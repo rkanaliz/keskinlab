@@ -1,170 +1,66 @@
 (function(){
-  const EVENTS = [{"date": "2026-09-14", "label": "Ders Yılı Başlangıcı", "type": "donem"}, {"date": "2026-10-29", "label": "Cumhuriyet Bayramı", "type": "kutlama"}, {"date": "2026-11-10", "label": "Atatürk'ü Anma", "type": "kutlama"}, {"date": "2026-11-16", "label": "Ara Tatil", "type": "tatil"}, {"date": "2026-11-17", "label": "Ara Tatil", "type": "tatil"}, {"date": "2026-11-18", "label": "Ara Tatil", "type": "tatil"}, {"date": "2026-11-19", "label": "Ara Tatil", "type": "tatil"}, {"date": "2026-11-20", "label": "Ara Tatil", "type": "tatil"}, {"date": "2026-11-24", "label": "Öğretmenler Günü", "type": "kutlama"}, {"date": "2027-01-01", "label": "Yılbaşı", "type": "tatil"}, {"date": "2027-01-25", "label": "Yarıyıl Tatili", "type": "tatil"}, {"date": "2027-01-26", "label": "Yarıyıl Tatili", "type": "tatil"}, {"date": "2027-01-27", "label": "Yarıyıl Tatili", "type": "tatil"}, {"date": "2027-01-28", "label": "Yarıyıl Tatili", "type": "tatil"}, {"date": "2027-01-29", "label": "Yarıyıl Tatili", "type": "tatil"}, {"date": "2027-01-30", "label": "Yarıyıl Tatili", "type": "tatil"}, {"date": "2027-01-31", "label": "Yarıyıl Tatili", "type": "tatil"}, {"date": "2027-02-01", "label": "Yarıyıl Tatili", "type": "tatil"}, {"date": "2027-02-02", "label": "Yarıyıl Tatili", "type": "tatil"}, {"date": "2027-02-03", "label": "Yarıyıl Tatili", "type": "tatil"}, {"date": "2027-02-04", "label": "Yarıyıl Tatili", "type": "tatil"}, {"date": "2027-02-05", "label": "Yarıyıl Tatili", "type": "tatil"}, {"date": "2027-03-08", "label": "Ramazan Bayramı", "type": "tatil"}, {"date": "2027-03-09", "label": "Ramazan Bayramı", "type": "tatil"}, {"date": "2027-03-10", "label": "Ramazan Bayramı", "type": "tatil"}, {"date": "2027-03-11", "label": "Ramazan Bayramı", "type": "tatil"}, {"date": "2027-03-12", "label": "Ara Tatil", "type": "tatil"}, {"date": "2027-04-23", "label": "Ulusal Egemenlik ve Çocuk Bayramı", "type": "kutlama"}, {"date": "2027-05-15", "label": "Kurban Bayramı", "type": "tatil"}, {"date": "2027-05-16", "label": "Kurban Bayramı", "type": "tatil"}, {"date": "2027-05-17", "label": "Kurban Bayramı", "type": "tatil"}, {"date": "2027-05-18", "label": "Kurban Bayramı", "type": "tatil"}, {"date": "2027-05-19", "label": "19 Mayıs / Kurban Bayramı (5. gün)", "type": "kutlama"}, {"date": "2027-06-25", "label": "Ders Yılı Bitişi", "type": "donem"}];
+  const EVENTS = [{"date": "2026-08-30", "label": "Zafer Bayramı", "type": "kutlama"}, {"date": "2026-09-01", "label": "Öğretmenlerin Mesleki Çalışmaları Başlangıcı", "type": "donem"}, {"date": "2026-09-07", "label": "Uluslararası Temiz Hava Günü", "type": "gun"}, {"date": "2026-09-07", "end": "2026-09-11", "label": "Uyum Eğitimleri (Okul Öncesi ve 1. Sınıf)", "type": "hafta"}, {"date": "2026-09-12", "label": "Dünya İlk Yardım Günü", "type": "gun"}, {"date": "2026-09-14", "label": "Ders Yılı Başlangıcı", "type": "donem"}, {"date": "2026-09-14", "end": "2026-09-20", "label": "İlköğretim Haftası", "type": "hafta"}, {"date": "2026-09-19", "label": "Gaziler Günü", "type": "gun"}, {"date": "2026-09-20", "label": "Öğrenciler Günü", "type": "gun"}, {"date": "2026-09-28", "label": "Dünya Okul Sütü Günü", "type": "gun"}, {"date": "2026-09-28", "end": "2026-10-04", "label": "Disleksi Haftası", "type": "hafta"}, {"date": "2026-10-01", "label": "Dünya Disleksi Günü", "type": "gun"}, {"date": "2026-10-04", "label": "Hayvanları Koruma Günü", "type": "gun"}, {"date": "2026-10-08", "end": "2026-10-12", "label": "Ahilik Kültürü Haftası", "type": "hafta"}, {"date": "2026-10-13", "label": "Dünya Afet Azaltma Günü", "type": "gun"}, {"date": "2026-10-24", "label": "Birleşmiş Milletler Günü", "type": "gun"}, {"date": "2026-10-29", "label": "Cumhuriyet Bayramı", "type": "kutlama"}, {"date": "2026-10-29", "end": "2026-11-04", "label": "Kızılay Haftası", "type": "hafta"}, {"date": "2026-11-02", "end": "2026-11-08", "label": "Lösemili Çocuklar Haftası", "type": "hafta"}, {"date": "2026-11-03", "end": "2026-11-09", "label": "Organ Bağışı ve Nakli Haftası", "type": "hafta"}, {"date": "2026-11-10", "end": "2026-11-16", "label": "Atatürk Haftası", "type": "hafta"}, {"date": "2026-11-12", "label": "Afet Eğitimi Hazırlık Günü", "type": "gun"}, {"date": "2026-11-14", "label": "Dünya Diyabet Günü", "type": "gun"}, {"date": "2026-11-16", "end": "2026-11-20", "label": "Ara Tatil", "type": "tatil"}, {"date": "2026-11-20", "label": "Dünya Felsefe Günü", "type": "gun"}, {"date": "2026-11-20", "label": "Dünya Çocuk Hakları Günü", "type": "gun"}, {"date": "2026-11-21", "end": "2026-11-27", "label": "Ağız ve Diş Sağlığı Haftası", "type": "hafta"}, {"date": "2026-11-24", "label": "Öğretmenler Günü", "type": "kutlama"}, {"date": "2026-12-03", "label": "Dünya Engelliler Günü", "type": "gun"}, {"date": "2026-12-04", "label": "Dünya Madenciler Günü", "type": "gun"}, {"date": "2026-12-05", "label": "Türk Kadınına Seçme ve Seçilme Hakkının Verilişi", "type": "gun"}, {"date": "2026-12-07", "end": "2026-12-17", "label": "Mevlana Haftası", "type": "hafta"}, {"date": "2026-12-07", "end": "2026-12-13", "label": "İnsan Hakları ve Demokrasi Haftası", "type": "hafta"}, {"date": "2026-12-12", "end": "2026-12-18", "label": "Tutum, Yatırım ve Türk Malları Haftası", "type": "hafta"}, {"date": "2026-12-20", "end": "2026-12-27", "label": "Mehmet Akif Ersoy'u Anma Haftası", "type": "hafta"}, {"date": "2027-01-01", "label": "Yılbaşı", "type": "tatil"}, {"date": "2027-01-04", "end": "2027-01-10", "label": "Enerji Tasarrufu Haftası", "type": "hafta"}, {"date": "2027-01-25", "end": "2027-02-05", "label": "Yarıyıl Tatili", "type": "tatil"}, {"date": "2027-02-22", "end": "2027-02-28", "label": "Vergi Haftası", "type": "hafta"}, {"date": "2027-03-01", "end": "2027-03-07", "label": "Yeşilay Haftası", "type": "hafta"}, {"date": "2027-03-01", "end": "2027-03-07", "label": "Girişimcilik Haftası", "type": "hafta"}, {"date": "2027-03-08", "end": "2027-03-11", "label": "Ramazan Bayramı", "type": "tatil"}, {"date": "2027-03-08", "label": "Dünya Kadınlar Günü", "type": "gun"}, {"date": "2027-03-08", "end": "2027-03-14", "label": "Bilim ve Teknoloji Haftası", "type": "hafta"}, {"date": "2027-03-12", "label": "Ara Tatil", "type": "tatil"}, {"date": "2027-03-12", "label": "İstiklâl Marşı'nın Kabulü ve Mehmet Akif Ersoy'u Anma Günü", "type": "gun"}, {"date": "2027-03-15", "end": "2027-03-21", "label": "Tüketiciyi Koruma Haftası", "type": "hafta"}, {"date": "2027-03-15", "end": "2027-03-21", "label": "Türk Dünyası ve Toplulukları Haftası", "type": "hafta"}, {"date": "2027-03-18", "label": "Şehitler Günü", "type": "gun"}, {"date": "2027-03-18", "end": "2027-03-24", "label": "Yaşlılar Haftası", "type": "hafta"}, {"date": "2027-03-21", "end": "2027-03-26", "label": "Orman Haftası", "type": "hafta"}, {"date": "2027-03-22", "label": "Dünya Su Günü", "type": "gun"}, {"date": "2027-03-27", "label": "Dünya Tiyatrolar Günü", "type": "gun"}, {"date": "2027-03-29", "end": "2027-04-04", "label": "Kütüphaneler Haftası", "type": "hafta"}, {"date": "2027-04-01", "end": "2027-04-07", "label": "Kanser Haftası", "type": "hafta"}, {"date": "2027-04-02", "label": "Dünya Otizm Farkındalık Günü", "type": "gun"}, {"date": "2027-04-07", "label": "Kişisel Verileri Koruma Günü", "type": "gun"}, {"date": "2027-04-07", "end": "2027-04-13", "label": "Dünya Sağlık Haftası", "type": "hafta"}, {"date": "2027-04-15", "end": "2027-04-22", "label": "Turizm Haftası", "type": "hafta"}, {"date": "2027-04-23", "label": "Ulusal Egemenlik ve Çocuk Bayramı", "type": "kutlama"}, {"date": "2027-04-26", "label": "Dünya Fikrî Mülkiyet Günü", "type": "gun"}, {"date": "2027-04-26", "end": "2027-05-02", "label": "Bilişim Haftası", "type": "hafta"}, {"date": "2027-04-26", "end": "2027-05-02", "label": "Trafik ve İlkyardım Haftası", "type": "hafta"}, {"date": "2027-04-29", "label": "Kût'ül Amâre Zaferi", "type": "gun"}, {"date": "2027-05-01", "label": "Emek ve Dayanışma Günü", "type": "tatil"}, {"date": "2027-05-03", "end": "2027-05-09", "label": "Vakıflar Haftası", "type": "hafta"}, {"date": "2027-05-04", "end": "2027-05-10", "label": "İş Sağlığı ve Güvenliği Haftası", "type": "hafta"}, {"date": "2027-05-09", "label": "Anneler Günü", "type": "gun"}, {"date": "2027-05-10", "end": "2027-05-16", "label": "Engelliler Haftası", "type": "hafta"}, {"date": "2027-05-15", "end": "2027-05-18", "label": "Kurban Bayramı", "type": "tatil"}, {"date": "2027-05-18", "end": "2027-05-24", "label": "Müzeler Haftası", "type": "hafta"}, {"date": "2027-05-19", "label": "19 Mayıs / Kurban Bayramı (5. gün)", "type": "kutlama"}, {"date": "2027-05-25", "label": "Etik Günü", "type": "gun"}, {"date": "2027-05-29", "label": "İstanbul'un Fethi", "type": "gun"}, {"date": "2027-05-31", "end": "2027-06-06", "label": "Hayat Boyu Öğrenme Haftası", "type": "hafta"}, {"date": "2027-06-07", "end": "2027-06-13", "label": "Çevre ve İklim Değişikliği Haftası", "type": "hafta"}, {"date": "2027-06-20", "label": "Babalar Günü", "type": "gun"}, {"date": "2027-06-25", "label": "Ders Yılı Bitişi", "type": "donem"}, {"date": "2027-07-15", "label": "15 Temmuz Demokrasi ve Millî Birlik Günü", "type": "kutlama"}, {"date": "2027-08-30", "label": "Zafer Bayramı", "type": "kutlama"}];
 
-  const EVENTS_MAP = {};
-  EVENTS.forEach(e => { EVENTS_MAP[e.date] = e; });
+  const TR_MONTHS_SHORT = ["Oca","Şub","Mar","Nis","May","Haz","Tem","Ağu","Eyl","Eki","Kas","Ara"];
 
-  const TR_MONTHS = ["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"];
-  const TR_DOW = ["Pt","Sa","Ça","Pe","Cu","Ct","Pz"];
+  function parseDate(s){
+    const [y,m,d] = s.split('-').map(Number);
+    return new Date(y, m-1, d);
+  }
+  function fmtShort(s){
+    const [y,m,d] = s.split('-').map(Number);
+    return `${d} ${TR_MONTHS_SHORT[m-1]}`;
+  }
+  function daysBetween(a,b){
+    const MS = 24*60*60*1000;
+    const da = new Date(a.getFullYear(),a.getMonth(),a.getDate());
+    const db = new Date(b.getFullYear(),b.getMonth(),b.getDate());
+    return Math.round((db-da)/MS);
+  }
+  function countLabel(n){
+    if(n === 0) return 'Bugün';
+    if(n === 1) return 'Yarın';
+    return `${n} gün sonra`;
+  }
 
-  const style = document.createElement('style');
-  style.textContent = `
-    .cal-grid-head{position:relative;}
-    .cal-nav{
-      background:none;border:none;cursor:pointer;color:#AEB6CC;font-size:1.1rem;
-      width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:6px;
-      transition:background .15s, color .15s;
-    }
-    .cal-nav:hover{background:rgba(255,255,255,0.08);color:#fff;}
-    .cal-days span{position:relative;cursor:default;}
-    .cal-days span.has-event{cursor:pointer;}
-    .cal-days span.has-event:hover{background:rgba(255,255,255,0.08);}
-    .cal-days span .dot{
-      position:absolute;bottom:2px;left:50%;transform:translateX(-50%);
-      width:4px;height:4px;border-radius:50%;background:currentColor;
-    }
-    .cal-days span.event .dot{background:var(--amber);}
-    .cal-today-row{display:flex;justify-content:flex-end;margin-top:10px;}
-    .cal-today-btn{
-      background:none;border:none;color:#7D86A0;font-family:'IBM Plex Mono',monospace;
-      font-size:0.7rem;cursor:pointer;padding:2px 6px;
-    }
-    .cal-today-btn:hover{color:#fff;}
-    .cal-popover{
-      margin-top:10px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
-      border-radius:8px;padding:9px 12px;font-size:0.8rem;color:#DDE2F0;
-    }
-    .cal-list li{cursor:default;}
-  `;
-  document.head.appendChild(style);
-
-  function pad(n){ return String(n).padStart(2,'0'); }
-  function dkey(y,m,d){ return `${y}-${pad(m+1)}-${pad(d)}`; }
-
-  const today = new Date();
-  let viewYear = today.getFullYear();
-  let viewMonth = today.getMonth();
-
-  function upcomingEvents(fromDate, limit){
-    const fromKey = dkey(fromDate.getFullYear(), fromDate.getMonth(), fromDate.getDate());
-    const future = EVENTS.filter(e => e.date >= fromKey);
+  function upcomingEvents(today, limit){
+    const items = EVENTS
+      .map(e => ({...e, _d: parseDate(e.date)}))
+      .filter(e => daysBetween(today, e._d) >= 0)
+      .sort((a,b) => a._d - b._d);
     const seen = new Set();
     const out = [];
-    for(const e of future){
-      const sig = e.label;
-      if(seen.has(sig)) continue;
-      seen.add(sig);
+    for(const e of items){
+      if(seen.has(e.label)) continue;
+      seen.add(e.label);
       out.push(e);
       if(out.length >= limit) break;
     }
     return out;
   }
 
-  function fmtShort(dateStr){
-    const [y,m,d] = dateStr.split('-').map(Number);
-    const MON = ["Oca","Şub","Mar","Nis","May","Haz","Tem","Ağu","Eyl","Eki","Kas","Ara"];
-    return `${d} ${MON[m-1]}`;
-  }
-
-  function renderUpcoming(){
-    const list = document.querySelector('.cal-list');
+  function render(){
+    const list = document.getElementById('upcoming-list');
     if(!list) return;
-    const items = upcomingEvents(today, 3);
-    list.innerHTML = items.map(e =>
-      `<li><span class="cal-date">${fmtShort(e.date)}</span> ${e.label}</li>`
-    ).join('') || '<li>Yaklaşan özel gün yok</li>';
-  }
-
-  function renderGrid(){
-    const box = document.querySelector('.cal-grid-box');
-    if(!box) return;
-
-    let head = box.querySelector('.cal-grid-head');
-    let dow = box.querySelector('.cal-dow');
-    let daysEl = box.querySelector('.cal-days');
-
-    if(!head.querySelector('.cal-nav')){
-      head.innerHTML = `
-        <button class="cal-nav" data-dir="-1" aria-label="Önceki ay">‹</button>
-        <span class="cal-month-label"></span>
-        <button class="cal-nav" data-dir="1" aria-label="Sonraki ay">›</button>`;
-      head.querySelectorAll('.cal-nav').forEach(btn => {
-        btn.addEventListener('click', () => {
-          viewMonth += parseInt(btn.dataset.dir, 10);
-          if(viewMonth < 0){ viewMonth = 11; viewYear--; }
-          if(viewMonth > 11){ viewMonth = 0; viewYear++; }
-          renderGrid();
-        });
-      });
+    const today = new Date();
+    const items = upcomingEvents(today, 6);
+    if(items.length === 0){
+      list.innerHTML = '<div class="upcoming-item"><span class="up-label">Yaklaşan özel gün bulunamadı.</span></div>';
+      return;
     }
-    if(!dow.dataset.built){
-      dow.innerHTML = TR_DOW.map(d => `<span>${d}</span>`).join('');
-      dow.dataset.built = '1';
-    }
-    if(!box.querySelector('.cal-today-row')){
-      const row = document.createElement('div');
-      row.className = 'cal-today-row';
-      row.innerHTML = '<button class="cal-today-btn">Bugüne Dön</button>';
-      row.querySelector('.cal-today-btn').addEventListener('click', () => {
-        viewYear = today.getFullYear();
-        viewMonth = today.getMonth();
-        renderGrid();
-      });
-      box.appendChild(row);
-      const pop = document.createElement('div');
-      pop.className = 'cal-popover';
-      pop.hidden = true;
-      box.appendChild(pop);
-    }
-
-    head.querySelector('.cal-month-label').textContent = `${TR_MONTHS[viewMonth]} ${viewYear}`;
-
-    const firstOfMonth = new Date(viewYear, viewMonth, 1);
-    const startWeekday = (firstOfMonth.getDay() + 6) % 7; // Pazartesi=0
-    const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
-    const daysInPrevMonth = new Date(viewYear, viewMonth, 0).getDate();
-
-    let cellsHTML = '';
-    for(let i = 0; i < startWeekday; i++){
-      cellsHTML += `<span class="muted">${daysInPrevMonth - startWeekday + 1 + i}</span>`;
-    }
-    for(let d = 1; d <= daysInMonth; d++){
-      const k = dkey(viewYear, viewMonth, d);
-      const ev = EVENTS_MAP[k];
-      const isToday = (viewYear === today.getFullYear() && viewMonth === today.getMonth() && d === today.getDate());
-      let cls = [];
-      if(isToday) cls.push('today');
-      if(ev) cls.push(ev.type === 'kutlama' ? 'event' : 'holiday', 'has-event');
-      cellsHTML += `<span class="${cls.join(' ')}" data-key="${k}" data-label="${ev ? ev.label.replace(/"/g,'&quot;') : ''}">${d}${ev ? '<i class="dot"></i>' : ''}</span>`;
-    }
-    let totalCells = startWeekday + daysInMonth;
-    let trailing = (7 - (totalCells % 7)) % 7;
-    for(let i = 1; i <= trailing; i++){
-      cellsHTML += `<span class="muted">${i}</span>`;
-    }
-    daysEl.innerHTML = cellsHTML;
-
-    const pop = box.querySelector('.cal-popover');
-    pop.hidden = true;
-    daysEl.querySelectorAll('.has-event').forEach(el => {
-      el.addEventListener('click', () => {
-        pop.hidden = false;
-        pop.textContent = `${el.textContent.replace(/\d+$/,'').trim() || el.dataset.key} — ${el.dataset.label}`;
-        const d = parseInt(el.dataset.key.split('-')[2], 10);
-        pop.textContent = `${d} ${TR_MONTHS[viewMonth]}: ${el.dataset.label}`;
-      });
-    });
-  }
-
-  function init(){
-    if(!document.querySelector('.cal-grid-box')) return;
-    renderGrid();
-    renderUpcoming();
+    list.innerHTML = items.map(e => {
+      const n = daysBetween(today, e._d);
+      return `<div class="upcoming-item">
+        <span class="up-date">${fmtShort(e.date)}</span>
+        <span class="up-label">${e.label}</span>
+        <span class="up-count">${countLabel(n)}</span>
+      </div>`;
+    }).join('');
   }
 
   if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', render);
   } else {
-    init();
+    render();
   }
 })();

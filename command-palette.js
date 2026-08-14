@@ -100,11 +100,26 @@
         </div>
       </div>
     `).join('');
-    resultsEl.querySelectorAll('.cp-item').forEach(el => {
-      el.addEventListener('click', () => go(parseInt(el.dataset.idx)));
-      el.addEventListener('mouseenter', () => { activeIndex = parseInt(el.dataset.idx); render(); });
-    });
   }
+
+  // Tek, kalıcı dinleyici — liste her yeniden çizildiğinde tekrar bağlamaya gerek yok,
+  // hover ile tıklama arasında DOM değişiminden kaynaklanan yarış durumunu ortadan kaldırır.
+  resultsEl.addEventListener('mousemove', (e) => {
+    const item = e.target.closest('.cp-item');
+    if(!item) return;
+    const idx = parseInt(item.dataset.idx, 10);
+    if(idx !== activeIndex){
+      activeIndex = idx;
+      resultsEl.querySelectorAll('.cp-item').forEach(el => {
+        el.classList.toggle('active', parseInt(el.dataset.idx, 10) === activeIndex);
+      });
+    }
+  });
+  resultsEl.addEventListener('click', (e) => {
+    const item = e.target.closest('.cp-item');
+    if(!item) return;
+    go(parseInt(item.dataset.idx, 10));
+  });
 
   function go(i){
     const r = currentResults[i];

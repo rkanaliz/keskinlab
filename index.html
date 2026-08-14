@@ -214,40 +214,37 @@
   .mat-body h4{font-size:0.95rem;font-weight:600;margin-bottom:6px;line-height:1.3;}
   .mat-meta{font-size:0.8rem;color:var(--ink-faint);}
 
-  /* CALENDAR */
-  .calendar-section{padding:0 0 84px;}
-  .cal-panel{
-    background:var(--ink);border-radius:20px;padding:44px;color:#fff;
-    display:grid;grid-template-columns:0.9fr 1.1fr;gap:50px;align-items:center;
+  /* YAKLAŞAN ÖZEL GÜNLER */
+  .upcoming-section{padding:0 0 84px;}
+  .upcoming-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:34px 36px;
   }
-  .cal-left .eyebrow{color:var(--amber);}
-  .cal-left .eyebrow::before{background:var(--teal);}
-  .cal-left h2{font-size:1.7rem;font-weight:700;color:#fff;margin-bottom:14px;}
-  .cal-left p{color:#AEB6CC;font-size:0.95rem;max-width:38ch;margin-bottom:22px;}
-  .cal-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;}
-  .cal-list li{
-    display:flex;align-items:center;gap:12px;font-size:0.88rem;color:#DDE2F0;
+  .upcoming-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:22px;flex-wrap:wrap;}
+  .upcoming-head h2{font-size:1.5rem;font-weight:700;}
+  .upcoming-link{
+    font-family:'IBM Plex Mono',monospace;font-size:0.82rem;font-weight:600;color:var(--teal-deep);
+    white-space:nowrap;
   }
-  .cal-date{
-    font-family:'IBM Plex Mono',monospace;background:rgba(255,255,255,0.08);
-    padding:5px 9px;border-radius:6px;font-size:0.78rem;color:var(--amber);min-width:62px;text-align:center;
+  .upcoming-list{display:flex;flex-direction:column;gap:2px;}
+  .upcoming-item{
+    display:flex;align-items:center;gap:14px;padding:12px 4px;border-bottom:1px solid var(--bg);
   }
-  .cal-grid-box{
-    background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);
-    border-radius:14px;padding:22px;
+  .upcoming-item:last-child{border-bottom:none;}
+  .up-date{
+    font-family:'IBM Plex Mono',monospace;font-size:0.76rem;color:var(--teal-deep);
+    background:#EAF3F1;border-radius:7px;padding:6px 10px;min-width:64px;text-align:center;flex-shrink:0;
   }
-  .cal-grid-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
-  .cal-grid-head span{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1rem;}
-  .cal-dow{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:8px;}
-  .cal-dow span{font-size:0.68rem;text-align:center;color:#7D86A0;font-family:'IBM Plex Mono',monospace;}
-  .cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;}
-  .cal-days span{
-    aspect-ratio:1;display:flex;align-items:center;justify-content:center;
-    font-size:0.78rem;border-radius:6px;color:#C9CFDF;
+  .up-label{flex:1;font-size:0.92rem;font-weight:500;color:var(--ink);min-width:0;}
+  .up-count{
+    font-family:'IBM Plex Mono',monospace;font-size:0.74rem;color:var(--amber-deep);
+    background:#FBF1E1;border-radius:20px;padding:5px 12px;flex-shrink:0;white-space:nowrap;
   }
-  .cal-days span.muted{color:#454E68;}
-  .cal-days span.today{background:var(--teal);color:#fff;font-weight:600;}
-  .cal-days span.holiday{background:rgba(226,166,59,0.18);color:var(--amber);font-weight:600;}
+  @media (max-width:640px){
+    .upcoming-card{padding:24px 20px;}
+    .up-label{font-size:0.86rem;}
+    .up-count{display:none;}
+  }
 
   /* FOOTER */
   footer{border-top:1px solid var(--line);padding:38px 0;}
@@ -267,7 +264,6 @@
     .hero-grid{grid-template-columns:1fr;gap:40px;}
     .area-grid{grid-template-columns:1fr 1fr;}
     .mat-row{grid-template-columns:1fr 1fr;}
-    .cal-panel{grid-template-columns:1fr;padding:32px 26px;}
   }
   @media (max-width:560px){
     .hero h1{font-size:2.1rem;}
@@ -434,20 +430,17 @@
   </div>
 </section>
 
-<section class="calendar-section" id="takvim">
+<section class="upcoming-section" id="takvim">
   <div class="wrap">
-    <div class="cal-panel">
-      <div class="cal-left">
-        <div class="eyebrow">Eğitim öğretim takvimi</div>
-        <h2>Bu ay ne var, bir bakışta gör.</h2>
-        <p>Tatiller, belirli gün ve haftalar ile sınav dönemleri otomatik işaretlenir.</p>
-        <ul class="cal-list"></ul>
+    <div class="upcoming-card">
+      <div class="upcoming-head">
+        <div>
+          <div class="eyebrow">Eğitim Öğretim Takvimi</div>
+          <h2>Yaklaşan Özel Günler</h2>
+        </div>
+        <a href="takvim.html" class="upcoming-link">Tam Takvimi Gör →</a>
       </div>
-      <div class="cal-grid-box">
-        <div class="cal-grid-head"></div>
-        <div class="cal-dow"></div>
-        <div class="cal-days"></div>
-      </div>
+      <div id="upcoming-list" class="upcoming-list"></div>
     </div>
   </div>
 </section>
