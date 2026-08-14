@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-2027 Çalışma Takvimi — KeskinLab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F4F6F3; --surface:#FFFFFF; --ink:#12182B; --ink-soft:#565F70; --ink-faint:#8890A0;
+    --teal:#1E8A80; --teal-deep:#146059; --amber:#E2A63B; --amber-deep:#B9822A;
+    --line:#DCE1DE; --radius:14px; --maxw:1180px; font-size:16px;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:'Space Grotesk',system-ui,sans-serif;margin:0;letter-spacing:-0.01em;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  a{color:inherit;text-decoration:none;}
+  :focus-visible{outline:2.5px solid var(--teal);outline-offset:3px;border-radius:4px;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(244,246,243,0.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.15rem;}
+  .logo svg{width:28px;height:28px;flex-shrink:0;}
+  .navlinks{display:flex;gap:22px;align-items:center;}
+  .navlinks a{font-size:0.87rem;font-weight:500;color:var(--ink-soft);white-space:nowrap;position:relative;padding:4px 0;}
+  .navlinks a.active{color:var(--teal-deep);}
+  .navlinks a.active::after{content:"";position:absolute;left:0;bottom:-2px;width:100%;height:2px;background:var(--amber);}
+  .navcta{background:var(--ink);color:#fff !important;padding:9px 18px;border-radius:8px;font-size:0.9rem;font-weight:600;}
+  @media (max-width:1060px){ .navlinks{display:none;} }
+
+  .crumb{padding:20px 0 0;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--ink-faint);}
+  .crumb a{color:var(--teal-deep);}
+  .crumb span{margin:0 6px;}
+
+  .page-head{padding:22px 0 32px;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.78rem;font-weight:500;color:var(--teal-deep);letter-spacing:0.06em;text-transform:uppercase;display:flex;align-items:center;gap:9px;margin-bottom:14px;}
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber);flex-shrink:0;}
+  .page-head h1{font-size:2.2rem;font-weight:700;margin-bottom:14px;}
+  .page-head p.lead{font-size:1.02rem;color:var(--ink-soft);max-width:62ch;}
+
+  .content{padding:0 0 80px;}
+  .stat-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px;}
+  .stat-chip{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 18px;display:flex;flex-direction:column;gap:2px;min-width:130px;}
+  .stat-chip .num{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.35rem;}
+  .stat-chip .lbl{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.04em;}
+
+  .donem-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;}
+  .donem-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;}
+  .donem-card h3{font-size:1rem;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:9px;}
+  .donem-card h3::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--teal);}
+  .donem-row{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--bg);font-size:0.87rem;}
+  .donem-row:last-child{border-bottom:none;}
+  .donem-row .lbl{color:var(--ink-faint);}
+  .donem-row .val{font-weight:600;text-align:right;}
+
+  .tatil-card{
+    background:#FBF1E1;border:1px solid #E9D2A0;border-radius:var(--radius);padding:20px 22px;margin-bottom:20px;
+    display:flex;gap:16px;flex-wrap:wrap;
+  }
+  .tatil-item{flex:1;min-width:180px;}
+  .tatil-item .lbl{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--amber-deep);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:4px;}
+  .tatil-item .val{font-weight:600;font-size:0.92rem;}
+
+  .gunler-head{font-size:1.15rem;font-weight:700;margin:36px 0 16px;}
+  .gunler-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
+  .gunler-list li{
+    display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);
+    border-radius:10px;padding:12px 16px;font-size:0.88rem;
+  }
+  .gun-tarih{
+    font-family:'IBM Plex Mono',monospace;background:var(--bg);border-radius:6px;padding:5px 10px;
+    font-size:0.78rem;color:var(--teal-deep);min-width:70px;text-align:center;flex-shrink:0;
+  }
+  .note{font-size:0.82rem;color:var(--ink-faint);margin-top:20px;line-height:1.6;}
+
+  footer{border-top:1px solid var(--line);padding:38px 0;}
+  .foot-grid{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  .foot-logo{display:flex;align-items:center;gap:9px;font-weight:700;}
+  .foot-logo svg{width:22px;height:22px;}
+  .foot-tag{font-size:0.82rem;color:var(--ink-faint);margin-top:4px;}
+  .foot-links{display:flex;gap:22px;flex-wrap:wrap;}
+  .foot-links a{font-size:0.86rem;color:var(--ink-soft);}
+
+  @media (max-width:760px){
+    .donem-grid{grid-template-columns:1fr;}
+    .page-head h1{font-size:1.7rem;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 32 32" fill="none"><rect x="9" y="9" width="14" height="14" rx="3" stroke="#12182B" stroke-width="2"/><circle cx="16" cy="16" r="3" fill="#E2A63B"/><path d="M16 2V9M16 23V30M2 16H9M23 16H30M6 6L10.5 10.5M25.9 25.9L21.4 21.4M6 26L10.5 21.4M25.9 6.1L21.4 10.5" stroke="#1E8A80" stroke-width="2" stroke-linecap="round"/></svg>
+        KeskinLab
+      </a>
+      <div class="navlinks">
+        <a href="5-sinif-bty.html">5. Sınıf BTY</a>
+        <a href="6-sinif-bty.html">6. Sınıf BTY</a>
+        <a href="index.html#robotik">Robotik Kodlama</a>
+        <a href="index.html#yapayzeka">Yapay Zekâ</a>
+        <a href="evrak-cantasi.html" class="active">Evrak Çantası</a>
+        <a href="index.html#atolye">Atölye</a>
+        <a href="#" class="navcta">İletişim</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap crumb"><a href="index.html">Anasayfa</a><span>/</span><a href="evrak-cantasi.html">Evrak Çantası</a><span>/</span>Takvim</div>
+
+<section class="page-head">
+  <div class="wrap">
+    <div class="eyebrow">Eğitim Öğretim Takvimi</div>
+    <h1>2026-2027 Çalışma Takvimi</h1>
+    <p class="lead">Ders yılı 14 Eylül 2026 Pazartesi'de başlıyor, 25 Haziran 2027 Cuma günü sona eriyor. Toplam 180,5 iş günü.</p>
+  </div>
+</section>
+
+<section class="content">
+  <div class="wrap">
+
+    <div class="stat-row">
+      <div class="stat-chip"><span class="num">180,5</span><span class="lbl">Toplam İş Günü</span></div>
+      <div class="stat-chip"><span class="num">88,5</span><span class="lbl">I. Dönem İş Günü</span></div>
+      <div class="stat-chip"><span class="num">92</span><span class="lbl">II. Dönem İş Günü</span></div>
+    </div>
+
+    <div class="donem-grid">
+      <div class="donem-card">
+        <h3>I. Dönem</h3>
+        <div class="donem-row"><span class="lbl">Başlangıç</span><span class="val">14 Eylül 2026, Pazartesi</span></div>
+        <div class="donem-row"><span class="lbl">Bitiş</span><span class="val">22 Ocak 2027, Cuma</span></div>
+        <div class="donem-row"><span class="lbl">Ara Tatil</span><span class="val">16–20 Kasım 2026</span></div>
+      </div>
+      <div class="donem-card">
+        <h3>II. Dönem</h3>
+        <div class="donem-row"><span class="lbl">Başlangıç</span><span class="val">8 Şubat 2027, Pazartesi</span></div>
+        <div class="donem-row"><span class="lbl">Bitiş</span><span class="val">25 Haziran 2027, Cuma</span></div>
+        <div class="donem-row"><span class="lbl">Ara Tatil</span><span class="val">8–12 Mart 2027</span></div>
+      </div>
+    </div>
+
+    <div class="tatil-card">
+      <div class="tatil-item"><div class="lbl">Yarıyıl Tatili</div><div class="val">25 Ocak – 5 Şubat 2027 (10 gün)</div></div>
+      <div class="tatil-item"><div class="lbl">Ramazan Bayramı</div><div class="val">8–11 Mart 2027 (ara tatille çakışıyor)</div></div>
+      <div class="tatil-item"><div class="lbl">Kurban Bayramı</div><div class="val">15–19 Mayıs 2027</div></div>
+    </div>
+
+    <div class="gunler-head">Belirli Gün ve Haftalar</div>
+    <ul class="gunler-list">
+      <li><span class="gun-tarih">29 Eki</span> Cumhuriyet Bayramı</li>
+      <li><span class="gun-tarih">10 Kas</span> Atatürk'ü Anma</li>
+      <li><span class="gun-tarih">24 Kas</span> Öğretmenler Günü</li>
+      <li><span class="gun-tarih">1 Oca</span> Yılbaşı</li>
+      <li><span class="gun-tarih">23 Nis</span> Ulusal Egemenlik ve Çocuk Bayramı</li>
+      <li><span class="gun-tarih">19 May</span> Atatürk'ü Anma, Gençlik ve Spor Bayramı</li>
+    </ul>
+
+    <p class="note">
+      29 Ekim, 23 Nisan ve 19 Mayıs resmî tatillerinde öğrenciler okuldaki törenlere katıldığı için bu günler iş günü olarak sayılıyor. Kaynak: M.E.B. 2026-2027 Eğitim ve Öğretim Yılı Çalışma Takvimi. Tam çerçeve yıllık planlar için <a href="evrak-cantasi.html" style="color:var(--teal-deep);text-decoration:underline;">Evrak Çantası</a>'na bakabilirsin.
+    </p>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <div class="foot-logo">
+        <svg viewBox="0 0 32 32" fill="none"><rect x="9" y="9" width="14" height="14" rx="3" stroke="#12182B" stroke-width="2"/><circle cx="16" cy="16" r="3" fill="#E2A63B"/></svg>
+        KeskinLab
+      </div>
+      <div class="foot-tag">5-6. Sınıf BTY · Robotik Kodlama · Yapay Zekâ</div>
+    </div>
+    <div class="foot-links">
+      <a href="5-sinif-bty.html">5. Sınıf</a>
+      <a href="6-sinif-bty.html">6. Sınıf</a>
+      <a href="index.html#robotik">Robotik Kodlama</a>
+      <a href="index.html#yapayzeka">Yapay Zekâ</a>
+      <a href="evrak-cantasi.html">Evrak Çantası</a>
+      <a href="index.html#atolye">Atölye</a>
+    </div>
+  </div>
+</footer>
+
+<script src="search-index.js"></script>
+<script src="command-palette.js"></script>
+</body>
+</html>

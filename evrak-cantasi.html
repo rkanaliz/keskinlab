@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evrak Çantası — KeskinLab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F4F6F3; --surface:#FFFFFF; --ink:#12182B; --ink-soft:#565F70; --ink-faint:#8890A0;
+    --teal:#1E8A80; --teal-deep:#146059; --amber:#E2A63B; --amber-deep:#B9822A;
+    --line:#DCE1DE; --radius:14px; --maxw:1180px; font-size:16px;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:'Space Grotesk',system-ui,sans-serif;margin:0;letter-spacing:-0.01em;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  a{color:inherit;text-decoration:none;}
+  :focus-visible{outline:2.5px solid var(--teal);outline-offset:3px;border-radius:4px;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(244,246,243,0.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.15rem;}
+  .logo svg{width:28px;height:28px;flex-shrink:0;}
+  .navlinks{display:flex;gap:22px;align-items:center;}
+  .navlinks a{font-size:0.87rem;font-weight:500;color:var(--ink-soft);white-space:nowrap;position:relative;padding:4px 0;}
+  .navlinks a.active{color:var(--teal-deep);}
+  .navlinks a.active::after{content:"";position:absolute;left:0;bottom:-2px;width:100%;height:2px;background:var(--amber);}
+  .navcta{background:var(--ink);color:#fff !important;padding:9px 18px;border-radius:8px;font-size:0.9rem;font-weight:600;}
+  @media (max-width:1060px){ .navlinks{display:none;} }
+
+  .crumb{padding:20px 0 0;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--ink-faint);}
+  .crumb a{color:var(--teal-deep);}
+  .crumb span{margin:0 6px;}
+
+  .page-head{padding:22px 0 36px;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.78rem;font-weight:500;color:var(--teal-deep);letter-spacing:0.06em;text-transform:uppercase;display:flex;align-items:center;gap:9px;margin-bottom:14px;}
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber);flex-shrink:0;}
+  .page-head h1{font-size:2.2rem;font-weight:700;margin-bottom:14px;}
+  .page-head p.lead{font-size:1.02rem;color:var(--ink-soft);max-width:62ch;}
+
+  .cats{padding:10px 0 80px;display:flex;flex-direction:column;gap:34px;}
+  .cat-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;}
+  .cat-head h2{font-size:1.15rem;font-weight:700;}
+  .cat-head .count{font-family:'IBM Plex Mono',monospace;font-size:0.74rem;color:var(--ink-faint);}
+  .doc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+
+  .doc-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:12px;
+    padding:18px 18px 16px;display:flex;flex-direction:column;gap:10px;transition:transform .15s, box-shadow .15s, border-color .15s;
+  }
+  .doc-card.ready{cursor:pointer;}
+  .doc-card.ready:hover{transform:translateY(-3px);box-shadow:0 12px 26px -14px rgba(18,24,43,0.2);border-color:var(--teal);}
+  .doc-icon{
+    width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .doc-card.ready .doc-icon{background:#EAF3F1;color:var(--teal-deep);}
+  .doc-card.pending .doc-icon{background:var(--bg);color:var(--ink-faint);border:1px dashed var(--line);}
+  .doc-icon svg{width:19px;height:19px;}
+  .doc-card h3{font-size:0.94rem;font-weight:600;line-height:1.35;}
+  .doc-card p{font-size:0.8rem;color:var(--ink-faint);flex:1;}
+  .doc-foot{display:flex;align-items:center;justify-content:space-between;margin-top:4px;}
+  .doc-tag{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:var(--ink-faint);}
+  .doc-card.ready .doc-tag{color:var(--teal-deep);}
+  .dl-icon{width:16px;height:16px;color:var(--teal-deep);flex-shrink:0;}
+
+  footer{border-top:1px solid var(--line);padding:38px 0;}
+  .foot-grid{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  .foot-logo{display:flex;align-items:center;gap:9px;font-weight:700;}
+  .foot-logo svg{width:22px;height:22px;}
+  .foot-tag{font-size:0.82rem;color:var(--ink-faint);margin-top:4px;}
+  .foot-links{display:flex;gap:22px;flex-wrap:wrap;}
+  .foot-links a{font-size:0.86rem;color:var(--ink-soft);}
+
+  @media (max-width:900px){ .doc-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:640px){
+    .page-head h1{font-size:1.7rem;}
+    .doc-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 32 32" fill="none"><rect x="9" y="9" width="14" height="14" rx="3" stroke="#12182B" stroke-width="2"/><circle cx="16" cy="16" r="3" fill="#E2A63B"/><path d="M16 2V9M16 23V30M2 16H9M23 16H30M6 6L10.5 10.5M25.9 25.9L21.4 21.4M6 26L10.5 21.4M25.9 6.1L21.4 10.5" stroke="#1E8A80" stroke-width="2" stroke-linecap="round"/></svg>
+        KeskinLab
+      </a>
+      <div class="navlinks">
+        <a href="5-sinif-bty.html">5. Sınıf BTY</a>
+        <a href="6-sinif-bty.html">6. Sınıf BTY</a>
+        <a href="index.html#robotik">Robotik Kodlama</a>
+        <a href="index.html#yapayzeka">Yapay Zekâ</a>
+        <a href="#" class="active">Evrak Çantası</a>
+        <a href="index.html#atolye">Atölye</a>
+        <a href="#" class="navcta">İletişim</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap crumb"><a href="index.html">Anasayfa</a><span>/</span>Evrak Çantası</div>
+
+<section class="page-head">
+  <div class="wrap">
+    <div class="eyebrow">Öğretmen Evrak Çantası</div>
+    <h1>Evrak Çantası</h1>
+    <p class="lead">Yıllık plan, takvim, tutanak ve form şablonları — sınıfa girmeden önce ihtiyacın olan her evrak tek yerde.</p>
+  </div>
+</section>
+
+<section class="cats">
+  <div class="wrap">
+
+    <div>
+      <div class="cat-head"><h2>Yıllık Planlar</h2><span class="count mono">2 hazır</span></div>
+      <div class="doc-grid">
+        <a class="doc-card ready" href="5-sinif-bty-cerceve-yillik-plan.xlsx" download>
+          <div class="doc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h11l5 5v11a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1z"/><path d="M14 4v5h5M8 13h8M8 17h5"/></svg></div>
+          <h3>5. Sınıf BTY — Çerçeve Yıllık Plan</h3>
+          <p>Resmî taslak plan, 2026-2027 takvimine göre 37 hafta düzenlenmiş.</p>
+          <div class="doc-foot"><span class="doc-tag">.xlsx · indir</span><svg class="dl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg></div>
+        </a>
+        <a class="doc-card ready" href="6-sinif-bty-cerceve-yillik-plan.xlsx" download>
+          <div class="doc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h11l5 5v11a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1z"/><path d="M14 4v5h5M8 13h8M8 17h5"/></svg></div>
+          <h3>6. Sınıf BTY — Çerçeve Yıllık Plan</h3>
+          <p>Resmî taslak plan, 2026-2027 takvimine göre 37 hafta düzenlenmiş.</p>
+          <div class="doc-foot"><span class="doc-tag">.xlsx · indir</span><svg class="dl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg></div>
+        </a>
+        <div class="doc-card pending">
+          <div class="doc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h11l5 5v11a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1z"/><path d="M14 4v5h5M8 13h8M8 17h5"/></svg></div>
+          <h3>Robotik Kodlama — Çerçeve Yıllık Plan</h3>
+          <p>Henüz kaynak veri yok.</p>
+          <div class="doc-foot"><span class="doc-tag">hazırlanıyor</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="cat-head"><h2>Eğitim Öğretim Takvimi</h2><span class="count mono">hazır</span></div>
+      <div class="doc-grid">
+        <a class="doc-card ready" href="takvim.html">
+          <div class="doc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
+          <h3>2026-2027 Çalışma Takvimi</h3>
+          <p>Dönemler, ara tatiller, yarıyıl tatili ve resmî günler — tek sayfada.</p>
+          <div class="doc-foot"><span class="doc-tag">sayfaya git →</span></div>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <div class="cat-head"><h2>Zümre &amp; Toplantı</h2><span class="count mono">hazırlanıyor</span></div>
+      <div class="doc-grid">
+        <div class="doc-card pending">
+          <div class="doc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <h3>Zümre Öğretmenler Kurulu Tutanağı</h3>
+          <p>Şablon henüz eklenmedi.</p>
+          <div class="doc-foot"><span class="doc-tag">hazırlanıyor</span></div>
+        </div>
+        <div class="doc-card pending">
+          <div class="doc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          <h3>Veli Bilgilendirme Yazıları</h3>
+          <p>Şablon henüz eklenmedi.</p>
+          <div class="doc-foot"><span class="doc-tag">hazırlanıyor</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="cat-head"><h2>Ölçme ve Değerlendirme</h2><span class="count mono">hazırlanıyor</span></div>
+      <div class="doc-grid">
+        <div class="doc-card pending">
+          <div class="doc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+          <h3>Dereceli Puanlama Anahtarı</h3>
+          <p>Şablon henüz eklenmedi.</p>
+          <div class="doc-foot"><span class="doc-tag">hazırlanıyor</span></div>
+        </div>
+        <div class="doc-card pending">
+          <div class="doc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+          <h3>Gözlem Formu</h3>
+          <p>Şablon henüz eklenmedi.</p>
+          <div class="doc-foot"><span class="doc-tag">hazırlanıyor</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <div class="foot-logo">
+        <svg viewBox="0 0 32 32" fill="none"><rect x="9" y="9" width="14" height="14" rx="3" stroke="#12182B" stroke-width="2"/><circle cx="16" cy="16" r="3" fill="#E2A63B"/></svg>
+        KeskinLab
+      </div>
+      <div class="foot-tag">5-6. Sınıf BTY · Robotik Kodlama · Yapay Zekâ</div>
+    </div>
+    <div class="foot-links">
+      <a href="5-sinif-bty.html">5. Sınıf</a>
+      <a href="6-sinif-bty.html">6. Sınıf</a>
+      <a href="index.html#robotik">Robotik Kodlama</a>
+      <a href="index.html#yapayzeka">Yapay Zekâ</a>
+      <a href="#">Evrak Çantası</a>
+      <a href="index.html#atolye">Atölye</a>
+    </div>
+  </div>
+</footer>
+
+<script src="search-index.js"></script>
+<script src="command-palette.js"></script>
+</body>
+</html>
