@@ -98,12 +98,20 @@
   .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:26px;}
   .btn{
     padding:13px 24px;border-radius:9px;font-weight:600;font-size:0.95rem;
-    display:inline-flex;align-items:center;gap:8px;transition:transform .15s, box-shadow .15s;
+    display:inline-flex;align-items:center;gap:8px;
+    border:1.5px solid var(--ink);background:transparent;color:var(--ink);
+    position:relative;overflow:hidden;isolation:isolate;cursor:pointer;
+    transition:color .25s ease, transform .15s ease, box-shadow .15s ease, border-color .25s ease;
   }
-  .btn-primary{background:var(--ink);color:#fff;}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(18,24,43,0.22);}
-  .btn-secondary{background:transparent;color:var(--ink);border:1.5px solid var(--line);}
-  .btn-secondary:hover{border-color:var(--ink);transform:translateY(-2px);}
+  .btn::before{
+    content:"";position:absolute;inset:0;background:var(--ink);z-index:-1;
+    transform:scaleX(0);transform-origin:left;transition:transform .3s ease;
+  }
+  .btn:hover::before{transform:scaleX(1);}
+  .btn:hover{color:#fff;transform:translateY(-2px);box-shadow:0 8px 20px rgba(18,24,43,0.2);}
+  .btn-secondary{border-color:var(--line);}
+  .btn-secondary::before{background:var(--teal);}
+  .btn-secondary:hover{border-color:var(--teal);}
   .badge-model{
     display:inline-flex;align-items:center;gap:8px;
     background:#EAF3F1;color:var(--teal-deep);
@@ -330,7 +338,7 @@
 <section class="circuit-section" id="modüller">
   <div class="wrap">
     <div class="circuit-head">
-      <div class="eyebrow">Altı ana modül</div>
+      <div class="eyebrow">Bir tıkla materyale ulaş</div>
       <h2>Her şey birbirine bağlı, tek panoda.</h2>
     </div>
     <div class="circuit-wrap">
@@ -433,25 +441,12 @@
         <div class="eyebrow">Eğitim öğretim takvimi</div>
         <h2>Bu ay ne var, bir bakışta gör.</h2>
         <p>Tatiller, belirli gün ve haftalar ile sınav dönemleri otomatik işaretlenir.</p>
-        <ul class="cal-list">
-          <li><span class="cal-date">29 Eki</span> Cumhuriyet Bayramı</li>
-          <li><span class="cal-date">10 Kas</span> Atatürk'ü Anma</li>
-          <li><span class="cal-date">24 Kas</span> Öğretmenler Günü</li>
-        </ul>
+        <ul class="cal-list"></ul>
       </div>
       <div class="cal-grid-box">
-        <div class="cal-grid-head">
-          <span>Kasım</span>
-          <span class="mono" style="font-size:.75rem;color:#7D86A0;">2025</span>
-        </div>
-        <div class="cal-dow"><span>Pt</span><span>Sa</span><span>Ça</span><span>Pe</span><span>Cu</span><span>Ct</span><span>Pz</span></div>
-        <div class="cal-days">
-          <span class="muted">27</span><span class="muted">28</span><span class="muted">29</span><span class="muted">30</span><span class="muted">31</span><span>1</span><span>2</span>
-          <span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
-          <span class="holiday">10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span>
-          <span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span>
-          <span class="holiday">24</span><span class="today">25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span>
-        </div>
+        <div class="cal-grid-head"></div>
+        <div class="cal-dow"></div>
+        <div class="cal-days"></div>
       </div>
     </div>
   </div>
@@ -479,5 +474,7 @@
 
 <script src="search-index.js"></script>
 <script src="command-palette.js"></script>
+<script src="mobile-nav.js"></script>
+<script src="home-calendar.js"></script>
 </body>
 </html>
