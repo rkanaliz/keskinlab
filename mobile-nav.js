@@ -24,7 +24,7 @@
     .mnav-sheet .navcta{
       margin-top:10px;text-align:center;border-bottom:none;background:var(--ink);color:#fff;border-radius:8px;
     }
-    .mnav-sheet .cp-trigger{justify-content:center;margin-top:6px;border-bottom:none;}
+    .mnav-sheet .cp-trigger{justify-content:center;margin-top:6px;border-bottom:none;align-self:flex-start;width:auto;}
     .mnav-close{
       position:absolute;top:14px;right:18px;background:none;border:none;cursor:pointer;
       color:var(--ink-faint);padding:6px;
