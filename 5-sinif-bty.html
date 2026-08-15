@@ -54,89 +54,45 @@
   }
   .toggle-btn.active{background:var(--ink);color:#fff;border-color:var(--ink);}
 
-  .donem-head{display:flex;align-items:center;gap:14px;margin:34px 0 16px;}
+  .donem-head{display:flex;align-items:center;gap:14px;margin:34px 0 14px;}
   .donem-head h2{font-size:1.1rem;font-weight:700;white-space:nowrap;}
   .donem-head .rule{flex:1;height:1px;background:var(--line);}
   .donem-note{font-family:'IBM Plex Mono',monospace;font-size:0.74rem;color:var(--ink-faint);}
 
   .tatil-gap{
-    display:flex;align-items:center;gap:10px;margin:18px 0;padding:12px 16px;
+    display:flex;align-items:center;gap:10px;margin:10px 0 18px;padding:12px 16px;
     background:#FBF1E1;border:1px dashed #E0C285;border-radius:10px;
     font-size:0.82rem;color:var(--amber-deep);font-family:'IBM Plex Mono',monospace;
   }
 
-  .weeks{padding:0 0 80px;display:flex;flex-direction:column;gap:10px;position:relative;}
-  .weeks::before{
-    content:"";position:absolute;left:33px;top:8px;bottom:8px;width:1.5px;
-    background:repeating-linear-gradient(to bottom, var(--line) 0 4px, transparent 4px 8px);
-    z-index:0;
+  /* YATAY HAFTA SEÇİCİ */
+  .hafta-strip{
+    display:flex;gap:10px;overflow-x:auto;padding:4px 2px 14px;scroll-snap-type:x proximity;
+    -webkit-overflow-scrolling:touch;
   }
-  .week{background:var(--surface);border:1px solid var(--line);border-radius:12px;transition:border-color .15s;position:relative;z-index:1;}
-  .week.current{
-    border-color:var(--teal);box-shadow:0 0 0 3px rgba(30,138,128,0.12);
-    background:linear-gradient(135deg, #F3FAF9 0%, var(--surface) 55%);
+  .hafta-strip::-webkit-scrollbar{height:6px;}
+  .hafta-strip::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px;}
+  .hafta-chip{
+    scroll-snap-align:start;flex-shrink:0;width:78px;background:var(--surface);border:1px solid var(--line);
+    border-radius:12px;padding:12px 6px 10px;text-align:center;text-decoration:none;color:inherit;
+    transition:border-color .15s, transform .12s;position:relative;
   }
-  .week.current summary{padding-right:14px;}
-  .week.done .week-tema .konu{color:var(--ink-faint);}
-  .now-mascot{
-    flex-shrink:0;width:34px;height:34px;display:flex;align-items:center;justify-content:center;
-    animation:mascot-bob 2.4s ease-in-out infinite;
-  }
-  @keyframes mascot-bob{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(-3px);} }
-  .now-badge{
-    font-family:'IBM Plex Mono',monospace;font-size:0.66rem;font-weight:700;color:var(--teal-deep);
-    background:#D9EFEB;border-radius:5px;padding:2px 7px;letter-spacing:0.04em;margin-left:8px;
-    vertical-align:middle;
-  }
-  .done-check{color:var(--teal);flex-shrink:0;width:15px;height:15px;margin-left:6px;}
-  .special-mascot{display:flex;align-items:center;gap:12px;margin-top:2px;}
-  .special-mascot .txt{color:var(--amber-deep);}
-  @media (prefers-reduced-motion: reduce){ .now-mascot{animation:none;} }
-  .week[open]{border-color:var(--teal);}
-  .week.special{background:#FBF1E1;border-color:#E9D2A0;}
-  .week.kurban{outline:2px solid var(--amber);outline-offset:-2px;}
-  .week summary{list-style:none;cursor:pointer;padding:15px 18px;display:flex;align-items:center;gap:14px;}
-  .week summary::-webkit-details-marker{display:none;}
-  .week-num{
-    font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:0.8rem;color:var(--teal-deep);
-    background:#EAF3F1;width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;
-    position:relative;z-index:1;
-  }
-  .week.done .week-num{background:var(--teal);color:#fff;}
-  .week.current .week-num{background:var(--teal);color:#fff;box-shadow:0 0 0 4px rgba(30,138,128,0.18);}
-  .week.special .week-num{background:#F1DFB3;color:var(--amber-deep);}
-  .week-main{flex:1;min-width:0;}
-  .week-tarih{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--ink-faint);margin-bottom:2px;}
-  .week-tema{font-size:0.95rem;font-weight:600;line-height:1.3;}
-  .week-tema .konu{font-weight:500;color:var(--ink-soft);}
-  .week-saat{
-    font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--ink-faint);
-    background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:3px 8px;flex-shrink:0;
-  }
-  .week-chevron{width:18px;height:18px;flex-shrink:0;color:var(--ink-faint);transition:transform .2s;}
-  .week[open] .week-chevron{transform:rotate(180deg);}
-  .week-body{padding:0 18px 18px 62px;}
-  .week-outcome{font-size:0.84rem;color:var(--ink-soft);margin-bottom:12px;}
-  .week-outcome .code{font-family:'IBM Plex Mono',monospace;color:var(--amber-deep);}
-  .kurban-note{
-    display:inline-flex;align-items:center;gap:6px;font-size:0.76rem;color:var(--amber-deep);
-    background:#F1DFB3;border-radius:6px;padding:4px 9px;margin-bottom:10px;font-family:'IBM Plex Mono',monospace;
-  }
-  .surec-list{list-style:none;margin:0 0 12px;padding:0;display:flex;flex-direction:column;gap:5px;}
-  .surec-list li{font-size:0.82rem;color:var(--ink-soft);padding-left:14px;position:relative;}
-  .surec-list li::before{content:"";position:absolute;left:0;top:0.55em;width:5px;height:5px;border-radius:50%;background:var(--teal);}
-  .mat-types{display:flex;gap:10px;flex-wrap:wrap;}
-  .mat-pill{display:flex;align-items:center;gap:7px;background:var(--bg);border:1px dashed var(--line);border-radius:20px;padding:6px 12px 6px 9px;font-size:0.76rem;color:var(--ink-faint);}
-  .mat-pill .dot{width:6px;height:6px;border-radius:50%;background:var(--ink-faint);flex-shrink:0;}
-  .gp-link{
-    display:inline-flex;align-items:center;gap:7px;margin-top:10px;
-    font-family:'IBM Plex Mono',monospace;font-size:0.76rem;font-weight:600;color:var(--teal-deep);
-    background:#EAF3F1;border-radius:8px;padding:8px 14px;
-  }
-  .gp-link svg{width:14px;height:14px;flex-shrink:0;}
-  .special-body{padding:0 18px 16px 62px;font-size:0.85rem;color:var(--amber-deep);}
+  .hafta-chip:hover{border-color:var(--teal);transform:translateY(-2px);}
+  .hafta-chip.current{border-color:var(--teal);background:linear-gradient(135deg,#F3FAF9,var(--surface));box-shadow:0 0 0 3px rgba(30,138,128,.14);}
+  .hafta-chip.special{background:#FBF1E1;border-color:#E9D2A0;}
+  .hafta-chip .num{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.15rem;color:var(--ink);display:flex;align-items:center;justify-content:center;gap:3px;}
+  .hafta-chip.done .num{color:var(--teal-deep);}
+  .hafta-chip .num svg{width:15px;height:15px;}
+  .hafta-chip .tarih{font-family:'IBM Plex Mono',monospace;font-size:0.62rem;color:var(--ink-faint);margin-top:4px;line-height:1.3;}
+  .hafta-chip .now-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);margin:5px auto 0;}
 
-  /* HAFTA SATIRI (liste görünümü) */
+  .tema-group-head{
+    font-size:1rem;font-weight:700;margin:30px 0 4px;display:flex;align-items:baseline;gap:10px;
+  }
+  .tema-group-head .cnt{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--ink-faint);font-weight:500;}
+  .tema-group:first-child .tema-group-head{margin-top:6px;}
+
+  /* HAFTA SATIRI (eski liste görünümü — artık sadece tema modunda kısa satır olarak kullanılabilir) */
   .week-row{
     display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);
     border-radius:12px;padding:15px 18px;text-decoration:none;color:inherit;position:relative;z-index:1;
@@ -148,6 +104,36 @@
   .week-row .week-num{position:relative;z-index:1;}
   .week-row.special .week-num{background:#F1DFB3;color:var(--amber-deep);}
   .week-row .row-chevron{width:16px;height:16px;color:var(--ink-faint);flex-shrink:0;}
+  .week-num{
+    font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:0.8rem;color:var(--teal-deep);
+    background:#EAF3F1;width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .week-main{flex:1;min-width:0;}
+  .week-tarih{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--ink-faint);margin-bottom:2px;}
+  .week-tema{font-size:0.95rem;font-weight:600;line-height:1.3;}
+  .week-tema .konu{font-weight:500;color:var(--ink-soft);}
+  .week-saat{
+    font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--ink-faint);
+    background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:3px 8px;flex-shrink:0;
+  }
+  .now-badge{
+    font-family:'IBM Plex Mono',monospace;font-size:0.66rem;font-weight:700;color:var(--teal-deep);
+    background:#D9EFEB;border-radius:5px;padding:2px 7px;letter-spacing:0.04em;margin-left:8px;vertical-align:middle;
+  }
+  .done-check{color:var(--teal);flex-shrink:0;width:15px;height:15px;margin-left:6px;}
+  .kurban-note{
+    display:inline-flex;align-items:center;gap:6px;font-size:0.76rem;color:var(--amber-deep);
+    background:#F1DFB3;border-radius:6px;padding:4px 9px;margin-bottom:10px;font-family:'IBM Plex Mono',monospace;
+  }
+  .gp-link{
+    display:inline-flex;align-items:center;gap:7px;margin-top:6px;
+    font-family:'IBM Plex Mono',monospace;font-size:0.76rem;font-weight:600;color:var(--teal-deep);
+    background:#EAF3F1;border-radius:8px;padding:8px 14px;
+  }
+  .gp-link svg{width:14px;height:14px;flex-shrink:0;}
+  .now-mascot{flex-shrink:0;width:34px;height:34px;display:flex;align-items:center;justify-content:center;animation:mascot-bob 2.4s ease-in-out infinite;}
+  @keyframes mascot-bob{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(-3px);} }
+  @media (prefers-reduced-motion: reduce){ .now-mascot,.panel-mascot{animation:none;} }
 
   /* PANEL GÖRÜNÜMÜ */
   #panel-root{display:none;}
@@ -156,15 +142,12 @@
     font-size:0.8rem;color:var(--teal-deep);margin-bottom:22px;cursor:pointer;background:none;border:none;padding:0;
   }
   .panel-back svg{width:15px;height:15px;}
-  .panel-header{
-    display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:6px;flex-wrap:wrap;
-  }
+  .panel-header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:6px;flex-wrap:wrap;}
   .panel-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.76rem;color:var(--teal-deep);display:flex;align-items:center;gap:8px;}
   .panel-mascot{width:36px;height:36px;flex-shrink:0;animation:mascot-bob 2.4s ease-in-out infinite;}
-  @media (prefers-reduced-motion: reduce){ .panel-mascot{animation:none;} }
   .panel-title{font-family:'Space Grotesk',sans-serif;font-size:1.9rem;font-weight:700;margin:6px 0 28px;line-height:1.2;}
 
-  .panel-section{margin-bottom:26px;}
+  .panel-section{margin-bottom:30px;}
   .panel-label{
     font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:600;color:var(--ink-faint);
     text-transform:uppercase;letter-spacing:0.05em;margin-bottom:12px;display:flex;align-items:center;gap:8px;
@@ -186,15 +169,12 @@
   .placeholder-box .txt b{color:var(--ink-soft);display:block;margin-bottom:3px;font-weight:600;}
   .placeholder-icon{flex-shrink:0;width:38px;height:38px;color:var(--ink-faint);}
 
-  .inline-note{font-size:0.92rem;color:var(--ink-soft);line-height:1.7;max-width:68ch;}
-
   .quiz-box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 24px;text-align:center;}
   .quiz-box p{font-size:0.87rem;color:var(--ink-faint);margin:8px 0 0;}
-
   .comments-box{background:var(--bg);border:1px dashed var(--line);border-radius:12px;padding:24px;text-align:center;}
   .comments-box p{font-size:0.85rem;color:var(--ink-faint);}
 
-  /* SLAYT GÖRÜNTÜLEYİCİ */
+  /* SLAYT GÖRÜNTÜLEYİCİ (Ders Sunumu) */
   .slide-viewer{background:var(--ink);border-radius:14px;overflow:hidden;user-select:none;}
   .slide-stage{position:relative;aspect-ratio:16/9;background:#000;display:flex;align-items:center;justify-content:center;}
   .slide-stage img{width:100%;height:100%;object-fit:contain;pointer-events:none;}
@@ -215,33 +195,56 @@
   .slide-viewer:fullscreen .slide-stage{aspect-ratio:unset;height:calc(100vh - 44px);}
   .slide-hint{font-size:0.76rem;color:var(--ink-faint);margin-top:8px;font-family:'IBM Plex Mono',monospace;}
 
-  /* İNFOGRAFİK / ÖZET GALERİSİ */
+  /* İNFOGRAFİK / ÖZET — dikey A4, kırpma yok */
   .media-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
   .media-card{
-    background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:pointer;
-    transition:transform .15s, box-shadow .15s;
+    background:var(--bg);border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:pointer;
+    display:flex;flex-direction:column;transition:transform .15s, box-shadow .15s;
   }
   .media-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px -16px rgba(18,24,43,0.22);}
-  .media-card img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;pointer-events:none;}
-  .media-card .cap{padding:10px 14px;font-size:0.82rem;color:var(--ink-soft);display:flex;align-items:center;gap:7px;}
+  .media-card .thumb-wrap{
+    background:var(--surface);display:flex;align-items:center;justify-content:center;padding:12px;
+    aspect-ratio:0.708;
+  }
+  .media-card .thumb-wrap img{max-width:100%;max-height:100%;object-fit:contain;pointer-events:none;}
+  .media-card .cap{padding:10px 14px;font-size:0.82rem;color:var(--ink-soft);display:flex;align-items:center;gap:7px;border-top:1px solid var(--line);}
   .media-card .cap svg{width:14px;height:14px;color:var(--ink-faint);flex-shrink:0;}
+  .summary-wrap{max-width:360px;}
 
-  /* LIGHTBOX (indirilemez önizleme) */
+  /* LIGHTBOX */
   .lightbox{
-    display:none;position:fixed;inset:0;z-index:300;background:rgba(15,21,36,0.9);
+    display:none;position:fixed;inset:0;z-index:300;background:rgba(15,21,36,0.92);
     align-items:center;justify-content:center;padding:5vh 4vw;
   }
   .lightbox.open{display:flex;}
   .lightbox img{max-width:100%;max-height:100%;object-fit:contain;pointer-events:none;user-select:none;border-radius:8px;}
   .lightbox-close{
-    position:absolute;top:20px;right:24px;background:rgba(255,255,255,0.1);border:none;border-radius:8px;
+    position:absolute;top:20px;right:24px;background:rgba(255,255,255,0.12);border:none;border-radius:8px;
     color:#fff;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;
   }
   .lightbox-close svg{width:18px;height:18px;}
+  .lightbox-controls{position:absolute;top:20px;left:24px;display:flex;gap:8px;}
+  .lightbox-btn{
+    background:rgba(255,255,255,0.12);border:none;border-radius:8px;color:#fff;padding:9px 13px;
+    display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:0.74rem;cursor:pointer;
+  }
+  .lightbox-btn:hover{background:rgba(255,255,255,0.2);}
+  .lightbox-btn svg{width:14px;height:14px;}
 
-  /* DOSYA KARTLARI (Ders Notu / Etkinlik / Öğretmen İçin) */
-  .doc-set{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px;}
-  .doc-set-title{font-size:0.95rem;font-weight:600;margin-bottom:14px;}
+  /* DOSYA KARTLARI (Ders Notu / Etkinlik / Öğretmen İçin) — önizlemeli */
+  .doc-card{
+    display:flex;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;
+    padding:16px;align-items:flex-start;cursor:pointer;transition:border-color .15s;
+  }
+  .doc-card:hover{border-color:var(--teal);}
+  .doc-thumb{
+    width:76px;height:107px;flex-shrink:0;border-radius:6px;overflow:hidden;border:1px solid var(--line);
+    background:var(--bg);
+  }
+  .doc-thumb img{width:100%;height:100%;object-fit:cover;object-position:top;pointer-events:none;}
+  .doc-main{flex:1;min-width:0;padding-top:2px;}
+  .doc-title{font-size:0.95rem;font-weight:600;margin-bottom:4px;}
+  .doc-desc{font-size:0.83rem;color:var(--ink-soft);margin-bottom:12px;line-height:1.5;}
   .doc-links{display:flex;gap:10px;flex-wrap:wrap;}
   .doc-link{
     display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;
@@ -253,7 +256,30 @@
   .teacher-section{background:#FBF1E1;border:1px solid #E9D2A0;border-radius:14px;padding:22px 24px;}
   .teacher-section .panel-label{color:var(--amber-deep);}
   .teacher-section .panel-label::before{background:var(--amber-deep);}
-  .teacher-sub{font-family:'IBM Plex Mono',monospace;font-size:0.74rem;color:var(--amber-deep);margin-bottom:10px;}
+  .teacher-sub{font-family:'IBM Plex Mono',monospace;font-size:0.74rem;color:var(--amber-deep);margin-bottom:14px;}
+  .teacher-section .doc-card{background:var(--surface);margin-bottom:12px;}
+  .teacher-section .doc-card:last-child{margin-bottom:0;}
+
+  /* ÖNCEKİ / SONRAKİ HAFTA */
+  .panel-nav{display:flex;justify-content:space-between;gap:12px;margin-top:12px;padding-top:26px;border-top:1px solid var(--line);}
+  .panel-nav-btn{
+    display:flex;flex-direction:column;gap:4px;padding:14px 18px;border:1px solid var(--line);border-radius:12px;
+    text-decoration:none;color:inherit;flex:1;max-width:48%;transition:border-color .15s;
+  }
+  .panel-nav-btn:hover{border-color:var(--teal);}
+  .panel-nav-btn.next{text-align:right;align-items:flex-end;}
+  .panel-nav-btn .lbl{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--ink-faint);display:flex;align-items:center;gap:5px;}
+  .panel-nav-btn.next .lbl{flex-direction:row-reverse;}
+  .panel-nav-btn .ttl{font-size:0.88rem;font-weight:600;}
+  .panel-nav-spacer{flex:1;max-width:48%;}
+
+  @media (max-width:640px){
+    .media-grid{grid-template-columns:1fr;}
+    .panel-nav{flex-direction:column;}
+    .panel-nav-btn{max-width:100%;}
+    .doc-card{flex-direction:column;}
+    .doc-thumb{width:100%;height:auto;aspect-ratio:0.708;max-width:140px;}
+  }
 
 
   footer{border-top:1px solid var(--line);padding:38px 0;}
@@ -342,13 +368,6 @@
 
 <script>
 const WEEKS = [{"hafta_no": 1, "tarih_araligi": "14 Eylül - 18 Eylül", "ders_saati": "2", "tema": "Bilişim Teknolojilerinin Hayatımızdaki Yeri", "konu": "Bilişim Teknolojilerinin Sınıflandırılması", "ogrenme_ciktisi": "BTY.5.1.1. Günlük yaşamda kullanılan bilişim teknolojilerini sınıflandırabilme", "surec_bilesenleri": ["a) Bilişim teknolojilerine ilişkin temel kavramları belirler.", "b) Geçmişten günümüze bilişim teknolojilerindeki benzerlikleri ve farklılıkları ilişkilendirir.", "c) Bilişim teknolojilerini kullanım alanlarına göre gruplandırır."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2026-09-14", "bitis": "2026-09-18"}, {"hafta_no": 2, "tarih_araligi": "21 Eylül - 25 Eylül", "ders_saati": "2", "tema": "Bilişim Teknolojilerinin Hayatımızdaki Yeri", "konu": "Bilişim Teknolojilerinin Etkileri ve Dijital Sağlık", "ogrenme_ciktisi": "BTY.5.1.2. Bilişim teknolojilerinin birey ve toplum üzerindeki etkilerini özetleyebilme", "surec_bilesenleri": ["a) Farklı bilişim teknolojilerinin olumlu ve olumsuz yönleri ile ilgili çözümleme yapar.", "b) Farklı bilişim teknolojilerinin kullanımına göre fiziksel güvenlik önlemleri ile ilgili sınıflandırma yapar.", "c) Bilişim teknolojilerini kullanmanın beden ve ruh sağlığı üzerindeki etkilerini kendi cümleleriyle ifade eder."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2026-09-21", "bitis": "2026-09-25"}, {"hafta_no": 3, "tarih_araligi": "28 Eylül - 02 Ekim", "ders_saati": "1+1", "tema": "Bilişim Teknolojilerinin Hayatımızdaki Yeri", "konu": "Bilişim Teknolojilerinin Etkileri ve Dijital Sağlık / Dijital Vatandaşlık Uygulamaları", "ogrenme_ciktisi": "BTY.5.1.2. Bilişim teknolojilerinin birey ve toplum üzerindeki etkilerini özetleyebilme BTY.5.1.3. Dijital vatandaşlık uygulamalarını sınıflandırabilme", "surec_bilesenleri": ["a) Farklı bilişim teknolojilerinin olumlu ve olumsuz yönleri ile ilgili çözümleme yapar.", "b) Farklı bilişim teknolojilerinin kullanımına göre fiziksel güvenlik önlemleri ile ilgili sınıflandırma yapar.", "c) Bilişim teknolojilerini kullanmanın beden ve ruh sağlığı üzerindeki etkilerini kendi cümleleriyle ifade eder.", "a) Dijital kimlik kavramını belirler.", "b) Dijital ayak izinin etkilerini bilişim teknolojilerinin kullanım alanları ile ilişkilendirir.", "c) Dijital vatandaşlık uygulamalarını kullanım alanlarına göre gruplandırır."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2026-09-28", "bitis": "2026-10-02"}, {"hafta_no": 4, "tarih_araligi": "05 Ekim - 09 Ekim", "ders_saati": "2", "tema": "Bilişim Teknolojilerinin Hayatımızdaki Yeri", "konu": "Dijital Vatandaşlık Uygulamaları", "ogrenme_ciktisi": "BTY.5.1.3. Dijital vatandaşlık uygulamalarını sınıflandırabilme", "surec_bilesenleri": ["a) Dijital kimlik kavramını belirler.", "b) Dijital ayak izinin etkilerini bilişim teknolojilerinin kullanım alanları ile ilişkilendirir.", "c) Dijital vatandaşlık uygulamalarını kullanım alanlarına göre gruplandırır."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2026-10-05", "bitis": "2026-10-09"}, {"hafta_no": 5, "tarih_araligi": "12 Ekim - 16 Ekim", "ders_saati": "1+1", "tema": "Bilişim Teknolojilerinin Hayatımızdaki Yeri", "konu": "Dijital Vatandaşlık Uygulamaları / Yapay Zekâda Temel Kavram ve Özellikler", "ogrenme_ciktisi": "BTY.5.1.3. Dijital vatandaşlık uygulamalarını sınıflandırabilme BTY.5.1.4. Yapay zekâ ile ilgili temel kavramları ve özellikleri sorgulayabilme", "surec_bilesenleri": ["a) Dijital kimlik kavramını belirler.", "b) Dijital ayak izinin etkilerini bilişim teknolojilerinin kullanım alanları ile ilişkilendirir.", "c) Dijital vatandaşlık uygulamalarını kullanım alanlarına göre gruplandırır.", "a) Yapay zekâ ile ilgili temel kavram ve özelliklere ilişkin merak ettiği konuları tanımlar.", "b) Yapay zekâ ile ilgili temel kavram ve özellikleri hakkında sorular sorar.", "c) Yapay zekâ ile ilgili temel kavram ve özellikleri hakkında bilgi toplar.", "ç) Yapay zekâ ile ilgili temel kavram ve özellikleri hakkında toplanan bilgilerin doğruluğunu değerlendirir.", "d) Yapay zekânın olası etkilerine ilişkin topladığı bilgiler üzerinden çıkarım yapar."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2026-10-12", "bitis": "2026-10-16"}, {"hafta_no": 6, "tarih_araligi": "19 Ekim - 23 Ekim", "ders_saati": "1+1", "tema": "Bilişim Teknolojilerinin Hayatımızdaki Yeri", "konu": "Yapay Zekâda Temel Kavram ve Özellikler / Bilgisayar Sistemlerinin Kullanımı", "ogrenme_ciktisi": "BTY.5.1.4. Yapay zekâ ile ilgili temel kavramları ve özellikleri sorgulayabilme BTY.5.1.5. Bilgisayar sistemlerini çözümleyebilme", "surec_bilesenleri": ["a) Yapay zekâ ile ilgili temel kavram ve özelliklere ilişkin merak ettiği konuları tanımlar.", "b) Yapay zekâ ile ilgili temel kavram ve özellikleri hakkında sorular sorar.", "c) Yapay zekâ ile ilgili temel kavram ve özellikleri hakkında bilgi toplar.", "ç) Yapay zekâ ile ilgili temel kavram ve özellikleri hakkında toplanan bilgilerin doğruluğunu değerlendirir.", "d) Yapay zekânın olası etkilerine ilişkin topladığı bilgiler üzerinden çıkarım yapar.", "a) Bilgisayar sistemlerinin temel bileşenlerini belirler.", "b) Bilgisayar sistemlerinin temel bileşenleri arasındaki ilişkileri belirler."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2026-10-19", "bitis": "2026-10-23"}, {"hafta_no": 7, "tarih_araligi": "26 Ekim - 30 Ekim", "ders_saati": "1+1", "tema": "Bilişim Teknolojilerinin Hayatımızdaki Yeri", "konu": "Bilgisayar Sistemlerinin Kullanımı / Dosya ve Klasör Yönetimi", "ogrenme_ciktisi": "BTY.5.1.5. Bilgisayar sistemlerini çözümleyebilme BTY.5.1.6. Dosya ve klasör yönetimi ile ilgili temel işlemlerle çalışabilme", "surec_bilesenleri": ["a) Bilgisayar sistemlerinin temel bileşenlerini belirler.", "b) Bilgisayar sistemlerinin temel bileşenleri arasındaki ilişkileri belirler.", "a) Temel dosya ve klasör düzenleme işlemlerini belirler.", "b) Temel dosya ve klasör düzenleme işlemlerini kullanır.", "c) Dosya ve klasör sıkıştırma işlemlerini verimlilik kapsamında değerlendirir."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2026-10-26", "bitis": "2026-10-30"}, {"hafta_no": 8, "tarih_araligi": "02 Kasım - 06 Kasım", "ders_saati": "SINAV HAFTASI", "tema": "", "konu": "", "ogrenme_ciktisi": "", "surec_bilesenleri": [], "kurban_bayrami_cakisiyor": false, "ozel_hafta": true, "baslangic": "2026-11-02", "bitis": "2026-11-06"}, {"hafta_no": 9, "tarih_araligi": "09 Kasım - 13 Kasım", "ders_saati": "2", "tema": "Dijital Ürün Tasarım ve Geliştirme", "konu": "Görsel Düzenleme Programlarına Giriş", "ogrenme_ciktisi": "BTY.5.2.1 Görsel düzenleme programlarından yararlanabilme", "surec_bilesenleri": ["a) Görsellerin temel özelliklerini tanır.", "b) Uygun görsel düzenleme programını belirler.", "c) Belirlenen görsel düzenleme programının arayüz özelliklerini kullanır.", "ç) Kullanılan görsel düzenleme programını kullanım alanları/verimliliği açısından değerlendirir."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2026-11-09", "bitis": "2026-11-13"}, {"hafta_no": 10, "tarih_araligi": "23 Kasım - 27 Kasım", "ders_saati": "1+1", "tema": "Dijital Ürün Tasarım ve Geliştirme", "konu": "Görsel Tasarıma Yönelik Kurgu Oluşturma / Görsel Ürün Geliştirme", "ogrenme_ciktisi": "BTY.5.2.2 Görsel için kurgu oluşturabilme BTY.5.2.3 Görsel dosyası geliştirebilme", "surec_bilesenleri": ["a) Görsel tasarlanacak gerçek hayat problemini belirler.", "b) Görsel hazırlama sürecinde kullanılacak hikâye/senaryo unsurlarını belirler.", "c) Belirlenen unsurları kapsayan hikâye/senaryo oluşturur.", "ç) Hikâyeyi/senaryoyu bütünlük/kullanışlılık açısından değerlendirir.", "a) Tasarlanan hikâye/senaryo unsurlarına uygun bir görsel oluşturur.", "b) Oluşturulan görseli belirlenen ölçütler açısından değerlendirir."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2026-11-23", "bitis": "2026-11-27"}, {"hafta_no": 11, "tarih_araligi": "30 Kasım - 04 Aralık", "ders_saati": "1+1", "tema": "Dijital Ürün Tasarım ve Geliştirme", "konu": "Görsel Ürün Geliştirme / Kelime İşlemci Programlarına Giriş", "ogrenme_ciktisi": "BTY.5.2.3 Görsel dosyası geliştirebilme BTY.5.2.4 Kelime işlemci programlarından yararlanabilme", "surec_bilesenleri": ["a) Tasarlanan hikâye/senaryo unsurlarına uygun bir görsel oluşturur.", "b) Oluşturulan görseli belirlenen ölçütler açısından değerlendirir.", "a) Kelime işlemci programlarının temel özelliklerini tanır.", "b) Uygun kelime işlemci programını belirler.", "c) Belirlenen kelime işlemci programının arayüz özelliklerini kullanır.", "ç) Kullanılan kelime işlemci programını kullanım alanları/verimliliği açısından değerlendirir."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2026-11-30", "bitis": "2026-12-04"}, {"hafta_no": 12, "tarih_araligi": "07 Aralık - 11 Aralık", "ders_saati": "1+1", "tema": "Dijital Ürün Tasarım ve Geliştirme", "konu": "Kelime İşlemci Programlarına Giriş / Kelime İşlemci Dosyası Geliştirme", "ogrenme_ciktisi": "BTY.5.2.4 Kelime işlemci programlarından yararlanabilme BTY.5.2.5 Kelime işlemci dosyası geliştirebilme", "surec_bilesenleri": ["a) Kelime işlemci programlarının temel özelliklerini tanır.", "b) Uygun kelime işlemci programını belirler.", "c) Belirlenen kelime işlemci programının arayüz özelliklerini kullanır.", "ç) Kullanılan kelime işlemci programını kullanım alanları/verimliliği açısından değerlendirir.", "a) Kelime işlemci dosyası oluşturur.", "b) Oluşturulan kelime işlemci dosyasını belirlenen ölçütler açısından değerlendirir."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2026-12-07", "bitis": "2026-12-11"}, {"hafta_no": 13, "tarih_araligi": "14 Aralık - 18 Aralık", "ders_saati": "2", "tema": "Dijital Ürün Tasarım ve Geliştirme", "konu": "Sunum Programlarına Giriş", "ogrenme_ciktisi": "BTY.5.2.6 Sunum programlarından yararlanabilme", "surec_bilesenleri": ["a) Sunum programlarının temel özelliklerini tanır.", "b) Uygun sunum programını belirler.", "c) Belirlenen sunum programının arayüz özelliklerini kullanır.", "ç) Kullanılan sunum programını kullanım alanları/verimliliği açısından değer lendirir."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2026-12-14", "bitis": "2026-12-18"}, {"hafta_no": 14, "tarih_araligi": "21 Aralık - 25 Aralık", "ders_saati": "1+1", "tema": "Dijital Ürün Tasarım ve Geliştirme / Bilgisayar Ağları ve İletişim", "konu": "Sunum Dosyası Oluşturma / Bilgisayar Ağları ve Ağ Bileşenleri", "ogrenme_ciktisi": "BTY.5.2.7 Sunum dosyası geliştirebilme BTY.5.3.1. Bilgisayar ağları ve bileşenlerini sorgulayabilme", "surec_bilesenleri": ["a) Sunum dosyası oluşturur.", "b) Oluşturulan sunum dosyasını belirlenen ölçütler açısından değerlendirir.", "a) Bilgisayar ağları ve bileşenleri ile ilgili merak ettiği konuları tanımlar.", "b) Bilgisayar ağları ve bileşenleri hakkında sorular sorar.", "c) Bilgisayar ağları ve bileşenleri hakkında bilgi toplar.", "ç) Bilgisayar ağları ve bileşenleri hakkında topladığı bilgilerin doğruluğunu değerlendirir.", "d) Bilgisayar ağları ve bileşenleri hakkında topladığı bilgiler hakkında çıkarım yapar."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2026-12-21", "bitis": "2026-12-25"}, {"hafta_no": 15, "tarih_araligi": "28 Aralık - 01 Ocak", "ders_saati": "1+1", "tema": "Bilgisayar Ağları ve İletişim", "konu": "Bilgisayar Ağları ve Ağ Bileşenleri / Bilgisayar Ağ Türleri ve Bağlanma Yöntemleri", "ogrenme_ciktisi": "BTY.5.3.1. Bilgisayar ağları ve bileşenlerini sorgulayabilme BTY.5.3.2. Bilgisayar ağları ve bağlanma yöntemlerini sınıflandırabilme", "surec_bilesenleri": ["a) Bilgisayar ağları ve bileşenleri ile ilgili merak ettiği konuları tanımlar.", "b) Bilgisayar ağları ve bileşenleri hakkında sorular sorar.", "c) Bilgisayar ağları ve bileşenleri hakkında bilgi toplar.", "ç) Bilgisayar ağları ve bileşenleri hakkında topladığı bilgilerin doğruluğunu değerlendirir.", "d) Bilgisayar ağları ve bileşenleri hakkında topladığı bilgiler hakkında çıkarım yapar.", "a) Bilgisayar ağlarında kullanılan bağlanma yöntemlerini belirler.", "b) Bilgisayar ağlarında kullanılan bağlanma yöntem ve teknolojilerini ilişkilendirir.", "c) Bilgisayar ağlarında kullanılan bileşenlerin işlevlerini gruplandırır."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2026-12-28", "bitis": "2027-01-01"}, {"hafta_no": 16, "tarih_araligi": "04 Ocak - 08 Ocak", "ders_saati": "SINAV HAFTASI", "tema": "", "konu": "", "ogrenme_ciktisi": "", "surec_bilesenleri": [], "kurban_bayrami_cakisiyor": false, "ozel_hafta": true, "baslangic": "2027-01-04", "bitis": "2027-01-08"}, {"hafta_no": 17, "tarih_araligi": "11 Ocak - 15 Ocak", "ders_saati": "2", "tema": "Bilgisayar Ağları ve İletişim", "konu": "İnternette Bilgi Kaynakları ve Arama Yöntemleri", "ogrenme_ciktisi": "BTY.5.3.3. İnternet ile amacına uygun olarak çalışabilme", "surec_bilesenleri": ["a) İnternette bilgiye ulaşmak için uygun kaynakları belirler.", "b) Bilginin doğruluğunu değerlendirmek için internetteki farklı bilgi kaynaklarını kullanır.", "c) Bilgiye ulaşmak için kullandığı kaynakları uygunluk/verimlilik kapsamında değerlendirir."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2027-01-11", "bitis": "2027-01-15"}, {"hafta_no": 18, "tarih_araligi": "18 Ocak - 22 Ocak", "ders_saati": "2", "tema": "Bilişim Etiği ve Siber Güvenlik", "konu": "Bilişim Etiği ve İlkeleri", "ogrenme_ciktisi": "BTY.5.4.1. Bilişim etiği kural ve ilkelerini yorumlayabilme", "surec_bilesenleri": ["a) Bilişim etiği ile ilgili temel kavramları inceler.", "b) Bilişim etiği kural ve ilkelerini bağlamdan kopmadan günlük hayatta kullanılacak şekilde dönüştürür.", "c) Bilişim etiği kural ve ilkelerine uygun davranmanın önemini yeniden ifade eder."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2027-01-18", "bitis": "2027-01-22"}, {"hafta_no": 19, "tarih_araligi": "08 Şubat - 12 Şubat", "ders_saati": "2", "tema": "Bilişim Etiği ve Siber Güvenlik", "konu": "Dijital Ortamlarda Gizlilik ve Güvenlik", "ogrenme_ciktisi": "BTY.5.4.2. Dijital ortamlarda gizlilik ve güvenlik önlemlerini yönetebilme", "surec_bilesenleri": ["a) Dijital ortamlarda karşılaşabileceği gizlilik ve güvenlik risklerini belirler.", "b) Dijital ortamlarda alabileceği gizlilik ve güvenlik önlemlerini belirler.", "c) Dijital ortamlarda bilgi gizliliği ve güvenliğinin temel bileşenlerini ayırt eder.", "ç) Dijital ortamda karşılaşılan bir durumu gizlilik ve güvenlik önlemleri açısından değerlendirir."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2027-02-08", "bitis": "2027-02-12"}, {"hafta_no": 20, "tarih_araligi": "15 Şubat - 19 Şubat", "ders_saati": "2", "tema": "Yapay Zekâ", "konu": "Yapay Zekâ Kullanım Alanları ve Alt Dalları", "ogrenme_ciktisi": "BTY.5.5.1. Yapay zekâ uygulamalarını sınıflandırabilme", "surec_bilesenleri": ["a Yapay zekâ uygulamalarını belirler.", "b) Yapay zekâ uygulamalarının çalışma sistemi bileşenlerini ilişkilendirir.", "c) Yapay zekâ uygulamalarını alt boyutlara göre gruplandırır."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2027-02-15", "bitis": "2027-02-19"}, {"hafta_no": 21, "tarih_araligi": "22 Şubat - 26 Şubat", "ders_saati": "2", "tema": "Yapay Zekâ", "konu": "Yapay Zekâ Kullanım Alanları ve Alt Dalları", "ogrenme_ciktisi": "BTY.5.5.1. Yapay zekâ uygulamalarını sınıflandırabilme", "surec_bilesenleri": ["a) Yapay zekâ uygulamalarını belirler.", "b) Yapay zekâ uygulamalarının çalışma sistemi bileşenlerini ilişkilendirir.", "c) Yapay zekâ uygulamalarını alt boyutlara göre gruplandırır."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2027-02-22", "bitis": "2027-02-26"}, {"hafta_no": 22, "tarih_araligi": "01 Mart - 05 Mart", "ders_saati": "2", "tema": "Yapay Zekâ", "konu": "Yapay Zekâda Güvenlik", "ogrenme_ciktisi": "BTY.5.5.2. Yapay zekâya ilişkin etik ve güvenlik / gizlilik önlemlerini yönetebilme", "surec_bilesenleri": ["a) Yapay zekâda etik ve güvenlik/gizlilik risklerini belirler.", "b) Yapay zekâda etik ve güvenlik/gizlilik önlemlerini belirler.", "c) Yapay zekâda etik ilkelerin ve bilgi güvenliğinin/gizliliğinin temel bileşenlerini ayırt eder.", "ç) Yapay zekâ uygulamalarını etik ilkeler ile e-güvenlik/e-gizlilik açısından değer- lendirir."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2027-03-01", "bitis": "2027-03-05"}, {"hafta_no": 23, "tarih_araligi": "15 Mart - 19 Mart", "ders_saati": "SINAV HAFTASI", "tema": "", "konu": "", "ogrenme_ciktisi": "", "surec_bilesenleri": [], "kurban_bayrami_cakisiyor": false, "ozel_hafta": true, "baslangic": "2027-03-15", "bitis": "2027-03-19"}, {"hafta_no": 24, "tarih_araligi": "22 Mart - 26 Mart", "ders_saati": "2", "tema": "Yazılım Tasarımı ve Programlama", "konu": "Problem Belirleme ve Algoritma Oluşturma", "ogrenme_ciktisi": "BTY.5.6.1. Problem çözümü için algoritmik düşünebilme", "surec_bilesenleri": ["a) Günlük yaşamda karşılaştığı bir problemi belirler.", "b) Belirlediği problemin girdi ve çıktılarını belirler.", "c) Belirlediği problemin çözümüne ilişkin işlem adımlarını listeler.", "ç) İşlem adımlarını akış şeması ile gösterir."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2027-03-22", "bitis": "2027-03-26"}, {"hafta_no": 25, "tarih_araligi": "29 Mart - 02 Nisan", "ders_saati": "OKUL TEMELLİ PLANLAMA*", "tema": "", "konu": "", "ogrenme_ciktisi": "", "surec_bilesenleri": [], "kurban_bayrami_cakisiyor": false, "ozel_hafta": true, "baslangic": "2027-03-29", "bitis": "2027-04-02"}, {"hafta_no": 26, "tarih_araligi": "05 Nisan - 09 Nisan", "ders_saati": "2", "tema": "Yazılım Tasarımı ve Programlama", "konu": "Problem Belirleme ve Algoritma Oluşturma", "ogrenme_ciktisi": "BTY.5.6.1. Problem çözümü için algoritmik düşünebilme", "surec_bilesenleri": ["a) Günlük yaşamda karşılaştığı bir problemi belirler.", "b) Belirlediği problemin girdi ve çıktılarını belirler.", "c) Belirlediği problemin çözümüne ilişkin işlem adımlarını listeler.", "ç) İşlem adımlarını akış şeması ile gösterir."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2027-04-05", "bitis": "2027-04-09"}, {"hafta_no": 27, "tarih_araligi": "12 Nisan - 16 Nisan", "ders_saati": "2", "tema": "Yazılım Tasarımı ve Programlama", "konu": "Problem Belirleme ve Algoritma Oluşturma", "ogrenme_ciktisi": "BTY.5.6.1. Problem çözümü için algoritmik düşünebilme", "surec_bilesenleri": ["a) Günlük yaşamda karşılaştığı bir problemi belirler.", "b) Belirlediği problemin girdi ve çıktılarını belirler.", "c) Belirlediği problemin çözümüne ilişkin işlem adımlarını listeler.", "ç) İşlem adımlarını akış şeması ile gösterir."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2027-04-12", "bitis": "2027-04-16"}, {"hafta_no": 28, "tarih_araligi": "19 Nisan - 23 Nisan", "ders_saati": "1+1", "tema": "Yazılım Tasarımı ve Programlama", "konu": "Problem Belirleme ve Algoritma Oluşturma / Algoritma Test Etme ve Geri Bildirim Alma", "ogrenme_ciktisi": "BTY.5.6.1. Problem çözümü için algoritmik düşünebilme BTY.5.6.2. Algoritma oluşturmada test edebilme-hata ayıklayabilme", "surec_bilesenleri": ["a) Günlük yaşamda karşılaştığı bir problemi belirler.", "b) Belirlediği problemin girdi ve çıktılarını belirler.", "c) Belirlediği problemin çözümüne ilişkin işlem adımlarını listeler.", "ç) İşlem adımlarını akış şeması ile gösterir.", "a) Geliştirdiği algoritmayı test eder.", "b) Hataları ayıklayarak algoritmayı kullanıma hazır hâle getirir."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2027-04-19", "bitis": "2027-04-23"}, {"hafta_no": 29, "tarih_araligi": "26 Nisan - 30 Nisan", "ders_saati": "1+1", "tema": "Yazılım Tasarımı ve Programlama", "konu": "Algoritma Test Etme ve Geri Bildirim Alma / Yazılımda Kullanılan Bileşenler", "ogrenme_ciktisi": "BTY.5.6.2. Algoritma oluşturmada test edebilme-hata ayıklayabilme BTY.5.6.3. Yazılım geliştirme sürecinde kullanılan bileşenlerden yararlanabilme", "surec_bilesenleri": ["a) Geliştirdiği algoritmayı test eder.", "b) Hataları ayıklayarak algoritmayı kullanıma hazır hâle getirir.", "a) Yazılım geliştirme sürecinin bileşenlerini tanımlar.", "b) Yazılım geliştirme sürecinin bileşenlerini kullanır.", "c) Yazılım geliştirme sürecinde kullandığı bileşenleri değerlendirir."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2027-04-26", "bitis": "2027-04-30"}, {"hafta_no": 30, "tarih_araligi": "03 Mayıs - 07 Mayıs", "ders_saati": "2", "tema": "Yazılım Tasarımı ve Programlama", "konu": "Yazılımda Kullanılan Bileşenler", "ogrenme_ciktisi": "BTY.5.6.3. Yazılım geliştirme sürecinde kullanılan bileşenlerden yararlanabilme", "surec_bilesenleri": ["a) Yazılım geliştirme sürecinin bileşenlerini tanımlar.", "b) Yazılım geliştirme sürecinin bileşenlerini kullanır.", "c) Yazılım geliştirme sürecinde kullandığı bileşenleri değerlendirir."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2027-05-03", "bitis": "2027-05-07"}, {"hafta_no": 31, "tarih_araligi": "10 Mayıs - 14 Mayıs", "ders_saati": "1+1", "tema": "Yazılım Tasarımı ve Programlama", "konu": "Yazılımda Kullanılan Bileşenler / Blok Tabanlı Ortamda Yazılım Geliştirme", "ogrenme_ciktisi": "BTY.5.6.3. Yazılım geliştirme sürecinde kullanılan bileşenlerden yararlanabilme BTY.5.6.4. Blok tabanlı ortamda yazılım geliştirme sürecini yönetebilme", "surec_bilesenleri": ["a) Yazılım geliştirme sürecinin bileşenlerini tanımlar.", "b) Yazılım geliştirme sürecinin bileşenlerini kullanır.", "c) Yazılım geliştirme sürecinde kullandığı bileşenleri değerlendirir.", "a) Blok tabanlı ortamda yazılım geliştirme sürecini planlar.", "b) Blok tabanlı ortamda yazılımı tasarlar.", "c) Blok tabanlı ortamda yazılımı oluşturur.", "ç) Blok tabanlı ortamda oluşturulan yazılımı değerlendirir."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2027-05-10", "bitis": "2027-05-14"}, {"hafta_no": 32, "tarih_araligi": "17 Mayıs - 21 Mayıs", "ders_saati": "2", "tema": "Yazılım Tasarımı ve Programlama", "konu": "Blok Tabanlı Ortamda Yazılım Geliştirme", "ogrenme_ciktisi": "BTY.5.6.4. Blok tabanlı ortamda yazılım geliştirme sürecini yönetebilme", "surec_bilesenleri": ["a) Blok tabanlı ortamda yazılım geliştirme sürecini planlar.", "b) Blok tabanlı ortamda yazılımı tasarlar.", "c) Blok tabanlı ortamda yazılımı oluşturur.", "ç) Blok tabanlı ortamda oluşturulan yazılımı değerlendirir."], "kurban_bayrami_cakisiyor": true, "ozel_hafta": false, "baslangic": "2027-05-17", "bitis": "2027-05-21"}, {"hafta_no": 33, "tarih_araligi": "24 Mayıs - 28 Mayıs", "ders_saati": "2", "tema": "Yazılım Tasarımı ve Programlama", "konu": "Blok Tabanlı Ortamda Yazılım Geliştirme", "ogrenme_ciktisi": "BTY.5.6.4. Blok tabanlı ortamda yazılım geliştirme sürecini yönetebilme", "surec_bilesenleri": ["a) Blok tabanlı ortamda yazılım geliştirme sürecini planlar.", "b) Blok tabanlı ortamda yazılımı tasarlar.", "c) Blok tabanlı ortamda yazılımı oluşturur.", "ç) Blok tabanlı ortamda oluşturulan yazılımı değerlendirir."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2027-05-24", "bitis": "2027-05-28"}, {"hafta_no": 34, "tarih_araligi": "31 Mayıs - 04 Haziran", "ders_saati": "2", "tema": "Yazılım Tasarımı ve Programlama", "konu": "Blok Tabanlı Ortamda Yazılım Geliştirme", "ogrenme_ciktisi": "BTY.5.6.4. Blok tabanlı ortamda yazılım geliştirme sürecini yönetebilme", "surec_bilesenleri": ["a) Blok tabanlı ortamda yazılım geliştirme sürecini planlar.", "b) Blok tabanlı ortamda yazılımı tasarlar.", "c) Blok tabanlı ortamda yazılımı oluşturur.", "ç) Blok tabanlı ortamda oluşturulan yazılımı değerlendirir."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2027-05-31", "bitis": "2027-06-04"}, {"hafta_no": 35, "tarih_araligi": "07 Haziran - 11 Haziran", "ders_saati": "SINAV HAFTASI", "tema": "", "konu": "", "ogrenme_ciktisi": "", "surec_bilesenleri": [], "kurban_bayrami_cakisiyor": false, "ozel_hafta": true, "baslangic": "2027-06-07", "bitis": "2027-06-11"}, {"hafta_no": 36, "tarih_araligi": "14 Haziran - 18 Haziran", "ders_saati": "2", "tema": "Yazılım Tasarımı ve Programlama", "konu": "Blok Tabanlı Ortamda Yazılım Geliştirme", "ogrenme_ciktisi": "BTY.5.6.4. Blok tabanlı ortamda yazılım geliştirme sürecini yönetebilme", "surec_bilesenleri": ["a) Blok tabanlı ortamda yazılım geliştirme sürecini planlar.", "b) Blok tabanlı ortamda yazılımı tasarlar.", "c) Blok tabanlı ortamda yazılımı oluşturur.", "ç) Blok tabanlı ortamda oluşturulan yazılımı değerlendirir."], "kurban_bayrami_cakisiyor": false, "ozel_hafta": false, "baslangic": "2027-06-14", "bitis": "2027-06-18"}, {"hafta_no": 37, "tarih_araligi": "21 Haziran - 25 Haziran", "ders_saati": "SOSYAL ETKİNLİK", "tema": "", "konu": "", "ogrenme_ciktisi": "", "surec_bilesenleri": [], "kurban_bayrami_cakisiyor": false, "ozel_hafta": true, "baslangic": "2027-06-21", "bitis": "2027-06-25"}];
-
-const SPECIAL_LABELS = {
-  "SINAV HAFTASI": "Sınav Haftası",
-  "OKUL TEMELLİ PLANLAMA*": "Okul Temelli Planlama",
-  "SOSYAL ETKİNLİK": "Sosyal Etkinlik"
-};
-
 const MATERIALS = {
   1: {
     slaytlar: Array.from({length:10}, (_,i) => `materyaller/5-sinif/hafta1/slayt-png/511_${i+1}.png`),
@@ -357,29 +376,36 @@ const MATERIALS = {
       {src:'materyaller/5-sinif/hafta1/infografik/511_info2.png', baslik:'İnfografik 2'}
     ],
     dersNotu: {
+      baslik:'Ders Notu',
+      aciklama:'Konuyu tekrar etmek ve bireysel çalışmak için hazırlanmış ders notu.',
       pdf:'materyaller/5-sinif/hafta1/ders-notu/KeskinLab_5_Sinif_1_Hafta_Ders_Notu.pdf',
-      docx:'materyaller/5-sinif/hafta1/ders-notu/KeskinLab_5_Sinif_1_Hafta_Ders_Notu.docx'
+      thumb:'materyaller/5-sinif/hafta1/thumbs/ders-notu.jpg'
     },
     etkinlik: {
       baslik:'Teknoloji Araştırmacıları',
+      aciklama:'Araştırma, geçmiş-günümüz karşılaştırması ve kullanım alanına göre sınıflandırma içeren grup etkinliği.',
       pdf:'materyaller/5-sinif/hafta1/etkinlik/KeskinLab_5_Sinif_1_Hafta_Teknoloji_Arastirmacilari.pdf',
-      docx:'materyaller/5-sinif/hafta1/etkinlik/KeskinLab_5_Sinif_1_Hafta_Teknoloji_Arastirmacilari.docx'
+      thumb:'materyaller/5-sinif/hafta1/thumbs/etkinlik.jpg'
     },
-    ozet: 'materyaller/5-sinif/hafta1/ozet/511_ozet.png',
-    gozlemFormu: {
-      pdf:'materyaller/5-sinif/hafta1/gozlem-formu/KeskinLab_5_Sinif_1_Hafta_Gozlem_Formu.pdf',
-      docx:'materyaller/5-sinif/hafta1/gozlem-formu/KeskinLab_5_Sinif_1_Hafta_Gozlem_Formu.docx'
-    }
+    ozet: {src:'materyaller/5-sinif/hafta1/ozet/511_ozet.png', baslik:'1. Hafta Özeti'},
+    ogretmenIcin: [
+      {
+        baslik:'Gözlem Formu',
+        aciklama:'Kavram kullanımı, geçmiş-günümüz ilişkisi kurma ve grup çalışmasına katılımın değerlendirilmesi için gözlem formu.',
+        pdf:'materyaller/5-sinif/hafta1/gozlem-formu/KeskinLab_5_Sinif_1_Hafta_Gozlem_Formu.pdf',
+        thumb:'materyaller/5-sinif/hafta1/thumbs/gozlem.jpg'
+      }
+    ]
   }
 };
 
-function chevronLeftIcon(){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 6l-6 6 6 6"/></svg>'; }
-function chevronRightIcon(){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"/></svg>'; }
-function fullscreenIcon(){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>'; }
-function closeXIcon(){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>'; }
-function viewIcon(){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>'; }
-function fileDownIcon(){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h11l5 5v11a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1z"/><path d="M14 4v5h5M12 12v6M9.5 15.5L12 18l2.5-2.5"/></svg>'; }
-function imgIcon(){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="M21 16l-5-5-4 4-2-2-6 6"/></svg>'; }
+const SPECIAL_LABELS = {
+  "SINAV HAFTASI": "Sınav Haftası",
+  "OKUL TEMELLİ PLANLAMA*": "Okul Temelli Planlama",
+  "SOSYAL ETKİNLİK": "Sosyal Etkinlik"
+};
+
+let VIEW_MODE = 'hafta';
 
 function getCode(s){
   if(!s) return '';
@@ -390,15 +416,17 @@ function getDesc(s){
   if(!s) return '';
   return s.replace(/^[A-ZÇĞİÖŞÜ]+(?:\.\d+)+\.?\s*/, '');
 }
-function chevronRight(){
-  return '<svg class="row-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>';
-}
-function backIcon(){
-  return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>';
-}
-function placeholderIcon(){
-  return '<svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>';
-}
+function chevronRight(){ return '<svg class="row-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>'; }
+function chevronLeftIcon(){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 6l-6 6 6 6"/></svg>'; }
+function chevronRightIcon(){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"/></svg>'; }
+function backIcon(){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>'; }
+function placeholderIcon(){ return '<svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>'; }
+function fullscreenIcon(){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>'; }
+function closeXIcon(){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>'; }
+function viewIcon(){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>'; }
+function fileDownIcon(){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h11l5 5v11a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1z"/><path d="M14 4v5h5M12 12v6M9.5 15.5L12 18l2.5-2.5"/></svg>'; }
+function imgIcon(){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="M21 16l-5-5-4 4-2-2-6 6"/></svg>'; }
+function fitIcon(){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3H5a2 2 0 00-2 2v4M15 3h4a2 2 0 012 2v4M9 21H5a2 2 0 01-2-2v-4M15 21h4a2 2 0 002-2v-4"/></svg>'; }
 
 function mascotSelam(){
   return `<svg viewBox="0 0 64 64" fill="none" width="34" height="34">
@@ -430,66 +458,90 @@ function getStatus(w){
   if(today >= start && today <= end) return 'current';
   return 'upcoming';
 }
-function dlIcon(){
-  return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h11l5 5v11a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1z"/><path d="M14 4v5h5"/></svg>';
-}
+function dlIcon(){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h11l5 5v11a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1z"/><path d="M14 4v5h5"/></svg>'; }
 function gpLink(hafta_no){
   return '<a class="gp-link" href="gunluk-planlar-5sinif/hafta' + hafta_no + '-5sinif-bty.docx" download>' + dlIcon() + 'Günlük Planı İndir (.docx)</a>';
 }
 
-/* ---------- LİSTE GÖRÜNÜMÜ ---------- */
-function renderRow(w){
+/* ---------- YATAY HAFTA SEÇİCİ (chip) ---------- */
+function renderChip(w){
   const status = getStatus(w);
   const statusClass = status === 'done' ? ' done' : (status === 'current' ? ' current' : '');
-  const checkIcon = status === 'done' ? '<svg class="done-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>' : '';
-
+  const checkIcon = status === 'done' ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>' : '';
   if(w.ozel_hafta){
-    const label = SPECIAL_LABELS[w.ders_saati] || w.ders_saati;
-    return `
-    <a class="week-row special${statusClass}" href="#hafta-${w.hafta_no}">
-      <span class="week-num">${status === 'done' ? checkIcon : w.hafta_no}</span>
-      <div class="week-main">
-        <div class="week-tarih">${w.tarih_araligi}</div>
-        <div class="week-tema">${label}</div>
-      </div>
-      ${chevronRight()}
+    return `<a class="hafta-chip special${statusClass}" href="#hafta-${w.hafta_no}" data-hafta="${w.hafta_no}">
+      <div class="num">${status === 'done' ? checkIcon : w.hafta_no}</div>
+      <div class="tarih">${SPECIAL_LABELS[w.ders_saati] ? SPECIAL_LABELS[w.ders_saati].split(' ')[0] : 'Özel'}</div>
     </a>`;
   }
-  const nowBadge = status === 'current' ? '<span class="now-badge">ŞİMDİ</span>' : '';
+  return `<a class="hafta-chip${statusClass}" href="#hafta-${w.hafta_no}" data-hafta="${w.hafta_no}">
+    <div class="num">${status === 'done' ? checkIcon : w.hafta_no}</div>
+    <div class="tarih">${w.tarih_araligi.split(' - ')[0]}</div>
+    ${status === 'current' ? '<div class="now-dot"></div>' : ''}
+  </a>`;
+}
+
+function renderDonemStrip(weeks, title, note){
   return `
-    <a class="week-row${w.kurban_bayrami_cakisiyor ? ' kurban' : ''}${statusClass}" id="row-hafta-${w.hafta_no}" href="#hafta-${w.hafta_no}">
-      <span class="week-num">${status === 'done' ? checkIcon : w.hafta_no}</span>
-      <div class="week-main">
-        <div class="week-tarih">${w.tarih_araligi} · ${w.tema}</div>
-        <div class="week-tema"><span class="konu">${w.konu}</span>${nowBadge}</div>
-      </div>
-      ${status === 'current' ? '<span class="now-mascot">' + mascotSelam() + '</span>' : ''}
-      <span class="week-saat">${w.ders_saati} saat</span>
-      ${chevronRight()}
-    </a>`;
+    <div class="donem-head"><h2>${title}</h2><div class="rule"></div><span class="donem-note">${note}</span></div>
+    <div class="hafta-strip">${weeks.map(renderChip).join('')}</div>
+  `;
+}
+
+function renderByHafta(){
+  const donem1 = WEEKS.filter(w => w.hafta_no <= 18);
+  const donem2 = WEEKS.filter(w => w.hafta_no >= 19);
+  let html = renderDonemStrip(donem1, 'I. Dönem', '1–18. Hafta');
+  html += `<div class="tatil-gap">◆ Yarıyıl Tatili — 25 Ocak – 5 Şubat 2027</div>`;
+  html += renderDonemStrip(donem2, 'II. Dönem', '19–37. Hafta');
+  return html;
+}
+
+function renderByTema(){
+  const groups = [];
+  const seen = {};
+  WEEKS.forEach(w => {
+    if(w.ozel_hafta) return;
+    if(!seen[w.tema]){ seen[w.tema] = []; groups.push(w.tema); }
+    seen[w.tema].push(w);
+  });
+  const ozelWeeks = WEEKS.filter(w => w.ozel_hafta);
+  let html = groups.map(tema => `
+    <div class="tema-group">
+      <div class="tema-group-head">${tema}<span class="cnt">${seen[tema].length} hafta</span></div>
+      <div class="hafta-strip">${seen[tema].map(renderChip).join('')}</div>
+    </div>
+  `).join('');
+  if(ozelWeeks.length){
+    html += `
+    <div class="tema-group">
+      <div class="tema-group-head">Sınav &amp; Planlama Haftaları<span class="cnt">${ozelWeeks.length} hafta</span></div>
+      <div class="hafta-strip">${ozelWeeks.map(renderChip).join('')}</div>
+    </div>`;
+  }
+  return html;
 }
 
 function renderList(){
   const root = document.getElementById('weeks-root');
-  const donem1 = WEEKS.filter(w => w.hafta_no <= 18);
-  const donem2 = WEEKS.filter(w => w.hafta_no >= 19);
-  let html = '<div class="weeks">';
-  html += `<div class="donem-head"><h2>I. Dönem</h2><div class="rule"></div><span class="donem-note">1–18. Hafta</span></div>`;
-  html += donem1.map(renderRow).join('');
-  html += `<div class="tatil-gap">◆ Yarıyıl Tatili — 25 Ocak – 5 Şubat 2027</div>`;
-  html += `<div class="donem-head"><h2>II. Dönem</h2><div class="rule"></div><span class="donem-note">19–37. Hafta</span></div>`;
-  html += donem2.map(renderRow).join('');
-  html += '</div>';
-  root.innerHTML = html;
+  root.innerHTML = `<div class="weeks">${VIEW_MODE === 'tema' ? renderByTema() : renderByHafta()}</div>`;
+  document.querySelectorAll('.toggle-btn').forEach(b => b.classList.toggle('active', b.dataset.view === VIEW_MODE));
 }
 
-/* ---------- PANEL GÖRÜNÜMÜ ---------- */
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.toggle-btn');
+  if(!btn) return;
+  VIEW_MODE = btn.dataset.view;
+  renderList();
+});
+
+/* ---------- MATERYAL BİLEŞENLERİ ---------- */
 function slideViewerHTML(vid, slides){
   return `
     <div class="slide-viewer" id="${vid}" data-idx="0">
       <div class="slide-stage">
         <button class="slide-nav-btn prev" aria-label="Önceki slayt">${chevronLeftIcon()}</button>
-        <img id="${vid}-img" src="${slides[0]}" oncontextmenu="return false" draggable="false" alt="Slayt 1">
+        <img id="${vid}-img" src="${slides[0]}" oncontextmenu="return false" draggable="false" alt="Slayt 1" fetchpriority="high" decoding="async">
         <button class="slide-nav-btn next" aria-label="Sonraki slayt">${chevronRightIcon()}</button>
       </div>
       <div class="slide-bar">
@@ -514,9 +566,7 @@ function initSlideViewer(vid, slides){
   }
   root.querySelector('.slide-nav-btn.prev').addEventListener('click', () => show(idx-1));
   root.querySelector('.slide-nav-btn.next').addEventListener('click', () => show(idx+1));
-  root.querySelector('.slide-fs-btn').addEventListener('click', () => {
-    if(root.requestFullscreen) root.requestFullscreen();
-  });
+  root.querySelector('.slide-fs-btn').addEventListener('click', () => { if(root.requestFullscreen) root.requestFullscreen(); });
   root.tabIndex = 0;
   root.addEventListener('keydown', (e) => {
     if(e.key === 'ArrowRight') show(idx+1);
@@ -524,27 +574,41 @@ function initSlideViewer(vid, slides){
   });
 }
 
-function mediaGridHTML(items){
-  return `<div class="media-grid">` + items.map((it,i) => `
+function mediaGridHTML(items, extraClass){
+  return `<div class="media-grid ${extraClass||''}">` + items.map(it => `
     <div class="media-card" data-lightbox-src="${it.src}">
-      <img src="${it.src}" oncontextmenu="return false" draggable="false" alt="${it.baslik}">
+      <div class="thumb-wrap"><img src="${it.src}" loading="lazy" oncontextmenu="return false" draggable="false" alt="${it.baslik}"></div>
       <div class="cap">${imgIcon()}${it.baslik}</div>
     </div>`).join('') + `</div>`;
 }
 
-function docSetHTML(title, files, opts){
-  opts = opts || {};
-  let links = '';
-  if(files.pdf){
-    links += `<a class="doc-link" href="${files.pdf}" target="_blank" rel="noopener">${viewIcon()}PDF Görüntüle</a>`;
-    if(opts.pdfDownload !== false){
-      links += `<a class="doc-link secondary" href="${files.pdf}" download>${fileDownIcon()}PDF İndir</a>`;
-    }
-  }
-  if(files.docx){
-    links += `<a class="doc-link secondary" href="${files.docx}" download>${fileDownIcon()}Düzenlenebilir Dosya (.docx)</a>`;
-  }
-  return `<div class="doc-set"><div class="doc-set-title">${title}</div><div class="doc-links">${links}</div></div>`;
+function docCardHTML(opts){
+  let links = `<a class="doc-link" href="${opts.pdf}" target="_blank" rel="noopener">${viewIcon()}Görüntüle</a>`;
+  links += `<a class="doc-link secondary" href="${opts.pdf}" download>${fileDownIcon()}İndir</a>`;
+  return `
+    <div class="doc-card" onclick="window.open('${opts.pdf}','_blank')">
+      <div class="doc-thumb"><img src="${opts.thumb}" loading="lazy" alt="${opts.baslik} önizleme"></div>
+      <div class="doc-main">
+        <div class="doc-title">${opts.baslik}</div>
+        <div class="doc-desc">${opts.aciklama}</div>
+        <div class="doc-links" onclick="event.stopPropagation()">${links}</div>
+      </div>
+    </div>`;
+}
+
+/* ---------- PANEL GÖRÜNÜMÜ ---------- */
+function panelNavHTML(w){
+  const idx = WEEKS.findIndex(x => x.hafta_no === w.hafta_no);
+  const prev = idx > 0 ? WEEKS[idx-1] : null;
+  const next = idx < WEEKS.length-1 ? WEEKS[idx+1] : null;
+  const prevTitle = prev ? (prev.ozel_hafta ? (SPECIAL_LABELS[prev.ders_saati]||prev.ders_saati) : prev.konu) : '';
+  const nextTitle = next ? (next.ozel_hafta ? (SPECIAL_LABELS[next.ders_saati]||next.ders_saati) : next.konu) : '';
+  return `
+    <div class="panel-nav">
+      ${prev ? `<a class="panel-nav-btn prev" href="#hafta-${prev.hafta_no}"><span class="lbl">${chevronLeftIcon()}Önceki Hafta</span><span class="ttl">${prevTitle}</span></a>` : '<div class="panel-nav-spacer"></div>'}
+      ${next ? `<a class="panel-nav-btn next" href="#hafta-${next.hafta_no}"><span class="lbl">Sonraki Hafta${chevronRightIcon()}</span><span class="ttl">${nextTitle}</span></a>` : '<div class="panel-nav-spacer"></div>'}
+    </div>
+  `;
 }
 
 function renderPanel(w){
@@ -559,6 +623,7 @@ function renderPanel(w){
         <div class="txt"><b>Bu hafta ders içeriği işlenmiyor</b>Okulun/zümrenin kararına göre planlanır.</div>
       </div>
       <div style="margin-top:18px">${gpLink(w.hafta_no)}</div>
+      ${panelNavHTML(w)}
     `;
   }
   const status = getStatus(w);
@@ -574,7 +639,7 @@ function renderPanel(w){
 
   const bodyHTML = mat ? `
     <div class="panel-section">
-      <div class="panel-label">Ders Slaytları</div>
+      <div class="panel-label">Ders Sunumu</div>
       ${slideViewerHTML('sv-'+w.hafta_no, mat.slaytlar)}
     </div>
 
@@ -584,42 +649,33 @@ function renderPanel(w){
     </div>
 
     <div class="panel-section">
-      ${docSetHTML('Ders Notu', mat.dersNotu)}
+      <div class="panel-label">Ders Notu</div>
+      ${docCardHTML(mat.dersNotu)}
     </div>
 
     <div class="panel-section">
-      ${docSetHTML('Öğrenci Etkinliği — ' + mat.etkinlik.baslik, mat.etkinlik)}
+      <div class="panel-label">Öğrenci Etkinliği</div>
+      ${docCardHTML(mat.etkinlik)}
     </div>
 
     <div class="panel-section">
       <div class="panel-label">Hafta Özeti</div>
-      ${mediaGridHTML([{src:mat.ozet, baslik:'1. Hafta Özeti'}])}
-      <div style="margin-top:10px"><a class="doc-link secondary" href="${mat.ozet}" download>${fileDownIcon()}Özeti İndir</a></div>
+      ${mediaGridHTML([{src:mat.ozet.src, baslik:mat.ozet.baslik}], 'summary-wrap')}
     </div>
 
     <div class="panel-section teacher-section">
       <div class="panel-label">Öğretmen İçin</div>
-      <div class="teacher-sub">Gözlem Formu</div>
-      <div class="doc-links" style="margin-bottom:14px">
-        <a class="doc-link" href="${mat.gozlemFormu.pdf}" target="_blank" rel="noopener">${viewIcon()}PDF Görüntüle</a>
-        <a class="doc-link secondary" href="${mat.gozlemFormu.pdf}" download>${fileDownIcon()}PDF İndir</a>
-        <a class="doc-link secondary" href="${mat.gozlemFormu.docx}" download>${fileDownIcon()}Düzenlenebilir Dosya (.docx)</a>
-      </div>
-      ${gpLink(w.hafta_no)}
+      ${mat.ogretmenIcin.map(docCardHTML).join('')}
+      <div style="margin-top:14px">${gpLink(w.hafta_no)}</div>
     </div>
   ` : `
     <div class="panel-section">
-      <div class="panel-label">Ders Başlangıcı</div>
-      <div class="placeholder-box">${placeholderIcon()}<div class="txt"><b>Hazırlanıyor</b>Konuya giriş ve motivasyon metni yakında eklenecek.</div></div>
+      <div class="panel-label">Ders Sunumu</div>
+      <div class="placeholder-box">${placeholderIcon()}<div class="txt"><b>Hazırlanıyor</b>Bu haftanın ders sunumu henüz eklenmedi.</div></div>
     </div>
 
     <div class="panel-section">
-      <div class="panel-label">Slayt</div>
-      <div class="placeholder-box">${placeholderIcon()}<div class="txt"><b>Hazırlanıyor</b>Bu haftanın slayt sunumu henüz eklenmedi.</div></div>
-    </div>
-
-    <div class="panel-section">
-      <div class="panel-label">İnfografik</div>
+      <div class="panel-label">İnfografikler</div>
       <div class="placeholder-box">${placeholderIcon()}<div class="txt"><b>Hazırlanıyor</b>Bu haftanın infografiği henüz eklenmedi.</div></div>
     </div>
 
@@ -632,11 +688,6 @@ function renderPanel(w){
     </div>
 
     <div style="margin:8px 0 36px">${gpLink(w.hafta_no)}</div>
-
-    <div class="panel-section">
-      <div class="panel-label">Yorumlar</div>
-      <div class="comments-box"><p>Yorum alanı yakında burada olacak.</p></div>
-    </div>
   `;
 
   return `
@@ -659,7 +710,13 @@ function renderPanel(w){
 
     ${bodyHTML}
 
+    ${panelNavHTML(w)}
+
     <div class="lightbox" id="lightbox-${w.hafta_no}">
+      <div class="lightbox-controls">
+        <button class="lightbox-fit">${fitIcon()}Ekrana Sığdır</button>
+        <button class="lightbox-fs">${fullscreenIcon()}Tam Ekran</button>
+      </div>
       <button class="lightbox-close">${closeXIcon()}</button>
       <img id="lightbox-${w.hafta_no}-img" src="" oncontextmenu="return false" draggable="false" alt="">
     </div>
@@ -680,6 +737,10 @@ function wireMaterialInteractions(w){
     });
   });
   lb.querySelector('.lightbox-close').addEventListener('click', () => lb.classList.remove('open'));
+  lb.querySelector('.lightbox-fs').addEventListener('click', () => { if(lb.requestFullscreen) lb.requestFullscreen(); });
+  lb.querySelector('.lightbox-fit').addEventListener('click', () => {
+    lbImg.style.maxWidth = '100%'; lbImg.style.maxHeight = '100%';
+  });
   lb.addEventListener('click', (e) => { if(e.target === lb) lb.classList.remove('open'); });
 }
 
@@ -710,8 +771,8 @@ route();
 
 if(!location.hash){
   setTimeout(() => {
-    const current = document.querySelector('.week-row.current');
-    if(current) current.scrollIntoView({behavior:'smooth', block:'center'});
+    const current = document.querySelector('.hafta-chip.current');
+    if(current) current.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
   }, 100);
 }
 </script>
