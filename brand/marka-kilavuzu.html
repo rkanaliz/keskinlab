@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KeskinLab — Marka Kılavuzu</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F4F6F3;
+    --surface:#FFFFFF;
+    --ink:#12182B;
+    --ink-soft:#565F70;
+    --ink-faint:#8890A0;
+    --teal:#1E8A80;
+    --teal-deep:#146059;
+    --amber:#E2A63B;
+    --amber-deep:#B9822A;
+    --line:#DCE1DE;
+    --code-bg:#0F1524;
+    --code-line:#232B45;
+    --code-text:#CBD5E8;
+    --radius:14px;
+    --maxw:1180px;
+    font-size:16px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6;}
+  h1,h2,h3{font-family:'Space Grotesk',system-ui,sans-serif;margin:0;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.76rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--teal-deep);display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+  .eyebrow::before{content:'';width:8px;height:8px;border-radius:2px;background:var(--amber);flex-shrink:0;}
+
+  header.hero{padding:72px 0 56px;border-bottom:1px solid var(--line);background:var(--surface);}
+  .lockup{display:flex;align-items:center;gap:18px;margin-bottom:22px;}
+  .lockup h1{font-size:2.4rem;font-weight:700;}
+  .lockup h1 .lab{color:var(--teal-deep);}
+  .hero p.lead{font-size:1.15rem;color:var(--ink-soft);max-width:640px;margin:0;}
+
+  section{padding:56px 0;border-bottom:1px solid var(--line);}
+  section h2{font-size:1.6rem;font-weight:700;margin-bottom:8px;}
+  section > .wrap > p.desc{color:var(--ink-soft);max-width:680px;margin:0 0 32px;}
+
+  /* LOGO GRID */
+  .logo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+  .logo-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px 20px;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;}
+  .logo-card.dark{background:var(--ink);}
+  .logo-card.teal{background:var(--teal-deep);}
+  .logo-card .label{font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--ink-soft);}
+  .logo-card.dark .label,.logo-card.teal .label{color:#B9C2D9;}
+  .logo-card svg{max-width:100%;height:auto;}
+
+  /* COLOR SWATCHES */
+  .color-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
+  .swatch{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:var(--surface);}
+  .swatch .fill{height:80px;}
+  .swatch .meta{padding:14px 16px;}
+  .swatch .name{font-weight:600;font-size:0.95rem;margin-bottom:2px;}
+  .swatch .hex{font-family:'IBM Plex Mono',monospace;font-size:0.82rem;color:var(--ink-soft);}
+  .swatch .role{font-size:0.82rem;color:var(--ink-faint);margin-top:6px;}
+
+  /* TYPE SPECIMENS */
+  .type-row{display:flex;align-items:baseline;justify-content:space-between;gap:24px;padding:20px 0;border-bottom:1px dashed var(--line);flex-wrap:wrap;}
+  .type-row:last-child{border-bottom:none;}
+  .type-sample{flex:1;min-width:280px;}
+  .type-meta{font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--ink-soft);white-space:nowrap;}
+
+  /* ICON GRID */
+  .icon-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:16px;}
+  .icon-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;align-items:center;gap:10px;}
+  .icon-card svg{width:28px;height:28px;stroke:var(--teal-deep);}
+  .icon-card .name{font-family:'IBM Plex Mono',monospace;font-size:0.74rem;color:var(--ink-soft);}
+
+  /* MASCOT GRID */
+  .mascot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;}
+  .mascot-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;align-items:center;gap:10px;}
+  .mascot-card .name{font-weight:600;font-size:0.9rem;}
+  .mascot-card .use{font-size:0.8rem;color:var(--ink-soft);text-align:center;}
+
+  /* DO / DONT */
+  .dd-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  @media (max-width:640px){.dd-grid{grid-template-columns:1fr;}}
+  .dd-card{border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;}
+  .dd-card.do{background:#EAF5F2;border:1px solid #BFE0D8;}
+  .dd-card.dont{background:#FBEDEC;border:1px solid #F0C9C6;}
+  .dd-tag{font-family:'IBM Plex Mono',monospace;font-size:0.75rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;}
+  .dd-card.do .dd-tag{color:var(--teal-deep);}
+  .dd-card.dont .dd-tag{color:#B23A32;}
+  .dd-card p{margin:0;font-size:0.85rem;color:var(--ink-soft);}
+
+  .rule-list{display:grid;gap:14px;}
+  .rule{display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;}
+  .rule .num{font-family:'IBM Plex Mono',monospace;font-size:0.8rem;color:var(--teal-deep);flex-shrink:0;width:28px;}
+  .rule .txt{font-size:0.92rem;color:var(--ink-soft);}
+  .rule .txt b{color:var(--ink);}
+
+  footer{padding:40px 0;text-align:center;color:var(--ink-faint);font-size:0.85rem;font-family:'IBM Plex Mono',monospace;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Marka Kılavuzu — v1.0</div>
+    <div class="lockup">
+      <svg viewBox="0 0 64 64" width="52" height="52" fill="none">
+        <rect x="14" y="18" width="36" height="30" rx="7" stroke="#146059" stroke-width="3"/>
+        <path d="M22 31l3 3 3-3M36 31l3 3 3-3" stroke="#1E8A80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M32 18V10" stroke="#146059" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="32" cy="7" r="3.5" fill="#E2A63B"/>
+        <path d="M14 28H7M50 28h7" stroke="#146059" stroke-width="3" stroke-linecap="round"/>
+        <path d="M23 48v6M41 48v6" stroke="#146059" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <h1>Keskin<span class="lab">Lab</span></h1>
+    </div>
+    <p class="lead">Devre Karakteri'nin yüzünden doğan bir kimlik: teal-amber renk ikilisi, Space Grotesk başlıklar ve devre temalı çizgi ikonlar. Bu kılavuz mevcut sitenin tasarım dilini resmileştirir — yeni bir şey icat etmez, olanı tutarlı hâle getirir.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Logo</h2>
+    <p class="desc">Amblem, sitede zaten kullanılan "selam" pozundaki Devre Karakteri'nin sadeleştirilmiş, simetrik hâlidir. Maskot bağlamsal anlarda (yükleniyor, boş durumlar, "hazırlanıyor" kartları) hareketli poz alır; logo ise kimlik için sabit ve nötr durur.</p>
+    <div class="logo-grid">
+      <div class="logo-card">
+        <svg viewBox="0 0 300 64" width="220" height="47"><g><rect x="14" y="18" width="36" height="30" rx="7" stroke="#146059" stroke-width="3" fill="none"/><path d="M22 31l3 3 3-3M36 31l3 3 3-3" stroke="#1E8A80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M32 18V10" stroke="#146059" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="7" r="3.5" fill="#E2A63B"/><path d="M14 28H7M50 28h7" stroke="#146059" stroke-width="3" stroke-linecap="round"/><path d="M23 48v6M41 48v6" stroke="#146059" stroke-width="3" stroke-linecap="round"/></g><text x="70" y="40" font-family="'Space Grotesk',sans-serif" font-size="30" font-weight="700"><tspan fill="#12182B">Keskin</tspan><tspan fill="#146059">Lab</tspan></text></svg>
+        <div class="label">logo-horizontal.svg — nav bar, e-posta imzası</div>
+      </div>
+      <div class="logo-card">
+        <svg viewBox="0 0 200 130" width="130" height="84"><g transform="translate(68,8)"><rect x="14" y="18" width="36" height="30" rx="7" stroke="#146059" stroke-width="3" fill="none"/><path d="M22 31l3 3 3-3M36 31l3 3 3-3" stroke="#1E8A80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M32 18V10" stroke="#146059" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="7" r="3.5" fill="#E2A63B"/><path d="M14 28H7M50 28h7" stroke="#146059" stroke-width="3" stroke-linecap="round"/><path d="M23 48v6M41 48v6" stroke="#146059" stroke-width="3" stroke-linecap="round"/></g><text x="100" y="112" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="26" font-weight="700"><tspan fill="#12182B">Keskin</tspan><tspan fill="#146059">Lab</tspan></text></svg>
+        <div class="label">logo-stacked.svg — sosyal medya, kapak sayfası</div>
+      </div>
+      <div class="logo-card">
+        <svg viewBox="0 0 64 64" width="64" height="64" fill="none"><rect x="14" y="18" width="36" height="30" rx="7" stroke="#146059" stroke-width="3"/><path d="M22 31l3 3 3-3M36 31l3 3 3-3" stroke="#1E8A80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 18V10" stroke="#146059" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="7" r="3.5" fill="#E2A63B"/><path d="M14 28H7M50 28h7" stroke="#146059" stroke-width="3" stroke-linecap="round"/><path d="M23 48v6M41 48v6" stroke="#146059" stroke-width="3" stroke-linecap="round"/></svg>
+        <div class="label">logo-mark.svg — açık zeminlerde tekil ikon</div>
+      </div>
+      <div class="logo-card teal">
+        <svg viewBox="0 0 64 64" width="64" height="64" fill="none"><rect x="14" y="18" width="36" height="30" rx="7" stroke="#FFFFFF" stroke-width="3"/><path d="M22 31l3 3 3-3M36 31l3 3 3-3" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 18V10" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="7" r="3.5" fill="#E2A63B"/><path d="M14 28H7M50 28h7" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/><path d="M23 48v6M41 48v6" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/></svg>
+        <div class="label">logo-mark-white.svg — koyu zeminlerde</div>
+      </div>
+      <div class="logo-card teal">
+        <svg viewBox="0 0 64 64" width="64" height="64"><rect width="64" height="64" rx="16" fill="#146059"/><rect x="17" y="21" width="30" height="24" rx="6" stroke="#FFFFFF" stroke-width="3" fill="none"/><path d="M24 32.5l2.5 2.5 2.5-2.5M35 32.5l2.5 2.5 2.5-2.5" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M32 21v-6" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="12" r="3" fill="#E2A63B"/></svg>
+        <div class="label">logo-badge.svg — app ikonu, profil fotoğrafı</div>
+      </div>
+      <div class="logo-card">
+        <svg viewBox="0 0 64 64" width="48" height="48"><rect width="64" height="64" rx="16" fill="#146059"/><rect x="16" y="20" width="32" height="26" rx="7" stroke="#FFFFFF" stroke-width="4" fill="none"/><circle cx="25" cy="33" r="3" fill="#FFFFFF"/><circle cx="39" cy="33" r="3" fill="#FFFFFF"/><circle cx="32" cy="10" r="3.5" fill="#E2A63B"/><path d="M32 20v-6" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/></svg>
+        <div class="label">favicon.svg — 16–32px sekme ikonu</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Kullanım Kuralları</h2>
+    <p class="desc">Amblem sade olduğu için kolay bozulur. Şu birkaç kural onu tutarlı tutar.</p>
+    <div class="rule-list">
+      <div class="rule"><div class="num">01</div><div class="txt"><b>Boşluk payı:</b> amblemin her yanında, kafa yüksekliğinin en az dörtte biri kadar (~8px @64px boyutunda) boş alan bırakın. Başka bir öğe bu alana girmemeli.</div></div>
+      <div class="rule"><div class="num">02</div><div class="txt"><b>Minimum boyut:</b> logo-mark'ı 24px'in altında kullanmayın; onun yerine favicon.svg'yi kullanın, o küçük boyut için kalınlaştırılmıştır.</div></div>
+      <div class="rule"><div class="num">03</div><div class="txt"><b>Renk sabitliği:</b> amblem sadece üç halde bulunur — teal (açık zemin), beyaz (koyu zemin) veya tam ink siyahı (tek renk baskı). Başka renk kombinasyonu üretmeyin.</div></div>
+      <div class="rule"><div class="num">04</div><div class="txt"><b>Oranları koruyun:</b> yatay/dikey ayrı ayrı ölçeklendirmeyin, döndürmeyin, eğmeyin veya gölge eklemeyin.</div></div>
+      <div class="rule"><div class="num">05</div><div class="txt"><b>Zemin kontrastı:</b> amber nokta (güç ışığı) her varyantta sabit kalır — bu, amblemi maskot ailesine bağlayan tek sabit detaydır, kaldırmayın.</div></div>
+    </div>
+
+    <div class="dd-grid" style="margin-top:28px;">
+      <div class="dd-card do">
+        <span class="dd-tag">Doğru</span>
+        <svg viewBox="0 0 64 64" width="56" height="56" fill="none"><rect x="14" y="18" width="36" height="30" rx="7" stroke="#146059" stroke-width="3"/><path d="M22 31l3 3 3-3M36 31l3 3 3-3" stroke="#1E8A80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 18V10" stroke="#146059" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="7" r="3.5" fill="#E2A63B"/><path d="M14 28H7M50 28h7" stroke="#146059" stroke-width="3" stroke-linecap="round"/><path d="M23 48v6M41 48v6" stroke="#146059" stroke-width="3" stroke-linecap="round"/></svg>
+        <p>Orijinal oranlarda, yeterli boşluk payıyla, tanımlı renklerle kullanın.</p>
+      </div>
+      <div class="dd-card dont">
+        <span class="dd-tag">Yanlış</span>
+        <div style="transform:scaleX(1.6) scaleY(0.6);">
+          <svg viewBox="0 0 64 64" width="56" height="56" fill="none"><rect x="14" y="18" width="36" height="30" rx="7" stroke="#B23A32" stroke-width="3"/><path d="M22 31l3 3 3-3M36 31l3 3 3-3" stroke="#B23A32" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 18V10" stroke="#B23A32" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="7" r="3.5" fill="#B23A32"/></svg>
+        </div>
+        <p>Oranları bozmayın, rastgele renk uygulamayın, döndürmeyin veya efekt eklemeyin.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Renk Paleti</h2>
+    <p class="desc">Sitede zaten üretimde olan değişkenler — yeni renk eklenmedi, sadece rolleri netleştirildi.</p>
+    <div class="color-grid">
+      <div class="swatch"><div class="fill" style="background:#146059;"></div><div class="meta"><div class="name">Teal Deep</div><div class="hex">#146059</div><div class="role">Birincil — başlık vurgusu, amblem çizgisi, düğme zemini</div></div></div>
+      <div class="swatch"><div class="fill" style="background:#1E8A80;"></div><div class="meta"><div class="name">Teal</div><div class="hex">#1E8A80</div><div class="role">İkincil — hover durumları, ikon detayları, bağlantılar</div></div></div>
+      <div class="swatch"><div class="fill" style="background:#E2A63B;"></div><div class="meta"><div class="name">Amber</div><div class="hex">#E2A63B</div><div class="role">Vurgu — "şimdi" rozetleri, güç ışığı noktası. Az ve seçici kullanın</div></div></div>
+      <div class="swatch"><div class="fill" style="background:#B9822A;"></div><div class="meta"><div class="name">Amber Deep</div><div class="hex">#B9822A</div><div class="role">Amber'in metin/kontrast gereken hâli</div></div></div>
+      <div class="swatch"><div class="fill" style="background:#12182B;"></div><div class="meta"><div class="name">Ink</div><div class="hex">#12182B</div><div class="role">Ana metin, wordmark'ın "Keskin" kısmı</div></div></div>
+      <div class="swatch"><div class="fill" style="background:#565F70;"></div><div class="meta"><div class="name">Ink Soft</div><div class="hex">#565F70</div><div class="role">İkincil metin, açıklamalar</div></div></div>
+      <div class="swatch"><div class="fill" style="background:#8890A0;"></div><div class="meta"><div class="name">Ink Faint</div><div class="hex">#8890A0</div><div class="role">Pasif/tamamlanmış durumlar (düşünüyor maskotu)</div></div></div>
+      <div class="swatch"><div class="fill" style="background:#F4F6F3;border-bottom:1px solid var(--line);"></div><div class="meta"><div class="name">Bg</div><div class="hex">#F4F6F3</div><div class="role">Sayfa zemini</div></div></div>
+      <div class="swatch"><div class="fill" style="background:#FFFFFF;border-bottom:1px solid var(--line);"></div><div class="meta"><div class="name">Surface</div><div class="hex">#FFFFFF</div><div class="role">Kart/panel zemini</div></div></div>
+      <div class="swatch"><div class="fill" style="background:#DCE1DE;"></div><div class="meta"><div class="name">Line</div><div class="hex">#DCE1DE</div><div class="role">Kenarlık, ayraç</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Tipografi</h2>
+    <p class="desc">Üç yazı tipi, üç görev: başlıklar için karakter, gövde için okunabilirlik, etiketler için teknik/devre hissi.</p>
+    <div class="type-row">
+      <div class="type-sample"><h3 style="font-size:2.2rem;font-weight:700;">Space Grotesk — Başlıklar</h3></div>
+      <div class="type-meta">700 · panel-title, h1–h3</div>
+    </div>
+    <div class="type-row">
+      <div class="type-sample"><p style="font-size:1.05rem;margin:0;">Inter — gövde metni. Ders açıklamaları, kart içerikleri ve tüm okunabilir paragraflar bu tipte.</p></div>
+      <div class="type-meta">400–500 · body</div>
+    </div>
+    <div class="type-row">
+      <div class="type-sample"><span style="font-family:'IBM Plex Mono',monospace;font-size:0.9rem;color:var(--teal-deep);letter-spacing:0.05em;">HAFTA 03 · 5. SINIF BTY</span></div>
+      <div class="type-meta">500 · eyebrow, kod, tarih etiketleri</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>İkon Stili</h2>
+    <p class="desc">Tüm ikonlar 24×24 viewBox, 2px çizgi kalınlığı, dolgu yok, yuvarlak uç/köşe. Yeni ikon eklerken (ChatGPT ile üretilen materyallerde dahil) bu kurala uyun.</p>
+    <div class="icon-grid">
+      <div class="icon-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg><div class="name">view</div></div>
+      <div class="icon-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h11l5 5v11a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1z"/><path d="M14 4v5h5M12 12v6M9.5 15.5L12 18l2.5-2.5"/></svg><div class="name">file-down</div></div>
+      <div class="icon-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="M21 16l-5-5-4 4-2-2-6 6"/></svg><div class="name">image</div></div>
+      <div class="icon-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3H5a2 2 0 00-2 2v4M15 3h4a2 2 0 012 2v4M9 21H5a2 2 0 01-2-2v-4M15 21h4a2 2 0 002-2v-4"/></svg><div class="name">fit</div></div>
+      <div class="icon-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg><div class="name">close</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Maskot Ailesi</h2>
+    <p class="desc">Devre Karakteri, logonun kaynağı ama ayrı bir görev üstlenir: bağlamsal anlarda duygu/durum ifade eder. Logo hiçbir zaman bu 4 pozdan birine dönüşmez — aile birbirini tamamlar, karıştırılmaz.</p>
+    <div class="mascot-grid">
+      <div class="mascot-card">
+        <svg viewBox="0 0 64 64" width="44" height="44" fill="none"><rect x="16" y="20" width="32" height="26" rx="6" stroke="#146059" stroke-width="2.5"/><path d="M22 32l3 3 3-3M36 32l3 3 3-3" stroke="#1E8A80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 20V12" stroke="#146059" stroke-width="2.5" stroke-linecap="round"/><circle cx="32" cy="9" r="3" fill="#E2A63B"/></svg>
+        <div class="name">Selam</div><div class="use">Aktif/şimdiki hafta paneli</div>
+      </div>
+      <div class="mascot-card">
+        <svg viewBox="0 0 64 64" width="44" height="44" fill="none"><rect x="16" y="20" width="32" height="26" rx="6" stroke="#8890A0" stroke-width="2.5"/><circle cx="25" cy="33" r="2" fill="#8890A0"/><circle cx="39" cy="33" r="2" fill="#8890A0"/><circle cx="32" cy="9" r="3" fill="#E2A63B" opacity="0.5"/><circle cx="32" cy="9" r="5.5" stroke="#E2A63B" stroke-width="1.4" stroke-dasharray="2 2"/></svg>
+        <div class="name">Düşünüyor</div><div class="use">"Hazırlanıyor" modül kartları</div>
+      </div>
+      <div class="mascot-card">
+        <svg viewBox="0 0 64 64" width="44" height="44" fill="none"><rect x="16" y="20" width="32" height="26" rx="6" stroke="#8890A0" stroke-width="2.5"/><path d="M24 33h4M36 33h4" stroke="#8890A0" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <div class="name">Nötr</div><div class="use">Genel/pasif durumlar</div>
+      </div>
+      <div class="mascot-card">
+        <svg viewBox="0 0 64 64" width="44" height="44" fill="none"><rect x="16" y="20" width="32" height="26" rx="6" stroke="#B23A32" stroke-width="2.5"/><path d="M23 30l4 4M27 30l-4 4M37 30l4 4M41 30l-4 4" stroke="#B23A32" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <div class="name">404</div><div class="use">Bulunamadı sayfaları</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">KeskinLab Marka Kılavuzu · v1.0 · Ağustos 2026</div>
+</footer>
+
+</body>
+</html>
