@@ -14,7 +14,7 @@ function d(s){const [y,m,day]=String(s).split('-').map(Number);return new Date(y
 function iso(dt){return `${dt.getFullYear()}-${String(dt.getMonth()+1).padStart(2,'0')}-${String(dt.getDate()).padStart(2,'0')}`}
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 async function txt(url){const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw Error(url+' → '+r.status);return r.text()}
-function parseBTY(t){const m=t.match(/const WEEKS\s*=\s*(\[[\s\S]*?\]);\s*const SPECIAL_LABELS/);if(!m)throw Error('BTY verisi okunamadı');return JSON.parse(m[1])}
+function parseBTY(t){const p=t.indexOf('const WEEKS');if(p<0)throw Error('BTY verisi okunamadı');const a=t.indexOf('[',p),z=t.indexOf('];',a);if(a<0||z<a)throw Error('BTY hafta dizisi okunamadı');return JSON.parse(t.slice(a,z+1))}
 function parsePush(t){const p=t.indexOf('COURSE_WEEKS.push(...'),a=t.indexOf('[',p),z=t.lastIndexOf(']);');if(p<0||a<0||z<a)throw Error('Seçmeli ders verisi okunamadı');return JSON.parse(t.slice(a,z+1))}
 function norm(w){if(w.tarih_araligi)return w;return {hafta_no:Number(w.hafta_no),tarih_araligi:w.tarih||'',tema:w.unite||'',konu:w.konu||'',ogrenme_ciktisi:(w.kazanimlar||[]).join(' • '),baslangic:w.baslangic,bitis:w.bitis,etkinlik:w.etkinlik||''}}
 async function loadCourse(key){const c=COURSES[key];try{if(c.source==='bty')return parseBTY(await txt(RAW+c.legacy)).map(norm);const p=await Promise.all(c.files.map(f=>txt(f).then(parsePush)));return p.flat().map(norm).sort((a,b)=>a.hafta_no-b.hafta_no)}catch(e){console.warn(key,e);return c.fallback.map(norm)}}
