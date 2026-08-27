@@ -7,7 +7,7 @@ const RAW='https://raw.githubusercontent.com/rkanaliz/keskinlab/main/';
 function date(s){const [y,m,d]=String(s).split('-').map(Number);return new Date(y,m-1,d,12)}
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function fmt(w){return String(w.tarih_araligi||w.tarih||'').toLocaleUpperCase('tr-TR')}
-function parseOldBTY(text){const m=text.match(/const WEEKS\s*=\s*(\[[\s\S]*?\]);\s*const SPECIAL_LABELS/);if(!m)throw Error('BTY hafta verisi bulunamadı');return JSON.parse(m[1])}
+function parseOldBTY(text){const p=text.indexOf('const WEEKS');if(p<0)throw Error('BTY hafta verisi bulunamadı');const a=text.indexOf('[',p),z=text.indexOf('];',a);if(a<0||z<a)throw Error('BTY hafta dizisi okunamadı');return JSON.parse(text.slice(a,z+1))}
 function parsePush(text){const p=text.indexOf('COURSE_WEEKS.push(...');if(p<0)throw Error('Seçmeli ders hafta verisi bulunamadı');const a=text.indexOf('[',p),z=text.lastIndexOf(']);');if(a<0||z<a)throw Error('Hafta dizisi okunamadı');return JSON.parse(text.slice(a,z+1))}
 async function text(url){const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw Error(url+' → '+r.status);return r.text()}
 function normalize(w){if(w.tarih_araligi)return w;return {hafta_no:Number(w.hafta_no),tarih_araligi:w.tarih||'',ders_saati:w.ders_saati||'2',tema:w.unite||'',konu:w.konu||'',ogrenme_ciktisi:(w.kazanimlar||[]).join(' • '),surec_bilesenleri:w.kazanimlar||[],etkinlik:w.etkinlik||'',belirli_gun:w.belirli_gun||'',baslangic:w.baslangic,bitis:w.bitis,ozel_hafta:false}}
