@@ -4,8 +4,14 @@
   "type": "module",
   "scripts": {
     "generate": "node scripts/generate-site-data.mjs",
+    "optimize:sources": "node scripts/optimize-source-images.mjs",
+    "build:web-assets": "node scripts/build-web-assets.mjs",
     "validate": "node scripts/validate-site.mjs",
     "validate:strict-assets": "node scripts/validate-site.mjs --strict-assets",
-    "check": "npm run generate && npm run validate"
+    "check": "npm run generate && npm run validate",
+    "build": "npm run build:web-assets && npm run generate && npm run validate:strict-assets"
+  },
+  "dependencies": {
+    "sharp": "^0.34.3"
   }
 }
