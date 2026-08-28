@@ -1,96 +1,46 @@
 (()=>{
 'use strict';
-const C=window.KESKINLAB_COURSE||{}, $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)], RAW='https://raw.githubusercontent.com/rkanaliz/keskinlab/main/';
-let WEEKS=[], OUTCOMES={};
-
+const C=window.KESKINLAB_COURSE||{};
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const RAW='https://raw.githubusercontent.com/rkanaliz/keskinlab/main/';
+let WEEKS=[],OUTCOMES={};
 const COURSE_NAV=[
- {key:'bty5',no:'01',name:'5. Sınıf BTY',short:'5. SINIF · BTY',meta:'37 HAFTA',href:'5-sinif-bty.html'},
- {key:'bty6',no:'02',name:'6. Sınıf BTY',short:'6. SINIF · BTY',meta:'37 HAFTA',href:'6-sinif-bty.html'},
- {key:'robotik',no:'03',name:'Robotik Kodlama-I',short:'5. SINIF · ROBOTİK',meta:'36 HAFTA',href:'robotik-kodlama.html'},
- {key:'yapayzeka',no:'04',name:'Yapay Zekâ Uygulamaları-I',short:'7–8. SINIF · YAPAY ZEKÂ',meta:'36 HAFTA',href:'yapay-zeka.html'}
+ {key:'bty5',no:'01',name:'5. Sınıf BTY',short:'5. SINIF · BTY',meta:'37 HAFTA',href:'classroom-5-sinif.html'},
+ {key:'bty6',no:'02',name:'6. Sınıf BTY',short:'6. SINIF · BTY',meta:'37 HAFTA',href:'classroom-6-sinif.html'},
+ {key:'robotik',no:'03',name:'Robotik Kodlama-I',short:'5. SINIF · ROBOTİK',meta:'36 HAFTA',href:'classroom-robotik.html'},
+ {key:'yapayzeka',no:'04',name:'Yapay Zekâ Uygulamaları-I',short:'7–8. SINIF · YAPAY ZEKÂ',meta:'36 HAFTA',href:'classroom-yapay-zeka.html'}
 ];
-function courseKey(){
- if(C.legacy==='5-sinif-bty.html')return 'bty5';
- if(C.legacy==='6-sinif-bty.html')return 'bty6';
- if((C.files||[]).some(f=>f.includes('robotik')))return 'robotik';
- if((C.files||[]).some(f=>f.includes('yapay-zeka')))return 'yapayzeka';
- return '';
-}
-function mountCourseNavigation(){
- const key=courseKey(),current=COURSE_NAV.find(x=>x.key===key)||COURSE_NAV[0];
- const style=document.createElement('style');
- style.id='keskinlab-course-switcher-style';
- style.textContent=`
- .brand img{width:32px;height:32px;display:block}
- .course-switcher{position:relative;margin-left:auto}
- .course-switcher>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;user-select:none}
- .course-switcher>summary::-webkit-details-marker{display:none}
- .course-switcher .course-tag{background:rgba(255,255,255,.28);transition:border-color .18s ease,background .18s ease}
- .course-switcher[open] .course-tag{border-color:rgba(30,138,128,.45);background:rgba(255,255,255,.72)}
- .course-switcher .chev{font:700 11px "IBM Plex Mono";color:var(--muted);transition:transform .18s ease}
- .course-switcher[open] .chev{transform:rotate(180deg)}
- .course-switch-pop{position:absolute;right:0;top:calc(100% + 10px);z-index:140;width:min(330px,86vw);padding:8px;background:rgba(244,246,243,.92);backdrop-filter:blur(20px) saturate(1.08);-webkit-backdrop-filter:blur(20px) saturate(1.08);border:1px solid rgba(18,24,43,.10);border-radius:16px;box-shadow:0 20px 55px rgba(18,24,43,.14)}
- .course-switch-pop:before{content:"DERS DEĞİŞTİR";display:block;padding:8px 10px 10px;font:600 8px "IBM Plex Mono";letter-spacing:.11em;color:var(--muted)}
- .course-switch-item{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:10px;align-items:center;min-height:58px;padding:9px 10px;border-top:1px solid rgba(18,24,43,.08);border-radius:8px}
- .course-switch-item:first-of-type{border-top:0}
- .course-switch-item:hover{background:rgba(30,138,128,.055)}
- .course-switch-item .cn{font:600 9px "IBM Plex Mono";color:var(--amber)}
- .course-switch-item b{display:block;font:650 14px "Space Grotesk";letter-spacing:-.02em}
- .course-switch-item small{display:block;margin-top:2px;font:500 8px "IBM Plex Mono";color:var(--muted)}
- .course-switch-item .ca{font:600 12px "IBM Plex Mono";color:var(--muted)}
- .course-switch-item.active{background:rgba(30,138,128,.065);pointer-events:none}
- .course-switch-item.active .ca{color:var(--teal2)}
- .drawer-course-switch{display:none}
- @media(max-width:820px){
-  .course-switcher{display:none!important}
-  .drawer{background:rgba(244,246,243,.72)!important;backdrop-filter:blur(22px) saturate(1.12);-webkit-backdrop-filter:blur(22px) saturate(1.12);border-right:1px solid rgba(255,255,255,.72);box-shadow:18px 0 60px rgba(18,24,43,.13)}
-  .scrim{background:rgba(18,24,43,.10)!important;backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
-  .drawer-course-switch{display:block;padding:16px 20px 18px;border-bottom:1px solid rgba(18,24,43,.10)}
-  .drawer-switch-label{margin-bottom:8px;font:600 8px "IBM Plex Mono";letter-spacing:.11em;color:var(--muted)}
-  .drawer-switch-item{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:8px;align-items:center;min-height:46px;padding:7px 0;border-top:1px solid rgba(18,24,43,.08)}
-  .drawer-switch-item:first-of-type{border-top:0}
-  .drawer-switch-item .cn{font:600 8px "IBM Plex Mono";color:var(--amber)}
-  .drawer-switch-item b{font:600 13px "Space Grotesk";letter-spacing:-.015em}
-  .drawer-switch-item .ca{font:600 11px "IBM Plex Mono";color:var(--muted)}
-  .drawer-switch-item.active{color:var(--teal2);pointer-events:none}
- }
- `;
- document.head.appendChild(style);
- $$('.brand svg').forEach(svg=>{const img=document.createElement('img');img.src='brand/devre-karakteri.svg';img.alt='KeskinLab Devre Karakteri';svg.replaceWith(img)});
- const oldTag=$('.course-tag');
- if(oldTag){
-  const details=document.createElement('details');
-  details.className='course-switcher';
-  details.innerHTML=`<summary class="course-tag" aria-label="Ders değiştir">${esc(current.short)} <span class="chev">⌄</span></summary><div class="course-switch-pop">${COURSE_NAV.map(x=>`<a class="course-switch-item ${x.key===key?'active':''}" href="${x.href}" ${x.key===key?'aria-current="page"':''}><span class="cn">${x.no}</span><span><b>${esc(x.name)}</b><small>${x.meta}</small></span><span class="ca">${x.key===key?'●':'→'}</span></a>`).join('')}</div>`;
-  oldTag.replaceWith(details);
-  document.addEventListener('click',e=>{if(details.open&&!details.contains(e.target))details.removeAttribute('open')});
- }
- const drawerCourse=$('.drawer-course');
- if(drawerCourse){
-  drawerCourse.insertAdjacentHTML('afterend',`<div class="drawer-course-switch"><div class="drawer-switch-label">DERS DEĞİŞTİR</div>${COURSE_NAV.map(x=>`<a class="drawer-switch-item ${x.key===key?'active':''}" href="${x.href}" ${x.key===key?'aria-current="page"':''}><span class="cn">${x.no}</span><b>${esc(x.name)}</b><span class="ca">${x.key===key?'●':'→'}</span></a>`).join('')}</div>`);
- }
-}
-
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c]))}
 function dt(s){const [y,m,d]=String(s).split('-').map(Number);return new Date(y,m-1,d,12)}
-function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function fmt(w){return String(w.tarih_araligi||w.tarih||'').toLocaleUpperCase('tr-TR')}
+function fmt(w){return String(w?.tarih_araligi||w?.tarih||'').toLocaleUpperCase('tr-TR')}
 async function text(url){const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw Error(`${url} → ${r.status}`);return r.text()}
 function parseBTY(t){const p=t.indexOf('const WEEKS'),a=t.indexOf('[',p),z=t.indexOf('];',a);if(p<0||a<0||z<a)throw Error('BTY veri dizisi okunamadı');return JSON.parse(t.slice(a,z+1))}
 function parsePush(t){const p=t.indexOf('COURSE_WEEKS.push(...'),a=t.indexOf('[',p),z=t.lastIndexOf(']);');if(p<0||a<0||z<a)throw Error('Seçmeli veri dizisi okunamadı');return JSON.parse(t.slice(a,z+1))}
 function norm(w){if(w.tarih_araligi)return w;return {...w,tarih_araligi:w.tarih||'',tema:w.unite||'',ogrenme_ciktisi:(w.kazanimlar||[]).join(' • '),surec_bilesenleri:w.kazanimlar||[],ders_saati:'2',ozel_hafta:false}}
+function courseKey(){if(C.legacy==='5-sinif-bty.html')return'bty5';if(C.legacy==='6-sinif-bty.html')return'bty6';if((C.files||[]).some(f=>f.includes('robotik')))return'robotik';if((C.files||[]).some(f=>f.includes('yapay-zeka')))return'yapayzeka';return''}
+function mountShell(){
+ const key=courseKey(),current=COURSE_NAV.find(x=>x.key===key)||COURSE_NAV[0];
+ const style=document.createElement('style');style.id='keskinlab-classroom-shell-v3';style.textContent=`.brand img{width:32px;height:32px;display:block}.course-switcher{position:relative;margin-left:auto}.course-switcher>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;user-select:none}.course-switcher>summary::-webkit-details-marker{display:none}.course-switcher .course-tag{background:rgba(255,255,255,.28);transition:border-color .18s ease,background .18s ease}.course-switcher[open] .course-tag{border-color:rgba(30,138,128,.45);background:rgba(255,255,255,.72)}.course-switcher .chev{font:700 11px "IBM Plex Mono";color:var(--muted);transition:transform .18s ease}.course-switcher[open] .chev{transform:rotate(180deg)}.course-switch-pop{position:absolute;right:0;top:calc(100% + 10px);z-index:140;width:min(330px,86vw);padding:8px;background:rgba(244,246,243,.92);backdrop-filter:blur(20px) saturate(1.08);-webkit-backdrop-filter:blur(20px) saturate(1.08);border:1px solid rgba(18,24,43,.10);border-radius:16px;box-shadow:0 20px 55px rgba(18,24,43,.14)}.course-switch-pop:before{content:"DERS DEĞİŞTİR";display:block;padding:8px 10px 10px;font:600 8px "IBM Plex Mono";letter-spacing:.11em;color:var(--muted)}.course-switch-item{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:10px;align-items:center;min-height:58px;padding:9px 10px;border-top:1px solid rgba(18,24,43,.08);border-radius:8px}.course-switch-item:first-of-type{border-top:0}.course-switch-item:hover{background:rgba(30,138,128,.055)}.course-switch-item .cn{font:600 9px "IBM Plex Mono";color:var(--amber)}.course-switch-item b{display:block;font:650 14px "Space Grotesk";letter-spacing:-.02em}.course-switch-item small{display:block;margin-top:2px;font:500 8px "IBM Plex Mono";color:var(--muted)}.course-switch-item .ca{font:600 12px "IBM Plex Mono";color:var(--muted)}.course-switch-item.active{background:rgba(30,138,128,.065);pointer-events:none}.course-switch-item.active .ca{color:var(--teal2)}.drawer-course-switch{display:none}.global-nav-link{white-space:nowrap}#pageHeader{display:block!important}.lesson.active{padding-top:40px}@media(max-width:820px){.course-switcher{display:none!important}.drawer{background:rgba(244,246,243,.72)!important;backdrop-filter:blur(22px) saturate(1.12);-webkit-backdrop-filter:blur(22px) saturate(1.12);border-right:1px solid rgba(255,255,255,.72);box-shadow:18px 0 60px rgba(18,24,43,.13)}.scrim{background:rgba(18,24,43,.10)!important;backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}.drawer-course-switch{display:block;padding:16px 20px 18px;border-bottom:1px solid rgba(18,24,43,.10)}.drawer-switch-label{margin-bottom:8px;font:600 8px "IBM Plex Mono";letter-spacing:.11em;color:var(--muted)}.drawer-switch-item{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:8px;align-items:center;min-height:46px;padding:7px 0;border-top:1px solid rgba(18,24,43,.08)}.drawer-switch-item:first-of-type{border-top:0}.drawer-switch-item .cn{font:600 8px "IBM Plex Mono";color:var(--amber)}.drawer-switch-item b{font:600 13px "Space Grotesk";letter-spacing:-.015em}.drawer-switch-item .ca{font:600 11px "IBM Plex Mono";color:var(--muted)}.drawer-switch-item.active{color:var(--teal2);pointer-events:none}}`;
+ document.head.appendChild(style);
+ $$('.brand svg').forEach(svg=>{const img=document.createElement('img');img.src='brand/devre-karakteri.svg';img.alt='KeskinLab Devre Karakteri';svg.replaceWith(img)});
+ const nav=$('.desktop-nav');if(nav&&!nav.querySelector('[href="/hakkinda"]'))nav.insertAdjacentHTML('beforeend','<a class="global-nav-link" href="/hakkinda">Hakkında</a><a class="global-nav-link" href="/hakkinda#iletisim">İletişim</a>');
+ const oldTag=$('.course-tag');if(oldTag){const details=document.createElement('details');details.className='course-switcher';details.innerHTML=`<summary class="course-tag" aria-label="Ders değiştir">${esc(current.short)} <span class="chev">⌄</span></summary><div class="course-switch-pop">${COURSE_NAV.map(x=>`<a class="course-switch-item ${x.key===key?'active':''}" href="${x.href}" ${x.key===key?'aria-current="page"':''}><span class="cn">${x.no}</span><span><b>${esc(x.name)}</b><small>${x.meta}</small></span><span class="ca">${x.key===key?'●':'→'}</span></a>`).join('')}</div>`;oldTag.replaceWith(details);document.addEventListener('click',e=>{if(details.open&&!details.contains(e.target))details.removeAttribute('open')})}
+ const drawerCourse=$('.drawer-course');if(drawerCourse&&!$('.drawer-course-switch'))drawerCourse.insertAdjacentHTML('afterend',`<div class="drawer-course-switch"><div class="drawer-switch-label">DERS DEĞİŞTİR</div>${COURSE_NAV.map(x=>`<a class="drawer-switch-item ${x.key===key?'active':''}" href="${x.href}" ${x.key===key?'aria-current="page"':''}><span class="cn">${x.no}</span><b>${esc(x.name)}</b><span class="ca">${x.key===key?'●':'→'}</span></a>`).join('')}</div>`);
+ const drawer=$('.drawer');if(drawer&&!drawer.querySelector('[href="/hakkinda"]')){const home=drawer.querySelector('a[href="index.html"]'),html='<a class="navx global-nav-link" href="/hakkinda">Hakkında</a><a class="navx global-nav-link" href="/hakkinda#iletisim">İletişim</a>';if(home)home.insertAdjacentHTML('beforebegin',html);else drawer.insertAdjacentHTML('beforeend',html)}
+}
 async function load(){try{if(C.source==='bty')WEEKS=(await text(RAW+C.legacy).then(parseBTY)).map(norm);else WEEKS=(await Promise.all(C.files.map(f=>text(f).then(parsePush)))).flat().map(norm).sort((a,b)=>a.hafta_no-b.hafta_no);$('#loadNote').textContent=''}catch(e){console.warn(e);$('#loadNote').textContent='Hafta verisi yüklenemedi. Sayfayı yenileyin.';$('#loadNote').classList.add('error')}}
 function parts(s){return String(s||'').split('•').map(x=>x.trim()).filter(Boolean)}
 function buildOutcomes(){OUTCOMES={};for(const w of WEEKS){for(const p of parts(w.ogrenme_ciktisi)){const m=p.match(/^([A-ZÇĞİÖŞÜ]+(?:\.\d+){3,4})\.?\s*(.*)$/);if(!m)continue;const code=m[1],depth=(code.match(/\./g)||[]).length;if(depth!==C.leaf)continue;const bits=code.split('.'),group=Number(bits[C.gidx]);if(!group)continue;const o=OUTCOMES[code]||(OUTCOMES[code]={group,desc:m[2].trim(),weeks:[],steps:[]});if(!o.weeks.includes(w.hafta_no))o.weeks.push(w.hafta_no);if(!o.steps.length)o.steps=(w.surec_bilesenleri||[]).filter(Boolean)}}}
 function currentIndex(){if(!WEEKS.length)return 0;const now=new Date();now.setHours(12,0,0,0);let i=WEEKS.findIndex(w=>now>=dt(w.baslangic)&&now<=dt(w.bitis));if(i>=0)return i;i=WEEKS.findIndex(w=>dt(w.baslangic)>now);return i>=0?i:WEEKS.length-1}
 function title(w){return w?.ozel_hafta?(w.ders_saati||'Özel Hafta'):(w?.konu||'Ders içeriği')}
-function showView(name){$$('.viewtab').forEach(b=>b.classList.toggle('active',b.dataset.view===name));$$('.view').forEach(v=>v.classList.toggle('active',v.id==='view-'+name));window.scrollTo({top:$('#pageHeader')?.offsetHeight||0,behavior:'smooth'})}
+function showView(name){closeLesson(false);$$('.viewtab').forEach(b=>b.classList.toggle('active',b.dataset.view===name));$$('.view').forEach(v=>v.classList.toggle('active',v.id==='view-'+name));history.replaceState(null,'',location.pathname);window.scrollTo({top:$('#pageHeader')?.offsetHeight||0,behavior:'smooth'})}
 function renderCurrent(){const w=WEEKS[currentIndex()];if(!w)return;const now=new Date();now.setHours(12,0,0,0);const before=now<dt(WEEKS[0].baslangic),after=now>dt(WEEKS.at(-1).bitis);$('#cwNum').textContent=String(w.hafta_no).padStart(2,'0');$('#cwDate').textContent=fmt(w);$('#cwTopic').textContent=title(w);$('#cwTheme').textContent=w.tema||'Özel hafta';$('#cwOutcome').textContent=w.ogrenme_ciktisi||'Bu hafta için öğrenme çıktısı bulunmuyor.';if(before){$('#currentHeading').textContent='Sıradaki ders hazır.';$('#cwState').textContent='DÖNEM ÖNCESİ · HAZIRLIK';$('#cwLead').textContent='Ders yılı başladığında bu alan otomatik olarak aktif haftaya döner. Şimdilik ilk ders haftasını önizliyorsun.'}else if(after){$('#currentHeading').textContent='Dönem tamamlandı.';$('#cwState').textContent='2026–2027 · TAMAMLANDI';$('#cwLead').textContent='Yıllık akış arşiv olarak erişilebilir durumda.'}else{$('#currentHeading').textContent='Sınıfta şimdi ne var?';$('#cwState').textContent='AKTİF DERS HAFTASI';$('#cwLead').textContent='Bu haftanın dersine, materyallerine ve öğretmen araçlarına tek yüzeyden ulaş.'}$('#startLesson').onclick=()=>location.hash='#hafta-'+w.hafta_no}
 function renderWeeks(){let h='';WEEKS.forEach((w,i)=>{if(i===0)h+='<div class="term-sep">I. DÖNEM · 1–18. HAFTA</div>';if(i===18)h+=`<div class="term-sep">II. DÖNEM · 19–${WEEKS.length}. HAFTA</div>`;h+=`<div class="week-row ${w.ozel_hafta?'special':''}" data-week="${w.hafta_no}"><div class="wn">${String(w.hafta_no).padStart(2,'0')}</div><div class="wd">${esc(fmt(w))}</div><div><div class="wt">${esc(title(w))}</div><div class="wtheme">${esc(w.tema||'Sınav / planlama / sosyal etkinlik haftası')}</div></div><div class="ws">AÇ →</div></div>`});$('#weekList').innerHTML=h;$$('.week-row').forEach(r=>r.onclick=()=>location.hash='#hafta-'+r.dataset.week)}
 function renderCurriculum(){let h='';for(let g=1;g<=C.groups;g++){const list=Object.entries(OUTCOMES).filter(([,o])=>o.group===g);h+=`<section class="theme-block"><div class="theme-top"><div class="theme-no">${esc(C.prefix+'.'+g)}</div><h3>${esc(C.themes[g]||('Bölüm '+g))}</h3><div class="theme-count">${list.length} ÇIKTI · +</div></div><div class="outcomes">${list.map(([code,o])=>`<article class="outcome"><div class="ocode">${esc(code)}</div><div class="odesc">${esc(o.desc)}</div><div class="oweeks">HAFTA ${o.weeks.join(', ')}</div><div class="osteps"><ul>${o.steps.map(s=>`<li>${esc(s)}</li>`).join('')}</ul></div></article>`).join('')}</div></section>`}$('#curriculumRoot').innerHTML=h;$$('.theme-top').forEach(t=>t.onclick=()=>t.parentElement.classList.toggle('open'));$$('.outcome').forEach(o=>o.onclick=e=>{if(!e.target.closest('li'))o.classList.toggle('open')})}
-function openLesson(no){const w=WEEKS.find(x=>Number(x.hafta_no)===Number(no));if(!w)return;$('#shell').classList.add('shell-hidden');$('#pageHeader').classList.add('shell-hidden');$('#lessonView').classList.add('active');$('#lessonNo').textContent=String(no).padStart(2,'0');$('#lessonEy').textContent=`${fmt(w)} · ${w.ders_saati||'2'} DERS SAATİ`;$('#lessonTitle').textContent=title(w);$('#lessonMeta').textContent=w.tema?`${C.unit} · ${w.tema}`:'Bu hafta ders içeriği işlenmiyor.';$('#slideTopic').textContent=title(w);$('#slideWeek').textContent=String(no).padStart(2,'0');const first=parts(w.ogrenme_ciktisi).find(x=>(x.match(/\./g)||[]).length===C.leaf)||'';const fm=first.match(/^([^\s]+)\.?\s*(.*)$/);$('#teacherOutcomeCode').textContent=fm?fm[1].replace(/\.$/,''):'ÖĞRENME ÇIKTISI';$('#teacherOutcomeText').textContent=w.ogrenme_ciktisi||'Bu hafta için öğrenme çıktısı bulunmuyor.';$('#teacherSteps').innerHTML=(w.surec_bilesenleri||[]).map(s=>`<li>${esc(s)}</li>`).join('');$('#activityText').textContent=w.etkinlik||'Haftanın öğrenci etkinliği ve sınıf içi uygulama alanı.';$('#planLink').href=C.plan.replace('{n}',w.hafta_no);window.scrollTo(0,0)}
-function closeLesson(){$('#lessonView').classList.remove('active');$('#shell').classList.remove('shell-hidden');$('#pageHeader').classList.remove('shell-hidden')}
+function openLesson(no){const w=WEEKS.find(x=>Number(x.hafta_no)===Number(no));if(!w)return;$('#shell').classList.add('shell-hidden');$('#lessonView').classList.add('active');$('#lessonNo').textContent=String(no).padStart(2,'0');$('#lessonEy').textContent=`${fmt(w)} · ${w.ders_saati||'2'} DERS SAATİ`;$('#lessonTitle').textContent=title(w);$('#lessonMeta').textContent=w.tema?`${C.unit} · ${w.tema}`:'Bu hafta ders içeriği işlenmiyor.';$('#slideTopic').textContent=title(w);$('#slideWeek').textContent=String(no).padStart(2,'0');const first=parts(w.ogrenme_ciktisi).find(x=>(x.match(/\./g)||[]).length===C.leaf)||'';const fm=first.match(/^([^\s]+)\.?\s*(.*)$/);$('#teacherOutcomeCode').textContent=fm?fm[1].replace(/\.$/,''):'ÖĞRENME ÇIKTISI';$('#teacherOutcomeText').textContent=w.ogrenme_ciktisi||'Bu hafta için öğrenme çıktısı bulunmuyor.';$('#teacherSteps').innerHTML=(w.surec_bilesenleri||[]).map(s=>`<li>${esc(s)}</li>`).join('');$('#activityText').textContent=w.etkinlik||'Haftanın öğrenci etkinliği ve sınıf içi uygulama alanı.';$('#planLink').href=C.plan.replace('{n}',w.hafta_no);window.scrollTo(0,0)}
+function closeLesson(scroll=false){$('#lessonView')?.classList.remove('active');$('#shell')?.classList.remove('shell-hidden');if(scroll)window.scrollTo(0,0)}
 function route(){const m=location.hash.match(/^#hafta-(\d+)$/);if(m)openLesson(+m[1]);else closeLesson()}
-function wire(){$('#lessonBack').onclick=()=>{history.replaceState(null,'',location.pathname);closeLesson()};$$('[data-view]').forEach(b=>b.onclick=()=>showView(b.dataset.view));$$('[data-go]').forEach(b=>b.onclick=()=>showView(b.dataset.go));$$('[data-top-view]').forEach(a=>a.onclick=e=>{e.preventDefault();showView(a.dataset.topView)});$$('[data-drawer-view]').forEach(a=>a.onclick=e=>{e.preventDefault();$('#drawerToggle').checked=false;showView(a.dataset.drawerView)});addEventListener('hashchange',route)}
-async function init(){mountCourseNavigation();await load();buildOutcomes();renderCurrent();renderWeeks();renderCurriculum();wire();route()}
+function wire(){$('#lessonBack').onclick=()=>{history.replaceState(null,'',location.pathname);closeLesson(true)};$$('[data-view]').forEach(b=>b.onclick=()=>showView(b.dataset.view));$$('[data-go]').forEach(b=>b.onclick=()=>showView(b.dataset.go));$$('[data-top-view]').forEach(a=>a.onclick=e=>{e.preventDefault();showView(a.dataset.topView)});$$('[data-drawer-view]').forEach(a=>a.onclick=e=>{e.preventDefault();$('#drawerToggle').checked=false;showView(a.dataset.drawerView)});addEventListener('hashchange',route)}
+async function init(){mountShell();await load();buildOutcomes();renderCurrent();renderWeeks();renderCurriculum();wire();route()}
 init();
 })();
