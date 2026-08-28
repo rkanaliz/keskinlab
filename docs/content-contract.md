@@ -85,10 +85,14 @@ Git'e ham, şişkin export commit edilmez. Kaynak görsel de optimize edilmiş m
 - Hedef kaynak boyutu: **600 KiB veya altı**.
 - 1.2 MiB üzeri raster kaynak validator'da uyarı üretir.
 - `--strict-assets` modunda 1.2 MiB üzeri raster kaynak build hatasıdır.
+- **Dosya boyutunu düşürmek için piksel boyutu küçültülmez.** Önce palet/quantization, metadata temizliği ve doğru PNG/JPEG kodlaması uygulanır; kaynak masterın genişlik/yüksekliği korunur.
+- Mevcut Hafta 01 görselleri optimize edilirken piksel boyutlarının birebir aynı kaldığı script tarafından doğrulanır.
+- Yeni **sunum** görselleri 16:9 oranında ve en az **1920×1080** üretilir. Eski 1672×941 slaytlar migrasyonda büyütülmez; yalnızca kodlamaları optimize edilir.
+- İnfografikler ve hafta özetleri kendi tasarım oranında kalır; 1920×1080 kuralı bunlara uygulanmaz.
 - Baskı/indirilebilir kalite gerekiyorsa mümkün olduğunda PDF ayrıca saklanır; web görüntüsü için gereksiz büyük PNG tutulmaz.
 - Build aşamasında web türevleri (WebP ve thumbnail) kaynaktan üretilir.
 
-Mevcut Hafta 1 rasterları migrasyon sırasında geçici olarak boyut uyarısı verebilir; motor merge'inden önce strict asset kontrolü temiz geçmelidir.
+Mevcut Hafta 1 rasterları A2.0 içinde optimize edilir; A2.1 motor merge'inden önce strict asset kontrolü temiz geçmelidir.
 
 ## 6. Thumbnail kuralı
 
@@ -123,15 +127,37 @@ Her ders için hafta başına bir günlük plan bulunmalıdır:
 - Robotik Kodlama-I: 36
 - Yapay Zekâ Uygulamaları-I: 36
 
-Plan adı standardizasyonu ayrı migrasyon adımıdır. Validator hafta numarasını dosya adından okuyarak eksik/çift planı yakalar.
+Kaynak dosya adı iki basamaklı hafta standardını kullanır:
 
-## 10. Üretilen dosyalar
+```text
+gunluk-planlar-5sinif/hafta01-5sinif-bty.docx
+gunluk-planlar-6sinif/hafta01-6sinif-bty.docx
+gunluk-planlar-robotik/hafta01-robotik-kodlama.docx
+gunluk-planlar-yapay-zeka/hafta01-yapay-zeka-uygulamalari.docx
+```
+
+Kullanıcıya sunulan indirme adı insan okunur olur, örneğin:
+
+```text
+KeskinLab-5-Sinif-Hafta-01-Gunluk-Plan.docx
+```
+
+Validator yalnızca klasörde 37/36 dosya bulunmasını değil, Homepage ve Classroom tarafından çalışma anında üretilen bütün günlük-plan yollarının diskte gerçekten var olduğunu da doğrular.
+
+## 10. Legacy veri taşıyıcıları — geçici A2.0 kuralı
+
+`5-sinif-bty.html` ve `6-sinif-bty.html` kullanıcı yüzeyi olarak emekliye ayrılmıştır; içlerindeki eski materyal linkleri A2.0 link taramasından açıkça hariç tutulur.
+
+Buna rağmen A2.1'e kadar `classroom-v2.js` bu dosyalardaki `const WEEKS` bloklarını RAW GitHub üzerinden veri kaynağı olarak kullanır. Bu nedenle validator her iki dosyadaki veri bloğunun parse edilebildiğini ve **37 kayıt** döndürdüğünü ayrıca kontrol eder. RAW bağımlılığı A2.1'de kalkınca bu geçici guard kaldırılır.
+
+## 11. Üretilen dosyalar
 
 Generator çıktıları kaynak değildir ve elle düzenlenmez:
 
 ```text
 generated/
   materials.json
+  web/
 ```
 
-Daha sonraki motor merge'inde aynı üretici yerel ders verisi ve arama indeksini de üretecektir.
+`generated/web/` altında WebP önizlemeler ve thumbnail'lar build sırasında üretilir. Daha sonraki motor merge'inde aynı üretici yerel ders verisi ve arama indeksini de üretecektir.
