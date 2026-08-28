@@ -43,13 +43,25 @@ function publicPath(...parts) {
   return parts.join('/').replaceAll(path.sep, '/');
 }
 
+function asciiSlug(value) {
+  return value
+    .replaceAll('ı','i').replaceAll('İ','I')
+    .replaceAll('ş','s').replaceAll('Ş','S')
+    .replaceAll('ğ','g').replaceAll('Ğ','G')
+    .replaceAll('ç','c').replaceAll('Ç','C')
+    .replaceAll('ö','o').replaceAll('Ö','O')
+    .replaceAll('ü','u').replaceAll('Ü','U')
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/[^A-Za-z0-9]+/g,'-').replace(/^-|-$/g,'');
+}
+
 function downloadName(course, week, label, ext, index) {
   const courseLabel = course
     .replace('5-sinif','5-Sinif')
     .replace('6-sinif','6-Sinif')
     .replace('robotik','Robotik')
     .replace('yapay-zeka','Yapay-Zeka');
-  const safeLabel = label.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^A-Za-z0-9]+/g,'-').replace(/^-|-$/g,'');
+  const safeLabel = asciiSlug(label);
   const suffix = index === '01' ? '' : `-${index}`;
   return `KeskinLab-${courseLabel}-Hafta-${week}-${safeLabel}${suffix}${ext}`;
 }
@@ -94,7 +106,7 @@ async function collectLeaf(course, week, rel, label) {
     const docx = formats.docx ? publicPath('materyaller', course, `hafta${week}`, rel, formats.docx) : null;
     const downloads = [];
     if (formats.pdf) downloads.push({href:pdf,format:'pdf',filename:downloadName(course,week,label,'.pdf',index)});
-    if (formats.docx) downloads.push({href:docx,format:'docx',filename:downloadName(course,week,`${label}-Duzenlenebilir`,'.docx',index)});
+    if (formats.docx) downloads.push({href:docx,format:'docx',filename:downloadName(course,week,`${label} Düzenlenebilir`,'.docx',index)});
     return { type: rel, label, index, preview: pdf, editable: docx, downloads };
   }).filter(x => x.preview || x.editable || x.downloads.length);
 }
