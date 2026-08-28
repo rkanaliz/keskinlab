@@ -12,6 +12,6 @@
     "build": "npm run build:web-assets && npm run generate && npm run validate:strict-assets"
   },
   "dependencies": {
-    "sharp": "^0.34.3"
+    "sharp": "^0.35.4"
   }
 }
