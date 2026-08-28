@@ -4,7 +4,8 @@ import path from 'node:path';
 const ROOT = process.cwd();
 const MATERIAL_ROOT = path.join(ROOT, 'materyaller');
 const OUT_DIR = path.join(ROOT, 'generated');
-const OUT_FILE = path.join(OUT_DIR, 'materials.json');
+const MATERIAL_OUT = path.join(OUT_DIR, 'materials.json');
+const COURSE_OUT = path.join(OUT_DIR, 'courses.json');
 
 const COURSES = [
   ['5-sinif', '5. Sınıf'],
@@ -12,6 +13,33 @@ const COURSES = [
   ['robotik', 'Robotik Kodlama-I'],
   ['yapay-zeka', 'Yapay Zekâ Uygulamaları-I']
 ];
+
+const COURSE_SOURCES = {
+  '5-sinif': {
+    title: '5. Sınıf BTY',
+    kind: 'bty',
+    files: ['5-sinif-bty.html'],
+    expectedWeeks: 37
+  },
+  '6-sinif': {
+    title: '6. Sınıf BTY',
+    kind: 'bty',
+    files: ['6-sinif-bty.html'],
+    expectedWeeks: 37
+  },
+  robotik: {
+    title: 'Robotik Kodlama-I',
+    kind: 'elective',
+    files: ['robotik-data-1.js', 'robotik-data-2.js'],
+    expectedWeeks: 36
+  },
+  'yapay-zeka': {
+    title: 'Yapay Zekâ Uygulamaları-I',
+    kind: 'elective',
+    files: ['yapay-zeka-data-1.js', 'yapay-zeka-data-2.js'],
+    expectedWeeks: 36
+  }
+};
 
 const LEAVES = [
   ['sunum', 'Sunum'],
@@ -111,7 +139,60 @@ async function collectLeaf(course, week, rel, label) {
   }).filter(x => x.preview || x.editable || x.downloads.length);
 }
 
-async function main() {
+function parseBtyWeeks(text, file) {
+  const p = text.indexOf('const WEEKS');
+  const a = text.indexOf('[', p);
+  const z = text.indexOf('];', a);
+  if (p < 0 || a < 0 || z < a) throw new Error(`${file}: const WEEKS block not found`);
+  return JSON.parse(text.slice(a, z + 1));
+}
+
+function parseElectiveWeeks(text, file) {
+  const p = text.indexOf('COURSE_WEEKS.push(...');
+  const a = text.indexOf('[', p);
+  const z = text.lastIndexOf(']);');
+  if (p < 0 || a < 0 || z < a) throw new Error(`${file}: COURSE_WEEKS.push block not found`);
+  return JSON.parse(text.slice(a, z + 1));
+}
+
+async function readSourceWeeks(config) {
+  const chunks = [];
+  for (const file of config.files) {
+    const text = await fs.readFile(path.join(ROOT, file), 'utf8');
+    chunks.push(config.kind === 'bty' ? parseBtyWeeks(text, file) : parseElectiveWeeks(text, file));
+  }
+  const weeks = chunks.flat().sort((a,b)=>Number(a.hafta_no)-Number(b.hafta_no));
+  if (weeks.length !== config.expectedWeeks) {
+    throw new Error(`${config.title}: expected ${config.expectedWeeks} source weeks, got ${weeks.length}`);
+  }
+  return weeks;
+}
+
+function normalizeWeek(source, sourceKind) {
+  const kazanimlar = Array.isArray(source.kazanimlar) ? [...source.kazanimlar] : [];
+  const surec = Array.isArray(source.surec_bilesenleri) ? [...source.surec_bilesenleri] : [];
+  return {
+    hafta_no: Number(source.hafta_no),
+    baslangic: source.baslangic ?? '',
+    bitis: source.bitis ?? '',
+    tarih_araligi: source.tarih_araligi ?? source.tarih ?? '',
+    ders_saati: source.ders_saati ?? null,
+    tema: source.tema ?? source.unite ?? '',
+    unite: source.unite ?? '',
+    konu: source.konu ?? '',
+    ogrenme_ciktisi: source.ogrenme_ciktisi ?? kazanimlar.join(' • '),
+    kazanimlar,
+    surec_bilesenleri: surec.length ? surec : kazanimlar,
+    etkinlik: source.etkinlik ?? '',
+    ozel_hafta: Boolean(source.ozel_hafta),
+    kurban_bayrami_cakisiyor: Boolean(source.kurban_bayrami_cakisiyor),
+    belirli_gun: source.belirli_gun ?? '',
+    sourceKind,
+    source
+  };
+}
+
+async function generateMaterials() {
   const result = { schemaVersion: 1, generatedAt: new Date().toISOString(), courses: {} };
   for (const [course, title] of COURSES) {
     const courseDir = path.join(MATERIAL_ROOT, course);
@@ -128,9 +209,30 @@ async function main() {
     }
     result.courses[course] = { title, weeks };
   }
+  await fs.writeFile(MATERIAL_OUT, JSON.stringify(result, null, 2) + '\n', 'utf8');
+  console.log(`Generated ${path.relative(ROOT, MATERIAL_OUT)}`);
+}
+
+async function generateCourses() {
+  const result = { schemaVersion: 1, generatedAt: new Date().toISOString(), courses: {} };
+  for (const [course, config] of Object.entries(COURSE_SOURCES)) {
+    const sourceWeeks = await readSourceWeeks(config);
+    result.courses[course] = {
+      title: config.title,
+      sourceKind: config.kind,
+      sourceFiles: config.files,
+      weekCount: config.expectedWeeks,
+      weeks: sourceWeeks.map(w => normalizeWeek(w, config.kind))
+    };
+  }
+  await fs.writeFile(COURSE_OUT, JSON.stringify(result, null, 2) + '\n', 'utf8');
+  console.log(`Generated ${path.relative(ROOT, COURSE_OUT)}`);
+}
+
+async function main() {
   await fs.mkdir(OUT_DIR, { recursive: true });
-  await fs.writeFile(OUT_FILE, JSON.stringify(result, null, 2) + '\n', 'utf8');
-  console.log(`Generated ${path.relative(ROOT, OUT_FILE)}`);
+  await generateMaterials();
+  await generateCourses();
 }
 
 main().catch(err => { console.error(err); process.exit(1); });
