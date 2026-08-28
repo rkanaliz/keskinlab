@@ -1,0 +1,12 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+
+# Node / local tooling
+node_modules/
+
+# Generated site data and web derivatives
+generated/
+.cache/
