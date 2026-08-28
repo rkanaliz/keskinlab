@@ -1,0 +1,11 @@
+{
+  "name": "keskinlab",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate-site-data.mjs",
+    "validate": "node scripts/validate-site.mjs",
+    "validate:strict-assets": "node scripts/validate-site.mjs --strict-assets",
+    "check": "npm run generate && npm run validate"
+  }
+}
