@@ -2,6 +2,75 @@
 'use strict';
 const C=window.KESKINLAB_COURSE||{}, $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)], RAW='https://raw.githubusercontent.com/rkanaliz/keskinlab/main/';
 let WEEKS=[], OUTCOMES={};
+
+const COURSE_NAV=[
+ {key:'bty5',no:'01',name:'5. Sınıf BTY',short:'5. SINIF · BTY',meta:'37 HAFTA',href:'5-sinif-bty.html'},
+ {key:'bty6',no:'02',name:'6. Sınıf BTY',short:'6. SINIF · BTY',meta:'37 HAFTA',href:'6-sinif-bty.html'},
+ {key:'robotik',no:'03',name:'Robotik Kodlama-I',short:'5. SINIF · ROBOTİK',meta:'36 HAFTA',href:'robotik-kodlama.html'},
+ {key:'yapayzeka',no:'04',name:'Yapay Zekâ Uygulamaları-I',short:'7–8. SINIF · YAPAY ZEKÂ',meta:'36 HAFTA',href:'yapay-zeka.html'}
+];
+function courseKey(){
+ if(C.legacy==='5-sinif-bty.html')return 'bty5';
+ if(C.legacy==='6-sinif-bty.html')return 'bty6';
+ if((C.files||[]).some(f=>f.includes('robotik')))return 'robotik';
+ if((C.files||[]).some(f=>f.includes('yapay-zeka')))return 'yapayzeka';
+ return '';
+}
+function mountCourseNavigation(){
+ const key=courseKey(),current=COURSE_NAV.find(x=>x.key===key)||COURSE_NAV[0];
+ const style=document.createElement('style');
+ style.id='keskinlab-course-switcher-style';
+ style.textContent=`
+ .brand img{width:32px;height:32px;display:block}
+ .course-switcher{position:relative;margin-left:auto}
+ .course-switcher>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;user-select:none}
+ .course-switcher>summary::-webkit-details-marker{display:none}
+ .course-switcher .course-tag{background:rgba(255,255,255,.28);transition:border-color .18s ease,background .18s ease}
+ .course-switcher[open] .course-tag{border-color:rgba(30,138,128,.45);background:rgba(255,255,255,.72)}
+ .course-switcher .chev{font:700 11px "IBM Plex Mono";color:var(--muted);transition:transform .18s ease}
+ .course-switcher[open] .chev{transform:rotate(180deg)}
+ .course-switch-pop{position:absolute;right:0;top:calc(100% + 10px);z-index:140;width:min(330px,86vw);padding:8px;background:rgba(244,246,243,.92);backdrop-filter:blur(20px) saturate(1.08);-webkit-backdrop-filter:blur(20px) saturate(1.08);border:1px solid rgba(18,24,43,.10);border-radius:16px;box-shadow:0 20px 55px rgba(18,24,43,.14)}
+ .course-switch-pop:before{content:"DERS DEĞİŞTİR";display:block;padding:8px 10px 10px;font:600 8px "IBM Plex Mono";letter-spacing:.11em;color:var(--muted)}
+ .course-switch-item{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:10px;align-items:center;min-height:58px;padding:9px 10px;border-top:1px solid rgba(18,24,43,.08);border-radius:8px}
+ .course-switch-item:first-of-type{border-top:0}
+ .course-switch-item:hover{background:rgba(30,138,128,.055)}
+ .course-switch-item .cn{font:600 9px "IBM Plex Mono";color:var(--amber)}
+ .course-switch-item b{display:block;font:650 14px "Space Grotesk";letter-spacing:-.02em}
+ .course-switch-item small{display:block;margin-top:2px;font:500 8px "IBM Plex Mono";color:var(--muted)}
+ .course-switch-item .ca{font:600 12px "IBM Plex Mono";color:var(--muted)}
+ .course-switch-item.active{background:rgba(30,138,128,.065);pointer-events:none}
+ .course-switch-item.active .ca{color:var(--teal2)}
+ .drawer-course-switch{display:none}
+ @media(max-width:820px){
+  .course-switcher{display:none!important}
+  .drawer{background:rgba(244,246,243,.72)!important;backdrop-filter:blur(22px) saturate(1.12);-webkit-backdrop-filter:blur(22px) saturate(1.12);border-right:1px solid rgba(255,255,255,.72);box-shadow:18px 0 60px rgba(18,24,43,.13)}
+  .scrim{background:rgba(18,24,43,.10)!important;backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
+  .drawer-course-switch{display:block;padding:16px 20px 18px;border-bottom:1px solid rgba(18,24,43,.10)}
+  .drawer-switch-label{margin-bottom:8px;font:600 8px "IBM Plex Mono";letter-spacing:.11em;color:var(--muted)}
+  .drawer-switch-item{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:8px;align-items:center;min-height:46px;padding:7px 0;border-top:1px solid rgba(18,24,43,.08)}
+  .drawer-switch-item:first-of-type{border-top:0}
+  .drawer-switch-item .cn{font:600 8px "IBM Plex Mono";color:var(--amber)}
+  .drawer-switch-item b{font:600 13px "Space Grotesk";letter-spacing:-.015em}
+  .drawer-switch-item .ca{font:600 11px "IBM Plex Mono";color:var(--muted)}
+  .drawer-switch-item.active{color:var(--teal2);pointer-events:none}
+ }
+ `;
+ document.head.appendChild(style);
+ $$('.brand svg').forEach(svg=>{const img=document.createElement('img');img.src='brand/devre-karakteri.svg';img.alt='KeskinLab Devre Karakteri';svg.replaceWith(img)});
+ const oldTag=$('.course-tag');
+ if(oldTag){
+  const details=document.createElement('details');
+  details.className='course-switcher';
+  details.innerHTML=`<summary class="course-tag" aria-label="Ders değiştir">${esc(current.short)} <span class="chev">⌄</span></summary><div class="course-switch-pop">${COURSE_NAV.map(x=>`<a class="course-switch-item ${x.key===key?'active':''}" href="${x.href}" ${x.key===key?'aria-current="page"':''}><span class="cn">${x.no}</span><span><b>${esc(x.name)}</b><small>${x.meta}</small></span><span class="ca">${x.key===key?'●':'→'}</span></a>`).join('')}</div>`;
+  oldTag.replaceWith(details);
+  document.addEventListener('click',e=>{if(details.open&&!details.contains(e.target))details.removeAttribute('open')});
+ }
+ const drawerCourse=$('.drawer-course');
+ if(drawerCourse){
+  drawerCourse.insertAdjacentHTML('afterend',`<div class="drawer-course-switch"><div class="drawer-switch-label">DERS DEĞİŞTİR</div>${COURSE_NAV.map(x=>`<a class="drawer-switch-item ${x.key===key?'active':''}" href="${x.href}" ${x.key===key?'aria-current="page"':''}><span class="cn">${x.no}</span><b>${esc(x.name)}</b><span class="ca">${x.key===key?'●':'→'}</span></a>`).join('')}</div>`);
+ }
+}
+
 function dt(s){const [y,m,d]=String(s).split('-').map(Number);return new Date(y,m-1,d,12)}
 function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function fmt(w){return String(w.tarih_araligi||w.tarih||'').toLocaleUpperCase('tr-TR')}
@@ -22,6 +91,6 @@ function openLesson(no){const w=WEEKS.find(x=>Number(x.hafta_no)===Number(no));i
 function closeLesson(){$('#lessonView').classList.remove('active');$('#shell').classList.remove('shell-hidden');$('#pageHeader').classList.remove('shell-hidden')}
 function route(){const m=location.hash.match(/^#hafta-(\d+)$/);if(m)openLesson(+m[1]);else closeLesson()}
 function wire(){$('#lessonBack').onclick=()=>{history.replaceState(null,'',location.pathname);closeLesson()};$$('[data-view]').forEach(b=>b.onclick=()=>showView(b.dataset.view));$$('[data-go]').forEach(b=>b.onclick=()=>showView(b.dataset.go));$$('[data-top-view]').forEach(a=>a.onclick=e=>{e.preventDefault();showView(a.dataset.topView)});$$('[data-drawer-view]').forEach(a=>a.onclick=e=>{e.preventDefault();$('#drawerToggle').checked=false;showView(a.dataset.drawerView)});addEventListener('hashchange',route)}
-async function init(){await load();buildOutcomes();renderCurrent();renderWeeks();renderCurriculum();wire();route()}
+async function init(){mountCourseNavigation();await load();buildOutcomes();renderCurrent();renderWeeks();renderCurriculum();wire();route()}
 init();
 })();
