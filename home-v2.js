@@ -5,10 +5,10 @@ const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const TR_DAYS=['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi'];
 const TR_MONTHS=['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
 const COURSES=[
- {key:'bty5',num:'01',label:'5. SINIF · BTY',page:'5-sinif-bty.html',plan:n=>`gunluk-planlar-5sinif/hafta${n}-5sinif-bty.docx`},
- {key:'bty6',num:'02',label:'6. SINIF · BTY',page:'6-sinif-bty.html',plan:n=>`gunluk-planlar-6sinif/hafta${n}-6sinif-bty.docx`},
- {key:'robotik',num:'03',label:'5. SINIF · ROBOTİK KODLAMA-I',page:'robotik-kodlama.html',plan:n=>`gunluk-planlar-robotik/hafta${n}-robotik-kodlama.docx`},
- {key:'yapayzeka',num:'04',label:'7–8. SINIF · YAPAY ZEKÂ UYGULAMALARI-I',page:'yapay-zeka.html',plan:n=>`gunluk-planlar-yapay-zeka/hafta${n}-yapay-zeka-uygulamalari.docx`}
+ {key:'bty5',num:'01',label:'5. SINIF · BTY',page:'5-sinif-bty.html',plan:n=>`gunluk-planlar-5sinif/hafta${String(n).padStart(2,'0')}-5sinif-bty.docx`},
+ {key:'bty6',num:'02',label:'6. SINIF · BTY',page:'6-sinif-bty.html',plan:n=>`gunluk-planlar-6sinif/hafta${String(n).padStart(2,'0')}-6sinif-bty.docx`},
+ {key:'robotik',num:'03',label:'5. SINIF · ROBOTİK KODLAMA-I',page:'robotik-kodlama.html',plan:n=>`gunluk-planlar-robotik/hafta${String(n).padStart(2,'0')}-robotik-kodlama.docx`},
+ {key:'yapayzeka',num:'04',label:'7–8. SINIF · YAPAY ZEKÂ UYGULAMALARI-I',page:'yapay-zeka.html',plan:n=>`gunluk-planlar-yapay-zeka/hafta${String(n).padStart(2,'0')}-yapay-zeka-uygulamalari.docx`}
 ];
 let DATA={bty5:[],bty6:[],robotik:[],yapayzeka:[]},EVENTS=[],manualWeekIndex=null;
 function parseISO(s){const [y,m,d]=String(s).split('-').map(Number);return new Date(y,m-1,d,12)}
