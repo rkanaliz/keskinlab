@@ -1,0 +1,42 @@
+name: A2 temporary source image optimization
+
+on:
+  push:
+    branches:
+      - keskinlab-stabilization-a2-preflight
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    if: ${{ !contains(github.event.head_commit.message, '[asset-opt]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: keskinlab-stabilization-a2-preflight
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install build dependency
+        run: npm install
+
+      - name: Optimize source images without resizing
+        run: npm run optimize:sources
+
+      - name: Commit optimized sources and lockfile
+        run: |
+          if git diff --quiet -- materyaller package-lock.json; then
+            echo "No source image changes needed."
+            exit 0
+          fi
+          git config user.name "KeskinLab Build Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add materyaller package-lock.json
+          git commit -m "Optimize Week 01 source images [asset-opt]"
+          git push origin HEAD:keskinlab-stabilization-a2-preflight
