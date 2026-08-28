@@ -14,7 +14,7 @@ footer{padding:0;border-top:1px solid var(--line)}
   .big-index{display:block!important;right:-.16em;top:38%;font-size:clamp(120px,38vw,220px);opacity:.026;letter-spacing:-.09em}
   .module-num::after{width:13px;flex-basis:13px}.module-row:hover .module-num::after{width:20px}
   .mobile-drawer{background:rgba(244,246,243,.68)!important;backdrop-filter:blur(22px) saturate(1.12)!important;-webkit-backdrop-filter:blur(22px) saturate(1.12)!important;border-right:1px solid rgba(255,255,255,.72)!important;box-shadow:18px 0 60px rgba(18,24,43,.13),inset -1px 0 0 rgba(18,24,43,.05)!important}
-  .mobile-drawer-scrim{background:rgba(18,24,43,.10)!important;backdrop-filter:blur(2px)!important;-webkit-backdrop-filter:blur(2px) saturate(1.12)!important}
+  .mobile-drawer-scrim{background:rgba(18,24,43,.10)!important;backdrop-filter:blur(2px)!important;-webkit-backdrop-filter:blur(2px)!important}
   .drawer-top,.drawer-context,.drawer-link{border-color:rgba(18,24,43,.10)!important}
   .drawer-link{background:rgba(255,255,255,.12)}.drawer-link:active{background:rgba(255,255,255,.34)}
   .drawer-tool{border-color:rgba(18,24,43,.10)!important}
