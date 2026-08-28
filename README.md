@@ -1,14 +1,28 @@
 # KeskinLab
 
-5-6. Sınıf Bilişim Teknolojileri ve Yazılım, Robotik Kodlama, Yapay Zekâ ve daha fazlası...
+KeskinLab; 5–6. sınıf Bilişim Teknolojileri ve Yazılım, Robotik Kodlama-I ve Yapay Zekâ Uygulamaları-I için haftalık ders akışı, günlük planlar, sınıf materyalleri ve öğretmen araçlarını tek yapıda birleştiren statik eğitim projesidir.
 
-## Yapı
-- `index.html` — Anasayfa
-- `5-sinif-bty.html`, `6-sinif-bty.html` — Haftalık ders planları (2026-2027 takvimine göre)
-- `evrak-cantasi.html`, `takvim.html` — Öğretmen evrak çantası ve çalışma takvimi
-- `search-index.js`, `command-palette.js` — ⌘K arama paleti (tüm sayfalarda ortak)
-- `gunluk-planlar-5sinif/`, `gunluk-planlar-6sinif/` — Haftalık günlük ders planı belgeleri (.docx)
-- `*.xlsx` — Resmî çerçeve yıllık plan belgeleri
+## Yayın mimarisi
+- Kaynak: GitHub (`main` production)
+- Hosting / deploy: Cloudflare Pages
+- Alan adı: `www.keskinlab.com`
+- Mimari: statik HTML / CSS / JavaScript
+- Production anasayfa: `index.html` → `/`
+- Geliştirme: ayrı branch → preview → kontrol → `main`
 
-## Yayına alma
-Statik site — build adımı yok (şimdilik). Netlify/Vercel'e doğrudan bağlanabilir.
+## Ana yüzeyler
+- `index.html` — yaşayan anasayfa / Bu Hafta / zaman çizgisi / dersler
+- `hakkinda.html` — KeskinLab nedir? + iletişim
+- `classroom-5-sinif.html`, `classroom-6-sinif.html` — BTY sınıf yüzeyleri
+- `classroom-robotik.html`, `classroom-yapay-zeka.html` — seçmeli ders sınıf yüzeyleri
+- `evrak-cantasi.html`, `takvim.html` — öğretmen araçları
+- `search-index.js`, `command-palette.js` — ortak arama
+
+## Günlük planlar
+- `gunluk-planlar-5sinif/` — 37 hafta
+- `gunluk-planlar-6sinif/` — 37 hafta
+- `gunluk-planlar-robotik/` — 36 hafta
+- `gunluk-planlar-yapay-zeka/` — 36 hafta
+
+## Çalışma standardı
+Tasarım ve özellik denemeleri önce preview üzerinde yapılır. Onaylanan değişiklikler paket halinde `main` dalına alınır; production üzerinde doğrudan deneme yapılmaz.
