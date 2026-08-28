@@ -84,6 +84,7 @@ async function validatePlans(){
     const dir=path.join(ROOT,folder);
     if(!(await exists(dir))){err(`Missing daily-plan directory: ${folder}`);continue;}
     const nums=new Map();
+    let unpadded=0;
     for(const name of await files(dir)){
       if(name==='.gitkeep')continue;
       if(!name.endsWith('.docx')){warn(`Unexpected daily-plan file: ${folder}/${name}`);continue;}
@@ -92,10 +93,11 @@ async function validatePlans(){
       const n=Number(m[1]);
       if(nums.has(n))err(`Duplicate daily plan for week ${n}: ${folder}`);
       nums.set(n,name);
-      if(m[1].length<2)warn(`Daily-plan name is not zero-padded yet: ${folder}/${name}`);
+      if(m[1].length<2)unpadded++;
     }
     for(let n=1;n<=count;n++)if(!nums.has(n))err(`Missing daily plan: ${folder} week ${n}`);
     for(const n of nums.keys())if(n<1||n>count)err(`Out-of-range daily plan: ${folder} week ${n}`);
+    if(unpadded)warn(`${folder}: ${unpadded} daily-plan filename(s) are not zero-padded yet; naming migration is still pending`);
   }
 }
 
