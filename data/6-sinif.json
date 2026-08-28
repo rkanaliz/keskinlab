@@ -1,0 +1,679 @@
+{
+  "schemaVersion": 1,
+  "course": "6-sinif",
+  "title": "6. Sınıf BTY",
+  "sourceKind": "bty",
+  "weekCount": 37,
+  "weeks": [
+    {
+      "hafta_no": 1,
+      "tarih_araligi": "14 Eylül - 18 Eylül",
+      "ders_saati": "2",
+      "tema": "Bilişim Teknolojilerinin Hayatımızdaki Yeri",
+      "konu": "Yenilikçi Bilişim Teknolojileri",
+      "ogrenme_ciktisi": "BTY.6.1.1. Yenilikçi bilişim teknolojilerini sınıflandırabilme",
+      "surec_bilesenleri": [
+        "a) Yenilikçi bilişim teknolojilerine ilişkin kavramları belirler.",
+        "b) Yenilikçi teknolojileri, bilişim teknolojilerinin günlük hayatı kolaylaştırmadaki rolüyle ilişkilendirir.",
+        "c) Yenilikçi bilişim teknolojilerini kullanım alanlarına göre gruplandırır."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2026-09-14",
+      "bitis": "2026-09-18"
+    },
+    {
+      "hafta_no": 2,
+      "tarih_araligi": "21 Eylül - 25 Eylül",
+      "ders_saati": "2",
+      "tema": "Bilişim Teknolojilerinin Hayatımızdaki Yeri",
+      "konu": "Bilişim Teknolojilerinin Geleceği",
+      "ogrenme_ciktisi": "BTY.6.1.2. Bilişim teknolojinin gelecekteki durumlarına yönelik çıkarım yapabilme",
+      "surec_bilesenleri": [
+        "a) Bilişim teknolojilerinin günümüze kadar olan gelişiminden yola çıkarak varsayımlarda bulunur.",
+        "b) Bilişim teknolojilerinin gelecekteki olası durumlarına yönelik örüntüleri listeler.",
+        "c) Bilişim teknolojilerinin gelecekteki olası durumlarına yönelik karşılaştırmalar yapar.",
+        "ç) Bilişim teknolojilerinin olası gelişimlerinin toplum üzerindeki etkilerine ilişkin önermeler sunar.",
+        "d) Bilişim teknolojilerinin olası gelişimlerinin toplum üzerindeki etkilerini değerlendirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2026-09-21",
+      "bitis": "2026-09-25"
+    },
+    {
+      "hafta_no": 3,
+      "tarih_araligi": "28 Eylül - 02 Ekim",
+      "ders_saati": "2",
+      "tema": "Dijital Ürün Tasarım ve Geliştirme",
+      "konu": "Tablolama Programlarına Giriş",
+      "ogrenme_ciktisi": "BTY.6.2.1. Tablolama programlarından yararlanabilme",
+      "surec_bilesenleri": [
+        "a) Tablolama programlarının temel özelliklerini tanır.",
+        "b) Uygun tablolama programını belirler.",
+        "c) Belirlenen tablolama programının arayüz özelliklerini kullanır.",
+        "ç) Kullanılan tablolama programını kullanım alanları/verimliliği açısından değerlendirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2026-09-28",
+      "bitis": "2026-10-02"
+    },
+    {
+      "hafta_no": 4,
+      "tarih_araligi": "05 Ekim - 09 Ekim",
+      "ders_saati": "1+1",
+      "tema": "Dijital Ürün Tasarım ve Geliştirme",
+      "konu": "Gerçek Yaşam Problemleri ile Tablolama / Veri Toplama ve Düzenleme / Veri Analizi ve Görselleştirme",
+      "ogrenme_ciktisi": "BTY.6.2.2. Tablolama programlarının kullanımına yönelik problemleri belirleyebilme BTY.6.2.3. Tablolama dosyasında kullanılacak verileri toplayabilme ve düzenleyebilme BTY.6.2.4. Tablolama programları kullanarak bulgulara ulaşabilme",
+      "surec_bilesenleri": [
+        "a) Tablolama programlarının kullanımına uygun gerçek yaşam durumunu belirler.",
+        "b) Bağlam içerisinde veriye dayalı cevaplanabilecek araştırma soruları oluşturur.",
+        "a) Tablolama dosyasında kullanılacak verileri toplama süreci için plan yapar.",
+        "b) Tablolama dosyasında kullanılacak verileri elde eder.",
+        "c) Tablolama dosyasında kullanılacak verileri kullanıma hazır hâle getirir.",
+        "a) Bulgulara ulaşmak için uygun analiz yöntemlerini seçer.",
+        "b) Tablolama programları kullanarak verileri işler.",
+        "c) Tablolama programları kullanarak verileri analiz eder.",
+        "ç) Tablolama programları kullanarak verileri görselleştirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2026-10-05",
+      "bitis": "2026-10-09"
+    },
+    {
+      "hafta_no": 5,
+      "tarih_araligi": "12 Ekim - 16 Ekim",
+      "ders_saati": "1+1",
+      "tema": "Dijital Ürün Tasarım ve Geliştirme",
+      "konu": "Ses Düzenleme Programlarına Giriş / Ses Dosyası için Kurgu Oluşturma",
+      "ogrenme_ciktisi": "BTY.6.2.5. Ses düzenleme programlarından yararlanabilme BTY.6.2.6. Ses dosyası için kurgu oluşturabilme",
+      "surec_bilesenleri": [
+        "a) Ses düzenleme programlarının temel özelliklerini tanır.",
+        "b) Uygun ses düzenleme programını belirler.",
+        "c) Belirlenen ses düzenleme programının arayüz özelliklerini kullanır.",
+        "ç) Kullanılan ses düzenleme programını kullanım alanları/verimliliği açısından değerlendirir.",
+        "a) Ses dosyası hazırlanacak gerçek hayat problemini belirler.",
+        "b) Ses dosyası hazırlama sürecinde kullanılacak hikâye/senaryo unsurlarını belirler.",
+        "c) Belirlenen unsurları kapsayan hikâye/senaryo oluşturur.",
+        "ç) Hikâyeyi/senaryoyu bütünlük/kullanışlılık açısından değerlendirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2026-10-12",
+      "bitis": "2026-10-16"
+    },
+    {
+      "hafta_no": 6,
+      "tarih_araligi": "19 Ekim - 23 Ekim",
+      "ders_saati": "2",
+      "tema": "Dijital Ürün Tasarım ve Geliştirme",
+      "konu": "Ses Dosyası Geliştirme",
+      "ogrenme_ciktisi": "BTY.6.2.7. Ses dosyası geliştirebilme",
+      "surec_bilesenleri": [
+        "a) Tasarlanan hikâye/senaryo unsurlarından uyumlu bir ses dosyası oluşturur.",
+        "b) Oluşturulan sesi belirlenen ölçütler açısından değerlendirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2026-10-19",
+      "bitis": "2026-10-23"
+    },
+    {
+      "hafta_no": 7,
+      "tarih_araligi": "26 Ekim - 30 Ekim",
+      "ders_saati": "1+1",
+      "tema": "Dijital Ürün Tasarım ve Geliştirme",
+      "konu": "Video Düzenleme Programlarına Giriş / Video Dosyası için Kurgu Oluşturma",
+      "ogrenme_ciktisi": "BTY.6.2.8. Video düzenleme programlarından yararlanabilme BTY.6.2.9. Video dosyası için kurgu oluşturabilme",
+      "surec_bilesenleri": [
+        "a) Video düzenleme programlarının temel özelliklerini tanır.",
+        "b) Uygun video düzenleme programını belirler.",
+        "c) Belirlenen video düzenleme programının arayüz özelliklerini kullanır.",
+        "ç) Kullanılan video düzenleme programını kullanım alanları/verimliliği açısından değerlendirir.",
+        "a) Video dosyası hazırlanacak gerçek hayat problemini belirler.",
+        "b) Video dosyası hazırlama sürecinde kullanılacak hikâye/senaryo unsurlarını belirler.",
+        "c) Belirlenen unsurları kapsayan hikâye/senaryo oluşturur.",
+        "ç) Hikâyeyi/senaryoyu bütünlük/kullanışlılık açısından değerlendirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2026-10-26",
+      "bitis": "2026-10-30"
+    },
+    {
+      "hafta_no": 8,
+      "tarih_araligi": "02 Kasım - 06 Kasım",
+      "ders_saati": "SINAV HAFTASI",
+      "tema": "",
+      "konu": "",
+      "ogrenme_ciktisi": "",
+      "surec_bilesenleri": [],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": true,
+      "baslangic": "2026-11-02",
+      "bitis": "2026-11-06"
+    },
+    {
+      "hafta_no": 9,
+      "tarih_araligi": "09 Kasım - 13 Kasım",
+      "ders_saati": "1+1",
+      "tema": "Dijital Ürün Tasarım ve Geliştirme / Bilgisayar Ağları ve İletişim",
+      "konu": "Video Dosyası Geliştirme / İletişim Teknolojileri ve Çeşitleri",
+      "ogrenme_ciktisi": "BTY.6.2.10. Video dosyası geliştirebilme BTY.6.3.1. İnternet ile amacına uygun olarak çalışabilme",
+      "surec_bilesenleri": [
+        "a) Tasarlanan hikâye/senaryo unsurlarından uyumlu bir video dosyası oluşturur.",
+        "b) Oluşturulan videoyu belirlenen ölçütler açısından değerlendirir.",
+        "a) İleri düzey arama yapmak için kullanabileceği arama motorlarını belirler.",
+        "b) Belirlediği arama motorlarını kullanır.",
+        "c) Öğrendiği yeni internet teknolojilerini verimlilik kapsamında değerlendirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2026-11-09",
+      "bitis": "2026-11-13"
+    },
+    {
+      "hafta_no": 10,
+      "tarih_araligi": "23 Kasım - 27 Kasım",
+      "ders_saati": "1+1",
+      "tema": "Bilgisayar Ağları ve İletişim",
+      "konu": "İletişim Teknolojileri ve Çeşitleri / İnternette İleri Düzey Arama",
+      "ogrenme_ciktisi": "BTY.6.3.1. İnternet ile amacına uygun olarak çalışabilme BTY.6.3.2. İletişim teknolojilerini sınıflandırabilme",
+      "surec_bilesenleri": [
+        "a) İleri düzey arama yapmak için kullanabileceği arama motorlarını belirler.",
+        "b) Belirlediği arama motorlarını kullanır.",
+        "c) Öğrendiği yeni internet teknolojilerini verimlilik kapsamında değerlendirir.",
+        "a) Farklı ve eş zamanlı iletişim sürecinde kullanılan bileşenleri belirler.",
+        "b) İletişim araçlarını türlerine göre ilişkilendirir.",
+        "c) İletişim süreci açısından kullanılan araçları gruplandırır.",
+        "a) Farklı ve eş zamanlı olarak kullanılan iletişim teknolojilerini amacına uygun olarak belirler.",
+        "b) Bir e-posta aracını amacına uygun olarak kullanır.",
+        "c) İletişim araçlarını kullanım amaçlarına uygunluğu açısından değerlendirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2026-11-23",
+      "bitis": "2026-11-27"
+    },
+    {
+      "hafta_no": 11,
+      "tarih_araligi": "30 Kasım - 04 Aralık",
+      "ders_saati": "1+1",
+      "tema": "Bilgisayar Ağları ve İletişim / Bilişim Etiği ve Siber Güvenlik",
+      "konu": "Etkileşimli Web Araçları / Bilişim Etiği ve İlkeleri",
+      "ogrenme_ciktisi": "BTY.6.3.3. İletişim teknolojileri ile çalışabilme BTY.6.4.1. Bilişim etiği kapsamında güvenlik önlemlerini yönetebilme",
+      "surec_bilesenleri": [
+        "a) Farklı ve eş zamanlı iletişim sürecinde kullanılan bileşenleri belirler.",
+        "b) İletişim araçlarını türlerine göre ilişkilendirir.",
+        "c) İletişim süreci açısından kullanılan araçları gruplandırır.",
+        "a) Farklı ve eş zamanlı olarak kullanılan iletişim teknolojilerini amacına uygun olarak belirler.",
+        "b) Bir e-posta aracını amacına uygun olarak kullanır.",
+        "c) İletişim araçlarını kullanım amaçlarına uygunluğu açısından değerlendirir.",
+        "a) Bilişim etiği kapsamındaki güvenlik risklerini belirler.",
+        "b) Bilişim etiği kapsamındaki güvenlik risklerine karşı alınabilecek önlemleri belirler.",
+        "c) Bilişim suçların türlerini bilişim etiği kapsamında ayırt eder.",
+        "ç) Karşılaşılan bilişim suçu veya bilişim etiği ihlalini güvenlik önlemleri açısından değerlendirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2026-11-30",
+      "bitis": "2026-12-04"
+    },
+    {
+      "hafta_no": 12,
+      "tarih_araligi": "07 Aralık - 11 Aralık",
+      "ders_saati": "1+1",
+      "tema": "Bilişim Etiği ve Siber Güvenlik",
+      "konu": "Telif Hakkı / Güvenli Siber Ortam",
+      "ogrenme_ciktisi": "BTY.6.4.2.Telif hakkı kavramını sorgulayabilme BTY.6.4.3. Siber ortamda güvenlik önlemlerini yönetebilme",
+      "surec_bilesenleri": [
+        "a) Telif hakkı kavramı hakkında merak ettiği konuları tanımlar.",
+        "b) Telif hakkı kavramı hakkında sorular sorar.",
+        "c) Telif hakkı kavramı hakkında bilgi toplar.",
+        "ç) Telif hakkı kavramı hakkında topladığı bilgilerin doğruluğunu değerlendirir.",
+        "d) Telif hakkı kavramı hakkında topladığı bilgiler üzerinden çıkarım yapar.",
+        "a) Siber ortamda güvenlik risklerini belirler.",
+        "b) Siber ortamda güvenlik önlemlerini belirler.",
+        "c) Siber ortamda bilgi güvenliğinin temel bileşenlerini ayırt eder.",
+        "ç) Siber ortamdaki örnek bir durumu güvenlik önlemleri açısından değerlendirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2026-12-07",
+      "bitis": "2026-12-11"
+    },
+    {
+      "hafta_no": 13,
+      "tarih_araligi": "14 Aralık - 18 Aralık",
+      "ders_saati": "1+1",
+      "tema": "Bilişim Etiği ve Siber Güvenlik / Yapay Zekâ",
+      "konu": "Lisans Türleri / Yapay Zekâda Verinin Rolü",
+      "ogrenme_ciktisi": "BTY.6.4.4.Kullanım haklarına göre lisans türlerini karşılaştırabilme BTY.6.5.1. Yapay zekâ girdileri hakkında bilgi toplayabilme",
+      "surec_bilesenleri": [
+        "a) Kullanım haklarına göre lisans türlerinin özellikleri belirler",
+        "b) Kullanım haklarına göre lisans türlerinin benzerliklerini listeler",
+        "c) Kullanım haklarına göre lisans türlerinin farklılıklarını listeler",
+        "a) Yapay zekâ girdileriyle ilgili gerekli bilgilere ulaşmak için kullanacağı araçları belirler.",
+        "b) Belirlediği araçları kullanarak yapay zekâ girdileri hakkındaki bilgileri bulur.",
+        "c) Yapay zekâ girdileri hakkındaki ulaşılan bilgileri doğrular.",
+        "ç) Yapay zekâ girdileri hakkındaki ulaşılan bilgileri kaydeder."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2026-12-14",
+      "bitis": "2026-12-18"
+    },
+    {
+      "hafta_no": 14,
+      "tarih_araligi": "21 Aralık - 25 Aralık",
+      "ders_saati": "2",
+      "tema": "Yapay Zekâ",
+      "konu": "Yapay Zekâda Verinin Rolü",
+      "ogrenme_ciktisi": "BTY.6.5.1. Yapay zekâ girdileri hakkında bilgi toplayabilme",
+      "surec_bilesenleri": [
+        "a) Yapay zekâ girdileriyle ilgili gerekli bilgilere ulaşmak için kullanacağı araçları belirler.",
+        "b) Belirlediği araçları kullanarak yapay zekâ girdileri hakkındaki bilgileri bulur.",
+        "c) Yapay zekâ girdileri hakkındaki ulaşılan bilgileri doğrular.",
+        "ç) Yapay zekâ girdileri hakkındaki ulaşılan bilgileri kaydeder."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2026-12-21",
+      "bitis": "2026-12-25"
+    },
+    {
+      "hafta_no": 15,
+      "tarih_araligi": "28 Aralık - 01 Ocak",
+      "ders_saati": "2",
+      "tema": "Yapay Zekâ",
+      "konu": "Yapay Zekâ Araçları",
+      "ogrenme_ciktisi": "BTY.6.5.2. Yapay zekâ araç ve teknolojileri ile çalışabilme",
+      "surec_bilesenleri": [
+        "a) Kullanacağı yapay zekâ aracını amacına uygun olarak belirler.",
+        "b) Belirlediği yapay zekâ aracını kullanır.",
+        "c) Kullandığı yapay zekâ aracını uygunluk/verimlilik kapsamında değerlendirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2026-12-28",
+      "bitis": "2027-01-01"
+    },
+    {
+      "hafta_no": 16,
+      "tarih_araligi": "04 Ocak - 08 Ocak",
+      "ders_saati": "SINAV HAFTASI",
+      "tema": "",
+      "konu": "",
+      "ogrenme_ciktisi": "",
+      "surec_bilesenleri": [],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": true,
+      "baslangic": "2027-01-04",
+      "bitis": "2027-01-08"
+    },
+    {
+      "hafta_no": 17,
+      "tarih_araligi": "11 Ocak - 15 Ocak",
+      "ders_saati": "1+1",
+      "tema": "Yapay Zekâ",
+      "konu": "Yapay Zekâ Araçları Yapay Zekâ Araçları ile Model Geliştirme",
+      "ogrenme_ciktisi": "BTY.6.5.2. Yapay zekâ araç ve teknolojileri ile çalışabilme BTY.6.5.3. Yapay zekâ araç ve teknolojileri ile model geliştirebilme",
+      "surec_bilesenleri": [
+        "a) Kullanacağı yapay zekâ aracını amacına uygun olarak belirler.",
+        "b) Belirlediği yapay zekâ aracını kullanır.",
+        "c) Kullandığı yapay zekâ aracını uygunluk/verimlilik kapsamında değerlendirir.",
+        "a) Yapay zekâ araç ve teknolojileri ile yapılacak olan modelde gerçek hayat problemini belirler.",
+        "b) Problemin çözümü için bir model oluşturur.",
+        "c) Yapay zekâ uygulamasında geliştirilen modeli uygular.",
+        "ç) Yapay zekâ uygulamasındaki modelin süreç ve sonuçlarını değerlendirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2027-01-11",
+      "bitis": "2027-01-15"
+    },
+    {
+      "hafta_no": 18,
+      "tarih_araligi": "18 Ocak - 22 Ocak",
+      "ders_saati": "2",
+      "tema": "Yapay Zekâ",
+      "konu": "Yapay Zekâ Araçları ile Model Geliştirme",
+      "ogrenme_ciktisi": "BTY.6.5.3. Yapay zekâ araç ve teknolojileri ile model geliştirebilme",
+      "surec_bilesenleri": [
+        "a) Yapay zekâ araç ve teknolojileri ile yapılacak olan modelde gerçek hayat problemini belirler.",
+        "b) Problemin çözümü için bir model oluşturur.",
+        "c) Yapay zekâ uygulamasında geliştirilen modeli uygular.",
+        "ç) Yapay zekâ uygulamasındaki modelin süreç ve sonuçlarını değerlendirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2027-01-18",
+      "bitis": "2027-01-22"
+    },
+    {
+      "hafta_no": 19,
+      "tarih_araligi": "08 Şubat - 12 Şubat",
+      "ders_saati": "2",
+      "tema": "Yazılım Tasarımı ve Programlama",
+      "konu": "Blok Tabanlı Programlama Ortamına Giriş",
+      "ogrenme_ciktisi": "BTY.6.6.1. Blok tabanlı ortamda yazılım geliştirme sürecinde kullanılan bileşenlerden yararlanabilme",
+      "surec_bilesenleri": [
+        "a) Blok tabanlı ortamında yazılım geliştirme süreci bileşenlerini tanır.",
+        "b) Blok tabanlı ortamda yazılım geliştirme süreci bileşenlerini kullanır.",
+        "c) Blok tabanlı ortamda yazılım geliştirme süreci bileşenlerini değerlendirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2027-02-08",
+      "bitis": "2027-02-12"
+    },
+    {
+      "hafta_no": 20,
+      "tarih_araligi": "15 Şubat - 19 Şubat",
+      "ders_saati": "2",
+      "tema": "Yazılım Tasarımı ve Programlama",
+      "konu": "Blok Tabanlı Programlama Ortamına Giriş",
+      "ogrenme_ciktisi": "BTY.6.6.1. Blok tabanlı ortamda yazılım geliştirme sürecinde kullanılan bileşenlerden yararlanabilme",
+      "surec_bilesenleri": [
+        "a) Blok tabanlı ortamında yazılım geliştirme süreci bileşenlerini tanır.",
+        "b) Blok tabanlı ortamda yazılım geliştirme süreci bileşenlerini kullanır.",
+        "c) Blok tabanlı ortamda yazılım geliştirme süreci bileşenlerini değerlendirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2027-02-15",
+      "bitis": "2027-02-19"
+    },
+    {
+      "hafta_no": 21,
+      "tarih_araligi": "22 Şubat - 26 Şubat",
+      "ders_saati": "2",
+      "tema": "Yazılım Tasarımı ve Programlama",
+      "konu": "Blok Tabanlı Programlama Ortamına Giriş",
+      "ogrenme_ciktisi": "BTY.6.6.1. Blok tabanlı ortamda yazılım geliştirme sürecinde kullanılan bileşenlerden yararlanabilme",
+      "surec_bilesenleri": [
+        "a) Blok tabanlı ortamında yazılım geliştirme süreci bileşenlerini tanır.",
+        "b) Blok tabanlı ortamda yazılım geliştirme süreci bileşenlerini kullanır.",
+        "c) Blok tabanlı ortamda yazılım geliştirme süreci bileşenlerini değerlendirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2027-02-22",
+      "bitis": "2027-02-26"
+    },
+    {
+      "hafta_no": 22,
+      "tarih_araligi": "01 Mart - 05 Mart",
+      "ders_saati": "2",
+      "tema": "Yazılım Tasarımı ve Programlama",
+      "konu": "Blok Tabanlı Ortamda Tasarım ve Programlama",
+      "ogrenme_ciktisi": "BTY.6.6.2. Blok tabanlı ortamda yazılım geliştirme sürecini yönetebilme",
+      "surec_bilesenleri": [
+        "a) Blok tabanlı ortamda yazılım geliştirme sürecini planlar.",
+        "b) Blok tabanlı ortamda yazılımı tasarlar.",
+        "c) Blok tabanlı ortamda yazılımı oluşturur.",
+        "ç) Blok tabanlı ortamda oluşturulan yazılımı değerlendirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2027-03-01",
+      "bitis": "2027-03-05"
+    },
+    {
+      "hafta_no": 23,
+      "tarih_araligi": "15 Mart - 19 Mart",
+      "ders_saati": "SINAV HAFTASI",
+      "tema": "",
+      "konu": "",
+      "ogrenme_ciktisi": "",
+      "surec_bilesenleri": [],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": true,
+      "baslangic": "2027-03-15",
+      "bitis": "2027-03-19"
+    },
+    {
+      "hafta_no": 24,
+      "tarih_araligi": "22 Mart - 26 Mart",
+      "ders_saati": "2",
+      "tema": "Yazılım Tasarımı ve Programlama",
+      "konu": "Blok Tabanlı Ortamda Tasarım ve Programlama",
+      "ogrenme_ciktisi": "BTY.6.6.2. Blok tabanlı ortamda yazılım geliştirme sürecini yönetebilme",
+      "surec_bilesenleri": [
+        "a) Blok tabanlı ortamda yazılım geliştirme sürecini planlar.",
+        "b) Blok tabanlı ortamda yazılımı tasarlar.",
+        "c) Blok tabanlı ortamda yazılımı oluşturur.",
+        "ç) Blok tabanlı ortamda oluşturulan yazılımı değerlendirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2027-03-22",
+      "bitis": "2027-03-26"
+    },
+    {
+      "hafta_no": 25,
+      "tarih_araligi": "29 Mart - 02 Nisan",
+      "ders_saati": "OKUL TEMELLİ PLANLAMA*",
+      "tema": "",
+      "konu": "",
+      "ogrenme_ciktisi": "",
+      "surec_bilesenleri": [],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": true,
+      "baslangic": "2027-03-29",
+      "bitis": "2027-04-02"
+    },
+    {
+      "hafta_no": 26,
+      "tarih_araligi": "05 Nisan - 09 Nisan",
+      "ders_saati": "2",
+      "tema": "Yazılım Tasarımı ve Programlama",
+      "konu": "Blok Tabanlı Ortamda Tasarım ve Programlama",
+      "ogrenme_ciktisi": "BTY.6.6.2. Blok tabanlı ortamda yazılım geliştirme sürecini yönetebilme",
+      "surec_bilesenleri": [
+        "a) Blok tabanlı ortamda yazılım geliştirme sürecini planlar.",
+        "b) Blok tabanlı ortamda yazılımı tasarlar.",
+        "c) Blok tabanlı ortamda yazılımı oluşturur.",
+        "ç) Blok tabanlı ortamda oluşturulan yazılımı değerlendirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2027-04-05",
+      "bitis": "2027-04-09"
+    },
+    {
+      "hafta_no": 27,
+      "tarih_araligi": "12 Nisan - 16 Nisan",
+      "ders_saati": "2",
+      "tema": "Yazılım Tasarımı ve Programlama",
+      "konu": "Blok Tabanlı Ortamda Tasarım ve Programlama",
+      "ogrenme_ciktisi": "BTY.6.6.2. Blok tabanlı ortamda yazılım geliştirme sürecini yönetebilme",
+      "surec_bilesenleri": [
+        "a) Blok tabanlı ortamda yazılım geliştirme sürecini planlar.",
+        "b) Blok tabanlı ortamda yazılımı tasarlar.",
+        "c) Blok tabanlı ortamda yazılımı oluşturur.",
+        "ç) Blok tabanlı ortamda oluşturulan yazılımı değerlendirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2027-04-12",
+      "bitis": "2027-04-16"
+    },
+    {
+      "hafta_no": 28,
+      "tarih_araligi": "19 Nisan - 23 Nisan",
+      "ders_saati": "2",
+      "tema": "Yazılım Tasarımı ve Programlama",
+      "konu": "Blok Tabanlı Ortamda Tasarım ve Programlama",
+      "ogrenme_ciktisi": "BTY.6.6.2. Blok tabanlı ortamda yazılım geliştirme sürecini yönetebilme",
+      "surec_bilesenleri": [
+        "a) Blok tabanlı ortamda yazılım geliştirme sürecini planlar.",
+        "b) Blok tabanlı ortamda yazılımı tasarlar.",
+        "c) Blok tabanlı ortamda yazılımı oluşturur.",
+        "ç) Blok tabanlı ortamda oluşturulan yazılımı değerlendirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2027-04-19",
+      "bitis": "2027-04-23"
+    },
+    {
+      "hafta_no": 29,
+      "tarih_araligi": "26 Nisan - 30 Nisan",
+      "ders_saati": "1+1",
+      "tema": "Yazılım Tasarımı ve Programlama",
+      "konu": "Blok Tabanlı Ortamda Tasarım ve Programlama / Yapay Zekâ Destekli Ürün Geliştirme ve Sunum",
+      "ogrenme_ciktisi": "BTY.6.6.2. Blok tabanlı ortamda yazılım geliştirme sürecini yönetebilme BTY6.6.3. Blok tabanlı ortamda yapay zekâ destekli ürün ortaya koyabilme",
+      "surec_bilesenleri": [
+        "a) Blok tabanlı ortamda yazılım geliştirme sürecini planlar.",
+        "b) Blok tabanlı ortamda yazılımı tasarlar.",
+        "c) Blok tabanlı ortamda yazılımı oluşturur.",
+        "ç) Blok tabanlı ortamda oluşturulan yazılımı değerlendirir.",
+        "a) Blok tabanlı ortamda yapay zekâ destekli ürün için gereksinimleri belirler.",
+        "b) Blok tabanlı ortamda yapay zekâ destekli ürün için kullanılacak araç gereçleri seçer.",
+        "c) Blok tabanlı ortamda yapay zekâ destekli ürün oluşturur.",
+        "ç) Blok tabanlı ortamda yapay zekâ destekli ürünü belirlenen ölçütleri karşılayacak şekilde çalışır hâle getirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2027-04-26",
+      "bitis": "2027-04-30"
+    },
+    {
+      "hafta_no": 30,
+      "tarih_araligi": "03 Mayıs - 07 Mayıs",
+      "ders_saati": "2",
+      "tema": "Yazılım Tasarımı ve Programlama",
+      "konu": "Yapay Zekâ Destekli Ürün Geliştirme ve Sunum",
+      "ogrenme_ciktisi": "BTY6.6.3. Blok tabanlı ortamda yapay zekâ destekli ürün ortaya koyabilme",
+      "surec_bilesenleri": [
+        "a) Blok tabanlı ortamda yapay zekâ destekli ürün için gereksinimleri belirler.",
+        "b) Blok tabanlı ortamda yapay zekâ destekli ürün için kullanılacak araç gereçleri seçer.",
+        "c) Blok tabanlı ortamda yapay zekâ destekli ürün oluşturur.",
+        "ç) Blok tabanlı ortamda yapay zekâ destekli ürünü belirlenen ölçütleri karşılayacak şekilde çalışır hâle getirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2027-05-03",
+      "bitis": "2027-05-07"
+    },
+    {
+      "hafta_no": 31,
+      "tarih_araligi": "10 Mayıs - 14 Mayıs",
+      "ders_saati": "2",
+      "tema": "Yazılım Tasarımı ve Programlama",
+      "konu": "Yapay Zekâ Destekli Ürün Geliştirme ve Sunum",
+      "ogrenme_ciktisi": "BTY6.6.3. Blok tabanlı ortamda yapay zekâ destekli ürün ortaya koyabilme",
+      "surec_bilesenleri": [
+        "a) Blok tabanlı ortamda yapay zekâ destekli ürün için gereksinimleri belirler.",
+        "b) Blok tabanlı ortamda yapay zekâ destekli ürün için kullanılacak araç gereçleri seçer.",
+        "c) Blok tabanlı ortamda yapay zekâ destekli ürün oluşturur.",
+        "ç) Blok tabanlı ortamda yapay zekâ destekli ürünü belirlenen ölçütleri karşılayacak şekilde çalışır hâle getirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2027-05-10",
+      "bitis": "2027-05-14"
+    },
+    {
+      "hafta_no": 32,
+      "tarih_araligi": "17 Mayıs - 21 Mayıs",
+      "ders_saati": "2",
+      "tema": "Yazılım Tasarımı ve Programlama",
+      "konu": "Yapay Zekâ Destekli Ürün Geliştirme ve Sunum",
+      "ogrenme_ciktisi": "BTY6.6.3. Blok tabanlı ortamda yapay zekâ destekli ürün ortaya koyabilme",
+      "surec_bilesenleri": [
+        "a) Blok tabanlı ortamda yapay zekâ destekli ürün için gereksinimleri belirler.",
+        "b) Blok tabanlı ortamda yapay zekâ destekli ürün için kullanılacak araç gereçleri seçer.",
+        "c) Blok tabanlı ortamda yapay zekâ destekli ürün oluşturur.",
+        "ç) Blok tabanlı ortamda yapay zekâ destekli ürünü belirlenen ölçütleri karşılayacak şekilde çalışır hâle getirir."
+      ],
+      "kurban_bayrami_cakisiyor": true,
+      "ozel_hafta": false,
+      "baslangic": "2027-05-17",
+      "bitis": "2027-05-21"
+    },
+    {
+      "hafta_no": 33,
+      "tarih_araligi": "24 Mayıs - 28 Mayıs",
+      "ders_saati": "2",
+      "tema": "Yazılım Tasarımı ve Programlama",
+      "konu": "Yapay Zekâ Destekli Ürün Geliştirme ve Sunum",
+      "ogrenme_ciktisi": "BTY6.6.3. Blok tabanlı ortamda yapay zekâ destekli ürün ortaya koyabilme",
+      "surec_bilesenleri": [
+        "a) Blok tabanlı ortamda yapay zekâ destekli ürün için gereksinimleri belirler.",
+        "b) Blok tabanlı ortamda yapay zekâ destekli ürün için kullanılacak araç gereçleri seçer.",
+        "c) Blok tabanlı ortamda yapay zekâ destekli ürün oluşturur.",
+        "ç) Blok tabanlı ortamda yapay zekâ destekli ürünü belirlenen ölçütleri karşılayacak şekilde çalışır hâle getirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2027-05-24",
+      "bitis": "2027-05-28"
+    },
+    {
+      "hafta_no": 34,
+      "tarih_araligi": "31 Mayıs - 04 Haziran",
+      "ders_saati": "2",
+      "tema": "Yazılım Tasarımı ve Programlama",
+      "konu": "Yapay Zekâ Destekli Ürün Geliştirme ve Sunum",
+      "ogrenme_ciktisi": "BTY6.6.3. Blok tabanlı ortamda yapay zekâ destekli ürün ortaya koyabilme",
+      "surec_bilesenleri": [
+        "a) Blok tabanlı ortamda yapay zekâ destekli ürün için gereksinimleri belirler.",
+        "b) Blok tabanlı ortamda yapay zekâ destekli ürün için kullanılacak araç gereçleri seçer.",
+        "c) Blok tabanlı ortamda yapay zekâ destekli ürün oluşturur.",
+        "ç) Blok tabanlı ortamda yapay zekâ destekli ürünü belirlenen ölçütleri karşılayacak şekilde çalışır hâle getirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2027-05-31",
+      "bitis": "2027-06-04"
+    },
+    {
+      "hafta_no": 35,
+      "tarih_araligi": "07 Haziran - 11 Haziran",
+      "ders_saati": "SINAV HAFTASI",
+      "tema": "",
+      "konu": "",
+      "ogrenme_ciktisi": "",
+      "surec_bilesenleri": [],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": true,
+      "baslangic": "2027-06-07",
+      "bitis": "2027-06-11"
+    },
+    {
+      "hafta_no": 36,
+      "tarih_araligi": "14 Haziran - 18 Haziran",
+      "ders_saati": "2",
+      "tema": "Yazılım Tasarımı ve Programlama",
+      "konu": "Yapay Zekâ Destekli Ürün Geliştirme ve Sunum",
+      "ogrenme_ciktisi": "BTY6.6.3. Blok tabanlı ortamda yapay zekâ destekli ürün ortaya koyabilme",
+      "surec_bilesenleri": [
+        "a) Blok tabanlı ortamda yapay zekâ destekli ürün için gereksinimleri belirler.",
+        "b) Blok tabanlı ortamda yapay zekâ destekli ürün için kullanılacak araç gereçleri seçer.",
+        "c) Blok tabanlı ortamda yapay zekâ destekli ürün oluşturur.",
+        "ç) Blok tabanlı ortamda yapay zekâ destekli ürünü belirlenen ölçütleri karşılayacak şekilde çalışır hâle getirir."
+      ],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": false,
+      "baslangic": "2027-06-14",
+      "bitis": "2027-06-18"
+    },
+    {
+      "hafta_no": 37,
+      "tarih_araligi": "21 Haziran - 25 Haziran",
+      "ders_saati": "SOSYAL ETKİNLİK",
+      "tema": "",
+      "konu": "",
+      "ogrenme_ciktisi": "",
+      "surec_bilesenleri": [],
+      "kurban_bayrami_cakisiyor": false,
+      "ozel_hafta": true,
+      "baslangic": "2027-06-21",
+      "bitis": "2027-06-25"
+    }
+  ]
+}

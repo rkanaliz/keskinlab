@@ -1,0 +1,558 @@
+{
+  "schemaVersion": 1,
+  "course": "robotik",
+  "title": "Robotik Kodlama-I",
+  "sourceKind": "elective",
+  "weekCount": 36,
+  "weeks": [
+    {
+      "hafta_no": 1,
+      "tarih": "14-18 Eylül 2026",
+      "unite": "RK.1.1. Robotik Kavramına Giriş",
+      "konu": "RK.1.1.1. Robotik Kavramının Tanımı • 1.1 Robot Nedir? • 1.2 Robotik Bilimi",
+      "kazanimlar": [
+        "RK.1.1.1.1. Robotik kavramını açıklar."
+      ],
+      "etkinlik": "Tanışma • Robot kavramı ile ilgili videolar",
+      "belirli_gun": "İlköğretim Haftası (14-20 Eylül 2026)",
+      "baslangic": "2026-09-14",
+      "bitis": "2026-09-18"
+    },
+    {
+      "hafta_no": 2,
+      "tarih": "21-25 Eylül 2026",
+      "unite": "RK.1.1. Robotik Kavramına Giriş",
+      "konu": "1.3 Roboti̇k Bi̇li̇mi̇ni̇n Günlük Hayattaki̇ Kullanim Alanlari",
+      "kazanimlar": [
+        "RK.1.1.2. Robotik Uygulamalarının Günlük Hayata Etkisi",
+        "RK.1.1.2.1. Robotik uygulamalarının günlük hayata katkılarını örnekler üzerinden açıklar.",
+        "RK.1.1.2.2. Robotik uygulamalarının günlük hayata olabilecek olumsuz etkilerini örnekler üzerinden açıklar.",
+        "RK.1.1.2.3. Robotik uygulamaların günlük hayattaki riskli yönlerini araştırır."
+      ],
+      "etkinlik": "Robotların tarihi gelişimi ve kullanım alanları ile ilgili videolar.",
+      "belirli_gun": "",
+      "baslangic": "2026-09-21",
+      "bitis": "2026-09-25"
+    },
+    {
+      "hafta_no": 3,
+      "tarih": "28 Eylül-2 Ekim 2026",
+      "unite": "RK.1.2. Kodlamaya Giriş",
+      "konu": "2.1 Algoritma",
+      "kazanimlar": [
+        "RK.1.2.1. Algoritma",
+        "RK.1.2.1.1. Algoritma kavramını tanımlar.",
+        "RK.1.2.1.2. Algoritmanın işlem adımlarından oluştuğunu fark eder.",
+        "RK.1.2.1.3. Algoritmanın işlem adımlarının sırasının önemini fark eder."
+      ],
+      "etkinlik": "Algoritma kavramı açıklanır. • Olaylar verilerek algoritma oluşturmaları sağlanır.",
+      "belirli_gun": "",
+      "baslangic": "2026-09-28",
+      "bitis": "2026-10-02"
+    },
+    {
+      "hafta_no": 4,
+      "tarih": "5-9 Ekim 2026",
+      "unite": "RK.1.2. Kodlamaya Giriş",
+      "konu": "2.2 Karar Yapıları",
+      "kazanimlar": [
+        "RK.1.2.2. Karar Yapıları",
+        "RK.1.2.2.1. Karar yapılarının tanımını yapar.",
+        "RK.1.2.2.2. Karar yapılarının kullanım alanlarını açıklar."
+      ],
+      "etkinlik": "Günlük yaşamdan karar yapılarıyla ilgili örnekler verilir. • Karar yapıları içeren olaylar verilerek algoritma oluşturmaları sağlanır.",
+      "belirli_gun": "",
+      "baslangic": "2026-10-05",
+      "bitis": "2026-10-09"
+    },
+    {
+      "hafta_no": 5,
+      "tarih": "12-16 Ekim 2026",
+      "unite": "RK.1.2. Kodlamaya Giriş",
+      "konu": "2.3 Döngü Yapıları",
+      "kazanimlar": [
+        "RK.1.2.3. Döngü Yapıları",
+        "RK.1.2.3.1. Döngü kavramının tanımını yapar.",
+        "RK.1.2.3.2. Döngü kavramının kullanım alanlarını açıklar."
+      ],
+      "etkinlik": "Günlük yaşamdan temel döngü yapılarıyla ilgili örnekler verilir. • Döngü yapıları içeren olaylar verilerek algoritma oluşturmaları sağlanır.",
+      "belirli_gun": "",
+      "baslangic": "2026-10-12",
+      "bitis": "2026-10-16"
+    },
+    {
+      "hafta_no": 6,
+      "tarih": "19-23 Ekim 2026",
+      "unite": "RK.1.2. Kodlamaya Giriş",
+      "konu": "2.4 Veri Türleri",
+      "kazanimlar": [
+        "RK.1.2.4. Veri Türleri",
+        "RK.1.2.4.1. Veri türlerini açıklar."
+      ],
+      "etkinlik": "Veri kavramı açıklanır.Veri türleriyle ilgili örnekler verilir.",
+      "belirli_gun": "",
+      "baslangic": "2026-10-19",
+      "bitis": "2026-10-23"
+    },
+    {
+      "hafta_no": 7,
+      "tarih": "26-30 Ekim 2026",
+      "unite": "RK.1.2. Kodlamaya Giriş",
+      "konu": "2.5 Değişken Kavramı",
+      "kazanimlar": [
+        "RK.1.2.5. Değişken Kavramı",
+        "RK.1.2.5.1. Değişken kavramının tanımını yapar."
+      ],
+      "etkinlik": "Değişken kavramı açıklanır. Değişken örnekleri verilir.",
+      "belirli_gun": "",
+      "baslangic": "2026-10-26",
+      "bitis": "2026-10-30"
+    },
+    {
+      "hafta_no": 8,
+      "tarih": "2-6 Kasım 2026",
+      "unite": "RK.1.2. Kodlamaya Giriş",
+      "konu": "2.6 Akış Diyagramı",
+      "kazanimlar": [
+        "RK.1.2.6. Akış Diyagramı",
+        "RK.1.2.6.1. Akış diyagramı kavramını açıklar.",
+        "RK.1.2.6.2. Akış diyagramında kullanılan sembollerin anlamlarını açıklar.",
+        "RK.1.2.6.3. Bir problemin çözümüne yönelik akış diyagramı oluşturur."
+      ],
+      "etkinlik": "Algoritmalar verilerek akış şemalarının oluşturulması sağlanır.",
+      "belirli_gun": "",
+      "baslangic": "2026-11-02",
+      "bitis": "2026-11-06"
+    },
+    {
+      "hafta_no": 9,
+      "tarih": "9-13 Kasım 2026",
+      "unite": "RK.1.3. Robotik Kodlama Ortamları",
+      "konu": "3.1 Blok Kodlama - Çevrim İçi / Çevrim Dışı Ortamlar",
+      "kazanimlar": [
+        "RK.1.3.1. Blok Tabanlı Geliştirme Ortamları",
+        "RK.1.3.1.1. Çevrim içi blok tabanlı ortamlara erişim sağlar.",
+        "RK.1.3.1.2. Çevrim dışı blok tabanlı geliştirme ortamının kurulumunu yapar."
+      ],
+      "etkinlik": "Blok kodlama kavramı açıklanır. Blok kodlama araçlarını tanıtılır. Code.org uygulamasından örnekler yapılır.",
+      "belirli_gun": "",
+      "baslangic": "2026-11-09",
+      "bitis": "2026-11-13"
+    },
+    {
+      "hafta_no": 10,
+      "tarih": "23-27 Kasım 2026",
+      "unite": "RK.1.3. Robotik Kodlama Ortamları",
+      "konu": "3.1 Blok Kodlama (mBlock) - Arayüz",
+      "kazanimlar": [
+        "RK.1.3.1. Blok Tabanlı Geliştirme Ortamları",
+        "RK.1.3.1.3. Blok tabanlı geliştirme ortamının arayüzünü tanır.",
+        "RK.1.3.1.4. Blok tabanlı geliştirme ortamına ait algılayıcıları ayırt eder."
+      ],
+      "etkinlik": "mBlock uygulamasına giriş yapılır. Arayüzü tanıtılır.",
+      "belirli_gun": "",
+      "baslangic": "2026-11-23",
+      "bitis": "2026-11-27"
+    },
+    {
+      "hafta_no": 11,
+      "tarih": "30 Kasım-4 Aralık 2026",
+      "unite": "RK.1.3. Robotik Kodlama Ortamları",
+      "konu": "3.1 Blok Kodlama (mBlock) - Hareket Blokları",
+      "kazanimlar": [
+        "RK.1.3.1. Blok Tabanlı Geliştirme Ortamları",
+        "RK.1.3.1.3. Blok tabanlı geliştirme ortamının arayüzünü tanır.",
+        "RK.1.3.1.4. Blok tabanlı geliştirme ortamına ait algılayıcıları ayırt eder."
+      ],
+      "etkinlik": "mBlock uygulaması hareket bloklarının işlevleri anlatılır. • \"Kuş Uçuyor\" ve \"Salyangoz etkinlikleri yapılır.",
+      "belirli_gun": "",
+      "baslangic": "2026-11-30",
+      "bitis": "2026-12-04"
+    },
+    {
+      "hafta_no": 12,
+      "tarih": "7-11 Aralık 2026",
+      "unite": "RK.1.3. Robotik Kodlama Ortamları",
+      "konu": "3.1 Blok Kodlama (mBlock) - Görünüm Blokları",
+      "kazanimlar": [
+        "RK.1.3.1. Blok Tabanlı Geliştirme Ortamları",
+        "RK.1.3.1.3. Blok tabanlı geliştirme ortamının arayüzünü tanır.",
+        "RK.1.3.1.4. Blok tabanlı geliştirme ortamına ait algılayıcıları ayırt eder."
+      ],
+      "etkinlik": "mBlock uygulamasındaki görünüm bloklarının işlevleri anlatılır. • \"Otabüs Durağı\" ve \"Panda Geziyor\" etkinlikleri yapılır.",
+      "belirli_gun": "",
+      "baslangic": "2026-12-07",
+      "bitis": "2026-12-11"
+    },
+    {
+      "hafta_no": 13,
+      "tarih": "14-18 Aralık 2026",
+      "unite": "RK.1.3. Robotik Kodlama Ortamları",
+      "konu": "3.1 Blok Kodlama (mBlock) - Ses Blokları",
+      "kazanimlar": [
+        "RK.1.3.1. Blok Tabanlı Geliştirme Ortamları",
+        "RK.1.3.1.3. Blok tabanlı geliştirme ortamının arayüzünü tanır.",
+        "RK.1.3.1.4. Blok tabanlı geliştirme ortamına ait algılayıcıları ayırt eder."
+      ],
+      "etkinlik": "mBlock uygulamasındaki ses bloklarının işlevleri anlatılır. • \"Müzikli Geçiş\" ve \"Müzik Yapalım\" etkinlikleri yapılır.",
+      "belirli_gun": "",
+      "baslangic": "2026-12-14",
+      "bitis": "2026-12-18"
+    },
+    {
+      "hafta_no": 14,
+      "tarih": "21-25 Aralık 2026",
+      "unite": "RK.1.3. Robotik Kodlama Ortamları",
+      "konu": "3.1 Blok Kodlama (mBlock) - Olaylar Blokları",
+      "kazanimlar": [
+        "RK.1.3.1. Blok Tabanlı Geliştirme Ortamları",
+        "RK.1.3.1.3. Blok tabanlı geliştirme ortamının arayüzünü tanır.",
+        "RK.1.3.1.4. Blok tabanlı geliştirme ortamına ait algılayıcıları ayırt eder."
+      ],
+      "etkinlik": "mBlock uygulamasındaki olaylar bloklarının işlevleri anlatılır. • \"Uçak Uçuyor\" ve \"Meslekler\" etkinliği yapılır.",
+      "belirli_gun": "",
+      "baslangic": "2026-12-21",
+      "bitis": "2026-12-25"
+    },
+    {
+      "hafta_no": 15,
+      "tarih": "28 Aralık-1 Ocak 2027",
+      "unite": "RK.1.3. Robotik Kodlama Ortamları",
+      "konu": "3.1 Blok Kodlama (mBlock) - Kontrol Blokları",
+      "kazanimlar": [
+        "RK.1.3.1. Blok Tabanlı Geliştirme Ortamları",
+        "RK.1.3.1.3. Blok tabanlı geliştirme ortamının arayüzünü tanır.",
+        "RK.1.3.1.4. Blok tabanlı geliştirme ortamına ait algılayıcıları ayırt eder."
+      ],
+      "etkinlik": "mBlock uygulamasındaki kontrol bloklarının işlevleri anlatılır. • \"Kar Yağıyor\" etkinliği yapılır.",
+      "belirli_gun": "",
+      "baslangic": "2026-12-28",
+      "bitis": "2027-01-01"
+    },
+    {
+      "hafta_no": 16,
+      "tarih": "4-8 Ocak 2027",
+      "unite": "RK.1.3. Robotik Kodlama Ortamları",
+      "konu": "3.1 Blok Kodlama (mBlock) - Algılama Blokları",
+      "kazanimlar": [
+        "RK.1.3.1. Blok Tabanlı Geliştirme Ortamları",
+        "RK.1.3.1.3. Blok tabanlı geliştirme ortamının arayüzünü tanır.",
+        "RK.1.3.1.4. Blok tabanlı geliştirme ortamına ait algılayıcıları ayırt eder."
+      ],
+      "etkinlik": "mBlock uygulamasındaki algılama bloklarının işlevleri anlatılır. • \"Sohbet Edelim\" ve \"Hayalet Oyunu\" etkinlikleri yapılır.",
+      "belirli_gun": "",
+      "baslangic": "2027-01-04",
+      "bitis": "2027-01-08"
+    },
+    {
+      "hafta_no": 17,
+      "tarih": "11-15 Ocak 2027",
+      "unite": "RK.1.3. Robotik Kodlama Ortamları",
+      "konu": "3.1 Blok Kodlama (mBlock) - İşlemler Blokları",
+      "kazanimlar": [
+        "RK.1.3.1. Blok Tabanlı Geliştirme Ortamları",
+        "RK.1.3.1.3. Blok tabanlı geliştirme ortamının arayüzünü tanır.",
+        "RK.1.3.1.4. Blok tabanlı geliştirme ortamına ait algılayıcıları ayırt eder."
+      ],
+      "etkinlik": "mBlock uygulamasındaki işlemler bloklarının işlevleri anlatılır. • \"Ehliyet Alma\" etkinliği yapılır.",
+      "belirli_gun": "",
+      "baslangic": "2027-01-11",
+      "bitis": "2027-01-15"
+    },
+    {
+      "hafta_no": 18,
+      "tarih": "18-22 Ocak 2027",
+      "unite": "RK.1.3. Robotik Kodlama Ortamları",
+      "konu": "3.2 Robotik Kodlama Benzetim Ortamları",
+      "kazanimlar": [
+        "RK.1.3.2. Robotik Kodlama Benzetim Ortamları",
+        "RK.1.3.2.1. Robotik kodlama benzetim ortamlarını açıklar."
+      ],
+      "etkinlik": "mBlock uygulamasındaki değişkenler bloklarının işlevleri anlatılır. • \"Sayı Tahmin\" etkinliği yapılır.",
+      "belirli_gun": "",
+      "baslangic": "2027-01-18",
+      "bitis": "2027-01-22"
+    },
+    {
+      "hafta_no": 19,
+      "tarih": "8-12 Şubat 2027",
+      "unite": "RK.1.4. Robotik Kodlama Uygulamalarına Ait Bileşenler",
+      "konu": "4.1 Temel Elektronik",
+      "kazanimlar": [
+        "RK.1.4.1. Donanımsal Bileşenler",
+        "RK.1.4.1.1. Robotik kodlamada kullanılan elektronik devre elemanlarını tanır."
+      ],
+      "etkinlik": "Temel elektronik ile ilgili kavramlar anlatılır.Etkileşimli etkinlikler yapılır.",
+      "belirli_gun": "",
+      "baslangic": "2027-02-08",
+      "bitis": "2027-02-12"
+    },
+    {
+      "hafta_no": 20,
+      "tarih": "15-19 Şubat 2027",
+      "unite": "RK.1.4. Robotik Kodlama Uygulamalarına Ait Bileşenler",
+      "konu": "4.2 Arduino",
+      "kazanimlar": [
+        "RK.1.4.1. Donanımsal Bileşenler",
+        "RK.1.4.1.1. Robotik kodlamada kullanılan elektronik devre elemanlarını tanır."
+      ],
+      "etkinlik": "Arduino kullanım alanları ve özellikleriyle ilgili bilgi verir.Etkileşimli etkinlikler yapılır.",
+      "belirli_gun": "",
+      "baslangic": "2027-02-15",
+      "bitis": "2027-02-19"
+    },
+    {
+      "hafta_no": 21,
+      "tarih": "22-26 Şubat 2027",
+      "unite": "RK.1.4. Robotik Kodlama Uygulamalarına Ait Bileşenler",
+      "konu": "4.3 Arduino Kartları - Arduino UNO",
+      "kazanimlar": [
+        "RK.1.4.1. Donanımsal Bileşenler",
+        "RK.1.4.1.1. Robotik kodlamada kullanılan elektronik devre elemanlarını tanır."
+      ],
+      "etkinlik": "Günümüzde sık kullanılan Arduino devre kartları hakkında bilgi verilir. Arduino UNO kartı bölümleri tanıtılır.",
+      "belirli_gun": "",
+      "baslangic": "2027-02-22",
+      "bitis": "2027-02-26"
+    },
+    {
+      "hafta_no": 22,
+      "tarih": "1-5 Mart 2027",
+      "unite": "RK.1.4. Robotik Kodlama Uygulamalarına Ait Bileşenler",
+      "konu": "4.3 Arduino Kartları - Analog ve Dijital Sinyal",
+      "kazanimlar": [
+        "RK.1.4.1. Donanımsal Bileşenler",
+        "RK.1.4.1.1. Robotik kodlamada kullanılan elektronik devre elemanlarını tanır."
+      ],
+      "etkinlik": "Analog ve dijital sinyal hakkında bilgi verilir.Etkileşimli etkinlikler yapılır.",
+      "belirli_gun": "",
+      "baslangic": "2027-03-01",
+      "bitis": "2027-03-05"
+    },
+    {
+      "hafta_no": 23,
+      "tarih": "15-19 Mart 2027",
+      "unite": "RK.1.4. Robotik Kodlama Uygulamalarına Ait Bileşenler",
+      "konu": "4.4 Arduino Devre Elemanları - Breadboard ve LED",
+      "kazanimlar": [
+        "RK.1.4.1. Donanımsal Bileşenler",
+        "RK.1.4.1.1. Robotik kodlamada kullanılan elektronik devre elemanlarını tanır."
+      ],
+      "etkinlik": "Breadboard ve LED devre elemanları tanıtılır.Etkileşimli etkinlikler yapılır.",
+      "belirli_gun": "",
+      "baslangic": "2027-03-15",
+      "bitis": "2027-03-19"
+    },
+    {
+      "hafta_no": 24,
+      "tarih": "22-26 Mart 2027",
+      "unite": "RK.1.4. Robotik Kodlama Uygulamalarına Ait Bileşenler",
+      "konu": "4.4 Arduino Devre Elemanları - Direnç, Potansiyometre ve Diyot",
+      "kazanimlar": [
+        "RK.1.4.1. Donanımsal Bileşenler",
+        "RK.1.4.1.2. Elektronik devre kartlarının sistem (girdi, işlem, çıktı) bileşenlerini açıklar."
+      ],
+      "etkinlik": "Direnç ,Potansiyometre ve Diyot devre elemanları tanıtılır. Etkileşimli etkinlikler yapılır.",
+      "belirli_gun": "",
+      "baslangic": "2027-03-22",
+      "bitis": "2027-03-26"
+    },
+    {
+      "hafta_no": 25,
+      "tarih": "29 Mart-2 Nisan 2027",
+      "unite": "RK.1.4. Robotik Kodlama Uygulamalarına Ait Bileşenler",
+      "konu": "4.4 Arduino Devre Elemanları - Buzzer, Jumper Kablo ve Buton",
+      "kazanimlar": [
+        "RK.1.4.1. Donanımsal Bileşenler",
+        "RK.1.4.1.2. Elektronik devre kartlarının sistem (girdi, işlem, çıktı) bileşenlerini açıklar."
+      ],
+      "etkinlik": "Buzzer ,Jumper Kablo ve Button devre elemanları tanıtılır. Etkileşimli etkinlikler yapılır.",
+      "belirli_gun": "",
+      "baslangic": "2027-03-29",
+      "bitis": "2027-04-02"
+    },
+    {
+      "hafta_no": 26,
+      "tarih": "5-9 Nisan 2027",
+      "unite": "RK.1.4. Robotik Kodlama Uygulamalarına Ait Bileşenler",
+      "konu": "4.4 Algılayıcı Türleri - Sensör Kavramı",
+      "kazanimlar": [
+        "RK.1.4.1. Donanımsal Bileşenler",
+        "RK.1.4.1.3. Robotik kodlama uygulamalarında kullanılan algılayıcı türlerini açıklar.",
+        "RK.1.4.1.4. Elektronik devre kartlarına farklı tür algılayıcıları bağlar."
+      ],
+      "etkinlik": "Sensör kavramı açıklanır.Etkileşimli etkinlikler yapılır.",
+      "belirli_gun": "",
+      "baslangic": "2027-04-05",
+      "bitis": "2027-04-09"
+    },
+    {
+      "hafta_no": 27,
+      "tarih": "12-16 Nisan 2027",
+      "unite": "RK.1.4. Robotik Kodlama Uygulamalarına Ait Bileşenler",
+      "konu": "4.4 Algılayıcı Türleri - Mesafe ve Sıcaklık Sensörleri",
+      "kazanimlar": [
+        "RK.1.4.1. Donanımsal Bileşenler",
+        "RK.1.4.1.3. Robotik kodlama uygulamalarında kullanılan algılayıcı türlerini açıklar.",
+        "RK.1.4.1.4. Elektronik devre kartlarına farklı tür algılayıcıları bağlar."
+      ],
+      "etkinlik": "Mesafe ve Sıcaklık sensörleri hakkında bilgi verilir. Etkileşimli etkinlikler yapılır.",
+      "belirli_gun": "",
+      "baslangic": "2027-04-12",
+      "bitis": "2027-04-16"
+    },
+    {
+      "hafta_no": 28,
+      "tarih": "19-23 Nisan 2027",
+      "unite": "RK.1.4. Robotik Kodlama Uygulamalarına Ait Bileşenler",
+      "konu": "4.4 Algılayıcı Türleri - Hareket ve Işık Sensörleri",
+      "kazanimlar": [
+        "RK.1.4.1. Donanımsal Bileşenler",
+        "RK.1.4.1.3. Robotik kodlama uygulamalarında kullanılan algılayıcı türlerini açıklar.",
+        "RK.1.4.1.4. Elektronik devre kartlarına farklı tür algılayıcıları bağlar."
+      ],
+      "etkinlik": "Hareket ve Işık sensörleri hakkında bilgi verilecek. Etkileşimli etkinlikler yapılır.",
+      "belirli_gun": "",
+      "baslangic": "2027-04-19",
+      "bitis": "2027-04-23"
+    },
+    {
+      "hafta_no": 29,
+      "tarih": "26-30 Nisan 2027",
+      "unite": "RK.1.5. Farklı Ortamlarda Robotik Devre Tasarımı",
+      "konu": "5.1 Robotik Devre Tasarımı - Tinkercad Ortamına Giriş",
+      "kazanimlar": [
+        "RK.1.5.1. Robotik Devre Tasarımı",
+        "RK.1.5.1.1. Çevrim içi benzetim araçlarını kullanarak robotik devre tasarımı yapar."
+      ],
+      "etkinlik": "Tinkercad uygulamasına nasıl giriş yapılacağı anlatılır. Arayüzü tanıtılır.",
+      "belirli_gun": "",
+      "baslangic": "2027-04-26",
+      "bitis": "2027-04-30"
+    },
+    {
+      "hafta_no": 30,
+      "tarih": "3-7 Mayıs 2027",
+      "unite": "RK.1.5. Farklı Ortamlarda Robotik Devre Tasarımı",
+      "konu": "5.1 Robotik Devre Tasarımı - LED Yakma Devresi",
+      "kazanimlar": [
+        "RK.1.5.1. Robotik Devre Tasarımı",
+        "RK.1.5.1.1. Çevrim içi benzetim araçlarını kullanarak robotik devre tasarımı yapar.",
+        "RK.1.5.1.2. Fiziksel (gerçek) ortamda robotik devre tasarımı yapar."
+      ],
+      "etkinlik": "Tinkercad uygulaması kullanılarak Arduino led devresi kurularak programlanır.",
+      "belirli_gun": "",
+      "baslangic": "2027-05-03",
+      "bitis": "2027-05-07"
+    },
+    {
+      "hafta_no": 31,
+      "tarih": "10-14 Mayıs 2027",
+      "unite": "RK.1.5. Farklı Ortamlarda Robotik Devre Tasarımı",
+      "konu": "5.1 Robotik Devre Tasarımı - Yürüyen Işık Devresi",
+      "kazanimlar": [
+        "RK.1.5.1. Robotik Devre Tasarımı",
+        "RK.1.5.1.3. Blok tabanlı ortamda bir amaca yönelik program hazırlar.",
+        "RK.1.5.1.4. Çevrim içi ortamda hazırlanan programı benzetim araçlarını kullanarak test eder.",
+        "RK.1.5.1.5. Hazırlanan programı fiziksel (gerçek) ortamda test eder."
+      ],
+      "etkinlik": "Tinkercad uygulaması kullanılarak Arduino yürüyen ışık devresi kurularak programlanır.",
+      "belirli_gun": "",
+      "baslangic": "2027-05-10",
+      "bitis": "2027-05-14"
+    },
+    {
+      "hafta_no": 32,
+      "tarih": "24-28 Mayıs 2027",
+      "unite": "RK.1.5. Farklı Ortamlarda Robotik Devre Tasarımı",
+      "konu": "5.1 Robotik Devre Tasarımı - Trafik Işıkları Devresi",
+      "kazanimlar": [
+        "RK.1.5.1. Robotik Devre Tasarımı",
+        "RK.1.5.1.3. Blok tabanlı ortamda bir amaca yönelik program hazırlar.",
+        "RK.1.5.1.4. Çevrim içi ortamda hazırlanan programı benzetim araçlarını kullanarak test eder.",
+        "RK.1.5.1.5. Hazırlanan programı fiziksel (gerçek) ortamda test eder."
+      ],
+      "etkinlik": "Tinkercad uygulaması kullanılarak Arduino trafik ışığı devresi kurularak programlanır.",
+      "belirli_gun": "",
+      "baslangic": "2027-05-24",
+      "bitis": "2027-05-28"
+    },
+    {
+      "hafta_no": 33,
+      "tarih": "31 Mayıs-4 Haziran 2027",
+      "unite": "RK.1.5. Farklı Ortamlarda Robotik Devre Tasarımı",
+      "konu": "5.1 Robotik Devre Tasarımı - Polis Arabası Devresi",
+      "kazanimlar": [
+        "RK.1.5.1. Robotik Devre Tasarımı",
+        "RK.1.5.1.3. Blok tabanlı ortamda bir amaca yönelik program hazırlar.",
+        "RK.1.5.1.4. Çevrim içi ortamda hazırlanan programı benzetim araçlarını kullanarak test eder.",
+        "RK.1.5.1.5. Hazırlanan programı fiziksel (gerçek) ortamda test eder."
+      ],
+      "etkinlik": "Tinkercad uygulaması kullanılarak Arduino polis arabası devresi kurularak programlanır.",
+      "belirli_gun": "",
+      "baslangic": "2027-05-31",
+      "bitis": "2027-06-04"
+    },
+    {
+      "hafta_no": 34,
+      "tarih": "7-11 Haziran 2027",
+      "unite": "RK.1.5. Farklı Ortamlarda Robotik Devre Tasarımı",
+      "konu": "5.1-5.2 Robotik Devre / Proje Geliştirme - Nota ve Melodi / 7 Segment",
+      "kazanimlar": [
+        "RK.1.5.1. Robotik Devre Tasarımı",
+        "RK.1.5.2. 7 Segment Display Uygulaması",
+        "RK.1.5.1.3. Blok tabanlı ortamda bir amaca yönelik program hazırlar.",
+        "RK.1.5.1.4. Çevrim içi ortamda hazırlanan programı benzetim araçlarını kullanarak test eder.",
+        "RK.1.5.1.5. Hazırlanan programı fiziksel (gerçek) ortamda test eder.",
+        "RK.1.5.2.1. Led uygulama projesi tasarlar.",
+        "RK.1.5.2.2. Projeye uygun bileşenleri belirler.",
+        "RK.1.5.2.3. Proje tasarımına uygun yazılım bileşenlerini blok tabanlı ortam üzerine yerleştirir.",
+        "RK.1.5.2.4. Benzetim ortamında devreyi hazırlar.",
+        "RK.1.5.2.5. Benzetim ortamındaki devreyi test eder."
+      ],
+      "etkinlik": "Tinkercad kullanılarak buzzer ile nota ve belirlenen bir melodiyi çalan devreler kurulur ve programlanır.",
+      "belirli_gun": "",
+      "baslangic": "2027-06-07",
+      "bitis": "2027-06-11"
+    },
+    {
+      "hafta_no": 35,
+      "tarih": "14-18 Haziran 2027",
+      "unite": "RK.1.5. Farklı Ortamlarda Robotik Devre Tasarımı",
+      "konu": "5.2 Proje Geliştirme - 7 Segment Display Uygulaması",
+      "kazanimlar": [
+        "RK.1.5.2. 7 Segment Display Uygulaması",
+        "RK.1.5.2.1. Led uygulama projesi tasarlar.",
+        "RK.1.5.2.2. Projeye uygun bileşenleri belirler.",
+        "RK.1.5.2.3. Proje tasarımına uygun yazılım bileşenlerini blok tabanlı ortam üzerine yerleştirir.",
+        "RK.1.5.2.4. Benzetim ortamında devreyi hazırlar.",
+        "RK.1.5.2.5. Benzetim ortamındaki devreyi test eder."
+      ],
+      "etkinlik": "Tinkercad uygulaması kullanılarak buzzer ve buton devre elemanlarıyla piyano devresi kurulur ve programlanır .",
+      "belirli_gun": "",
+      "baslangic": "2027-06-14",
+      "bitis": "2027-06-18"
+    },
+    {
+      "hafta_no": 36,
+      "tarih": "21-25 Haziran 2027",
+      "unite": "RK.1.5. Farklı Ortamlarda Robotik Devre Tasarımı",
+      "konu": "5.2 Proje Geliştirme - Özgün Proje / 7 Segment Display",
+      "kazanimlar": [
+        "RK.1.5.2. 7 Segment Display Uygulaması",
+        "RK.1.5.2.1. Led uygulama projesi tasarlar.",
+        "RK.1.5.2.2. Projeye uygun bileşenleri belirler.",
+        "RK.1.5.2.3. Proje tasarımına uygun yazılım bileşenlerini blok tabanlı ortam üzerine yerleştirir.",
+        "RK.1.5.2.4. Benzetim ortamında devreyi hazırlar.",
+        "RK.1.5.2.5. Benzetim ortamındaki devreyi test eder.",
+        "RK.1.5.2.6. Yazılımsal ve donanımsal hataları ayıklar.",
+        "RK.1.5.2.7. Fiziksel (gerçek) ortamda devreyi oluşturur.",
+        "RK.1.5.2.8. Fiziksel (gerçek) ortamda devreyi test eder."
+      ],
+      "etkinlik": "Şu ana kadar öğrelinen devre elemanlarını kullanaral Tinkercad circuits ya da Fritzing similatör uygulamaları üzerinde öğrenciler kendi projelerini geliştirir.",
+      "belirli_gun": "",
+      "baslangic": "2027-06-21",
+      "bitis": "2027-06-25"
+    }
+  ]
+}
