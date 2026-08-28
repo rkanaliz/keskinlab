@@ -1,0 +1,28 @@
+/* 28 Ağustos 2026 — onaylı anasayfa temizliği + Soft Glass mobil menü */
+#bridgeSvg,.row-connector{display:none!important}
+.module-num{display:flex;align-items:center;gap:10px;white-space:nowrap}
+.module-num::after{content:"";width:24px;height:1px;flex:0 0 24px;background:var(--line-strong);transform-origin:left center;transition:width .28s ease,background .28s ease}
+.module-row:hover .module-num::after{width:38px;background:var(--teal)}
+.brand img,.drawer-brand img{object-fit:contain;border-radius:0!important}
+footer{padding:0;border-top:1px solid var(--line)}
+.foot{min-height:82px;padding:18px 0;align-items:center}
+.foot-brand{display:inline-flex;align-items:center;gap:8px;color:var(--ink)}
+.foot-brand img{width:25px;height:25px}
+.foot-brand b{font:650 12px "Space Grotesk";letter-spacing:-.01em}
+.foot-brand em{font:500 9px "IBM Plex Mono";color:var(--muted);font-style:normal}
+@media(max-width:920px){
+  .big-index{display:block!important;right:-.16em;top:38%;font-size:clamp(120px,38vw,220px);opacity:.026;letter-spacing:-.09em}
+  .module-num::after{width:13px;flex-basis:13px}.module-row:hover .module-num::after{width:20px}
+  .mobile-drawer{background:rgba(244,246,243,.68)!important;backdrop-filter:blur(22px) saturate(1.12)!important;-webkit-backdrop-filter:blur(22px) saturate(1.12)!important;border-right:1px solid rgba(255,255,255,.72)!important;box-shadow:18px 0 60px rgba(18,24,43,.13),inset -1px 0 0 rgba(18,24,43,.05)!important}
+  .mobile-drawer-scrim{background:rgba(18,24,43,.10)!important;backdrop-filter:blur(2px)!important;-webkit-backdrop-filter:blur(2px)!important}
+  .drawer-top,.drawer-context,.drawer-link{border-color:rgba(18,24,43,.10)!important}
+  .drawer-link{background:rgba(255,255,255,.12)}.drawer-link:active{background:rgba(255,255,255,.34)}
+  .drawer-tool{border-color:rgba(18,24,43,.10)!important}
+  .drawer-close,.mobile-nav-trigger{background:rgba(255,255,255,.30)!important;border-color:rgba(18,24,43,.10)!important}
+}
+@media(max-width:520px){
+  .big-index{right:-.34em;top:33%;font-size:clamp(116px,43vw,188px);opacity:.024}
+  .foot{min-height:74px;flex-direction:row;align-items:center;justify-content:space-between;gap:12px}
+  .foot>span:last-child{text-align:right;font-size:8px}
+}
+@media(max-width:390px){.big-index{right:-.42em;top:31%;font-size:142px;opacity:.022}}
