@@ -15,11 +15,30 @@ const SOURCE_EXT = new Set(['.png','.jpg','.jpeg','.pdf','.docx']);
 const RASTER_EXT = new Set(['.png','.jpg','.jpeg']);
 const WARN_RASTER_BYTES = Math.round(1.2 * 1024 * 1024);
 
+// These pages are retired presentation surfaces. During A2.0 their local links are
+// intentionally ignored, but the BTY WEEKS payloads are guarded separately because
+// classroom-v2.js still parses those two files until A2.1 removes the RAW dependency.
+const LEGACY_HTML_LINK_EXCLUDES = new Set([
+  '5-sinif-bty.html',
+  '6-sinif-bty.html',
+  'robotik-kodlama.html',
+  'yapay-zeka.html'
+]);
+const LEGACY_BTY_DATA_GUARDS = [
+  ['5-sinif-bty.html', 37],
+  ['6-sinif-bty.html', 37]
+];
+const CLASSROOM_PLAN_RULES = [
+  ['classroom-5-sinif.html', 37],
+  ['classroom-6-sinif.html', 37],
+  ['classroom-robotik.html', 36],
+  ['classroom-yapay-zeka.html', 36]
+];
+
 function rel(p){ return path.relative(ROOT,p).replaceAll(path.sep,'/'); }
 async function exists(p){ try{ await fs.access(p); return true; }catch{return false;} }
 async function dirs(p){ if(!(await exists(p)))return[]; return (await fs.readdir(p,{withFileTypes:true})).filter(e=>e.isDirectory()).map(e=>e.name); }
 async function files(p){ if(!(await exists(p)))return[]; return (await fs.readdir(p,{withFileTypes:true})).filter(e=>e.isFile()).map(e=>e.name); }
-
 function err(msg){ errors.push(msg); }
 function warn(msg){ warnings.push(msg); }
 
@@ -101,6 +120,112 @@ async function validatePlans(){
   }
 }
 
+function parseLegacyWeeks(text, file){
+  const p=text.indexOf('const WEEKS'), a=text.indexOf('[',p), z=text.indexOf('];',a);
+  if(p<0||a<0||z<a)throw new Error(`${file}: const WEEKS block not found`);
+  return JSON.parse(text.slice(a,z+1));
+}
+
+async function validateLegacyDataGuards(){
+  for(const [file,count] of LEGACY_BTY_DATA_GUARDS){
+    const full=path.join(ROOT,file);
+    if(!(await exists(full))){err(`Legacy BTY data carrier is missing: ${file}`);continue;}
+    try{
+      const weeks=parseLegacyWeeks(await fs.readFile(full,'utf8'),file);
+      if(!Array.isArray(weeks)||weeks.length!==count)err(`${file}: const WEEKS must parse to exactly ${count} records; got ${Array.isArray(weeks)?weeks.length:'non-array'}`);
+    }catch(e){err(`Legacy BTY data guard failed: ${e.message}`);}
+  }
+}
+
+async function redirectRoutes(){
+  const out=new Set(['/']);
+  const p=path.join(ROOT,'_redirects');
+  if(!(await exists(p)))return out;
+  const text=await fs.readFile(p,'utf8');
+  for(const raw of text.split(/\r?\n/)){
+    const line=raw.trim();
+    if(!line||line.startsWith('#'))continue;
+    const from=line.split(/\s+/)[0];
+    if(from)out.add(from);
+  }
+  return out;
+}
+
+function isExternalRef(ref){
+  return /^(?:https?:|mailto:|tel:|data:|javascript:|\/\/)/i.test(ref);
+}
+
+async function validateStaticHtmlLinks(){
+  const routes=await redirectRoutes();
+  const htmlFiles=(await files(ROOT)).filter(x=>x.endsWith('.html')).sort();
+  for(const file of htmlFiles){
+    if(LEGACY_HTML_LINK_EXCLUDES.has(file))continue;
+    const text=await fs.readFile(path.join(ROOT,file),'utf8');
+    const re=/(?:href|src)\s*=\s*["']([^"']+)["']/gi;
+    let m;
+    while((m=re.exec(text))){
+      const original=m[1].trim();
+      if(!original||original==='#'||original.startsWith('#')||isExternalRef(original))continue;
+      const clean=original.split('#')[0].split('?')[0];
+      if(!clean)continue;
+      if(clean==='/')continue;
+      if(clean.startsWith('/')&&routes.has(clean))continue;
+      const target=clean.startsWith('/')?path.join(ROOT,clean.slice(1)):path.resolve(path.dirname(path.join(ROOT,file)),clean);
+      if(!(await exists(target)))err(`Broken local HTML reference: ${file} -> ${original}`);
+    }
+  }
+}
+
+function planCountFromPath(p){
+  if(p.includes('gunluk-planlar-5sinif')||p.includes('gunluk-planlar-6sinif'))return 37;
+  if(p.includes('gunluk-planlar-robotik')||p.includes('gunluk-planlar-yapay-zeka'))return 36;
+  return null;
+}
+
+async function validateClassroomPlanLinks(){
+  const runtime=await fs.readFile(path.join(ROOT,'classroom-v2.js'),'utf8');
+  const padded=/C\.plan\.replace\(\s*['"]\{n\}['"]\s*,\s*String\(w\.hafta_no\)\.padStart\(2\s*,\s*['"]0['"]\)\s*\)/.test(runtime);
+  const raw=/C\.plan\.replace\(\s*['"]\{n\}['"]\s*,\s*w\.hafta_no\s*\)/.test(runtime);
+  if(!padded&&!raw){err('classroom-v2.js: daily-plan expansion pattern is unknown; validator cannot prove runtime links');return;}
+  const token=n=>padded?String(n).padStart(2,'0'):String(n);
+  for(const [file,count] of CLASSROOM_PLAN_RULES){
+    const text=await fs.readFile(path.join(ROOT,file),'utf8');
+    const m=text.match(/window\.KESKINLAB_COURSE\s*=\s*(\{[\s\S]*?\});/);
+    if(!m){err(`${file}: KESKINLAB_COURSE config not found`);continue;}
+    let config;
+    try{config=JSON.parse(m[1]);}catch(e){err(`${file}: KESKINLAB_COURSE is not valid JSON (${e.message})`);continue;}
+    if(!config.plan||!config.plan.includes('{n}')){err(`${file}: plan template must contain {n}`);continue;}
+    for(let n=1;n<=count;n++){
+      const target=config.plan.replace('{n}',token(n));
+      if(!(await exists(path.join(ROOT,target))))err(`Broken Classroom daily-plan link: ${file} week ${n} -> ${target}`);
+    }
+  }
+}
+
+async function validateHomePlanLinks(){
+  const text=await fs.readFile(path.join(ROOT,'home-v2.js'),'utf8');
+  const templates=[...text.matchAll(/plan\s*:\s*n\s*=>\s*`([^`]+)`/g)].map(m=>m[1]);
+  if(templates.length!==4){err(`home-v2.js: expected 4 daily-plan factories, found ${templates.length}`);return;}
+  for(const tpl of templates){
+    let factory;
+    try{factory=new Function('n',`return \`${tpl}\`;`);}catch(e){err(`home-v2.js: cannot evaluate daily-plan factory (${e.message})`);continue;}
+    let sample;
+    try{sample=factory(1);}catch(e){err(`home-v2.js: daily-plan factory throws (${e.message})`);continue;}
+    const count=planCountFromPath(sample);
+    if(!count){err(`home-v2.js: unknown daily-plan factory target: ${sample}`);continue;}
+    for(let n=1;n<=count;n++){
+      let target;
+      try{target=factory(n);}catch(e){err(`home-v2.js: daily-plan factory failed for week ${n} (${e.message})`);break;}
+      if(!(await exists(path.join(ROOT,target))))err(`Broken homepage daily-plan link: week ${n} -> ${target}`);
+    }
+  }
+}
+
+async function validateDynamicPlanLinks(){
+  await validateClassroomPlanLinks();
+  await validateHomePlanLinks();
+}
+
 async function validateGenerated(){
   const p=path.join(ROOT,'generated','materials.json');
   if(!(await exists(p))){warn('generated/materials.json not present; run npm run generate before full validation');return;}
@@ -110,6 +235,9 @@ async function validateGenerated(){
 async function main(){
   await validateMaterialTree();
   await validatePlans();
+  await validateLegacyDataGuards();
+  await validateStaticHtmlLinks();
+  await validateDynamicPlanLinks();
   await validateGenerated();
   for(const w of warnings)console.warn(`WARN  ${w}`);
   for(const e of errors)console.error(`ERROR ${e}`);
