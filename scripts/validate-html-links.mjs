@@ -4,6 +4,7 @@ import path from 'node:path';
 const ROOT=process.cwd();
 const SKIP_DIRS=new Set(['.git','node_modules','generated','.cache']);
 const FILE_EXT_RE=/\.(?:html?|css|js|mjs|json|svg|png|jpe?g|webp|gif|pdf|docx|xlsx|zip)(?:[?#].*)?$/i;
+const TEMPLATE_RE=/\$\{[^}]+\}|\{[A-Za-z_]\w*\}/;
 const errors=new Set();
 
 async function exists(p){try{await fs.access(p);return true}catch{return false}}
@@ -43,14 +44,17 @@ async function validTarget(fromFile,clean,routes){
   return false;
 }
 async function validateStaticRef(file,original,routes,kind='HTML reference'){
-  if(!original||original==='#'||original.startsWith('#')||external(original)||original.includes('${'))return;
+  if(!original||original==='#'||original.startsWith('#')||external(original)||TEMPLATE_RE.test(original))return;
   const clean=cleanRef(original);
   if(!clean)return;
   if(!(await validTarget(file,clean,routes)))errors.add(`Broken local ${kind}: ${fileLabel(file)} -> ${original}`);
 }
 async function validateTemplatePath(file,original){
-  if(!original.includes('${')||external(original))return;
-  const before=cleanRef(original).split('${')[0];
+  if(!TEMPLATE_RE.test(original)||external(original))return;
+  const clean=cleanRef(original);
+  const match=clean.match(TEMPLATE_RE);
+  if(!match)return;
+  const before=clean.slice(0,match.index);
   if(!before.includes('/'))return;
   const base=before.endsWith('/')?before:path.posix.dirname(before);
   const target=before.startsWith('/')?path.join(ROOT,base.slice(1)):path.resolve(path.dirname(file),base);
@@ -62,7 +66,7 @@ async function validateEmbeddedFileLiterals(file,text,routes){
   while((m=re.exec(text))){
     const value=(m[1]??m[2]??m[3]??'').trim();
     if(!value||external(value)||!value.includes('/'))continue;
-    if(value.includes('${')){
+    if(TEMPLATE_RE.test(value)){
       if(FILE_EXT_RE.test(value))await validateTemplatePath(file,value);
       continue;
     }
