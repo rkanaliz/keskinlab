@@ -24,5 +24,11 @@ KeskinLab; 5–6. sınıf Bilişim Teknolojileri ve Yazılım, Robotik Kodlama-I
 - `gunluk-planlar-robotik/` — 36 hafta
 - `gunluk-planlar-yapay-zeka/` — 36 hafta
 
+## Kilitli arayüz kararları
+- Ana sayfadaki **Bu Hafta** kartlarında dört ders aynı bilgi gramerini kullanır: **ders adı → okunabilir konu başlığı → tema**.
+- Robotik Kodlama-I ve Yapay Zekâ Uygulamaları-I için `RK.1.1.1`, `1.1`, `1.2`, `1.1.1` gibi müfredat kodları ana konu başlığında gösterilmez. Kodlar veri katmanında korunur; Müfredat / Classroom / öğretmen katmanında kullanılabilir.
+- Robotik ve Yapay Zekâ kartlarında tipografi, punto, satır aralığı, renk, hizalama, öğretmen katmanı, **Derse Başla** ve **Günlük Plan** yapısı 5. ve 6. sınıf kartlarıyla aynı kalır. Sadece konu metni okunabilir hâle getirilir.
+- 5. Sınıf Hafta 01 **Ders Notu** ve **Öğrenci Etkinliği**, 6. sınıftaki gibi ortak PDF/DOCX viewer akışını kullanır; özel web-içerik override'ı kullanılmaz.
+
 ## Çalışma standardı
 Tasarım ve özellik denemeleri önce preview üzerinde yapılır. Onaylanan değişiklikler paket halinde `main` dalına alınır; production üzerinde doğrudan deneme yapılmaz.
