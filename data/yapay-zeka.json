@@ -1,0 +1,535 @@
+{
+  "schemaVersion": 1,
+  "course": "yapay-zeka",
+  "title": "Yapay Zekâ Uygulamaları-I",
+  "sourceKind": "elective",
+  "weekCount": 36,
+  "weeks": [
+    {
+      "hafta_no": 1,
+      "tarih": "14-18 Eylül 2026",
+      "unite": "YZU.1.1. YAPAY ZEKÂYA GİRİŞ",
+      "konu": "1.1.1. Yapay Zekâ Kavramı",
+      "kazanimlar": [
+        "YZU.1.1.1.1. Yapay zekânın tanımını yapar."
+      ],
+      "etkinlik": "Tanışma • “Yapay zekâ” tanımı verilir. Etkileşimli etkinliklerle konu pekiştirilir.",
+      "belirli_gun": "İLKÖĞRETİM HAFTASI (14-20 EYLÜL 2026)",
+      "baslangic": "2026-09-14",
+      "bitis": "2026-09-18"
+    },
+    {
+      "hafta_no": 2,
+      "tarih": "21-25 Eylül 2026",
+      "unite": "YZU.1.1. YAPAY ZEKÂYA GİRİŞ",
+      "konu": "1.1.1. Yapay Zekâ Kavramı (Yapay Zekâ ve Doğal Zekâ)",
+      "kazanimlar": [
+        "YZU.1.1.1.2. Yapay zekâ ve zekânın benzerliklerini fark eder.",
+        "YZU.1.1.1.3. Yapay zekâ ve zekânın ayrımını yapar."
+      ],
+      "etkinlik": "Yapay zekâ ve doğal zekâ arasındaki benzerlikler ve farklılıklar anlatılır. Etkileşimli etkinliklerle konu pekiştirilir.",
+      "belirli_gun": "—",
+      "baslangic": "2026-09-21",
+      "bitis": "2026-09-25"
+    },
+    {
+      "hafta_no": 3,
+      "tarih": "28 Eylül-2 Ekim 2026",
+      "unite": "YZU.1.1. YAPAY ZEKÂYA GİRİŞ",
+      "konu": "1.1.1. Yapay Zekâ Kavramı (Yapay Zekânın Sınırlılıkları)",
+      "kazanimlar": [
+        "YZU.1.1.1.4. Yapay zekânın sınırlılıklarını fark eder."
+      ],
+      "etkinlik": "İnsanlara özel duyguların (merhamet, empati, diğerkâmlık, sevgi vb.) yapay zekâda olmaması ve bunun olası sonuçları üzerine tartışma yürütülür.",
+      "belirli_gun": "—",
+      "baslangic": "2026-09-28",
+      "bitis": "2026-10-02"
+    },
+    {
+      "hafta_no": 4,
+      "tarih": "5-9 Ekim 2026",
+      "unite": "YZU.1.1. YAPAY ZEKÂYA GİRİŞ",
+      "konu": "1.1.2. Yapay Zekânın Tarihsel Gelişimi",
+      "kazanimlar": [
+        "YZU.1.1.2.1. Yapay zekânın tarihsel gelişimini açıklar."
+      ],
+      "etkinlik": "“Yapay Zekânın Tarihsel Gelişimi” ile ilgili video/görsel içeriklerle konu aktarılır ve etkileşimli etkinliklerle pekiştirilir.",
+      "belirli_gun": "—",
+      "baslangic": "2026-10-05",
+      "bitis": "2026-10-09"
+    },
+    {
+      "hafta_no": 5,
+      "tarih": "12-16 Ekim 2026",
+      "unite": "YZU.1.2. YAPAY ZEKÂNIN KULLANIM ALANLARI VE ALT BOYUTLARI",
+      "konu": "1.2.1. Yapay Zekânın Kullanım Alanları",
+      "kazanimlar": [
+        "YZU.1.2.1.1. Yapay zekânın kullanım alanlarını ifade eder."
+      ],
+      "etkinlik": "Yapay zekânın kullanım alanları örneklerle açıklanır. Etkileşimli etkinliklerle konu pekiştirilir.",
+      "belirli_gun": "—",
+      "baslangic": "2026-10-12",
+      "bitis": "2026-10-16"
+    },
+    {
+      "hafta_no": 6,
+      "tarih": "19-23 Ekim 2026",
+      "unite": "YZU.1.2. YAPAY ZEKÂNIN KULLANIM ALANLARI VE ALT BOYUTLARI",
+      "konu": "1.2.1. Yapay Zekânın Kullanım Alanları (Yapay Zekâ Araçları)",
+      "kazanimlar": [
+        "YZU.1.2.1.2. Yapay zekâ uygulamalarının nasıl çalıştığını örnekler üzerinden açıklar."
+      ],
+      "etkinlik": "Yaygın olarak kullanılan yapay zekâ araçları ve temel çalışma mantıkları örnekler üzerinden açıklanır.",
+      "belirli_gun": "—",
+      "baslangic": "2026-10-19",
+      "bitis": "2026-10-23"
+    },
+    {
+      "hafta_no": 7,
+      "tarih": "26-30 Ekim 2026",
+      "unite": "YZU.1.2. YAPAY ZEKÂNIN KULLANIM ALANLARI VE ALT BOYUTLARI",
+      "konu": "1.2.1. Yapay Zekânın Kullanım Alanları (ChatGPT, Gemini, Copy.ai)",
+      "kazanimlar": [
+        "YZU.1.2.1.2. Yapay zekâ uygulamalarının nasıl çalıştığını örnekler üzerinden açıklar.",
+        "YZU.1.2.1.3. Farklı yapay zekâ uygulamalarının sonuçlarını örnekler üzerinden açıklar.",
+        "YZU.1.2.1.4. Üretken yapay zekâ uygulamalarını etkili bir biçimde kullanma yöntemlerini fark eder."
+      ],
+      "etkinlik": "ChatGPT, Gemini, Copy.ai vb. üretken yapay zekâ uygulamaları tanıtılır; doğru ve etkili girdi hazırlamaya yönelik basit örnekler yapılır.",
+      "belirli_gun": "29 EKİM CUMHURİYET BAYRAMI",
+      "baslangic": "2026-10-26",
+      "bitis": "2026-10-30"
+    },
+    {
+      "hafta_no": 8,
+      "tarih": "2-6 Kasım 2026",
+      "unite": "YZU.1.2. YAPAY ZEKÂNIN KULLANIM ALANLARI VE ALT BOYUTLARI",
+      "konu": "1.2.1. Yapay Zekânın Kullanım Alanları (QuickDraw, AutoDraw, DALL-E, Canva)",
+      "kazanimlar": [
+        "YZU.1.2.1.2. Yapay zekâ uygulamalarının nasıl çalıştığını örnekler üzerinden açıklar.",
+        "YZU.1.2.1.3. Farklı yapay zekâ uygulamalarının sonuçlarını örnekler üzerinden açıklar.",
+        "YZU.1.2.1.4. Üretken yapay zekâ uygulamalarını etkili bir biçimde kullanma yöntemlerini fark eder."
+      ],
+      "etkinlik": "QuickDraw, AutoDraw, DALL-E, Canva vb. yapay zekâ uygulamaları tanıtılır ve kullanımlarıyla ilgili basit örnekler yapılır.",
+      "belirli_gun": "—",
+      "baslangic": "2026-11-02",
+      "bitis": "2026-11-06"
+    },
+    {
+      "hafta_no": 9,
+      "tarih": "9-13 Kasım 2026",
+      "unite": "YZU.1.2. YAPAY ZEKÂNIN KULLANIM ALANLARI VE ALT BOYUTLARI",
+      "konu": "1.2.2. Yapay Zekânın Alt Boyutları",
+      "kazanimlar": [
+        "YZU.1.2.2.1. Yapay zekânın alt boyutlarını açıklar."
+      ],
+      "etkinlik": "Yapay zekânın alt boyutları örnekler üzerinden açıklanır ve etkileşimli etkinliklerle konu pekiştirilir.",
+      "belirli_gun": "10 KASIM ATATÜRK’Ü ANMA GÜNÜ VE ATATÜRK HAFTASI",
+      "baslangic": "2026-11-09",
+      "bitis": "2026-11-13"
+    },
+    {
+      "hafta_no": 10,
+      "tarih": "23-27 Kasım 2026",
+      "unite": "YZU.1.2. YAPAY ZEKÂNIN KULLANIM ALANLARI VE ALT BOYUTLARI",
+      "konu": "1.2.2. Yapay Zekânın Alt Boyutları",
+      "kazanimlar": [
+        "YZU.1.2.2.2. Yapay zekânın alt boyutları ile kullanım alanlarını ilişkilendirir."
+      ],
+      "etkinlik": "Özel gereksinimli bireylere, hasta ve yaşlılara yardım amaçlı yapay zekâ kullanım alanları tartışılır; yapay zekânın toplum yararına kullanımına yönelik farkındalık geliştirilir.",
+      "belirli_gun": "24 KASIM ÖĞRETMENLER GÜNÜ",
+      "baslangic": "2026-11-23",
+      "bitis": "2026-11-27"
+    },
+    {
+      "hafta_no": 11,
+      "tarih": "30 Kasım-4 Aralık 2026",
+      "unite": "YZU.1.3. YAPAY ZEKÂ VE ETİK",
+      "konu": "1.3.1. Yapay Zekâ Uygulamalarında Etik ile İlgili Temel Kavramlar (Büyük Veri)",
+      "kazanimlar": [
+        "YZU.1.3.1.1. Yapay zekâ uygulamalarında büyük veri kavramının önemini fark eder."
+      ],
+      "etkinlik": "“Büyük veri” kavramı yapay zekâ uygulamaları bağlamında örneklerle açıklanır ve etkileşimli etkinliklerle pekiştirilir.",
+      "belirli_gun": "—",
+      "baslangic": "2026-11-30",
+      "bitis": "2026-12-04"
+    },
+    {
+      "hafta_no": 12,
+      "tarih": "7-11 Aralık 2026",
+      "unite": "YZU.1.3. YAPAY ZEKÂ VE ETİK",
+      "konu": "1.3.1. Yapay Zekâ Uygulamalarında Etik ile İlgili Temel Kavramlar (Veri Madenciliği)",
+      "kazanimlar": [
+        "YZU.1.3.1.2. Yapay zekâ uygulamalarında veri madenciliği kavramının önemini fark eder."
+      ],
+      "etkinlik": "“Veri madenciliği” kavramı yapay zekâ uygulamaları bağlamında örneklerle açıklanır ve etkileşimli etkinliklerle pekiştirilir.",
+      "belirli_gun": "—",
+      "baslangic": "2026-12-07",
+      "bitis": "2026-12-11"
+    },
+    {
+      "hafta_no": 13,
+      "tarih": "14-18 Aralık 2026",
+      "unite": "YZU.1.3. YAPAY ZEKÂ VE ETİK",
+      "konu": "1.3.2. Yapay Zekâda Etik",
+      "kazanimlar": [
+        "YZU.1.3.2.1. Yapay zekâ ve etik kavramları arasında bağlantı kurar."
+      ],
+      "etkinlik": "Yapay zekâ uygulamalarında etik ile ilgili temel kavramlar örnekler üzerinden açıklanır ve tartışılır.",
+      "belirli_gun": "—",
+      "baslangic": "2026-12-14",
+      "bitis": "2026-12-18"
+    },
+    {
+      "hafta_no": 14,
+      "tarih": "21-25 Aralık 2026",
+      "unite": "YZU.1.3. YAPAY ZEKÂ VE ETİK",
+      "konu": "1.3.2. Yapay Zekâda Etik (Yapay Zekâ Etik İhlalleri)",
+      "kazanimlar": [
+        "YZU.1.3.2.2. Yapay zekâ uygulamalarındaki büyük veri kaynaklı etik ihlallerini örnekler üzerinden ayırt eder.",
+        "YZU.1.3.2.3. Yapay zekâ uygulamalarındaki veri madenciliği kaynaklı etik ihlallerini örnekler üzerinden açıklar."
+      ],
+      "etkinlik": "Büyük veri ve veri madenciliği kaynaklı yaygın etik ihlaller örnekler üzerinden incelenir ve karşılaştırılır.",
+      "belirli_gun": "—",
+      "baslangic": "2026-12-21",
+      "bitis": "2026-12-25"
+    },
+    {
+      "hafta_no": 15,
+      "tarih": "28 Aralık-1 Ocak 2027",
+      "unite": "YZU.1.3. YAPAY ZEKÂ VE ETİK",
+      "konu": "1.3.3. Gizlilik ve Güvenlik (Kişisel Veri İhlalleri)",
+      "kazanimlar": [
+        "YZU.1.3.3.1. Yapay zekâ uygulamalarında kişisel verilerin ihlaline örnekler verir."
+      ],
+      "etkinlik": "Yapay zekâ uygulamalarında kişisel verilerin ihlaline ilişkin örnekler incelenir ve konu etkileşimli etkinliklerle pekiştirilir.",
+      "belirli_gun": "1 OCAK YILBAŞI",
+      "baslangic": "2026-12-28",
+      "bitis": "2027-01-01"
+    },
+    {
+      "hafta_no": 16,
+      "tarih": "4-8 Ocak 2027",
+      "unite": "YZU.1.3. YAPAY ZEKÂ VE ETİK",
+      "konu": "1.3.3. Gizlilik ve Güvenlik (Güvenlik İlkeleri)",
+      "kazanimlar": [
+        "YZU.1.3.3.2. Yapay zekâ uygulamalarında karşılaşılan ihlallere karşı bilişim güvenliği ilkelerini uygular."
+      ],
+      "etkinlik": "Yapay zekâ uygulamalarında karşılaşılan ihlallere karşı alınabilecek güvenlik önlemleri örnekler üzerinden açıklanır.",
+      "belirli_gun": "—",
+      "baslangic": "2027-01-04",
+      "bitis": "2027-01-08"
+    },
+    {
+      "hafta_no": 17,
+      "tarih": "11-15 Ocak 2027",
+      "unite": "YZU.1.4. YAPAY ZEKÂNIN ÖNEMİ",
+      "konu": "1.4.1. Yapay Zekânın Önemi",
+      "kazanimlar": [
+        "YZU.1.4.1.1. Yapay zekânın önemini kavrar."
+      ],
+      "etkinlik": "Yapay zekânın önemi farklı yaşam ve meslek alanlarından örneklerle açıklanır ve etkileşimli etkinliklerle pekiştirilir.",
+      "belirli_gun": "—",
+      "baslangic": "2027-01-11",
+      "bitis": "2027-01-15"
+    },
+    {
+      "hafta_no": 18,
+      "tarih": "18-22 Ocak 2027",
+      "unite": "YZU.1.4. YAPAY ZEKÂNIN ÖNEMİ",
+      "konu": "1.4.2. Yapay Zekânın Geleceği",
+      "kazanimlar": [
+        "YZU.1.4.2.1. Yapay zekânın geleceği ile ilgili çıkarımlar yapar."
+      ],
+      "etkinlik": "“Yapay zekâ gelecekte nasıl bir hâl alacaktır?” sorusu üzerinden tartışma yürütülür; öğrenciler bugünkü gelişmelerden hareketle geleceğe ilişkin çıkarımlar yapar.",
+      "belirli_gun": "—",
+      "baslangic": "2027-01-18",
+      "bitis": "2027-01-22"
+    },
+    {
+      "hafta_no": 19,
+      "tarih": "8-12 Şubat 2027",
+      "unite": "YZU.1.5. BLOK TABANLI GELİŞTİRME ORTAMLARI",
+      "konu": "1.5.1. Blok Tabanlı Geliştirme Ortamları",
+      "kazanimlar": [
+        "YZU.1.5.1.1. Çevrim içi blok tabanlı ortamlara erişim sağlar.",
+        "YZU.1.5.1.2. Çevrim dışı blok tabanlı geliştirme ortamının kurulumunu yapar."
+      ],
+      "etkinlik": "Blok tabanlı yapay zekâ geliştirme uygulamaları tanıtılır; çevrim içi erişim ve çevrim dışı kurulum adımları uygulanır.",
+      "belirli_gun": "—",
+      "baslangic": "2027-02-08",
+      "bitis": "2027-02-12"
+    },
+    {
+      "hafta_no": 20,
+      "tarih": "15-19 Şubat 2027",
+      "unite": "YZU.1.5. BLOK TABANLI GELİŞTİRME ORTAMLARI",
+      "konu": "1.5.1. Blok Tabanlı Geliştirme Ortamları (PictoBlox Arayüzü)",
+      "kazanimlar": [
+        "YZU.1.5.1.3. Blok tabanlı geliştirme ortamının arayüzünü tanır."
+      ],
+      "etkinlik": "PictoBlox uygulamasına erişim/üyelik işlemleri ve arayüzün temel bölümleri uygulamalı olarak tanıtılır.",
+      "belirli_gun": "—",
+      "baslangic": "2027-02-15",
+      "bitis": "2027-02-19"
+    },
+    {
+      "hafta_no": 21,
+      "tarih": "22-26 Şubat 2027",
+      "unite": "YZU.1.5. BLOK TABANLI GELİŞTİRME ORTAMLARI",
+      "konu": "1.5.1. Blok Tabanlı Geliştirme Ortamları (PictoBlox Kütüphaneleri ve Algılayıcılar)",
+      "kazanimlar": [
+        "YZU.1.5.1.4. Blok tabanlı geliştirme ortamına ait algılayıcıları ayırt eder."
+      ],
+      "etkinlik": "PictoBlox kütüphanelerine erişim gösterilir; geliştirme ortamında kullanılabilen algılayıcıların/girdi kaynaklarının işlevleri örneklerle ayırt edilir.",
+      "belirli_gun": "—",
+      "baslangic": "2027-02-22",
+      "bitis": "2027-02-26"
+    },
+    {
+      "hafta_no": 22,
+      "tarih": "1-5 Mart 2027",
+      "unite": "YZU.1.5. BLOK TABANLI GELİŞTİRME ORTAMLARI",
+      "konu": "1.5.1. Blok Tabanlı Geliştirme Ortamları (PictoBlox Face Detection)",
+      "kazanimlar": [
+        "YZU.1.5.1.5. Blok tabanlı geliştirme ortamının kütüphanelerini tanır.",
+        "YZU.1.5.1.6. Blok tabanlı geliştirme ortamını gerçek zamanlı olarak test etme yöntemlerini fark eder."
+      ],
+      "etkinlik": "PictoBlox Face Detection kütüphanesi eklenir; temel kod blokları incelenir ve basit bir gerçek zamanlı test yapılır.",
+      "belirli_gun": "—",
+      "baslangic": "2027-03-01",
+      "bitis": "2027-03-05"
+    },
+    {
+      "hafta_no": 23,
+      "tarih": "15-19 Mart 2027",
+      "unite": "YZU.1.5. BLOK TABANLI GELİŞTİRME ORTAMLARI",
+      "konu": "1.5.1. Blok Tabanlı Geliştirme Ortamları (PictoBlox Object Detection)",
+      "kazanimlar": [
+        "YZU.1.5.1.5. Blok tabanlı geliştirme ortamının kütüphanelerini tanır.",
+        "YZU.1.5.1.6. Blok tabanlı geliştirme ortamını gerçek zamanlı olarak test etme yöntemlerini fark eder."
+      ],
+      "etkinlik": "PictoBlox Object Detection kütüphanesi eklenir; temel kod blokları incelenir ve basit bir gerçek zamanlı test yapılır.",
+      "belirli_gun": "18 MART ŞEHİTLER GÜNÜ",
+      "baslangic": "2027-03-15",
+      "bitis": "2027-03-19"
+    },
+    {
+      "hafta_no": 24,
+      "tarih": "22-26 Mart 2027",
+      "unite": "YZU.1.5. BLOK TABANLI GELİŞTİRME ORTAMLARI",
+      "konu": "1.5.1. Blok Tabanlı Geliştirme Ortamları (PictoBlox Human Body Detection)",
+      "kazanimlar": [
+        "YZU.1.5.1.5. Blok tabanlı geliştirme ortamının kütüphanelerini tanır.",
+        "YZU.1.5.1.6. Blok tabanlı geliştirme ortamını gerçek zamanlı olarak test etme yöntemlerini fark eder."
+      ],
+      "etkinlik": "PictoBlox Human Body Detection kütüphanesi eklenir; temel bloklar incelenir ve gerçek zamanlı test uygulanır.",
+      "belirli_gun": "—",
+      "baslangic": "2027-03-22",
+      "bitis": "2027-03-26"
+    },
+    {
+      "hafta_no": 25,
+      "tarih": "29 Mart-2 Nisan 2027",
+      "unite": "YZU.1.5. BLOK TABANLI GELİŞTİRME ORTAMLARI",
+      "konu": "1.5.1. Blok Tabanlı Geliştirme Ortamları (PictoBlox Speech Recognition)",
+      "kazanimlar": [
+        "YZU.1.5.1.5. Blok tabanlı geliştirme ortamının kütüphanelerini tanır.",
+        "YZU.1.5.1.6. Blok tabanlı geliştirme ortamını gerçek zamanlı olarak test etme yöntemlerini fark eder."
+      ],
+      "etkinlik": "PictoBlox Speech Recognition kütüphanesi eklenir; ses girdisinin bloklarla nasıl işlendiği incelenir ve gerçek zamanlı test uygulanır.",
+      "belirli_gun": "—",
+      "baslangic": "2027-03-29",
+      "bitis": "2027-04-02"
+    },
+    {
+      "hafta_no": 26,
+      "tarih": "5-9 Nisan 2027",
+      "unite": "YZU.1.5. BLOK TABANLI GELİŞTİRME ORTAMLARI",
+      "konu": "1.5.1. Blok Tabanlı Geliştirme Ortamları (PictoBlox Text Recognition)",
+      "kazanimlar": [
+        "YZU.1.5.1.5. Blok tabanlı geliştirme ortamının kütüphanelerini tanır.",
+        "YZU.1.5.1.6. Blok tabanlı geliştirme ortamını gerçek zamanlı olarak test etme yöntemlerini fark eder."
+      ],
+      "etkinlik": "PictoBlox Text Recognition kütüphanesi eklenir; metin tanıma blokları incelenir ve basit bir gerçek zamanlı test uygulanır.",
+      "belirli_gun": "—",
+      "baslangic": "2027-04-05",
+      "bitis": "2027-04-09"
+    },
+    {
+      "hafta_no": 27,
+      "tarih": "12-16 Nisan 2027",
+      "unite": "YZU.1.5. BLOK TABANLI GELİŞTİRME ORTAMLARI",
+      "konu": "1.5.1. Blok Tabanlı Geliştirme Ortamları (PictoBlox Artificial Intelligence)",
+      "kazanimlar": [
+        "YZU.1.5.1.5. Blok tabanlı geliştirme ortamının kütüphanelerini tanır.",
+        "YZU.1.5.1.6. Blok tabanlı geliştirme ortamını gerçek zamanlı olarak test etme yöntemlerini fark eder."
+      ],
+      "etkinlik": "PictoBlox Artificial Intelligence kütüphanesi eklenir; temel bloklar incelenir ve gerçek zamanlı test yöntemleri uygulanır.",
+      "belirli_gun": "—",
+      "baslangic": "2027-04-12",
+      "bitis": "2027-04-16"
+    },
+    {
+      "hafta_no": 28,
+      "tarih": "19-23 Nisan 2027",
+      "unite": "YZU.1.6. BLOK TABANLI ÖRNEK PROJE GELİŞTİRME",
+      "konu": "1.6.1. Blok Tabanlı Ortamda Görüntü İşleme Projesi (Nesne Tespit Projesi)",
+      "kazanimlar": [
+        "YZU.1.6.1.1. Yapay zekâ uygulamalarında görüntü işlemenin temel mantığını kavrar.",
+        "YZU.1.6.1.2. Blok tabanlı ortamda görüntü işleme projesi tasarlar.",
+        "YZU.1.6.1.3. Blok tabanlı ortamda görüntü işleme projesi oluşturur.",
+        "YZU.1.6.1.4. Blok tabanlı ortamda görüntü işleme projesini gerçek zamanlı olarak test eder.",
+        "YZU.1.6.1.5. Blok tabanlı ortamda uygulamanın olası hatalarını ayıklar.",
+        "YZU.1.6.1.6. Blok tabanlı ortamda görüntü işleme projesini kaydeder."
+      ],
+      "etkinlik": "PictoBlox ortamında “Nesne Tespit-1” ve “Nesne Tespit-2” projeleri uygulanır.",
+      "belirli_gun": "23 NİSAN ULUSAL EGEMENLİK VE ÇOCUK BAYRAMI",
+      "baslangic": "2027-04-19",
+      "bitis": "2027-04-23"
+    },
+    {
+      "hafta_no": 29,
+      "tarih": "26-30 Nisan 2027",
+      "unite": "YZU.1.6. BLOK TABANLI ÖRNEK PROJE GELİŞTİRME",
+      "konu": "1.6.1. Blok Tabanlı Ortamda Görüntü İşleme Projesi (Yüz Filtresi Projesi)",
+      "kazanimlar": [
+        "YZU.1.6.1.1. Yapay zekâ uygulamalarında görüntü işlemenin temel mantığını kavrar.",
+        "YZU.1.6.1.2. Blok tabanlı ortamda görüntü işleme projesi tasarlar.",
+        "YZU.1.6.1.3. Blok tabanlı ortamda görüntü işleme projesi oluşturur.",
+        "YZU.1.6.1.4. Blok tabanlı ortamda görüntü işleme projesini gerçek zamanlı olarak test eder.",
+        "YZU.1.6.1.5. Blok tabanlı ortamda uygulamanın olası hatalarını ayıklar.",
+        "YZU.1.6.1.6. Blok tabanlı ortamda görüntü işleme projesini kaydeder."
+      ],
+      "etkinlik": "PictoBlox uygulamasında “Yüz Filtresi” projesi yapılır.",
+      "belirli_gun": "BİLİŞİM HAFTASI (26 NİSAN-2 MAYIS 2027)",
+      "baslangic": "2027-04-26",
+      "bitis": "2027-04-30"
+    },
+    {
+      "hafta_no": 30,
+      "tarih": "3-7 Mayıs 2027",
+      "unite": "YZU.1.6. BLOK TABANLI ÖRNEK PROJE GELİŞTİRME",
+      "konu": "1.6.1. Blok Tabanlı Ortamda Görüntü İşleme Projesi (Yüz Analizi Projesi)",
+      "kazanimlar": [
+        "YZU.1.6.1.1. Yapay zekâ uygulamalarında görüntü işlemenin temel mantığını kavrar.",
+        "YZU.1.6.1.2. Blok tabanlı ortamda görüntü işleme projesi tasarlar.",
+        "YZU.1.6.1.3. Blok tabanlı ortamda görüntü işleme projesi oluşturur.",
+        "YZU.1.6.1.4. Blok tabanlı ortamda görüntü işleme projesini gerçek zamanlı olarak test eder.",
+        "YZU.1.6.1.5. Blok tabanlı ortamda uygulamanın olası hatalarını ayıklar.",
+        "YZU.1.6.1.6. Blok tabanlı ortamda görüntü işleme projesini kaydeder."
+      ],
+      "etkinlik": "PictoBlox uygulamasında “Yüz Analizi” projesi yapılır.",
+      "belirli_gun": "—",
+      "baslangic": "2027-05-03",
+      "bitis": "2027-05-07"
+    },
+    {
+      "hafta_no": 31,
+      "tarih": "10-14 Mayıs 2027",
+      "unite": "YZU.1.6. BLOK TABANLI ÖRNEK PROJE GELİŞTİRME",
+      "konu": "1.6.1. Blok Tabanlı Ortamda Görüntü İşleme Projesi (Duygu Analizi Projesi)",
+      "kazanimlar": [
+        "YZU.1.6.1.1. Yapay zekâ uygulamalarında görüntü işlemenin temel mantığını kavrar.",
+        "YZU.1.6.1.2. Blok tabanlı ortamda görüntü işleme projesi tasarlar.",
+        "YZU.1.6.1.3. Blok tabanlı ortamda görüntü işleme projesi oluşturur.",
+        "YZU.1.6.1.4. Blok tabanlı ortamda görüntü işleme projesini gerçek zamanlı olarak test eder.",
+        "YZU.1.6.1.5. Blok tabanlı ortamda uygulamanın olası hatalarını ayıklar.",
+        "YZU.1.6.1.6. Blok tabanlı ortamda görüntü işleme projesini kaydeder."
+      ],
+      "etkinlik": "PictoBlox uygulamasında “Duygu Analizi” projesi yapılır.",
+      "belirli_gun": "—",
+      "baslangic": "2027-05-10",
+      "bitis": "2027-05-14"
+    },
+    {
+      "hafta_no": 32,
+      "tarih": "24-28 Mayıs 2027",
+      "unite": "YZU.1.6. BLOK TABANLI ÖRNEK PROJE GELİŞTİRME",
+      "konu": "1.6.1. Blok Tabanlı Ortamda Görüntü İşleme Projesi (Kimim Ben Projesi)",
+      "kazanimlar": [
+        "YZU.1.6.1.1. Yapay zekâ uygulamalarında görüntü işlemenin temel mantığını kavrar.",
+        "YZU.1.6.1.2. Blok tabanlı ortamda görüntü işleme projesi tasarlar.",
+        "YZU.1.6.1.3. Blok tabanlı ortamda görüntü işleme projesi oluşturur.",
+        "YZU.1.6.1.4. Blok tabanlı ortamda görüntü işleme projesini gerçek zamanlı olarak test eder.",
+        "YZU.1.6.1.5. Blok tabanlı ortamda uygulamanın olası hatalarını ayıklar.",
+        "YZU.1.6.1.6. Blok tabanlı ortamda görüntü işleme projesini kaydeder."
+      ],
+      "etkinlik": "PictoBlox uygulamasında “Kimim Ben?” projesi yapılır.",
+      "belirli_gun": "—",
+      "baslangic": "2027-05-24",
+      "bitis": "2027-05-28"
+    },
+    {
+      "hafta_no": 33,
+      "tarih": "31 Mayıs-4 Haziran 2027",
+      "unite": "YZU.1.6. BLOK TABANLI ÖRNEK PROJE GELİŞTİRME",
+      "konu": "1.6.1. Blok Tabanlı Ortamda Görüntü İşleme Projesi (Çizelim Projesi)",
+      "kazanimlar": [
+        "YZU.1.6.1.1. Yapay zekâ uygulamalarında görüntü işlemenin temel mantığını kavrar.",
+        "YZU.1.6.1.2. Blok tabanlı ortamda görüntü işleme projesi tasarlar.",
+        "YZU.1.6.1.3. Blok tabanlı ortamda görüntü işleme projesi oluşturur.",
+        "YZU.1.6.1.4. Blok tabanlı ortamda görüntü işleme projesini gerçek zamanlı olarak test eder.",
+        "YZU.1.6.1.5. Blok tabanlı ortamda uygulamanın olası hatalarını ayıklar.",
+        "YZU.1.6.1.6. Blok tabanlı ortamda görüntü işleme projesini kaydeder."
+      ],
+      "etkinlik": "PictoBlox uygulamasında “Çizelim!” projesi yapılır.",
+      "belirli_gun": "—",
+      "baslangic": "2027-05-31",
+      "bitis": "2027-06-04"
+    },
+    {
+      "hafta_no": 34,
+      "tarih": "7-11 Haziran 2027",
+      "unite": "YZU.1.6. BLOK TABANLI ÖRNEK PROJE GELİŞTİRME",
+      "konu": "1.6.2. Blok Tabanlı Ortamda Ses İşleme Projesi (Sesli Komut Projesi)",
+      "kazanimlar": [
+        "YZU.1.6.2.1. Yapay zekâ uygulamalarında ses işlemenin temel mantığını kavrar.",
+        "YZU.1.6.2.2. Blok tabanlı ortamda ses işleme projesi tasarlar.",
+        "YZU.1.6.2.3. Blok tabanlı ortamda ses işleme projesi oluşturur.",
+        "YZU.1.6.2.4. Blok tabanlı ortamda ses işleme projesini gerçek zamanlı olarak test eder.",
+        "YZU.1.6.2.5. Blok tabanlı ortamda uygulamanın olası hatalarını ayıklar.",
+        "YZU.1.6.2.6. Blok tabanlı ortamda ses işleme projesini kaydeder."
+      ],
+      "etkinlik": "PictoBlox uygulamasında “Sesli Komut” projesi yapılır.",
+      "belirli_gun": "—",
+      "baslangic": "2027-06-07",
+      "bitis": "2027-06-11"
+    },
+    {
+      "hafta_no": 35,
+      "tarih": "14-18 Haziran 2027",
+      "unite": "YZU.1.6. BLOK TABANLI ÖRNEK PROJE GELİŞTİRME",
+      "konu": "1.6.2. Blok Tabanlı Ortamda Ses İşleme Projesi (Sesli Kitap Projesi)",
+      "kazanimlar": [
+        "YZU.1.6.2.1. Yapay zekâ uygulamalarında ses işlemenin temel mantığını kavrar.",
+        "YZU.1.6.2.2. Blok tabanlı ortamda ses işleme projesi tasarlar.",
+        "YZU.1.6.2.3. Blok tabanlı ortamda ses işleme projesi oluşturur.",
+        "YZU.1.6.2.4. Blok tabanlı ortamda ses işleme projesini gerçek zamanlı olarak test eder.",
+        "YZU.1.6.2.5. Blok tabanlı ortamda uygulamanın olası hatalarını ayıklar.",
+        "YZU.1.6.2.6. Blok tabanlı ortamda ses işleme projesini kaydeder."
+      ],
+      "etkinlik": "PictoBlox uygulamasında “Sesli Kitap” projesi yapılır.",
+      "belirli_gun": "—",
+      "baslangic": "2027-06-14",
+      "bitis": "2027-06-18"
+    },
+    {
+      "hafta_no": 36,
+      "tarih": "21-25 Haziran 2027",
+      "unite": "YZU.1.6. BLOK TABANLI ÖRNEK PROJE GELİŞTİRME",
+      "konu": "1.6.2. Blok Tabanlı Ortamda Ses İşleme Projesi (Hangi Ses Projesi)",
+      "kazanimlar": [
+        "YZU.1.6.2.1. Yapay zekâ uygulamalarında ses işlemenin temel mantığını kavrar.",
+        "YZU.1.6.2.2. Blok tabanlı ortamda ses işleme projesi tasarlar.",
+        "YZU.1.6.2.3. Blok tabanlı ortamda ses işleme projesi oluşturur.",
+        "YZU.1.6.2.4. Blok tabanlı ortamda ses işleme projesini gerçek zamanlı olarak test eder.",
+        "YZU.1.6.2.5. Blok tabanlı ortamda uygulamanın olası hatalarını ayıklar.",
+        "YZU.1.6.2.6. Blok tabanlı ortamda ses işleme projesini kaydeder."
+      ],
+      "etkinlik": "PictoBlox uygulamasında “Hangi Ses” projesi yapılır.",
+      "belirli_gun": "—",
+      "baslangic": "2027-06-21",
+      "bitis": "2027-06-25"
+    }
+  ]
+}

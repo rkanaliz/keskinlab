@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>KeskinLab Reader Prototipi</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="reader-prototype.css">
+</head>
+<body>
+<header class="reader-header">
+  <a class="reader-brand" href="classroom-5-sinif.html?week=1"><img src="brand/devre-karakteri.svg" alt=""><span>KeskinLab</span></a>
+  <div class="reader-context"><span>5. SINIF BTY · HAFTA 01</span><b id="readerTitle">Reader Prototipi</b></div>
+  <a class="reader-back" href="classroom-5-sinif.html?week=1">← Derse Dön</a>
+</header>
+<nav class="reader-tabs" aria-label="Reader prototipleri">
+  <a href="?type=slides" data-type="slides">Sunum</a>
+  <a href="?type=visuals" data-type="visuals">İnfografikler</a>
+  <a href="?type=note" data-type="note">Ders Notu</a>
+  <a href="?type=activity" data-type="activity">Öğrenci Etkinliği</a>
+</nav>
+<main id="readerRoot" class="reader-root" aria-live="polite"></main>
+<script type="module" src="reader-prototype.js"></script>
+</body>
+</html>
