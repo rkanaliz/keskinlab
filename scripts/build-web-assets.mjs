@@ -29,7 +29,7 @@ async function main(){
     await fs.mkdir(dir,{recursive:true});
     const web=path.join(dir,`${parsed.name}.webp`);
     const thumb=path.join(dir,`${parsed.name}-thumb.webp`);
-    await sharp(file,{failOn:'none'}).webp({quality:86,effort:5,smartSubsample:true}).toFile(web);
+    await sharp(file,{failOn:'none'}).webp({quality:80,effort:5,smartSubsample:true}).toFile(web);
     await sharp(file,{failOn:'none'}).resize({width:480,withoutEnlargement:true}).webp({quality:78,effort:5,smartSubsample:true}).toFile(thumb);
   }
   console.log(`Generated ${files.length} WebP previews and ${files.length} thumbnails under generated/web/`);
