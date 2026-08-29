@@ -10,10 +10,6 @@ footer{padding:0;border-top:1px solid var(--line)}
 .foot-brand img{width:25px;height:25px}
 .foot-brand b{font:650 12px "Space Grotesk";letter-spacing:-.01em}
 .foot-brand em{font:500 9px "IBM Plex Mono";color:var(--muted);font-style:normal}
-/* Robotik ve Yapay Zekâ henüz haftalık materyal yüzeyine açılmıyor: ana sayfada yalnız ders başlığı kalır. */
-#weekStream .week-course:nth-child(3),#weekStream .week-course:nth-child(4){grid-template-columns:70px minmax(0,1fr);align-items:center;min-height:92px}
-#weekStream .week-course:nth-child(3) .wc-topic,#weekStream .week-course:nth-child(3) .wc-theme,#weekStream .week-course:nth-child(3) .wc-teacher,#weekStream .week-course:nth-child(3) .week-actions,#weekStream .week-course:nth-child(4) .wc-topic,#weekStream .week-course:nth-child(4) .wc-theme,#weekStream .week-course:nth-child(4) .wc-teacher,#weekStream .week-course:nth-child(4) .week-actions{display:none!important}
-#weekStream .week-course:nth-child(3) .wc-label,#weekStream .week-course:nth-child(4) .wc-label{margin:0;font:650 clamp(21px,2.5vw,32px)/1.08 "Space Grotesk";letter-spacing:-.025em;color:var(--ink)}
 @media(max-width:920px){
   .big-index{display:block!important;right:-.16em;top:38%;font-size:clamp(120px,38vw,220px);opacity:.026;letter-spacing:-.09em}
   .module-num::after{width:13px;flex-basis:13px}.module-row:hover .module-num::after{width:20px}
@@ -34,8 +30,6 @@ footer{padding:0;border-top:1px solid var(--line)}
   .drawer-course-link{min-height:50px;padding:0 22px 0 63px;display:flex;align-items:center;justify-content:space-between;gap:14px;color:var(--ink);text-decoration:none;border-top:1px solid rgba(18,24,43,.07);font:550 13px/1.25 "Inter"}
   .drawer-course-link>span:last-child{flex:0 0 auto;color:var(--muted);font:500 14px "Space Grotesk"}
   .drawer-course-link:active{background:rgba(255,255,255,.30)}
-  #weekStream .week-course:nth-child(3),#weekStream .week-course:nth-child(4){grid-template-columns:30px minmax(0,1fr)!important;min-height:78px}
-  #weekStream .week-course:nth-child(3) .wc-num,#weekStream .week-course:nth-child(4) .wc-num{grid-row:1!important}
 }
 @media(max-width:520px){
   .big-index{right:-.34em;top:33%;font-size:clamp(116px,43vw,188px);opacity:.024}
