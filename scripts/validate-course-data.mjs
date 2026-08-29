@@ -5,27 +5,28 @@ const ROOT=process.cwd();
 const GENERATED=path.join(ROOT,'generated','courses.json');
 const errors=[];
 const SOURCES={
- '5-sinif':{kind:'bty',legacy:['5-sinif-bty.html'],canonical:'data/5-sinif.json',count:37},
- '6-sinif':{kind:'bty',legacy:['6-sinif-bty.html'],canonical:'data/6-sinif.json',count:37},
+ '5-sinif':{kind:'bty',canonical:'data/5-sinif.json',count:37},
+ '6-sinif':{kind:'bty',canonical:'data/6-sinif.json',count:37},
  robotik:{kind:'elective',legacy:['robotik-data-1.js','robotik-data-2.js'],canonical:'data/robotik.json',count:36},
  'yapay-zeka':{kind:'elective',legacy:['yapay-zeka-data-1.js','yapay-zeka-data-2.js'],canonical:'data/yapay-zeka.json',count:36}
 };
 function err(m){errors.push(m)}
-function parseBty(text,file){const p=text.indexOf('const WEEKS'),a=text.indexOf('[',p),z=text.indexOf('];',a);if(p<0||a<0||z<a)throw new Error(`${file}: const WEEKS block not found`);return JSON.parse(text.slice(a,z+1))}
 function parseElective(text,file){const p=text.indexOf('COURSE_WEEKS.push(...'),a=text.indexOf('[',p),z=text.lastIndexOf(']);');if(p<0||a<0||z<a)throw new Error(`${file}: COURSE_WEEKS.push block not found`);return JSON.parse(text.slice(a,z+1))}
-async function legacyWeeks(config){const parts=[];for(const file of config.legacy){const text=await fs.readFile(path.join(ROOT,file),'utf8');parts.push(config.kind==='bty'?parseBty(text,file):parseElective(text,file))}return parts.flat().sort((a,b)=>Number(a.hafta_no)-Number(b.hafta_no))}
+async function legacyWeeks(config){if(!config.legacy)return null;const parts=[];for(const file of config.legacy){const text=await fs.readFile(path.join(ROOT,file),'utf8');parts.push(parseElective(text,file))}return parts.flat().sort((a,b)=>Number(a.hafta_no)-Number(b.hafta_no))}
 async function canonical(config){return JSON.parse(await fs.readFile(path.join(ROOT,config.canonical),'utf8'))}
 function stable(v){return JSON.stringify(v)}
 function normalized(source,kind){const kazanimlar=Array.isArray(source.kazanimlar)?[...source.kazanimlar]:[],surec=Array.isArray(source.surec_bilesenleri)?[...source.surec_bilesenleri]:[];return{hafta_no:Number(source.hafta_no),baslangic:source.baslangic??'',bitis:source.bitis??'',tarih_araligi:source.tarih_araligi??source.tarih??'',ders_saati:source.ders_saati??null,tema:source.tema??source.unite??'',unite:source.unite??'',konu:source.konu??'',ogrenme_ciktisi:source.ogrenme_ciktisi??kazanimlar.join(' • '),kazanimlar,surec_bilesenleri:surec.length?surec:kazanimlar,etkinlik:source.etkinlik??'',ozel_hafta:Boolean(source.ozel_hafta),kurban_bayrami_cakisiyor:Boolean(source.kurban_bayrami_cakisiyor),belirli_gun:source.belirli_gun??'',sourceKind:kind}}
 async function main(){let generated;try{generated=JSON.parse(await fs.readFile(GENERATED,'utf8'))}catch(e){console.error(`ERROR generated/courses.json cannot be read: ${e.message}`);process.exit(1)}if(generated.schemaVersion!==2)err(`generated/courses.json schemaVersion must be 2; got ${generated.schemaVersion}`);
  for(const[course,config]of Object.entries(SOURCES)){
-  const legacy=await legacyWeeks(config),source=await canonical(config);
+  const source=await canonical(config),legacy=await legacyWeeks(config);
   if(source.schemaVersion!==1)err(`${config.canonical}: schemaVersion must be 1`);
   if(source.sourceKind!==config.kind)err(`${config.canonical}: sourceKind mismatch`);
   if(source.weekCount!==config.count)err(`${config.canonical}: weekCount ${source.weekCount}, expected ${config.count}`);
   if(!Array.isArray(source.weeks)||source.weeks.length!==config.count){err(`${config.canonical}: invalid weeks length`);continue}
-  if(legacy.length!==config.count)err(`${course}: legacy week count ${legacy.length}, expected ${config.count}`);
-  if(stable(source.weeks)!==stable(legacy))err(`${course}: canonical data is not lossless against migration source`);
+  if(legacy){
+   if(legacy.length!==config.count)err(`${course}: legacy week count ${legacy.length}, expected ${config.count}`);
+   if(stable(source.weeks)!==stable(legacy))err(`${course}: canonical data is not lossless against migration source`);
+  }
   const out=generated.courses?.[course];if(!out){err(`${course}: missing from generated/courses.json`);continue}
   if(out.weekCount!==config.count)err(`${course}: generated weekCount mismatch`);
   if(out.sourceFile!==config.canonical)err(`${course}: generated sourceFile mismatch`);
