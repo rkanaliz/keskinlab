@@ -1,0 +1,173 @@
+{
+  "schemaVersion": "1.0",
+  "courses": {
+    "5-sinif": {
+      "weeks": {
+        "01": {
+          "lessonPlayer": {
+            "title": "Hafta 01 · Etkileşimler",
+            "description": "Ders sunumundan sonra kullanılabilecek kısa pekiştirme ve öğrenme kanıtı etkinlikleri.",
+            "activities": [
+              {
+                "id": "classify-use",
+                "kind": "classify",
+                "phase": "PEKİŞTİRME",
+                "title": "Kullanım Alanına Yerleştir",
+                "description": "Teknolojileri kullanım amaçlarına göre sınıflandır. Bir teknolojinin birden fazla alanda kullanılabileceğini sınıfta tartış.",
+                "items": ["Akıllı tahta", "MR cihazı", "Navigasyon", "ATM", "Akıllı telefon", "E-kitap okuyucu"],
+                "categories": ["Eğitim", "Sağlık", "Ulaşım", "Finans", "İletişim", "Birden fazla alan"],
+                "teacherPrompt": "Her yerleştirmeden sonra öğrenciden nedenini iste. Alternatif kullanım alanı varsa sınıfa sor."
+              },
+              {
+                "id": "match-past-present",
+                "kind": "match",
+                "phase": "PEKİŞTİRME",
+                "title": "Geçmişten Günümüze Eşleştir",
+                "description": "Geçmişteki araçları günümüzde benzer ihtiyacı karşılayan teknolojiyle eşleştir.",
+                "pairs": [
+                  {"left": "Mektup", "right": "Mesaj / e-posta"},
+                  {"left": "Basılı harita", "right": "Navigasyon"},
+                  {"left": "Filmli fotoğraf makinesi", "right": "Telefon kamerası"},
+                  {"left": "Masaüstü bilgisayar", "right": "Dizüstü bilgisayar"}
+                ]
+              },
+              {
+                "id": "quiz-evidence",
+                "kind": "quiz",
+                "phase": "ÖĞRENME KANITI",
+                "title": "Hızlı Kontrol",
+                "description": "Üç kısa soruyla sınıflandırma mantığını kontrol et.",
+                "questions": [
+                  {
+                    "prompt": "Aynı bilişim teknolojisi farklı kullanım amaçlarına göre birden fazla alanda sınıflandırılabilir mi?",
+                    "options": ["Evet", "Hayır", "Yalnızca okulda"],
+                    "correct": 0,
+                    "feedback": "Kullanım amacı değiştiğinde aynı teknoloji farklı alanlarla ilişkilendirilebilir."
+                  },
+                  {
+                    "prompt": "MR cihazı en doğrudan hangi kullanım alanıyla ilişkilidir?",
+                    "options": ["Sağlık", "Ulaşım", "Finans"],
+                    "correct": 0,
+                    "feedback": "MR cihazı sağlık alanında görüntüleme amacıyla kullanılır."
+                  },
+                  {
+                    "prompt": "Navigasyon uygulamasının temel kullanım alanı hangisidir?",
+                    "options": ["Ulaşım", "Sağlık", "Finans"],
+                    "correct": 0,
+                    "feedback": "Navigasyon konum ve rota bulma amacıyla ulaşım alanıyla doğrudan ilişkilidir."
+                  }
+                ]
+              }
+            ]
+          },
+          "differentiation": {
+            "support": {
+              "label": "DESTEKLEME",
+              "title": "Kavramları görünür kıl",
+              "description": "Soyut kavramları günlük yaşam örnekleriyle yeniden kur.",
+              "steps": [
+                "Teknoloji adı ve kullanım alanı kartlarını eşleştir.",
+                "Her kart için öğrenciden bir günlük yaşam örneği iste.",
+                "Gerekirse seçenek sayısını azaltarak yeniden denet."
+              ]
+            },
+            "enrichment": {
+              "label": "ZENGİNLEŞTİRME",
+              "title": "Mini Teknoloji Müzesi",
+              "description": "Bir teknolojinin geçmişten günümüze değişimini görünür hâle getir.",
+              "steps": [
+                "Bir teknoloji seç.",
+                "Geçmişteki ve günümüzdeki biçimini karşılaştır.",
+                "Benzerlik, farklılık ve kullanım alanını kısa bir zaman çizgisinde göster."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "6-sinif": {
+      "weeks": {
+        "01": {
+          "lessonPlayer": {
+            "title": "Hafta 01 · Etkileşimler",
+            "description": "Ders sunumundan sonra yenilikçi bilişim teknolojilerini ilişkilendiren kısa etkinlikler.",
+            "activities": [
+              {
+                "id": "classify-innovative",
+                "kind": "classify",
+                "phase": "PEKİŞTİRME",
+                "title": "Kullanım Alanına Yerleştir",
+                "description": "Yenilikçi teknolojileri en belirgin kullanım alanlarıyla ilişkilendir; birden fazla kullanım ihtimalini tartış.",
+                "items": ["Artırılmış gerçeklik", "Sanal gerçeklik", "Yapay zekâ", "Akıllı saat", "Bulut bilişim", "Yüz tanıma"],
+                "categories": ["Eğitim", "Sağlık", "Ulaşım", "İletişim", "Eğlence", "Birden fazla alan"],
+                "teacherPrompt": "Tek bir doğru kategori dayatma. Öğrencinin kullanım bağlamını gerekçelendirmesini iste."
+              },
+              {
+                "id": "match-concepts",
+                "kind": "match",
+                "phase": "PEKİŞTİRME",
+                "title": "Kavramı Açıklamayla Eşleştir",
+                "description": "Yenilikçi teknoloji kavramlarını kısa açıklamalarıyla eşleştir.",
+                "pairs": [
+                  {"left": "Artırılmış gerçeklik", "right": "Gerçek görüntü üzerine dijital katman ekler"},
+                  {"left": "Sanal gerçeklik", "right": "Kullanıcıyı oluşturulmuş sanal bir ortama taşır"},
+                  {"left": "Yapay zekâ", "right": "Verilerden örüntü çıkarıp tahmin veya karar üretmeye yardımcı olur"},
+                  {"left": "Bulut bilişim", "right": "Veri ve uygulamalara internet üzerinden erişim sağlar"}
+                ]
+              },
+              {
+                "id": "quiz-evidence",
+                "kind": "quiz",
+                "phase": "ÖĞRENME KANITI",
+                "title": "Hızlı Kontrol",
+                "description": "Üç kısa soruyla kavramlar arasındaki farkları kontrol et.",
+                "questions": [
+                  {
+                    "prompt": "Artırılmış gerçeklik ile sanal gerçeklik arasındaki temel fark hangisidir?",
+                    "options": ["AR gerçek görüntüye dijital katman ekler; VR sanal bir ortam oluşturur", "İkisi tamamen aynıdır", "AR yalnızca oyunlarda kullanılır"],
+                    "correct": 0,
+                    "feedback": "AR gerçek çevreyi dijital içerikle zenginleştirirken VR kullanıcıyı sanal bir ortama taşır."
+                  },
+                  {
+                    "prompt": "Akıllı saat yalnızca sağlık alanında mı kullanılabilir?",
+                    "options": ["Hayır, farklı amaçlarla farklı alanlarda kullanılabilir", "Evet, yalnızca sağlıkta", "Akıllı saat bilişim teknolojisi değildir"],
+                    "correct": 0,
+                    "feedback": "Akıllı saat sağlık takibi dışında iletişim, bildirim, ödeme ve başka amaçlarla da kullanılabilir."
+                  },
+                  {
+                    "prompt": "Bulut bilişimin temel özelliği hangisidir?",
+                    "options": ["Veri ve uygulamalara internet üzerinden erişim", "Sadece bilgisayara kablo bağlamak", "Yalnızca çevrimdışı dosya saklamak"],
+                    "correct": 0,
+                    "feedback": "Bulut bilişim, kaynaklara ağ üzerinden erişmeyi sağlar."
+                  }
+                ]
+              }
+            ]
+          },
+          "differentiation": {
+            "support": {
+              "label": "DESTEKLEME",
+              "title": "Kavram + örnek kur",
+              "description": "Yenilikçi teknoloji adlarını somut günlük yaşam örnekleriyle eşleştir.",
+              "steps": [
+                "Her teknoloji için kısa bir açıklama kartı kullan.",
+                "Açıklamanın yanına günlük yaşamdan bir örnek ekle.",
+                "Benzer görünen iki kavramı yan yana karşılaştır."
+              ]
+            },
+            "enrichment": {
+              "label": "ZENGİNLEŞTİRME",
+              "title": "Mini Teknoloji Fuarı",
+              "description": "Bir yenilikçi teknolojiyi farklı kullanım alanları üzerinden incele.",
+              "steps": [
+                "Bir yenilikçi teknoloji seç.",
+                "En az iki farklı kullanım alanı belirle.",
+                "Faydalarını, sınırlılıklarını ve gelecekteki olası kullanımını kısa bir sunumla paylaş."
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
