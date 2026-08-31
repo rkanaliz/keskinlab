@@ -1,7 +1,6 @@
 (()=>{
 'use strict';
 const stage=document.getElementById('slideStage');
-const chapterLabel=document.getElementById('chapterLabel');
 if(!stage)return;
 
 const I=(name)=>{
@@ -59,12 +58,17 @@ function production(){
   return `<div class="klv-layer klv-production">${e.map(([i,n,c])=>`<div class="equipment ${c}">${i==='green'?'<svg viewBox="0 0 74 74"><rect x="9" y="11" width="56" height="49" fill="#759565" stroke="#12182B" stroke-width="2.6"/><path d="M9 60h56M20 60v7M54 60v7" stroke="#12182B" stroke-width="2.6"/></svg>':I(i)}<span>${n}</span></div>`).join('')}<i class="wire w1"></i><i class="wire w2"></i><i class="wire w3"></i></div>`;
 }
 
+const evolutionSteps=new Set([
+  'w01-gecmis-bugun-ornek-ver',
+  'w01-arsiv-daktilo',
+  'w01-arsiv-teyp',
+  'w01-arsiv-bilgisayar'
+]);
 function modeFor(step){
-  const chapter=(chapterLabel?.textContent||'').toLocaleUpperCase('tr-TR');
   if(['w01-bilisim-ne','w01-gunluk-hayat-ornekleri','w01-ortak-islev'].includes(step))return'archive';
   if(step==='w01-sinema-tv-teknolojileri')return'production';
   if(step.startsWith('w01-yesil-ekran'))return'green';
-  if(chapter.includes('GEÇMİŞTEN GÜNÜMÜZE'))return'evolution';
+  if(evolutionSteps.has(step))return'evolution';
   return'';
 }
 function decorate(){
@@ -82,7 +86,6 @@ function decorate(){
 let raf=0;
 const schedule=()=>{cancelAnimationFrame(raf);raf=requestAnimationFrame(decorate)};
 new MutationObserver(schedule).observe(stage,{childList:true});
-if(chapterLabel)new MutationObserver(schedule).observe(chapterLabel,{childList:true,characterData:true,subtree:true});
 window.addEventListener('popstate',schedule);
 schedule();
 })();
