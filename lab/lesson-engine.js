@@ -17,7 +17,7 @@ let current=0;
 let revealOpen=false;
 let classifyState={selected:null,placed:new Map()};
 
-const escapeHtml=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const escapeHtml=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c]));
 const pad=n=>String(n).padStart(2,'0');
 
 function iconSvg(name){
@@ -41,7 +41,8 @@ function iconSvg(name){
 }
 
 function baseChrome(step,index){
-  return `<div class="s-grid"></div><div class="s-circuit"></div><div class="s-brand">KESKİNLAB · 5. SINIF BTY</div><div class="s-step">${pad(index+1)} · ${escapeHtml(step.id)}</div>`;
+  const total=lesson?.steps?.length||index+1;
+  return `<div class="s-grid"></div><div class="s-circuit"></div><div class="s-brand">KESKİNLAB · 5. SINIF BTY</div><div class="s-step">${pad(index+1)} / ${pad(total)}</div>`;
 }
 
 function scaleStage(){
@@ -58,7 +59,8 @@ function firstIndexOfChapter(id){return lesson.steps.findIndex(s=>s.chapter===id
 function updateProgress(){
   const step=lesson.steps[current],chapter=chapterOf(step);
   $('#lessonMeta').textContent=`5. SINIF · BTY · HAFTA ${pad(lesson.week)} · ${lesson.title.toLocaleUpperCase('tr-TR')}`;
-  $('#chapterLabel').textContent=(chapter?.title||'DERS').toLocaleUpperCase('tr-TR');
+  const hour=step.lessonHour?` · ${step.lessonHour}. DERS`:'';
+  $('#chapterLabel').textContent=`${chapter?.title||'DERS'}${hour}`.toLocaleUpperCase('tr-TR');
   $('#stepLabel').textContent=`${pad(current+1)} / ${pad(lesson.steps.length)}`;
   $('#progressFill').style.width=`${((current+1)/lesson.steps.length)*100}%`;
   $('#prevButton').disabled=current===0;
@@ -79,6 +81,8 @@ function renderTeacher(){
     <div class="teacher-block"><div class="teacher-label">ÖĞRETMEN NOTU</div><p>${escapeHtml(t.note||'Bu adım için ek öğretmen notu yok.')}</p></div>
     ${t.timeHint?`<div class="teacher-block"><div class="teacher-label">SÜRE İPUCU</div><p>${escapeHtml(t.timeHint)}</p></div>`:''}
     <div class="teacher-block"><div class="teacher-label">TYMM / PEDAGOJİK ROL</div><p>${escapeHtml(step.tymm?.phaseLabel||step.mode||'')}</p></div>
+    ${t.support?`<div class="teacher-block"><div class="teacher-label">DESTEKLEME · GEREKİRSE</div><p>${escapeHtml(t.support)}</p></div>`:''}
+    ${t.enrichment?`<div class="teacher-block"><div class="teacher-label">ZENGİNLEŞTİRME · GEREKİRSE</div><p>${escapeHtml(t.enrichment)}</p></div>`:''}
     ${step.evidence?`<div class="teacher-block"><div class="teacher-label">ÖĞRENME KANITI</div><p>Bu adımda öğrencinin açıklaması, sınıflandırması veya ürünü süreç içi öğrenme kanıtı olarak gözlenebilir. Sistem öğrenci verisi kaydetmez.</p></div>`:''}
     ${refs?`<div class="teacher-block"><div class="teacher-label">KAYNAK BAĞLANTISI</div><div class="teacher-tags">${refs}</div></div>`:''}
   `;
