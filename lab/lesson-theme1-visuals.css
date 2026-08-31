@@ -5,8 +5,8 @@
 
 .klv-photo{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;background:#F4F6F3}
 .klv-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
-.klv-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(244,246,243,.96) 0%,rgba(244,246,243,.80) 30%,rgba(244,246,243,.14) 53%,rgba(244,246,243,0) 72%)}
-.klv-photo-tag{position:absolute;right:58px;bottom:42px;z-index:2;padding:8px 11px;background:rgba(244,246,243,.88);border:1px solid rgba(18,24,43,.13);font:600 10px "IBM Plex Mono";letter-spacing:.08em;color:#146059}
+.klv-photo:after{content:"";position:absolute;left:0;top:0;bottom:0;width:43%;background:rgba(244,246,243,.88)}
+.klv-photo-tag{position:absolute;right:58px;bottom:42px;z-index:2;padding:8px 11px;background:rgba(244,246,243,.90);border:1px solid rgba(18,24,43,.13);font:600 10px "IBM Plex Mono";letter-spacing:.08em;color:#146059}
 
 /* Archive: the approved artwork already contains intentional blank space at left. */
 .klv-photo--archive-hero img{object-position:56% center;transform:scale(1.02)}
@@ -19,49 +19,36 @@
 .klv-photo--evolution-media img{object-position:68% 58%;transform:scale(1.15)}
 .klv-photo--evolution-wide img{object-position:58% center;transform:scale(1.05)}
 
-/* Green-screen chapter: first show the result, then reveal the whole studio. */
+/* Green-screen chapter: first show a tighter result crop, then reveal the whole studio. */
 .klv-photo--green-result img{object-position:74% 55%;transform:scale(1.55)}
-.klv-photo--green-result:after{background:linear-gradient(90deg,rgba(244,246,243,.98) 0%,rgba(244,246,243,.88) 34%,rgba(244,246,243,.20) 57%,rgba(244,246,243,0) 77%)}
+.klv-photo--green-result:after{width:46%;background:rgba(244,246,243,.92)}
 .klv-photo--green-studio img{object-position:58% center;transform:scale(1.02)}
 .klv-photo--green-equipment img{object-position:67% center;transform:scale(1.14)}
 
 /* Image-led slides: text stays deterministic and the artwork gets the visual weight. */
-.slide-stage[data-klv-photo="archive"] .s-grid,
-.slide-stage[data-klv-photo="archive"] .s-circuit,
-.slide-stage[data-klv-photo="evolution"] .s-grid,
-.slide-stage[data-klv-photo="evolution"] .s-circuit,
-.slide-stage[data-klv-photo="green"] .s-grid,
-.slide-stage[data-klv-photo="green"] .s-circuit{opacity:.08}
+.slide-stage[data-klv-photo] .s-grid,
+.slide-stage[data-klv-photo] .s-circuit{opacity:.06}
+.slide-stage[data-klv-photo].layout-question .content,
+.slide-stage[data-klv-photo="green"].layout-cover .content{left:104px;top:150px;width:720px;right:auto}
+.slide-stage[data-klv-photo].layout-question .s-question{font-size:74px;line-height:.98;max-width:720px}
+.slide-stage[data-klv-photo].layout-question .s-lead{max-width:650px;font-size:23px;line-height:1.45}
 
-.slide-stage[data-klv-photo="archive"].layout-question .content,
-.slide-stage[data-klv-photo="evolution"].layout-question .content,
-.slide-stage[data-klv-photo="green"].layout-question .content,
-.slide-stage[data-klv-photo="green"].layout-cover .content{left:104px;top:150px;width:760px;right:auto}
-
-.slide-stage[data-klv-photo="archive"].layout-question .s-question,
-.slide-stage[data-klv-photo="evolution"].layout-question .s-question,
-.slide-stage[data-klv-photo="green"].layout-question .s-question{font-size:76px;line-height:.98;max-width:760px}
-.slide-stage[data-klv-photo="archive"].layout-question .s-lead,
-.slide-stage[data-klv-photo="evolution"].layout-question .s-lead,
-.slide-stage[data-klv-photo="green"].layout-question .s-lead{max-width:690px;font-size:24px;line-height:1.45}
-
-/* Old object-icon constellations are hidden only when the real artwork is present. */
+/* Old object-icon constellations are hidden only when the real archive artwork is present. */
 .slide-stage[data-klv-photo="archive"] .content>div[style*="display:flex"]{display:none!important}
 
-/* The evolution image replaces the old large compare icon treatment, while the concise copy remains. */
-.slide-stage[data-klv-photo="evolution"].layout-compare .content{left:102px;top:145px;width:760px;right:auto}
-.slide-stage[data-klv-photo="evolution"].layout-compare .s-title{font-size:66px;max-width:740px}
-.slide-stage[data-klv-photo="evolution"].layout-compare .compare-grid{margin-top:26px;display:block}
-.slide-stage[data-klv-photo="evolution"].layout-compare .compare-side{background:rgba(244,246,243,.84);border:0;border-left:3px solid rgba(30,138,128,.34);padding:12px 18px;margin-bottom:10px;text-align:left!important}
-.slide-stage[data-klv-photo="evolution"].layout-compare .compare-side:nth-of-type(2){display:none}
-.slide-stage[data-klv-photo="evolution"].layout-compare .compare-visual{display:none}
-.slide-stage[data-klv-photo="evolution"].layout-compare .compare-side h3{font-size:24px;margin:0 0 4px}
-.slide-stage[data-klv-photo="evolution"].layout-compare .compare-side p{font-size:16px;line-height:1.35;margin:0;max-width:650px}
-.slide-stage[data-klv-photo="evolution"].layout-compare .compare-arrow{display:none}
-.slide-stage[data-klv-photo="evolution"].layout-compare .compare-caption{font-size:18px;text-align:left;margin:12px 0 0;max-width:680px}
+/* Compare copy remains readable, while the generated icons yield to the real evolution artwork. */
+.slide-stage[data-klv-photo="evolution"].layout-compare .content{left:102px;top:132px;width:760px;right:auto}
+.slide-stage[data-klv-photo="evolution"].layout-compare .s-title{font-size:62px;line-height:1;max-width:720px}
+.slide-stage[data-klv-photo="evolution"].layout-compare .compare-grid{grid-template-columns:1fr 1fr;gap:10px;margin-top:28px}
+.slide-stage[data-klv-photo="evolution"].layout-compare .compare-side{background:rgba(244,246,243,.88);border:0;border-top:2px solid rgba(30,138,128,.34);padding:12px 14px;text-align:left!important}
+.slide-stage[data-klv-photo="evolution"].layout-compare .compare-visual,.slide-stage[data-klv-photo="evolution"].layout-compare .compare-arrow{display:none}
+.slide-stage[data-klv-photo="evolution"].layout-compare .compare-label{font-size:9px;margin-bottom:4px}
+.slide-stage[data-klv-photo="evolution"].layout-compare .compare-side h3{font-size:22px;margin:0 0 4px}
+.slide-stage[data-klv-photo="evolution"].layout-compare .compare-side p{font-size:14px;line-height:1.35;margin:0;max-width:none}
+.slide-stage[data-klv-photo="evolution"].layout-compare .compare-caption{font-size:17px;text-align:left;margin:12px 0 0;max-width:700px}
 
-.slide-stage[data-klv-photo="green"].layout-cover .big{font-size:82px;line-height:.96;max-width:720px}
-.slide-stage[data-klv-photo="green"] .s-reveal{background:rgba(244,246,243,.82);padding:20px 22px;border-left:3px solid rgba(30,138,128,.45)}
+.slide-stage[data-klv-photo="green"].layout-cover .big{font-size:80px;line-height:.96;max-width:700px}
+.slide-stage[data-klv-photo="green"] .s-reveal{background:rgba(244,246,243,.90);padding:20px 22px;border-left:3px solid rgba(30,138,128,.45)}
 
 /* Keep touch UI visible over imagery. */
 .slide-stage[data-klv-photo] .s-action{z-index:7;background:#12182B;color:#fff;border-color:#12182B}
