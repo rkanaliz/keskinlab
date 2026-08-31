@@ -1,0 +1,274 @@
+{
+  "schemaVersion": "2.0",
+  "status": "prototype",
+  "id": "5-bty-w01",
+  "course": "5-sinif",
+  "week": 1,
+  "dateRange": "14 Eylül - 18 Eylül 2026",
+  "duration": "2 ders saati (80 dakika)",
+  "theme": "Bilişim Teknolojilerinin Hayatımızdaki Yeri",
+  "title": "Bilişim Teknolojilerinin Sınıflandırılması",
+  "outcomes": [
+    {
+      "code": "BTY.5.1.1",
+      "text": "Günlük yaşamda kullanılan bilişim teknolojilerini sınıflandırabilme",
+      "components": [
+        "a) Bilişim teknolojilerine ilişkin temel kavramları belirler.",
+        "b) Geçmişten günümüze bilişim teknolojilerindeki benzerlikleri ve farklılıkları ilişkilendirir.",
+        "c) Bilişim teknolojilerini kullanım alanlarına göre gruplandırır."
+      ]
+    }
+  ],
+  "design": {
+    "artDirection": "Teknoloji arşivi / geçmişten bugüne nesneler",
+    "note": "Bu ilk motor testinde nihai ImageGen varlıkları yerine deterministik çizgi ikonlar kullanılır. Amaç önce akış, okunabilirlik ve etkileşim davranışını doğrulamaktır."
+  },
+  "chapters": [
+    {"id": "baslangic", "title": "Merak Et"},
+    {"id": "kavramlar", "title": "Kavramı Kur"},
+    {"id": "siniflandirma", "title": "Sınıflandır"},
+    {"id": "ikinci-ders", "title": "2. Ders Saati", "checkpoint": true},
+    {"id": "gecmis-gunumuz", "title": "Geçmişten Günümüze"},
+    {"id": "kanit", "title": "Öğrenmeyi Gör"}
+  ],
+  "steps": [
+    {
+      "id": "w01-beyin-firtinasi",
+      "chapter": "baslangic",
+      "mode": "ask",
+      "layout": "question",
+      "interaction": {"type": "none"},
+      "student": {
+        "label": "ÖNCE SEN SÖYLE",
+        "title": "Bilişim teknolojisi deyince aklına ne geliyor?",
+        "lead": "Araç, ortam ya da günlük yaşamdan bir örnek söyle. Şimdilik doğru-yanlış aramıyoruz."
+      },
+      "teacher": {
+        "note": "Öğrenci cevaplarını düzeltmeden topla. Araç, ortam ve kullanım örneklerini görünür kıl. Amaç ön bilgiyi ve olası kavram yanılgılarını görmek.",
+        "timeHint": "3-5 dk"
+      },
+      "tymm": {"phase": "preAssessment", "phaseLabel": "Ön değerlendirme · beyin fırtınası"},
+      "sourceRefs": ["BTY.5.1.1.a", "Tema 1 · Ön Değerlendirme"]
+    },
+    {
+      "id": "w01-ortak-ozellik",
+      "chapter": "baslangic",
+      "mode": "ask",
+      "layout": "question",
+      "interaction": {"type": "reveal"},
+      "student": {
+        "label": "BİR ADIM DAHA",
+        "title": "Bunların ortak özelliği ne?",
+        "lead": "Telefon, akıllı tahta, ATM ve navigasyon aynı görünmüyor. Peki onları aynı dersin konusu yapan ne olabilir?"
+      },
+      "visualItems": [
+        {"label": "Akıllı telefon", "icon": "phone"},
+        {"label": "Akıllı tahta", "icon": "board"},
+        {"label": "ATM", "icon": "atm"},
+        {"label": "Navigasyon", "icon": "navigation"}
+      ],
+      "reveal": {
+        "title": "Bilgiyle bir işleri var.",
+        "text": "Bu araçlar farklı amaçlarda kullanılsa da bilgiye ulaşma, bilgiyi işleme, saklama ya da iletme gibi süreçlerde rol alır."
+      },
+      "teacher": {
+        "note": "Cevabı hemen açma. 'Hepsi elektronik' gibi yüzeysel cevapları ara durak kabul et; öğrencileri bilginin kullanılması ve iletişim boyutuna doğru sorularla ilerlet.",
+        "timeHint": "3-4 dk"
+      },
+      "tymm": {"phase": "bridge", "phaseLabel": "Köprü kurma · günlük yaşam örnekleri"},
+      "sourceRefs": ["Tema 1 · Köprü Kurma", "BTY.5.1.1.a"]
+    },
+    {
+      "id": "w01-kavramlari-kur",
+      "chapter": "kavramlar",
+      "mode": "explain",
+      "layout": "concepts",
+      "interaction": {"type": "none"},
+      "student": {
+        "label": "KAVRAMLARI KUR",
+        "title": "Beş kavramı birbirinden ayıralım"
+      },
+      "concepts": [
+        {"term": "Bilgi", "copy": "Bir durumu anlamamıza ve karar vermemize yarayan anlamlı içerik."},
+        {"term": "İletişim", "copy": "Bilginin insanlar ya da araçlar arasında aktarılması ve paylaşılması."},
+        {"term": "Teknoloji", "copy": "İhtiyaçlara çözüm üretmek için geliştirilen araç, yöntem ve sistemler."},
+        {"term": "Bilişim", "copy": "Bilginin teknoloji yardımıyla işlenmesi, saklanması ve aktarılmasıyla ilgili süreçler."},
+        {"term": "BİT", "copy": "Bilgiyi işlemek ve iletişim kurmak için kullanılan bilgi ve iletişim teknolojileri."}
+      ],
+      "teacher": {
+        "note": "Resmî program bu aşamada iletişim, bilgi, bilişim, teknoloji ve BİT temel kavramlarının tanıtılmasını ister. Buradaki kısa tanımlar KeskinLab'ın 5. sınıf düzeyi için prototip anlatım formülasyonudur; seri üretim öncesi terminoloji kontrolünden geçirilecek.",
+        "timeHint": "8-10 dk"
+      },
+      "tymm": {"phase": "learningTeaching", "phaseLabel": "Öğrenme-öğretme uygulaması · temel kavramları belirleme"},
+      "sourceRefs": ["BTY.5.1.1.a", "Öğretim Programı · temel kavramlar: iletişim, bilgi, bilişim, teknoloji, BİT"]
+    },
+    {
+      "id": "w01-siniflandir",
+      "chapter": "siniflandirma",
+      "mode": "do",
+      "layout": "activity",
+      "interaction": {"type": "classify"},
+      "student": {
+        "label": "SINIFLANDIR",
+        "title": "Bu araçları nasıl gruplardın?",
+        "lead": "Bir kart seç, sonra kullanım alanına dokun. Aynı aracın farklı bağlamlarda başka bir gruba da girebileceğini tartış."
+      },
+      "items": [
+        {"id": "phone", "label": "Akıllı telefon", "icon": "phone", "hint": "iletişim / çok amaçlı"},
+        {"id": "board", "label": "Akıllı tahta", "icon": "board", "hint": "sınıf içi kullanım"},
+        {"id": "atm", "label": "ATM", "icon": "atm", "hint": "bankacılık işlemleri"},
+        {"id": "navigation", "label": "Navigasyon", "icon": "navigation", "hint": "konum ve rota"},
+        {"id": "health", "label": "Sağlık izleme cihazı", "icon": "health", "hint": "ölçüm / takip"},
+        {"id": "scanner", "label": "Barkod okuyucu", "icon": "scanner", "hint": "ürün / veri girişi"}
+      ],
+      "categories": [
+        {"id": "iletisim", "label": "İletişim"},
+        {"id": "egitim", "label": "Eğitim"},
+        {"id": "saglik", "label": "Sağlık"},
+        {"id": "ulasim", "label": "Ulaşım"},
+        {"id": "finans", "label": "Finans"},
+        {"id": "birden-fazla", "label": "Birden Fazla Alan"}
+      ],
+      "teacher": {
+        "note": "Tek bir doğru kategori dayatma. Öğrenciden seçtiği ölçütü ve yerleştirme gerekçesini iste. Barkod okuyucu gibi bağlama göre değişebilen örnekleri tartışma fırsatı olarak kullan.",
+        "timeHint": "12-15 dk"
+      },
+      "tymm": {"phase": "learningTeaching", "phaseLabel": "Öğrenme-öğretme uygulaması · kullanım alanlarına göre gruplandırma"},
+      "evidence": true,
+      "sourceRefs": ["BTY.5.1.1.c", "Günlük Plan · sınıflandırma etkinliği"]
+    },
+    {
+      "id": "w01-olcut-degisirse",
+      "chapter": "siniflandirma",
+      "mode": "discuss",
+      "layout": "question",
+      "interaction": {"type": "reveal"},
+      "student": {
+        "label": "TARTIŞ",
+        "title": "Sınıflandırma ölçütümüz değişirse gruplar da değişir mi?",
+        "lead": "Az önce yaptığın yerleştirmelerden birini seç ve nedenini savun."
+      },
+      "reveal": {
+        "title": "Evet, değişebilir.",
+        "text": "Sınıflandırma kullandığımız ölçüte ve bağlama bağlıdır. Aynı teknoloji birden fazla kullanım alanıyla ilişkilendirilebilir."
+      },
+      "teacher": {
+        "note": "Grupların sınıflandırmalarını karşılaştır. Özellikle 'aynı araç birden fazla alanda kullanılabilir mi?' sorusunu gerekçe istemek için kullan.",
+        "timeHint": "5-7 dk"
+      },
+      "tymm": {"phase": "learningTeaching", "phaseLabel": "Paylaşım, sorgulama ve gerekçelendirme"},
+      "evidence": true,
+      "sourceRefs": ["BTY.5.1.1.c", "Günlük Plan · paylaşım ve sorgulama"]
+    },
+    {
+      "id": "w01-checkpoint-2ders",
+      "chapter": "ikinci-ders",
+      "mode": "checkpoint",
+      "layout": "checkpoint",
+      "interaction": {"type": "none"},
+      "student": {
+        "label": "DOĞAL DEVAM NOKTASI",
+        "title": "2. ders saati",
+        "lead": "Buradan sonra geçmiş ve günümüz teknolojilerini karşılaştıracağız. Ders burada kaldıysa bir sonraki derste Bölümler menüsünden bu noktaya dönebilirsin."
+      },
+      "teacher": {
+        "note": "Bu ekran pedagojik bir 'set' değildir; iki ders saati arasındaki doğal checkpoint'tir.",
+        "timeHint": "Geçiş"
+      },
+      "tymm": {"phase": "checkpoint", "phaseLabel": "Ders içi doğal devam noktası"},
+      "sourceRefs": ["Günlük Plan · 2. Ders Saati"]
+    },
+    {
+      "id": "w01-daktilodan-kelime-islemciye",
+      "chapter": "gecmis-gunumuz",
+      "mode": "observe",
+      "layout": "compare",
+      "interaction": {"type": "none"},
+      "student": {
+        "label": "GEÇMİŞ ↔ GÜNÜMÜZ",
+        "title": "İhtiyaç benzer, araç değişiyor"
+      },
+      "compare": {
+        "left": {"label": "GEÇMİŞ", "title": "Daktilo", "icon": "typewriter", "copy": "Yazılı içerik üretmek için fiziksel tuş ve kâğıt kullanır."},
+        "right": {"label": "GÜNÜMÜZ", "title": "Kelime işlemci", "icon": "laptop", "copy": "Yazıyı dijital olarak oluşturmayı, düzenlemeyi, saklamayı ve paylaşmayı kolaylaştırır."},
+        "caption": "Sınıfa sor: İkisinin ortak amacı nedir? Hangi özellikler değişmiş, hangi ihtiyaç değişmemiş?"
+      },
+      "teacher": {
+        "note": "Daktilo-kelime işlemci örneği yalnız bir çift. Aynı mantığı sabit telefon-akıllı telefon, teyp-dijital müzik uygulaması ve eski bilgisayar-dizüstü bilgisayar gibi çiftlerle sözlü olarak genişletebilirsin.",
+        "timeHint": "8-10 dk"
+      },
+      "tymm": {"phase": "learningTeaching", "phaseLabel": "Geçmişten günümüze benzerlik ve farklılıkları ilişkilendirme"},
+      "sourceRefs": ["BTY.5.1.1.b", "Günlük Plan · geçmiş-günümüz karşılaştırması"]
+    },
+    {
+      "id": "w01-bir-teknolojiyi-incele",
+      "chapter": "gecmis-gunumuz",
+      "mode": "do",
+      "layout": "task",
+      "interaction": {"type": "none"},
+      "student": {
+        "label": "KÜÇÜK GRUP",
+        "title": "Bir teknoloji seç, izini sür",
+        "foot": "Kısa sunumdan sonra diğer gruplardan en az bir soru alın."
+      },
+      "prompts": [
+        "Ne işe yarıyor?",
+        "Geçmişte aynı ihtiyaç nasıl karşılanıyordu?",
+        "Bugün ne değişti?",
+        "Hangi kullanım alanına giriyor?"
+      ],
+      "teacher": {
+        "note": "Gruplar seçtikleri teknoloji için dört soruyu yanıtlasın ve kısa bir sınıf paylaşımı yapsın. Diğer öğrencilerden en az bir soru istemek, programın sorgulama ve iletişim boyutunu görünür kılar.",
+        "timeHint": "10-13 dk"
+      },
+      "tymm": {"phase": "learningTeaching", "phaseLabel": "İlişkilendirme, grup çalışması ve soru sorma"},
+      "evidence": true,
+      "sourceRefs": ["BTY.5.1.1.b", "BTY.5.1.1.c", "Günlük Plan · ilişkilendirme"]
+    },
+    {
+      "id": "w01-ortak-sonuc",
+      "chapter": "gecmis-gunumuz",
+      "mode": "reflect",
+      "layout": "question",
+      "interaction": {"type": "reveal"},
+      "student": {
+        "label": "ORTAK SONUCA VAR",
+        "title": "Teknoloji değişiyor. Peki ihtiyaçlar tamamen değişiyor mu?",
+        "lead": "İletişim kurmak, bilgiye ulaşmak, üretmek ve işleri kolaylaştırmak dün de vardı; bugün de var."
+      },
+      "reveal": {
+        "title": "Araçlar değişir, amaçlar birbirine bağlanabilir.",
+        "text": "Geçmiş ve günümüz teknolojilerini karşılaştırırken yalnızca görünüşe değil, karşıladıkları ihtiyaca ve kullanım alanına bakmak sınıflandırmayı güçlendirir."
+      },
+      "teacher": {
+        "note": "Sınıfça genel katkıları konuş; eksik veya hatalı sınıflandırmaları gerekçesiyle birlikte düzelt. Bu ekran öğretmen monoloğuna dönüşmesin; öğrencilerin karşılaştırmalardan çıkardığı ortak sonuçları topla.",
+        "timeHint": "5-7 dk"
+      },
+      "tymm": {"phase": "learningTeaching", "phaseLabel": "Ortak sonuç ve geri bildirim"},
+      "sourceRefs": ["BTY.5.1.1.b", "BTY.5.1.1.c", "Günlük Plan · ortak sonuç"]
+    },
+    {
+      "id": "w01-cikis-bileti",
+      "chapter": "kanit",
+      "mode": "check",
+      "layout": "exit",
+      "interaction": {"type": "none"},
+      "student": {
+        "label": "ÇIKIŞ BİLETİ",
+        "title": "Üç kısa cevapla dersi kapat"
+      },
+      "items": [
+        {"prompt": "Bir temel kavramı kendi cümlenle açıkla.", "hint": "Bilgi, iletişim, bilişim, teknoloji veya BİT."},
+        {"prompt": "Geçmiş ve günümüzden bir teknoloji çiftinin bir benzerliğini ve bir farkını yaz.", "hint": "Karşılaştırırken amaç + özellik düşün."},
+        {"prompt": "Verilen bir bilişim teknolojisini kullanım alanına göre sınıflandır ve nedenini söyle.", "hint": "Sadece kategori adı değil, gerekçe de önemli."}
+      ],
+      "teacher": {
+        "note": "Bu üç madde sırasıyla BTY.5.1.1'in a, b ve c süreç bileşenlerine hızlı geri bildirim verir. Cevapları puanlamak zorunda değilsin; bir sonraki ders için kavram yanılgılarını not etmek yeterli olabilir.",
+        "timeHint": "5 dk"
+      },
+      "tymm": {"phase": "evidence", "phaseLabel": "Öğrenme kanıtı · ders sonu çıkış bileti"},
+      "evidence": true,
+      "sourceRefs": ["BTY.5.1.1.a", "BTY.5.1.1.b", "BTY.5.1.1.c", "Günlük Plan · çıkış bileti"]
+    }
+  ]
+}
