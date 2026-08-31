@@ -65,13 +65,11 @@
 .slide-stage[data-klv="archive"] .content>div[style*="display:flex"]{display:none!important}
 .slide-stage[data-klv="evolution"].layout-question .content{top:145px;width:1550px}
 .slide-stage[data-klv="evolution"].layout-question .s-question{font-size:74px;max-width:1500px}
-.slide-stage[data-klv="evolution"].layout-task .content{top:118px}
-.slide-stage[data-klv="evolution"].layout-task .task-list{max-width:720px}
 .slide-stage[data-klv="green"].layout-question .content{left:100px;top:160px;width:720px}
 .slide-stage[data-klv="green"].layout-question .s-question{font-size:74px;max-width:700px}
 .slide-stage[data-klv="green"].layout-question .s-lead{font-size:24px;max-width:650px}
 .slide-stage[data-klv="green"].layout-cover .content{left:105px;top:160px;width:690px}
-.slide-stage[data-klv="green"] .layout-cover .big{font-size:84px}
+.slide-stage[data-klv="green"].layout-cover .big{font-size:84px}
 .slide-stage[data-klv="green"] .s-grid{opacity:.26}
 .slide-stage[data-klv="production"].layout-question .content{left:100px;top:165px;width:850px}
 .slide-stage[data-klv="production"].layout-question .s-question{font-size:78px;max-width:830px}
