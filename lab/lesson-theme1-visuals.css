@@ -1,82 +1,72 @@
 /* KeskinLab · Tema 1 — Teknoloji Arşivi / Keşif Masası
-   Deterministik görsel katman. ImageGen stil referansının Lesson Engine karşılığıdır. */
-.slide-stage{background-color:#F4F6F3}
-.slide-stage:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.18;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.10'/%3E%3C/svg%3E")}
-.slide-stage>.content,.slide-stage>.s-brand,.slide-stage>.s-step,.slide-stage>.s-circuit,.slide-stage>.s-grid,.slide-stage>.s-action{z-index:4}
-.klv-layer{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden;color:var(--ink)}
-.klv-layer *{box-sizing:border-box}
-.klv-index{position:absolute;font:600 10px "IBM Plex Mono";letter-spacing:.09em;color:var(--teal2);padding:7px 9px;border:1px solid rgba(30,138,128,.25);background:rgba(244,246,243,.82)}
-.klv-index b{color:var(--amber2)}
-.klv-route{position:absolute;height:1px;border-top:1px dashed rgba(30,138,128,.48);transform-origin:left center}
-.klv-route:after{content:"";position:absolute;right:-4px;top:-4px;width:7px;height:7px;border-radius:50%;background:var(--amber)}
-.klv-dot{position:absolute;width:8px;height:8px;border:1px solid rgba(30,138,128,.55);border-radius:50%;background:var(--paper)}
+   Onaylanan ImageGen görselleri gerçek ders yüzeyinde kullanılır. */
+.slide-stage{background:#F4F6F3}
+.slide-stage>.content,.slide-stage>.s-brand,.slide-stage>.s-step,.slide-stage>.s-circuit,.slide-stage>.s-grid,.slide-stage>.s-action{z-index:5}
 
-/* Archive constellation */
-.klv-archive{left:auto;right:54px;top:104px;width:760px;height:820px}
-.klv-archive .klv-plate{position:absolute;width:210px;height:190px;display:grid;place-items:center;filter:drop-shadow(0 12px 20px rgba(18,24,43,.08))}
-.klv-archive .klv-plate svg{width:150px;height:150px;overflow:visible}
-.klv-archive .klv-plate .klv-name{position:absolute;bottom:4px;left:8px;font:600 10px "IBM Plex Mono";letter-spacing:.055em;color:var(--muted);background:rgba(244,246,243,.88);padding:4px 6px;border-bottom:1px solid rgba(18,24,43,.15)}
-.klv-archive .p1{left:15px;top:20px;transform:rotate(-4deg)}
-.klv-archive .p2{left:250px;top:8px;transform:rotate(2deg)}
-.klv-archive .p3{right:14px;top:74px;transform:rotate(4deg)}
-.klv-archive .p4{left:76px;top:282px;transform:rotate(2deg)}
-.klv-archive .p5{left:318px;top:278px;transform:rotate(-3deg)}
-.klv-archive .p6{right:20px;top:350px;transform:rotate(2deg)}
-.klv-archive .p7{left:208px;bottom:42px;transform:rotate(3deg)}
-.klv-archive .p8{right:45px;bottom:56px;transform:rotate(-2deg)}
-.klv-archive .klv-route.r1{left:175px;top:172px;width:140px;transform:rotate(-14deg)}
-.klv-archive .klv-route.r2{left:438px;top:160px;width:120px;transform:rotate(18deg)}
-.klv-archive .klv-route.r3{left:210px;top:450px;width:120px;transform:rotate(-3deg)}
-.klv-archive .klv-route.r4{left:485px;top:468px;width:120px;transform:rotate(12deg)}
-.klv-archive .klv-index{right:42px;top:670px}
+.klv-photo{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;background:#F4F6F3}
+.klv-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.klv-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(244,246,243,.96) 0%,rgba(244,246,243,.80) 30%,rgba(244,246,243,.14) 53%,rgba(244,246,243,0) 72%)}
+.klv-photo-tag{position:absolute;right:58px;bottom:42px;z-index:2;padding:8px 11px;background:rgba(244,246,243,.88);border:1px solid rgba(18,24,43,.13);font:600 10px "IBM Plex Mono";letter-spacing:.08em;color:#146059}
 
-/* Past-present archive strip */
-.klv-evolution{left:96px;right:96px;top:420px;height:450px;display:grid;grid-template-columns:repeat(4,1fr);gap:30px;align-items:start}
-.klv-pair{position:relative;min-height:360px;display:grid;grid-template-columns:1fr 72px 1fr;align-items:center;border-top:1px solid rgba(18,24,43,.16);padding-top:22px}
-.klv-pair:before{content:attr(data-no);position:absolute;top:-12px;left:0;background:var(--paper);padding-right:8px;font:600 9px "IBM Plex Mono";color:var(--amber2)}
-.klv-pair .klv-object{display:grid;place-items:center;gap:8px;text-align:center}
-.klv-pair svg{width:100px;height:100px}
-.klv-pair span{font:600 9px "IBM Plex Mono";letter-spacing:.04em;color:var(--muted)}
-.klv-pair .klv-arrow{position:relative;height:1px;background:rgba(30,138,128,.45)}
-.klv-pair .klv-arrow:after{content:"→";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--paper);padding:3px 7px;font:600 18px "IBM Plex Mono";color:var(--teal2)}
+/* Archive: the approved artwork already contains intentional blank space at left. */
+.klv-photo--archive-hero img{object-position:56% center;transform:scale(1.02)}
+.klv-photo--archive-close img{object-position:65% center;transform:scale(1.12)}
+.klv-photo--archive-soft img{object-position:61% center;transform:scale(1.06);opacity:.92}
 
-/* Green screen lab */
-.klv-green{left:720px;right:55px;top:120px;bottom:70px}
-.klv-green .studio-svg{width:100%;height:100%;filter:drop-shadow(0 18px 28px rgba(18,24,43,.08))}
-.klv-green .klv-index{left:16px;bottom:8px}
-.klv-green-examples{position:absolute;right:80px;bottom:84px;width:620px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.klv-scene{height:138px;border:1px solid rgba(18,24,43,.18);background:rgba(255,255,255,.56);padding:10px;position:relative}
-.klv-scene:before{content:"";position:absolute;inset:8px;border:1px dashed rgba(30,138,128,.24)}
-.klv-scene svg{width:100%;height:100%}
-.klv-scene span{position:absolute;left:12px;bottom:8px;padding:3px 5px;background:rgba(244,246,243,.9);font:600 8px "IBM Plex Mono";color:var(--muted)}
+/* Evolution: use the real editorial comparison artwork; different steps use different crops. */
+.klv-photo--evolution-hero img{object-position:58% center;transform:scale(1.02)}
+.klv-photo--evolution-typewriter img{object-position:62% 18%;transform:scale(1.18)}
+.klv-photo--evolution-media img{object-position:68% 58%;transform:scale(1.15)}
+.klv-photo--evolution-wide img{object-position:58% center;transform:scale(1.05)}
 
-/* Production equipment wall */
-.klv-production{right:76px;top:170px;width:650px;height:650px}
-.klv-production .equipment{position:absolute;display:grid;place-items:center;width:180px;height:180px}
-.klv-production .equipment svg{width:130px;height:130px}
-.klv-production .equipment span{font:600 9px "IBM Plex Mono";color:var(--muted);letter-spacing:.05em}
-.klv-production .e1{left:10px;top:20px}.klv-production .e2{left:235px;top:0}.klv-production .e3{right:0;top:62px}.klv-production .e4{left:108px;top:255px}.klv-production .e5{right:95px;top:294px}.klv-production .e6{left:258px;bottom:0}
-.klv-production .wire{position:absolute;border-top:1px dashed rgba(30,138,128,.38)}
-.klv-production .w1{left:168px;top:130px;width:120px;transform:rotate(-10deg)}.klv-production .w2{left:400px;top:145px;width:110px;transform:rotate(18deg)}.klv-production .w3{left:235px;top:365px;width:150px;transform:rotate(8deg)}
+/* Green-screen chapter: first show the result, then reveal the whole studio. */
+.klv-photo--green-result img{object-position:74% 55%;transform:scale(1.55)}
+.klv-photo--green-result:after{background:linear-gradient(90deg,rgba(244,246,243,.98) 0%,rgba(244,246,243,.88) 34%,rgba(244,246,243,.20) 57%,rgba(244,246,243,0) 77%)}
+.klv-photo--green-studio img{object-position:58% center;transform:scale(1.02)}
+.klv-photo--green-equipment img{object-position:67% center;transform:scale(1.14)}
 
-/* Let visual screens breathe. */
-.slide-stage[data-klv="archive"].layout-question .content{left:104px;top:160px;width:900px}
-.slide-stage[data-klv="archive"].layout-question .s-question{max-width:860px;font-size:82px}
-.slide-stage[data-klv="archive"] .content>div[style*="display:flex"]{display:none!important}
-.slide-stage[data-klv="evolution"].layout-question .content{top:145px;width:1550px}
-.slide-stage[data-klv="evolution"].layout-question .s-question{font-size:74px;max-width:1500px}
-.slide-stage[data-klv="green"].layout-question .content{left:100px;top:160px;width:720px}
-.slide-stage[data-klv="green"].layout-question .s-question{font-size:74px;max-width:700px}
-.slide-stage[data-klv="green"].layout-question .s-lead{font-size:24px;max-width:650px}
-.slide-stage[data-klv="green"].layout-cover .content{left:105px;top:160px;width:690px}
-.slide-stage[data-klv="green"].layout-cover .big{font-size:84px}
-.slide-stage[data-klv="green"] .s-grid{opacity:.26}
-.slide-stage[data-klv="production"].layout-question .content{left:100px;top:165px;width:850px}
-.slide-stage[data-klv="production"].layout-question .s-question{font-size:78px;max-width:830px}
+/* Image-led slides: text stays deterministic and the artwork gets the visual weight. */
+.slide-stage[data-klv-photo="archive"] .s-grid,
+.slide-stage[data-klv-photo="archive"] .s-circuit,
+.slide-stage[data-klv-photo="evolution"] .s-grid,
+.slide-stage[data-klv-photo="evolution"] .s-circuit,
+.slide-stage[data-klv-photo="green"] .s-grid,
+.slide-stage[data-klv-photo="green"] .s-circuit{opacity:.08}
 
-/* Compare screens remain readable while taking on the archive language. */
-.slide-stage[data-klv="evolution"].layout-compare .compare-visual{height:220px}
-.slide-stage[data-klv="evolution"].layout-compare .compare-visual .tech-icon{width:170px;height:170px}
-.slide-stage[data-klv="evolution"].layout-compare .compare-side{background:rgba(244,246,243,.74)}
+.slide-stage[data-klv-photo="archive"].layout-question .content,
+.slide-stage[data-klv-photo="evolution"].layout-question .content,
+.slide-stage[data-klv-photo="green"].layout-question .content,
+.slide-stage[data-klv-photo="green"].layout-cover .content{left:104px;top:150px;width:760px;right:auto}
 
-@media (pointer:coarse){.klv-index{font-size:11px}.klv-archive .klv-plate .klv-name{font-size:11px}.klv-pair span{font-size:10px}}
+.slide-stage[data-klv-photo="archive"].layout-question .s-question,
+.slide-stage[data-klv-photo="evolution"].layout-question .s-question,
+.slide-stage[data-klv-photo="green"].layout-question .s-question{font-size:76px;line-height:.98;max-width:760px}
+.slide-stage[data-klv-photo="archive"].layout-question .s-lead,
+.slide-stage[data-klv-photo="evolution"].layout-question .s-lead,
+.slide-stage[data-klv-photo="green"].layout-question .s-lead{max-width:690px;font-size:24px;line-height:1.45}
+
+/* Old object-icon constellations are hidden only when the real artwork is present. */
+.slide-stage[data-klv-photo="archive"] .content>div[style*="display:flex"]{display:none!important}
+
+/* The evolution image replaces the old large compare icon treatment, while the concise copy remains. */
+.slide-stage[data-klv-photo="evolution"].layout-compare .content{left:102px;top:145px;width:760px;right:auto}
+.slide-stage[data-klv-photo="evolution"].layout-compare .s-title{font-size:66px;max-width:740px}
+.slide-stage[data-klv-photo="evolution"].layout-compare .compare-grid{margin-top:26px;display:block}
+.slide-stage[data-klv-photo="evolution"].layout-compare .compare-side{background:rgba(244,246,243,.84);border:0;border-left:3px solid rgba(30,138,128,.34);padding:12px 18px;margin-bottom:10px;text-align:left!important}
+.slide-stage[data-klv-photo="evolution"].layout-compare .compare-side:nth-of-type(2){display:none}
+.slide-stage[data-klv-photo="evolution"].layout-compare .compare-visual{display:none}
+.slide-stage[data-klv-photo="evolution"].layout-compare .compare-side h3{font-size:24px;margin:0 0 4px}
+.slide-stage[data-klv-photo="evolution"].layout-compare .compare-side p{font-size:16px;line-height:1.35;margin:0;max-width:650px}
+.slide-stage[data-klv-photo="evolution"].layout-compare .compare-arrow{display:none}
+.slide-stage[data-klv-photo="evolution"].layout-compare .compare-caption{font-size:18px;text-align:left;margin:12px 0 0;max-width:680px}
+
+.slide-stage[data-klv-photo="green"].layout-cover .big{font-size:82px;line-height:.96;max-width:720px}
+.slide-stage[data-klv-photo="green"] .s-reveal{background:rgba(244,246,243,.82);padding:20px 22px;border-left:3px solid rgba(30,138,128,.45)}
+
+/* Keep touch UI visible over imagery. */
+.slide-stage[data-klv-photo] .s-action{z-index:7;background:#12182B;color:#fff;border-color:#12182B}
+
+@media(pointer:coarse){
+  .klv-photo-tag{font-size:11px;padding:9px 12px}
+  .slide-stage[data-klv-photo] .s-action{min-height:68px;min-width:220px}
+}
