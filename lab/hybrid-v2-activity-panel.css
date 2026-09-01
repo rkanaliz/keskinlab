@@ -1,0 +1,84 @@
+/* KeskinLab activity panel v3 — working surface inspired by the approved reference */
+.activity-focus .workspace{grid-template-rows:minmax(0,1fr)}
+.activity-focus .promptbar{display:none}
+
+.activity-v3.slide{padding:clamp(20px,1.8cqw,30px) clamp(24px,2.2cqw,36px) clamp(18px,1.6cqw,28px)}
+.activity-v3 .slide-head{min-height:22px}
+.activity-v3 .step-kicker{font-size:clamp(8px,.62cqw,10px)}
+.activity-v3 .step-count{font-size:clamp(7px,.56cqw,9px)}
+.activity-v3 .activity-body{height:calc(100% - 26px);margin-top:8px;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:clamp(8px,.75cqw,12px);min-height:0}
+.activity-v3 .activity-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(18px,1.8cqw,28px);align-items:end}
+.activity-v3 .activity-eyebrow{margin-bottom:4px;font-size:clamp(7px,.58cqw,9px);letter-spacing:.12em;color:#146059}
+.activity-v3 .activity-title{max-width:940px;margin:0;font-size:clamp(34px,3.4cqw,54px);line-height:.98;letter-spacing:-.045em}
+.activity-v3 .activity-lead{max-width:860px;margin-top:8px;font-size:clamp(12px,1.05cqw,17px);line-height:1.34;color:#565F70}
+
+.activity-v3-meta{display:grid;grid-template-columns:minmax(170px,1fr) auto;gap:10px;align-items:stretch;min-width:min(420px,31cqw)}
+.activity-v3-note{padding:10px 12px;border:1px solid rgba(18,24,43,.12);border-top:3px solid #E2A63B;background:rgba(255,255,255,.8);display:flex;flex-direction:column;justify-content:center}
+.activity-v3-note small{font:600 7px "IBM Plex Mono";letter-spacing:.11em;color:#B9822A}
+.activity-v3-note strong{margin-top:4px;font:650 clamp(11px,.9cqw,15px)/1.2 "Space Grotesk";color:#12182B}
+.activity-v3 .activity-counter{min-width:104px;padding:9px 12px;border:1px solid rgba(18,24,43,.12);background:#fff;text-align:center;display:grid;place-content:center}
+.activity-v3 .activity-counter b{font-size:clamp(28px,2.5cqw,40px);line-height:.9;color:#1E8A80}
+.activity-v3 .activity-counter span{margin-top:5px;font-size:6.5px;letter-spacing:.08em;color:#8890A0}
+
+.activity-v3 .activity-grid{display:grid;grid-template-columns:minmax(0,.83fr) minmax(0,1.17fr);gap:clamp(14px,1.35cqw,22px);margin:0;min-height:0;max-width:none}
+.activity-v3 .item-pool,.activity-v3 .zones{position:relative;min-height:0;padding-top:22px}
+.activity-v3 .item-pool:before,.activity-v3 .zones:before{position:absolute;left:0;top:2px;font:600 7px "IBM Plex Mono";letter-spacing:.12em;color:#146059}
+.activity-v3 .item-pool:before{content:"ÖRNEK KARTLARI"}
+.activity-v3 .zones:before{content:"KAVRAM ALANLARI"}
+
+.activity-v3 .item-pool{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(4,minmax(0,1fr));gap:8px}
+.activity-v3 .item-btn{position:relative;min-height:0;height:100%;padding:10px 10px 9px 42px;border:1px solid #D8DEDA;border-radius:8px;background:#fff;box-shadow:0 3px 10px rgba(18,24,43,.05);text-align:left;color:#12182B;overflow:hidden}
+.activity-v3 .item-btn:hover{border-color:#9BBDB7}
+.activity-v3 .item-btn.selected{border:2px solid #1E8A80;background:#ECF6F3;box-shadow:0 0 0 3px rgba(30,138,128,.10)}
+.activity-v3 .item-btn.used{opacity:.28}
+.activity-v3 .item-btn b{display:block;font:650 clamp(10px,.86cqw,14px)/1.18 "Space Grotesk"}
+.activity-v3 .item-btn small{display:block;margin-top:4px;font-size:clamp(8px,.62cqw,10px);line-height:1.15;color:#75808D}
+.item-serial{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:24px;height:24px;border:1px solid rgba(30,138,128,.28);border-radius:50%;display:grid;place-items:center;background:#F4F6F3;font:600 7px "IBM Plex Mono";color:#146059}
+
+.activity-v3 .zones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:8px}
+.activity-v3 .zone{position:relative;min-height:0;height:100%;padding:12px 10px 9px;border:1px dashed #9FB5B0;border-radius:9px;background:rgba(255,255,255,.58);text-align:center;display:flex;flex-direction:column;align-items:center;color:#12182B;overflow:hidden}
+.activity-v3 .zone:nth-child(4){grid-column:1/2}
+.activity-v3 .zone:nth-child(5){grid-column:2/4}
+.activity-v3 .zone:hover{background:rgba(255,255,255,.78)}
+.activity-v3 .zone b{margin-top:4px;font:700 clamp(10px,.82cqw,13px) "IBM Plex Mono";letter-spacing:.05em;color:#146059}
+.zone-seal{width:clamp(34px,3cqw,46px);height:clamp(34px,3cqw,46px);border:1px solid rgba(30,138,128,.32);border-radius:50%;display:grid;place-items:center;background:#F4F6F3;font:700 clamp(8px,.68cqw,10px) "IBM Plex Mono";color:#12182B}
+.activity-v3 .chips{width:100%;min-height:44px;margin-top:7px;display:flex;align-content:center;justify-content:center;gap:4px}
+.activity-v3 .chips:empty:after{content:"Seçili kartı buraya yerleştir";align-self:center;font-size:clamp(7px,.58cqw,9px);line-height:1.2;color:#9AA5AD}
+.activity-v3 .chip{padding:4px 6px;border-radius:5px;background:#12182B;color:#fff;font:600 clamp(7px,.58cqw,9px)/1.15 "IBM Plex Mono";max-width:100%}
+.activity-v3 .chip.correct{background:#146059}.activity-v3 .chip.wrong{background:#7B2E35}
+
+.activity-v3 .activity-actions{display:grid;grid-template-columns:minmax(240px,.8fr) minmax(0,1fr) auto;gap:10px;align-items:stretch;margin:0}
+.activity-v3-tip{grid-column:1;min-height:48px;padding:7px 10px;border:1px solid rgba(18,24,43,.10);background:rgba(255,255,255,.82);display:grid;grid-template-columns:34px 1fr;gap:9px;align-items:center}
+.activity-v3-tip img{width:30px;height:30px;object-fit:contain}
+.activity-v3-tip small{display:block;font:600 7px "IBM Plex Mono";letter-spacing:.1em;color:#146059}
+.activity-v3-tip span{display:block;margin-top:2px;font-size:clamp(8px,.68cqw,11px);line-height:1.25;color:#565F70}
+.activity-v3 .activity-result{grid-column:2;min-height:48px;margin:0;padding:7px 10px;display:flex;flex-direction:column;justify-content:center}
+.activity-v3 .activity-result strong{font-size:clamp(9px,.76cqw,12px)}
+.activity-v3 .activity-result span{font-size:clamp(7px,.58cqw,9px)}
+.activity-v3 .activity-buttons{grid-column:3;display:flex;align-items:stretch;gap:8px}
+.activity-v3 .activity-buttons button{min-width:96px;min-height:48px;padding:0 14px;border-radius:8px}
+.activity-v3 .activity-buttons .check-btn{min-width:128px;background:#167C74;border-color:#167C74;font-size:10px}
+.activity-v3 .stage-brand{display:none}
+
+@container (max-width:1100px){
+  .activity-v3 .activity-title{font-size:clamp(30px,3.1cqw,44px)}
+  .activity-v3 .activity-grid{grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:12px}
+  .activity-v3-meta{min-width:340px}
+  .activity-v3 .item-btn{padding-left:36px}.item-serial{left:8px;width:22px;height:22px}
+  .activity-v3 .activity-buttons button{min-width:88px}.activity-v3 .activity-buttons .check-btn{min-width:112px}
+}
+
+@container (max-height:620px){
+  .activity-v3.slide{padding-top:14px;padding-bottom:12px}
+  .activity-v3 .activity-title{font-size:clamp(28px,2.9cqw,40px)}
+  .activity-v3 .activity-lead{font-size:11px;margin-top:5px}
+  .activity-v3 .activity-body{gap:6px}
+  .activity-v3 .item-pool,.activity-v3 .zones{padding-top:18px}
+  .activity-v3 .item-pool:before,.activity-v3 .zones:before{top:0}
+  .activity-v3 .activity-actions,.activity-v3-tip,.activity-v3 .activity-result,.activity-v3 .activity-buttons button{min-height:42px}
+}
+
+@media(pointer:coarse){
+  .activity-v3 .item-btn,.activity-v3 .zone,.activity-v3 .activity-buttons button{touch-action:manipulation}
+  .activity-v3 .activity-buttons button{min-height:48px}
+}
