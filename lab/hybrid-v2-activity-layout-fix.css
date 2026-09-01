@@ -1,0 +1,164 @@
+/* KeskinLab activity layout stabilization — normal + fullscreen */
+
+/* Keep the 16:9 canvas anchored to the top of the usable lesson area.
+   On browser windows taller than 16:9, unused navy space stays below instead of splitting above/below. */
+.activity-focus .stage-wrap{
+  place-items:start center;
+  align-content:start;
+}
+
+/* The activity uses the complete 16:9 canvas instead of collapsing its middle row to content height. */
+.activity-v4 .activity-body{
+  height:calc(100% - 22px)!important;
+  min-height:0!important;
+  grid-template-rows:minmax(112px,23%) minmax(0,1fr) minmax(52px,9%)!important;
+}
+.activity-v4 .activity-head{
+  height:100%!important;
+  min-height:0!important;
+  align-self:stretch;
+}
+.activity-v4-hero{
+  height:100%!important;
+  min-height:0!important;
+}
+.activity-v4 .activity-grid{
+  height:100%!important;
+  min-height:0!important;
+  max-height:none!important;
+  align-self:stretch!important;
+  overflow:visible;
+}
+.activity-v4 .item-pool,
+.activity-v4 .zones{
+  height:100%!important;
+  min-height:0!important;
+  max-height:none!important;
+  align-self:stretch;
+}
+
+/* The 8 cards and 5 target zones always share the available work-surface height. */
+.activity-v4 .item-pool{
+  grid-template-rows:repeat(4,minmax(0,1fr))!important;
+}
+.activity-v4 .zones{
+  grid-template-rows:repeat(2,minmax(0,1fr))!important;
+}
+.activity-v4 .item-btn,
+.activity-v4 .zone{
+  height:100%!important;
+  min-height:0!important;
+}
+
+/* Prevent the colored icon from eating the beginning of long Turkish card labels. */
+.activity-v4 .item-btn{
+  padding-left:clamp(58px,4.8cqw,72px)!important;
+  padding-right:clamp(9px,.8cqw,13px)!important;
+}
+.activity-v4 .item-icon{
+  left:clamp(10px,.8cqw,13px)!important;
+  width:clamp(30px,2.55cqw,38px)!important;
+  height:clamp(30px,2.55cqw,38px)!important;
+}
+.activity-v4 .item-btn b,
+.activity-v4 .item-btn small{
+  position:relative;
+  z-index:2;
+  max-width:100%;
+  overflow-wrap:normal;
+  word-break:normal;
+  hyphens:none;
+}
+
+/* Keep typography stable instead of scaling too aggressively when fullscreen changes canvas width. */
+.activity-v4 .activity-title{
+  font-size:clamp(30px,2.75cqw,46px)!important;
+  line-height:1.01!important;
+  max-width:720px!important;
+}
+.activity-v4 .activity-lead{
+  font-size:clamp(11px,.82cqw,14px)!important;
+  margin-top:7px!important;
+}
+.activity-v4 .item-btn b{
+  font-size:clamp(10px,.76cqw,13px)!important;
+  line-height:1.18!important;
+}
+.activity-v4 .item-btn small{
+  font-size:clamp(7px,.56cqw,9px)!important;
+  line-height:1.12!important;
+}
+.activity-v4 .zone b{
+  font-size:clamp(10px,.78cqw,14px)!important;
+}
+.activity-v4 .zone-icon{
+  width:clamp(46px,3.8cqw,64px)!important;
+  height:clamp(46px,3.8cqw,64px)!important;
+}
+
+/* Footer stays attached to the bottom edge of the cream work surface. */
+.activity-v4 .activity-actions{
+  align-self:end!important;
+  min-height:52px!important;
+  max-height:68px;
+}
+.activity-v4 .activity-buttons button{
+  min-height:48px!important;
+}
+
+/* Normal desktop browser windows: use a little less top chrome and give the work surface more height. */
+@container (max-width:1180px){
+  .activity-v4.slide{
+    padding-top:14px!important;
+    padding-bottom:12px!important;
+  }
+  .activity-v4 .activity-body{
+    grid-template-rows:minmax(100px,21%) minmax(0,1fr) 52px!important;
+    gap:7px!important;
+  }
+  .activity-v4 .activity-head{
+    grid-template-columns:minmax(0,1fr) minmax(300px,.82fr)!important;
+  }
+  .activity-v4 .activity-title{
+    font-size:clamp(28px,2.65cqw,39px)!important;
+    max-width:650px!important;
+  }
+  .activity-v4 .item-btn{
+    padding-left:54px!important;
+  }
+  .activity-v4 .item-icon{
+    left:9px!important;
+    width:32px!important;
+    height:32px!important;
+  }
+  .activity-v4 .zone-icon{
+    width:44px!important;
+    height:44px!important;
+  }
+}
+
+/* Short landscape displays: preserve touch targets, compress decoration first. */
+@container (max-height:620px){
+  .activity-v4 .activity-body{
+    grid-template-rows:92px minmax(0,1fr) 48px!important;
+    gap:6px!important;
+  }
+  .activity-v4-hero .hero-note,
+  .activity-v4-hero .hero-plant{
+    display:none!important;
+  }
+  .activity-v4 .activity-title{
+    font-size:clamp(25px,2.45cqw,34px)!important;
+  }
+  .activity-v4 .item-btn b{
+    font-size:10px!important;
+  }
+  .activity-v4 .item-btn small{
+    margin-top:2px!important;
+    font-size:7px!important;
+  }
+  .activity-v4 .activity-actions,
+  .activity-v4 .activity-buttons button{
+    min-height:48px!important;
+  }
+}
