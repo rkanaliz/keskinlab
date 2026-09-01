@@ -1,15 +1,49 @@
 {
-  "schemaVersion": "scene-pilot-1",
+  "schemaVersion": "scene-final-1",
   "canvas": {"width": 1600, "height": 900},
   "artSystem": "teknoloji-arsivi",
+  "principle": "teacher-scenario-first",
   "scenes": {
+    "w01-kopru": {
+      "archetype": "bridge-map",
+      "art": "discovery-table",
+      "label": "KEŞİF MASASI · BAĞ KUR",
+      "coreKicker": "ORTAK DİLİMİZ",
+      "core": "Bilgi · İletişim · İşlem",
+      "coreNote": "Farklı araçları anlamak için ortak kavramlara ihtiyacımız var.",
+      "nodes": [
+        {"title":"Akıllı telefon","copy":"Mesaj, görüntü ve veri aktarır.","kicker":"İLETİŞİM","mark":"message"},
+        {"title":"ATM","copy":"İşlem bilgilerini alır, işler ve sonucu gösterir.","kicker":"BİLGİ İŞLEME","mark":"finance"},
+        {"title":"Akıllı tahta","copy":"Ders içeriğini görüntüler ve paylaşmayı kolaylaştırır.","kicker":"BİLGİ + İLETİŞİM","mark":"education"},
+        {"title":"Navigasyon","copy":"Konum ve rota verisini anlamlı bilgiye dönüştürür.","kicker":"ANLAMLI BİLGİ","mark":"route"}
+      ]
+    },
+    "w01-kavram-anlatimi": {
+      "archetype": "concept-archive",
+      "art": "archive-files",
+      "label": "TEKNOLOJİ ARŞİVİ · KAVRAM DOSYASI"
+    },
+    "w01-kavram-izi": {
+      "archetype": "research-desk",
+      "art": "group-research",
+      "label": "ARAŞTIRMA MASASI · KAVRAMIN İZİNİ SÜR",
+      "stepLabels": ["ANLAMINI ÇÖZ","HAYATTAN ÖRNEK BUL","TEKNOLOJİYLE BAĞ KUR"],
+      "outputKicker": "SUNUMA HAZIRLIK",
+      "output": "Kavramınızı kendi cümlenizle, bir örnek ve bir teknoloji bağlantısıyla anlatın."
+    },
+    "w01-grup-paylasimi": {
+      "archetype": "share-stage",
+      "art": "classroom-share",
+      "label": "SINIF PAYLAŞIMI · ANLAT + SOR",
+      "audiencePrompt": "Sunum yapan gruba kavramı daha iyi anlamamıza yardım edecek bir soru sorun.",
+      "audienceNote": "Dinleyenler yalnız dinlemiyor; soruyla anlamı derinleştiriyor."
+    },
     "w01-avantaj-sorusu": {
       "archetype": "collection-board",
       "art": "archive-board",
       "label": "BEYİN FIRTINASI · FİKİRLERİ TOPLA",
-      "title": "Bilişim teknolojileri günlük yaşamı nasıl kolaylaştırıyor?",
-      "lead": "Cevabı hazır vermiyoruz. Sınıftan gelen örnekleri dört düşünme alanında toplayalım.",
       "question": "Her alan için günlük hayattan en az bir örnek söyleyebilir misiniz?",
+      "footer": "Hazır cevap göstermiyoruz; önce sınıfın örnekleri gelsin.",
       "lanes": [
         {"code":"01","title":"Zaman","prompt":"Bir işi daha kısa sürede yaptığımız bir teknoloji örneği düşün.","mark":"clock"},
         {"code":"02","title":"İşi yapma biçimi","prompt":"Aynı iş geçmişte nasıl yapılıyordu; bugün nasıl yapılıyor?","mark":"process"},
@@ -17,28 +51,20 @@
         {"code":"04","title":"İletişim","prompt":"Uzakta biriyle haberleşmek hangi teknolojilerle kolaylaştı?","mark":"message"}
       ]
     },
+    "w01-avantaj-sonuc": {
+      "archetype": "summary-strip",
+      "art": "shared-conclusion",
+      "label": "ORTAK SONUÇ · SINIFIN FİKİRLERİNİ TOPARLA",
+      "marks": ["clock","search","process","info"]
+    },
     "w01-yazi-ihtiyaci": {
       "archetype": "timeline",
       "art": "archive-desk",
       "label": "TEKNOLOJİ ARŞİVİ · ZAMAN İZİ",
-      "title": "Yazı üretme ihtiyacı",
-      "lead": "Araç değişiyor. Önce iki dönemde de karşılanan ortak ihtiyacı bulalım.",
       "constant": "YAZI ÜRETMEK",
-      "past": {
-        "era":"GEÇMİŞ",
-        "title":"Daktilo",
-        "copy":"Metni doğrudan kâğıda aktarır; düzeltme ve yeniden düzenleme seçenekleri sınırlıdır.",
-        "object":"assets/w01/objects/typewriter.svg",
-        "evidence":["kâğıda doğrudan yazı","fiziksel çıktı","sınırlı düzenleme"]
-      },
-      "present": {
-        "era":"GÜNÜMÜZ",
-        "title":"Dizüstü bilgisayar",
-        "copy":"Metni oluşturmayı, düzenlemeyi, saklamayı ve paylaşmayı kolaylaştırır.",
-        "object":"assets/w01/objects/laptop.svg",
-        "evidence":["kolay düzenleme","dijital saklama","hızlı paylaşım"]
-      },
-      "prompts":[
+      "past": {"object":"assets/w01/objects/typewriter.svg","evidence":["kâğıda doğrudan yazı","fiziksel çıktı","sınırlı düzenleme"]},
+      "present": {"object":"assets/w01/objects/laptop.svg","evidence":["kolay düzenleme","dijital saklama","hızlı paylaşım"]},
+      "prompts": [
         {"code":"01","label":"BENZERLİK","text":"İkisi de hangi ihtiyacı karşılıyor?"},
         {"code":"02","label":"DEĞİŞİM","text":"İşi yapma biçimi nasıl değişmiş?"},
         {"code":"03","label":"SONUÇ","text":"Araç değişse de değişmeyen ne?"}
@@ -48,28 +74,92 @@
       "archetype": "timeline",
       "art": "archive-signal",
       "label": "TEKNOLOJİ ARŞİVİ · ZAMAN İZİ",
-      "title": "İletişim kurma ihtiyacı",
       "lead": "İhtiyaç sürüyor; bağlantı kurma biçimi ve hareket özgürlüğü değişiyor.",
       "constant": "İLETİŞİM KURMAK",
-      "past": {
-        "era":"GEÇMİŞ",
-        "title":"Sabit telefon",
-        "copy":"Belirli bir yerdeki telefon hattına bağlı olarak sesli iletişim sağlar.",
-        "object":"assets/w01/objects/fixed-phone.svg",
-        "evidence":["sabit konum","telefon hattı","sesli iletişim"]
-      },
-      "present": {
-        "era":"GÜNÜMÜZ",
-        "title":"Akıllı telefon",
-        "copy":"Hareket hâlindeyken ses, görüntü, metin ve internet üzerinden iletişim sağlar.",
-        "object":"assets/w01/objects/smartphone.svg",
-        "evidence":["hareket hâlinde","çoklu iletişim","internet bağlantısı"]
-      },
-      "prompts":[
+      "past": {"object":"assets/w01/objects/fixed-phone.svg","evidence":["sabit konum","telefon hattı","sesli iletişim"]},
+      "present": {"object":"assets/w01/objects/smartphone.svg","evidence":["hareket hâlinde","çoklu iletişim","internet bağlantısı"]},
+      "prompts": [
         {"code":"01","label":"BENZERLİK","text":"İki araçta da ortak amaç ne?"},
         {"code":"02","label":"DEĞİŞİM","text":"Nerede ve nasıl iletişim kurabildiğimiz nasıl değişmiş?"},
         {"code":"03","label":"SONUÇ","text":"İhtiyaç aynı kalırken hangi olanaklar artmış?"}
       ]
+    },
+    "w01-teknoloji-arastirma": {
+      "archetype": "research-desk",
+      "art": "time-research",
+      "label": "GRUP ARAŞTIRMASI · DÜNÜNDEN BUGÜNÜNE",
+      "stepLabels": ["İŞLEV","GEÇMİŞ","GÜNÜMÜZ","BENZERLİK","KULLANIM ALANI"],
+      "outputKicker": "PAYLAŞIM ÜRÜNÜ",
+      "output": "Araştırmanızı kısa bir afişe veya sözlü sunuma dönüştürün."
+    },
+    "w01-teknoloji-sunum": {
+      "archetype": "share-stage",
+      "art": "classroom-share",
+      "label": "GRUP SUNUMU · KARŞILAŞTIR + SOR",
+      "audiencePrompt": "Dinleyenler, benzerlik veya farklılığı daha iyi görmemize yardım edecek bir soru sorsun.",
+      "audienceNote": "Önce grup anlatır; sonra sınıf sorularla karşılaştırmayı derinleştirir."
+    },
+    "w01-yesil-ekran-merak": {
+      "archetype": "collection-board",
+      "art": "green-room",
+      "label": "MERAK PANOSU · SORULARI TOPLA",
+      "compact": true,
+      "question": "Bu sahneyle ilgili en çok neyi merak ediyorsunuz?",
+      "footer": "Henüz açıklamıyoruz. Önce öğrencilerin tahminleri ve soruları görünür olsun.",
+      "lanes": [
+        {"code":"01","title":"Çekim","prompt":"Oyuncu gerçekten gördüğümüz ortamda mıydı?","mark":"camera","kicker":"MERAK ALANI"},
+        {"code":"02","title":"Tek renkli fon","prompt":"Neden çekimde tek renkli bir arka plan kullanılmış olabilir?","mark":"screen","kicker":"MERAK ALANI"},
+        {"code":"03","title":"Arka plan","prompt":"Son görüntüdeki ortam çekimden sonra nasıl eklenmiş olabilir?","mark":"process","kicker":"MERAK ALANI"}
+      ]
+    },
+    "w01-yesil-ekran-kamera-arkasi": {
+      "archetype": "transformation",
+      "art": "green-room",
+      "label": "KAMERA ARKASI · ÇEKİMDEN SON SAHNEYE",
+      "stages": ["Görüntüyü kaydet","Yeşil alanı ayır","Yeni arka planı yerleştir"]
+    },
+    "w01-yesil-ekran-ornekler": {
+      "archetype": "example-gallery",
+      "art": "green-room",
+      "label": "KULLANIM ARŞİVİ · AYNI TEKNİK, FARKLI AMAÇ",
+      "core": "YEŞİL EKRAN",
+      "marks": ["screen","camera","media","message"]
+    },
+    "w01-sinema-tv-havuz": {
+      "archetype": "process-flow",
+      "art": "production-line",
+      "label": "PRODÜKSİYON DOSYASI · BİRLİKTE ÇALIŞAN SİSTEM",
+      "kickers": ["GÖRÜNTÜ","SES","DÜZENLEME","EFEKT","YAYIN"],
+      "marks": ["camera","message","process","screen","media"]
+    },
+    "w01-alan-listesi": {
+      "archetype": "field-map",
+      "art": "usage-map",
+      "label": "KULLANIM HARİTASI · CİHAZA DEĞİL AMACA BAK",
+      "marks": ["education","health","route","finance","message","media"]
+    },
+    "w01-birden-fazla-alan": {
+      "archetype": "split-context",
+      "art": "same-device",
+      "label": "ÖLÇÜTÜ DEĞİŞTİR · AYNI ARAÇ, FARKLI AMAÇ",
+      "object": "TABLET",
+      "contexts": [
+        {"kicker":"BAĞLAM 01","title":"Eğitim","copy":"Canlı derse katılmak, araştırma yapmak veya ders içeriği kullanmak.","mark":"education"},
+        {"kicker":"BAĞLAM 02","title":"Medya / Eğlence","copy":"Oyun oynamak, video izlemek veya dijital içerik tüketmek.","mark":"media"}
+      ]
+    },
+    "w01-katkiyi-ornekle": {
+      "archetype": "contribution-chain",
+      "art": "contribution-map",
+      "label": "GERÇEK YAŞAM BAĞI · ALAN → TEKNOLOJİ → KATKI",
+      "labels": ["ALAN","TEKNOLOJİ","KATKI"],
+      "marks": ["education","process","info"]
+    },
+    "w01-cikis-kaniti": {
+      "archetype": "exit-evidence",
+      "art": "evidence-desk",
+      "label": "ÇIKIŞ KANITI · ÜÇ ÖĞRENME HAREKETİ",
+      "labels": ["KAVRAM","GEÇMİŞ–GÜNÜMÜZ","KULLANIM ALANI"]
     }
   }
 }
