@@ -1,0 +1,48 @@
+/* KeskinLab Hybrid Player — teacher-first Week 1 refinements */
+:root{--rail:clamp(260px,18vw,350px)}
+.shell{grid-template-columns:var(--rail) minmax(0,1fr)}
+.rail{padding:clamp(18px,1.3vw,26px) clamp(14px,1vw,20px) 16px}
+.brand{height:clamp(58px,5vw,76px);gap:12px}.brand img{width:clamp(38px,2.8vw,52px);height:clamp(38px,2.8vw,52px)}.brand b{font-size:clamp(22px,1.55vw,31px)}
+.rail-label{font-size:clamp(10px,.72vw,14px);margin-top:clamp(18px,1.5vw,26px)}
+.chapter-nav{gap:clamp(5px,.45vw,9px)}
+.chapter-btn{min-height:clamp(62px,5.1vw,88px);padding:clamp(10px,.8vw,14px) 10px clamp(10px,.8vw,14px) clamp(54px,3.8vw,72px);border-radius:10px}
+.chapter-btn:before{left:10px;top:50%;transform:translateY(-50%);width:clamp(32px,2.3vw,43px);height:clamp(32px,2.3vw,43px);font-size:clamp(10px,.72vw,14px)}
+.chapter-btn strong{font-size:clamp(13px,.94vw,19px);line-height:1.15;letter-spacing:-.01em}.chapter-btn small{font-size:clamp(9px,.65vw,12px);line-height:1.3;margin-top:5px}
+.rail-btn{min-height:clamp(48px,4vw,62px);font-size:clamp(9px,.65vw,12px);margin-top:auto}.prep-btn{border-color:rgba(101,209,198,.35);color:#DCE7EA}
+
+.main{grid-template-rows:clamp(72px,6vw,92px) minmax(0,1fr) clamp(64px,5vw,78px)}
+.topbar{padding:0 clamp(16px,1.5vw,28px)}.course-meta b{font-size:clamp(10px,.72vw,14px)}.course-meta span{font-size:clamp(11px,.82vw,16px)}
+.top-actions button{min-height:clamp(44px,3.6vw,56px);font-size:clamp(9px,.68vw,12px)}
+.workspace{padding:0 clamp(12px,1.5vw,28px) clamp(8px,.8vw,14px);grid-template-rows:minmax(0,1fr) clamp(54px,4.2vw,66px);gap:8px}
+.stage-wrap{border-radius:14px}
+.interaction-slide{background:#F4F1E8!important}
+.slide{padding:clamp(34px,3.2vw,60px) clamp(42px,4.2vw,80px) clamp(42px,3.4vw,66px)}
+.slide-body{margin-top:clamp(26px,2.3vw,42px)}
+.big-title{font-size:clamp(48px,5.4vw,94px);max-width:1180px}.compact-title{font-size:clamp(40px,4.1vw,72px);line-height:1.02}.compact-lead{font-size:clamp(18px,1.55vw,27px);max-width:1120px;margin-top:14px}
+.step-kicker{font-size:clamp(10px,.72vw,14px)}.step-count{font-size:clamp(9px,.65vw,12px)}
+
+/* White strip becomes a slim, dark student-action bar; teacher guidance stays in the drawer. */
+.promptbar{grid-template-columns:clamp(36px,2.7vw,48px) minmax(0,1fr) auto auto;min-height:0;padding:clamp(7px,.65vw,10px) clamp(12px,1vw,18px);border:1px solid rgba(255,255,255,.09);background:rgba(7,21,37,.88);color:#fff;border-radius:9px}
+.prompt-icon{width:clamp(34px,2.5vw,44px);height:clamp(34px,2.5vw,44px);font-size:clamp(15px,1.1vw,20px);background:#158E86}.prompt-copy strong{font-size:clamp(12px,.92vw,17px);color:#fff}.prompt-copy span{font-size:clamp(10px,.72vw,13px);color:#B7C7D0}.prompt-hint{border-left:1px solid rgba(255,255,255,.14);color:#87A0AE;font-size:clamp(8px,.58vw,11px);padding-left:14px;white-space:nowrap}.prompt-action{min-height:38px;background:#1E8A80;font-size:clamp(9px,.62vw,11px)}
+
+/* Rich instructional surfaces */
+.rich-body{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);grid-template-rows:auto auto;gap:clamp(24px,2.2vw,40px);align-items:start}.rich-copy{max-width:900px}.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.story-point{display:grid;grid-template-columns:38px 1fr;gap:10px;align-items:start;padding:18px 18px;background:#fff;border-top:3px solid #1E8A80}.story-point span{font:600 10px "IBM Plex Mono";color:#B9822A}.story-point p{margin:0;font-size:clamp(15px,1.05vw,20px);line-height:1.42;color:#202A42}.focus-question{grid-column:1/-1;padding:18px 22px;border-left:4px solid #E2A63B;background:#fff}.focus-question small{display:block;font:600 9px "IBM Plex Mono";letter-spacing:.1em;color:#B9822A}.focus-question strong{display:block;margin-top:7px;font:700 clamp(20px,1.7vw,30px) "Space Grotesk";line-height:1.2}
+
+.question-body{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);gap:clamp(28px,3vw,58px);align-items:start}.question-copy .big-title{font-size:clamp(48px,5vw,88px)}.context-panel{padding:24px;background:#fff;border-top:4px solid #1E8A80}.context-panel>small{font:600 9px "IBM Plex Mono";letter-spacing:.1em;color:#146059}.context-grid{display:grid;gap:10px;margin-top:16px}.context-chip{padding:14px 16px;border:1px solid #DCE1DE;font:650 clamp(15px,1.1vw,21px) "Space Grotesk";color:#202A42}
+
+.concept-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:24px}.concept-card{display:grid;grid-template-columns:34px 1fr;gap:12px;min-height:150px;padding:18px;background:#fff;border-top:3px solid #1E8A80}.concept-card:nth-child(4),.concept-card:nth-child(5){grid-column:span 1}.concept-card>span{font:600 10px "IBM Plex Mono";color:#B9822A}.concept-card h3{margin:0;font:700 clamp(19px,1.4vw,27px) "Space Grotesk"}.concept-card p{margin:8px 0;font-size:clamp(13px,.93vw,17px);line-height:1.4;color:#565F70}.concept-card small{font-size:clamp(11px,.78vw,14px);color:#146059}
+
+.task-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:24px;max-width:1200px}.task-row{display:grid;grid-template-columns:46px 1fr;gap:14px;align-items:center;min-height:86px;padding:18px;background:#fff;border-top:3px solid #1E8A80}.task-row span{font:600 11px "IBM Plex Mono";color:#B9822A}.task-row strong{font:650 clamp(17px,1.25vw,23px) "Space Grotesk";line-height:1.25}.closing-note{margin-top:16px;max-width:1200px;padding:16px 20px;border-left:4px solid #E2A63B;background:#fff;font-size:clamp(14px,1vw,19px);color:#202A42}
+
+.compare{margin-top:24px;max-width:none}.compare-card{min-height:210px;padding:26px}.compare-card h3{font-size:clamp(26px,2vw,38px)}.compare-card p{font-size:clamp(15px,1.05vw,20px)}.compare-question{margin-top:18px;padding:18px 22px;background:#fff;border-left:4px solid #E2A63B;font:650 clamp(18px,1.35vw,25px) "Space Grotesk"}
+
+.exit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}.exit-card{min-height:190px;padding:22px;background:#fff;border-top:4px solid #1E8A80;display:grid;grid-template-columns:40px 1fr;gap:12px}.exit-card>span{font:600 11px "IBM Plex Mono";color:#B9822A}.exit-card strong{display:block;font:700 clamp(19px,1.45vw,27px) "Space Grotesk";line-height:1.25}.exit-card small{display:block;margin-top:12px;font-size:clamp(12px,.88vw,16px);line-height:1.4;color:#565F70}
+
+/* Larger, complete touch activities */
+.activity-body{margin-top:18px}.activity-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:end}.activity-counter{min-width:130px;text-align:right}.activity-counter b{display:block;font:700 clamp(32px,2.5vw,48px) "Space Grotesk";color:#1E8A80}.activity-counter span{font:600 8px "IBM Plex Mono";color:#8890A0}.activity-grid{grid-template-columns:minmax(400px,.8fr) minmax(0,1.2fr);gap:22px;margin-top:18px;max-width:none}.item-pool{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.item-btn{min-height:clamp(82px,6.2vw,112px);padding:14px 16px;border-radius:9px}.item-btn b{font-size:clamp(14px,1.02vw,19px);line-height:1.22}.item-btn small{display:block;margin-top:5px;font-size:clamp(10px,.72vw,13px)}.zones{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.zone{min-height:clamp(118px,8.7vw,158px);padding:14px}.zone b{font-size:clamp(9px,.68vw,12px)}.chip{font-size:clamp(9px,.68vw,12px);line-height:1.25;border-left:3px solid transparent}.chip.correct{background:#146059;border-left-color:#67D4CA}.chip.wrong{background:#7B2E35;border-left-color:#E2A63B}.activity-actions{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:12px}.activity-result{flex:1;min-height:52px;padding:10px 14px;border-left:4px solid #8890A0;background:#fff}.activity-result strong{display:block;font:700 14px "Space Grotesk"}.activity-result span{display:block;margin-top:3px;font-size:11px;color:#565F70}.activity-result.success{border-left-color:#1E8A80}.activity-result.needs-work{border-left-color:#B9822A}.activity-buttons{display:flex;gap:9px}.activity-buttons button{min-height:48px;padding:0 18px;border:1px solid #C6CECA;border-radius:8px;background:#fff;color:#12182B;font:600 10px "IBM Plex Mono"}.activity-buttons .check-btn{border-color:#1E8A80;background:#1E8A80;color:#fff}
+
+.teacher-list{margin:8px 0 0;padding-left:20px}.teacher-list li{margin:8px 0;font-size:13px;line-height:1.5;color:#202A42}
+
+@media(max-width:1320px){:root{--rail:clamp(230px,18vw,290px)}.chapter-btn strong{font-size:clamp(12px,.9vw,16px)}.chapter-btn small{font-size:9px}.rich-body,.question-body{grid-template-columns:1fr}.story-grid{grid-template-columns:1fr 1fr}.concept-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.activity-grid{grid-template-columns:360px 1fr}.zones{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-height:800px) and (orientation:landscape){.chapter-btn{min-height:52px}.chapter-btn small{display:none}.workspace{grid-template-rows:minmax(0,1fr) 48px}.promptbar{padding-top:5px;padding-bottom:5px}.prompt-copy span{display:none}.slide{padding-top:28px;padding-bottom:34px}.slide-body{margin-top:20px}.concept-card{min-height:120px}.activity-grid{margin-top:12px}.item-btn{min-height:72px}.zone{min-height:98px}}
+@media(pointer:coarse){.chapter-btn{min-height:max(66px,5vw)}.item-btn,.zone,.activity-buttons button,.prompt-action,.nav-btn,.top-actions button,.rail-btn{touch-action:manipulation}}
