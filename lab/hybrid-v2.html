@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="hybrid-v2.css">
   <link rel="stylesheet" href="hybrid-v2-slides.css">
+  <link rel="stylesheet" href="hybrid-v2-revision.css">
 </head>
 <body>
 <div class="shell" id="shell">
@@ -18,7 +19,7 @@
     <a class="brand" href="../classroom-5-sinif.html"><img src="../brand/devre-karakteri.svg" alt=""><b>Keskin<span>Lab</span></b></a>
     <div class="rail-label">DERS AKIŞI</div>
     <nav id="chapterNav" class="chapter-nav"></nav>
-    <button class="rail-btn" id="notesBtn" type="button">ÖĞRETMEN NOTLARI</button>
+    <button class="rail-btn prep-btn" id="prepBtn" type="button">HAFTAYA HAZIRLIK</button>
   </aside>
   <main class="main">
     <header class="topbar">
@@ -29,9 +30,9 @@
       <div class="stage-wrap"><article class="stage" id="stage"></article></div>
       <section class="promptbar" id="promptbar">
         <div class="prompt-icon" id="promptIcon">?</div>
-        <div class="prompt-copy"><strong id="promptTitle">Düşün ve paylaş</strong><span id="promptText">Önce öğrenci sesi.</span></div>
+        <div class="prompt-copy"><strong id="promptTitle">Sıran sizde</strong><span id="promptText">Düşün ve paylaş.</span></div>
         <button id="promptAction" class="prompt-action" type="button" hidden></button>
-        <div class="prompt-hint" id="promptHint">SOR · BEKLE · PAYLAŞ</div>
+        <div class="prompt-hint" id="promptHint">DÜŞÜN · PAYLAŞ</div>
       </section>
     </section>
     <footer class="bottombar">
@@ -41,7 +42,7 @@
     </footer>
   </main>
 </div>
-<aside class="drawer" id="teacherDrawer" aria-hidden="true"><div class="drawer-head"><div><small>ÖĞRETMEN KATMANI</small><h2>Bu adımda</h2></div><button id="closeDrawer" type="button">×</button></div><div id="teacherContent" class="teacher-content"></div></aside>
+<aside class="drawer" id="teacherDrawer" aria-hidden="true"><div class="drawer-head"><div><small>ÖĞRETMEN KATMANI</small><h2 id="drawerTitle">Bu adımda</h2></div><button id="closeDrawer" type="button">×</button></div><div id="teacherContent" class="teacher-content"></div></aside>
 <div id="scrim" class="scrim" hidden></div>
 <div id="loading" class="loading"><div class="loading-mark">K</div><strong>Ders hazırlanıyor</strong><span>5. Sınıf BTY · Hafta 01</span></div>
 <div id="portrait" class="portrait"><strong>Dersi yatay ekranda aç.</strong><span>Akıllı tahta ve yatay ekranlar için tasarlanmıştır.</span></div>
