@@ -1,65 +1,56 @@
-# 5. Sınıf BTY · Hafta 1 · BTY.5.1.1 Kapsam Denetimi
+# 5. Sınıf BTY · Hafta 1 · BTY.5.1.1 Final Kapsam Denetimi
 
-Bu belge, resmî **Bilişim Teknolojileri ve Yazılım Dersi Öğretim Programı (5 ve 6. Sınıflar, 2025)** içindeki BTY.5.1.1 öğrenme-öğretme uygulamalarının KeskinLab Lesson Engine akışında nerede karşılandığını denetlemek için hazırlanmıştır.
+Bu belge, resmî BTY.5.1.1 öğrenme-öğretme uygulamalarının KeskinLab Hafta 1 final ders akışındaki karşılığını denetler.
 
 ## Kaynak önceliği
-
 1. Resmî BTY Öğretim Programı — ayrıntılı öğrenme-öğretme uygulamaları
-2. Çerçeve yıllık plan — haftaya atanan öğrenme çıktısı
-3. 2026–2027 haftalık takvim — tarih ve ders saati
-4. TYMM tema/pedagojik veri — ön değerlendirme, köprü, farklılaştırma, öğrenme kanıtı
-5. KeskinLab türevleri — günlük plan, ders notu, storyboard vb.
+2. Çerçeve yıllık plan
+3. 2026–2027 haftalık takvim
+4. TYMM tema/pedagojik veri
+5. KeskinLab türevleri
 
 Alt sıradaki hiçbir kaynak üst sıradaki resmî kapsamı daraltamaz.
 
-## Kapsam eşlemesi
+## Final kapsam eşlemesi
 
-| Resmî öğrenme hareketi | Lesson Engine karşılığı |
+| Resmî öğrenme hareketi | Final akış karşılığı |
 |---|---|
-| “Bilişim teknolojileri” hakkında beyin fırtınası | `w01-bilisim-ne` |
-| Günlük yaşamda karşılaşılan bilişim teknolojilerine örnek verme | `w01-gunluk-hayat-ornekleri` |
-| Temel kavramları tanıtma: iletişim, bilgi, bilişim, teknoloji, BİT | `w01-bes-kavram` |
-| Rastgele küçük gruplar / kelime kavanozundan kavram seçimi | `w01-kelime-kavanozu` |
-| Kavram hakkında hazırlık ve araştırma | `w01-kavram-arastir` |
-| Tarayıcı / kaynak kullanımı için öğretmen rehberliği | `w01-kavram-arastir` öğretmen katmanı |
-| Araştırma sonuçlarını sınıfla paylaşma | `w01-kavram-paylas` |
-| Temel kavramları belirleme | `w01-kavram-paylas` + `w01-kavramlari-kullanimla-iliskilendir` |
-| Kavramları kullanım bağlamlarıyla gruplandırma | `w01-kavramlari-kullanimla-iliskilendir` |
-| Sunum yapan gruba soru sorma | `w01-soru-sor` |
-| “Bilişim teknolojilerinin genel olarak sağladığı avantajlar?” tartışması | `w01-avantajlar-soru` |
-| Hayatı kolaylaştırma / hızlandırma / maliyeti azaltma / verimlilik ortak görüşü | `w01-avantajlar-ortak-gorus` |
-| Geçmişte ve günümüzde kullanılan teknolojilere örnek verme | `w01-gecmis-bugun-ornek-ver` |
-| Daktilo, teyp, ilk bilgisayarlar ile güncel örneklerin görsellerini inceleme | `w01-arsiv-daktilo`, `w01-arsiv-teyp`, `w01-arsiv-bilgisayar` |
-| Eski-yeni teknolojilerin benzerlik ve farklılıklarını ilişkilendirme | aynı üç arşiv adımı |
-| Küçük gruplara belirli bir teknolojiyi geçmişten günümüze inceleme görevi | `w01-gecmis-gunumuz-grup-gorevi` |
-| Araştırma yapıp geçmiş-günümüz biçimlerini karşılaştırma | `w01-gecmis-gunumuz-grup-gorevi` |
-| Bilgileri afiş olarak sunma | `w01-afis-hazirla` |
-| Sunum, tartışma ve etkin dinleme | `w01-afis-sunumu` |
-| Diğer öğrencilerin benzerlik/farklılık değerlendirmesi ve soru sorması | `w01-afis-sunumu` |
-| Yeşil ekranla oluşturulmuş film sahnesini izleme | `w01-yesil-ekran-sahne` |
+| Bilişim teknolojileri hakkında beyin fırtınası | `w01-bilisim-ne` |
+| Günlük yaşamdan bilişim teknolojisi örnekleri | `w01-gunluk-hayat-ornekleri` |
+| Günlük örneklerden temel kavramlara köprü | `w01-kopru` |
+| İletişim, bilgi, bilişim, teknoloji ve BİT kavramlarını tanıtma | `w01-bes-kavram` + `w01-kavram-anlatimi` |
+| Kelime kavanozundan grup kavramı seçme | `w01-kelime-kavanozu` |
+| Kavramı araştırma ve kendi cümlesiyle açıklama | `w01-kavram-izi` |
+| Araştırma sonucunu sunma ve dinleyenlerin soru sorması | `w01-grup-paylasimi` |
+| Kavramları kullanım örnekleriyle ilişkilendirme | `w01-kavram-eslestir` |
+| Bilişim teknolojilerinin genel avantajlarını tartışma | `w01-avantaj-sorusu` |
+| Hayatı kolaylaştırma, hız, erişim, maliyet/verimlilik ortak sonucunu kurma | `w01-avantaj-sonuc` |
+| Geçmiş ve günümüz teknolojilerini karşılaştırmaya geçiş | `w01-checkpoint-2ders` |
+| Geçmiş–günümüz benzerlik/farklılık ilişkisi: yazı üretme | `w01-yazi-ihtiyaci` |
+| Geçmiş–günümüz benzerlik/farklılık ilişkisi: iletişim | `w01-iletisim-ihtiyaci` |
+| Seçilen teknolojinin geçmiş ve günümüz hâlini araştırma | `w01-teknoloji-arastirma` |
+| Araştırmayı afiş veya kısa sunumla paylaşma; soru sorma | `w01-teknoloji-sunum` |
+| Yeşil ekranla oluşturulmuş sahneyi inceleme | `w01-yesil-ekran-sahne` |
 | Yeşil ekran hakkında merak edilenleri paylaşma | `w01-yesil-ekran-merak` |
-| Sahnenin çekim sürecini gösterme | `w01-yesil-ekran-kamera-arkasi` |
-| Farklı yeşil ekran sahneleri gösterme | `w01-yesil-ekran-farkli-sahneler` |
-| Sinema ve televizyondaki diğer bilişim teknolojilerini sorma | `w01-sinema-tv-teknolojileri` |
-| Gelen cevaplarla liste oluşturma | `w01-sinema-tv-teknolojileri` öğretmen akışı |
-| Sinema/TV teknolojilerini kullanım alanlarına göre kategorize etme | `w01-sinema-tv-siniflandir` |
-| Bilişim teknolojilerinin farklı alanlardaki kullanımları hakkında soru sorma | `w01-baska-alanlar` |
-| Cevapları listeleyip kullanım alanlarına göre gruplandırma | `w01-alan-listesi` + `w01-alanlara-gore-siniflandir` |
-| İş birliğiyle fikir paylaşma | ilgili grup/tartışma adımları |
-| Eksik alanların öğretmen tarafından tamamlanması | `w01-eksik-alanlari-tamamla` |
-| Toplumsal hayata etkileri/katkıları tartışma | `w01-toplumsal-etki-tartisma` |
-| Hangi alanlarda daha fazla fayda sağladığını değerlendirme | `w01-en-faydali-alan` |
-| Toplumsal katkıları kendi örnekleriyle zenginleştirip paylaşma | `w01-katkiyi-ornekle` |
+| Çekim sürecini / kamera arkasını inceleme | `w01-yesil-ekran-kamera-arkasi` |
+| Yeşil ekranın farklı kullanım örneklerini inceleme | `w01-yesil-ekran-ornekler` |
+| Sinema ve televizyondaki diğer bilişim teknolojilerini belirleme | `w01-sinema-tv-teknolojileri` |
+| Prodüksiyonda birlikte çalışan teknolojileri ilişkilendirme | `w01-sinema-tv-havuz` |
+| Sinema/TV teknolojilerini işlevlerine göre kategorize etme | `w01-sinema-tv-siniflandir` |
+| Bilişim teknolojilerinin farklı kullanım alanlarını belirleme | `w01-baska-alanlar` |
+| Kullanım alanlarını örneklerle ortaklaştırma | `w01-alan-listesi` |
+| Teknolojileri kullanım alanlarına göre gruplandırma | `w01-alanlara-gore-siniflandir` |
+| Aynı teknolojinin kullanım amacına göre farklı gruplara girebileceğini sorgulama | `w01-birden-fazla-alan` |
+| Toplumsal katkıyı alan ve teknoloji üzerinden değerlendirme | `w01-toplumsal-etki-tartisma` |
+| Alan → teknoloji → katkı ilişkisini gerçek yaşam örneğiyle kurma | `w01-katkiyi-ornekle` |
+| BTY.5.1.1 a-b-c süreç bileşenlerini hızlı öğrenme kanıtıyla kapatma | `w01-cikis-gorsel` + `w01-cikis-kaniti` |
 
-## Farklılaştırma
-
-- Resmî zenginleştirme: geçmişten günümüze bilişim teknolojileri için zaman çizelgesi.
-- Resmî destekleme: temel kavramları anlamaya yardımcı kavram haritası.
-- Bunlar ana akışa zorunlu ekran olarak yığılmaz; öğretmen katmanından gerektiğinde açılan yollar olarak tutulur.
-
-## KeskinLab uygulama kararları
-
-- `w01-ortak-islev` resmî “Köprü Kurma” açıklamasının dijital ders akışına çevrilmiş biçimidir.
-- `w01-cikis-kaniti`, BTY.5.1.1’in a-b-c süreç bileşenlerini hızlı görünür kılmak için KeskinLab tarafından eklenmiştir; resmî tema düzeyi ölçme araçlarının yerine geçmez.
-- Lesson Engine’de ekran/adım sayısı hedef değildir. Resmî öğrenme hareketleri ve sınıf içi pedagojik ihtiyaçlar ne gerektiriyorsa akış o kadar genişler.
-- Bir öğrenme hareketi başka bir adıma sırf kısa tutmak için sıkıştırılamaz.
+## Final tasarım kararı
+- `mode` pedagojik hareketi belirtir; görsel şablon değildir.
+- `scene.archetype` yalnız sahne kompozisyonunu belirtir.
+- Ana bölüm görselleri 16:9 WebP olarak korunur.
+- Etkileşim ekranları canlı HTML/JS olarak kalır.
+- Ara sahneler öğretmen senaryosuna göre seçilen kompozisyon arketipleriyle oluşturulur.
+- Öğretmen notları öğrenci yüzeyinde gösterilmez; Öğretmen Paneli içinde kalır.
+- Minimum kullanım koşulu internet + akıllı tahtadır.
+- Ekran/adım sayısı hedef değildir; pedagojik ihtiyaç ne gerektiriyorsa akış o kadar sürer.
