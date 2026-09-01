@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "scene-pilot-1",
+  "canvas": {"width": 1600, "height": 900},
+  "artSystem": "teknoloji-arsivi",
+  "scenes": {
+    "w01-avantaj-sorusu": {
+      "archetype": "collection-board",
+      "art": "archive-board",
+      "label": "BEYİN FIRTINASI · FİKİRLERİ TOPLA",
+      "title": "Bilişim teknolojileri günlük yaşamı nasıl kolaylaştırıyor?",
+      "lead": "Cevabı hazır vermiyoruz. Sınıftan gelen örnekleri dört düşünme alanında toplayalım.",
+      "question": "Her alan için günlük hayattan en az bir örnek söyleyebilir misiniz?",
+      "lanes": [
+        {"code":"01","title":"Zaman","prompt":"Bir işi daha kısa sürede yaptığımız bir teknoloji örneği düşün.","mark":"clock"},
+        {"code":"02","title":"İşi yapma biçimi","prompt":"Aynı iş geçmişte nasıl yapılıyordu; bugün nasıl yapılıyor?","mark":"process"},
+        {"code":"03","title":"Bilgiye erişim","prompt":"İhtiyaç duyduğumuz bir bilgiye ulaşmak nasıl kolaylaştı?","mark":"search"},
+        {"code":"04","title":"İletişim","prompt":"Uzakta biriyle haberleşmek hangi teknolojilerle kolaylaştı?","mark":"message"}
+      ]
+    },
+    "w01-yazi-ihtiyaci": {
+      "archetype": "timeline",
+      "art": "archive-desk",
+      "label": "TEKNOLOJİ ARŞİVİ · ZAMAN İZİ",
+      "title": "Yazı üretme ihtiyacı",
+      "lead": "Araç değişiyor. Önce iki dönemde de karşılanan ortak ihtiyacı bulalım.",
+      "constant": "YAZI ÜRETMEK",
+      "past": {
+        "era":"GEÇMİŞ",
+        "title":"Daktilo",
+        "copy":"Metni doğrudan kâğıda aktarır; düzeltme ve yeniden düzenleme seçenekleri sınırlıdır.",
+        "object":"assets/w01/objects/typewriter.svg",
+        "evidence":["kâğıda doğrudan yazı","fiziksel çıktı","sınırlı düzenleme"]
+      },
+      "present": {
+        "era":"GÜNÜMÜZ",
+        "title":"Dizüstü bilgisayar",
+        "copy":"Metni oluşturmayı, düzenlemeyi, saklamayı ve paylaşmayı kolaylaştırır.",
+        "object":"assets/w01/objects/laptop.svg",
+        "evidence":["kolay düzenleme","dijital saklama","hızlı paylaşım"]
+      },
+      "prompts":[
+        {"code":"01","label":"BENZERLİK","text":"İkisi de hangi ihtiyacı karşılıyor?"},
+        {"code":"02","label":"DEĞİŞİM","text":"İşi yapma biçimi nasıl değişmiş?"},
+        {"code":"03","label":"SONUÇ","text":"Araç değişse de değişmeyen ne?"}
+      ]
+    },
+    "w01-iletisim-ihtiyaci": {
+      "archetype": "timeline",
+      "art": "archive-signal",
+      "label": "TEKNOLOJİ ARŞİVİ · ZAMAN İZİ",
+      "title": "İletişim kurma ihtiyacı",
+      "lead": "İhtiyaç sürüyor; bağlantı kurma biçimi ve hareket özgürlüğü değişiyor.",
+      "constant": "İLETİŞİM KURMAK",
+      "past": {
+        "era":"GEÇMİŞ",
+        "title":"Sabit telefon",
+        "copy":"Belirli bir yerdeki telefon hattına bağlı olarak sesli iletişim sağlar.",
+        "object":"assets/w01/objects/fixed-phone.svg",
+        "evidence":["sabit konum","telefon hattı","sesli iletişim"]
+      },
+      "present": {
+        "era":"GÜNÜMÜZ",
+        "title":"Akıllı telefon",
+        "copy":"Hareket hâlindeyken ses, görüntü, metin ve internet üzerinden iletişim sağlar.",
+        "object":"assets/w01/objects/smartphone.svg",
+        "evidence":["hareket hâlinde","çoklu iletişim","internet bağlantısı"]
+      },
+      "prompts":[
+        {"code":"01","label":"BENZERLİK","text":"İki araçta da ortak amaç ne?"},
+        {"code":"02","label":"DEĞİŞİM","text":"Nerede ve nasıl iletişim kurabildiğimiz nasıl değişmiş?"},
+        {"code":"03","label":"SONUÇ","text":"İhtiyaç aynı kalırken hangi olanaklar artmış?"}
+      ]
+    }
+  }
+}
