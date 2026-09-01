@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 360" role="img" aria-label="Dizüstü bilgisayar illüstrasyonu">
+  <g fill="none" stroke="#12182B" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="104" y="54" width="312" height="198" rx="16" fill="#F8F4EA"/>
+    <rect x="126" y="76" width="268" height="154" rx="5" fill="#EAF4F1"/>
+    <path fill="#F8F4EA" d="M78 252h364l34 48H44z"/>
+    <path d="M44 300h432c-10 22-28 32-54 32H98c-26 0-44-10-54-32z" fill="#EFE7D7"/>
+    <path d="M142 278h236" stroke-width="5" opacity=".5"/>
+  </g>
+  <g stroke="#1E8A80" stroke-width="6" stroke-linecap="round">
+    <path d="M160 118h148"/>
+    <path d="M160 146h198"/>
+    <path d="M160 174h122"/>
+  </g>
+  <rect x="326" y="108" width="48" height="72" rx="6" fill="none" stroke="#E2A63B" stroke-width="6"/>
+  <circle cx="350" cy="166" r="3" fill="#E2A63B"/>
+</svg>
