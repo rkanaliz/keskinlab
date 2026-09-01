@@ -1,0 +1,65 @@
+/* KeskinLab scene pilot — pedagogy (mode) is separate from composition (archetype). */
+.scene-pilot-focus .stage-wrap{position:relative;display:block;overflow:hidden;padding:0;background:#071525}
+.scene-pilot-focus .stage{position:absolute;left:50%;top:50%;width:1600px!important;height:900px!important;max-width:none!important;max-height:none!important;aspect-ratio:auto!important;transform-origin:center center;container-type:normal;box-shadow:0 18px 54px rgba(0,0,0,.24)}
+.scene-pilot{position:relative;width:1600px;height:900px;overflow:hidden;background:#F4F1E8;color:#12182B;font-family:Inter,Arial,sans-serif}
+.scene-pilot:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.52;background-image:radial-gradient(circle at 1px 1px,rgba(18,24,43,.055) 1px,transparent 1.2px);background-size:30px 30px}
+.scene-pilot:after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(18,24,43,.07)}
+.scene-pilot-inner{position:relative;z-index:2;height:100%;padding:54px 68px 50px;box-sizing:border-box;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:24px}
+.scene-pilot-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:start}
+.scene-pilot-label{display:flex;align-items:center;gap:14px;font:600 13px "IBM Plex Mono",monospace;letter-spacing:.13em;color:#146059;text-transform:uppercase}
+.scene-pilot-label:before{content:"";width:36px;height:3px;background:#E2A63B}
+.scene-pilot-title{margin:14px 0 0;max-width:1100px;font:700 68px/.96 "Space Grotesk",sans-serif;letter-spacing:-.055em;color:#12182B}
+.scene-pilot-lead{margin:16px 0 0;max-width:1000px;font-size:23px;line-height:1.42;color:#586171}
+.scene-pilot-step{text-align:right;font:600 12px "IBM Plex Mono",monospace;letter-spacing:.09em;color:#89909B;padding-top:4px}
+.scene-pilot-brand{position:absolute;right:62px;bottom:40px;display:flex;align-items:center;gap:10px;font:700 21px "Space Grotesk",sans-serif;color:#12182B}
+.scene-pilot-brand img{width:34px;height:34px}.scene-pilot-brand span{color:#1E8A80}
+
+/* COLLECTION BOARD — the screen collects thinking instead of showing the answer. */
+.scene-collection .scene-pilot-inner{grid-template-rows:auto minmax(0,1fr) 78px}
+.collection-board{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:10px;border-top:2px solid #12182B;border-bottom:1px solid rgba(18,24,43,.18);min-height:510px;background:rgba(255,255,255,.34)}
+.collection-board:before{content:"SINIFTAN GELEN FİKİRLER";position:absolute;right:18px;top:-31px;font:600 11px "IBM Plex Mono",monospace;letter-spacing:.1em;color:#B9822A}
+.collection-lane{position:relative;padding:28px 28px 22px;display:grid;grid-template-rows:auto auto auto 1fr;gap:14px;border-right:1px solid rgba(18,24,43,.17)}
+.collection-lane:last-child{border-right:0}
+.collection-lane:nth-child(2n){background:rgba(30,138,128,.035)}
+.collection-lane-code{font:600 12px "IBM Plex Mono",monospace;letter-spacing:.12em;color:#B9822A}
+.collection-mark{width:78px;height:78px;color:#1E8A80;margin-top:2px}
+.collection-mark svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.collection-lane h3{margin:0;font:700 31px/1.04 "Space Grotesk",sans-serif;letter-spacing:-.025em}
+.collection-lane p{margin:0;max-width:30ch;font-size:17px;line-height:1.43;color:#596372}
+.idea-slots{align-self:end;display:grid;gap:11px;margin-top:12px}
+.idea-slot{display:grid;grid-template-columns:48px 1fr;align-items:center;min-height:52px;border-bottom:1px solid rgba(18,24,43,.25);color:#8D949D}
+.idea-slot b{font:600 10px "IBM Plex Mono",monospace;letter-spacing:.09em;color:#1E8A80}.idea-slot span{font-size:14px}
+.collection-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(18,24,43,.2);padding:16px 220px 0 0}
+.collection-footer strong{font:700 21px "Space Grotesk",sans-serif}.collection-footer span{max-width:720px;font-size:16px;line-height:1.35;color:#596372}
+
+/* TIMELINE — objects sit on one surface; the persistent need is the visual spine. */
+.scene-timeline .scene-pilot-inner{grid-template-rows:auto minmax(0,1fr) 112px}
+.timeline-surface{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 230px minmax(0,1fr);align-items:stretch;gap:14px;min-height:500px;margin-top:2px}
+.timeline-surface:before{content:"";position:absolute;left:90px;right:90px;top:56%;height:3px;background:linear-gradient(90deg,#146059 0%,#1E8A80 52%,#E2A63B 100%);opacity:.52}
+.timeline-object{position:relative;z-index:2;padding:18px 28px 12px;display:grid;grid-template-rows:auto minmax(0,1fr) auto auto;min-width:0}
+.timeline-object.past{border-left:2px solid rgba(18,24,43,.18)}
+.timeline-object.present{border-right:2px solid rgba(18,24,43,.18)}
+.timeline-era{font:600 12px "IBM Plex Mono",monospace;letter-spacing:.13em;color:#B9822A}
+.object-stage{position:relative;display:grid;place-items:center;min-height:285px;margin-top:8px}
+.object-stage:after{content:"";position:absolute;left:12%;right:12%;bottom:18px;height:16px;border-radius:50%;background:rgba(18,24,43,.08);filter:blur(8px)}
+.object-stage img{position:relative;z-index:2;display:block;width:430px;height:290px;object-fit:contain;filter:drop-shadow(0 10px 8px rgba(18,24,43,.08))}
+.timeline-object h3{margin:0;font:700 35px/1 "Space Grotesk",sans-serif;letter-spacing:-.03em}
+.timeline-object-copy{margin:9px 0 0;max-width:48ch;font-size:16px;line-height:1.4;color:#596372}
+.evidence-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.evidence-row span{padding:7px 10px;border-top:2px solid #1E8A80;background:rgba(255,255,255,.7);font:600 11px "IBM Plex Mono",monospace;color:#46505F}
+.timeline-spine{position:relative;z-index:4;display:grid;place-items:center;text-align:center}
+.timeline-spine:before{content:"";position:absolute;top:10%;bottom:10%;left:50%;width:1px;border-left:1px dashed rgba(18,24,43,.28)}
+.constant-need{position:relative;z-index:2;width:190px;min-height:150px;display:grid;place-content:center;padding:18px;border:2px solid #1E8A80;border-radius:50%;background:#F4F1E8;box-shadow:0 0 0 13px rgba(244,241,232,.9)}
+.constant-need small{font:600 10px "IBM Plex Mono",monospace;letter-spacing:.11em;color:#B9822A}.constant-need strong{display:block;margin-top:10px;font:700 24px/1.05 "Space Grotesk",sans-serif;color:#146059}
+.constant-arrow{position:absolute;left:50%;top:56%;transform:translate(-50%,-50%);margin-top:100px;font:700 31px "IBM Plex Mono",monospace;color:#1E8A80;background:#F4F1E8;padding:0 8px}
+.timeline-prompts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding-right:200px}
+.timeline-prompt{padding:15px 18px 12px;border-top:2px solid #E2A63B;background:rgba(255,255,255,.76)}
+.timeline-prompt small{display:block;font:600 10px "IBM Plex Mono",monospace;letter-spacing:.1em;color:#B9822A}.timeline-prompt strong{display:block;margin-top:7px;font:700 18px/1.22 "Space Grotesk",sans-serif;color:#12182B}
+
+/* Art variants are atmosphere only; they never replace content. */
+.scene-timeline[data-art="archive-desk"]:after{content:"";position:absolute;left:0;right:0;bottom:185px;height:105px;background:linear-gradient(180deg,transparent,rgba(185,130,72,.055));pointer-events:none}
+.scene-timeline[data-art="archive-signal"] .timeline-surface:after{content:"";position:absolute;right:70px;top:34px;width:330px;height:330px;border:1px solid rgba(30,138,128,.11);border-radius:50%;box-shadow:0 0 0 52px rgba(30,138,128,.035),0 0 0 104px rgba(30,138,128,.018);pointer-events:none}
+
+@media(max-height:760px) and (orientation:landscape){
+  .scene-pilot-focus .stage{transform-origin:center center}
+}
