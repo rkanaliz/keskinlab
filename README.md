@@ -13,6 +13,7 @@ KeskinLab; 5–6. sınıf Bilişim Teknolojileri ve Yazılım, Robotik Kodlama-I
 ## Ana yüzeyler
 - `index.html` — yaşayan anasayfa / Bu Hafta / zaman çizgisi / dersler
 - `hakkinda.html` — KeskinLab nedir? + iletişim
+- `dijital-araclar.html` — öğretmen için MEB ve YEĞİTEK dijital araçlar rehberi
 - `classroom-5-sinif.html`, `classroom-6-sinif.html` — BTY sınıf yüzeyleri
 - `classroom-robotik.html`, `classroom-yapay-zeka.html` — seçmeli ders sınıf yüzeyleri
 - `evrak-cantasi.html`, `takvim.html` — öğretmen araçları
