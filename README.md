@@ -31,5 +31,13 @@ KeskinLab; 5–6. sınıf Bilişim Teknolojileri ve Yazılım, Robotik Kodlama-I
 - Robotik ve Yapay Zekâ kartlarında tipografi, punto, satır aralığı, renk, hizalama, öğretmen katmanı, **Derse Başla** ve **Günlük Plan** yapısı 5. ve 6. sınıf kartlarıyla aynı kalır. Sadece konu metni okunabilir hâle getirilir.
 - 5. Sınıf Hafta 01 **Ders Notu** ve **Öğrenci Etkinliği**, 6. sınıftaki gibi ortak PDF/DOCX viewer akışını kullanır; özel web-içerik override'ı kullanılmaz.
 
+## Site-wide tipografi
+- Ortak tipografi katmanı: `keskinlab-typography.css`
+- Space Grotesk: başlıklar ve editoryal vurgu
+- Inter: gövde metni ve navigasyon
+- IBM Plex Mono: numara, tarih, etiket, metadata ve teknik bilgi
+- Başlık ağırlığı varsayılan olarak 700'dür; sentetik 650/800 ağırlık kullanılmaz.
+- Sayfa ölçeği ve yerleşim kendi bağlamını korur; tipografi rolleri site genelinde ortaktır.
+
 ## Çalışma standardı
 Tasarım ve özellik denemeleri önce preview üzerinde yapılır. Onaylanan değişiklikler paket halinde `main` dalına alınır; production üzerinde doğrudan deneme yapılmaz.

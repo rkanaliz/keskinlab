@@ -1,0 +1,41 @@
+/* KeskinLab site-wide typography layer — v1.0
+   Canonical roles: Space Grotesk = display, Inter = reading, IBM Plex Mono = technical/meta. */
+:root{
+  --kl-font-display:"Space Grotesk",system-ui,sans-serif;
+  --kl-font-body:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --kl-font-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+html{font-synthesis-weight:none;}
+body{font-family:var(--kl-font-body)!important;font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+button,input,select,textarea{font-family:inherit;}
+
+/* Display hierarchy: calm, editorial, no synthetic 650/800 weights. */
+h1,h2,h3,h4,
+.brand,.brand span,.logo,.drawer-brand,.drawer-course b,.drawer-context strong,.drawer-link .dt,
+.module-title,.course-title,.course-hero h1,.current-copy h3,.theme-top h3,
+.lesson-title h2,.flow-title,.slide-inner strong,.week-row .wt,
+.page-head h1,.cat-head h2,.gunler-head,.profile h3,.need-body .q,.foot-brand b{
+  font-family:var(--kl-font-display)!important;
+}
+h1,h2,h3,
+.current-copy h3,.theme-top h3,.flow-title,.slide-inner strong,.drawer-course b,.drawer-context strong,.drawer-link .dt,.foot-brand b{
+  font-weight:700!important;
+}
+h1,h2,h3{text-wrap:balance;}
+
+/* Technical information is deliberately monospaced, never body copy. */
+.eyebrow,.kicker,.mono,.meta,.tag,.field-label,.appendix-meta,
+.course-kicker,.course-tag,.section-label,.viewtab,.metric,
+.week-id .lbl,.week-id .date,.current-copy .state,.theme-line,
+.curriculum-strip .csl,.curriculum-strip .csv,.week-row .wn,.week-row .wd,
+.week-row .wtheme,.week-row .ws,.term-sep,.theme-no,.theme-count,.ocode,.oweeks,
+.lesson-back,.lesson-index small,.lesson-title .ey,.lesson-meta,.flow-n,
+.slide-inner .mini,.slide-inner small,.mat span,.teacher-desk summary,
+.teacher-box .code,.preview-note,.crumb,.count,.doc-tag,.stat-chip .lbl,
+.tatil-item .lbl,.gun-tarih,.drawer-link .dn,.drawer-context .ey{
+  font-family:var(--kl-font-mono)!important;
+}
+
+/* Navigation and reading copy stay neutral. */
+.links,.desktop-nav,.navlinks,.need-body .a,.field-value,.profile .tagline,
+p,li{font-family:var(--kl-font-body);}
