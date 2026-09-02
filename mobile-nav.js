@@ -1,20 +1,57 @@
 (function(){
   const COURSE_PAGES = {
-    robotik: 'robotik-kodlama.html',
-    yapayzeka: 'yapay-zeka.html'
+    robotik: '/robotik-kodlama',
+    yapayzeka: '/yapay-zeka',
+    sinif5: '/5-sinif-bty',
+    sinif6: '/6-sinif-bty'
   };
+
+  function ensureTypography(){
+    if(document.querySelector('link[data-keskinlab-typography]')) return;
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'keskinlab-typography.css';
+    link.setAttribute('data-keskinlab-typography','');
+    document.head.appendChild(link);
+  }
 
   function normalizeCourseLinks(){
     document.querySelectorAll('a').forEach(a => {
       const text = (a.textContent || '').trim();
       const href = a.getAttribute('href') || '';
+
       if(text === 'Robotik Kodlama' || href === '#robotik' || href === 'index.html#robotik'){
         a.setAttribute('href', COURSE_PAGES.robotik);
       }
       if(text === 'Yapay Zekâ' || text === 'Yapay Zeka' || href === '#yapayzeka' || href === 'index.html#yapayzeka'){
         a.setAttribute('href', COURSE_PAGES.yapayzeka);
       }
+      if((text === '5. Sınıf BTY' || text === '5. Sınıf') && /5-sinif-bty/.test(href)){
+        a.setAttribute('href', COURSE_PAGES.sinif5);
+      }
+      if((text === '6. Sınıf BTY' || text === '6. Sınıf') && /6-sinif-bty/.test(href)){
+        a.setAttribute('href', COURSE_PAGES.sinif6);
+      }
+      if(text === 'Atölye' || href === '#atolye' || href === 'index.html#atolye'){
+        a.textContent = 'Dijital Araçlar';
+        a.setAttribute('href', '/dijital-araclar');
+      }
+      if(text === 'İletişim' && (href === '#' || href === 'index.html#iletisim')){
+        a.setAttribute('href', '/iletisim');
+      }
+      if(text === 'Anasayfa' && (href === 'index.html' || href === './index.html')){
+        a.setAttribute('href', '/');
+      }
     });
+
+    const navlinks = document.querySelector('.navlinks');
+    if(navlinks && !navlinks.querySelector('a[href="/dijital-araclar"]')){
+      const link = document.createElement('a');
+      link.href = '/dijital-araclar';
+      link.textContent = 'Dijital Araçlar';
+      const contact = navlinks.querySelector('.navcta');
+      navlinks.insertBefore(link, contact || null);
+    }
 
     const robotCard = document.getElementById('robotik');
     if(robotCard && robotCard.classList.contains('area-card') && robotCard.tagName !== 'A'){
@@ -50,9 +87,12 @@
 
   function extendSearchIndex(){
     if(typeof SEARCH_INDEX === 'undefined' || !Array.isArray(SEARCH_INDEX)) return;
-    const add = item => { if(!SEARCH_INDEX.some(x => x.url === item.url)) SEARCH_INDEX.push(item); };
-    add({title:'Robotik Kodlama-I',subtitle:'5. Sınıf · 36 günlük plan · 72 saat',url:'robotik-kodlama.html',type:'sayfa'});
-    add({title:'Yapay Zekâ Uygulamaları-I',subtitle:'7–8. Sınıf · 36 günlük plan · 72 saat',url:'yapay-zeka.html',type:'sayfa'});
+    const add = item => {
+      if(!SEARCH_INDEX.some(x => x.url === item.url || x.title === item.title)) SEARCH_INDEX.push(item);
+    };
+    add({title:'Dijital Araçlar',subtitle:'Öğretmen için MEB ve YEĞİTEK dijital araçlar rehberi',url:'/dijital-araclar',type:'sayfa'});
+    add({title:'Robotik Kodlama-I',subtitle:'5. Sınıf · 36 günlük plan · 72 saat',url:COURSE_PAGES.robotik,type:'sayfa'});
+    add({title:'Yapay Zekâ Uygulamaları-I',subtitle:'7–8. Sınıf · 36 günlük plan · 72 saat',url:COURSE_PAGES.yapayzeka,type:'sayfa'});
     if(typeof COURSE !== 'undefined' && COURSE && Array.isArray(COURSE.weeks)){
       const page = location.pathname.split('/').pop() || 'index.html';
       COURSE.weeks.forEach(w=>add({
@@ -82,6 +122,7 @@
   document.head.appendChild(style);
 
   function setup(){
+    ensureTypography();
     normalizeCourseLinks();
     extendSearchIndex();
 
