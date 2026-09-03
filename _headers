@@ -3,3 +3,15 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   X-Frame-Options: SAMEORIGIN
+
+/5-sinif-bty
+  Link: <https://www.keskinlab.com/5-sinif-bty>; rel="canonical"
+
+/6-sinif-bty
+  Link: <https://www.keskinlab.com/6-sinif-bty>; rel="canonical"
+
+/robotik-kodlama
+  Link: <https://www.keskinlab.com/robotik-kodlama>; rel="canonical"
+
+/yapay-zeka
+  Link: <https://www.keskinlab.com/yapay-zeka>; rel="canonical"
