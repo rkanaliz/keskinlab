@@ -144,9 +144,9 @@ KeskinLab-5-Sinif-Hafta-01-Gunluk-Plan.docx
 
 Validator yalnızca klasörde 37/36 dosya bulunmasını değil, Homepage ve Classroom tarafından çalışma anında üretilen bütün günlük-plan yollarının diskte gerçekten var olduğunu da doğrular.
 
-## 10. Kanonik ders verisi
+## 10. Kanonik ders verisi ve public ders yüzeyleri
 
-Ders haftalarının kanonik kaynağı repository içindeki yerel JSON dosyalarıdır:
+Ders haftalarının kanonik veri kaynağı repository içindeki yerel JSON dosyalarıdır:
 
 ```text
 data/5-sinif.json
@@ -155,9 +155,18 @@ data/robotik.json
 data/yapay-zeka.json
 ```
 
-`5-sinif-bty.html`, `6-sinif-bty.html`, `robotik-kodlama.html` ve `yapay-zeka.html` kullanıcı yüzeyi olarak legacy kabul edilir; kanonik ders verisi değildir.
+`generate-site-data.mjs`, bu kaynakları okuyarak `generated/courses.json` üretir. Classroom motoru ders haftalarını uzaktaki RAW GitHub dosyalarından değil, aynı deploy içindeki `generated/courses.json` dosyasından okur. Böylece production çalışma zamanı ağ bağımlılığı olmadan yerel ve doğrulanabilir kalır.
 
-`generate-site-data.mjs`, kanonik JSON kaynaklarını okuyarak `generated/courses.json` üretir. Classroom motoru ders haftalarını uzaktaki RAW GitHub dosyalarından değil, aynı deploy içindeki `generated/courses.json` dosyasından okur. Böylece production çalışma zamanı ağ bağımlılığı olmadan yerel ve doğrulanabilir kalır.
+Kullanıcıya açık kanonik ders HTML dosyaları:
+
+```text
+5-sinif-bty.html          → /5-sinif-bty
+6-sinif-bty.html          → /6-sinif-bty
+robotik-kodlama.html      → /robotik-kodlama
+yapay-zeka.html           → /yapay-zeka
+```
+
+`classroom-5-sinif.html`, `classroom-6-sinif.html`, `classroom-robotik.html` ve `classroom-yapay-zeka.html` geçiş dönemi uyumluluk aynalarıdır; public canonical değildir. Aynalar kanonik dosyalarla birebir aynı kalır ve `validate-course-mirrors.mjs` ayrışmayı build hatası yapar. `_redirects`, eski `/classroom-*` yollarını temiz public URL'lere taşır.
 
 ## 11. Üretilen dosyalar
 
@@ -185,6 +194,9 @@ Production build aşağıdaki kontroller temiz geçmeden başarılı sayılmaz:
 - günlük plan bütünlüğü,
 - ders veri bütünlüğü,
 - global navigasyon mimarisi,
-- temel erişilebilirlik korumaları.
+- temel erişilebilirlik korumaları,
+- kanonik ders dosyaları ile geçiş aynalarının eşitliği.
 
 MEB/YEĞİTEK gibi dış kaynaklara dayanan rehber bağlantıları ayrıca haftalık sağlık kontrolüyle izlenir; dış sunucu geçici hataları build'i engellemez, kesin `404/410` durumları hata kabul edilir.
+
+Her `main` güncellemesinden sonra ayrı `Production Smoke` işi Cloudflare production üzerinde ana yüzeyleri, temiz ders URL'lerini, `robots.txt` ve `sitemap.xml` dosyalarını gerçek HTTP istekleriyle kontrol eder.
