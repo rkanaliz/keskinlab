@@ -1,11 +1,15 @@
 /home-v2 / 301
 /home-v2.html / 301
 /index.html / 301
-/5-sinif-bty /classroom-5-sinif.html 301
-/5-sinif-bty.html /classroom-5-sinif.html 301
-/6-sinif-bty /classroom-6-sinif.html 301
-/6-sinif-bty.html /classroom-6-sinif.html 301
-/robotik-kodlama /classroom-robotik.html 301
-/robotik-kodlama.html /classroom-robotik.html 301
-/yapay-zeka /classroom-yapay-zeka.html 301
-/yapay-zeka.html /classroom-yapay-zeka.html 301
+
+/5-sinif-bty /classroom-5-sinif.html 200
+/5-sinif-bty.html /5-sinif-bty 301
+
+/6-sinif-bty /classroom-6-sinif.html 200
+/6-sinif-bty.html /6-sinif-bty 301
+
+/robotik-kodlama /classroom-robotik.html 200
+/robotik-kodlama.html /robotik-kodlama 301
+
+/yapay-zeka /classroom-yapay-zeka.html 200
+/yapay-zeka.html /yapay-zeka 301
