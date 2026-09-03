@@ -5,10 +5,10 @@ const checks = {
   'hakkinda.html': ['/dijital-araclar', '/hakkinda', '/iletisim'],
   'iletisim.html': ['/dijital-araclar', '/hakkinda', '/iletisim'],
   'dijital-araclar.html': ['/dijital-araclar', '/hakkinda', '/iletisim'],
-  'classroom-5-sinif.html': ['href="/"', '/dijital-araclar', '/hakkinda'],
-  'classroom-6-sinif.html': ['href="/"', '/dijital-araclar', '/hakkinda'],
-  'classroom-robotik.html': ['href="/"', '/dijital-araclar', '/hakkinda'],
-  'classroom-yapay-zeka.html': ['href="/"', '/dijital-araclar', '/hakkinda']
+  '5-sinif-bty.html': ['href="/"', '/dijital-araclar', '/hakkinda'],
+  '6-sinif-bty.html': ['href="/"', '/dijital-araclar', '/hakkinda'],
+  'robotik-kodlama.html': ['href="/"', '/dijital-araclar', '/hakkinda'],
+  'yapay-zeka.html': ['href="/"', '/dijital-araclar', '/hakkinda']
 };
 
 const errors = [];
@@ -19,7 +19,6 @@ for (const [file, needles] of Object.entries(checks)) {
   }
 }
 
-// Ana navigasyon sırasını, site-wide bilgi mimarisinin referansı olarak anasayfada kilitle.
 const home = await fs.readFile('index.html', 'utf8');
 const order = ['#bugun', '#zaman', '#dersler', '/dijital-araclar', '/hakkinda', '/iletisim'];
 let cursor = -1;
