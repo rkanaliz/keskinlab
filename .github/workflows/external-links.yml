@@ -1,0 +1,21 @@
+name: Check Official Links
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 5 * * 1'
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check public official links
+        run: node scripts/check-external-links.mjs
