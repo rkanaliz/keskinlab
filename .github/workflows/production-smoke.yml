@@ -1,0 +1,25 @@
+name: Production Smoke
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Give Cloudflare Pages time to deploy
+        run: sleep 35
+
+      - name: Check production routes
+        run: node scripts/check-production.mjs
