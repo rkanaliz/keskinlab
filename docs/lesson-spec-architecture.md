@@ -128,6 +128,44 @@ olarak modellenir.
 
 Schema, `plannedMinutes` değerini 40 veya 80 ile sabitlemez. Süre doğruluğu canonical ders verisine göre validator tarafından denetlenir.
 
+### 4.1 Core, optional ve extension teslim rolleri
+
+Bir period içindeki her pedagojik step, öğretmenin varsayılan 40 dakikalık rotada o adımla nasıl karşılaşacağını açıkça belirtir:
+
+- `core`: “Çekirdek rotayı çalıştır” akışında otomatik ilerlenen zorunlu adım.
+- `optional`: Bir core adımın yerine seçilebilen kısa alternatif örnek. Alternatif ise `alternativeToStepId` ile aynı period içindeki core adıma bağlanır.
+- `extension`: Bir core adımı ek süreyle derinleştiren çalışma. `anchorStepId` ile aynı period içindeki core adıma bağlanır.
+
+Süre alanı her rolde mevcut `minutes` alanıdır; ikinci bir süre alanı oluşturulmaz. `plannedMinutes` yalnız `deliveryRole: "core"` adımların `minutes` toplamıdır. Optional ve extension süreleri öğretmene seçim etkisini göstermek için korunur ancak period toplamına eklenmez.
+
+```json
+{
+  "id": "past-present-letter-message",
+  "deliveryRole": "core",
+  "minutes": 3
+}
+```
+
+```json
+{
+  "id": "past-present-map-navigation",
+  "deliveryRole": "optional",
+  "alternativeToStepId": "past-present-letter-message",
+  "minutes": 3
+}
+```
+
+```json
+{
+  "id": "technology-researchers",
+  "deliveryRole": "extension",
+  "anchorStepId": "match-past-present",
+  "minutes": 9
+}
+```
+
+Bir step aynı anda `anchorStepId` ve `alternativeToStepId` taşımaz. Core step ilişki alanı taşımaz. Delivery rolü pedagojik step’e aittir; altyazı, transcript, durağan kare veya düşük teknoloji yedeği gibi erişilebilirlik/fallback özellikleri resource düzeyinde kalır.
+
 ---
 
 ## 5. Stabil müfredat referansları
@@ -380,6 +418,7 @@ Aşağıdaki JSON Schema, tasarım referansıdır; henüz repository’de gerçe
       "required": [
         "id",
         "phase",
+        "deliveryRole",
         "minutes",
         "curriculumRefs",
         "teacherAction",
@@ -404,6 +443,18 @@ Aşağıdaki JSON Schema, tasarım referansıdır; henüz repository’de gerçe
             "degerlendirme",
             "kapanis"
           ]
+        },
+        "deliveryRole": {
+          "type": "string",
+          "enum": ["core", "optional", "extension"]
+        },
+        "anchorStepId": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "alternativeToStepId": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
         },
         "minutes": {
           "type": "integer",
@@ -562,6 +613,10 @@ Aşağıdaki JSON Schema, tasarım referansıdır; henüz repository’de gerçe
 
 - `course` schema içinde sabit enum’a gömülmedi; canonical course eşlemesini validator yapar.
 - `plannedMinutes` yalnız pozitif integer’dır.
+- Her step `deliveryRole` taşır; izinli değerler `core`, `optional`, `extension`dır.
+- Süre için yalnız mevcut `minutes` alanı kullanılır.
+- `plannedMinutes`, yalnız core step sürelerinin toplamıdır.
+- Optional alternatifler `alternativeToStepId`, extension adımlar `anchorStepId` ile aynı period içindeki core adıma bağlanır.
 - `periods` sayısına üst sınır konulmaz.
 - Resource sayısına üst sınır konulmaz.
 - Material `indexes` dizisine üst sınır konulmaz.
@@ -572,7 +627,7 @@ Aşağıdaki JSON Schema, tasarım referansıdır; henüz repository’de gerçe
 
 ## 11. 5. Sınıf BTY · Hafta 01 örnek lesson-spec
 
-Bu örnek production verisi değildir; mimarinin nasıl kullanılacağını göstermek için hazırlanmıştır.
+Bu bölüm yalnız temel JSON yapısını gösteren kompakt bir mimari örnektir; Hafta 01'in güncel pedagojik sırasını veya CORE/FLEX dakika dağılımını temsil etmez. Güncel ve doğrulanan kaynak `lesson-specs/5-sinif/hafta01.json`, ayrıntılı yüzey akışı ise `docs/5-sinif-hafta01-content-storyboard.md` dosyasıdır.
 
 Hafta konusu: **Bilişim Teknolojilerinin Sınıflandırılması**  
 Öğrenme çıktısı: **BTY.5.1.1 Günlük yaşamda kullanılan bilişim teknolojilerini sınıflandırabilme**
@@ -668,6 +723,7 @@ Süreç bileşenleri:
         {
           "id": "on-bilgiyi-yokla",
           "phase": "giris",
+          "deliveryRole": "core",
           "minutes": 5,
           "curriculumRefs": [
             "BTY.5.1.1.a"
@@ -686,6 +742,7 @@ Süreç bileşenleri:
         {
           "id": "temel-kavramlari-kur",
           "phase": "kesfetme",
+          "deliveryRole": "core",
           "minutes": 10,
           "curriculumRefs": [
             "BTY.5.1.1.a"
@@ -700,6 +757,7 @@ Süreç bileşenleri:
         {
           "id": "ilk-siniflandirma",
           "phase": "uygulama",
+          "deliveryRole": "core",
           "minutes": 15,
           "curriculumRefs": [
             "BTY.5.1.1.c"
@@ -720,6 +778,7 @@ Süreç bileşenleri:
         {
           "id": "siniflandirmayi-sorgula",
           "phase": "tartisma",
+          "deliveryRole": "core",
           "minutes": 7,
           "curriculumRefs": [
             "BTY.5.1.1.c"
@@ -734,6 +793,7 @@ Süreç bileşenleri:
         {
           "id": "birinci-ders-cikisi",
           "phase": "kapanis",
+          "deliveryRole": "core",
           "minutes": 3,
           "curriculumRefs": [
             "BTY.5.1.1.a",
@@ -757,6 +817,7 @@ Süreç bileşenleri:
         {
           "id": "onceki-dersle-bag-kur",
           "phase": "giris",
+          "deliveryRole": "core",
           "minutes": 4,
           "curriculumRefs": [
             "BTY.5.1.1.a",
@@ -770,6 +831,7 @@ Süreç bileşenleri:
         {
           "id": "gecmis-gunumuz-karsilastir",
           "phase": "kesfetme",
+          "deliveryRole": "core",
           "minutes": 10,
           "curriculumRefs": [
             "BTY.5.1.1.b"
@@ -788,6 +850,7 @@ Süreç bileşenleri:
         {
           "id": "eslestir-ve-gerekcelendir",
           "phase": "pekistirme",
+          "deliveryRole": "core",
           "minutes": 8,
           "curriculumRefs": [
             "BTY.5.1.1.b"
@@ -801,6 +864,7 @@ Süreç bileşenleri:
         {
           "id": "teknoloji-arastirmacilari",
           "phase": "uygulama",
+          "deliveryRole": "core",
           "minutes": 10,
           "curriculumRefs": [
             "BTY.5.1.1.b",
@@ -822,6 +886,7 @@ Süreç bileşenleri:
         {
           "id": "ortak-sonuca-ulas",
           "phase": "tartisma",
+          "deliveryRole": "core",
           "minutes": 4,
           "curriculumRefs": [
             "BTY.5.1.1.a",
@@ -837,6 +902,7 @@ Süreç bileşenleri:
         {
           "id": "hafta-cikis-kaniti",
           "phase": "kapanis",
+          "deliveryRole": "core",
           "minutes": 4,
           "curriculumRefs": [
             "BTY.5.1.1.a",
@@ -883,6 +949,7 @@ Validator aşağıdaki kontrolleri yapmalıdır.
 - `periodNo` değerleri pozitif integer mı?
 - `plannedMinutes` pozitif integer mı?
 - Step `minutes` değerleri pozitif integer mı?
+- Her step geçerli bir `deliveryRole` (`core`, `optional`, `extension`) taşıyor mu?
 - Step id’leri dosya içinde benzersiz mi?
 - Resource id’leri benzersiz mi?
 
@@ -921,24 +988,35 @@ BTY.5.1.1.c
 
 Sonra:
 
-- canonical referansların tamamı en az bir step’te kullanılmış mı?
+- canonical referansların tamamı en az bir `core` step’te kullanılmış mı?
 - canonical kaynakta olmayan ref kullanılmış mı?
 - aynı ref’in tekrar kullanılması normaldir; kapsama kontrolü set mantığıyla yapılır.
 
 ### 12.4 Period ve süre tutarlılığı
 
-- Her period için `sum(steps.minutes) === plannedMinutes` olmalı.
+- Her period için `sum(coreSteps.minutes) === plannedMinutes` olmalı.
+- Optional ve extension step süreleri `plannedMinutes` toplamına dahil edilmemeli.
 - Haftalık toplam period süresi canonical `ders_saati` ile uyumlu olmalı.
 - Period numaraları benzersiz ve mantıklı sırada olmalı.
 - Schema period sayısını sınırlandırmaz; validator canonical haftaya göre beklenen yapıyı değerlendirir.
 
-### 12.5 Resource referansları
+### 12.5 Step ilişki bütünlüğü
+
+- `anchorStepId` ve `alternativeToStepId` aynı anda kullanılamaz.
+- Core step bu iki ilişki alanından hiçbirini taşıyamaz.
+- Extension step `anchorStepId` taşımak zorundadır.
+- `anchorStepId` yalnız extension step’te kullanılabilir.
+- `alternativeToStepId` yalnız optional step’te kullanılabilir.
+- Her iki referans da aynı period içindeki geçerli bir core step’e çözülmelidir.
+- Step referans grafiğinde cycle oluşamaz.
+
+### 12.6 Resource referansları
 
 - Step’te geçen her `resourceRef`, `resources` registry’de var mı?
 - Kullanılmayan resource varsa başlangıçta warning verilebilir.
 - Resource tipi tanınan bir resource türü mü?
 
-### 12.6 Fiziksel materyal varlığı
+### 12.7 Fiziksel materyal varlığı
 
 `kind: "material"` kaynaklarında:
 
@@ -947,14 +1025,14 @@ Sonra:
 - `indexes: "all"` ise klasörde en az bir uygun materyal var mı?
 - materyal sayısı için hiçbir üst sınır uygulanmaz.
 
-### 12.7 Lesson Player doğrulaması
+### 12.8 Lesson Player doğrulaması
 
 `kind: "lessonPlayer"` kaynaklarında:
 
 - ilgili course/week Lesson Player verisi var mı?
 - `activityId` gerçekten tanımlı mı?
 
-### 12.8 Teknoloji fallback doğrulaması
+### 12.9 Teknoloji fallback doğrulaması
 
 - `requiresTechnology: true` ise `fallbackResourceRef` var mı?
 - fallback gerçekten registry’de tanımlı mı?
@@ -962,14 +1040,14 @@ Sonra:
 - fallback zincirinde cycle oluşuyor mu?
 - fallback’in teknoloji gerektirmemesi tercih edilir; teknoloji gerektiriyorsa zincir sonunda gerçek düşük-teknoloji alternatifine ulaşılmalı.
 
-### 12.9 Evidence doğrulaması
+### 12.10 Evidence doğrulaması
 
-- Her period içinde en az bir anlamlı evidence var mı?
+- Her periodün core rotasında en az bir anlamlı evidence var mı?
 - `evidence.observable` boş mu?
 - `evidence.mode` izinli değerlerden biri mi?
 - `criterion` opsiyoneldir; uydurma nicel eşik üretmek zorunlu değildir.
 
-### 12.10 Pedagojik sıra kontrolleri
+### 12.11 Pedagojik sıra kontrolleri
 
 `giris` ve `kapanis` schema’ya mekanik olarak zorlanmamalıdır; bazı haftalar farklı pedagojik desenler gerektirebilir.
 
@@ -983,7 +1061,7 @@ Validator:
 
 Bu kontroller error/warning ayrımıyla tasarlanmalıdır.
 
-### 12.11 Migration strict mode
+### 12.12 Migration strict mode
 
 Normal modda:
 
@@ -1014,6 +1092,13 @@ Kavramları Keşfet ve Sınıflandır
 Geçmişten Günümüze İlişkilendir ve Kanıtla
 ```
 
+Öğretmen çekirdek rotayı başlattığında renderer yalnız `core` step’lerde ilerler. Bir core step’in bağlı seçenekleri varsa arayüz bağlama göre şunları sunabilir:
+
+- `optional` için **Başka örnek seç**,
+- `extension` için **Bu adımı genişlet**.
+
+Seçilen optional adım core örneğin yerine çalışır; extension tamamlandıktan sonra akış bağlı olduğu core rotaya döner. Bu seçimler fiziksel görsel sırasına veya görsele gömülü toplam sayıya bağlanmaz.
+
 Bir period açıldığında:
 
 ```text
@@ -1027,6 +1112,8 @@ Bir period açıldığında:
 Sunum veya Lesson Player öğretmenin menüden seçtiği ayrı bir “materyal bölümü” olmaktan çıkar; ilgili adımın sınıf yüzeyi olur.
 
 Öğretmen yine “Tüm Materyaller” veya “Öğretmen Masası” gibi yardımcı alanlara erişebilir. Ancak ana ders akışının omurgası bunlar değildir.
+
+Yeni üretilecek statik görsellerde `XX/YY` biçiminde mutlak toplam yüzey sayısı bulunmaz. Yüzey sayısı pedagojik ihtiyaca ve seçilen rotaya göre değişebileceğinden ilerleme göstergesi gerekiyorsa renderer tarafından dinamik üretilir. Daha önce kilitlenmiş görsellerdeki mevcut sayaçlar bu karar nedeniyle yeniden üretilmez veya değiştirilmez.
 
 ---
 
@@ -1054,7 +1141,9 @@ Haftaya göre değişebilir:
 - öğrenci çalışma kâğıdı sayısı,
 - tartışma adımı sayısı,
 - değerlendirme biçimi,
-- period içindeki step sayısı.
+- period içindeki step sayısı,
+- optional ve extension adımların sayısı,
+- öğretmenin seçtiği alternatif örnek ve genişletmeler.
 
 Bu nedenle “her hafta 10 slayt + 2 infografik + 1 etkinlik” gibi üretim standardı kullanılmayacaktır.
 
@@ -1166,6 +1255,8 @@ Bu nedenle:
 10. Spec olmayan haftalar migration sürecinde mevcut sistemle çalışmaya devam eder.
 11. Production renderer ancak prototype onayından sonra değiştirilir.
 12. Bir hafta, öğretmen dışarıdan başka kaynağa ihtiyaç duymadan ilgili ders saatlerini yürütebildiğinde “hazır” kabul edilir.
+13. Her step `core`, `optional` veya `extension` delivery rolü taşır; period süresi yalnız core adımlardan hesaplanır.
+14. Yeni görseller mutlak toplam yüzey sayısını taşımaz; rota ilerlemesi renderer sorumluluğudur.
 
 ---
 
