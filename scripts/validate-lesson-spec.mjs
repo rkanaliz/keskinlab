@@ -24,6 +24,12 @@ const ALLOWED_PHASES = new Set([
   'kapanis'
 ]);
 
+const ALLOWED_DELIVERY_ROLES = new Set([
+  'core',
+  'optional',
+  'extension'
+]);
+
 const ALLOWED_EVIDENCE_MODES = new Set([
   'oral',
   'observation',
@@ -54,6 +60,9 @@ const PERIOD_KEYS = new Set(['periodNo', 'title', 'plannedMinutes', 'steps']);
 const STEP_KEYS = new Set([
   'id',
   'phase',
+  'deliveryRole',
+  'anchorStepId',
+  'alternativeToStepId',
   'minutes',
   'curriculumRefs',
   'teacherAction',
@@ -117,6 +126,82 @@ function checkUnknownKeys(file, object, allowed, label) {
   for (const key of Object.keys(object)) {
     if (!allowed.has(key)) fail(file, `${label}: desteklenmeyen alan "${key}".`);
   }
+}
+
+function checkDeliveryRoles(period, periodLabel, file) {
+  const steps = Array.isArray(period.steps) ? period.steps.filter(isObject) : [];
+  const stepById = new Map(
+    steps
+      .filter((step) => isNonEmptyString(step.id))
+      .map((step) => [step.id, step])
+  );
+
+  for (const [stepIndex, step] of steps.entries()) {
+    const stepLabel = `${periodLabel}.steps[${stepIndex}]`;
+    const role = step.deliveryRole;
+    const hasAnchor = step.anchorStepId !== undefined;
+    const hasAlternative = step.alternativeToStepId !== undefined;
+
+    if (!ALLOWED_DELIVERY_ROLES.has(role)) {
+      fail(file, `${stepLabel}.deliveryRole geçersiz: ${role ?? 'yok'}`);
+    }
+    if (hasAnchor && !isNonEmptyString(step.anchorStepId)) {
+      fail(file, `${stepLabel}.anchorStepId boş olmayan string olmalı.`);
+    }
+    if (hasAlternative && !isNonEmptyString(step.alternativeToStepId)) {
+      fail(file, `${stepLabel}.alternativeToStepId boş olmayan string olmalı.`);
+    }
+    if (hasAnchor && hasAlternative) {
+      fail(file, `${stepLabel}: anchorStepId ve alternativeToStepId aynı anda kullanılamaz.`);
+    }
+    if (role === 'core' && (hasAnchor || hasAlternative)) {
+      fail(file, `${stepLabel}: core step ilişki referansı taşıyamaz.`);
+    }
+    if (role === 'extension' && !hasAnchor) {
+      fail(file, `${stepLabel}: extension step anchorStepId içermeli.`);
+    }
+    if (role !== 'extension' && hasAnchor) {
+      fail(file, `${stepLabel}: anchorStepId yalnız extension step'te kullanılabilir.`);
+    }
+    if (role !== 'optional' && hasAlternative) {
+      fail(file, `${stepLabel}: alternativeToStepId yalnız optional step'te kullanılabilir.`);
+    }
+
+    for (const [field, targetId] of [
+      ['anchorStepId', step.anchorStepId],
+      ['alternativeToStepId', step.alternativeToStepId]
+    ]) {
+      if (!isNonEmptyString(targetId)) continue;
+      const target = stepById.get(targetId);
+      if (!target) {
+        fail(file, `${stepLabel}.${field} aynı period içinde geçerli bir step'e referans vermeli: ${targetId}`);
+      } else if (target.deliveryRole !== 'core') {
+        fail(file, `${stepLabel}.${field} core bir step'e referans vermeli: ${targetId}`);
+      }
+    }
+  }
+
+  const visitState = new Map();
+  function visit(stepId, trail = []) {
+    const state = visitState.get(stepId);
+    if (state === 'done') return;
+    if (state === 'visiting') {
+      const cycleStart = trail.indexOf(stepId);
+      const cycle = [...trail.slice(Math.max(cycleStart, 0)), stepId].join(' -> ');
+      fail(file, `${periodLabel}: step referans döngüsü bulundu: ${cycle}`);
+      return;
+    }
+
+    visitState.set(stepId, 'visiting');
+    const step = stepById.get(stepId);
+    const targetId = step?.anchorStepId ?? step?.alternativeToStepId;
+    if (isNonEmptyString(targetId) && stepById.has(targetId)) {
+      visit(targetId, [...trail, stepId]);
+    }
+    visitState.set(stepId, 'done');
+  }
+
+  for (const stepId of stepById.keys()) visit(stepId);
 }
 
 async function readJson(file) {
@@ -304,6 +389,8 @@ function checkStructure(spec, file) {
         }
       }
     }
+
+    checkDeliveryRoles(period, label, file);
   }
 
   if (isObject(spec.resources)) {
@@ -362,6 +449,7 @@ function checkCanonical(spec, weekData, file) {
 
   const expectedRefs = new Set(expectedCurriculumRefs(weekData, file));
   const usedRefs = new Set();
+  const coreRefs = new Set();
   for (const period of spec.periods ?? []) {
     for (const step of period.steps ?? []) {
       for (const ref of step.curriculumRefs ?? []) {
@@ -370,12 +458,13 @@ function checkCanonical(spec, weekData, file) {
           continue;
         }
         usedRefs.add(ref);
+        if (step.deliveryRole === 'core') coreRefs.add(ref);
       }
     }
   }
 
   for (const ref of expectedRefs) {
-    if (!usedRefs.has(ref)) fail(file, `Süreç bileşeni hiçbir step tarafından kapsanmıyor: ${ref}`);
+    if (!coreRefs.has(ref)) fail(file, `Süreç bileşeni çekirdek rotada kapsanmıyor: ${ref}`);
   }
   for (const ref of usedRefs) {
     if (!expectedRefs.has(ref)) fail(file, `Canonical haftada bulunmayan curriculumRef kullanılmış: ${ref}`);
@@ -406,24 +495,25 @@ function checkPeriods(spec, weekData, file) {
 
   let weekMinutes = 0;
   for (const period of spec.periods) {
-    const stepMinutes = (period.steps ?? []).reduce(
+    const coreSteps = (period.steps ?? []).filter((step) => step?.deliveryRole === 'core');
+    const stepMinutes = coreSteps.reduce(
       (sum, step) => sum + (isPositiveInteger(step.minutes) ? step.minutes : 0),
       0
     );
     if (stepMinutes !== period.plannedMinutes) {
-      fail(file, `Period ${period.periodNo}: step süreleri ${stepMinutes} dk, plannedMinutes ${period.plannedMinutes} dk.`);
+      fail(file, `Period ${period.periodNo}: core step süreleri ${stepMinutes} dk, plannedMinutes ${period.plannedMinutes} dk.`);
     }
     if (period.plannedMinutes !== 40) {
       fail(file, `Period ${period.periodNo}: canonical ders birimi 40 dk; plannedMinutes ${period.plannedMinutes}.`);
     }
     weekMinutes += period.plannedMinutes;
 
-    const firstPhase = period.steps?.[0]?.phase;
-    const lastPhase = period.steps?.at(-1)?.phase;
+    const firstPhase = coreSteps[0]?.phase;
+    const lastPhase = coreSteps.at(-1)?.phase;
     if (firstPhase !== 'giris') warn(file, `Period ${period.periodNo}: ilk phase "giris" değil (${firstPhase ?? 'yok'}).`);
     if (lastPhase !== 'kapanis') warn(file, `Period ${period.periodNo}: son phase "kapanis" değil (${lastPhase ?? 'yok'}).`);
 
-    const hasEvidence = (period.steps ?? []).some(
+    const hasEvidence = coreSteps.some(
       (step) => isObject(step.evidence) && isNonEmptyString(step.evidence.observable) && ALLOWED_EVIDENCE_MODES.has(step.evidence.mode)
     );
     if (!hasEvidence) fail(file, `Period ${period.periodNo}: anlamlı evidence tanımlı değil.`);
