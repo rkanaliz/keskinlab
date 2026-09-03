@@ -1,7 +1,5 @@
 /* KeskinLab — onaylı anasayfa temizliği + Soft Glass mobil menü */
 #bridgeSvg,.row-connector{display:none!important}
-/* Tarihe bağlı manuel “son güncelleme” bilgisi gösterilmez; içerik durumu canlı veri katmanından gelir. */
-.ticker-track span:nth-child(5),.ticker-track span:nth-child(11){display:none!important}
 .module-num{display:flex;align-items:center;gap:10px;white-space:nowrap}
 .module-num::after{content:"";width:24px;height:1px;flex:0 0 24px;background:var(--line-strong);transform-origin:left center;transition:width .28s ease,background .28s ease}
 .module-row:hover .module-num::after{width:38px;background:var(--teal)}
@@ -10,8 +8,9 @@ footer{padding:0;border-top:1px solid var(--line)}
 .foot{min-height:82px;padding:18px 0;align-items:center}
 .foot-brand{display:inline-flex;align-items:center;gap:8px;color:var(--ink)}
 .foot-brand img{width:25px;height:25px}
-.foot-brand b{font:650 12px "Space Grotesk";letter-spacing:-.01em}
+.foot-brand b{font:700 12px "Space Grotesk";letter-spacing:-.01em}
 .foot-brand em{font:500 9px "IBM Plex Mono";color:var(--muted);font-style:normal}
+.teacher-tools{background:rgba(255,255,255,.18)}
 @media(max-width:920px){
   .big-index{display:block!important;right:-.16em;top:38%;font-size:clamp(120px,38vw,220px);opacity:.026;letter-spacing:-.09em}
   .module-num::after{width:13px;flex-basis:13px}.module-row:hover .module-num::after{width:20px}
@@ -29,7 +28,7 @@ footer{padding:0;border-top:1px solid var(--line)}
   .drawer-course-accordion[open] .drawer-arrow-closed{display:none}
   .drawer-course-accordion[open] .drawer-arrow-open{display:inline}
   .drawer-course-list{overflow:hidden;background:rgba(255,255,255,.08);border-bottom:1px solid rgba(18,24,43,.10)}
-  .drawer-course-link{min-height:50px;padding:0 22px 0 63px;display:flex;align-items:center;justify-content:space-between;gap:14px;color:var(--ink);text-decoration:none;border-top:1px solid rgba(18,24,43,.07);font:550 13px/1.25 "Inter"}
+  .drawer-course-link{min-height:50px;padding:0 22px 0 63px;display:flex;align-items:center;justify-content:space-between;gap:14px;color:var(--ink);text-decoration:none;border-top:1px solid rgba(18,24,43,.07);font:500 13px/1.25 "Inter"}
   .drawer-course-link>span:last-child{flex:0 0 auto;color:var(--muted);font:500 14px "Space Grotesk"}
   .drawer-course-link:active{background:rgba(255,255,255,.30)}
 }
