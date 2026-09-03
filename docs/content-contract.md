@@ -92,7 +92,7 @@ Git'e ham, şişkin export commit edilmez. Kaynak görsel de optimize edilmiş m
 - Baskı/indirilebilir kalite gerekiyorsa mümkün olduğunda PDF ayrıca saklanır; web görüntüsü için gereksiz büyük PNG tutulmaz.
 - Build aşamasında web türevleri (WebP ve thumbnail) kaynaktan üretilir.
 
-Mevcut Hafta 1 rasterları A2.0 içinde optimize edilir; A2.1 motor merge'inden önce strict asset kontrolü temiz geçmelidir.
+Mevcut Hafta 1 rasterları optimize edilirken piksel boyutu korunur; strict asset kontrolü production build'in parçasıdır.
 
 ## 6. Thumbnail kuralı
 
@@ -104,13 +104,13 @@ Thumbnail build çıktısıdır. Elle oluşturulan/eski `thumbs/` klasörleri ye
 
 Materyal yokluğu, hafta yokluğu anlamına gelmez. Müfredat verisi ve günlük plan mevcut olabilir.
 
-Classroom motorunun ileride uygulayacağı durum:
+Classroom motoru:
 
-- önce mevcut hafta bilgisi ve günlük plan,
-- ardından varsa sınıf materyalleri,
-- materyal yoksa sessiz bir bilgi notu.
+- önce mevcut hafta bilgisi ve günlük planı gösterir,
+- ardından gerçekten mevcut sınıf materyallerini ekler,
+- materyal yoksa sessiz bir bilgi durumu kullanır.
 
-Materyal yokluğu sayfanın ana başlığı veya hata durumu değildir.
+Materyal yokluğu sayfanın ana başlığı veya hata durumu değildir. Olmayan materyal için boş kart, sahte indirme bağlantısı veya “yakında” bileşeni üretilmez.
 
 ## 8. Özel hafta
 
@@ -144,11 +144,20 @@ KeskinLab-5-Sinif-Hafta-01-Gunluk-Plan.docx
 
 Validator yalnızca klasörde 37/36 dosya bulunmasını değil, Homepage ve Classroom tarafından çalışma anında üretilen bütün günlük-plan yollarının diskte gerçekten var olduğunu da doğrular.
 
-## 10. Legacy veri taşıyıcıları — geçici A2.0 kuralı
+## 10. Kanonik ders verisi
 
-`5-sinif-bty.html` ve `6-sinif-bty.html` kullanıcı yüzeyi olarak emekliye ayrılmıştır; içlerindeki eski materyal linkleri A2.0 link taramasından açıkça hariç tutulur.
+Ders haftalarının kanonik kaynağı repository içindeki yerel JSON dosyalarıdır:
 
-Buna rağmen A2.1'e kadar `classroom-v2.js` bu dosyalardaki `const WEEKS` bloklarını RAW GitHub üzerinden veri kaynağı olarak kullanır. Bu nedenle validator her iki dosyadaki veri bloğunun parse edilebildiğini ve **37 kayıt** döndürdüğünü ayrıca kontrol eder. RAW bağımlılığı A2.1'de kalkınca bu geçici guard kaldırılır.
+```text
+data/5-sinif.json
+data/6-sinif.json
+data/robotik.json
+data/yapay-zeka.json
+```
+
+`5-sinif-bty.html`, `6-sinif-bty.html`, `robotik-kodlama.html` ve `yapay-zeka.html` kullanıcı yüzeyi olarak legacy kabul edilir; kanonik ders verisi değildir.
+
+`generate-site-data.mjs`, kanonik JSON kaynaklarını okuyarak `generated/courses.json` üretir. Classroom motoru ders haftalarını uzaktaki RAW GitHub dosyalarından değil, aynı deploy içindeki `generated/courses.json` dosyasından okur. Böylece production çalışma zamanı ağ bağımlılığı olmadan yerel ve doğrulanabilir kalır.
 
 ## 11. Üretilen dosyalar
 
@@ -156,8 +165,26 @@ Generator çıktıları kaynak değildir ve elle düzenlenmez:
 
 ```text
 generated/
+  courses.json
   materials.json
   web/
 ```
 
-`generated/web/` altında WebP önizlemeler ve thumbnail'lar build sırasında üretilir. Daha sonraki motor merge'inde aynı üretici yerel ders verisi ve arama indeksini de üretecektir.
+- `generated/courses.json`: dört dersin normalize edilmiş hafta verisi.
+- `generated/materials.json`: gerçekten mevcut materyaller ve format varyantları.
+- `generated/web/`: WebP önizlemeler ve thumbnail çıktıları.
+
+Bu dosyalar build sırasında kaynaklardan yeniden üretilir. Elle yapılan değişiklikler kalıcı kabul edilmez.
+
+## 12. Yayın doğrulamaları
+
+Production build aşağıdaki kontroller temiz geçmeden başarılı sayılmaz:
+
+- yerel HTML bağlantıları,
+- materyal klasör sözleşmesi ve dosya boyutları,
+- günlük plan bütünlüğü,
+- ders veri bütünlüğü,
+- global navigasyon mimarisi,
+- temel erişilebilirlik korumaları.
+
+MEB/YEĞİTEK gibi dış kaynaklara dayanan rehber bağlantıları ayrıca haftalık sağlık kontrolüyle izlenir; dış sunucu geçici hataları build'i engellemez, kesin `404/410` durumları hata kabul edilir.
