@@ -9,10 +9,12 @@
     "validate:html": "node scripts/validate-html-links.mjs",
     "validate:site": "node scripts/validate-site.mjs",
     "validate:courses": "node scripts/validate-course-data.mjs",
-    "validate": "npm run validate:html && npm run validate:site && npm run validate:courses",
+    "validate:navigation": "node scripts/validate-navigation.mjs",
+    "validate:a11y": "node scripts/validate-accessibility.mjs",
+    "validate": "npm run validate:html && npm run validate:site && npm run validate:courses && npm run validate:navigation && npm run validate:a11y",
     "validate:strict-assets": "node scripts/validate-site.mjs --strict-assets && npm run validate:courses",
     "check": "npm run generate && npm run validate",
-    "build": "npm run build:web-assets && npm run generate && npm run validate:html && npm run validate:strict-assets"
+    "build": "npm run build:web-assets && npm run generate && npm run validate:html && npm run validate:strict-assets && npm run validate:navigation && npm run validate:a11y"
   },
   "dependencies": {
     "sharp": "^0.35.4"
