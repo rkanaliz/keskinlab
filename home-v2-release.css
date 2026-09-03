@@ -1,5 +1,7 @@
-/* 28 Ağustos 2026 — onaylı anasayfa temizliği + Soft Glass mobil menü */
+/* KeskinLab — onaylı anasayfa temizliği + Soft Glass mobil menü */
 #bridgeSvg,.row-connector{display:none!important}
+/* Tarihe bağlı manuel “son güncelleme” bilgisi gösterilmez; içerik durumu canlı veri katmanından gelir. */
+.ticker-track span:nth-child(5),.ticker-track span:nth-child(11){display:none!important}
 .module-num{display:flex;align-items:center;gap:10px;white-space:nowrap}
 .module-num::after{content:"";width:24px;height:1px;flex:0 0 24px;background:var(--line-strong);transform-origin:left center;transition:width .28s ease,background .28s ease}
 .module-row:hover .module-num::after{width:38px;background:var(--teal)}
