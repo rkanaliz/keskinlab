@@ -1,0 +1,42 @@
+name: Validate Lesson Specs
+
+on:
+  push:
+    branches:
+      - lesson-spec-architecture
+    paths:
+      - 'lesson-specs/**'
+      - 'scripts/validate-lesson-spec.mjs'
+      - 'lesson-player-data.json'
+      - 'data/**'
+      - 'materyaller/**'
+      - 'package.json'
+      - '.github/workflows/lesson-spec-validate.yml'
+  pull_request:
+    paths:
+      - 'lesson-specs/**'
+      - 'scripts/validate-lesson-spec.mjs'
+      - 'lesson-player-data.json'
+      - 'data/**'
+      - 'materyaller/**'
+      - 'package.json'
+      - '.github/workflows/lesson-spec-validate.yml'
+
+jobs:
+  validate-lesson-specs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate lesson specs
+        run: npm run validate:lesson-specs
