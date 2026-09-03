@@ -84,6 +84,7 @@
       "required": [
         "id",
         "phase",
+        "deliveryRole",
         "minutes",
         "curriculumRefs",
         "teacherAction",
@@ -108,6 +109,22 @@
             "degerlendirme",
             "kapanis"
           ]
+        },
+        "deliveryRole": {
+          "type": "string",
+          "enum": [
+            "core",
+            "optional",
+            "extension"
+          ]
+        },
+        "anchorStepId": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "alternativeToStepId": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
         },
         "minutes": {
           "type": "integer",
@@ -149,7 +166,95 @@
         "enrichment": {
           "type": "string"
         }
-      }
+      },
+      "allOf": [
+        {
+          "not": {
+            "required": [
+              "anchorStepId",
+              "alternativeToStepId"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "deliveryRole": {
+                "const": "core"
+              }
+            },
+            "required": [
+              "deliveryRole"
+            ]
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "anchorStepId"
+                  ]
+                },
+                {
+                  "required": [
+                    "alternativeToStepId"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "deliveryRole": {
+                "const": "extension"
+              }
+            },
+            "required": [
+              "deliveryRole"
+            ]
+          },
+          "then": {
+            "required": [
+              "anchorStepId"
+            ],
+            "not": {
+              "required": [
+                "alternativeToStepId"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "alternativeToStepId"
+            ]
+          },
+          "then": {
+            "properties": {
+              "deliveryRole": {
+                "const": "optional"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "anchorStepId"
+            ]
+          },
+          "then": {
+            "properties": {
+              "deliveryRole": {
+                "const": "extension"
+              }
+            }
+          }
+        }
+      ]
     },
     "evidence": {
       "type": "object",
