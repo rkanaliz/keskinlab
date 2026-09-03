@@ -10,6 +10,8 @@ on:
       - 'lesson-player-data.json'
       - 'data/**'
       - 'materyaller/**'
+      - 'lesson-spec-preview.html'
+      - 'lesson-spec-preview.js'
       - 'package.json'
       - '.github/workflows/lesson-spec-validate.yml'
   pull_request:
@@ -19,6 +21,8 @@ on:
       - 'lesson-player-data.json'
       - 'data/**'
       - 'materyaller/**'
+      - 'lesson-spec-preview.html'
+      - 'lesson-spec-preview.js'
       - 'package.json'
       - '.github/workflows/lesson-spec-validate.yml'
 
@@ -40,3 +44,6 @@ jobs:
 
       - name: Validate lesson specs
         run: npm run validate:lesson-specs
+
+      - name: Check preview JavaScript syntax
+        run: node --check lesson-spec-preview.js
