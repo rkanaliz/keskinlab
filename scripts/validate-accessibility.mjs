@@ -3,7 +3,7 @@ import { promises as fs } from 'node:fs';
 const files = [
   'index.html','hakkinda.html','iletisim.html','dijital-araclar.html',
   'evrak-cantasi.html','takvim.html',
-  'classroom-5-sinif.html','classroom-6-sinif.html','classroom-robotik.html','classroom-yapay-zeka.html'
+  '5-sinif-bty.html','6-sinif-bty.html','robotik-kodlama.html','yapay-zeka.html'
 ];
 const errors = [];
 
