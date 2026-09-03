@@ -11,10 +11,11 @@
     "validate:courses": "node scripts/validate-course-data.mjs",
     "validate:navigation": "node scripts/validate-navigation.mjs",
     "validate:a11y": "node scripts/validate-accessibility.mjs",
-    "validate": "npm run validate:html && npm run validate:site && npm run validate:courses && npm run validate:navigation && npm run validate:a11y",
+    "validate:mirrors": "node scripts/validate-course-mirrors.mjs",
+    "validate": "npm run validate:html && npm run validate:site && npm run validate:courses && npm run validate:navigation && npm run validate:a11y && npm run validate:mirrors",
     "validate:strict-assets": "node scripts/validate-site.mjs --strict-assets && npm run validate:courses",
     "check": "npm run generate && npm run validate",
-    "build": "npm run build:web-assets && npm run generate && npm run validate:html && npm run validate:strict-assets && npm run validate:navigation && npm run validate:a11y"
+    "build": "npm run build:web-assets && npm run generate && npm run validate:html && npm run validate:strict-assets && npm run validate:navigation && npm run validate:a11y && npm run validate:mirrors"
   },
   "dependencies": {
     "sharp": "^0.35.4"
