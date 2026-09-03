@@ -12,13 +12,14 @@ KeskinLab; 5–6. sınıf Bilişim Teknolojileri ve Yazılım, Robotik Kodlama-I
 - Build çıktıları: `generated/courses.json`, `generated/materials.json`, `generated/web/`
 
 ## Ana yüzeyler
-- `index.html` — yaşayan anasayfa / Bu Hafta / zaman çizgisi / dersler
+- `index.html` — yaşayan anasayfa / Bu Hafta / zaman çizgisi / dersler / öğretmen araçları
 - `hakkinda.html` — KeskinLab nedir?
 - `iletisim.html` — hata, öneri, geri bildirim ve iş birliği yüzeyi
 - `dijital-araclar.html` — öğretmen için MEB ve YEĞİTEK dijital araçlar rehberi
-- `classroom-5-sinif.html`, `classroom-6-sinif.html` — BTY sınıf yüzeyleri
-- `classroom-robotik.html`, `classroom-yapay-zeka.html` — seçmeli ders sınıf yüzeyleri
-- `evrak-cantasi.html`, `takvim.html` — öğretmen araçları
+- `5-sinif-bty.html`, `6-sinif-bty.html` — kanonik BTY sınıf yüzeyleri
+- `robotik-kodlama.html`, `yapay-zeka.html` — kanonik seçmeli ders sınıf yüzeyleri
+- `classroom-*.html` — geçici uyumluluk aynaları; kanonik ders dosyalarıyla birebir aynı olmak zorunda
+- `evrak-cantasi.html`, `takvim.html` — ortak editoryal kabuk kullanan öğretmen araçları
 - `search-index.js`, `command-palette.js` — ortak arama
 
 ## Günlük planlar
@@ -41,7 +42,16 @@ KeskinLab; 5–6. sınıf Bilişim Teknolojileri ve Yazılım, Robotik Kodlama-I
 - Inter: gövde metni ve navigasyon
 - IBM Plex Mono: numara, tarih, etiket, metadata ve teknik bilgi
 - Başlık ağırlığı varsayılan olarak 700'dür; sentetik 650/800 ağırlık kullanılmaz.
-- Hakkında, İletişim ve Evrak Çantası ortak editoryal kabuk üzerinden aynı navigasyon ve tipografi gramerini kullanır.
+- Hakkında, İletişim, Evrak Çantası ve Eğitim Takvimi ortak editoryal kabuk üzerinden aynı navigasyon ve tipografi gramerini kullanır.
+
+## URL standardı
+Kullanıcıya açık ders adresleri:
+- `/5-sinif-bty`
+- `/6-sinif-bty`
+- `/robotik-kodlama`
+- `/yapay-zeka`
+
+`/classroom-*` yolları public canonical değildir; `_redirects` bunları temiz ders adreslerine taşır. Geçiş döneminde repository içindeki `classroom-*.html` aynalarının kanonik dosyalardan ayrışması `validate-course-mirrors.mjs` tarafından engellenir.
 
 ## Kalite kapıları
 Production build aşağıdaki kontroller temiz geçmeden başarılı sayılmaz:
@@ -51,13 +61,16 @@ Production build aşağıdaki kontroller temiz geçmeden başarılı sayılmaz:
 - ders verisi bütünlüğü
 - global navigasyon mimarisi (`scripts/validate-navigation.mjs`)
 - temel erişilebilirlik korumaları (`scripts/validate-accessibility.mjs`)
+- kanonik ders / uyumluluk aynası eşitliği (`scripts/validate-course-mirrors.mjs`)
 
 MEB/YEĞİTEK gibi resmî dış kaynak bağlantıları `Check Official Links` GitHub Actions işiyle haftalık kontrol edilir. Kesin `404/410` durumları hata, geçici ağ/sunucu sorunları uyarı olarak değerlendirilir.
 
+`Production Smoke` işi her `main` güncellemesinden sonra Cloudflare production yüzeyini gerçek HTTP istekleriyle kontrol eder; ana sayfa, temel içerik yüzeyleri, temiz ders URL'leri, robots ve sitemap bu kontrolden geçer.
+
 ## SEO ve yayın hijyeni
 - `robots.txt` ve `sitemap.xml` production kökünde tutulur.
-- `_headers` temel güvenlik başlıklarını uygular.
-- Kamuya açık ana yüzeylerde canonical URL kullanılır; derslerin temiz URL standardı ayrıca routing katmanında korunur.
+- `_headers` temel güvenlik başlıklarını ve derslerin canonical HTTP `Link` başlıklarını uygular.
+- Sitemap yalnız kanonik public URL'leri içerir; elle güncellenen sahte freshness tarihleri tutulmaz.
 
 ## Çalışma standardı
 Tasarım ve özellik denemeleri mümkün olduğunda preview üzerinde yapılır. Production'a alınan her değişiklik GitHub Actions doğrulamasından geçer; çalışan sistemi gereksiz yere yeniden yazmak yerine ortak katmanlar kademeli olarak konsolide edilir.
