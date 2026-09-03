@@ -1,0 +1,291 @@
+{
+  "schemaVersion": 1,
+  "course": "5-sinif",
+  "week": 1,
+  "learningOutcomes": [
+    "BTY.5.1.1"
+  ],
+  "resources": {
+    "haftaya-giris-gorseli": {
+      "kind": "material",
+      "type": "hafta-ozeti",
+      "indexes": [
+        "01"
+      ],
+      "requiresTechnology": false
+    },
+    "temel-kavram-slides": {
+      "kind": "material",
+      "type": "sunum",
+      "indexes": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05"
+      ],
+      "requiresTechnology": true,
+      "fallbackResourceRef": "ders-notu"
+    },
+    "gecmis-gunumuz-slides": {
+      "kind": "material",
+      "type": "sunum",
+      "indexes": [
+        "06",
+        "07",
+        "08"
+      ],
+      "requiresTechnology": true,
+      "fallbackResourceRef": "gecmis-gunumuz-infografik"
+    },
+    "gecmis-gunumuz-infografik": {
+      "kind": "material",
+      "type": "infografik",
+      "indexes": [
+        "02"
+      ],
+      "requiresTechnology": false
+    },
+    "ders-notu": {
+      "kind": "material",
+      "type": "ders-notu",
+      "indexes": [
+        "01"
+      ],
+      "requiresTechnology": false
+    },
+    "ogrenci-etkinligi": {
+      "kind": "material",
+      "type": "ogrenci-etkinligi",
+      "indexes": [
+        "01"
+      ],
+      "requiresTechnology": false
+    },
+    "siniflandirma-player": {
+      "kind": "lessonPlayer",
+      "activityId": "classify-use",
+      "requiresTechnology": true,
+      "fallbackResourceRef": "ogrenci-etkinligi"
+    },
+    "gecmis-gunumuz-player": {
+      "kind": "lessonPlayer",
+      "activityId": "match-past-present",
+      "requiresTechnology": true,
+      "fallbackResourceRef": "gecmis-gunumuz-infografik"
+    },
+    "hizli-kontrol-player": {
+      "kind": "lessonPlayer",
+      "activityId": "quiz-evidence",
+      "requiresTechnology": true,
+      "fallbackResourceRef": "sozlu-cikis-kontrolu"
+    },
+    "sozlu-cikis-kontrolu": {
+      "kind": "teacherLed",
+      "description": "Öğretmenin üç kısa çıkış sorusunu sözlü olarak yöneltmesi.",
+      "requiresTechnology": false
+    },
+    "sinif-tartismasi": {
+      "kind": "teacherLed",
+      "description": "Aynı teknolojinin kullanım amacına göre birden fazla alanda sınıflandırılabileceği üzerine sınıf tartışması.",
+      "requiresTechnology": false
+    }
+  },
+  "periods": [
+    {
+      "periodNo": 1,
+      "title": "Kavramları Keşfet ve Sınıflandır",
+      "plannedMinutes": 40,
+      "steps": [
+        {
+          "id": "on-bilgiyi-yokla",
+          "phase": "giris",
+          "minutes": 5,
+          "curriculumRefs": [
+            "BTY.5.1.1.a"
+          ],
+          "teacherAction": "Öğrencilerin günlük yaşamda karşılaştıkları bilişim teknolojilerini ortaya çıkaracak kısa bir beyin fırtınası başlatır.",
+          "studentAction": "Evde ve okula gelirken karşılaştığı teknoloji örneklerini paylaşır.",
+          "teacherPrompt": "Bu sabah uyanmanızdan okula gelmenize kadar hangi teknolojilerle karşılaştınız?",
+          "resourceRefs": [
+            "haftaya-giris-gorseli"
+          ],
+          "evidence": {
+            "observable": "Öğrenci günlük yaşamdan en az bir bilişim teknolojisi örneği ifade eder.",
+            "mode": "oral"
+          }
+        },
+        {
+          "id": "temel-kavramlari-kur",
+          "phase": "kesfetme",
+          "minutes": 10,
+          "curriculumRefs": [
+            "BTY.5.1.1.a"
+          ],
+          "teacherAction": "Öğrenci cevaplarından hareketle bilgi, teknoloji ve bilişim teknolojileriyle ilgili temel kavramları yapılandırır.",
+          "studentAction": "Kavramları günlük yaşam örnekleriyle ilişkilendirir ve kendi örneklerini açıklar.",
+          "teacherPrompt": "Bir aracın yalnızca elektronik olması onu bilişim teknolojisi yapar mı? Neden?",
+          "resourceRefs": [
+            "temel-kavram-slides"
+          ]
+        },
+        {
+          "id": "ilk-siniflandirma",
+          "phase": "uygulama",
+          "minutes": 15,
+          "curriculumRefs": [
+            "BTY.5.1.1.c"
+          ],
+          "teacherAction": "Öğrencilerden farklı bilişim teknolojilerini kullanım alanlarına göre gruplandırmalarını ve seçimlerini açıklamalarını ister.",
+          "studentAction": "Teknolojileri kullanım alanlarına göre sınıflandırır ve seçtiği sınıflandırmayı gerekçelendirir.",
+          "teacherPrompt": "Bu teknolojiyi neden bu kullanım alanına yerleştirdiniz? Başka bir alanda da kullanılabilir mi?",
+          "resourceRefs": [
+            "siniflandirma-player"
+          ],
+          "support": "Seçenek sayısı azaltılabilir ve hazır kullanım alanı başlıkları verilebilir.",
+          "enrichment": "Öğrenciden aynı teknolojinin farklı amaçlarla birden fazla kullanım alanına nasıl girebileceğini açıklaması istenir.",
+          "evidence": {
+            "observable": "Öğrenci bilişim teknolojilerini kullanım alanına göre gruplandırır ve en az bir sınıflandırma kararını gerekçelendirir.",
+            "mode": "observation"
+          }
+        },
+        {
+          "id": "siniflandirmayi-sorgula",
+          "phase": "tartisma",
+          "minutes": 7,
+          "curriculumRefs": [
+            "BTY.5.1.1.c"
+          ],
+          "teacherAction": "Farklı öğrenci sınıflandırmalarını karşılaştırır ve sınıflandırma ölçütünün önemini tartışmaya açar.",
+          "studentAction": "Farklı sınıflandırmaları karşılaştırır, hangi ölçütün kullanıldığını açıklar.",
+          "teacherPrompt": "Ölçüt değişirse aynı teknoloji başka bir gruba geçebilir mi?",
+          "resourceRefs": [
+            "sinif-tartismasi"
+          ]
+        },
+        {
+          "id": "birinci-ders-cikisi",
+          "phase": "kapanis",
+          "minutes": 3,
+          "curriculumRefs": [
+            "BTY.5.1.1.a",
+            "BTY.5.1.1.c"
+          ],
+          "teacherAction": "Dersin iki ana fikrini öğrencilerden kısa cümlelerle tekrar ister.",
+          "studentAction": "Bir temel kavramı ve bir sınıflandırma örneğini kendi cümlesiyle ifade eder.",
+          "resourceRefs": [],
+          "evidence": {
+            "observable": "Öğrenci temel kavramlardan birini ve kullanım alanına göre bir sınıflandırma örneğini ifade eder.",
+            "mode": "oral"
+          }
+        }
+      ]
+    },
+    {
+      "periodNo": 2,
+      "title": "Geçmişten Günümüze İlişkilendir ve Kanıtla",
+      "plannedMinutes": 40,
+      "steps": [
+        {
+          "id": "onceki-dersle-bag-kur",
+          "phase": "giris",
+          "minutes": 4,
+          "curriculumRefs": [
+            "BTY.5.1.1.a",
+            "BTY.5.1.1.c"
+          ],
+          "teacherAction": "Bir önceki derste oluşturulan kavram ve sınıflandırma bilgisini kısa sorularla yeniden etkinleştirir.",
+          "studentAction": "Önceki dersten hatırladığı kavramları ve sınıflandırma ölçütlerini paylaşır.",
+          "teacherPrompt": "Geçen derste bir teknolojiyi hangi ölçüte göre gruplandırmıştık?",
+          "resourceRefs": []
+        },
+        {
+          "id": "gecmis-gunumuz-karsilastir",
+          "phase": "kesfetme",
+          "minutes": 10,
+          "curriculumRefs": [
+            "BTY.5.1.1.b"
+          ],
+          "teacherAction": "Geçmiş ve günümüz teknoloji örneklerini karşılaştırarak benzerlik ve farklılıkları görünür hâle getirir.",
+          "studentAction": "Bir geçmiş teknoloji örneğini güncel karşılığıyla ilişkilendirir; benzerlik ve farklılık söyler.",
+          "teacherPrompt": "Araç değişmiş olsa da hangi ihtiyaç aynı kalmış olabilir?",
+          "resourceRefs": [
+            "gecmis-gunumuz-slides"
+          ],
+          "evidence": {
+            "observable": "Öğrenci geçmiş ve günümüz bilişim teknolojileri arasında en az bir benzerlik veya farklılık kurar.",
+            "mode": "oral"
+          }
+        },
+        {
+          "id": "eslestir-ve-gerekcelendir",
+          "phase": "pekistirme",
+          "minutes": 8,
+          "curriculumRefs": [
+            "BTY.5.1.1.b"
+          ],
+          "teacherAction": "Geçmişten günümüze eşleştirme etkinliğini yürütür ve her eşleştirmede gerekçe ister.",
+          "studentAction": "Geçmiş teknoloji örneklerini güncel karşılıklarıyla eşleştirir ve ilişkiyi açıklar.",
+          "resourceRefs": [
+            "gecmis-gunumuz-player"
+          ]
+        },
+        {
+          "id": "teknoloji-arastirmacilari",
+          "phase": "uygulama",
+          "minutes": 10,
+          "curriculumRefs": [
+            "BTY.5.1.1.b",
+            "BTY.5.1.1.c"
+          ],
+          "teacherAction": "Gruplara seçtikleri teknoloji için ne yaptığı, geçmişte aynı ihtiyacın nasıl karşılandığı, bugün neyin değiştiği ve hangi kullanım alanına girdiği sorularını yöneltir.",
+          "studentAction": "Seçtiği teknolojiyi geçmiş-günümüz ve kullanım alanı açısından inceleyip kısa grup açıklaması hazırlar.",
+          "teacherPrompt": "Bu teknoloji hangi ihtiyacı karşılıyor, eskiden bu ihtiyaç nasıl karşılanıyordu ve bugün ne değişti?",
+          "resourceRefs": [
+            "ogrenci-etkinligi"
+          ],
+          "support": "Daha az seçenek ve hazır soru başlıkları verilebilir; eşli çalışma kullanılabilir.",
+          "enrichment": "Öğrenciden seçtiği teknolojinin 3–4 aşamalı mini gelişim çizgisini oluşturması istenebilir.",
+          "evidence": {
+            "observable": "Öğrenci seçtiği teknolojiyi geçmiş-günümüz ilişkisi ve kullanım alanı açısından açıklar.",
+            "mode": "worksheet"
+          }
+        },
+        {
+          "id": "ortak-sonuca-ulas",
+          "phase": "tartisma",
+          "minutes": 4,
+          "curriculumRefs": [
+            "BTY.5.1.1.a",
+            "BTY.5.1.1.b",
+            "BTY.5.1.1.c"
+          ],
+          "teacherAction": "Öğrenci örneklerini ortaklaştırarak haftanın üç süreç bileşenini birbirine bağlar.",
+          "studentAction": "Teknolojinin değişimi, amacı ve kullanım alanı arasındaki ilişkiyi sınıfça ifade eder.",
+          "resourceRefs": [
+            "sinif-tartismasi"
+          ]
+        },
+        {
+          "id": "hafta-cikis-kaniti",
+          "phase": "kapanis",
+          "minutes": 4,
+          "curriculumRefs": [
+            "BTY.5.1.1.a",
+            "BTY.5.1.1.b",
+            "BTY.5.1.1.c"
+          ],
+          "teacherAction": "Kısa çıkış kontrolünü uygular ve yanlış anlaşılan noktaları not eder.",
+          "studentAction": "Temel kavram, geçmiş-günümüz ilişkisi ve kullanım alanına göre sınıflandırmayla ilgili kısa sorulara cevap verir.",
+          "resourceRefs": [
+            "hizli-kontrol-player"
+          ],
+          "evidence": {
+            "observable": "Öğrencinin haftanın üç süreç bileşenine ilişkin kısa cevapları görünür hâle gelir.",
+            "mode": "quiz"
+          }
+        }
+      ]
+    }
+  ]
+}
