@@ -1,0 +1,380 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://keskinlab.com/schema/lesson-spec.schema.json",
+  "title": "KeskinLab Lesson Spec",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "course",
+    "week",
+    "learningOutcomes",
+    "resources",
+    "periods"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "course": {
+      "type": "string",
+      "minLength": 1
+    },
+    "week": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "learningOutcomes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "resources": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/resource"
+      }
+    },
+    "periods": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/period"
+      }
+    }
+  },
+  "$defs": {
+    "period": {
+      "type": "object",
+      "required": [
+        "periodNo",
+        "title",
+        "plannedMinutes",
+        "steps"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "periodNo": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "plannedMinutes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "steps": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/step"
+          }
+        }
+      }
+    },
+    "step": {
+      "type": "object",
+      "required": [
+        "id",
+        "phase",
+        "deliveryRole",
+        "minutes",
+        "curriculumRefs",
+        "teacherAction",
+        "studentAction",
+        "resourceRefs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "phase": {
+          "type": "string",
+          "enum": [
+            "giris",
+            "kesfetme",
+            "dogrudan-ogretim",
+            "uygulama",
+            "tartisma",
+            "pekistirme",
+            "degerlendirme",
+            "kapanis"
+          ]
+        },
+        "deliveryRole": {
+          "type": "string",
+          "enum": [
+            "core",
+            "optional",
+            "extension"
+          ]
+        },
+        "anchorStepId": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "alternativeToStepId": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "minutes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "curriculumRefs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "teacherAction": {
+          "type": "string",
+          "minLength": 1
+        },
+        "studentAction": {
+          "type": "string",
+          "minLength": 1
+        },
+        "teacherPrompt": {
+          "type": "string"
+        },
+        "resourceRefs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence"
+        },
+        "support": {
+          "type": "string"
+        },
+        "enrichment": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "not": {
+            "required": [
+              "anchorStepId",
+              "alternativeToStepId"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "deliveryRole": {
+                "const": "core"
+              }
+            },
+            "required": [
+              "deliveryRole"
+            ]
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "anchorStepId"
+                  ]
+                },
+                {
+                  "required": [
+                    "alternativeToStepId"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "deliveryRole": {
+                "const": "extension"
+              }
+            },
+            "required": [
+              "deliveryRole"
+            ]
+          },
+          "then": {
+            "required": [
+              "anchorStepId"
+            ],
+            "not": {
+              "required": [
+                "alternativeToStepId"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "alternativeToStepId"
+            ]
+          },
+          "then": {
+            "properties": {
+              "deliveryRole": {
+                "const": "optional"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "anchorStepId"
+            ]
+          },
+          "then": {
+            "properties": {
+              "deliveryRole": {
+                "const": "extension"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "observable",
+        "mode"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "observable": {
+          "type": "string",
+          "minLength": 1
+        },
+        "criterion": {
+          "type": "string"
+        },
+        "mode": {
+          "enum": [
+            "oral",
+            "observation",
+            "worksheet",
+            "quiz",
+            "product",
+            "peer-review"
+          ]
+        }
+      }
+    },
+    "resource": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "type",
+            "indexes"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "material"
+            },
+            "type": {
+              "type": "string",
+              "minLength": 1
+            },
+            "indexes": {
+              "oneOf": [
+                {
+                  "const": "all"
+                },
+                {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "string",
+                    "pattern": "^\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "requiresTechnology": {
+              "type": "boolean"
+            },
+            "fallbackResourceRef": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "activityId"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "lessonPlayer"
+            },
+            "activityId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "requiresTechnology": {
+              "type": "boolean"
+            },
+            "fallbackResourceRef": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "description"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "teacherLed"
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1
+            },
+            "requiresTechnology": {
+              "type": "boolean"
+            },
+            "fallbackResourceRef": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    }
+  }
+}
