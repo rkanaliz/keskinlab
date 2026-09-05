@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="homepage-v2.css">
+<script src="homepage-v2.js" defer></script>
 </head>
 <body>
 
@@ -64,26 +65,23 @@
         </div>
       </div>
 
-      <div class="hero-media">
-        <div class="hero-image-frame placeholder-media" role="img" aria-label="Hero görsel yer tutucu — final görsel eklenecek">
-          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" class="placeholder-icon">
-            <rect x="6" y="14" width="44" height="28" rx="3" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M6 36h44" stroke="currentColor" stroke-width="1.6"/>
-            <circle cx="20" cy="25" r="4" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M27 33l6-8 15 17" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-          </svg>
+      <div class="hero-media" data-hero-carousel role="region" aria-roledescription="carousel" aria-label="KeskinLab görselleri">
+        <div class="hero-image-frame" aria-live="polite" aria-atomic="true">
+          <img class="hero-slide is-active" src="final-assets/hero-01.webp" alt="Öğrenme atölyesinde bilgisayarıyla çalışan öğrenci" width="1568" height="1003" fetchpriority="high" aria-hidden="false">
+          <img class="hero-slide" src="final-assets/hero-02.webp" alt="Atölyede tasarım fikirlerini birlikte tartışan üç öğrenci" width="1568" height="1003" decoding="async" aria-hidden="true">
+          <img class="hero-slide" src="final-assets/hero-03.webp" alt="Ahşap robot kolu projesi üzerinde birlikte çalışan üç öğrenci" width="1568" height="1003" decoding="async" aria-hidden="true">
         </div>
         <div class="hero-media-controls">
           <div class="hero-dots">
-            <span class="dot is-active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+            <button class="dot is-active" type="button" aria-label="1. görseli göster" aria-pressed="true" data-slide="0"></button>
+            <button class="dot" type="button" aria-label="2. görseli göster" aria-pressed="false" data-slide="1"></button>
+            <button class="dot" type="button" aria-label="3. görseli göster" aria-pressed="false" data-slide="2"></button>
           </div>
           <div class="hero-arrows">
-            <button class="icon-btn icon-btn-round" aria-label="Önceki" type="button">
+            <button class="icon-btn icon-btn-round" aria-label="Önceki" type="button" data-carousel-prev>
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 3L5 7l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
-            <button class="icon-btn icon-btn-round" aria-label="Sonraki" type="button">
+            <button class="icon-btn icon-btn-round" aria-label="Sonraki" type="button" data-carousel-next>
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
           </div>
@@ -156,8 +154,8 @@
       <div class="course-grid">
 
         <article class="course-card course-card--warm">
-          <div class="course-media placeholder-media">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" class="placeholder-icon"><circle cx="20" cy="14" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M8 34c0-7 5-12 12-12s12 5 12 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <div class="course-media">
+            <img src="final-assets/course-5-sinif.webp" alt="" loading="lazy" decoding="async">
           </div>
           <div class="course-body">
             <h3 class="course-title">5. Sınıf</h3>
@@ -173,8 +171,8 @@
         </article>
 
         <article class="course-card course-card--cool">
-          <div class="course-media placeholder-media">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" class="placeholder-icon"><circle cx="20" cy="14" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M8 34c0-7 5-12 12-12s12 5 12 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <div class="course-media">
+            <img src="final-assets/course-6-sinif.webp" alt="" loading="lazy" decoding="async">
           </div>
           <div class="course-body">
             <h3 class="course-title">6. Sınıf</h3>
@@ -190,8 +188,8 @@
         </article>
 
         <article class="course-card course-card--neutral">
-          <div class="course-media placeholder-media">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" class="placeholder-icon"><rect x="10" y="14" width="20" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/><circle cx="20" cy="9" r="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M20 11.5V14" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="21" r="1.6" fill="currentColor"/><circle cx="24" cy="21" r="1.6" fill="currentColor"/></svg>
+          <div class="course-media">
+            <img src="final-assets/course-robotik.webp" alt="" loading="lazy" decoding="async">
           </div>
           <div class="course-body">
             <h3 class="course-title">Robotik Kodlama</h3>
@@ -207,8 +205,8 @@
         </article>
 
         <article class="course-card course-card--tint">
-          <div class="course-media placeholder-media">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" class="placeholder-icon"><rect x="12" y="8" width="16" height="24" rx="4" stroke="currentColor" stroke-width="1.6"/><path d="M17 16h6M17 21h6M17 26h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <div class="course-media">
+            <img src="final-assets/course-yapay-zeka.webp" alt="" loading="lazy" decoding="async">
           </div>
           <div class="course-body">
             <h3 class="course-title">Yapay Zekâ Uygulamaları</h3>
