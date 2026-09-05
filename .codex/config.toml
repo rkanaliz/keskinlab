@@ -1,0 +1,35 @@
+# KeskinLab Codex orchestration profile
+# Primary agent handles planning, ambiguity, hard debugging and final review.
+# Bounded workers handle routine work with minimal context.
+
+model = "gpt-6-astra"
+model_reasoning_effort = "medium"
+
+developer_instructions = """
+Use subagents selectively to reduce primary-model work and user supervision.
+
+Prefer the luna_worker role for bounded, low-risk work such as repository search, file discovery, documentation reading, log inspection, targeted tests, simple extraction, and repetitive mechanical edits.
+
+Use the terra_worker role only when implementation spans dependent files or requires more judgment than the Luna worker should exercise, but does not require an architectural or product decision.
+
+Keep architecture, ambiguous product decisions, difficult debugging, source conflicts, security-sensitive changes, scope decisions, pedagogical decisions, visual-direction decisions, and final integration review on the primary agent.
+
+Delegate only when it meaningfully saves primary-agent work or improves quality. Give workers only the minimum context needed. Prefer one bounded worker over several parallel workers unless parallelism materially helps. Do not fork the full conversation unless genuinely necessary. Do not repeat work already completed and verified by a worker. Prefer targeted tests over broad suites. Keep the primary reasoning effort at medium unless a genuinely difficult task justifies more.
+"""
+
+[features.multi_agent_v2]
+enabled = true
+
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 2
+default_subagent_model = "gpt-5.6-luna"
+default_subagent_reasoning_effort = "low"
+
+[agents.luna_worker]
+description = "Low-cost bounded worker for repository search, documentation reading, file discovery, logs, targeted tests, simple extraction and repetitive mechanical edits. Never owns architecture or product decisions."
+config_file = "./agents/luna-worker.toml"
+
+[agents.terra_worker]
+description = "Implementation worker for dependent multi-file changes or bounded refactors that need more judgment than Luna, while architecture and final review remain with the primary agent."
+config_file = "./agents/terra-worker.toml"
