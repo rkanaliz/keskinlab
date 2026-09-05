@@ -1,0 +1,154 @@
+{
+  "schemaVersion": "1.0-teacher-first",
+  "course": "5-sinif",
+  "week": 1,
+  "title": "Bilişim Teknolojilerinin Sınıflandırılması",
+  "theme": "Bilişim Teknolojilerinin Hayatımızdaki Yeri",
+  "durationMinutes": 80,
+  "learningOutcome": {
+    "code": "BTY.5.1.1",
+    "text": "Günlük yaşamda kullanılan bilişim teknolojilerini sınıflandırabilme",
+    "components": [
+      "Bilişim teknolojilerine ilişkin temel kavramları belirler.",
+      "Geçmişten günümüze bilişim teknolojilerindeki benzerlikleri ve farklılıkları ilişkilendirir.",
+      "Bilişim teknolojilerini kullanım alanlarına göre gruplandırır."
+    ]
+  },
+  "minimumRequirements": ["İnternet bağlantısı", "Akıllı tahta"],
+  "preparation": [
+    "Kelime kavanozu için iletişim, bilgi, bilişim, teknoloji ve BİT kavramlarını içeren beş kartı dersten önce hazırlayın.",
+    "Küçük grup çalışması yapılacağı için sınıfın grup düzenini önceden planlayın."
+  ],
+  "sections": [
+    {"id":"acilis","title":"Açılış","sub":"Merak uyandırma","start":"w01-bilisim-ne","slide":"assets/w01/slides/slide-01.webp"},
+    {"id":"on-bilgi","title":"Ön Bilgimizi Paylaşıyoruz","sub":"Günlük yaşamdan örnekler","start":"w01-gunluk-hayat-ornekleri","slide":"assets/w01/slides/slide-02.webp"},
+    {"id":"kavramlar","title":"Kavramları Keşfedelim","sub":"5 temel kavram","start":"w01-bes-kavram","slide":"assets/w01/slides/slide-03.webp"},
+    {"id":"grup","title":"Gruplarla Araştırıyoruz","sub":"Araştır · sor · paylaş","start":"w01-kelime-kavanozu","slide":"assets/w01/slides/slide-04.webp"},
+    {"id":"gecmis","title":"Geçmişten Günümüze","sub":"Aynı ihtiyaç, farklı araçlar","start":"w01-checkpoint-2ders","slide":"assets/w01/slides/slide-05.webp"},
+    {"id":"yesil-ekran","title":"Yeşil Ekranın Arkası","sub":"Gerçek ile kurgu","start":"w01-yesil-ekran-sahne","slide":"assets/w01/slides/slide-06.webp"},
+    {"id":"sinema","title":"Sinema ve TV'de Teknolojiler","sub":"Sahnenin görünmeyen araçları","start":"w01-sinema-tv-teknolojileri","slide":"assets/w01/slides/slide-07.webp"},
+    {"id":"alanlar","title":"Nerelerde Kullanılıyor?","sub":"Kullanım alanları","start":"w01-baska-alanlar","slide":"assets/w01/slides/slide-08.webp"},
+    {"id":"sonuc","title":"Neler Öğrendik?","sub":"Ortak sonuca ulaşalım","start":"w01-toplumsal-etki-tartisma","slide":"assets/w01/slides/slide-09.webp"},
+    {"id":"kanit","title":"Çıkış Bileti","sub":"Öğrenmeyi görünür kıl","start":"w01-cikis-gorsel","slide":"assets/w01/slides/slide-10.webp"}
+  ],
+  "steps": [
+    {
+      "id":"w01-bilisim-ne","section":"acilis","lessonHour":1,"mode":"ask","layout":"visual","student":{"label":"MERAK ET","title":"Bilişim teknolojileri deyince aklına ne geliyor?","cue":"Gördüğün araçlardan yola çık; aklına gelen örnekleri paylaş."},"teacher":{"note":"Beyin fırtınası yapın. Öğrencilerin araç, ortam ve kullanım örneklerini düzeltmeden toplayın; bu aşama ön değerlendirmedir."},"tymm":{"phaseLabel":"Ön değerlendirme · beyin fırtınası"},"sourceRefs":["BTY.5.1.1 · Öğrenme-Öğretme Uygulamaları","Ön Değerlendirme Süreci"]
+    },
+    {
+      "id":"w01-gunluk-hayat-ornekleri","section":"on-bilgi","lessonHour":1,"mode":"observe","layout":"visual","student":{"label":"GÜNLÜK HAYAT","title":"Teknoloji çevremizin her yerinde","cue":"Evde, okulda, ulaşımda, sağlıkta ve iletişimde karşılaştığın örnekleri düşün."},"teacher":{"note":"Öğrenci örneklerini genişletin. Bilişim teknolojilerinin yalnızca bilgisayardan ibaret olmadığına doğal bir köprü kurun."},"tymm":{"phaseLabel":"Köprü kurma"},"sourceRefs":["Köprü Kurma","BTY.5.1.1.a"]
+    },
+    {
+      "id":"w01-kopru","section":"on-bilgi","lessonHour":1,"mode":"explain","layout":"narrative","student":{"label":"BİRLİKTE DÜŞÜNELİM","title":"Aynı görünmüyorlar, aynı işi de yapmıyorlar","intro":"Telefon, ATM, akıllı tahta ve navigasyon birbirinden çok farklı. Yine de hepsi bilgiyle, iletişimle veya bir işi gerçekleştirmekle ilişkilidir.","points":["Bir araç bilgi gösterebilir veya saklayabilir.","Bir sistem bilgiyi işleyebilir.","Bir teknoloji insanlar arasında iletişimi kolaylaştırabilir."],"question":"Bu ilişkileri konuşabilmek için önce beş temel kavramı tanıyalım."},"teacher":{"note":"Bu adımda öğrenciden tek bir ‘ortak özellik’ cevabı beklemeyin. Günlük örneklerden temel kavramlara geçiş yapın."},"tymm":{"phaseLabel":"Köprü kurma · kavramlara geçiş"},"sourceRefs":["BTY.5.1.1.a","Köprü Kurma"]
+    },
+    {
+      "id":"w01-bes-kavram","section":"kavramlar","lessonHour":1,"mode":"explain","layout":"visual","student":{"label":"5 TEMEL KAVRAM","title":"Bilgi · İletişim · Bilişim · Teknoloji · BİT","cue":"Birazdan bu kavramları günlük yaşam örnekleriyle ilişkilendireceğiz."},"teacher":{"note":"Resmî program bu aşamada öğretmenin temel kavramları tanıtmasını ister. Tanımları kısa tutup günlük örneklerle ilişkilendirin."},"tymm":{"phaseLabel":"Temel kavramları belirleme"},"sourceRefs":["BTY.5.1.1.a"]
+    },
+    {
+      "id":"w01-kavram-anlatimi","section":"kavramlar","lessonHour":1,"mode":"explain","layout":"concepts","student":{"label":"KAVRAMLARI TANIYALIM","title":"Beş kavram, beş farklı bakış","intro":"Kavramları ezberlemek yerine günlük hayattaki karşılıklarını düşünelim.","concepts":[
+        {"term":"İletişim","copy":"Bir düşünceyi, bilgiyi veya mesajı başka birine aktarma sürecidir.","example":"Örnek: mesajlaşma"},
+        {"term":"Bilgi","copy":"Bir şeyi anlamamıza, öğrenmemize veya karar vermemize yardımcı olan anlamlı içeriktir.","example":"Örnek: navigasyondaki yol tarifi"},
+        {"term":"Bilişim","copy":"Bilginin toplanması, işlenmesi, saklanması ve gerektiğinde aktarılmasıyla ilgilenir.","example":"Örnek: ATM'de işlem bilgilerinin işlenmesi"},
+        {"term":"Teknoloji","copy":"Bir ihtiyacı karşılamak veya bir işi kolaylaştırmak için geliştirilen araç, yöntem ve sistemlerin genel adıdır.","example":"Örnek: 3B yazıcı"},
+        {"term":"BİT","copy":"Bilgiyi işlemek ve iletişim kurmak için kullanılan bilgi ve iletişim teknolojilerinin bütünüdür.","example":"Örnek: akıllı tahta + internet"}
+      ]},"teacher":{"note":"Öğrencilerden her kavram için kendi yaşamlarından bir örnek istemek kavramları görünür hâle getirir."},"tymm":{"phaseLabel":"Temel kavramları tanıtma"},"sourceRefs":["BTY.5.1.1.a","Resmî program · iletişim, bilgi, bilişim, teknoloji, BİT"]
+    },
+    {
+      "id":"w01-kelime-kavanozu","section":"grup","lessonHour":1,"mode":"do","layout":"visual","student":{"label":"KELİME KAVANOZU","title":"Şimdi her grup bir kavramın uzmanı olacak","cue":"Grubunuz için kavanozdan bir kavram seçin."},"teacher":{"note":"Öğretmen tarafından önceden hazırlanan kelime kavanozundan her gruba bir temel kavram seçtirin."},"tymm":{"phaseLabel":"Küçük grup çalışmasına geçiş"},"sourceRefs":["BTY.5.1.1 · kelime kavanozu","D3.4"]
+    },
+    {
+      "id":"w01-kavram-izi","section":"grup","lessonHour":1,"mode":"research","layout":"task","student":{"label":"ARAŞTIR","title":"Hadi çocuklar, kavramımızı biraz daha yakından tanıyalım","intro":"Az önce grubunuza bir kavram çıktı. Şimdi onu kısa, anlaşılır ve kendi cümlelerinizle anlatmaya hazırlanalım.","prompts":["Kendi cümlenle bu kavram ne anlama geliyor?","Evde, okulda veya çevrende bununla ilişkili bir örnek bul.","Hangi cihaz, uygulama veya sistem bu kavramla bağlantılı?"],"closing":"Hazır olduğunuzda kavramınızı sınıfa kısa bir şekilde anlatacaksınız."},"teacher":{"note":"Araştırma sırasında tarayıcı kullanımı için rehberlik edebilirsiniz. Hazır tanımı aynen okutmak yerine öğrencinin kendi cümlesini kurmasını isteyin."},"tymm":{"phaseLabel":"Grup araştırması"},"sourceRefs":["BTY.5.1.1.a","SDB2.2"]
+    },
+    {
+      "id":"w01-grup-paylasimi","section":"grup","lessonHour":1,"mode":"discuss","layout":"narrative","student":{"label":"PAYLAŞ","title":"Kavramınızı sınıfa anlatın","intro":"Her grup kavramını kısa ve anlaşılır biçimde paylaşacak.","points":["Kavramı kendi cümlenizle açıklayın.","Günlük yaşamdan bir örnek verin.","Dinleyen gruplar sunum sonunda en az bir soru sorsun."],"question":"Sorular, kavramı daha iyi anlamamıza yardım etmeli."},"teacher":{"note":"Diğer öğrencilerin sunum sırasında soru sormalarını teşvik edin. Soruların kavramı açıklığa kavuşturmasına odaklanın."},"tymm":{"phaseLabel":"Araştırma sonuçlarını paylaşma ve soru sorma"},"sourceRefs":["SDB2.2","KB2.8","E3.8"]
+    },
+    {
+      "id":"w01-kavram-eslestir","section":"grup","lessonHour":1,"mode":"do","layout":"activity","interaction":{"type":"classify","checkable":true},"student":{"label":"KAVRAMI KULLAN","title":"Örnekleri en güçlü bağ kurduğu kavramla eşleştir","intro":"Kartı seç, uygun kavrama dokun. Hepsini yerleştirdikten sonra Kontrol Et'e bas.","cue":"Eşleştirme bittikten sonra gerekçeleri sınıfça konuşun."},"items":[
+        {"id":"message","label":"Bir mesajın başka kişiye aktarılması","hint":"mesaj gönderme"},
+        {"id":"route","label":"Navigasyon ekranındaki yol tarifi","hint":"anlamlı içerik"},
+        {"id":"atm","label":"ATM'nin işlem bilgisini işleyip hesabı güncellemesi","hint":"bilgi işleme"},
+        {"id":"printer","label":"Bir ihtiyacı karşılamak için geliştirilen 3B yazıcı","hint":"araç / sistem"},
+        {"id":"board","label":"Akıllı tahta ve internetle bilgi paylaşımı","hint":"bilgi + iletişim"},
+        {"id":"email","label":"E-posta ile dosya ve mesaj gönderme","hint":"iletişim"},
+        {"id":"library","label":"Dijital kütüphanede arama sonucu bulunan içerik","hint":"anlamlı içerik"},
+        {"id":"hospital","label":"Hastane sisteminde hasta verilerinin kaydedilip işlenmesi","hint":"bilgi işleme"}
+      ],"categories":[
+        {"id":"iletisim","label":"İletişim"},{"id":"bilgi","label":"Bilgi"},{"id":"bilisim","label":"Bilişim"},{"id":"teknoloji","label":"Teknoloji"},{"id":"bit","label":"BİT"}
+      ],"answerKey":{"message":["iletisim"],"route":["bilgi"],"atm":["bilisim"],"printer":["teknoloji"],"board":["bit"],"email":["iletisim","bit"],"library":["bilgi"],"hospital":["bilisim","bit"]},"teacher":{"note":"Bu eşleştirme destekleme niteliğindedir. Bazı örnekler birden fazla kavramla ilişkilendirilebilir; sistem kabul edilen güçlü bağları kontrol eder, ardından öğrenciden gerekçe isteyin."},"tymm":{"phaseLabel":"Kavramları kullanım örnekleriyle ilişkilendirme"},"sourceRefs":["BTY.5.1.1.a","Tema 1 · Destekleme"]
+    },
+    {
+      "id":"w01-avantaj-sorusu","section":"grup","lessonHour":1,"mode":"ask","layout":"question","student":{"label":"BEYİN FIRTINASI","title":"Bilişim teknolojileri genel olarak bize neler sağlıyor?","intro":"Biraz önce farklı araç ve sistemleri inceledik. Şimdi bunların günlük yaşamı nasıl kolaylaştırabildiğini düşün.","context":["Zaman","İşleri yapma biçimi","Bilgiye erişim","İletişim"]},"teacher":{"note":"Resmî programdaki ‘Bilişim teknolojilerinin genel olarak sağladığı avantajlar neler olabilir?’ sorusunu beyin fırtınasıyla tartışın. Önce öğrenci fikirlerini alın."},"tymm":{"phaseLabel":"Avantajları tartışma"},"sourceRefs":["E3.5","SDB2.1"]
+    },
+    {
+      "id":"w01-avantaj-sonuc","section":"grup","lessonHour":1,"mode":"explain","layout":"narrative","student":{"label":"ORTAK SONUÇ","title":"Teknoloji işleri farklı biçimlerde kolaylaştırabilir","intro":"Sınıfın verdiği örnekleri birkaç ortak fikir altında toplayabiliriz.","points":["Bazı işleri daha hızlı yapmamızı sağlar.","Bilgiye erişimi ve iletişimi kolaylaştırabilir.","Bazı süreçlerde maliyeti azaltabilir.","İşlerin daha verimli yürütülmesine yardımcı olabilir."],"question":"Her teknoloji bu katkıların hepsini aynı ölçüde sağlamak zorunda değildir."},"teacher":{"note":"Öğrenci cevaplarını bu ortak fikirlerle ilişkilendirin; katkıları mutlak ve her teknoloji için geçerli ifadeler gibi sunmayın."},"tymm":{"phaseLabel":"Avantajları ortaklaştırma"},"sourceRefs":["BTY.5.1.1 · öğrenme-öğretme uygulaması"]
+    },
+    {
+      "id":"w01-checkpoint-2ders","section":"gecmis","lessonHour":2,"mode":"checkpoint","layout":"visual","student":{"label":"2. DERS","title":"Araç değişiyor; ihtiyaç ne kadar değişiyor?","cue":"Geçmiş ve günümüz teknolojilerini karşılaştırmaya geçiyoruz."},"teacher":{"note":"İkinci dersin doğal başlangıç noktasıdır. Doğrudan bu bölümden başlanabilir."},"tymm":{"phaseLabel":"Geçmiş-günümüz karşılaştırmasına geçiş"},"sourceRefs":["BTY.5.1.1.b"]
+    },
+    {
+      "id":"w01-yazi-ihtiyaci","section":"gecmis","lessonHour":2,"mode":"compare","layout":"compare","student":{"label":"KARŞILAŞTIR","title":"Yazı üretme ihtiyacı","intro":"İki araç farklı dönemlere ait; önce neyi aynı amaçla yaptıklarına bakalım."},"compare":{"left":{"label":"GEÇMİŞ","title":"Daktilo","copy":"Metni doğrudan kâğıda aktarır; düzenleme seçenekleri sınırlıdır."},"right":{"label":"GÜNÜMÜZ","title":"Dizüstü bilgisayar","copy":"Metni oluşturmayı, düzenlemeyi, saklamayı ve paylaşmayı kolaylaştırır."},"caption":"Benzerlik ne? Farklılık ne? Değişmeyen ihtiyaç hangisi?"},"teacher":{"note":"Öğrenciyi yalnız cihaz özelliklerine değil, karşılanan ihtiyaca yönlendirin: yazı üretme ihtiyacı sürerken araç ve süreç değişmiştir."},"tymm":{"phaseLabel":"Benzerlik ve farklılıkları ilişkilendirme"},"sourceRefs":["BTY.5.1.1.b"]
+    },
+    {
+      "id":"w01-iletisim-ihtiyaci","section":"gecmis","lessonHour":2,"mode":"compare","layout":"compare","student":{"label":"KARŞILAŞTIR","title":"İletişim kurma ihtiyacı","compare":{"left":{"label":"GEÇMİŞ","title":"Sabit telefon","copy":"Belirli bir yerdeki telefon hattına bağlı iletişim."},"right":{"label":"GÜNÜMÜZ","title":"Akıllı telefon","copy":"Hareket hâlindeyken ses, görüntü, metin ve internet üzerinden iletişim."},"caption":"İhtiyaç devam ederken kullanım biçimi nasıl değişmiş?"}},"teacher":{"note":"Benzerlik ve farklılığı öğrencilerin söylemesini bekleyin; ‘daha yeni = her durumda daha iyi’ gibi yüzeysel bir sonuca sıkışmayın."},"tymm":{"phaseLabel":"Geçmiş-günümüz ilişkisi"},"sourceRefs":["BTY.5.1.1.b"]
+    },
+    {
+      "id":"w01-teknoloji-arastirma","section":"gecmis","lessonHour":2,"mode":"research","layout":"task","student":{"label":"GRUP GÖREVİ","title":"Bir teknolojinin dününü ve bugününü araştırın","intro":"Grubunuz bir teknoloji seçsin. Geçmişte ve bugün aynı ihtiyacın nasıl karşılandığını karşılaştırın.","prompts":["Bu teknoloji ne işe yarıyor?","Geçmişte bu ihtiyaç nasıl karşılanıyordu?","Bugün neler değişti?","Benzer kalan özellik veya amaç ne?","Hangi kullanım alanında karşımıza çıkıyor?"],"closing":"Hazırlığınızı kısa bir afiş veya sözlü sunuma dönüştürün."},"teacher":{"note":"Resmî program öğrencilerin seçtikleri teknolojinin geçmiş ve günümüz hâlini araştırıp afiş/sunum hazırlamasını ister. Ürünün biçiminden çok karşılaştırma ve ilişkilendirmeye odaklanın."},"tymm":{"phaseLabel":"Geçmiş-günümüz araştırması"},"sourceRefs":["BTY.5.1.1.b","KB2.7"]
+    },
+    {
+      "id":"w01-teknoloji-sunum","section":"gecmis","lessonHour":2,"mode":"discuss","layout":"narrative","student":{"label":"SUNUM","title":"Araştırmanızı sınıfla paylaşın","intro":"Her grup seçtiği teknolojinin geçmiş ve günümüz hâlini kısa biçimde anlatsın.","points":["Değişmeyen ihtiyacı söyleyin.","En belirgin değişikliği açıklayın.","Dinleyen öğrenciler en az bir soru sorsun."],"question":"Sorular, benzerlik ve farklılıkları daha iyi görmemize yardım etmeli."},"teacher":{"note":"Diğer öğrencilerin sorularını teşvik edin. Eksik veya hatalı karşılaştırmaları sunumlar tamamlandıktan sonra gerekçeyle düzeltin."},"tymm":{"phaseLabel":"Araştırma sonuçlarını paylaşma"},"sourceRefs":["BTY.5.1.1.b","E3.8"]
+    },
+    {
+      "id":"w01-yesil-ekran-sahne","section":"yesil-ekran","lessonHour":2,"mode":"observe","layout":"visual","student":{"label":"BİR FİLM SAHNESİ","title":"Bu sahnenin ne kadarı gerçekten orada çekilmiş olabilir?","cue":"Önce sahneyi incele; açıklama yapmadan tahminini söyle."},"teacher":{"note":"Resmî programda önce yeşil ekran teknolojisiyle oluşturulmuş bir film sahnesi izletilir. Süreci hemen açıklamayın."},"tymm":{"phaseLabel":"Yeşil ekran sahnesini gözlemleme"},"sourceRefs":["BTY.5.1.1.c","Resmî program · yeşil ekran sahnesi"]
+    },
+    {
+      "id":"w01-yesil-ekran-merak","section":"yesil-ekran","lessonHour":2,"mode":"ask","layout":"question","student":{"label":"MERAK ET","title":"Bu sahne nasıl oluşturulmuş olabilir?","intro":"Şimdi aklına gelen soruları paylaş. Oyuncu gerçekten o ortamda mıydı? Arka plan ne zaman eklenmiş olabilir?","context":["Çekim nerede yapıldı?","Neden tek renkli bir fon kullanılıyor?","Arka plan nasıl değişiyor?"]},"teacher":{"note":"Öğrencilerin merak ettiklerini ve farklı açıklama ihtimallerini paylaşmalarını isteyin."},"tymm":{"phaseLabel":"Merak edilenleri paylaşma ve soru sorma"},"sourceRefs":["SDB1.1","E1.1","E3.5"]
+    },
+    {
+      "id":"w01-yesil-ekran-kamera-arkasi","section":"yesil-ekran","lessonHour":2,"mode":"observe","layout":"compare","student":{"label":"KAMERA ARKASI","title":"Aynı sahnenin çekim anına bakalım","compare":{"left":{"label":"ÇEKİM","title":"Tek renkli fon önünde çekim","copy":"Oyuncu ve nesneler tek renkli bir arka plan önünde kaydedilir."},"right":{"label":"SONUÇ","title":"Dijital ortam","copy":"Arka plan daha sonra başka bir görüntü veya sahneyle değiştirilir."},"caption":"Çekim ile son görüntü arasında hangi teknolojik işlemler gerçekleşmiş olabilir?"}},"teacher":{"note":"Öğrencilerin tahminlerinden sonra çekim sürecini gösterin. Görüntü kaydı ve dijital düzenleme ilişkisini görünür hâle getirin."},"tymm":{"phaseLabel":"Çekim sürecini gözlemleme"},"sourceRefs":["Resmî program · sahnenin çekim süreci"]
+    },
+    {
+      "id":"w01-yesil-ekran-ornekler","section":"yesil-ekran","lessonHour":2,"mode":"observe","layout":"narrative","student":{"label":"BAŞKA NEREDE?","title":"Aynı teknik farklı amaçlarla kullanılabilir","intro":"Yeşil ekran yalnızca fantastik filmlerde kullanılmaz.","points":["Hava durumu sunumlarında harita arka planı oluşturma","Stüdyo yayınlarında farklı ortamlar gösterme","Film ve dizilerde gerçek olmayan mekânlar oluşturma","İçerik üretiminde arka planı değiştirme"],"question":"Bu örneklerde ortak olan teknoloji hangisi? Kullanım amacı nasıl değişiyor?"},"teacher":{"note":"Resmî program farklı yeşil ekran örneklerinin gösterilmesini ister. Örnekleri kullanım amacı üzerinden karşılaştırın."},"tymm":{"phaseLabel":"Farklı yeşil ekran örneklerini inceleme"},"sourceRefs":["Resmî program · farklı yeşil ekran örnekleri"]
+    },
+    {
+      "id":"w01-sinema-tv-teknolojileri","section":"sinema","lessonHour":2,"mode":"ask","layout":"visual","student":{"label":"SETİ GENİŞLET","title":"Bir film yalnızca yeşil ekrandan mı oluşur?","cue":"Çekim, ses, görüntü, kurgu ve yayın süreçlerinde kullanılan teknolojileri düşün."},"teacher":{"note":"Öğrencilerin sinema ve televizyonda kullanılan diğer bilişim teknolojilerini belirlemesini sağlayın; eksikleri en son tamamlayın."},"tymm":{"phaseLabel":"Sinema ve televizyon teknolojilerini belirleme"},"sourceRefs":["BTY.5.1.1.c","Resmî program · sinema ve televizyon"]
+    },
+    {
+      "id":"w01-sinema-tv-havuz","section":"sinema","lessonHour":2,"mode":"explain","layout":"narrative","student":{"label":"TEKNOLOJİ HAVUZU","title":"Sahnenin görünmeyen araçları","intro":"Bir yapımın ortaya çıkması için farklı teknolojiler birlikte çalışır.","points":["Dijital kamera → görüntüyü kaydeder","Mikrofon → sesi kaydeder","Kurgu yazılımı → görüntü ve sesi düzenler","Yeşil ekran → görsel efekt için arka planı değiştirir","Dijital yayın sistemi → içeriği izleyiciye ulaştırır"],"question":"Şimdi bu teknolojileri yaptıkları işe göre gruplayalım."},"teacher":{"note":"Bu liste öğrenci cevapları toplandıktan sonra eksikleri tamamlamak için kullanılabilir."},"tymm":{"phaseLabel":"Teknolojileri kullanım işleviyle ilişkilendirme"},"sourceRefs":["BTY.5.1.1.c"]
+    },
+    {
+      "id":"w01-sinema-tv-siniflandir","section":"sinema","lessonHour":2,"mode":"do","layout":"activity","interaction":{"type":"classify","checkable":true},"student":{"label":"KATEGORİZE ET","title":"Sinema ve TV teknolojilerini yaptıkları işe göre grupla","intro":"Bir kart seç, uygun gruba dokun. Hepsini yerleştirdikten sonra Kontrol Et'e bas."},"items":[
+        {"id":"camera","label":"Dijital kamera","hint":"görüntü kaydı"},{"id":"microphone","label":"Mikrofon","hint":"ses kaydı"},{"id":"editing","label":"Kurgu yazılımı","hint":"düzenleme"},{"id":"green","label":"Yeşil ekran","hint":"görsel efekt"},{"id":"stream","label":"Dijital yayın sistemi","hint":"yayın / iletim"},{"id":"monitor","label":"Prodüksiyon monitörü","hint":"görüntü kontrolü"}
+      ],"categories":[{"id":"goruntu","label":"Görüntü"},{"id":"ses","label":"Ses"},{"id":"duzenleme","label":"Düzenleme"},{"id":"efekt","label":"Görsel Efekt"},{"id":"yayin","label":"Yayın / İletim"}],"answerKey":{"camera":["goruntu"],"microphone":["ses"],"editing":["duzenleme"],"green":["efekt"],"stream":["yayin"],"monitor":["goruntu"]},"teacher":{"note":"Sınıflandırmayı cevap yarışmasına dönüştürmeyin. Kontrol sonrasında öğrencilerden seçimlerinin gerekçesini isteyin."},"tymm":{"phaseLabel":"Sinema/TV teknolojilerini kullanım işlevine göre kategorize etme"},"sourceRefs":["BTY.5.1.1.c"]
+    },
+    {
+      "id":"w01-baska-alanlar","section":"alanlar","lessonHour":2,"mode":"ask","layout":"visual","student":{"label":"SİNEMADAN DIŞARI ÇIK","title":"Bilişim teknolojileri başka hangi alanlarda karşımıza çıkıyor?","cue":"Eğitim, sağlık, ulaşım, finans, iletişim… başka hangi alanları ekleyebilirsin?"},"teacher":{"note":"Öğrencilerin farklı kullanım alanlarına ilişkin örneklerini önce listeleyin; eksik alanları en son tamamlayın."},"tymm":{"phaseLabel":"Farklı kullanım alanlarını belirleme"},"sourceRefs":["BTY.5.1.1.c","E3.8"]
+    },
+    {
+      "id":"w01-alan-listesi","section":"alanlar","lessonHour":2,"mode":"explain","layout":"narrative","student":{"label":"ALANLARI GÖRELİM","title":"Aynı teknoloji farklı alanlarda farklı amaçlarla kullanılabilir","intro":"Bilişim teknolojilerini yalnız cihaz adına göre değil, kullanım amacına göre düşünelim.","points":["Eğitim → akıllı tahta, çevrim içi ders","Sağlık → hasta kayıt sistemi, sağlık izleme cihazı","Ulaşım → navigasyon, dijital bilet sistemi","Finans / ticaret → ATM, POS, barkod sistemi","İletişim → mesajlaşma, görüntülü görüşme","Medya / eğlence → dijital yayın, oyun sistemleri"],"question":"Bir cihazın kullanım amacı değişirse girdiği grup da değişebilir."},"teacher":{"note":"Kategori başlıklarını öğrencilerin oluşturduğu listeyi tamamlamak için kullanın. Aynı teknolojinin birden fazla alanda kullanılabileceğini vurgulayın."},"tymm":{"phaseLabel":"Kullanım alanlarını ortaklaştırma"},"sourceRefs":["BTY.5.1.1.c"]
+    },
+    {
+      "id":"w01-alanlara-gore-siniflandir","section":"alanlar","lessonHour":2,"mode":"do","layout":"activity","interaction":{"type":"classify","checkable":true},"student":{"label":"KULLANIM AMACINA GÖRE","title":"Senaryoyu oku, teknolojiyi kullanım alanına yerleştir","intro":"Kartlarda cihazın nasıl kullanıldığı yazıyor. Bu kullanım amacına göre doğru alana yerleştir."},"items":[
+        {"id":"phoneedu","label":"Akıllı telefonla canlı derse katılma","hint":"öğrenme"},{"id":"watchhealth","label":"Akıllı saatle nabız takibi","hint":"sağlık verisi"},{"id":"nav","label":"Navigasyonla rota bulma","hint":"yolculuk"},{"id":"atm2","label":"ATM'den para çekme","hint":"bankacılık"},{"id":"video","label":"Görüntülü görüşme yapma","hint":"iletişim"},{"id":"game","label":"Oyun konsoluyla oyun oynama","hint":"eğlence"},{"id":"barcode","label":"Barkod okuyucuyla ürün kaydı","hint":"ticaret"},{"id":"board2","label":"Akıllı tahtada konu anlatımı","hint":"eğitim"}
+      ],"categories":[{"id":"egitim","label":"Eğitim"},{"id":"saglik","label":"Sağlık"},{"id":"ulasim","label":"Ulaşım"},{"id":"finans","label":"Finans / Ticaret"},{"id":"iletisim","label":"İletişim"},{"id":"eglence","label":"Medya / Eğlence"}],"answerKey":{"phoneedu":["egitim"],"watchhealth":["saglik"],"nav":["ulasim"],"atm2":["finans"],"video":["iletisim"],"game":["eglence"],"barcode":["finans"],"board2":["egitim"]},"teacher":{"note":"Bu adım BTY.5.1.1.c'nin doğrudan öğrenci eylemidir. Kartları bağlamlı verdik; kontrolden sonra aynı cihazın farklı amaçlarla başka alanlara da girebileceğini tartıştırın."},"tymm":{"phaseLabel":"Bilişim teknolojilerini kullanım alanlarına göre gruplandırma"},"sourceRefs":["BTY.5.1.1.c"],"evidence":true
+    },
+    {
+      "id":"w01-birden-fazla-alan","section":"alanlar","lessonHour":2,"mode":"reflect","layout":"question","student":{"label":"ÖLÇÜTÜ DEĞİŞTİR","title":"Aynı teknoloji birden fazla kullanım alanına girebilir mi?","intro":"Bir tablet düşün: derste kullanıldığında eğitim, oyun oynarken eğlence amacıyla kullanılabilir.","context":["Araç aynı kalabilir.","Kullanım amacı değişebilir.","Sınıflandırma ölçütü kullanım amacıdır."],"question":"Sen de bir teknoloji seç ve iki farklı kullanım alanına örnek ver."},"teacher":{"note":"Öğrencinin sınıflandırmanın ölçüte bağlı olduğunu fark etmesini sağlayın. Tek bir cihazı her durumda tek kategoriye sabitlemeyin."},"tymm":{"phaseLabel":"Sınıflandırma ölçütünü sorgulama"},"sourceRefs":["BTY.5.1.1.c","KB2.8"]
+    },
+    {
+      "id":"w01-toplumsal-etki-tartisma","section":"sonuc","lessonHour":2,"mode":"discuss","layout":"visual","student":{"label":"TOPLUMA KATKI","title":"Bilişim teknolojileri toplum için nerelerde fayda sağlıyor?","cue":"Bir alan seç; bir teknoloji ve sağladığı katkı üzerinden düşün."},"teacher":{"note":"Bu tartışmayı BTY.5.1.2'nin olumlu/olumsuz etkilerine taşımayın. Bu hafta yalnız resmî senaryonun sonunda istenen toplumsal katkı değerlendirmesiyle sınırlı kalın."},"tymm":{"phaseLabel":"Toplumsal katkıyı değerlendirme"},"sourceRefs":["BTY.5.1.1 · toplumsal hayata katkı değerlendirmesi"]
+    },
+    {
+      "id":"w01-katkiyi-ornekle","section":"sonuc","lessonHour":2,"mode":"reflect","layout":"task","student":{"label":"ÖRNEKLE","title":"Bir katkıyı gerçek yaşam örneğiyle tamamla","intro":"Kısa ve somut konuş: alan + teknoloji + sağladığı katkı.","prompts":["Hangi alanı seçtin?","Hangi bilişim teknolojisi kullanılıyor?","Bu teknoloji o alanda neyi kolaylaştırıyor veya geliştiriyor?"],"closing":"Farklı grupların cevaplarını dinleyin; aynı alan için farklı örnekler olabilir."},"teacher":{"note":"Öğrencilerin topluma sağlanan katkıları kendi örnekleriyle zenginleştirip paylaşmasını sağlayın."},"tymm":{"phaseLabel":"Katkıyı örneklerle zenginleştirme"},"sourceRefs":["SDB1.2","SDB3.3"]
+    },
+    {
+      "id":"w01-cikis-gorsel","section":"kanit","lessonHour":2,"mode":"check","layout":"visual","student":{"label":"DERSİ KAPAT","title":"Üç kısa kanıtla ne öğrendiğimizi görelim","cue":"Bir sonraki ekranda üç kısa görev var."},"teacher":{"note":"Çıkış kanıtı BTY.5.1.1'in a-b-c süreç bileşenlerini hızlı biçimde yoklar."},"tymm":{"phaseLabel":"Öğrenme kanıtına geçiş"},"sourceRefs":["BTY.5.1.1.a","BTY.5.1.1.b","BTY.5.1.1.c"]
+    },
+    {
+      "id":"w01-cikis-kaniti","section":"kanit","lessonHour":2,"mode":"check","layout":"exit","student":{"label":"ÖĞRENME KANITI","title":"Dersi üç kısa kanıtla kapat","intro":"Cevaplarını kısa, kendi cümlelerinle ve gerekçeli ver.","items":[
+        {"prompt":"Temel kavramlardan birini kendi cümlenle açıkla.","hint":"İletişim, bilgi, bilişim, teknoloji veya BİT."},
+        {"prompt":"Geçmiş ve günümüzden bir teknoloji çiftinin bir benzerliğini ve bir farkını söyle.","hint":"İhtiyaç + araç + kullanım biçimi."},
+        {"prompt":"Bir bilişim teknolojisini kullanım alanına göre sınıflandır ve nedenini açıkla.","hint":"Kullanım amacını düşün."}
+      ]},"teacher":{"note":"Bu üç görev süreç bileşenlerinin hızlı kanıtıdır. Yanıtları sınıfın sonraki haftaya hazır oluşunu görmek için kullanın."},"tymm":{"phaseLabel":"Öğrenme kanıtı"},"sourceRefs":["BTY.5.1.1.a","BTY.5.1.1.b","BTY.5.1.1.c"],"evidence":true
+    }
+  ]
+}

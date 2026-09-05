@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#071525">
+  <title>KeskinLab · Hibrit Ders Player</title>
+  <link rel="icon" href="../brand/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="hybrid-v2.css">
+  <link rel="stylesheet" href="hybrid-v2-slides.css">
+  <link rel="stylesheet" href="hybrid-v2-revision.css">
+  <link rel="stylesheet" href="hybrid-v2-stage-standard.css">
+  <link rel="stylesheet" href="hybrid-v2-stage-patch.css">
+  <link rel="stylesheet" href="hybrid-v2-fit.css">
+  <link rel="stylesheet" href="hybrid-v2-activity-panel.css">
+  <link rel="stylesheet" href="hybrid-v2-activity-layout-fix.css">
+  <link rel="stylesheet" href="hybrid-v2-surface-family.css">
+  <link rel="stylesheet" href="hybrid-v2-scene-pilot.css">
+  <link rel="stylesheet" href="hybrid-v2-scene-final-fix.css">
+</head>
+<body>
+<div class="shell" id="shell">
+  <aside class="rail">
+    <a class="brand" href="../classroom-5-sinif.html"><img src="../brand/devre-karakteri.svg" alt=""><b>Keskin<span>Lab</span></b></a>
+    <div class="rail-label">DERS AKIŞI</div>
+    <nav id="chapterNav" class="chapter-nav"></nav>
+    <button class="rail-btn prep-btn" id="prepBtn" type="button">HAFTAYA HAZIRLIK</button>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <div class="course-meta"><div><b>5. SINIF BTY</b><i></i><b>1. HAFTA</b></div><span id="themeText">Bilişim Teknolojilerinin Hayatımızdaki Yeri</span></div>
+      <div class="top-actions"><button id="teacherBtn" type="button">ÖĞRETMEN PANELİ</button><button id="fullscreenBtn" type="button" aria-label="Tam ekran">⛶</button></div>
+    </header>
+    <section class="workspace">
+      <div class="stage-wrap"><article class="stage" id="stage"></article></div>
+      <section class="promptbar" id="promptbar">
+        <div class="prompt-icon" id="promptIcon">?</div>
+        <div class="prompt-copy"><strong id="promptTitle">Sıran sizde</strong><span id="promptText">Düşün ve paylaş.</span></div>
+        <button id="promptAction" class="prompt-action" type="button" hidden></button>
+        <div class="prompt-hint" id="promptHint">DÜŞÜN · PAYLAŞ</div>
+      </section>
+    </section>
+    <footer class="bottombar">
+      <button class="nav-btn" id="prevBtn" type="button">← <span>ÖNCEKİ</span></button>
+      <div class="progress"><div class="progress-copy"><span id="chapterLabel">BAŞLANGIÇ</span><b id="stepLabel">BÖLÜM 01 / 10</b></div><div class="progress-track"><i id="progressFill"></i></div></div>
+      <button class="nav-btn next" id="nextBtn" type="button"><span>SONRAKİ</span> →</button>
+    </footer>
+  </main>
+</div>
+<aside class="drawer" id="teacherDrawer" aria-hidden="true"><div class="drawer-head"><div><small>ÖĞRETMEN KATMANI</small><h2 id="drawerTitle">Bu adımda</h2></div><button id="closeDrawer" type="button">×</button></div><div id="teacherContent" class="teacher-content"></div></aside>
+<div id="scrim" class="scrim" hidden></div>
+<div id="loading" class="loading"><div class="loading-mark">K</div><strong>Ders hazırlanıyor</strong><span>5. Sınıf BTY · Hafta 01</span></div>
+<div id="portrait" class="portrait"><strong>Dersi yatay ekranda aç.</strong><span>Akıllı tahta ve yatay ekranlar için tasarlanmıştır.</span></div>
+<script src="hybrid-v2.js"></script>
+<script src="hybrid-v2-activity-panel.js"></script>
+<script src="hybrid-v2-scene-pilot.js"></script>
+</body>
+</html>
