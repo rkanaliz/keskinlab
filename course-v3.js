@@ -281,10 +281,8 @@
       var planSp = D.dailyPlans[n];
       if (planSp) actions.push('<a href="' + planSp + '" class="btn btn-secondary">Günlük Planı Gör</a>');
     }
+    flowEl.classList.toggle('has-following-actions', actions.length > 0);
     actionsEl.innerHTML = actions.join('');
-
-    // görsel slot
-    renderVisual(week);
 
     // materyaller
     renderMaterials(week);

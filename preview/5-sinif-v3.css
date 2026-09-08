@@ -203,14 +203,16 @@ body.v3-modal-open { overflow: hidden; }
   padding: 4px 10px; border-radius: 999px; background: var(--color-accent-soft); color: var(--color-accent);
 }
 
-.week-surface-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: start; margin-bottom: 28px; }
+.week-surface-grid { margin-bottom: 14px; }
+.week-surface-copy { max-width: 760px; }
 
 .week-kicker { font-size: 13px; font-weight: 600; color: var(--color-accent); text-transform: uppercase; letter-spacing: .04em; margin: 0 0 10px; }
 .week-topic { font-size: 30px; font-weight: 700; letter-spacing: -.015em; line-height: 1.15; color: var(--color-text); margin: 0 0 14px; }
 .week-explainer { font-size: 16px; line-height: 1.65; color: var(--color-text-secondary); margin: 0 0 22px; max-width: 44ch; }
 
 /* Akış — küçük bir öğrenme rotası gibi (form filtresi değil) */
-.flow-chips { display: flex; flex-wrap: wrap; align-items: center; gap: 0; margin-bottom: 26px; }
+.flow-chips { display: flex; flex-wrap: wrap; align-items: center; gap: 0; margin-bottom: 0; }
+.flow-chips.has-following-actions { margin-bottom: 26px; }
 .flow-chip {
   display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 600;
   color: var(--color-text); background: var(--color-surface); border: 1px solid var(--color-border);
@@ -223,54 +225,6 @@ body.v3-modal-open { overflow: hidden; }
 .flow-connector { width: 16px; height: 1px; background: var(--color-border); margin: 0 6px; flex-shrink: 0; }
 
 .week-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-
-/* Hafta görsel alanı — tema bazlı "sahne" yer tutucu (ikon kutusu değil) */
-.week-visual {
-  position: relative; aspect-ratio: 4 / 3; border-radius: var(--radius-lg); overflow: hidden;
-  background: var(--color-surface-subtle);
-  box-shadow: inset 0 0 0 1px var(--color-border);
-}
-.week-visual svg { width: 100%; height: 100%; display: block; }
-.week-visual .scene-tag {
-  position: absolute; left: 14px; bottom: 12px; font-family: var(--font-mono); font-size: 9.5px; font-weight: 600;
-  letter-spacing: .05em; color: var(--color-text-muted); background: rgba(255,255,255,.7); padding: 3px 7px; border-radius: 4px;
-}
-.week-visual.is-question {
-  display: flex;
-  align-items: stretch;
-  padding: 34px;
-  background: var(--color-surface-subtle);
-}
-.week-question { display: flex; flex-direction: column; width: 100%; }
-.week-question-label {
-  margin: 0 0 22px;
-  color: var(--color-accent);
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  font-weight: 600;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-.week-question h3 {
-  max-width: 15ch;
-  margin: 0;
-  color: var(--color-text);
-  font-size: clamp(23px, 2.1vw, 30px);
-  font-weight: 600;
-  letter-spacing: -.02em;
-  line-height: 1.22;
-}
-.week-question-prompts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 18px;
-  margin-top: auto;
-  padding-top: 18px;
-  border-top: 1px solid var(--color-border);
-  color: var(--color-text-secondary);
-  font-size: 12.5px;
-  line-height: 1.4;
-}
 
 /* Hafta materyalleri — tek aktif önizleme ve materyal seçici */
 
@@ -507,8 +461,6 @@ body.v3-modal-open { overflow: hidden; }
 @media (max-width: 1080px) {
   .main-nav { display: none; }
   .mobile-menu-trigger { display: flex; }
-  .week-surface-grid { grid-template-columns: 1fr; }
-  .week-visual { order: -1; aspect-ratio: 16/9; }
   .teacher-panel { grid-template-columns: 1fr 1fr; }
   .teacher-col-curriculum { grid-column: 1 / -1; }
 }
@@ -521,9 +473,6 @@ body.v3-modal-open { overflow: hidden; }
   .header-row { gap:8px; }.logo{min-width:0}.logo-tagline{font-size:7.5px;letter-spacing:.08em}.header-actions{gap:4px;min-width:0}.header-actions .btn-primary{padding:8px 9px;font-size:11.5px;white-space:nowrap}.mobile-menu-trigger{flex:0 0 36px}
   .week-topic { font-size: 22px; overflow-wrap:anywhere; }
   .week-explainer { overflow-wrap:anywhere; }
-  .week-visual.is-question { order: 0; min-height: 250px; padding: 26px; aspect-ratio: auto; }
-  .week-question-label { margin-bottom: 16px; }
-  .week-question h3 { font-size: 24px; }
   .week-surface-head { display:grid; grid-template-columns:36px minmax(0,1fr) 36px; gap: 8px; width:100%; }
   .week-surface-context { min-width:0; flex-wrap: wrap; justify-content: center; gap: 6px; }
   .week-status-pill { white-space:normal; text-align:center; max-width:100%; }
