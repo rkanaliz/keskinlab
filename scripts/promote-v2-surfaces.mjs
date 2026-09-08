@@ -141,8 +141,8 @@ for (const config of courses) {
       const files = (material.downloads || []).map(item => '/' + item.href.replace(/^\//, ''));
       if (material.preview && !files.includes('/' + material.preview.replace(/^\//, ''))) files.push('/' + material.preview.replace(/^\//, ''));
       const parts = material.type.split('/');
-      if (parts.length === 1) entry[parts[0]] = files;
-      else (entry[parts[0]] ||= {})[parts[1]] = files;
+      if (parts.length === 1) (entry[parts[0]] ||= []).push(...files);
+      else ((entry[parts[0]] ||= {})[parts[1]] ||= []).push(...files);
     }
     materials[String(week.week)] = entry;
   }
