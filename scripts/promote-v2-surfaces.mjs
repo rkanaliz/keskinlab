@@ -157,10 +157,10 @@ for (const config of courses) {
   let html = await readFile('preview/5-sinif-v3.html', 'utf8');
   html = html.replaceAll('../', '/').replaceAll('homepage-v2.html', '/')
     .replaceAll('5-sinif-v3.html', '/5-sinif-bty.html')
-    .replaceAll('5-sinif-v3.css', '/course-v3.css?v=20260908c')
+    .replaceAll('5-sinif-v3.css', '/course-v3.css?v=20260908d')
     .replaceAll('homepage-materials.js', '/site-materials.js')
     .replaceAll('5-sinif-v3-data.js', `/course-data-${config.key}.js`)
-    .replaceAll('5-sinif-v3.js', '/course-v3.js?v=20260908c')
+    .replaceAll('5-sinif-v3.js', '/course-v3.js?v=20260908d')
     .replaceAll('5. Sınıf BTY', config.title)
     .replaceAll('Bilişim Teknolojileri ve Yazılım', config.subject)
     .replaceAll('/5-sinif-bty.html', '/5-sinif-bty')

@@ -191,6 +191,23 @@
   // ---------------------------------------------------------------
   function renderVisual(week) {
     var el = document.getElementById('weekVisual');
+    if (week.n === 1 && !week.ozel) {
+      el.classList.add('is-question');
+      el.removeAttribute('aria-hidden');
+      el.innerHTML =
+        '<div class="week-question">' +
+          '<p class="week-question-label">Haftanın Sorusu</p>' +
+          '<h3>Telefon, akıllı saat, yazıcı ve oyun konsolu aynı işi mi yapıyor?</h3>' +
+          '<div class="week-question-prompts" aria-label="Soruyu düşünme yolları">' +
+            '<span>Ne işe yarıyor?</span>' +
+            '<span>Nerede kullanılıyor?</span>' +
+            '<span>Zamanla nasıl değişti?</span>' +
+          '</div>' +
+        '</div>';
+      return;
+    }
+    el.classList.remove('is-question');
+    el.setAttribute('aria-hidden', 'true');
     var scene = week.ozel ? SPECIAL_SCENE : (THEME_SCENES[String(week.temaNo)] || SPECIAL_SCENE);
     var tag = week.ozel ? 'ÖZEL HAFTA' : (THEME_LABELS[String(week.temaNo)] || '');
     el.innerHTML = scene + (tag ? '<span class="scene-tag">' + tag + '</span>' : '');

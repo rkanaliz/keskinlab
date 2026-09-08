@@ -1231,7 +1231,7 @@ window.KL5_DATA = {
   },
   "studentCopy": {
     "1": {
-      "explainer": "Telefon, akıllı saat, yazıcı ve oyun konsolu aynı işi mi yapıyor? Bu hafta bilişim teknolojilerini ne işe yaradıklarına göre ayıracağız."
+      "explainer": "Bu hafta bilişim teknolojilerini adlarına göre değil, ne işe yaradıklarına göre ayıracağız."
     },
     "2": {
       "explainer": "Uzun süre ekrana bakmak gözlerini yoruyor mu? Bu hafta bilişim teknolojilerinin hayatımıza kattıklarını ve bedenimize etkilerini konuşuyoruz.",
