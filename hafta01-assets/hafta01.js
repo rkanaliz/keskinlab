@@ -39,22 +39,6 @@ function render(){
   $('#next').disabled=index===slides.length-1;
 }
 
-function start(period){
-  index=period===2?10:0;
-  player.classList.add('open');
-  player.setAttribute('aria-hidden','false');
-  document.body.style.overflow='hidden';
-  stage.querySelector('.loading')?.remove();
-  render();
-}
-
-function close(){
-  player.classList.remove('open');
-  player.setAttribute('aria-hidden','true');
-  document.body.style.overflow='';
-  if(document.fullscreenElement)document.exitFullscreen?.();
-}
-
 function step(delta){
   const next=index+delta;
   if(next<0||next>=slides.length)return;
@@ -62,18 +46,14 @@ function step(delta){
   render();
 }
 
-$('[data-start="1"]').onclick=()=>start(1);
-$('[data-start="2"]').onclick=()=>start(2);
-$('#close').onclick=close;
 $('#prev').onclick=()=>step(-1);
 $('#next').onclick=()=>step(1);
 $('#full').onclick=()=>player.requestFullscreen?.();
 
 addEventListener('keydown',event=>{
-  if(!player.classList.contains('open'))return;
+  if(event.target instanceof HTMLInputElement||event.target instanceof HTMLTextAreaElement)return;
   if(event.key==='ArrowRight')step(1);
   if(event.key==='ArrowLeft')step(-1);
-  if(event.key==='Escape')close();
 });
 
 stage.addEventListener('touchstart',event=>{
@@ -85,4 +65,6 @@ stage.addEventListener('touchend',event=>{
   touchX=null;
   if(Math.abs(delta)>50)step(delta>0?-1:1);
 },{passive:true});
+stage.querySelector('.loading')?.remove();
+render();
 })();

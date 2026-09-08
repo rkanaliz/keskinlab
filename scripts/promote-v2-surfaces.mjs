@@ -65,6 +65,9 @@ courseJs = courseJs
   .replace("{ key: '5-sinif', label: '5. Sınıf BTY', page: '5-sinif-v3.html'", "{ key: '5-sinif', label: '5. Sınıf BTY', page: '/5-sinif-bty.html'")
   .replace("if (n === 1) {\n      actions.push('<a href=\"' + D.links.week1Lesson", "if (n === 1 && D.links.week1Lesson) {\n      actions.push('<a href=\"' + D.links.week1Lesson")
   .replace("(week.n === 1 ? D.links.week1Lesson : mats['sunum'][0])", "(week.n === 1 && D.links.week1Lesson ? D.links.week1Lesson : mats['sunum'][0])");
+courseJs = courseJs
+  .replace('Sınıf Sunumunu Başlat', 'Hafta 01 Ders Alanını Aç')
+  .replace("if (mats['sunum']) links.push('<a href=\"' + (week.n === 1 && D.links.week1Lesson ? D.links.week1Lesson : mats['sunum'][0]) + '\" class=\"teacher-link\">Sınıf Sunumunu Aç</a>');", "if (mats['sunum'] && !(week.n === 1 && D.links.week1Lesson)) links.push('<a href=\"' + mats['sunum'][0] + '\" class=\"teacher-link\">Sınıf Sunumunu Aç</a>');");
 courseJs = courseJs.replaceAll('/5-sinif-bty.html', '/5-sinif-bty').replaceAll('/6-sinif-bty.html', '/6-sinif-bty').replaceAll('/robotik-kodlama.html', '/robotik-kodlama').replaceAll('/yapay-zeka.html', '/yapay-zeka').replaceAll('/takvim.html', '/takvim');
 courseJs = courseJs.replace(
   "var first = week.cikti.split(/BTY\\.5\\.\\d+\\.\\d+\\.?\\s*/).filter(Boolean)[0] || week.cikti;\n    first = first.trim().replace(/\\s*BTY\\.5.*$/, '');",
