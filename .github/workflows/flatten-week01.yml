@@ -1,0 +1,73 @@
+name: One-time Week 01 route cleanup
+on:
+  push:
+    branches: [keskinlab-redesign-2026]
+    paths: [.github/workflows/flatten-week01.yml]
+permissions:
+  contents: write
+jobs:
+  migrate:
+    if: github.ref == 'refs/heads/keskinlab-redesign-2026'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Verify expected base and install dependencies
+        run: |
+          test "$(git rev-parse HEAD^)" = "e9fd7ba9b76fa9217d830e0a0355e508b47e73b2"
+          npm ci
+      - name: Apply the scoped source migration
+        run: |
+          node scripts/flatten-week01.mjs
+          git diff --check
+          node --check course-v3.js
+          node --check preview/5-sinif-v3.js
+          node --check scripts/promote-v2-surfaces.mjs
+      - name: Verify migration is idempotent
+        run: |
+          git diff --binary > "$RUNNER_TEMP/first.diff"
+          node scripts/flatten-week01.mjs
+          git diff --binary > "$RUNNER_TEMP/second.diff"
+          cmp "$RUNNER_TEMP/first.diff" "$RUNNER_TEMP/second.diff"
+      - name: Build and validate the site
+        run: |
+          npm run build
+          npm run validate
+      - name: Check scope and remove temporary migration files
+        run: |
+          git diff --quiet -- materyaller hafta01-assets brand data gunluk-planlar-5sinif gunluk-planlar-6sinif gunluk-planlar-robotik gunluk-planlar-yapay-zeka
+          git rm -- .github/workflows/flatten-week01.yml scripts/flatten-week01.mjs
+          git add -u
+          git diff --cached --check
+          python3 - <<'PY'
+          import subprocess
+          allowed = {
+              '_redirects', '5-sinif-hafta01.html',
+              'preview/5-sinif-v3.js', 'course-v3.js',
+              'preview/5-sinif-v3-data.js', 'course-data-5-sinif.js',
+              'scripts/promote-v2-surfaces.mjs',
+              'preview/homepage-v2.html', 'preview/homepage-v2.js',
+              'preview/homepage-materials.js', 'site-materials.js', 'site-v2.js',
+              'index.html', '5-sinif-bty.html', 'classroom-5-sinif.html',
+              'dijital-icerikler.html',
+              '.github/workflows/flatten-week01.yml', 'scripts/flatten-week01.mjs'
+          }
+          changed = set(subprocess.check_output(['git','diff','--cached','--name-only'],text=True).splitlines())
+          unexpected = changed - allowed
+          if unexpected:
+              raise SystemExit('Unexpected changes: ' + ', '.join(sorted(unexpected)))
+          print('Scoped files:', '\n'.join(sorted(changed)))
+          PY
+      - name: Commit only to the approved branch
+        run: |
+          git config user.name "KeskinLab Migration"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Use the 5th-grade course page as the Week 01 lesson workspace"
+          git push origin HEAD:refs/heads/keskinlab-redesign-2026
