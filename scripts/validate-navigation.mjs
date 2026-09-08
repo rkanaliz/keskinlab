@@ -1,11 +1,11 @@
 import { promises as fs } from 'node:fs';
 
 const publicSurfaces = [
-  'index.html', 'hakkinda.html', 'iletisim.html', 'dijital-araclar.html',
+  'index.html', 'hakkinda.html', 'iletisim.html', 'dijital-araclar.html', 'dijital-icerikler.html',
   'evrak-cantasi.html', 'takvim.html', '5-sinif-bty.html', '6-sinif-bty.html',
-  'robotik-kodlama.html', 'yapay-zeka.html'
+  'robotik-kodlama.html', 'yapay-zeka.html', '5-sinif-hafta01.html'
 ];
-const essentialTargets = ['href="/"', '/5-sinif-bty', '/6-sinif-bty', '/takvim', '/hakkinda'];
+const essentialTargets = ['href="/"', '/5-sinif-bty', '/6-sinif-bty', '/dijital-icerikler', '/evrak-cantasi', '/hakkinda'];
 const errors = [];
 let canonicalHeader = null;
 let canonicalFooter = null;
@@ -24,7 +24,7 @@ for (const file of publicSurfaces) {
     if (!html.includes(target)) errors.push(`${file}: eksik global navigasyon hedefi ${target}`);
   }
   if (/Gizlilik[\s\S]{0,100}href=["']\/hakkinda|href=["']\/hakkinda["'][^>]*>Gizlilik/.test(html)) errors.push(`${file}: Gizlilik etiketi Hakkında hedefine bağlanmış`);
-  for (const token of ['data-shared-shell="v2"','searchTrigger','startLesson','mobileMenuTrigger','site-footer','/site-shell.css','/dijital-araclar']) {
+  for (const token of ['data-shared-shell="v2"','searchTrigger','startLesson','mobileMenuTrigger','site-footer','/site-shell.css','/dijital-icerikler','/evrak-cantasi']) {
     if (!html.includes(token)) errors.push(`${file}: ortak V2 shell öğesi eksik ${token}`);
   }
   const header = html.match(/<header class="site-header"[\s\S]*?<\/header>/)?.[0];
@@ -39,7 +39,7 @@ for (const file of publicSurfaces) {
 }
 
 const home = await fs.readFile('index.html', 'utf8');
-const order = ['/5-sinif-bty', '/6-sinif-bty', '/#dersler', '/evrak-cantasi', '/takvim', '/hakkinda'];
+const order = ['/5-sinif-bty', '/6-sinif-bty', '/#dersler', '/dijital-icerikler', '/evrak-cantasi', '/hakkinda'];
 let cursor = -1;
 for (const href of order) {
   const next = home.indexOf(`href="${href}"`, cursor + 1);
@@ -50,6 +50,8 @@ if (!home.includes('id="searchTrigger"')) errors.push('index.html: arama kontrol
 if (!home.includes('id="startLesson"')) errors.push('index.html: Derse Başla kontrolü bulunamadı');
 const desktopNav = home.match(/<nav class="main-nav"[\s\S]*?<\/nav>/)?.[0] || '';
 if (/>Ana Sayfa<\//.test(desktopNav)) errors.push('index.html: logo varken masaüstü menüsünde gereksiz Ana Sayfa bağlantısı var');
+if (/href="\/takvim"/.test(desktopNav)) errors.push('index.html: Takvim masaüstü üst menüden çıkarılmamış');
+if (/nav-resource-group|nav-resource-menu/.test(desktopNav)) errors.push('index.html: kaldırılması istenen açılır kaynak menüsü hâlâ mevcut');
 for (const bad of ['/dijital-araclar#ders-hazirla','/dijital-araclar#d3']) {
   if (home.includes(`data-material-filter`) && home.includes(`href="${bad}"`)) errors.push(`index.html: materyal filtresi gerçek materyal yerine rehbere gidiyor ${bad}`);
 }

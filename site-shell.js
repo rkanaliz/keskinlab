@@ -6,7 +6,7 @@
   const courses = [['5. Sınıf BTY', '/5-sinif-bty'], ['6. Sınıf BTY', '/6-sinif-bty'], ['Robotik Kodlama', '/robotik-kodlama'], ['Yapay Zekâ Uygulamaları', '/yapay-zeka']];
   const labels = { sunum: 'Sunu', 'ders-notu': 'Ders Notu', 'ogrenci-etkinligi': 'Öğrenci Etkinliği / Çalışma Kâğıdı', infografik: 'İnfografik', 'hafta-ozeti': 'Hafta Özeti', 'olcme-degerlendirme/kisa-cevap': 'Kısa Cevaplı Test', 'olcme-degerlendirme/rubrik': 'Rubrik', 'ogretmen/gozlem-formu': 'Öğretmen Gözlem Formu' };
   const courseNames = { '5-sinif': '5. Sınıf BTY', '6-sinif': '6. Sınıf BTY', robotik: 'Robotik Kodlama', 'yapay-zeka': 'Yapay Zekâ' };
-  const baseRecords = [...courses.map(([title, href]) => ['DERS', title, href]), ['EVRAK', 'Evrak Çantası', '/evrak-cantasi'], ['TAKVİM', 'Eğitim Takvimi', '/takvim'], ['REHBER', 'Dijital Araçlar', '/dijital-araclar'], ['SAYFA', 'Hakkında', '/hakkinda']];
+  const baseRecords = [...courses.map(([title, href]) => ['DERS', title, href]), ['İÇERİK', 'Dijital İçerikler', '/dijital-icerikler'], ['EVRAK', 'Evraklar', '/evrak-cantasi'], ['TAKVİM', 'Eğitim Takvimi', '/takvim'], ['REHBER', 'MEB / YEĞİTEK Dijital Araçlar', '/dijital-araclar'], ['SAYFA', 'Hakkında', '/hakkinda']];
   const materialRecords = (window.KeskinLabHomepageMaterials || []).map((item) => ['MATERYAL', `${courseNames[item.course]} · Hafta ${item.week} · ${labels[item.type] || item.type}`, `/${String(item.href).replace(/^\//, '')}`]);
   const records = [...baseRecords, ...materialRecords];
   const normalize = (value) => String(value || '').toLocaleLowerCase('tr-TR').replace(/ı/g, 'i').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();

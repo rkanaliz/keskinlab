@@ -782,3 +782,9 @@ ul { list-style: none; margin: 0; padding: 0; }
   .section-head { flex-direction: column; align-items: flex-start; gap: 10px; }
   .footer-row { flex-direction: column; gap: 10px; align-items: flex-start; }
 }
+
+@media (max-width: 360px) {
+  .hero-copy { min-width: 0; }
+  .hero-actions { flex-wrap: wrap; }
+  .hero-actions .btn { flex: 1 1 100%; justify-content: center; }
+}

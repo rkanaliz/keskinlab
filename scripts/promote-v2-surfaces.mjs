@@ -9,7 +9,7 @@ const courses = [
 
 const searchIcon = `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M16 16l-3.4-3.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>`;
 const arrowIcon = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
-const navItems = [['/5-sinif-bty','5. Sınıf'],['/6-sinif-bty','6. Sınıf'],['/#dersler','Seçmeli Dersler'],['/takvim','Takvim'],['/hakkinda','Hakkında']];
+const navItems = [['/5-sinif-bty','5. Sınıf'],['/6-sinif-bty','6. Sınıf'],['/#dersler','Seçmeli Dersler'],['/dijital-icerikler','Dijital İçerikler'],['/evrak-cantasi','Evraklar'],['/hakkinda','Hakkında']];
 
 function active(current, href) {
   const elective = ['/robotik-kodlama', '/yapay-zeka'].includes(current) && href === '/#dersler';
@@ -17,13 +17,11 @@ function active(current, href) {
 }
 
 function shellHeader(current) {
-  const leading = navItems.slice(0, 3).map(([href,label]) => `<a href="${href}" class="nav-link${active(current, href)}">${label}</a>`).join('');
-  const trailing = navItems.slice(3).map(([href,label]) => `<a href="${href}" class="nav-link${active(current, href)}">${label}</a>`).join('');
-  const resourcesActive = ['/evrak-cantasi', '/dijital-araclar'].includes(current);
-  return `<header class="site-header" data-shared-shell="v2"><div class="container header-row"><a class="logo" href="/"><span class="logo-word">KeskinLab</span><span class="logo-tagline">ÖĞRENMEYİ TASARLAR</span></a><nav class="main-nav" aria-label="Ana navigasyon" id="mainNav">${leading}<div class="nav-resource-group"><a href="/evrak-cantasi" class="nav-link${resourcesActive ? ' is-active" aria-current="page' : ''}">İçerikler ve Evraklar <span aria-hidden="true">⌄</span></a><div class="nav-resource-menu"><a href="/evrak-cantasi">Evrak Çantası</a><a href="/dijital-araclar">Dijital Araçlar</a></div></div>${trailing}</nav><div class="header-actions"><button class="icon-btn" id="searchTrigger" aria-label="Ara" aria-haspopup="dialog" type="button">${searchIcon}</button><button id="startLesson" class="btn btn-primary btn-compact" aria-expanded="false" aria-controls="lessonMenu" type="button">Derse Başla ${arrowIcon}</button><div class="header-menu" id="lessonMenu" hidden></div><button class="mobile-menu-trigger icon-btn" id="mobileMenuTrigger" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobileMenu" type="button">☰</button></div></div></header>`;
+  const links = navItems.map(([href,label]) => `<a href="${href}" class="nav-link${active(current, href)}">${label}</a>`).join('');
+  return `<header class="site-header" data-shared-shell="v2"><div class="container header-row"><a class="logo" href="/"><span class="logo-word">KeskinLab</span><span class="logo-tagline">ÖĞRENMEYİ TASARLAR</span></a><nav class="main-nav" aria-label="Ana navigasyon" id="mainNav">${links}</nav><div class="header-actions"><button class="icon-btn" id="searchTrigger" aria-label="Ara" aria-haspopup="dialog" type="button">${searchIcon}</button><button id="startLesson" class="btn btn-primary btn-compact" aria-expanded="false" aria-controls="lessonMenu" type="button">Derse Başla ${arrowIcon}</button><div class="header-menu" id="lessonMenu" hidden></div><button class="mobile-menu-trigger icon-btn" id="mobileMenuTrigger" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobileMenu" type="button">☰</button></div></div></header>`;
 }
-const shellOverlays = `<div id="mobileBackdrop" class="mobile-backdrop" hidden></div><nav class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobil navigasyon" hidden><button class="menu-close" type="button" aria-label="Menüyü kapat">Kapat</button><a href="/">Ana Sayfa</a><a href="/5-sinif-bty">5. Sınıf</a><a href="/6-sinif-bty">6. Sınıf</a><a href="/#dersler">Seçmeli Dersler</a><a href="/evrak-cantasi">İçerikler ve Evraklar</a><a href="/dijital-araclar">Dijital Araçlar</a><a href="/takvim">Takvim</a><a href="/hakkinda">Hakkında</a><button class="menu-search" type="button">Ara</button></nav><div class="search-dialog" id="searchDialog" role="dialog" aria-modal="true" aria-label="KeskinLab'da ara" hidden><div class="search-shell"><div class="search-head"><label for="searchInput">KeskinLab'da ara</label><button id="searchClose" type="button">Kapat</button></div><input id="searchInput" type="search" autocomplete="off" placeholder="Konu, hafta, evrak veya takvim ara"><div id="searchResults" class="search-results"></div></div></div>`;
-const shellFooter = `<footer class="site-footer" data-shared-shell="v2"><div class="container footer-row"><span class="footer-text">© 2026 KeskinLab. Tüm hakları saklıdır.</span><nav class="footer-nav" aria-label="Alt navigasyon"><a href="/hakkinda">Hakkında</a><a href="/iletisim">İletişim</a><a href="/dijital-araclar">Dijital Araçlar</a></nav></div></footer>`;
+const shellOverlays = `<div id="mobileBackdrop" class="mobile-backdrop" hidden></div><nav class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobil navigasyon" hidden><button class="menu-close" type="button" aria-label="Menüyü kapat">Kapat</button><a href="/">Ana Sayfa</a><a href="/5-sinif-bty">5. Sınıf</a><a href="/6-sinif-bty">6. Sınıf</a><a href="/#dersler">Seçmeli Dersler</a><a href="/dijital-icerikler">Dijital İçerikler</a><a href="/evrak-cantasi">Evraklar</a><a href="/hakkinda">Hakkında</a><button class="menu-search" type="button">Ara</button></nav><div class="search-dialog" id="searchDialog" role="dialog" aria-modal="true" aria-label="KeskinLab'da ara" hidden><div class="search-shell"><div class="search-head"><label for="searchInput">KeskinLab'da ara</label><button id="searchClose" type="button">Kapat</button></div><input id="searchInput" type="search" autocomplete="off" placeholder="Konu, hafta, evrak veya takvim ara"><div id="searchResults" class="search-results"></div></div></div>`;
+const shellFooter = `<footer class="site-footer" data-shared-shell="v2"><div class="container footer-row"><span class="footer-text">© 2026 KeskinLab. Tüm hakları saklıdır.</span><nav class="footer-nav" aria-label="Alt navigasyon"><a href="/takvim">Takvim</a><a href="/hakkinda">Hakkında</a><a href="/iletisim">İletişim</a><a href="/dijital-araclar">Dijital Araçlar</a></nav></div></footer>`;
 
 function applySharedShell(html, current, { editorial = false } = {}) {
   html = html
@@ -89,6 +87,28 @@ function stripCodes(text = '') {
 }
 
 const materialManifest = JSON.parse(await readFile('generated/materials.json', 'utf8'));
+
+function escapeHtml(value = '') {
+  return String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
+}
+
+const catalogSections = Object.entries(materialManifest.courses || {}).map(([courseKey, course]) => {
+  const weekCards = Object.values(course.weeks || {}).filter(week => week.materials?.length).map(week => {
+    const materials = week.materials.map(material => {
+      const links = [];
+      if (material.webPreview || material.preview) links.push(`<a class="material-action primary" href="/${escapeHtml(material.webPreview || material.preview).replace(/^\//, '')}" target="_blank" rel="noopener">Aç</a>`);
+      for (const download of material.downloads || []) links.push(`<a class="material-action" href="/${escapeHtml(download.href).replace(/^\//, '')}" download="${escapeHtml(download.filename)}">${escapeHtml(download.format.toUpperCase())} indir</a>`);
+      return `<article class="material-card"><div><span>${escapeHtml(material.label)}</span><h3>${escapeHtml(material.label)} ${escapeHtml(material.index)}</h3></div><div class="material-actions">${links.join('')}</div></article>`;
+    }).join('');
+    return `<section class="catalog-week"><div class="catalog-week-head"><span>HAFTA ${String(week.week).padStart(2, '0')}</span><h2>${escapeHtml(course.title)}</h2></div><div class="material-grid">${materials}</div></section>`;
+  }).join('');
+  return weekCards;
+}).join('');
+
+let catalogHtml = `<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Dijital İçerikler — KeskinLab</title><meta name="description" content="KeskinLab'ın gerçekten mevcut sunum, etkinlik, ders notu, test ve öğretmen materyalleri."><link rel="canonical" href="https://www.keskinlab.com/dijital-icerikler"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/dijital-icerikler.css"></head><body>${shellHeader('/dijital-icerikler')}<main><section class="catalog-hero"><div class="container"><p class="eyebrow">GERÇEK KESKİNLAB MATERYALLERİ</p><h1>Dijital İçerikler</h1><p>Sunum, etkinlik, ders notu, test ve öğretmen araçlarını doğrudan açın veya indirin. Burada yalnız dosya sisteminde gerçekten bulunan materyaller gösterilir.</p><a class="guide-link" href="/dijital-araclar">MEB / YEĞİTEK Dijital Araçlar Rehberi →</a></div></section><div class="container catalog-body">${catalogSections || '<p>Henüz yayımlanmış materyal bulunmuyor.</p>'}</div></main>${shellOverlays}${shellFooter}<script src="/site-materials.js"></script><script src="/site-shell.js"></script></body></html>`;
+catalogHtml = applySharedShell(catalogHtml, '/dijital-icerikler');
+await writeFile('dijital-icerikler.html', catalogHtml);
+
 for (const config of courses) {
   const raw = JSON.parse(await readFile(`data/${config.key}.json`, 'utf8'));
   const themeNames = [];
@@ -182,6 +202,15 @@ for (const file of editorialFiles) {
   if (!html.includes('src="/site-shell.js"')) html = html.replace('</body>', '<script src="/site-materials.js"></script><script src="/site-shell.js"></script></body>');
   await writeFile(file, html);
 }
+
+let weekWorkspace = await readFile('5-sinif-hafta01.html', 'utf8');
+weekWorkspace = weekWorkspace
+  .replace(/<header class="(?:top|site-header)"[^>]*>[\s\S]*?<\/header>/, shellHeader('/5-sinif-bty'))
+  .replace(/<body(?:\s[^>]*)?>/, '<body class="lesson-workspace-v2">');
+if (!weekWorkspace.includes('href="/site-shell.css"')) weekWorkspace = weekWorkspace.replace('</head>', '<link rel="stylesheet" href="/site-shell.css"></head>');
+if (!weekWorkspace.includes('id="mobileMenu"')) weekWorkspace = weekWorkspace.replace('<section class="player"', `${shellOverlays}${shellFooter}<section class="player"`);
+if (!weekWorkspace.includes('src="/site-shell.js"')) weekWorkspace = weekWorkspace.replace('<script src="/hafta01-assets/hafta01.js"></script>', '<script src="/site-materials.js"></script><script src="/site-shell.js"></script><script src="/hafta01-assets/hafta01.js"></script>');
+await writeFile('5-sinif-hafta01.html', weekWorkspace);
 
 let editorialCss = await readFile('keskinlab-editorial.css', 'utf8');
 editorialCss = editorialCss
