@@ -7,7 +7,16 @@ const publicSurfaces = [
 ];
 const essentialTargets = ['href="/"', '/5-sinif-bty', '/6-sinif-bty', '/takvim', '/hakkinda'];
 const errors = [];
-const editorialSurfaces = new Set(['hakkinda.html','iletisim.html','dijital-araclar.html','evrak-cantasi.html','takvim.html']);
+let canonicalHeader = null;
+let canonicalFooter = null;
+
+function shellSignature(fragment) {
+  return fragment
+    .replace(/\s(?:class="nav-link )?is-active"/g, (value) => value.startsWith(' class') ? ' class="nav-link"' : '"')
+    .replace(/\saria-current="page"/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
 
 for (const file of publicSurfaces) {
   const html = await fs.readFile(file, 'utf8');
@@ -15,15 +24,22 @@ for (const file of publicSurfaces) {
     if (!html.includes(target)) errors.push(`${file}: eksik global navigasyon hedefi ${target}`);
   }
   if (/Gizlilik[\s\S]{0,100}href=["']\/hakkinda|href=["']\/hakkinda["'][^>]*>Gizlilik/.test(html)) errors.push(`${file}: Gizlilik etiketi Hakkında hedefine bağlanmış`);
-  if (editorialSurfaces.has(file)) {
-    for (const token of ['site-shell-header','siteShellSearchButton','siteShellMenuButton','site-shell-footer','/site-shell.css','/site-shell.js']) {
-      if (!html.includes(token)) errors.push(`${file}: ortak site shell öğesi eksik ${token}`);
-    }
+  for (const token of ['data-shared-shell="v2"','searchTrigger','startLesson','mobileMenuTrigger','site-footer','/site-shell.css','/dijital-araclar']) {
+    if (!html.includes(token)) errors.push(`${file}: ortak V2 shell öğesi eksik ${token}`);
   }
+  const header = html.match(/<header class="site-header"[\s\S]*?<\/header>/)?.[0];
+  const footer = html.match(/<footer class="site-footer"[\s\S]*?<\/footer>/)?.[0];
+  if (!header || !footer) continue;
+  const headerSignature = shellSignature(header);
+  const footerSignature = shellSignature(footer);
+  canonicalHeader ||= headerSignature;
+  canonicalFooter ||= footerSignature;
+  if (headerSignature !== canonicalHeader) errors.push(`${file}: header kanonik V2 shell ile eşleşmiyor`);
+  if (footerSignature !== canonicalFooter) errors.push(`${file}: footer kanonik V2 shell ile eşleşmiyor`);
 }
 
 const home = await fs.readFile('index.html', 'utf8');
-const order = ['/5-sinif-bty', '/6-sinif-bty', '#dersler', '#dijital-icerikler', '/takvim', '/hakkinda'];
+const order = ['/5-sinif-bty', '/6-sinif-bty', '/#dersler', '/evrak-cantasi', '/takvim', '/hakkinda'];
 let cursor = -1;
 for (const href of order) {
   const next = home.indexOf(`href="${href}"`, cursor + 1);
