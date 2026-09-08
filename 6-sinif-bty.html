@@ -1,10 +1,202 @@
-<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>6. Sınıf BTY — KeskinLab</title><meta name="description" content="KeskinLab 6. Sınıf BTY: Haftanın Dersi, Yıllık Akış, Program Yapısı ve Derse Başla görünümü."><link rel="icon" href="brand/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="classroom-v2.css"></head><body>
-<input id="drawerToggle" type="checkbox" aria-hidden="true"><label class="scrim" for="drawerToggle" aria-label="Menüyü kapat"></label><aside class="drawer"><div class="drawer-top"><div class="brand"><svg viewBox="0 0 64 64" fill="none"><rect x="14" y="18" width="36" height="30" rx="7" stroke="#146059" stroke-width="4"/><path d="M22 31l3 3 3-3M36 31l3 3 3-3" stroke="#1E8A80" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 18V10" stroke="#146059" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="7" r="4" fill="#E2A63B"/></svg><span>KeskinLab</span></div><label class="drawer-close" for="drawerToggle">×</label></div><div class="drawer-course"><span class="sm">DERS</span><b>6. Sınıf BTY</b></div><a class="navx" href="#" data-drawer-view="current">Haftanın Dersi</a><a class="navx" href="#" data-drawer-view="weeks">Yıllık Akış</a><a class="navx" href="#" data-drawer-view="curriculum">Program Yapısı</a><div class="drawer-course"><span class="sm">KESKİNLAB</span><b>Genel erişim</b></div><a class="navx" href="/#bugun">Bu Hafta</a><a class="navx" href="/#dersler">Dersler</a><a class="navx" href="/evrak-cantasi.html">Evrak Çantası</a><a class="navx" href="/takvim.html">Eğitim Takvimi</a><a class="navx" href="/dijital-araclar">Dijital Araçlar</a><a class="navx" href="/hakkinda">Hakkında</a><a class="navx" href="/iletisim">İletişim</a><a class="navx" href="/">← Ana Sayfa</a></aside>
-<header id="pageHeader"><div class="wrap topbar"><a class="brand" href="/"><svg viewBox="0 0 64 64" fill="none"><rect x="14" y="18" width="36" height="30" rx="7" stroke="#146059" stroke-width="4"/><path d="M22 31l3 3 3-3M36 31l3 3 3-3" stroke="#1E8A80" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 18V10" stroke="#146059" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="7" r="4" fill="#E2A63B"/></svg><span>KeskinLab</span></a><nav class="desktop-nav"><a href="/">Ana Sayfa</a><a href="/#dersler">Dersler</a><a href="#" data-top-view="current">Haftanın Dersi</a><a href="#" data-top-view="weeks">Yıllık Akış</a><a href="#" data-top-view="curriculum">Program Yapısı</a><a href="/dijital-araclar">Dijital Araçlar</a><a href="/hakkinda">Hakkında</a></nav><span class="course-tag">6. SINIF · BTY</span><label class="menu-trigger" for="drawerToggle"><span>MENÜ</span><span>≡</span></label></div></header>
-<main id="shell"><section class="course-hero"><div class="wrap"><div class="course-kicker">2026–2027 · Bilişim Teknolojileri ve Yazılım</div><div class="course-title-row"><h1>6. Sınıf BTY</h1><div class="course-side"><p>Haftanın dersine doğrudan gir; yıllık akışı veya öğretim programının tamamını istediğinde aynı yüzeyde aç.</p><div class="course-metrics"><div class="metric"><b>37</b>TOPLAM HAFTA</div><div class="metric"><b>24</b>ÖĞRENME ÇIKTISI</div><div class="metric"><b>6</b>TEMA</div></div></div></div></div></section>
-<div class="viewbar"><div class="wrap viewtabs"><button class="viewtab active" data-view="current">HAFTANIN DERSİ</button><button class="viewtab" data-view="weeks">YILLIK AKIŞ</button><button class="viewtab" data-view="curriculum">PROGRAM YAPISI</button></div></div>
-<section class="view active" id="view-current"><div class="wrap"><div class="section-head"><div class="section-label">Şimdi</div><h2 id="currentHeading">Sıradaki ders hazır.</h2></div><div class="current-grid"><div class="week-id"><div class="lbl">HAFTA</div><div class="num" id="cwNum">01</div><div class="date" id="cwDate"></div></div><div class="current-copy"><div class="state" id="cwState">HAZIRLIK MODU</div><h3 id="cwTopic"></h3><p id="cwLead"></p><div class="theme-line">TEMA · <b id="cwTheme"></b></div><div class="actions"><button class="btn primary" id="startLesson">Derse Başla →</button><button class="btn" data-go="weeks">Yıllık Akış</button><button class="btn" data-go="curriculum">Program Yapısını Gör</button></div></div></div><div class="curriculum-strip"><span class="csl">ÖĞRENME ÇIKTISI</span><span class="csv" id="cwOutcome"></span></div><div class="preview-note" id="loadNote">Tarih motoru gerçek 2026–2027 hafta verisini kullanır. Dönem başlamadan önce sıradaki ders haftasını gösterir.</div></div></section>
-<section class="view" id="view-weeks"><div class="wrap"><div class="section-head"><div class="section-label">Yıllık Akış</div><h2>37 hafta. Tek çizgide.</h2></div><div class="week-list" id="weekList"></div></div></section>
-<section class="view" id="view-curriculum"><div class="wrap"><div class="section-head"><div class="section-label">Program Yapısı</div><h2>Programın tamamı.</h2></div><div class="curriculum" id="curriculumRoot"></div><div class="preview-note">Öğrenme çıktıları ve hafta eşleşmeleri 6. sınıf yıllık plan verisinden alınır; yeni kazanım üretilmez.</div></div></section></main>
-<section class="lesson" id="lessonView"><div class="wrap"><button class="lesson-back" id="lessonBack">← 6. Sınıf BTY</button><div class="lesson-head"><div class="lesson-index"><small>HAFTA</small><span id="lessonNo">01</span></div><div class="lesson-title"><div class="ey" id="lessonEy"></div><h2 id="lessonTitle"></h2><div class="lesson-meta" id="lessonMeta"></div></div></div><div class="lesson-flow"><div class="flow-section"><div class="flow-n">01 · DERSE BAK</div><div><h3 class="flow-title">Ders Sunumu</h3><p class="flow-desc">Sınıfta veya akıllı tahtada dersin görsel akışı burada açılır.</p><div class="slide-demo"><div class="slide-inner"><div class="mini">KESKİNLAB · 6. SINIF BTY</div><strong id="slideTopic"></strong><small>HAFTA <span id="slideWeek"></span> · SUNUM ALANI</small></div></div></div></div><div class="flow-section"><div class="flow-n">02 · GÖR</div><div><h3 class="flow-title">İnfografikler</h3><p class="flow-desc">Konunun görsel anlatımları ve sınıfta hızlı başvuru materyalleri.</p><div class="material-rail"><div class="mat"><b>İnfografik</b><span>GÖRSEL MATERYAL</span></div><div class="mat"><b>Hafta Özeti</b><span>HIZLI TEKRAR</span></div></div></div></div><div class="flow-section"><div class="flow-n">03 · OKU</div><div><h3 class="flow-title">Ders Notu</h3><p class="flow-desc">Öğrencinin sayfa içinde okuyabileceği ders içeriği. İndirme ikinci planda; okuma birinci planda.</p></div></div><div class="flow-section"><div class="flow-n">04 · YAP</div><div><h3 class="flow-title">Öğrenci Etkinliği</h3><p class="flow-desc" id="activityText">Haftanın öğrenci etkinliği ve sınıf içi uygulama alanı.</p></div></div><div class="flow-section"><div class="flow-n">05 · KONTROL ET</div><div><h3 class="flow-title">Kendini Kontrol Et</h3><p class="flow-desc">Hazır olduğunda kısa kontrol soruları burada çalışır; öğrencinin ana akışını kesmez.</p></div></div><div class="flow-section"><div class="flow-n">06 · ÖĞRETMEN</div><div><h3 class="flow-title">Öğretmen Masası</h3><p class="flow-desc">Resmî program bilgisi, süreç bileşenleri ve günlük plan öğrenci akışının altında, daha sessiz bir katmanda kalır.</p><details class="teacher-desk" open><summary>Program ve plan araçlarını aç</summary><div class="teacher-content"><div class="teacher-box"><div class="code" id="teacherOutcomeCode"></div><p id="teacherOutcomeText"></p><ul id="teacherSteps"></ul></div><a class="btn" id="planLink" href="#">Günlük Planı İndir ↓</a></div></details></div></div></div></div></section>
-<script>window.KESKINLAB_COURSE={"source":"bty","legacy":"6-sinif-bty.html","prefix":"BTY.6","groups":6,"leaf":3,"gidx":2,"unit":"TEMA","plan":"gunluk-planlar-6sinif/hafta{n}-6sinif-bty.docx","themes":{"1":"Bilişim Teknolojilerinin Hayatımızdaki Yeri","2":"Dijital Ürün Tasarım ve Geliştirme","3":"Bilgisayar Ağları ve İletişim","4":"Bilişim Etiği ve Siber Güvenlik","5":"Yapay Zekâ","6":"Yazılım Tasarımı ve Programlama"}};</script><script src="classroom-v2.js"></script><script src="classroom-viewer-enhancements.js"></script><script src="classroom-v1-experience.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6. Sınıf BTY — KeskinLab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/course-v3.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-row">
+    <a class="logo" href="/">
+      <span class="logo-word">KeskinLab</span>
+      <span class="logo-tagline">ÖĞRENMEYİ TASARLAR</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Ana navigasyon" id="mainNav">
+      <a href="/" class="nav-link">Ana Sayfa</a>
+      <a href="/5-sinif-bty" class="nav-link">5. Sınıf</a>
+      <a href="/6-sinif-bty" class="nav-link is-active" aria-current="page">6. Sınıf</a>
+      <a href="/#dersler" class="nav-link">Seçmeli Dersler</a>
+      <a href="/#dijital-icerikler" class="nav-link">Dijital İçerikler</a>
+      <a href="/takvim" class="nav-link">Takvim</a>
+      <a href="/hakkinda" class="nav-link">Hakkında</a><a href="/dijital-araclar" class="nav-link nav-link-secondary">Dijital Araçlar</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="searchTrigger" aria-label="Ara" aria-haspopup="dialog" type="button">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M16 16l-3.4-3.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <button id="startLesson" class="btn btn-primary btn-compact" aria-expanded="false" aria-controls="lessonMenu" type="button">
+        Derse Başla
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="header-menu" id="lessonMenu" hidden></div>
+      <button class="mobile-menu-trigger icon-btn" id="mobileMenuTrigger" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobileMenu" type="button">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- DERS TANITIM ŞERİDİ (kompakt, homepage hero'sunun küçültülmüş kopyası değil) -->
+  <section class="course-strip">
+    <div class="container course-strip-row">
+      <div class="course-strip-copy">
+        <p class="eyebrow">2026–2027 · Bilişim Teknolojileri ve Yazılım</p>
+        <h1 class="course-strip-title">6. Sınıf BTY</h1>
+      </div>
+      <div class="course-strip-meta" id="courseStripMeta">
+        <!-- JS: bugünkü durum rozeti -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ÖĞRENCİ ANA DENEYİMİ -->
+  <section class="week-surface" id="weekSurface" aria-live="polite">
+
+    <div class="container week-surface-inner">
+
+      <div class="week-surface-head">
+        <button class="week-nav-btn" id="prevWeekBtn" type="button" aria-label="Önceki hafta">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M9.5 3.5L5 7.5l4.5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="week-surface-context">
+          <span class="tag-mono" id="weekTag">HAFTA 01</span>
+          <span class="week-date" id="weekDate">14–18 Eylül</span>
+          <span class="week-status-pill" id="weekStatusPill" hidden></span>
+        </div>
+        <button class="week-nav-btn" id="nextWeekBtn" type="button" aria-label="Sonraki hafta">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M5.5 3.5L10 7.5l-4.5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+
+      <div class="week-surface-grid">
+
+        <div class="week-surface-copy">
+          <p class="week-kicker" id="weekKicker">Bu hafta neyi keşfediyoruz?</p>
+          <h2 class="week-topic" id="weekTopic">Bilişim Teknolojilerinin Sınıflandırılması</h2>
+          <p class="week-explainer" id="weekExplainer"></p>
+
+          <div class="flow-chips" id="flowChips"></div>
+
+          <div class="week-actions" id="weekActions"></div>
+        </div>
+
+        <div class="week-visual" id="weekVisual" aria-hidden="true">
+          <!-- JS: temaya göre sade çizgi motif; ileride clay/3D final asset ile değiştirilebilir -->
+        </div>
+
+      </div>
+
+      <!-- HAFTA MATERYALLERİ -->
+      <div class="week-materials" id="weekMaterials"></div>
+
+      <!-- TAKVİM BAĞLAMI (yalnız gerçekten örtüşen bir takvim olayı varsa görünür) -->
+      <div class="week-calendar-note" id="weekCalendarNote" hidden></div>
+
+    </div>
+  </section>
+
+  <!-- 37 HAFTA GEZİNİMİ -->
+  <section class="term-nav">
+    <div class="container">
+      <div class="term-nav-head">
+        <div>
+          <p class="eyebrow">Yıl İçindeki Yeri</p>
+          <h2 class="section-title" id="themeGroupTitle">Tema 1 · Bilişim Teknolojilerinin Hayatımızdaki Yeri</h2>
+        </div>
+        <button class="text-link" id="toggleAllWeeksBtn" type="button">
+          Tüm Haftalar
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3.5 5.5L7 9l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+
+      <div class="theme-week-pills" id="themeWeekPills"></div>
+
+      <div class="all-weeks-panel" id="allWeeksPanel" hidden></div>
+    </div>
+  </section>
+
+  <!-- ÖĞRETMEN İÇİN -->
+  <section class="teacher-layer">
+    <div class="container">
+      <button class="teacher-toggle" id="teacherToggle" type="button" aria-expanded="false" aria-controls="teacherPanel">
+        <span class="teacher-toggle-label">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.3" stroke="currentColor" stroke-width="1.4"/><path d="M2 12.5h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M5.5 6.5h5M5.5 9h3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          Öğretmen İçin
+        </span>
+        <svg class="teacher-toggle-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3.5 5.5L7 9l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+
+      <div class="teacher-panel" id="teacherPanel" hidden>
+
+        <div class="teacher-col">
+          <p class="teacher-col-label">Bu Hafta İçin</p>
+          <div class="teacher-links" id="teacherWeekLinks"></div>
+        </div>
+
+        <div class="teacher-col">
+          <p class="teacher-col-label">Ders Geneli</p>
+          <div class="teacher-links">
+            <a href="/6-sinif-bty-cerceve-yillik-plan.xlsx" class="teacher-link">Yıllık Plan</a>
+            <a href="/evrak-cantasi" class="teacher-link">Evrak Çantası</a>
+            <a href="/takvim" class="teacher-link">Eğitim Takvimi</a>
+          </div>
+        </div>
+
+        <div class="teacher-col teacher-col-curriculum">
+          <p class="teacher-col-label">Program Bağlamı</p>
+          <details class="curriculum-details" id="curriculumDetails">
+            <summary>Öğrenme çıktısı ve süreç bileşenlerini gör</summary>
+            <div class="curriculum-body" id="curriculumBody"></div>
+          </details>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="mobileBackdrop" class="mobile-backdrop" hidden></div>
+<nav class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobil navigasyon" hidden>
+  <button class="menu-close" type="button" aria-label="Menüyü kapat">Kapat</button>
+  <a href="/">Ana Sayfa</a>
+  <a href="/6-sinif-bty">6. Sınıf</a>
+  <a href="/#dersler">Seçmeli Dersler</a>
+  <a href="/#dijital-icerikler">Dijital İçerikler</a>
+  <a href="/takvim">Takvim</a>
+  <a href="/hakkinda">Hakkında</a>
+  <button class="menu-search" type="button">Ara</button>
+</nav>
+<div class="search-dialog" id="searchDialog" role="dialog" aria-modal="true" aria-label="KeskinLab'da ara" hidden>
+  <div class="search-shell">
+    <div class="search-head"><label for="searchInput">KeskinLab'da ara</label><button id="searchClose" type="button">Kapat</button></div>
+    <input id="searchInput" type="search" autocomplete="off" placeholder="Konu, hafta, evrak veya takvim ara">
+    <div id="searchResults" class="search-results"></div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <span class="footer-text">© 2026 KeskinLab. Tüm hakları saklıdır.</span>
+    <nav class="footer-nav" aria-label="Alt navigasyon">
+      <a href="/hakkinda">Hakkında</a>
+      <a href="/iletisim">İletişim</a>
+      <a href="/dijital-araclar">Dijital Araçlar</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="/site-materials.js"></script>
+<script>window.KESKINLAB_COURSE={"source":"6-sinif","plan":"gunluk-planlar-6sinif/hafta{n}-6sinif-bty.docx"};</script>
+<script src="/course-data-6-sinif.js"></script>
+<script src="/course-v3.js"></script>
+</body>
+</html>
