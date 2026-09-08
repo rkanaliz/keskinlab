@@ -17,29 +17,9 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="keskinlab-typography.css">
 <link rel="stylesheet" href="keskinlab-editorial.css">
-</head>
-<body>
-<input type="checkbox" id="mobileNavToggle" aria-hidden="true">
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="/"><img src="brand/devre-karakteri.svg" alt="KeskinLab Devre Karakteri"><span>KeskinLab</span></a>
-    <nav class="links" aria-label="Ana menü"><a href="/5-sinif-bty">5. Sınıf</a><a href="/6-sinif-bty">6. Sınıf</a><a href="/#dersler">Seçmeli Dersler</a><a class="active" aria-current="page" href="/evrak-cantasi">İçerikler ve Evraklar</a><a href="/takvim">Takvim</a><a href="/hakkinda">Hakkında</a></nav>
-    <label class="mobile-nav-trigger" for="mobileNavToggle" aria-label="Menüyü aç"><span>MENÜ</span><span class="bars" aria-hidden="true"></span></label>
-  </div>
-</header>
-<label class="mobile-drawer-scrim" for="mobileNavToggle" aria-label="Menüyü kapat"></label>
-<aside class="mobile-drawer" aria-label="KeskinLab mobil menü">
-  <div class="drawer-top"><a class="drawer-brand" href="/"><img src="brand/devre-karakteri.svg" alt=""><span>KeskinLab</span></a><label class="drawer-close" for="mobileNavToggle" aria-label="Menüyü kapat">×</label></div>
-  <div class="drawer-context"><div class="ey">ÖĞRETMEN ARACI</div><strong>Evrak Çantası</strong></div>
-  <nav class="drawer-nav" aria-label="Mobil ana menü">
-    <a class="drawer-link" href="/#bugun"><span class="dn">01</span><span class="dt">Bu Hafta</span><span class="da">→</span></a>
-    <a class="drawer-link" href="/#zaman"><span class="dn">02</span><span class="dt">Zaman Çizgisi</span><span class="da">→</span></a>
-    <a class="drawer-link" href="/#dersler"><span class="dn">03</span><span class="dt">Dersler</span><span class="da">→</span></a>
-    <a class="drawer-link" href="/dijital-araclar"><span class="dn">04</span><span class="dt">Dijital Araçlar</span><span class="da">→</span></a>
-    <a class="drawer-link" href="/hakkinda"><span class="dn">05</span><span class="dt">Hakkında</span><span class="da">→</span></a>
-    <a class="drawer-link" href="/iletisim"><span class="dn">06</span><span class="dt">İletişim</span><span class="da">→</span></a>
-  </nav>
-</aside>
+<link rel="stylesheet" href="/site-shell.css"></head>
+<body><header class="site-shell-header"><div class="site-shell-inner"><a class="site-shell-logo" href="/"><strong>KeskinLab</strong><span>ÖĞRENMEYİ TASARLAR</span></a><nav class="site-shell-nav" aria-label="Ana navigasyon"><a href="/5-sinif-bty">5. Sınıf</a><a href="/6-sinif-bty">6. Sınıf</a><a href="/#dersler">Seçmeli Dersler</a><a href="/evrak-cantasi" aria-current="page">İçerikler ve Evraklar</a><a href="/takvim">Takvim</a><a href="/hakkinda">Hakkında</a></nav><div class="site-shell-actions"><button class="site-shell-icon" id="siteShellSearchButton" type="button" aria-label="Ara">⌕</button><button class="site-shell-icon site-shell-menu-button" id="siteShellMenuButton" type="button" aria-label="Menüyü aç">☰</button></div></div></header>
+
 <main>
 <section class="page-hero">
   <div class="arch-mark" aria-hidden="true">EVRAK</div>
@@ -76,7 +56,6 @@
     </div>
   </div>
 </section>
-</main>
-<footer><div class="wrap foot"><span class="foot-brand"><img src="brand/devre-karakteri.svg" alt=""><b>KeskinLab</b><span>© 2026</span></span><span>Bilişim · Teknoloji · Üretim</span></div></footer>
-</body>
+</main><nav class="site-shell-mobile" id="siteShellMobile" aria-label="Mobil navigasyon" hidden><button class="site-shell-close" data-shell-close type="button">Kapat</button><a href="/">Ana Sayfa</a><a href="/5-sinif-bty">5. Sınıf</a><a href="/6-sinif-bty">6. Sınıf</a><a href="/#dersler">Seçmeli Dersler</a><a href="/evrak-cantasi">İçerikler ve Evraklar</a><a href="/takvim">Takvim</a><a href="/hakkinda">Hakkında</a><button id="siteShellMobileSearch" type="button">Ara</button></nav><div class="site-shell-search" id="siteShellSearch" role="dialog" aria-modal="true" aria-label="KeskinLab'da ara" hidden><div class="site-shell-search-box"><button class="site-shell-close" data-shell-close type="button">Kapat</button><label for="siteShellSearchInput">KeskinLab'da ara</label><input id="siteShellSearchInput" type="search" placeholder="Ders, hafta, materyal veya evrak ara"><div class="site-shell-results" id="siteShellResults"></div></div></div><footer class="site-shell-footer"><div class="site-shell-footer-inner"><span>© 2026 KeskinLab. Tüm hakları saklıdır.</span><nav aria-label="Alt navigasyon"><a href="/hakkinda">Hakkında</a><a href="/iletisim">İletişim</a><a href="/dijital-araclar">Dijital Araçlar</a></nav></div></footer>
+<script src="/site-materials.js"></script><script src="/site-shell.js"></script></body>
 </html>

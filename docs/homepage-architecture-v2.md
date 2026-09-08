@@ -4,14 +4,14 @@ Bu belge, yeni KeskinLab ana sayfasının onaylanmış ve kilitlenmiş bilgi mim
 
 ## 1. Nihai navigasyon
 
-KeskinLab logosu ana sayfaya yönlendirir. Navigasyonda ayrıca “Ana Sayfa” bağlantısı bulunmaz.
+KeskinLab logosu ana sayfaya yönlendirir. Navigasyonda ayrıca “Ana Sayfa” bağlantısı bulunmaz. Bu belge içindeki bölüm kompozisyonu ve dört dersli “Bu Hafta” kapsamı, son onaylı V2 ana sayfanın güncel durumunu yansıtır.
 
 Masaüstü ana navigasyonu:
 
 1. **5. Sınıf** — 5. Sınıf Bilişim Teknolojileri ve Yazılım ders alanına doğrudan erişim sağlar.
 2. **6. Sınıf** — 6. Sınıf Bilişim Teknolojileri ve Yazılım ders alanına doğrudan erişim sağlar.
 3. **Seçmeli Dersler** — Robotik Kodlama ve Yapay Zekâ Uygulamaları derslerini tek başlık altında toplar.
-4. **İçerikler ve Evraklar** — slayt, etkinlik, günlük ders planı ve yıllık plan gibi öğretmen kaynaklarına erişim sağlar.
+4. **İçerikler ve Evraklar** — slayt, etkinlik, günlük ders planı ve yıllık plan gibi gerçek öğretmen kaynaklarına erişim sağlar.
 5. **Takvim** — eğitim haftaları, tatiller ve belirli günlere ulaşır.
 6. **Hakkında** — KeskinLab’ın amacı ve çalışma yaklaşımını açıklar.
 
@@ -32,13 +32,13 @@ Ana sayfanın yukarıdan aşağı bölüm sırası:
 
 01. **Hero**
 02. **Hızlı Erişim**
-03. **Bu Hafta**
-04. **Dersler**
+03. **Dersler**
+04. **Bu Hafta**
 05. **İçerikler ve Evraklar**
 06. **Takvim Özeti**
 07. **Kısa Proje Notu + Footer**
 
-“Bu Hafta” bölümü masaüstünde ve mobilde genel ders kataloğundan önce gelir. Öğretmenin en acil ihtiyacı, mevcut eğitim haftasındaki 5. ve 6. sınıf dersine ulaşmaktır.
+“Bu Hafta” bölümü son onaylı V2 kompozisyonunda genel ders kataloğundan sonra gelir ve dört dersin güncel haftasını birlikte gösterir.
 
 ## 3. Her bölümün amacı
 
@@ -50,15 +50,15 @@ Ana sayfanın yukarıdan aşağı bölüm sırası:
 
 - kısa ve güçlü bir ana başlık,
 - KeskinLab’ın öğretim programını sınıfta uygulanabilir haftalık ders deneyimlerine dönüştüren bir öğretmen çalışma alanı olduğunu anlatan tek kısa açıklama,
-- 5. ve 6. sınıfa doğrudan erişim,
+- 5. sınıfa doğrudan erişim ve tüm ders kataloğuna geçiş,
 - tek ve anlamlı eğitim görseli.
 
 **Ana eylemler:**
 
 - 5. Sınıfı Keşfet
-- 6. Sınıfı Keşfet
+- Tüm Dersleri Gör
 
-Bu iki yol eşdeğer olduğu için aynı görsel ağırlıkta sunulabilir. Hero uzun pazarlama metni, istatistik veya sosyal kanıt içermez.
+Bu iki eylem mevcut onaylı V2 kompozisyonunun ana ve ikincil yoludur. Hero uzun pazarlama metni, istatistik veya sosyal kanıt içermez.
 
 ### 02. Hızlı Erişim
 
@@ -81,12 +81,12 @@ Bu alan ana navigasyonun tekrarı değildir. Girişler kullanıcı görevlerine 
 
 **Kullanıcı ihtiyacı:** İçinde bulunulan eğitim haftasının dersini hızla hazırlamak veya açmak.
 
-**Kapsam yalnızca:**
+**Güncel kapsam:**
 
 - 5. Sınıf Bilişim Teknolojileri ve Yazılım,
 - 6. Sınıf Bilişim Teknolojileri ve Yazılım.
-
-Robotik Kodlama ve Yapay Zekâ Uygulamaları bu bölümde gösterilmez. Bu derslerin haftalık akışı kendi ders sayfalarında yer alır.
+- Robotik Kodlama,
+- Yapay Zekâ Uygulamaları.
 
 **Gösterilecek içerik:**
 
@@ -173,9 +173,7 @@ Proje notu iki veya üç kısa cümleyi geçmez. Ana sayfanın sonu uzun bir “
 
 İlk görünümde logo, altı ana navigasyon bağlantısı, arama kontrolü ve hero yer alır. Hero’nun sol tarafı mesaj ve 5–6. sınıf eylemlerini; sağ tarafı tek eğitim görselini taşır.
 
-Hero altında hafif yatay Hızlı Erişim şeridi bulunur. Ardından öğretmenin acil görevine öncelik verilerek Bu Hafta bölümü gelir. Burada 5. ve 6. sınıf haftalık dersleri birlikte ve kolay karşılaştırılabilir biçimde gösterilir.
-
-Dersler bölümü daha sonra genel katalog görevini üstlenir. 5. ve 6. sınıf BTY görsel olarak baskın, seçmeli dersler ikincil düzeydedir. Sayfanın devamında İçerikler ve Evraklar ile Takvim Özeti yer alır; kısa proje notu ve footer sayfayı tamamlar.
+Hero altında hafif yatay Hızlı Erişim şeridi bulunur. Dersler bölümü genel katalog görevini üstlenir. Ardından Bu Hafta bölümünde dört dersin haftalık içerikleri birlikte ve kolay karşılaştırılabilir biçimde gösterilir. Sayfanın devamında İçerikler ve Evraklar ile Takvim Özeti yer alır; kısa proje notu ve footer sayfayı tamamlar.
 
 Sayfanın okuma mantığı:
 
@@ -193,8 +191,8 @@ Mobil bölüm sırası masaüstüyle aynıdır:
 
 01. Hero  
 02. Hızlı Erişim  
-03. Bu Hafta  
-04. Dersler  
+03. Dersler
+04. Bu Hafta
 05. İçerikler ve Evraklar  
 06. Takvim Özeti  
 07. Kısa Proje Notu + Footer
@@ -212,7 +210,7 @@ Hero içinde sıralama:
 
 Hızlı Erişim, altı ağır kart yerine hafif bağlantı satırları veya doğal yeniden akış kullanan kompakt bir yüzeydir.
 
-Bu Hafta bölümünde önce 5. sınıf, ardından 6. sınıf gösterilir. Konu ve ana eylem önce; tema, tarih ve ikincil dosya seçenekleri sonra gelir.
+Bu Hafta bölümünde 5. sınıf, 6. sınıf, Robotik Kodlama ve Yapay Zekâ Uygulamaları aynı bilgi grameriyle gösterilir. Konu ve ana eylem önce; tema, tarih ve ikincil dosya seçenekleri sonra gelir.
 
 Dersler bölümünde 5. ve 6. sınıf BTY önce gösterilir. Robotik Kodlama ve Yapay Zekâ Uygulamaları aynı görsel ağırlığa çıkarılmaz.
 

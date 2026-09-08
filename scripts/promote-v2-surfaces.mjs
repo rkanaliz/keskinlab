@@ -7,6 +7,14 @@ const courses = [
   { key: 'yapay-zeka', file: 'yapay-zeka.html', title: 'Yapay Zekâ Uygulamaları-I', subject: 'Seçmeli Ders', folder: 'yapay-zeka', suffix: 'yapay-zeka-uygulamalari' }
 ];
 
+function shellHeader(current) {
+  const links = [['/5-sinif-bty','5. Sınıf'],['/6-sinif-bty','6. Sınıf'],['/#dersler','Seçmeli Dersler'],['/evrak-cantasi','İçerikler ve Evraklar'],['/takvim','Takvim'],['/hakkinda','Hakkında']]
+    .map(([href,label]) => `<a href="${href}"${href===current?' aria-current="page"':''}>${label}</a>`).join('');
+  return `<header class="site-shell-header"><div class="site-shell-inner"><a class="site-shell-logo" href="/"><strong>KeskinLab</strong><span>ÖĞRENMEYİ TASARLAR</span></a><nav class="site-shell-nav" aria-label="Ana navigasyon">${links}</nav><div class="site-shell-actions"><button class="site-shell-icon" id="siteShellSearchButton" type="button" aria-label="Ara">⌕</button><button class="site-shell-icon site-shell-menu-button" id="siteShellMenuButton" type="button" aria-label="Menüyü aç">☰</button></div></div></header>`;
+}
+const shellOverlays = `<nav class="site-shell-mobile" id="siteShellMobile" aria-label="Mobil navigasyon" hidden><button class="site-shell-close" data-shell-close type="button">Kapat</button><a href="/">Ana Sayfa</a><a href="/5-sinif-bty">5. Sınıf</a><a href="/6-sinif-bty">6. Sınıf</a><a href="/#dersler">Seçmeli Dersler</a><a href="/evrak-cantasi">İçerikler ve Evraklar</a><a href="/takvim">Takvim</a><a href="/hakkinda">Hakkında</a><button id="siteShellMobileSearch" type="button">Ara</button></nav><div class="site-shell-search" id="siteShellSearch" role="dialog" aria-modal="true" aria-label="KeskinLab'da ara" hidden><div class="site-shell-search-box"><button class="site-shell-close" data-shell-close type="button">Kapat</button><label for="siteShellSearchInput">KeskinLab'da ara</label><input id="siteShellSearchInput" type="search" placeholder="Ders, hafta, materyal veya evrak ara"><div class="site-shell-results" id="siteShellResults"></div></div></div>`;
+const shellFooter = `<footer class="site-shell-footer"><div class="site-shell-footer-inner"><span>© 2026 KeskinLab. Tüm hakları saklıdır.</span><nav aria-label="Alt navigasyon"><a href="/hakkinda">Hakkında</a><a href="/iletisim">İletişim</a><a href="/dijital-araclar">Dijital Araçlar</a></nav></div></footer>`;
+
 const homeHtml = (await readFile('preview/homepage-v2.html', 'utf8'))
   .replaceAll('homepage-v2.html', '/')
   .replaceAll('../', '/')
@@ -127,7 +135,6 @@ for (const config of courses) {
   if (!config.annual) html = html.replace(/<a href="\/5-sinif-bty-cerceve-yillik-plan\.xlsx" class="teacher-link">Yıllık Plan<\/a>\s*/, '');
   else html = html.replace('/5-sinif-bty-cerceve-yillik-plan.xlsx', config.annual);
   html = html.replace('<title>5. Sınıf BTY — KeskinLab</title>', `<title>${config.title} — KeskinLab</title>`);
-  html = html.replace('<a href="/hakkinda" class="nav-link">Hakkında</a>', '<a href="/hakkinda" class="nav-link">Hakkında</a><a href="/dijital-araclar" class="nav-link nav-link-secondary">Dijital Araçlar</a>');
   html = html.replace('<a href="/hakkinda">Gizlilik</a>', '<a href="/dijital-araclar">Dijital Araçlar</a>');
   const legacyConfig = JSON.stringify({ source: config.key, plan: `gunluk-planlar-${config.folder}/hafta{n}-${config.suffix}.docx` });
   html = html.replace(`<script src="/course-data-${config.key}.js"></script>`, `<script>window.KESKINLAB_COURSE=${legacyConfig};</script>\n<script src="/course-data-${config.key}.js"></script>`);
@@ -144,10 +151,18 @@ for (const file of editorialFiles) {
     ['/5-sinif-bty', '5. Sınıf'], ['/6-sinif-bty', '6. Sınıf'], ['/#dersler', 'Seçmeli Dersler'],
     ['/evrak-cantasi', 'İçerikler ve Evraklar'], ['/takvim', 'Takvim'], ['/hakkinda', 'Hakkında']
   ].map(([href, label]) => `<a${href === current ? ' class="active" aria-current="page"' : ''} href="${href}">${label}</a>`).join('');
-  html = html.replace(/<nav class="links" aria-label="Ana menü">[\s\S]*?<\/nav>/, `<nav class="links" aria-label="Ana menü">${links}</nav>`)
+  html = html.replace(/<header(?:\s[^>]*)?>[\s\S]*?<\/header>/, shellHeader(current))
+    .replace(/<input[^>]+id="mobileNavToggle"[\s\S]*?<\/aside>/, '')
+    .replace(/<\/main>[\s\S]*?(?=<footer)/, '</main>')
+    .replace(/<footer(?:\s[^>]*)?>[\s\S]*?<\/footer>/, shellFooter)
+    .replace('</main>', `</main>${shellOverlays}`)
     .replace(/https:\/\/fonts\.googleapis\.com\/css2\?family=[^"']+/, 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap')
     .replaceAll('href="/evrak-cantasi.html"', 'href="/evrak-cantasi"')
     .replaceAll('href="/takvim.html"', 'href="/takvim"');
+  if (!html.includes('href="/site-shell.css"')) html = html.replace('</head>', '<link rel="stylesheet" href="/site-shell.css"></head>');
+  if (!html.includes('keskinlab-typography.css')) html = html.replace('<link rel="stylesheet" href="/site-shell.css">', '<link rel="stylesheet" href="/keskinlab-typography.css"><link rel="stylesheet" href="/site-shell.css">');
+  if (!html.includes('class="site-shell-header"')) html = html.replace('<body>', `<body>${shellHeader(current)}`);
+  if (!html.includes('src="/site-shell.js"')) html = html.replace('</body>', '<script src="/site-materials.js"></script><script src="/site-shell.js"></script></body>');
   await writeFile(file, html);
 }
 

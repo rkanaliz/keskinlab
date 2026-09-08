@@ -29,7 +29,7 @@ KeskinLab; 5–6. sınıf Bilişim Teknolojileri ve Yazılım, Robotik Kodlama-I
 - `gunluk-planlar-yapay-zeka/` — 36 hafta
 
 ## Kilitli arayüz kararları
-- Ana sayfadaki **Bu Hafta** kartlarında dört ders aynı bilgi gramerini kullanır: **ders adı → okunabilir konu başlığı → tema**.
+- Ana sayfadaki **Bu Hafta** kartlarında dört ders aynı bilgi gramerini kullanır: **ders adı → okunabilir konu başlığı → tema**. Bu dört dersli kapsam güncel kullanıcı onayıdır.
 - Robotik Kodlama-I ve Yapay Zekâ Uygulamaları-I için `RK.1.1.1`, `1.1`, `1.2`, `1.1.1` gibi müfredat kodları ana konu başlığında gösterilmez. Kodlar veri katmanında korunur; Müfredat / Classroom / öğretmen katmanında kullanılabilir.
 - Robotik ve Yapay Zekâ kartlarında tipografi, punto, satır aralığı, renk, hizalama, öğretmen katmanı, **Derse Başla** ve **Günlük Plan** yapısı 5. ve 6. sınıf kartlarıyla aynı kalır. Sadece konu metni okunabilir hâle getirilir.
 - Hazır olmayan materyal veya evrak, kullanıcı yüzeyinde sahte kart/placeholder olarak gösterilmez.
@@ -38,10 +38,9 @@ KeskinLab; 5–6. sınıf Bilişim Teknolojileri ve Yazılım, Robotik Kodlama-I
 ## Site-wide tipografi ve editoryal kabuk
 - Ortak tipografi katmanı: `keskinlab-typography.css`
 - Ortak editoryal sayfa kabuğu: `keskinlab-editorial.css`
-- Space Grotesk: başlıklar ve editoryal vurgu
-- Inter: gövde metni ve navigasyon
+- IBM Plex Sans: başlıklar, editoryal vurgu, gövde metni ve navigasyon
 - IBM Plex Mono: numara, tarih, etiket, metadata ve teknik bilgi
-- Başlık ağırlığı varsayılan olarak 700'dür; sentetik 650/800 ağırlık kullanılmaz.
+- Başlık ağırlıkları V2 yüzeylerinde 600–700 aralığındaki gerçek font ağırlıklarıyla kullanılır; sentetik 650/800 ağırlık kullanılmaz.
 - Hakkında, İletişim, Evrak Çantası ve Eğitim Takvimi ortak editoryal kabuk üzerinden aynı navigasyon ve tipografi gramerini kullanır.
 
 ## URL standardı

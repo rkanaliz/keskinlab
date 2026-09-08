@@ -477,13 +477,16 @@ body.v3-modal-open { overflow: hidden; }
 
 @media (max-width: 720px) {
   :root { --container-pad: 18px; }
-  html, body { overflow-x: clip; }
   .header-row { height: 58px; gap: 12px; }
   .logo-word { font-size: 17px; }
   .course-strip-row { flex-direction: column; align-items: flex-start; gap: 6px; }
-  .week-topic { font-size: 22px; }
-  .week-surface-head { gap: 8px; }
-  .week-surface-context { flex-wrap: wrap; justify-content: center; gap: 6px; }
+  .header-row { gap:8px; }.logo{min-width:0}.logo-tagline{font-size:7.5px;letter-spacing:.08em}.header-actions{gap:4px;min-width:0}.header-actions .btn-primary{padding:8px 9px;font-size:11.5px;white-space:nowrap}.mobile-menu-trigger{flex:0 0 36px}
+  .week-topic { font-size: 22px; overflow-wrap:anywhere; }
+  .week-explainer { overflow-wrap:anywhere; }
+  .week-surface-head { display:grid; grid-template-columns:36px minmax(0,1fr) 36px; gap: 8px; width:100%; }
+  .week-surface-context { min-width:0; flex-wrap: wrap; justify-content: center; gap: 6px; }
+  .week-status-pill { white-space:normal; text-align:center; max-width:100%; }
+  .week-surface-grid,.week-surface-copy,.week-materials,.material-viewer,.material-stage { min-width:0; max-width:100%; }
   .week-actions { flex-direction: column; align-items: stretch; }
   .week-actions .btn { justify-content: center; }
   .week-materials { padding: 18px 0; }
