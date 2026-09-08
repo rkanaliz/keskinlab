@@ -3,7 +3,7 @@ import { promises as fs } from 'node:fs';
 const publicSurfaces = [
   'index.html', 'hakkinda.html', 'iletisim.html', 'dijital-araclar.html', 'dijital-icerikler.html',
   'evrak-cantasi.html', 'takvim.html', '5-sinif-bty.html', '6-sinif-bty.html',
-  'robotik-kodlama.html', 'yapay-zeka.html', '5-sinif-hafta01.html'
+  'robotik-kodlama.html', 'yapay-zeka.html'
 ];
 const essentialTargets = ['href="/"', '/5-sinif-bty', '/6-sinif-bty', '/dijital-icerikler', '/evrak-cantasi', '/hakkinda'];
 const errors = [];

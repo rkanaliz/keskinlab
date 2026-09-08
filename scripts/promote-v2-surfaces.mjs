@@ -1,7 +1,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 
 const courses = [
-  { key: '5-sinif', file: '5-sinif-bty.html', title: '5. Sınıf BTY', subject: 'Bilişim Teknolojileri ve Yazılım', folder: '5sinif', suffix: '5sinif-bty', annual: '/5-sinif-bty-cerceve-yillik-plan.xlsx', week1: '/5-sinif-hafta01.html' },
+  { key: '5-sinif', file: '5-sinif-bty.html', title: '5. Sınıf BTY', subject: 'Bilişim Teknolojileri ve Yazılım', folder: '5sinif', suffix: '5sinif-bty', annual: '/5-sinif-bty-cerceve-yillik-plan.xlsx', week1: '/5-sinif-bty?week=1#weekMaterials' },
   { key: '6-sinif', file: '6-sinif-bty.html', title: '6. Sınıf BTY', subject: 'Bilişim Teknolojileri ve Yazılım', folder: '6sinif', suffix: '6sinif-bty', annual: '/6-sinif-bty-cerceve-yillik-plan.xlsx' },
   { key: 'robotik', file: 'robotik-kodlama.html', title: 'Robotik Kodlama-I', subject: 'Seçmeli Ders', folder: 'robotik', suffix: 'robotik-kodlama' },
   { key: 'yapay-zeka', file: 'yapay-zeka.html', title: 'Yapay Zekâ Uygulamaları-I', subject: 'Seçmeli Ders', folder: 'yapay-zeka', suffix: 'yapay-zeka-uygulamalari' }
@@ -63,11 +63,7 @@ let courseJs = await readFile('preview/5-sinif-v3.js', 'utf8');
 courseJs = courseJs
   .replaceAll('../', '/')
   .replace("{ key: '5-sinif', label: '5. Sınıf BTY', page: '5-sinif-v3.html'", "{ key: '5-sinif', label: '5. Sınıf BTY', page: '/5-sinif-bty.html'")
-  .replace("if (n === 1) {\n      actions.push('<a href=\"' + D.links.week1Lesson", "if (n === 1 && D.links.week1Lesson) {\n      actions.push('<a href=\"' + D.links.week1Lesson")
-  .replace("(week.n === 1 ? D.links.week1Lesson : mats['sunum'][0])", "(week.n === 1 && D.links.week1Lesson ? D.links.week1Lesson : mats['sunum'][0])");
-courseJs = courseJs
-  .replace('Sınıf Sunumunu Başlat', 'Hafta 01 Ders Alanını Aç')
-  .replace("if (mats['sunum']) links.push('<a href=\"' + (week.n === 1 && D.links.week1Lesson ? D.links.week1Lesson : mats['sunum'][0]) + '\" class=\"teacher-link\">Sınıf Sunumunu Aç</a>');", "if (mats['sunum'] && !(week.n === 1 && D.links.week1Lesson)) links.push('<a href=\"' + mats['sunum'][0] + '\" class=\"teacher-link\">Sınıf Sunumunu Aç</a>');");
+;
 courseJs = courseJs.replaceAll('/5-sinif-bty.html', '/5-sinif-bty').replaceAll('/6-sinif-bty.html', '/6-sinif-bty').replaceAll('/robotik-kodlama.html', '/robotik-kodlama').replaceAll('/yapay-zeka.html', '/yapay-zeka').replaceAll('/takvim.html', '/takvim');
 courseJs = courseJs.replace(
   "var first = week.cikti.split(/BTY\\.5\\.\\d+\\.\\d+\\.?\\s*/).filter(Boolean)[0] || week.cikti;\n    first = first.trim().replace(/\\s*BTY\\.5.*$/, '');",
@@ -208,16 +204,6 @@ for (const file of editorialFiles) {
   await writeFile(file, html);
 }
 
-let weekWorkspace = await readFile('5-sinif-hafta01.html', 'utf8');
-weekWorkspace = weekWorkspace
-  .replace(/<header class="(?:top|site-header)"[^>]*>[\s\S]*?<\/header>/, shellHeader('/5-sinif-bty'))
-  .replace(/<body(?:\s[^>]*)?>/, '<body class="lesson-workspace-v2">');
-if (!weekWorkspace.includes('/site-shell-v2b.css')) weekWorkspace = weekWorkspace.replace('</head>', '<link rel="stylesheet" href="/site-shell-v2b.css"></head>');
-if (!weekWorkspace.includes('id="mobileMenu"')) weekWorkspace = weekWorkspace.replace('<section class="player"', `${shellOverlays}${shellFooter}<section class="player"`);
-if (!weekWorkspace.includes('/site-shell-v2b.js')) weekWorkspace = weekWorkspace.replace('<script src="/hafta01-assets/hafta01.js"></script>', '<script src="/site-materials.js"></script><script src="/site-shell-v2b.js"></script><script src="/hafta01-assets/hafta01.js"></script>');
-weekWorkspace = weekWorkspace.replace(/href="\/site-shell(?:-v2b)?\.css(?:\?[^"']*)?"/g, 'href="/site-shell-v2b.css"').replace(/src="\/site-shell(?:-v2b)?\.js(?:\?[^"']*)?"/g, 'src="/site-shell-v2b.js"');
-weekWorkspace = weekWorkspace.replace(/(?:<link rel="stylesheet" href="\/site-shell-v2b\.css">)+/g, '<link rel="stylesheet" href="/site-shell-v2b.css">').replace(/(?:<script src="\/site-materials\.js"><\/script><script src="\/site-shell-v2b\.js"><\/script>)+/g, '<script src="/site-materials.js"></script><script src="/site-shell-v2b.js"></script>');
-await writeFile('5-sinif-hafta01.html', weekWorkspace);
 
 await writeFile('site-shell-v2b.css', await readFile('site-shell.css', 'utf8'));
 await writeFile('site-shell-v2b.js', await readFile('site-shell.js', 'utf8'));

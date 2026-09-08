@@ -1208,7 +1208,7 @@ window.KL5_DATA = {
     "yearlyPlan": "/5-sinif-bty-cerceve-yillik-plan.xlsx",
     "calendar": "/takvim.html",
     "teacherDocs": "/evrak-cantasi.html",
-    "week1Lesson": "/5-sinif-hafta01.html",
+    "week1Lesson": "/5-sinif-bty?week=1#weekMaterials",
     "homepage": "homepage-v2.html"
   },
   "week1Flow": [

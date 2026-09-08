@@ -256,9 +256,8 @@
     // eylemler
     var actionsEl = document.getElementById('weekActions');
     var actions = [];
-    if (n === 1 && D.links.week1Lesson) {
-      actions.push('<a href="' + D.links.week1Lesson + '" class="btn btn-primary">Hafta 01 Ders Alanını Aç' +
-        '<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>');
+    if (n === 1) {
+      // The presentation already lives in the week materials below.
       var sunum = D.materials['1'] && D.materials['1']['sunum'];
       if (sunum) actions.push('<a href="#weekMaterials" class="btn btn-secondary">Materyalleri Gör</a>');
     } else if (!week.ozel) {
@@ -521,7 +520,7 @@
     if (plan) links.push('<a href="' + plan + '" class="teacher-link">Günlük Ders Planı</a>');
     var mats = D.materials[String(week.n)];
     if (mats) {
-      if (mats['sunum'] && !(week.n === 1 && D.links.week1Lesson)) links.push('<a href="' + mats['sunum'][0] + '" class="teacher-link">Sınıf Sunumunu Aç</a>');
+      if (mats['sunum'] && week.n !== 1) links.push('<a href="' + mats['sunum'][0] + '" class="teacher-link">Sınıf Sunumunu Aç</a>');
       if (mats['ogrenci-etkinligi']) links.push('<a href="' + mats['ogrenci-etkinligi'][0] + '" class="teacher-link">Çalışma Kâğıdı</a>');
       if (mats['ogretmen'] && mats['ogretmen']['gozlem-formu']) links.push('<a href="' + mats['ogretmen']['gozlem-formu'][0] + '" class="teacher-link">Gözlem Formu</a>');
     }
