@@ -159,7 +159,7 @@ for (const config of courses) {
     .replaceAll('5-sinif-v3.html', '/5-sinif-bty.html')
     .replaceAll('5-sinif-v3.css', '/course-v3.css?v=20260908d')
     .replaceAll('homepage-materials.js', '/site-materials.js')
-    .replaceAll('5-sinif-v3-data.js', `/course-data-${config.key}.js`)
+    .replaceAll('5-sinif-v3-data.js', `/course-data-${config.key}.js?v=20260908d`)
     .replaceAll('5-sinif-v3.js', '/course-v3.js?v=20260908d')
     .replaceAll('5. Sınıf BTY', config.title)
     .replaceAll('Bilişim Teknolojileri ve Yazılım', config.subject)
@@ -180,7 +180,7 @@ for (const config of courses) {
   html = html.replace('<title>5. Sınıf BTY — KeskinLab</title>', `<title>${config.title} — KeskinLab</title>`);
   html = html.replace('<a href="/hakkinda">Gizlilik</a>', '<a href="/dijital-araclar">Dijital Araçlar</a>');
   const legacyConfig = JSON.stringify({ source: config.key, plan: `gunluk-planlar-${config.folder}/hafta{n}-${config.suffix}.docx` });
-  html = html.replace(`<script src="/course-data-${config.key}.js"></script>`, `<script>window.KESKINLAB_COURSE=${legacyConfig};</script>\n<script src="/course-data-${config.key}.js"></script>`);
+  html = html.replace(`<script src="/course-data-${config.key}.js?v=20260908d"></script>`, `<script>window.KESKINLAB_COURSE=${legacyConfig};</script>\n<script src="/course-data-${config.key}.js?v=20260908d"></script>`);
   html = applySharedShell(html, activeHref);
   await writeFile(config.file, html);
   const mirror = { '5-sinif': 'classroom-5-sinif.html', '6-sinif': 'classroom-6-sinif.html', robotik: 'classroom-robotik.html', 'yapay-zeka': 'classroom-yapay-zeka.html' }[config.key];
