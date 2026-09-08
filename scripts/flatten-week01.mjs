@@ -67,6 +67,11 @@ for (const file of [
   if (await exists(file)) await edit(file, text => text.replace(LEGACY, CANONICAL));
 }
 
+// A retired page must not remain in the public-surface validation lists.
+for (const file of ['scripts/validate-navigation.mjs', 'scripts/validate-accessibility.mjs']) {
+  await edit(file, text => text.replace(/,\s*['"]5-sinif-hafta01\.html['"]/g, ''));
+}
+
 if (await exists('5-sinif-hafta01.html')) {
   await unlink('5-sinif-hafta01.html');
   changed.push('5-sinif-hafta01.html (deleted)');
@@ -80,7 +85,8 @@ const sourceFiles = [
   'preview/5-sinif-v3.js', 'course-v3.js', 'preview/5-sinif-v3-data.js',
   'course-data-5-sinif.js', 'scripts/promote-v2-surfaces.mjs',
   'index.html', 'site-v2.js', 'site-materials.js', '5-sinif-bty.html',
-  'classroom-5-sinif.html', 'dijital-icerikler.html'
+  'classroom-5-sinif.html', 'dijital-icerikler.html',
+  'scripts/validate-navigation.mjs', 'scripts/validate-accessibility.mjs'
 ];
 for (const file of sourceFiles) {
   if (await exists(file) && LEGACY.test(await readFile(file, 'utf8'))) {
