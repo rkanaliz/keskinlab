@@ -30,9 +30,10 @@ function applySharedShell(html, current, { editorial = false } = {}) {
     .replace(/<nav class="site-shell-mobile"[\s\S]*?(?=<footer)/, shellOverlays)
     .replace(/<footer(?:\s[^>]*)?>[\s\S]*?<\/footer>/, shellFooter);
   if (!html.includes('id="mobileMenu"')) html = html.replace(shellFooter, `${shellOverlays}${shellFooter}`);
-  if (!html.includes('href="/site-shell.css"')) html = html.replace('</head>', '<link rel="stylesheet" href="/site-shell.css"></head>');
+  html = html.replace(/(?:<link rel="stylesheet" href="\/site-shell\.css(?:\?[^"']*)?">)+/g, '<link rel="stylesheet" href="/site-shell.css">');
+  if (!html.includes('/site-shell.css')) html = html.replace('</head>', '<link rel="stylesheet" href="/site-shell.css"></head>');
   if (editorial) html = html.replace(/<body(?:\s[^>]*)?>/, '<body class="editorial-v2">');
-  return html;
+  return html.replace(/href="\/site-shell\.css(?:\?[^"']*)?"/g, 'href="/site-shell.css?v=20260908b"').replace(/src="\/site-shell\.js(?:\?[^"']*)?"/g, 'src="/site-shell.js?v=20260908b"');
 }
 
 let homeHtml = (await readFile('preview/homepage-v2.html', 'utf8'))
@@ -48,7 +49,7 @@ let homeHtml = (await readFile('preview/homepage-v2.html', 'utf8'))
   .replaceAll('/hakkinda.html', '/hakkinda')
   .replaceAll('/iletisim.html', '/iletisim')
   .replaceAll('/dijital-araclar.html', '/dijital-araclar')
-  .replace('href="homepage-v2.css"', 'href="/site-v2.css"')
+  .replace('href="homepage-v2.css"', 'href="/site-v2.css?v=20260908b"')
   .replace('src="homepage-materials.js"', 'src="/site-materials.js"')
   .replace('src="homepage-v2.js"', 'src="/site-v2.js"');
 homeHtml = applySharedShell(homeHtml, '/');
@@ -157,7 +158,7 @@ for (const config of courses) {
   let html = await readFile('preview/5-sinif-v3.html', 'utf8');
   html = html.replaceAll('../', '/').replaceAll('homepage-v2.html', '/')
     .replaceAll('5-sinif-v3.html', '/5-sinif-bty.html')
-    .replaceAll('5-sinif-v3.css', '/course-v3.css')
+    .replaceAll('5-sinif-v3.css', '/course-v3.css?v=20260908b')
     .replaceAll('homepage-materials.js', '/site-materials.js')
     .replaceAll('5-sinif-v3-data.js', `/course-data-${config.key}.js`)
     .replaceAll('5-sinif-v3.js', '/course-v3.js')
@@ -199,7 +200,8 @@ for (const file of editorialFiles) {
     .replaceAll('href="/takvim.html"', 'href="/takvim"');
   if (!html.includes('keskinlab-typography.css')) html = html.replace('<link rel="stylesheet" href="/site-shell.css">', '<link rel="stylesheet" href="/keskinlab-typography.css"><link rel="stylesheet" href="/site-shell.css">');
   html = applySharedShell(html, current, { editorial: true });
-  if (!html.includes('src="/site-shell.js"')) html = html.replace('</body>', '<script src="/site-materials.js"></script><script src="/site-shell.js"></script></body>');
+  html = html.replace(/(?:<script src="\/site-materials\.js"><\/script><script src="\/site-shell\.js(?:\?[^"']*)?"><\/script>)+/g, '');
+  if (!html.includes('/site-shell.js')) html = html.replace('</body>', '<script src="/site-materials.js"></script><script src="/site-shell.js?v=20260908b"></script></body>');
   await writeFile(file, html);
 }
 
@@ -207,9 +209,10 @@ let weekWorkspace = await readFile('5-sinif-hafta01.html', 'utf8');
 weekWorkspace = weekWorkspace
   .replace(/<header class="(?:top|site-header)"[^>]*>[\s\S]*?<\/header>/, shellHeader('/5-sinif-bty'))
   .replace(/<body(?:\s[^>]*)?>/, '<body class="lesson-workspace-v2">');
-if (!weekWorkspace.includes('href="/site-shell.css"')) weekWorkspace = weekWorkspace.replace('</head>', '<link rel="stylesheet" href="/site-shell.css"></head>');
+if (!weekWorkspace.includes('/site-shell.css')) weekWorkspace = weekWorkspace.replace('</head>', '<link rel="stylesheet" href="/site-shell.css"></head>');
 if (!weekWorkspace.includes('id="mobileMenu"')) weekWorkspace = weekWorkspace.replace('<section class="player"', `${shellOverlays}${shellFooter}<section class="player"`);
-if (!weekWorkspace.includes('src="/site-shell.js"')) weekWorkspace = weekWorkspace.replace('<script src="/hafta01-assets/hafta01.js"></script>', '<script src="/site-materials.js"></script><script src="/site-shell.js"></script><script src="/hafta01-assets/hafta01.js"></script>');
+if (!weekWorkspace.includes('/site-shell.js')) weekWorkspace = weekWorkspace.replace('<script src="/hafta01-assets/hafta01.js"></script>', '<script src="/site-materials.js"></script><script src="/site-shell.js?v=20260908b"></script><script src="/hafta01-assets/hafta01.js"></script>');
+weekWorkspace = weekWorkspace.replace(/href="\/site-shell\.css(?:\?[^"']*)?"/g, 'href="/site-shell.css?v=20260908b"').replace(/src="\/site-shell\.js(?:\?[^"']*)?"/g, 'src="/site-shell.js?v=20260908b"');
 await writeFile('5-sinif-hafta01.html', weekWorkspace);
 
 let editorialCss = await readFile('keskinlab-editorial.css', 'utf8');
