@@ -44,8 +44,8 @@
     if (!week.cikti) return null;
     // Kürasyon henüz yapılmamış bir hafta için sade bir yedek metin
     // (resmî öğrenme çıktısının doğal dile çevrilmiş hâli)
-    var first = week.cikti.split(/BTY\.5\.\d+\.\d+\.?\s*/).filter(Boolean)[0] || week.cikti;
-    first = first.trim().replace(/\s*BTY\.5.*$/, '');
+    var first = week.cikti.replace(/^\S*\d(?:\.\d+)+\.?\s*/u, '').trim();
+    first = first.replace(/\s+\S*\d(?:\.\d+)+.*$/u, '');
     return 'Bu hafta ' + first.charAt(0).toLocaleLowerCase('tr') + first.slice(1);
   }
 
@@ -256,15 +256,11 @@
     // eylemler
     var actionsEl = document.getElementById('weekActions');
     var actions = [];
-    if (n === 1) {
-      // The presentation already lives in the week materials below.
-      var sunum = D.materials['1'] && D.materials['1']['sunum'];
-      if (sunum) actions.push('<a href="#weekMaterials" class="btn btn-secondary">Materyalleri Gör</a>');
-    } else if (!week.ozel) {
+    if (n !== 1 && !week.ozel) {
       var plan = D.dailyPlans[n];
       if (plan) actions.push('<a href="' + plan + '" class="btn btn-primary">Günlük Ders Planını Aç' +
         '<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>');
-    } else {
+    } else if (n !== 1) {
       var planSp = D.dailyPlans[n];
       if (planSp) actions.push('<a href="' + planSp + '" class="btn btn-secondary">Günlük Planı Gör</a>');
     }

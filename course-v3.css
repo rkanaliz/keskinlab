@@ -238,14 +238,14 @@ body.v3-modal-open { overflow: hidden; }
 
 /* Hafta materyalleri — tek aktif önizleme ve materyal seçici */
 
-.week-materials { border-top: 1px solid var(--color-border); padding: 20px 0; }
+.week-materials { border-top: 1px solid var(--color-border); padding: 12px 0; }
 .materials-empty { font-size: 13.5px; color: var(--color-text-muted); margin: 0; }
 
 .material-viewer {
   display: grid;
   grid-template-columns: minmax(0, 72fr) minmax(190px, 28fr);
   grid-template-areas: "stage selector";
-  gap: 36px;
+  gap: 24px;
   align-items: start;
 }
 .material-stage-column { grid-area: stage; min-width: 0; }
@@ -255,7 +255,8 @@ body.v3-modal-open { overflow: hidden; }
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: clamp(320px, 31vw, 410px);
+  height: auto;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   background: var(--color-surface-subtle);
   border: 1px solid var(--color-border);
@@ -295,6 +296,7 @@ body.v3-modal-open { overflow: hidden; }
   flex: 1 1 auto;
   min-height: 0;
   height: auto;
+  aspect-ratio: auto;
   border: 0;
   border-radius: 0;
 }
@@ -489,7 +491,7 @@ body.v3-modal-open { overflow: hidden; }
   .week-surface-grid,.week-surface-copy,.week-materials,.material-viewer,.material-stage { min-width:0; max-width:100%; }
   .week-actions { flex-direction: column; align-items: stretch; }
   .week-actions .btn { justify-content: center; }
-  .week-materials { padding: 18px 0; }
+  .week-materials { padding: 12px 0; }
   .material-viewer {
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas: "selector" "stage";
@@ -512,7 +514,6 @@ body.v3-modal-open { overflow: hidden; }
   .material-selector-item.is-active::before { top: auto; right: 10px; bottom: 0; left: 10px; width: auto; height: 2px; }
   .material-label-full { display: none; }
   .material-label-short { display: inline; }
-  .material-stage { height: clamp(240px, 68vw, 280px); }
   .material-viewer-footer { padding-top: 8px; }
   .theme-week-pills { gap: 6px; }
   .week-pill { width: 30px; height: 30px; font-size: 10.5px; }
