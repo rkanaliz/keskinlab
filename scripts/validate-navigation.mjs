@@ -24,7 +24,7 @@ for (const file of publicSurfaces) {
     if (!html.includes(target)) errors.push(`${file}: eksik global navigasyon hedefi ${target}`);
   }
   if (/Gizlilik[\s\S]{0,100}href=["']\/hakkinda|href=["']\/hakkinda["'][^>]*>Gizlilik/.test(html)) errors.push(`${file}: Gizlilik etiketi Hakkında hedefine bağlanmış`);
-  for (const token of ['data-shared-shell="v2"','searchTrigger','startLesson','mobileMenuTrigger','site-footer','/site-shell.css','/dijital-icerikler','/evrak-cantasi']) {
+  for (const token of ['data-shared-shell="v2"','searchTrigger','startLesson','mobileMenuTrigger','site-footer','/site-shell-v2b.css','/dijital-icerikler','/evrak-cantasi']) {
     if (!html.includes(token)) errors.push(`${file}: ortak V2 shell öğesi eksik ${token}`);
   }
   const header = html.match(/<header class="site-header"[\s\S]*?<\/header>/)?.[0];

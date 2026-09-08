@@ -30,10 +30,10 @@ function applySharedShell(html, current, { editorial = false } = {}) {
     .replace(/<nav class="site-shell-mobile"[\s\S]*?(?=<footer)/, shellOverlays)
     .replace(/<footer(?:\s[^>]*)?>[\s\S]*?<\/footer>/, shellFooter);
   if (!html.includes('id="mobileMenu"')) html = html.replace(shellFooter, `${shellOverlays}${shellFooter}`);
-  html = html.replace(/(?:<link rel="stylesheet" href="\/site-shell\.css(?:\?[^"']*)?">)+/g, '<link rel="stylesheet" href="/site-shell.css">');
-  if (!html.includes('/site-shell.css')) html = html.replace('</head>', '<link rel="stylesheet" href="/site-shell.css"></head>');
+  html = html.replace(/(?:<link rel="stylesheet" href="\/site-shell(?:-v2b)?\.css(?:\?[^"']*)?">)+/g, '<link rel="stylesheet" href="/site-shell-v2b.css">');
+  if (!html.includes('/site-shell-v2b.css')) html = html.replace('</head>', '<link rel="stylesheet" href="/site-shell-v2b.css"></head>');
   if (editorial) html = html.replace(/<body(?:\s[^>]*)?>/, '<body class="editorial-v2">');
-  return html.replace(/href="\/site-shell\.css(?:\?[^"']*)?"/g, 'href="/site-shell.css?v=20260908b"').replace(/src="\/site-shell\.js(?:\?[^"']*)?"/g, 'src="/site-shell.js?v=20260908b"');
+  return html.replace(/href="\/site-shell(?:-v2b)?\.css(?:\?[^"']*)?"/g, 'href="/site-shell-v2b.css"').replace(/src="\/site-shell(?:-v2b)?\.js(?:\?[^"']*)?"/g, 'src="/site-shell-v2b.js"');
 }
 
 let homeHtml = (await readFile('preview/homepage-v2.html', 'utf8'))
@@ -49,7 +49,7 @@ let homeHtml = (await readFile('preview/homepage-v2.html', 'utf8'))
   .replaceAll('/hakkinda.html', '/hakkinda')
   .replaceAll('/iletisim.html', '/iletisim')
   .replaceAll('/dijital-araclar.html', '/dijital-araclar')
-  .replace('href="homepage-v2.css"', 'href="/site-v2.css?v=20260908b"')
+  .replace('href="homepage-v2.css"', 'href="/site-v2b.css"')
   .replace('src="homepage-materials.js"', 'src="/site-materials.js"')
   .replace('src="homepage-v2.js"', 'src="/site-v2.js"');
 homeHtml = applySharedShell(homeHtml, '/');
@@ -200,8 +200,8 @@ for (const file of editorialFiles) {
     .replaceAll('href="/takvim.html"', 'href="/takvim"');
   if (!html.includes('keskinlab-typography.css')) html = html.replace('<link rel="stylesheet" href="/site-shell.css">', '<link rel="stylesheet" href="/keskinlab-typography.css"><link rel="stylesheet" href="/site-shell.css">');
   html = applySharedShell(html, current, { editorial: true });
-  html = html.replace(/(?:<script src="\/site-materials\.js"><\/script><script src="\/site-shell\.js(?:\?[^"']*)?"><\/script>)+/g, '');
-  if (!html.includes('/site-shell.js')) html = html.replace('</body>', '<script src="/site-materials.js"></script><script src="/site-shell.js?v=20260908b"></script></body>');
+  html = html.replace(/(?:<script src="\/site-materials\.js"><\/script><script src="\/site-shell(?:-v2b)?\.js(?:\?[^"']*)?"><\/script>)+/g, '');
+  if (!html.includes('/site-shell-v2b.js')) html = html.replace('</body>', '<script src="/site-materials.js"></script><script src="/site-shell-v2b.js"></script></body>');
   await writeFile(file, html);
 }
 
@@ -209,11 +209,16 @@ let weekWorkspace = await readFile('5-sinif-hafta01.html', 'utf8');
 weekWorkspace = weekWorkspace
   .replace(/<header class="(?:top|site-header)"[^>]*>[\s\S]*?<\/header>/, shellHeader('/5-sinif-bty'))
   .replace(/<body(?:\s[^>]*)?>/, '<body class="lesson-workspace-v2">');
-if (!weekWorkspace.includes('/site-shell.css')) weekWorkspace = weekWorkspace.replace('</head>', '<link rel="stylesheet" href="/site-shell.css"></head>');
+if (!weekWorkspace.includes('/site-shell-v2b.css')) weekWorkspace = weekWorkspace.replace('</head>', '<link rel="stylesheet" href="/site-shell-v2b.css"></head>');
 if (!weekWorkspace.includes('id="mobileMenu"')) weekWorkspace = weekWorkspace.replace('<section class="player"', `${shellOverlays}${shellFooter}<section class="player"`);
-if (!weekWorkspace.includes('/site-shell.js')) weekWorkspace = weekWorkspace.replace('<script src="/hafta01-assets/hafta01.js"></script>', '<script src="/site-materials.js"></script><script src="/site-shell.js?v=20260908b"></script><script src="/hafta01-assets/hafta01.js"></script>');
-weekWorkspace = weekWorkspace.replace(/href="\/site-shell\.css(?:\?[^"']*)?"/g, 'href="/site-shell.css?v=20260908b"').replace(/src="\/site-shell\.js(?:\?[^"']*)?"/g, 'src="/site-shell.js?v=20260908b"');
+if (!weekWorkspace.includes('/site-shell-v2b.js')) weekWorkspace = weekWorkspace.replace('<script src="/hafta01-assets/hafta01.js"></script>', '<script src="/site-materials.js"></script><script src="/site-shell-v2b.js"></script><script src="/hafta01-assets/hafta01.js"></script>');
+weekWorkspace = weekWorkspace.replace(/href="\/site-shell(?:-v2b)?\.css(?:\?[^"']*)?"/g, 'href="/site-shell-v2b.css"').replace(/src="\/site-shell(?:-v2b)?\.js(?:\?[^"']*)?"/g, 'src="/site-shell-v2b.js"');
+weekWorkspace = weekWorkspace.replace(/(?:<link rel="stylesheet" href="\/site-shell-v2b\.css">)+/g, '<link rel="stylesheet" href="/site-shell-v2b.css">').replace(/(?:<script src="\/site-materials\.js"><\/script><script src="\/site-shell-v2b\.js"><\/script>)+/g, '<script src="/site-materials.js"></script><script src="/site-shell-v2b.js"></script>');
 await writeFile('5-sinif-hafta01.html', weekWorkspace);
+
+await writeFile('site-shell-v2b.css', await readFile('site-shell.css', 'utf8'));
+await writeFile('site-shell-v2b.js', await readFile('site-shell.js', 'utf8'));
+await writeFile('site-v2b.css', await readFile('site-v2.css', 'utf8'));
 
 let editorialCss = await readFile('keskinlab-editorial.css', 'utf8');
 editorialCss = editorialCss
