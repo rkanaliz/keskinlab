@@ -19,6 +19,13 @@
   }
   function todayDate() { return new Date(); }
 
+  function replayMotion(el, className) {
+    if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    el.classList.remove(className);
+    void el.offsetWidth;
+    el.classList.add(className);
+  }
+
   // ---------------------------------------------------------------
   // Öğrenci akışı — 37 haftanın gerçek konu/süreç bileşenlerinden
   // elle kürate edilmiş sunum-katmanı metni (bkz. 5-sinif-v3-data.js
@@ -308,6 +315,8 @@
       url.searchParams.set('week', n);
       window.history.replaceState({}, '', url);
     }
+
+    replayMotion(document.querySelector('.week-surface-inner'), 'is-refreshing');
   }
 
   function materialViewerItem(files) {
@@ -329,7 +338,10 @@
     var counter = el.querySelector('.material-pagination span');
     var prev = el.querySelector('[data-material-page="prev"]');
     var next = el.querySelector('[data-material-page="next"]');
-    if (image) image.src = active.previews[activeMaterialIndex];
+    if (image) {
+      image.src = active.previews[activeMaterialIndex];
+      replayMotion(image, 'is-changing');
+    }
     if (counter) counter.textContent = (activeMaterialIndex + 1) + ' / ' + active.previews.length;
     if (prev) prev.disabled = activeMaterialIndex === 0;
     if (next) next.disabled = activeMaterialIndex === active.previews.length - 1;
@@ -464,6 +476,7 @@
       });
     }
     wireMaterialStage(el.querySelector('.material-stage'), active);
+    replayMotion(el.querySelector('.material-viewer'), 'is-switching');
   }
 
   function renderMaterials(week) {
@@ -649,7 +662,7 @@
 
   document.getElementById('toggleAllWeeksBtn').addEventListener('click', function () {
     var panel = document.getElementById('allWeeksPanel');
-    if (panel.hidden) { renderAllWeeksPanel(); panel.hidden = false; this.textContent = 'Haftaları Gizle'; }
+    if (panel.hidden) { renderAllWeeksPanel(); panel.hidden = false; replayMotion(panel, 'is-opening'); this.textContent = 'Haftaları Gizle'; }
     else { panel.hidden = true; this.textContent = 'Tüm Haftalar'; }
   });
 
@@ -658,6 +671,7 @@
     var panel = document.getElementById('teacherPanel');
     var open = panel.hidden;
     panel.hidden = !open;
+    if (open) replayMotion(panel, 'is-opening');
     teacherToggle.setAttribute('aria-expanded', String(open));
   });
 
