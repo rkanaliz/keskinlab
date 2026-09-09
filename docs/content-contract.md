@@ -86,13 +86,13 @@ Git'e ham, şişkin export commit edilmez. Kaynak görsel de optimize edilmiş m
 - 1.2 MiB üzeri raster kaynak validator'da uyarı üretir.
 - `--strict-assets` modunda 1.2 MiB üzeri raster kaynak build hatasıdır.
 - **Dosya boyutunu düşürmek için piksel boyutu küçültülmez.** Önce palet/quantization, metadata temizliği ve doğru PNG/JPEG kodlaması uygulanır; kaynak masterın genişlik/yüksekliği korunur.
-- Onaylı Hafta 01 ve Hafta 02 sunum paketleri 1672×941 özgün PNG kaynaklarıyla korunur; web sunumunda optimize WebP türevleri kullanılır.
+- Onaylı Hafta 01, Hafta 02 ve Hafta 03 sunum paketleri 1672×941 özgün PNG kaynaklarıyla korunur; web sunumunda optimize WebP türevleri kullanılır.
 - Yeni **sunum** görselleri 16:9 oranında ve en az **1920×1080** üretilir. Eski 1672×941 slaytlar migrasyonda büyütülmez; yalnızca kodlamaları optimize edilir.
 - İnfografikler ve hafta özetleri kendi tasarım oranında kalır; 1920×1080 kuralı bunlara uygulanmaz.
 - Baskı/indirilebilir kalite gerekiyorsa mümkün olduğunda PDF ayrıca saklanır; web görüntüsü için gereksiz büyük PNG tutulmaz.
 - Build aşamasında web türevleri (WebP ve thumbnail) kaynaktan üretilir.
 
-Onaylı Hafta 1 ve Hafta 2 rasterlarının piksel boyutu korunur; strict asset kontrolü production build'in parçasıdır.
+Onaylı Hafta 1, Hafta 2 ve Hafta 3 rasterlarının piksel boyutu korunur; strict asset kontrolü production build'in parçasıdır.
 
 ## 6. Thumbnail kuralı
 
