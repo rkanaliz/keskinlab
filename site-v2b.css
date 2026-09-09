@@ -436,7 +436,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   isolation: isolate;
   overflow: hidden;
   padding: 56px 0 48px;
-  background: #fff;
+  background: linear-gradient(135deg, #fff 0%, #fffaf8 50%, #faf2ef 100%);
 }
 .courses::before,
 .courses::after {
@@ -445,39 +445,39 @@ ul { list-style: none; margin: 0; padding: 0; }
   z-index: -1;
   pointer-events: none;
   border-radius: 50%;
-  filter: blur(22px);
+  filter: blur(30px);
   opacity: 0;
   will-change: transform, opacity;
 }
 .courses::before {
-  width: min(58vw, 760px);
-  height: 330px;
-  left: -20%;
-  bottom: -155px;
-  background: radial-gradient(ellipse, rgba(139, 30, 36, .11) 0%, rgba(139, 30, 36, .055) 42%, transparent 72%);
-  transform: translate3d(-12%, 24%, 0) scale(.82);
+  width: min(68vw, 900px);
+  height: 390px;
+  left: -26%;
+  bottom: -185px;
+  background: radial-gradient(ellipse, rgba(139, 30, 36, .22) 0%, rgba(139, 30, 36, .105) 40%, transparent 72%);
+  transform: translate3d(-6%, 18%, 0) scale(.9);
 }
 .courses::after {
-  width: min(48vw, 620px);
-  height: 300px;
-  right: -16%;
-  top: -120px;
-  background: radial-gradient(ellipse, rgba(190, 119, 93, .14) 0%, rgba(190, 119, 93, .06) 44%, transparent 72%);
-  transform: translate3d(18%, -18%, 0) scale(.86);
+  width: min(60vw, 780px);
+  height: 360px;
+  right: -22%;
+  top: -155px;
+  background: radial-gradient(ellipse, rgba(205, 132, 101, .24) 0%, rgba(190, 119, 93, .12) 42%, transparent 72%);
+  transform: translate3d(12%, -12%, 0) scale(.94);
 }
-.courses.is-glow-active::before { animation: course-glow-burgundy 8.8s cubic-bezier(.2,.7,.2,1) forwards; }
-.courses.is-glow-active::after { animation: course-glow-clay 9.4s cubic-bezier(.2,.7,.2,1) .18s forwards; }
+.courses.is-glow-active::before { animation: course-glow-burgundy 11s ease-in-out infinite alternate; }
+.courses.is-glow-active::after { animation: course-glow-clay 13s ease-in-out .8s infinite alternate; }
 .courses > .container { position: relative; z-index: 1; }
 
 @keyframes course-glow-burgundy {
-  0% { opacity: 0; transform: translate3d(-12%, 24%, 0) scale(.82); }
-  42% { opacity: 1; transform: translate3d(48%, -12%, 0) scale(1.08); }
-  100% { opacity: .82; transform: translate3d(82%, -20%, 0) scale(1.18); }
+  0% { opacity: .68; transform: translate3d(-6%, 18%, 0) scale(.9); }
+  50% { opacity: 1; transform: translate3d(45%, -12%, 0) scale(1.08); }
+  100% { opacity: .8; transform: translate3d(88%, -18%, 0) scale(1.18); }
 }
 @keyframes course-glow-clay {
-  0% { opacity: 0; transform: translate3d(18%, -18%, 0) scale(.86); }
-  48% { opacity: 1; transform: translate3d(-46%, 20%, 0) scale(1.1); }
-  100% { opacity: .8; transform: translate3d(-72%, 30%, 0) scale(1.16); }
+  0% { opacity: .72; transform: translate3d(12%, -12%, 0) scale(.94); }
+  50% { opacity: 1; transform: translate3d(-42%, 18%, 0) scale(1.1); }
+  100% { opacity: .78; transform: translate3d(-82%, 26%, 0) scale(1.18); }
 }
 
 .section-head {

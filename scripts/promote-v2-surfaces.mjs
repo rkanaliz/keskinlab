@@ -49,9 +49,9 @@ let homeHtml = (await readFile('preview/homepage-v2.html', 'utf8'))
   .replaceAll('/hakkinda.html', '/hakkinda')
   .replaceAll('/iletisim.html', '/iletisim')
   .replaceAll('/dijital-araclar.html', '/dijital-araclar')
-  .replace('href="homepage-v2.css?v=20260909c"', 'href="/site-v2b.css?v=20260909c"')
+  .replace('href="homepage-v2.css?v=20260909d"', 'href="/site-v2b.css?v=20260909d"')
   .replace('src="homepage-materials.js"', 'src="/site-materials.js"')
-  .replace('src="homepage-v2.js?v=20260909c"', 'src="/site-v2.js?v=20260909c"');
+  .replace('src="homepage-v2.js?v=20260909d"', 'src="/site-v2.js?v=20260909d"');
 homeHtml = applySharedShell(homeHtml, '/');
 await writeFile('index.html', homeHtml);
 await writeFile('site-v2.css', (await readFile('preview/homepage-v2.css', 'utf8')).replaceAll('final-assets/', 'preview/final-assets/'));
