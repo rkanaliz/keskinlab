@@ -99,6 +99,17 @@ await writeFile('dijital-icerikler.html', digitalHubHtml);
 await writeFile('dijital-icerikler.css', await readFile('preview/dijital-icerikler-v2.css', 'utf8'));
 await writeFile('dijital-icerikler.js', await readFile('preview/dijital-icerikler-v2.js', 'utf8'));
 
+let teacherDocsHtml = (await readFile('preview/evrak-cantasi-v2.html', 'utf8'))
+  .replace('<title>Evraklar — KeskinLab Önizleme</title>', '<title>Evraklar — KeskinLab</title>')
+  .replace('<meta name="description" content="Öğretmenin yıllık plan, günlük plan ve eğitim takvimine düzenli erişim alanı.">', '<meta name="description" content="Öğretmenin yıllık plan, günlük plan ve eğitim takvimine düzenli erişim alanı.">\n  <link rel="canonical" href="https://www.keskinlab.com/evrak-cantasi">')
+  .replaceAll('/preview/evrak-cantasi-v2.html', '/evrak-cantasi')
+  .replace('/preview/evrak-cantasi-v2.css', '/evrak-cantasi.css?v=20260909a')
+  .replace('/preview/evrak-cantasi-v2.js', '/evrak-cantasi.js?v=20260909a');
+teacherDocsHtml = applySharedShell(teacherDocsHtml, '/evrak-cantasi');
+await writeFile('evrak-cantasi.html', teacherDocsHtml);
+await writeFile('evrak-cantasi.css', await readFile('preview/evrak-cantasi-v2.css', 'utf8'));
+await writeFile('evrak-cantasi.js', await readFile('preview/evrak-cantasi-v2.js', 'utf8'));
+
 for (const config of courses) {
   const raw = JSON.parse(await readFile(`data/${config.key}.json`, 'utf8'));
   const themeNames = [];
@@ -177,7 +188,7 @@ for (const config of courses) {
   await writeFile(mirror, html);
 }
 
-const editorialFiles = ['hakkinda.html', 'iletisim.html', 'evrak-cantasi.html', 'takvim.html', 'dijital-araclar.html'];
+const editorialFiles = ['hakkinda.html', 'iletisim.html', 'takvim.html', 'dijital-araclar.html'];
 for (const file of editorialFiles) {
   let html = await readFile(file, 'utf8');
   const current = '/' + file.replace(/\.html$/, '');
