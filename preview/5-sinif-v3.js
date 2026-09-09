@@ -341,16 +341,17 @@
     var rows = definitions.map(function (definition) {
       var files = mats[definition.key] || [];
       var pdf = files.find(function (file) { return PDF_EXT_RE.test(file); });
-      if (!pdf) return '';
+      var download = files.find(function (file) { return /\.docx$/i.test(file); }) || pdf;
       return '<div class="lesson-file-row">' +
         '<span class="lesson-file-name">' + definition.label + '</span>' +
-        '<span class="lesson-file-actions">' +
-          '<a href="' + pdf + '" aria-label="' + definition.openLabel + '">Aç</a>' +
-          '<a href="' + pdf + '" download aria-label="' + definition.downloadLabel + '">↓ indir</a>' +
-        '</span>' +
+        (pdf
+          ? '<span class="lesson-file-actions">' +
+              '<a href="' + pdf + '" aria-label="' + definition.openLabel + '">Aç</a>' +
+              '<a href="' + download + '" download aria-label="' + definition.downloadLabel + '">↓ indir</a>' +
+            '</span>'
+          : '<span class="material-status">Hazırlanacak</span>') +
       '</div>';
-    }).filter(Boolean).join('');
-    if (!rows) return '';
+    }).join('');
     return '<section class="lesson-files" aria-labelledby="lessonFilesTitle">' +
       '<h3 class="lesson-files-title" id="lessonFilesTitle">DERS DOSYALARI</h3>' +
       '<div class="lesson-files-list">' + rows + '</div>' +
@@ -396,7 +397,9 @@
     activeMaterialItems = items;
     var active = items.find(function (item) { return item.key === activeMaterialType; }) || items[0];
     activeMaterialType = active.key;
-    activeMaterialIndex = Math.max(0, Math.min(activeMaterialIndex, active.previews.length - 1));
+    activeMaterialIndex = active.previews.length
+      ? Math.max(0, Math.min(activeMaterialIndex, active.previews.length - 1))
+      : 0;
 
     var preview = active.previews[activeMaterialIndex];
     var hasPagination = active.previews.length > 1;
@@ -407,6 +410,7 @@
       return '<button class="material-selector-item' + (selected ? ' is-active' : '') + '" type="button" data-material-type="' + item.key + '" aria-pressed="' + selected + '">' +
         '<span class="material-label-full">' + item.label + '</span>' +
         '<span class="material-label-short">' + shortLabel + '</span>' +
+        (!item.previews.length ? '<span class="material-status">Hazırlanacak</span>' : '') +
       '</button>';
     }).join('');
 
@@ -420,7 +424,7 @@
     var footer = hasPagination
       ? '<div class="material-viewer-footer">' + pagination + '</div>'
       : '';
-    var fullscreenButton = supportsFullscreen
+    var fullscreenButton = supportsFullscreen && preview
       ? '<button class="material-fullscreen-btn" type="button" title="Tam ekran" aria-label="Tam ekran">' +
           '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 3H3v4M13 3h4v4M17 13v4h-4M7 17H3v-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
         '</button>'
@@ -429,8 +433,10 @@
     el.innerHTML =
       '<div class="material-viewer">' +
         '<div class="material-stage-column">' +
-          '<div class="material-stage">' +
-            (preview ? '<img src="' + preview + '" alt="' + active.label + ' önizlemesi">' : '') +
+          '<div class="material-stage' + (!preview ? ' is-pending' : '') + '">' +
+            (preview
+              ? '<img src="' + preview + '" alt="' + active.label + ' önizlemesi">'
+              : '<div class="material-placeholder" role="status"><span>' + active.label + '</span><strong>Hazırlanacak</strong></div>') +
             fullscreenButton +
           '</div>' +
           footer +
@@ -467,30 +473,18 @@
 
   function renderMaterials(week) {
     var el = document.getElementById('weekMaterials');
-    var mats = D.materials[String(week.n)];
-    if (!mats || week.ozel) {
-      el.innerHTML = '<p class="materials-empty">' +
-        (week.ozel ? 'Bu hafta için ek ders materyali bulunmuyor.' : 'Bu hafta için ek materyal henüz yüklenmedi. Günlük ders planı hazır.') +
-        '</p>';
-      return;
-    }
+    var mats = D.materials[String(week.n)] || {};
     var items = [];
     var lessonFiles = renderLessonFiles(mats);
     MATERIAL_ORDER.forEach(function (key) {
-      var files = mats[key];
-      if (!files || !files.length) return;
+      var files = mats[key] || [];
       var viewerItem = materialViewerItem(files);
-      if (!viewerItem.previews.length) return;
       viewerItem.key = key;
       viewerItem.label = MATERIAL_LABELS[key] || key;
       items.push(viewerItem);
     });
-    if (!items.length && !lessonFiles) {
-      el.innerHTML = '<p class="materials-empty">Bu hafta için ek materyal henüz yüklenmedi. Günlük ders planı hazır.</p>';
-      return;
-    }
-    if (!items.length) { el.innerHTML = lessonFiles; return; }
-    activeMaterialType = items[0].key;
+    var firstAvailable = items.find(function (item) { return item.previews.length; });
+    activeMaterialType = firstAvailable ? firstAvailable.key : items[0].key;
     activeMaterialIndex = 0;
     renderMaterialViewer(week, items, lessonFiles);
   }
@@ -528,13 +522,12 @@
     var links = [];
     var plan = D.dailyPlans[week.n];
     if (plan) links.push('<a href="' + plan + '" class="teacher-link">Günlük Ders Planı</a>');
-    var mats = D.materials[String(week.n)];
-    if (mats) {
-      if (mats['sunum'] && week.n !== 1) links.push('<a href="' + mats['sunum'][0] + '" class="teacher-link">Sınıf Sunumunu Aç</a>');
-      if (mats['ogrenci-etkinligi']) links.push('<a href="' + mats['ogrenci-etkinligi'][0] + '" class="teacher-link">Çalışma Kâğıdı</a>');
-      if (mats['ogretmen'] && mats['ogretmen']['gozlem-formu']) links.push('<a href="' + mats['ogretmen']['gozlem-formu'][0] + '" class="teacher-link">Gözlem Formu</a>');
-    }
-    el.innerHTML = links.length ? links.join('') : '<p class="teacher-empty">Bu hafta için özel öğretmen materyali henüz yok.</p>';
+    var mats = D.materials[String(week.n)] || {};
+    if (mats['ogrenci-etkinligi']) links.push('<a href="' + (mats['ogrenci-etkinligi'].find(function (file) { return PDF_EXT_RE.test(file); }) || mats['ogrenci-etkinligi'][0]) + '" class="teacher-link">Çalışma Kâğıdı</a>');
+    else links.push('<span class="teacher-link teacher-link-pending">Çalışma Kâğıdı <small>Hazırlanacak</small></span>');
+    if (mats['ogretmen'] && mats['ogretmen']['gozlem-formu']) links.push('<a href="' + (mats['ogretmen']['gozlem-formu'].find(function (file) { return PDF_EXT_RE.test(file); }) || mats['ogretmen']['gozlem-formu'][0]) + '" class="teacher-link">Gözlem Formu</a>');
+    else links.push('<span class="teacher-link teacher-link-pending">Gözlem Formu <small>Hazırlanacak</small></span>');
+    el.innerHTML = links.join('');
   }
 
   function renderCurriculum(week) {

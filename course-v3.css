@@ -252,6 +252,25 @@ body.v3-modal-open { overflow: hidden; }
   user-select: none;
 }
 .material-stage img { width: 100%; height: 100%; object-fit: contain; pointer-events: none; -webkit-user-drag: none; }
+.material-stage.is-pending { min-height: 220px; aspect-ratio: auto; }
+.material-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+.material-placeholder span { font-size: 13px; }
+.material-placeholder strong {
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
 .material-fullscreen-btn {
   position: absolute;
   right: 12px;
@@ -313,6 +332,10 @@ body.v3-modal-open { overflow: hidden; }
 .material-selector { grid-area: selector; display: flex; flex-direction: column; min-width: 0; }
 .material-selector-item {
   position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
   width: 100%;
   border: 0;
   border-bottom: 1px solid var(--color-border);
@@ -336,6 +359,14 @@ body.v3-modal-open { overflow: hidden; }
   background: var(--color-accent);
 }
 .material-label-short { display: none; }
+.material-status {
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
 
 .lesson-files { margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--color-border); }
 .lesson-files-title {
@@ -360,6 +391,7 @@ body.v3-modal-open { overflow: hidden; }
 .lesson-file-actions { display: inline-flex; align-items: center; gap: 18px; flex-shrink: 0; }
 .lesson-file-actions a { color: var(--color-text-secondary); }
 .lesson-file-actions a:hover { color: var(--color-accent); }
+.lesson-file-row > .material-status { flex-shrink: 0; }
 
 /* Takvim bağlamı */
 
@@ -431,6 +463,16 @@ body.v3-modal-open { overflow: hidden; }
 .teacher-links { display: flex; flex-direction: column; gap: 8px; }
 .teacher-link { font-size: 13.5px; font-weight: 500; color: var(--color-text-secondary); }
 .teacher-link:hover { color: var(--color-accent); }
+.teacher-link-pending { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.teacher-link-pending:hover { color: var(--color-text-secondary); }
+.teacher-link-pending small {
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
 .teacher-empty { font-size: 13px; color: var(--color-text-muted); font-style: italic; }
 
 .curriculum-details summary { font-size: 13px; font-weight: 500; color: var(--color-accent); cursor: pointer; }
@@ -525,6 +567,7 @@ body.v3-modal-open { overflow: hidden; }
   .week-surface-context { min-width:0; flex-wrap: wrap; justify-content: center; gap: 6px; }
   .week-status-pill { white-space:normal; text-align:center; max-width:100%; }
   .week-surface-grid,.week-surface-copy,.week-materials,.material-viewer,.material-stage { min-width:0; max-width:100%; }
+  .material-stage.is-pending { min-height: 170px; }
   .week-materials { padding: 12px 0; }
   .material-viewer {
     grid-template-columns: minmax(0, 1fr);
