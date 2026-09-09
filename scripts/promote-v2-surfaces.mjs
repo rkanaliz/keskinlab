@@ -88,26 +88,16 @@ function stripCodes(text = '') {
 
 const materialManifest = JSON.parse(await readFile('generated/materials.json', 'utf8'));
 
-function escapeHtml(value = '') {
-  return String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
-}
-
-const catalogSections = Object.entries(materialManifest.courses || {}).map(([courseKey, course]) => {
-  const weekCards = Object.values(course.weeks || {}).filter(week => week.materials?.length).map(week => {
-    const materials = week.materials.map(material => {
-      const links = [];
-      if (material.webPreview || material.preview) links.push(`<a class="material-action primary" href="/${escapeHtml(material.webPreview || material.preview).replace(/^\//, '')}" target="_blank" rel="noopener">Aç</a>`);
-      for (const download of material.downloads || []) links.push(`<a class="material-action" href="/${escapeHtml(download.href).replace(/^\//, '')}" download="${escapeHtml(download.filename)}">${escapeHtml(download.format.toUpperCase())} indir</a>`);
-      return `<article class="material-card"><div><span>${escapeHtml(material.label)}</span><h3>${escapeHtml(material.label)} ${escapeHtml(material.index)}</h3></div><div class="material-actions">${links.join('')}</div></article>`;
-    }).join('');
-    return `<section class="catalog-week"><div class="catalog-week-head"><span>HAFTA ${String(week.week).padStart(2, '0')}</span><h2>${escapeHtml(course.title)}</h2></div><div class="material-grid">${materials}</div></section>`;
-  }).join('');
-  return weekCards;
-}).join('');
-
-let catalogHtml = `<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Dijital İçerikler — KeskinLab</title><meta name="description" content="KeskinLab'ın gerçekten mevcut sunum, etkinlik, ders notu, test ve öğretmen materyalleri."><link rel="canonical" href="https://www.keskinlab.com/dijital-icerikler"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/dijital-icerikler.css"></head><body>${shellHeader('/dijital-icerikler')}<main><section class="catalog-hero"><div class="container"><p class="eyebrow">GERÇEK KESKİNLAB MATERYALLERİ</p><h1>Dijital İçerikler</h1><p>Sunum, etkinlik, ders notu, test ve öğretmen araçlarını doğrudan açın veya indirin. Burada yalnız dosya sisteminde gerçekten bulunan materyaller gösterilir.</p><a class="guide-link" href="/dijital-araclar">MEB / YEĞİTEK Dijital Araçlar Rehberi →</a></div></section><div class="container catalog-body">${catalogSections || '<p>Henüz yayımlanmış materyal bulunmuyor.</p>'}</div></main>${shellOverlays}${shellFooter}<script src="/site-materials.js"></script><script src="/site-shell.js"></script></body></html>`;
-catalogHtml = applySharedShell(catalogHtml, '/dijital-icerikler');
-await writeFile('dijital-icerikler.html', catalogHtml);
+let digitalHubHtml = (await readFile('preview/dijital-icerikler-v2.html', 'utf8'))
+  .replace('<title>Dijital İçerikler — KeskinLab Önizleme</title>', '<title>Dijital İçerikler — KeskinLab</title>')
+  .replace('<meta name="description" content="Öğretmenler için güncel dijital eğitim gündemi, MEB ve YEĞİTEK platformları ve kısa kullanım kılavuzları.">', '<meta name="description" content="Öğretmenler için güncel dijital eğitim gündemi, MEB ve YEĞİTEK platformları ve kısa kullanım kılavuzları.">\n  <link rel="canonical" href="https://www.keskinlab.com/dijital-icerikler">')
+  .replaceAll('/preview/dijital-icerikler-v2.html', '/dijital-icerikler')
+  .replace('/preview/dijital-icerikler-v2.css', '/dijital-icerikler.css?v=20260909a')
+  .replace('/preview/dijital-icerikler-v2.js', '/dijital-icerikler.js?v=20260909a');
+digitalHubHtml = applySharedShell(digitalHubHtml, '/dijital-icerikler');
+await writeFile('dijital-icerikler.html', digitalHubHtml);
+await writeFile('dijital-icerikler.css', await readFile('preview/dijital-icerikler-v2.css', 'utf8'));
+await writeFile('dijital-icerikler.js', await readFile('preview/dijital-icerikler-v2.js', 'utf8'));
 
 for (const config of courses) {
   const raw = JSON.parse(await readFile(`data/${config.key}.json`, 'utf8'));
