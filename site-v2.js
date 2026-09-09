@@ -4,9 +4,35 @@
 
   const slides = [...carousel.querySelectorAll('.hero-slide')];
   const dots = [...carousel.querySelectorAll('[data-slide]')];
+  const previous = carousel.querySelector('[data-carousel-prev]');
+  const next = carousel.querySelector('[data-carousel-next]');
+  const toggle = carousel.querySelector('[data-carousel-toggle]');
   if (!slides.length || slides.length !== dots.length) return;
 
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const interval = 6000;
   let current = 0;
+  let timer = null;
+  let userPaused = false;
+  let pointerPaused = false;
+  let focusPaused = false;
+
+  const canAdvance = () => !reduceMotion.matches && !userPaused && !pointerPaused && !focusPaused && !document.hidden;
+
+  const syncToggle = () => {
+    if (!toggle) return;
+    toggle.classList.toggle('is-paused', userPaused);
+    const label = userPaused ? 'Otomatik geçişi başlat' : 'Otomatik geçişi duraklat';
+    toggle.setAttribute('aria-label', label);
+    toggle.title = label;
+  };
+
+  const schedule = () => {
+    window.clearTimeout(timer);
+    timer = canAdvance() ? window.setTimeout(() => show(current + 1), interval) : null;
+    carousel.classList.toggle('is-auto-paused', !canAdvance());
+  };
+
   const show = (index) => {
     current = (index + slides.length) % slides.length;
     slides.forEach((slide, position) => {
@@ -16,11 +42,32 @@
       dots[position].classList.toggle('is-active', active);
       dots[position].setAttribute('aria-pressed', String(active));
     });
+    schedule();
   };
 
-  carousel.querySelector('[data-carousel-prev]').addEventListener('click', () => show(current - 1));
-  carousel.querySelector('[data-carousel-next]').addEventListener('click', () => show(current + 1));
+  previous?.addEventListener('click', () => show(current - 1));
+  next?.addEventListener('click', () => show(current + 1));
   dots.forEach((dot, index) => dot.addEventListener('click', () => show(index)));
+
+  toggle?.addEventListener('click', () => {
+    userPaused = !userPaused;
+    if (!userPaused) focusPaused = false;
+    syncToggle();
+    schedule();
+  });
+  carousel.addEventListener('pointerenter', () => { pointerPaused = true; schedule(); });
+  carousel.addEventListener('pointerleave', () => { pointerPaused = false; schedule(); });
+  carousel.addEventListener('focusin', () => { focusPaused = true; schedule(); });
+  carousel.addEventListener('focusout', event => {
+    if (event.relatedTarget && carousel.contains(event.relatedTarget)) return;
+    focusPaused = false;
+    schedule();
+  });
+  document.addEventListener('visibilitychange', schedule);
+  reduceMotion.addEventListener?.('change', schedule);
+
+  syncToggle();
+  schedule();
 })();
 
 (() => {
