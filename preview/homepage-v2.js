@@ -1,4 +1,30 @@
 (() => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (reduceMotion.matches || !('IntersectionObserver' in window)) return;
+
+  const groups = [
+    [...document.querySelectorAll('.quick-item')],
+    [...document.querySelectorAll('.this-week .eyebrow, .week-context, .week-lead, .week-row')],
+    [...document.querySelectorAll('.bottom-panels .panel')]
+  ];
+  const items = groups.flat();
+  groups.forEach(group => group.forEach((item, index) => {
+    item.dataset.reveal = '';
+    item.style.setProperty('--reveal-delay', `${Math.min(index * 75, 300)}ms`);
+  }));
+  document.documentElement.classList.add('motion-ready');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: .14, rootMargin: '0px 0px -5% 0px' });
+  items.forEach(item => observer.observe(item));
+})();
+
+(() => {
   const carousel = document.querySelector('[data-hero-carousel]');
   if (!carousel) return;
 
