@@ -307,7 +307,8 @@
 
   function materialViewerItem(files) {
     var images = files.filter(function (f) { return IMAGE_EXT_RE.test(f); });
-    return { previews: images };
+    var download = files.find(function (f) { return PDF_EXT_RE.test(f); }) || null;
+    return { previews: images, download: download };
   }
 
   function materialSupportsFullscreen(key) {
@@ -333,7 +334,30 @@
     if (next) next.disabled = activeMaterialIndex === active.previews.length - 1;
   }
 
-  function renderLessonFiles(mats) {
+  function renderLessonFiles(mats, resources) {
+    if (resources && resources.length) {
+      var bundle = resources.find(function (resource) { return resource.group === 'bundle'; });
+      var groupLabels = { teacher: 'Öğretmen İçin', student: 'Öğrenci Çalışmaları', assessment: 'Ölçme ve Değerlendirme', theme: 'Tema Görevi' };
+      var groupOrder = ['teacher', 'student', 'assessment', 'theme'];
+      var groups = groupOrder.map(function (group) {
+        var resourceRows = resources.filter(function (resource) { return resource.group === group; }).map(function (resource) {
+          return '<div class="resource-file-row">' +
+            '<span class="resource-file-name">' + resource.label + '</span>' +
+            '<span class="resource-file-actions">' +
+              (resource.pdf ? '<a href="' + resource.pdf + '" target="_blank" rel="noopener">Aç</a>' : '') +
+              (resource.docx ? '<a href="' + resource.docx + '" download>Düzenlenebilir <span>↓</span></a>' : '') +
+            '</span>' +
+          '</div>';
+        }).join('');
+        return resourceRows ? '<div class="resource-group"><h4>' + groupLabels[group] + '</h4>' + resourceRows + '</div>' : '';
+      }).join('');
+      return '<section class="lesson-files lesson-files-expanded" aria-labelledby="lessonFilesTitle">' +
+        '<div class="resource-files-head"><div><p>HAFTA 01 · DERS DOSYALARI</p><h3 id="lessonFilesTitle">Derste kullanacağın her şey.</h3></div>' +
+          (bundle && bundle.pdf ? '<a class="resource-bundle-link" href="' + bundle.pdf + '" target="_blank" rel="noopener">Tüm evrakları aç <span>→</span></a>' : '') +
+        '</div><div class="resource-groups">' + groups + '</div>' +
+        '<p class="resource-note">PDF dosyaları yazdırmaya, DOCX dosyaları düzenlemeye hazırdır. Tema performans görevi 2. haftada tamamlanır.</p>' +
+      '</section>';
+    }
     var definitions = [
       { key: 'ogrenci-etkinligi', label: 'Etkinlik', openLabel: 'Etkinliği aç', downloadLabel: 'Etkinliği indir' },
       { key: 'ders-notu', label: 'Ders Notu', openLabel: 'Ders Notunu aç', downloadLabel: 'Ders Notunu indir' }
@@ -421,8 +445,11 @@
           '<button type="button" class="material-page-btn" data-material-page="next" aria-label="Sonraki"' + (activeMaterialIndex === active.previews.length - 1 ? ' disabled' : '') + '>→</button>' +
         '</div>'
       : '<span></span>';
-    var footer = hasPagination
-      ? '<div class="material-viewer-footer">' + pagination + '</div>'
+    var downloadLink = active.download
+      ? '<a class="material-download-link" href="' + active.download + '" download>' + active.label + ' PDF <span>↓</span></a>'
+      : '';
+    var footer = hasPagination || downloadLink
+      ? '<div class="material-viewer-footer">' + pagination + downloadLink + '</div>'
       : '';
     var fullscreenButton = supportsFullscreen && preview
       ? '<button class="material-fullscreen-btn" type="button" title="Tam ekran" aria-label="Tam ekran">' +
@@ -475,7 +502,7 @@
     var el = document.getElementById('weekMaterials');
     var mats = D.materials[String(week.n)] || {};
     var items = [];
-    var lessonFiles = renderLessonFiles(mats);
+    var lessonFiles = renderLessonFiles(mats, D.resourceBundles && D.resourceBundles[String(week.n)]);
     MATERIAL_ORDER.forEach(function (key) {
       var files = mats[key] || [];
       var viewerItem = materialViewerItem(files);

@@ -1,0 +1,231 @@
+{
+  "course": "6-sinif-bty",
+  "week": 1,
+  "academic_year": "2026-2027",
+  "title": "Yenilikçi Bilişim Teknolojileri",
+  "learning_outcome": "BTY.6.1.1",
+  "total": 22,
+  "format": "static-image",
+  "slides": [
+    {
+      "number": 1,
+      "title": "Teknoloji Ne Zaman Yenilikçi Olur?",
+      "file": "sunum/01-teknoloji-ne-zaman-yenilikci-olur.png",
+      "width": 1920,
+      "height": 1080,
+      "pedagogical_role": "Giriş ve köprü",
+      "process_components": "a-b",
+      "sha256": "f97d9e71d495717172b785c157588dcaa4fac5d83c0b7c02401b57c36ef75037"
+    },
+    {
+      "number": 2,
+      "title": "Hızlı Yoklama",
+      "file": "sunum/02-hizli-yoklama.png",
+      "width": 1920,
+      "height": 1080,
+      "pedagogical_role": "Ön değerlendirme",
+      "process_components": "a",
+      "sha256": "100df142d2b77749630b425b1a0a1240b821d6f804507277d17b2f0e91619f3f"
+    },
+    {
+      "number": 3,
+      "title": "Burada Ne Oluyor?",
+      "file": "sunum/03-burada-ne-oluyor.png",
+      "width": 1920,
+      "height": 1080,
+      "pedagogical_role": "AR gözlemi",
+      "process_components": "a",
+      "sha256": "9bf08b7e2649f2273fc3b5bffb65b9ac21912c060cdc8a8ba4cd173fdba0e45f"
+    },
+    {
+      "number": 4,
+      "title": "Artırılmış Gerçeklik",
+      "file": "sunum/04-artirilmis-gerceklik.png",
+      "width": 1920,
+      "height": 1080,
+      "pedagogical_role": "Kavramı netleştirme",
+      "process_components": "a-b",
+      "sha256": "210b92641510b06f6cf0caa3a9bdc591e1b56a88f4620410fdc85a7934b483d2"
+    },
+    {
+      "number": 5,
+      "title": "Sanal Gerçeklikte Ne Farklı?",
+      "file": "sunum/05-sanal-gerceklik.png",
+      "width": 1920,
+      "height": 1080,
+      "pedagogical_role": "VR keşfi",
+      "process_components": "a",
+      "sha256": "960cc14ff9276cf2da3136f6ba4211c472fdc0ff835d19f001ae4c4b2e2a5ddc"
+    },
+    {
+      "number": 6,
+      "title": "AR mı, VR mi?",
+      "file": "sunum/06-ar-mi-vr-mi.png",
+      "width": 1920,
+      "height": 1080,
+      "pedagogical_role": "Karşılaştırma ve gerekçe",
+      "process_components": "a",
+      "sha256": "9111d023bcc9ff142966f9d58f97c5d601d20553685180a45a7dfd4ce8c1d5f0"
+    },
+    {
+      "number": 7,
+      "title": "Yenilikçi Teknoloji İstasyonu",
+      "file": "sunum/07-teknoloji-istasyonu.png",
+      "width": 1920,
+      "height": 1080,
+      "pedagogical_role": "Kısa kavram sunumu",
+      "process_components": "a-b",
+      "sha256": "71949418997731824398ffa38ecd31a57f9cffb56fac521c39e544299ef30635"
+    },
+    {
+      "number": 8,
+      "title": "Seç ve İncele",
+      "file": "sunum/08-sec-ve-incele.png",
+      "width": 1920,
+      "height": 1080,
+      "pedagogical_role": "Grup araştırmasını başlatma",
+      "process_components": "a-b",
+      "sha256": "365188132963a28ec7c1b2cb019ac2e952e42dde09e36135399e0fada8cffcd1"
+    },
+    {
+      "number": 9,
+      "title": "Araştırma Notları",
+      "file": "sunum/09-arastirma-notlari.png",
+      "width": 1920,
+      "height": 1080,
+      "pedagogical_role": "Araştırma ve kaynak kaydı",
+      "process_components": "a-b",
+      "sha256": "ff6469fef9047ac66605bcc09604d351d6255c5e2e06c7483b363fd4d839e2d7"
+    },
+    {
+      "number": 10,
+      "title": "Kısa Grup Paylaşımı",
+      "file": "sunum/10-kisa-grup-paylasimi.png",
+      "width": 1920,
+      "height": 1080,
+      "pedagogical_role": "Bulguları paylaşma",
+      "process_components": "a-b",
+      "sha256": "648ae2e028c9415d35aeba3c43ead3236ed7fc9025db1845b05b11c411873415"
+    },
+    {
+      "number": 11,
+      "title": "Avantaj mı, Sınırlılık mı?",
+      "file": "sunum/11-avantaj-sinirlilik.png",
+      "width": 1920,
+      "height": 1080,
+      "pedagogical_role": "Eleştirel tartışma",
+      "process_components": "b",
+      "sha256": "6c63223074dca2faa6a9533922af7ff95cae070dd6b5cbad2b20a5330971fa0c"
+    },
+    {
+      "number": 12,
+      "title": "Bir Teknolojiyi Nasıl Tanırız?",
+      "file": "sunum/12-bir-teknolojiyi-nasil-taniriz.png",
+      "width": 1920,
+      "height": 1080,
+      "pedagogical_role": "Ara sentez",
+      "process_components": "a-b-c",
+      "sha256": "aa300bb0db6af7af4d5d6e8a9e1c10b1af911e333c64bb8348559381c3b3c150"
+    },
+    {
+      "number": 13,
+      "title": "Bir Telefon Kaç İşi Birleştiriyor?",
+      "file": "sunum/13-telefonun-islevleri.png",
+      "width": 1920,
+      "height": 1080,
+      "pedagogical_role": "Günlük yaşama köprü",
+      "process_components": "b",
+      "sha256": "34a1e15fade6b4c0a979cb9284728fb1927946911427b68a07bf811344a3979a"
+    },
+    {
+      "number": 14,
+      "title": "Hangi Alanlarda İşe Yarıyor?",
+      "file": "sunum/14-kullanim-alanlari.png",
+      "width": 1920,
+      "height": 1080,
+      "pedagogical_role": "Sınıflandırma ölçütünü belirleme",
+      "process_components": "c",
+      "sha256": "a2ff14b68c280c0014bc5d97439be9dcbf6cd17978cfa98cc6f7353abd67e98f"
+    },
+    {
+      "number": 15,
+      "title": "İletişimde Ne Değişti?",
+      "file": "sunum/15-iletisimde-degisim.png",
+      "width": 1920,
+      "height": 1080,
+      "pedagogical_role": "İletişim örneği ve tartışma",
+      "process_components": "b-c",
+      "sha256": "8e31724ff4a35f1c1fe06b91770a8262c7afb0e0f647bb3da6706faa6d2ce671"
+    },
+    {
+      "number": 16,
+      "title": "Eğitimde Ne Değişti?",
+      "file": "sunum/16-egitimde-degisim.png",
+      "width": 1920,
+      "height": 1080,
+      "pedagogical_role": "Eğitim örneği",
+      "process_components": "b-c",
+      "sha256": "f3594150b96f882a481859d782defabb21021059e2b4361c1817fc402b452470"
+    },
+    {
+      "number": 17,
+      "title": "Sağlıkta Ne Değişti?",
+      "file": "sunum/17-saglikta-degisim.png",
+      "width": 1920,
+      "height": 1080,
+      "pedagogical_role": "Sağlık örneği",
+      "process_components": "b-c",
+      "sha256": "8da3b6a5bf2a983843ceaf6a2eb83d9baa1fab8bfe12736bcf202d5d5c9c5564"
+    },
+    {
+      "number": 18,
+      "title": "Eğlencede Ne Değişti?",
+      "file": "sunum/18-eglencede-degisim.png",
+      "width": 1920,
+      "height": 1080,
+      "pedagogical_role": "Eğlence örneği",
+      "process_components": "b-c",
+      "sha256": "a32c0c7c3c09bfad52f51873bd96f3e4abe9aafea528e07f0e3e2e62395fdba3"
+    },
+    {
+      "number": 19,
+      "title": "Sanayide Ne Değişti?",
+      "file": "sunum/19-sanayide-degisim.png",
+      "width": 1920,
+      "height": 1080,
+      "pedagogical_role": "Sanayi örneği",
+      "process_components": "b-c",
+      "sha256": "477d5bd6f1fbd53b4f3cf1e777b585f5048f40b9e3ac846e3c36983debd025fa"
+    },
+    {
+      "number": 20,
+      "title": "Aynı Teknoloji, Farklı Alanlar",
+      "file": "sunum/20-ayni-teknoloji-farkli-alanlar.png",
+      "width": 1920,
+      "height": 1080,
+      "pedagogical_role": "Çoklu kullanım alanları",
+      "process_components": "c",
+      "sha256": "ea3dda78034484166d5722731d6100bdd8afcfebe8d3a2c91b496e52f088e77a"
+    },
+    {
+      "number": 21,
+      "title": "Kullanım Alanına Göre Grupla",
+      "file": "sunum/21-kullanim-alanina-gore-grupla.png",
+      "width": 1920,
+      "height": 1080,
+      "pedagogical_role": "Sınıflandırma ve ürün",
+      "process_components": "c",
+      "sha256": "29be804366f884a5be6caa4175576f1cd35ca8d155cd8f4f663bdb5099d6f635"
+    },
+    {
+      "number": 22,
+      "title": "Bir Teknoloji Seç ve Gerekçelendir",
+      "file": "sunum/22-sec-ve-gerekcelendir.png",
+      "width": 1920,
+      "height": 1080,
+      "pedagogical_role": "Bireysel öğrenme kanıtı",
+      "process_components": "a-b-c",
+      "sha256": "d89c80e701ee75f52725b2b192742b774b80169a193e11ef050a83c08774a18c"
+    }
+  ]
+}

@@ -155,21 +155,33 @@ for (const config of courses) {
   const themes = Object.fromEntries(themeNames.map((name, index) => [String(index + 1), name]));
   const dailyPlans = Object.fromEntries(weeks.map(w => [w.n, `/gunluk-planlar-${config.folder}/hafta${String(w.n).padStart(2, '0')}-${config.suffix}.docx`]));
   const materials = {};
+  const resourceBundles = {};
   const manifestCourse = materialManifest.courses?.[config.key];
   for (const week of Object.values(manifestCourse?.weeks || {})) {
     const entry = {};
+    const resources = [];
     for (const material of week.materials || []) {
       const files = (material.downloads || []).map(item => '/' + item.href.replace(/^\//, ''));
       if (material.preview && !files.includes('/' + material.preview.replace(/^\//, ''))) files.push('/' + material.preview.replace(/^\//, ''));
       const parts = material.type.split('/');
       if (parts.length === 1) (entry[parts[0]] ||= []).push(...files);
       else ((entry[parts[0]] ||= {})[parts[1]] ||= []).push(...files);
+      if (material.type === 'evraklar') {
+        resources.push({
+          id: material.index,
+          label: material.label,
+          group: material.group || 'student',
+          pdf: material.downloads?.find(item => item.format === 'pdf')?.href ? '/' + material.downloads.find(item => item.format === 'pdf').href.replace(/^\//, '') : null,
+          docx: material.downloads?.find(item => item.format === 'docx')?.href ? '/' + material.downloads.find(item => item.format === 'docx').href.replace(/^\//, '') : null
+        });
+      }
     }
     materials[String(week.week)] = entry;
+    if (resources.length) resourceBundles[String(week.week)] = resources;
   }
   const data = {
     course: { title: config.title, term: '2026–2027', subject: config.subject, totalWeeks: weeks.length, totalThemes: themeNames.length, weeklyHours: 2, codePrefix: config.key },
-    themes, weeks, materials, dailyPlans, events,
+    themes, weeks, materials, ...(Object.keys(resourceBundles).length ? { resourceBundles } : {}), dailyPlans, events,
     links: { yearlyPlan: config.annual || null, calendar: '/takvim.html', teacherDocs: '/evrak-cantasi.html', week1Lesson: config.week1 || null, homepage: '/' },
     week1Flow: config.key === '5-sinif' ? curated.week1Flow : [],
     studentCopy: config.key === '5-sinif' ? curated.studentCopy : {}

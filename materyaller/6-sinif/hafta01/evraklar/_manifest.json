@@ -1,0 +1,14 @@
+{
+  "tum-evraklar": { "label": "Tüm Hafta 01 Evrakları", "group": "bundle" },
+  "00-ogretmen-uygulama-kilavuzu": { "label": "Öğretmen Uygulama Kılavuzu", "group": "teacher" },
+  "01-on-degerlendirme": { "label": "Ön Değerlendirme", "group": "assessment" },
+  "02-ar-gozlem-ve-kesif": { "label": "AR Gözlem ve Keşif", "group": "student" },
+  "03-grup-arastirmasi-ve-mini-poster": { "label": "Grup Araştırması ve Mini Poster", "group": "student" },
+  "04-frayer-modeli": { "label": "Frayer Modeli", "group": "student" },
+  "05-grup-gozlem-formu": { "label": "Grup Gözlem Formu", "group": "teacher" },
+  "06-dereceli-puanlama-anahtari": { "label": "Dereceli Puanlama Anahtarı", "group": "assessment" },
+  "07-kullanim-alani-siniflandirma": { "label": "Kullanım Alanına Göre Sınıflandır", "group": "student" },
+  "08-kisa-cevapli-kontrol": { "label": "Kısa Cevaplı Kontrol", "group": "assessment" },
+  "09-acik-uclu-degerlendirme": { "label": "Açık Uçlu Değerlendirme", "group": "assessment" },
+  "10-tema1-performans-gorevi": { "label": "Tema 1 Performans Görevi", "group": "theme" }
+}
