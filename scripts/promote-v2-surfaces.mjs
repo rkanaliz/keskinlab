@@ -110,6 +110,27 @@ await writeFile('evrak-cantasi.html', teacherDocsHtml);
 await writeFile('evrak-cantasi.css', await readFile('preview/evrak-cantasi-v2.css', 'utf8'));
 await writeFile('evrak-cantasi.js', await readFile('preview/evrak-cantasi-v2.js', 'utf8'));
 
+const infoPages = [
+  { source: 'hakkinda-v2.html', target: 'hakkinda.html', route: '/hakkinda', title: 'KeskinLab nedir? — Hakkında' },
+  { source: 'iletisim-v2.html', target: 'iletisim.html', route: '/iletisim', title: 'İletişim — KeskinLab' },
+  { source: 'takvim-v2.html', target: 'takvim.html', route: '/takvim', title: '2026–2027 Çalışma Takvimi — KeskinLab' }
+];
+for (const page of infoPages) {
+  let html = await readFile(`preview/${page.source}`, 'utf8');
+  html = html
+    .replace(/<title>[^<]+ Önizleme<\/title>/, `<title>${page.title}</title>`)
+    .replace('</head>', `<link rel="canonical" href="https://www.keskinlab.com${page.route}"></head>`)
+    .replaceAll('/preview/hakkinda-v2.html', '/hakkinda')
+    .replaceAll('/preview/iletisim-v2.html', '/iletisim')
+    .replaceAll('/preview/takvim-v2.html', '/takvim')
+    .replace('/preview/info-pages-v2.css', '/info-pages.css?v=20260909a')
+    .replace('/preview/info-pages-v2.js', '/info-pages.js?v=20260909a');
+  html = applySharedShell(html, page.route);
+  await writeFile(page.target, html);
+}
+await writeFile('info-pages.css', await readFile('preview/info-pages-v2.css', 'utf8'));
+await writeFile('info-pages.js', await readFile('preview/info-pages-v2.js', 'utf8'));
+
 for (const config of courses) {
   const raw = JSON.parse(await readFile(`data/${config.key}.json`, 'utf8'));
   const themeNames = [];
@@ -188,7 +209,7 @@ for (const config of courses) {
   await writeFile(mirror, html);
 }
 
-const editorialFiles = ['hakkinda.html', 'iletisim.html', 'takvim.html', 'dijital-araclar.html'];
+const editorialFiles = ['dijital-araclar.html'];
 for (const file of editorialFiles) {
   let html = await readFile(file, 'utf8');
   const current = '/' + file.replace(/\.html$/, '');
