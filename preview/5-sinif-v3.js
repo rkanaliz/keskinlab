@@ -277,22 +277,6 @@
       return i === 0 ? chip : '<span class="flow-connector"></span>' + chip;
     }).join('');
 
-    // eylemler
-    var actionsEl = document.getElementById('weekActions');
-    var actions = [];
-    var weekMaterials = D.materials[String(n)];
-    var hasEmbeddedMaterials = weekMaterials && Object.keys(weekMaterials).length > 0;
-    if (n !== 1 && !week.ozel && !hasEmbeddedMaterials) {
-      var plan = D.dailyPlans[n];
-      if (plan) actions.push('<a href="' + plan + '" class="btn btn-primary">Günlük Ders Planını Aç' +
-        '<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>');
-    } else if (n !== 1 && !hasEmbeddedMaterials) {
-      var planSp = D.dailyPlans[n];
-      if (planSp) actions.push('<a href="' + planSp + '" class="btn btn-secondary">Günlük Planı Gör</a>');
-    }
-    flowEl.classList.toggle('has-following-actions', actions.length > 0);
-    actionsEl.innerHTML = actions.join('');
-
     // materyaller
     renderMaterials(week);
 

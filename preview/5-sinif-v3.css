@@ -212,7 +212,6 @@ body.v3-modal-open { overflow: hidden; }
 
 /* Akış — küçük bir öğrenme rotası gibi (form filtresi değil) */
 .flow-chips { display: flex; flex-wrap: wrap; align-items: center; gap: 0; margin-bottom: 0; }
-.flow-chips.has-following-actions { margin-bottom: 26px; }
 .flow-chip {
   display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 600;
   color: var(--color-text); background: var(--color-surface); border: 1px solid var(--color-border);
@@ -223,8 +222,6 @@ body.v3-modal-open { overflow: hidden; }
   font-family: var(--font-mono); font-size: 10px; font-weight: 600; color: #fff; background: var(--color-accent); border-radius: 50%;
 }
 .flow-connector { width: 16px; height: 1px; background: var(--color-border); margin: 0 6px; flex-shrink: 0; }
-
-.week-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
 /* Hafta materyalleri — tek aktif önizleme ve materyal seçici */
 
@@ -528,8 +525,6 @@ body.v3-modal-open { overflow: hidden; }
   .week-surface-context { min-width:0; flex-wrap: wrap; justify-content: center; gap: 6px; }
   .week-status-pill { white-space:normal; text-align:center; max-width:100%; }
   .week-surface-grid,.week-surface-copy,.week-materials,.material-viewer,.material-stage { min-width:0; max-width:100%; }
-  .week-actions { flex-direction: column; align-items: stretch; }
-  .week-actions .btn { justify-content: center; }
   .week-materials { padding: 12px 0; }
   .material-viewer {
     grid-template-columns: minmax(0, 1fr);
