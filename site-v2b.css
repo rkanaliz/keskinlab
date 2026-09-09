@@ -377,7 +377,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .quick-item::before {
   content: "";
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   inset: 0;
   background: linear-gradient(120deg, var(--quick-tint), rgba(255,255,255,.22));
   transform: scaleX(0);
@@ -432,7 +432,52 @@ ul { list-style: none; margin: 0; padding: 0; }
    ========================================================= */
 
 .courses {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   padding: 56px 0 48px;
+  background: #fff;
+}
+.courses::before,
+.courses::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(22px);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+.courses::before {
+  width: min(58vw, 760px);
+  height: 330px;
+  left: -20%;
+  bottom: -155px;
+  background: radial-gradient(ellipse, rgba(139, 30, 36, .11) 0%, rgba(139, 30, 36, .055) 42%, transparent 72%);
+  transform: translate3d(-12%, 24%, 0) scale(.82);
+}
+.courses::after {
+  width: min(48vw, 620px);
+  height: 300px;
+  right: -16%;
+  top: -120px;
+  background: radial-gradient(ellipse, rgba(190, 119, 93, .14) 0%, rgba(190, 119, 93, .06) 44%, transparent 72%);
+  transform: translate3d(18%, -18%, 0) scale(.86);
+}
+.courses.is-glow-active::before { animation: course-glow-burgundy 8.8s cubic-bezier(.2,.7,.2,1) forwards; }
+.courses.is-glow-active::after { animation: course-glow-clay 9.4s cubic-bezier(.2,.7,.2,1) .18s forwards; }
+.courses > .container { position: relative; z-index: 1; }
+
+@keyframes course-glow-burgundy {
+  0% { opacity: 0; transform: translate3d(-12%, 24%, 0) scale(.82); }
+  42% { opacity: 1; transform: translate3d(48%, -12%, 0) scale(1.08); }
+  100% { opacity: .82; transform: translate3d(82%, -20%, 0) scale(1.18); }
+}
+@keyframes course-glow-clay {
+  0% { opacity: 0; transform: translate3d(18%, -18%, 0) scale(.86); }
+  48% { opacity: 1; transform: translate3d(-46%, 20%, 0) scale(1.1); }
+  100% { opacity: .8; transform: translate3d(-72%, 30%, 0) scale(1.16); }
 }
 
 .section-head {
@@ -904,5 +949,11 @@ ul { list-style: none; margin: 0; padding: 0; }
     transition: none !important;
     transform: none !important;
     opacity: 1 !important;
+  }
+  .courses::before, .courses::after {
+    animation: none !important;
+    opacity: .72;
+    transform: none;
+    will-change: auto;
   }
 }

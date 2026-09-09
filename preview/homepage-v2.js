@@ -22,6 +22,16 @@
     });
   }, { threshold: .14, rootMargin: '0px 0px -5% 0px' });
   items.forEach(item => observer.observe(item));
+
+  const courseSection = document.querySelector('[data-course-glow]');
+  if (courseSection) {
+    const glowObserver = new IntersectionObserver(entries => {
+      if (!entries.some(entry => entry.isIntersecting)) return;
+      courseSection.classList.add('is-glow-active');
+      glowObserver.disconnect();
+    }, { threshold: .2 });
+    glowObserver.observe(courseSection);
+  }
 })();
 
 (() => {
