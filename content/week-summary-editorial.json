@@ -1,0 +1,287 @@
+[
+  {
+    "course": "5-sinif", "grade": "5. SINIF BTY", "week": 1, "page": 1, "total": 4,
+    "title": "Bilişim Teknolojileri",
+    "concepts": [
+      ["BİLGİ", "Öğrendiğimiz ve anlamlandırdığımız şeyler."],
+      ["İLETİŞİM", "Duygu, düşünce ve bilgileri başkalarına aktarmaktır."],
+      ["TEKNOLOJİ", "İhtiyaçları karşılayan araç ve yöntemlerdir."],
+      ["BİLİŞİM", "Bilginin elde edilmesi, işlenmesi, saklanması ve iletilmesidir."],
+      ["BİT", "Bilgi işlemlerini ve iletişimi gerçekleştiren teknolojilerin ortak adıdır."]
+    ],
+    "journeyTitle": "BİLGİNİN YOLCULUĞU",
+    "journey": ["ELDE ET", "İŞLE", "SAKLA", "İLET", "DÖNÜŞTÜR"],
+    "compareTitle": "TEKNOLOJİ VE BİLİŞİM",
+    "compare": [["TEKNOLOJİ", "Araç + yöntem"], ["BİLİŞİM", "Bilgi + süreç"]],
+    "examplesTitle": "GÜNLÜK HAYATTAN ÖRNEKLER",
+    "examples": [["Akıllı saat", "Konum + sağlık verisi"], ["Telefon", "Görüntü + ses"], ["Oyun konsolu", "Girdi + işlem + çıktı"]],
+    "key": "Teknoloji yalnızca cihaz değildir; bir ihtiyaca çözüm üreten araç ve yöntemlerin bütünüdür.",
+    "checks": ["BİT’in açılımını söyleyebilirim.", "Bir aracın bilgi görevlerini gösterebilirim.", "Teknolojinin zamanla neden değiştiğini açıklayabilirim."]
+  },
+  {
+    "course": "5-sinif", "grade": "5. SINIF BTY", "week": 1, "page": 2, "total": 4,
+    "title": "Araç Değişir, İhtiyaç Sürer",
+    "concepts": [
+      ["İHTİYAÇ", "İnsanların karşılamak istediği gereksinim."],
+      ["ARAÇ", "Bir işi yapmayı sağlayan teknoloji."],
+      ["ÖZELLİK", "Aracın işi nasıl yaptığı."],
+      ["KOLAYLIK", "İşin daha hızlı, taşınabilir veya erişilebilir olması."],
+      ["DEĞİŞİM", "İhtiyaç sürerken aracın ve özelliklerinin yenilenmesi."]
+    ],
+    "journeyTitle": "KARŞILAŞTIRMA ROTASI",
+    "journey": ["İHTİYACI BUL", "ESKİ ARACI İNCELE", "YENİ ARACI İNCELE", "FARKI BELİRLE", "DEĞİŞİMİ AÇIKLA"],
+    "compareTitle": "AYNI KALAN / DEĞİŞEN",
+    "compare": [["AYNI KALAN", "Yazmak, dinlemek ve haberleşmek gibi ihtiyaçlar"], ["DEĞİŞEN", "Araç, hız, taşınabilirlik, kullanım kolaylığı ve işlev sayısı"]],
+    "examplesTitle": "GEÇMİŞTEN BUGÜNE",
+    "examples": [["Yazmak", "Daktilo → bilgisayar"], ["Müzik", "Kasetçalar → telefon"], ["Yön bulmak", "Kâğıt harita → navigasyon"]],
+    "key": "Bir teknolojiyi karşılaştırırken önce ortak ihtiyacı, sonra değişen aracı ve sağladığı kolaylığı bul.",
+    "checks": ["Ortak ihtiyacı söyleyebilirim.", "Eski ve yeni aracın farkını belirleyebilirim.", "Değişimin sağladığı kolaylığı açıklayabilirim."]
+  },
+  {
+    "course": "5-sinif", "grade": "5. SINIF BTY", "week": 1, "page": 3, "total": 4,
+    "title": "Teknolojiyi Üç Soruyla Oku",
+    "concepts": [
+      ["İŞLEV", "Teknolojinin yaptığı temel iş."],
+      ["İHTİYAÇ", "Aracın hangi gereksinime cevap verdiği."],
+      ["ALAN", "Teknolojinin kullanıldığı ortam veya amaç."],
+      ["KATKI", "İnsanlara sağladığı kolaylık."],
+      ["ÇOKLU KULLANIM", "Aynı teknolojinin birden fazla alanda işe yaraması."]
+    ],
+    "journeyTitle": "ÜÇ SORU + BİR KONTROL",
+    "journey": ["NE YAPIYOR?", "NEYİ KOLAYLAŞTIRIYOR?", "NEREDE KULLANILIYOR?", "BAŞKA ALANI VAR MI?", "GEREKÇELENDİR"],
+    "compareTitle": "ARAÇ / AMAÇ",
+    "compare": [["ARAÇ", "Telefon, tablet, sensör, robot veya yazılım"], ["AMAÇ", "İletişim, öğrenme, izleme, üretim veya günlük yaşam"]],
+    "examplesTitle": "BİR ARAÇ, ÇOK ALAN",
+    "examples": [["Tablet", "Eğitim + iletişim"], ["Akıllı saat", "Sağlık + günlük yaşam"], ["Yapay zekâ", "İletişim + eğitim + sanayi"]],
+    "key": "Bir teknolojiyi yalnızca adına göre değil; işlevi, katkısı ve kullanım alanıyla tanı.",
+    "checks": ["Bir teknolojinin işlevini söyleyebilirim.", "Kullanım alanını gerekçelendirebilirim.", "Aynı aracın farklı alanlarını bulabilirim."]
+  },
+  {
+    "course": "5-sinif", "grade": "5. SINIF BTY", "week": 1, "page": 4, "total": 4,
+    "title": "Kullanım Alanları Haritası",
+    "concepts": [
+      ["EĞİTİM", "Öğrenmeyi ve desteklemeyi kolaylaştıran kullanımlar."],
+      ["SAĞLIK", "İzleme, kayıt ve sağlık hizmetini destekleyen kullanımlar."],
+      ["FİNANS", "Ödeme ve para transferi gibi işlemler."],
+      ["GÜNLÜK YAŞAM", "Ev ve kişisel işleri kolaylaştıran kullanımlar."],
+      ["İLETİŞİM", "Mesajlaşma, görüşme ve bilgi paylaşımı."]
+    ],
+    "journeyTitle": "SINIFLANDIRMA ADIMLARI",
+    "journey": ["ARACI SEÇ", "NE YAPTIĞINI SÖYLE", "AMACI BUL", "ALANI BELİRLE", "NEDENİNİ AÇIKLA"],
+    "compareTitle": "TEK ALAN / ÇOK ALAN",
+    "compare": [["TEK ALAN", "Örneğin yalnızca belirli bir üretim işi yapan makine"], ["ÇOK ALAN", "Telefon veya tablet gibi farklı amaçlara uyarlanan araç"]],
+    "examplesTitle": "HIZLI ÖRNEKLER",
+    "examples": [["Akıllı tahta", "Eğitim"], ["Hasta monitörü", "Sağlık"], ["Mobil bankacılık", "Finans"]],
+    "key": "Sınıflandırmanın değeri etikette değil, aracın neden o alana yerleştirildiğini açıklayabilmektedir.",
+    "checks": ["Bir aracı uygun alana koyabilirim.", "Seçimimin nedenini açıklayabilirim.", "Birden fazla alanı olan aracı fark edebilirim."]
+  },
+  {
+    "course": "5-sinif", "grade": "5. SINIF BTY", "week": 2, "page": 1, "total": 3,
+    "title": "Teknolojinin Etkisini Oku",
+    "concepts": [
+      ["YARAR", "Bir işi kolaylaştıran veya geliştiren sonuç."],
+      ["GÜÇLÜK", "Kullanım sırasında ortaya çıkabilen sorun."],
+      ["AMAÇ", "Teknolojinin ne için kullanıldığı."],
+      ["SÜRE", "Teknolojiyle ne kadar zaman geçirildiği."],
+      ["KULLANIM BİÇİMİ", "Aracın hangi koşullarda ve nasıl kullanıldığı."]
+    ],
+    "journeyTitle": "ETKİYİ ÇÖZÜMLE",
+    "journey": ["DURUMU OKU", "ETKİYİ BUL", "NEDENİNİ BELİRLE", "ÖNLEMİ SEÇ", "SONUCU DEĞERLENDİR"],
+    "compareTitle": "OLUMLU / OLUMSUZ",
+    "compare": [["OLUMLU", "İletişimi, öğrenmeyi ve günlük işleri kolaylaştırabilir."], ["OLUMSUZ", "Aşırı veya hatalı kullanım bedeni, dikkati ve günlük düzeni zorlayabilir."]],
+    "examplesTitle": "AYNI ARAÇ, FARKLI SONUÇ",
+    "examples": [["Telefon", "İletişim / dikkat dağılması"], ["Tablet", "Öğrenme / uzun ekran süresi"], ["Oyun", "Eğlence / zaman yönetimi"]],
+    "key": "Bir teknolojinin etkisi yalnızca araca değil; amaç, süre ve kullanım biçimine de bağlıdır.",
+    "checks": ["Bir olumlu etki söyleyebilirim.", "Bir güçlüğün nedenini açıklayabilirim.", "Duruma uygun bir önlem seçebilirim."]
+  },
+  {
+    "course": "5-sinif", "grade": "5. SINIF BTY", "week": 2, "page": 2, "total": 3,
+    "title": "Ergonomi: Bedene Uygun Düzen",
+    "concepts": [
+      ["DURUŞ", "Sırtı destekleyerek dik ve rahat oturmak."],
+      ["EKRAN", "Rahat görülebilecek konum ve uzaklıkta tutmak."],
+      ["IŞIK", "Çalışma alanını iyi aydınlatmak."],
+      ["MOLA", "Uzun süre aynı pozisyonda kalmamak."],
+      ["DÜZEN", "Kabloları güvenli, masayı rahat kullanılır tutmak."]
+    ],
+    "journeyTitle": "ÇALIŞMA ALANINI KUR",
+    "journey": ["SANDALYEYİ AYARLA", "AYAKLARI DESTEKLE", "EKRANI KONUMLANDIR", "IŞIĞI KONTROL ET", "MOLA VER"],
+    "compareTitle": "RAHAT / RİSKLİ",
+    "compare": [["RAHAT", "Destekli sırt, uygun mesafe, düzenli masa ve kısa molalar"], ["RİSKLİ", "Boynu uzun süre eğmek, ıslak elle prize dokunmak, hasarlı kablo kullanmak"]],
+    "examplesTitle": "ARAÇLARA GÖRE",
+    "examples": [["Bilgisayar", "Sırt desteği + ekran konumu"], ["Telefon", "Boynu uzun süre eğmeme"], ["Kablo", "Takılma ve elektrik riskini önleme"]],
+    "key": "Ergonomi, çalışma düzenini bedenimize uygun hâle getirir; elektrik tehlikesinde kullanımı bırakıp yetişkinden yardım isteriz.",
+    "checks": ["Doğru oturuşu gösterebilirim.", "Ekranı uygun konuma getirebilirim.", "Kablo tehlikesinde ne yapacağımı bilirim."]
+  },
+  {
+    "course": "5-sinif", "grade": "5. SINIF BTY", "week": 2, "page": 3, "total": 3,
+    "title": "Ekran, Uyku ve Dikkat Dengesi",
+    "concepts": [
+      ["EKRAN SÜRESİ", "Günlük rutine göre planlanması gereken kullanım süresi."],
+      ["GÖZ MOLASI", "Ekrandan düzenli aralıklarla uzaklaşmak."],
+      ["UYKU", "Geç saat ekran kullanımından etkilenebilen dinlenme düzeni."],
+      ["BİLDİRİM", "Dikkati bölebilen sesli veya görsel uyarı."],
+      ["ÇEVRİM İÇİ NEZAKET", "Saygılı olmak, empati kurmak ve güvenli davranmak."]
+    ],
+    "journeyTitle": "DENGE PLANI",
+    "journey": ["SÜREYİ PLANLA", "ARA VER", "BİLDİRİMİ AZALT", "UYKUYU KORU", "GEREKİRSE YARDIM İSTE"],
+    "compareTitle": "20–20–20 / GÜVENLİK",
+    "compare": [["20–20–20", "Yaklaşık her 20 dakikada, 20 saniye boyunca 6 metre uzağa bak."], ["GÜVENLİK", "Çevrim içi zorbalıkta sorunu saklama; güvendiğin bir yetişkinden yardım iste."]],
+    "examplesTitle": "ETKİ ZİNCİRLERİ",
+    "examples": [["Geç ekran", "Geç uyku → yorgunluk"], ["Sık bildirim", "Dikkat dağılması → işin yarım kalması"], ["Uzun kullanım", "Göz ve beden yorgunluğu"]],
+    "key": "Sağlıklı teknoloji kullanımı; süreyi, bedeni, uykuyu, dikkati ve çevrim içi davranışı birlikte düşünmektir.",
+    "checks": ["Kendime bir kullanım hedefi koyabilirim.", "Gözlerimi nasıl dinlendireceğimi bilirim.", "Çevrim içi sorunda kimden yardım isteyeceğimi bilirim."]
+  },
+  {
+    "course": "5-sinif", "grade": "5. SINIF BTY", "week": 3, "page": 1, "total": 4,
+    "title": "Kullanım Alışkanlığını Çözümle",
+    "concepts": [
+      ["AMAÇ", "Teknolojiyi hangi ihtiyaç için kullandığın."],
+      ["SÜRE", "Kullanıma ayırdığın yaklaşık zaman."],
+      ["BEDEN", "Duruş, göz ve fiziksel rahatlık üzerindeki etki."],
+      ["DİKKAT", "Odaklanma ve işi sürdürebilme üzerindeki etki."],
+      ["DUYGU", "Kullanım sonrasında nasıl hissettiğin."]
+    ],
+    "journeyTitle": "GÜNLÜKTEN HEDEFE",
+    "journey": ["KULLANIMI KAYDET", "ETKİYİ FARK ET", "NEDENİ AÇIKLA", "ALTERNATİF BUL", "KÜÇÜK HEDEF KOY"],
+    "compareTitle": "OTOMATİK / KONTROLLÜ",
+    "compare": [["OTOMATİK", "Süreyi ve amacı düşünmeden kullanmaya devam etmek"], ["KONTROLLÜ", "Amacı bilmek, süreyi planlamak, mola ve ekran dışı seçenek oluşturmak"]],
+    "examplesTitle": "HEDEF ÖRNEKLERİ",
+    "examples": [["Mola", "Belirli aralıklarla kalkmak"], ["Bildirim", "Çalışırken gereksiz uyarıları kapatmak"], ["Alternatif", "Ekran dışında bir etkinlik seçmek"]],
+    "key": "İyi hedef küçük, açık ve uygulanabilir olur; davranışı suçlamaz, değiştirebileceğin bir adımı gösterir.",
+    "checks": ["Kullanımımın etkisini açıklayabilirim.", "Sağlıklı bir alternatif düşünebilirim.", "Kendime uygulanabilir bir hedef koyabilirim."]
+  },
+  {
+    "course": "5-sinif", "grade": "5. SINIF BTY", "week": 3, "page": 2, "total": 4,
+    "title": "Dijital Kimliğin Parçaları",
+    "concepts": [
+      ["KULLANICI ADI", "Bir hesapta bizi tanıtan ad."],
+      ["PROFİL BİLGİLERİ", "Profilde yer verdiğimiz tanıtıcı bilgiler."],
+      ["GİZLİLİK AYARLARI", "Bilgileri kimlerin görebileceğini düzenleyen seçimler."],
+      ["PAYLAŞIM", "Çevrim içi yayımladığımız içerik."],
+      ["DAVRANIŞ", "Yorumlarımız ve çevrim içi iletişim biçimimiz."]
+    ],
+    "journeyTitle": "PROFİLİ GÜVENLE KUR",
+    "journey": ["AMACI BELİRLE", "GEREKLİ BİLGİYİ SEÇ", "GÖRÜNÜRLÜĞÜ KONTROL ET", "PAYLAŞMADAN DÜŞÜN", "DAVRANIŞINI DEĞERLENDİR"],
+    "compareTitle": "GEREKLİ / GEREKSİZ",
+    "compare": [["GEREKLİ", "Hesabın amacına uygun, sınırlı ve güvenli bilgiler"], ["GEREKSİZ", "Amaçla ilgisi olmayan veya güvenliği azaltabilecek kişisel bilgiler"]],
+    "examplesTitle": "HESAP TÜRLERİ",
+    "examples": [["Oyun", "Kullanıcı adı + avatar"], ["Öğrenme", "Dersle ilgili profil"], ["İletişim", "Görünürlük ve paylaşım ayarları"]],
+    "key": "Dijital kimlik yalnızca profil fotoğrafı değildir; bilgilerimiz, ayarlarımız, paylaşımlarımız ve davranışlarımız birlikte iz bırakır.",
+    "checks": ["Dijital kimliğin parçalarını sayabilirim.", "Bir bilginin gerekli olup olmadığını sorgulayabilirim.", "Görünürlük ayarının önemini açıklayabilirim."]
+  },
+  {
+    "course": "5-sinif", "grade": "5. SINIF BTY", "week": 3, "page": 3, "total": 4,
+    "title": "Dijital Vatandaşlık Pusulası",
+    "concepts": [
+      ["SAYGI", "Çevrim içi ortamda başkalarının haklarını gözetmek."],
+      ["SORUMLULUK", "Yaptıklarının sonuçlarını düşünmek."],
+      ["GÜVENLİK", "Kendini ve bilgilerini koruyan seçimler yapmak."],
+      ["ETİK", "Doğru ve adil davranışı sorgulamak."],
+      ["İLETİŞİM", "Açık, nazik ve empatik bir dil kullanmak."]
+    ],
+    "journeyTitle": "PAYLAŞMADAN ÖNCE",
+    "journey": ["DOĞRU MU?", "GEREKLİ Mİ?", "SAYGILI MI?", "GÜVENLİ Mİ?", "SONUCU NE OLABİLİR?"],
+    "compareTitle": "HAK / SORUMLULUK",
+    "compare": [["HAK", "Öğrenme, iletişim kurma ve dijital hizmetlerden yararlanma"], ["SORUMLULUK", "Güvenli, saygılı ve etik seçimler yapma"]],
+    "examplesTitle": "KULLANIM ALANLARI",
+    "examples": [["Eğitim", "Kaynağı ve paylaşımı sorgulamak"], ["Sosyal medya", "Saygı + gizlilik"], ["İletişim", "Nazik dil + empati"]],
+    "key": "Dijital vatandaşlık, teknolojiyi kullanabilmenin yanında dijital ortamdaki seçimlerin sorumluluğunu taşımaktır.",
+    "checks": ["Saygılı bir çevrim içi davranışı tanırım.", "Paylaşımın olası sonucunu düşünebilirim.", "Güvenli ve etik seçimi gerekçelendirebilirim."]
+  },
+  {
+    "course": "5-sinif", "grade": "5. SINIF BTY", "week": 3, "page": 4, "total": 4,
+    "title": "Dijital İzlerin Yaşam Döngüsü",
+    "concepts": [
+      ["PAYLAŞIM", "Çevrim içi yayımlanan fotoğraf, video veya metin."],
+      ["YORUM", "Bir içeriğe eklenen görüş veya tepki."],
+      ["HESAP ETKİNLİĞİ", "Bir hesap üzerinden yapılan çevrim içi işlem."],
+      ["KOPYA", "Bir içeriğin başka biri tarafından saklanan örneği."],
+      ["YENİDEN PAYLAŞIM", "İçeriğin başka bir yerde tekrar görünmesi."]
+    ],
+    "journeyTitle": "BİR İÇERİK NASIL YAYILIR?",
+    "journey": ["OLUŞTUR", "PAYLAŞ", "GÖRÜLÜR", "KOPYALANABİLİR", "YENİDEN YAYILABİLİR"],
+    "compareTitle": "SİLMEK / KALICILIK",
+    "compare": [["SİLMEK", "Kendi hesabındaki içeriği kaldırabilir."], ["KALICILIK", "Daha önce alınan kopya veya yeniden paylaşım görünmeye devam edebilir."]],
+    "examplesTitle": "İZ BIRAKABİLENLER",
+    "examples": [["Fotoğraf", "Paylaşım ve kopya"], ["Yorum", "Hesapla ilişkilenen ifade"], ["Arama örneği", "Kamuya açık bilgilerin görünmesi"]],
+    "key": "Her çevrim içi bilgi herkese açık değildir; kamuya açık paylaşımlar ise kopyalanabilir ve yeniden yayılabilir.",
+    "checks": ["Dijital ayak izini açıklayabilirim.", "Bir içeriğin nasıl yayılabileceğini gösterebilirim.", "Paylaşmadan önce görünürlüğü sorgulayabilirim."]
+  },
+  {
+    "course": "6-sinif", "grade": "6. SINIF BTY", "week": 1, "page": 1, "total": 4,
+    "title": "Yenilikçi Teknolojiyi Tanı",
+    "concepts": [
+      ["YENİLİK", "Bir ihtiyaca yeni veya gelişmiş bir çözüm sunma."],
+      ["İŞLEV", "Teknolojinin yaptığı temel iş."],
+      ["KATKI", "Günlük hayatı nasıl kolaylaştırdığı."],
+      ["KULLANIM ALANI", "Teknolojinin hangi amaç ve ortamda kullanıldığı."],
+      ["SINIRLILIK", "Kullanımın önündeki koşul veya güçlük."]
+    ],
+    "journeyTitle": "BİR TEKNOLOJİYİ İNCELE",
+    "journey": ["NE YAPIYOR?", "NEYİ KOLAYLAŞTIRIYOR?", "NEREDE KULLANILIYOR?", "AVANTAJI NE?", "SINIRI NE?"],
+    "compareTitle": "YENİ / YENİLİKÇİ",
+    "compare": [["YENİ", "Yakın zamanda ortaya çıkmış olabilir."], ["YENİLİKÇİ", "Bir ihtiyaca farklı veya gelişmiş bir çözüm sunar."]],
+    "examplesTitle": "İNCELEME ALANLARI",
+    "examples": [["Artırılmış gerçeklik", "Gerçek görüntü + dijital bilgi"], ["Sanal gerçeklik", "Dijital ortam deneyimi"], ["Giyilebilir teknoloji", "Taşınabilir takip ve ölçüm"]],
+    "key": "Bir teknolojiyi yenilikçi yapan yalnızca yeni görünmesi değil, bir ihtiyaca nasıl çözüm ürettiğidir.",
+    "checks": ["Yenilikçi teknoloji kavramını açıklayabilirim.", "Bir teknolojinin katkısını söyleyebilirim.", "Bir avantaj ve sınırlılık belirleyebilirim."]
+  },
+  {
+    "course": "6-sinif", "grade": "6. SINIF BTY", "week": 1, "page": 2, "total": 4,
+    "title": "AR ve VR: Aynı Değil",
+    "concepts": [
+      ["AR", "Gerçek dünyanın üzerine dijital bilgi ekler."],
+      ["VR", "Gerçek çevrenin yerine dijital bir ortam sunar."],
+      ["GERÇEK ÇEVRE", "AR kullanımında görünmeye devam eder."],
+      ["DİJİTAL ORTAM", "VR kullanımında deneyimin merkezine geçer."],
+      ["ETKİLEŞİM", "Kullanıcının dijital içerikle ilişki kurması."]
+    ],
+    "journeyTitle": "AYIRT ETME ROTASI",
+    "journey": ["ÇEVREYE BAK", "GERÇEK DÜNYA GÖRÜNÜYOR MU?", "DİJİTAL BİLGİ EKLENİYOR MU?", "ORTAM DEĞİŞİYOR MU?", "AR / VR KARARI VER"],
+    "compareTitle": "AR / VR",
+    "compare": [["AR", "Gerçek dünya görünür; üzerine metin, model, işaret veya yönlendirme eklenir."], ["VR", "Kullanıcı dijital bir dünyanın içine girer; gerçek çevre geri planda kalır."]],
+    "examplesTitle": "KULLANIM ÖRNEKLERİ",
+    "examples": [["AR", "Müzede eser bilgisi"], ["AR", "Yol tarifi ve çevre bilgisi"], ["VR", "Dijital deneyim ve keşif"]],
+    "key": "AR ve VR yenilikçi teknolojilerdir; temel fark, gerçek çevrenin deneyimdeki yeridir.",
+    "checks": ["AR’ın gerçek dünyayla ilişkisini açıklayabilirim.", "VR’ın farkını söyleyebilirim.", "Bir örneği gerekçesiyle sınıflandırabilirim."]
+  },
+  {
+    "course": "6-sinif", "grade": "6. SINIF BTY", "week": 1, "page": 3, "total": 4,
+    "title": "Avantaj ve Sınırlılık Dengesi",
+    "concepts": [
+      ["ZAMAN", "Bazı işlemleri daha hızlı yapmayı sağlayabilir."],
+      ["ERİŞİM", "Bilgiye ve hizmete ulaşmayı kolaylaştırabilir."],
+      ["TAKİP", "Ölçme ve izleme olanağı sağlayabilir."],
+      ["KAYNAK", "İnternet, enerji veya uygun cihaz gerektirebilir."],
+      ["GİZLİLİK", "Kişisel verilerle ilgili dikkat gerektirebilir."]
+    ],
+    "journeyTitle": "DENGELİ DEĞERLENDİR",
+    "journey": ["TEKNOLOJİYİ SEÇ", "KATKISINI BUL", "KOŞULLARI BELİRLE", "SINIRINI SÖYLE", "GEREKÇELİ KARAR VER"],
+    "compareTitle": "AVANTAJ / SINIRLILIK",
+    "compare": [["AVANTAJ", "Zaman kazandırma, bilgiye erişim, takip ve ölçüm"], ["SINIRLILIK", "Bağlantı veya enerji ihtiyacı, maliyet, hata ve gizlilik soruları"]],
+    "examplesTitle": "SORULACAK ÜÇ SORU",
+    "examples": [["Kime?", "Kim kullanacak?"], ["Nerede?", "Hangi koşulda çalışacak?"], ["Ne karşılığında?", "Hangi kaynak ve veriyi isteyecek?"]],
+    "key": "Aynı teknoloji hem yarar sağlayabilir hem de sınırlılık taşıyabilir; değerlendirme kullanım durumuna göre yapılır.",
+    "checks": ["Avantaj ile sınırlılığı ayırabilirim.", "Kullanım koşulunu hesaba katabilirim.", "Dengeli bir değerlendirme yazabilirim."]
+  },
+  {
+    "course": "6-sinif", "grade": "6. SINIF BTY", "week": 1, "page": 4, "total": 4,
+    "title": "Kullanım Alanına Göre Sınıflandır",
+    "concepts": [
+      ["İLETİŞİM", "Mesajlaşma, çeviri ve görüntülü görüşme."],
+      ["EĞİTİM", "Öğrenme, öğretme ve araştırma."],
+      ["SAĞLIK", "Takip, ölçüm ve hastalıkların erken teşhisi."],
+      ["EĞLENCE", "Oyun, medya ve sanal deneyimler."],
+      ["SANAYİ", "Üretim, kontrol ve verimlilik."]
+    ],
+    "journeyTitle": "SINIFLANDIRMA KANITI",
+    "journey": ["ÖRNEĞİ SEÇ", "TEMEL İŞLEVİ YAZ", "KATKISINI AÇIKLA", "ALANI BELİRLE", "BAŞKA ALANI VAR MI BAK"],
+    "compareTitle": "TEKNOLOJİ / BAĞLAM",
+    "compare": [["TEKNOLOJİ", "Aynı araç veya sistem"], ["BAĞLAM", "Eğitimde, sağlıkta, iletişimde veya sanayide farklı amaç"]],
+    "examplesTitle": "AYNI TEKNOLOJİ",
+    "examples": [["Yapay zekâ", "Eğitim + iletişim + sanayi"], ["Sensör", "Sağlık + sanayi"], ["AR", "Eğitim + günlük yaşam"]],
+    "key": "Bir teknoloji birden fazla alanda kullanılabilir; sınıflandırma yaparken o örnekteki amaca bakılır.",
+    "checks": ["Beş kullanım alanını ayırabilirim.", "Bir örneği amacıyla ilişkilendirebilirim.", "Çoklu kullanım alanını gerekçelendirebilirim."]
+  }
+]
