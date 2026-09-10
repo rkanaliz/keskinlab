@@ -329,8 +329,6 @@ body.v3-modal-open { overflow: hidden; }
   cursor: pointer;
 }
 .material-page-btn:disabled { color: var(--color-text-muted); cursor: default; opacity: .5; }
-.material-download-link { margin-left: auto; color: var(--color-accent); font-size: 12px; font-weight: 600; text-decoration: none; }
-.material-download-link:hover { color: #74181d; }
 .material-selector { grid-area: selector; display: flex; flex-direction: column; min-width: 0; }
 .material-selector-item {
   position: relative;

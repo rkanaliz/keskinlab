@@ -307,8 +307,7 @@
 
   function materialViewerItem(files) {
     var images = files.filter(function (f) { return IMAGE_EXT_RE.test(f); });
-    var download = files.find(function (f) { return PDF_EXT_RE.test(f); }) || null;
-    return { previews: images, download: download };
+    return { previews: images };
   }
 
   function materialSupportsFullscreen(key) {
@@ -445,11 +444,8 @@
           '<button type="button" class="material-page-btn" data-material-page="next" aria-label="Sonraki"' + (activeMaterialIndex === active.previews.length - 1 ? ' disabled' : '') + '>→</button>' +
         '</div>'
       : '<span></span>';
-    var downloadLink = active.download
-      ? '<a class="material-download-link" href="' + active.download + '" download>' + active.label + ' PDF <span>↓</span></a>'
-      : '';
-    var footer = hasPagination || downloadLink
-      ? '<div class="material-viewer-footer">' + pagination + downloadLink + '</div>'
+    var footer = hasPagination
+      ? '<div class="material-viewer-footer">' + pagination + '</div>'
       : '';
     var fullscreenButton = supportsFullscreen && preview
       ? '<button class="material-fullscreen-btn" type="button" title="Tam ekran" aria-label="Tam ekran">' +
