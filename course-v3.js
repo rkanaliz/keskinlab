@@ -333,7 +333,7 @@
     if (next) next.disabled = activeMaterialIndex === active.previews.length - 1;
   }
 
-  function renderLessonFiles(mats, resources) {
+  function renderLessonFiles(mats, resources, week) {
     if (resources && resources.length) {
       var bundle = resources.find(function (resource) { return resource.group === 'bundle'; });
       var groupLabels = { teacher: 'Öğretmen İçin', student: 'Öğrenci Çalışmaları', assessment: 'Ölçme ve Değerlendirme', theme: 'Tema Görevi' };
@@ -351,10 +351,10 @@
         return resourceRows ? '<div class="resource-group"><h4>' + groupLabels[group] + '</h4>' + resourceRows + '</div>' : '';
       }).join('');
       return '<section class="lesson-files lesson-files-expanded" aria-labelledby="lessonFilesTitle">' +
-        '<div class="resource-files-head"><div><p>HAFTA 01 · DERS DOSYALARI</p><h3 id="lessonFilesTitle">Derste kullanacağın her şey.</h3></div>' +
+        '<div class="resource-files-head"><div><p>HAFTA ' + String(week.n).padStart(2, '0') + ' · DERS DOSYALARI</p><h3 id="lessonFilesTitle">Derste kullanacağın her şey.</h3></div>' +
           (bundle && bundle.pdf ? '<a class="resource-bundle-link" href="' + bundle.pdf + '" target="_blank" rel="noopener">Tüm evrakları aç <span>→</span></a>' : '') +
         '</div><div class="resource-groups">' + groups + '</div>' +
-        '<p class="resource-note">PDF dosyaları yazdırmaya, DOCX dosyaları düzenlemeye hazırdır. Tema performans görevi 2. haftada tamamlanır.</p>' +
+        '<p class="resource-note">PDF dosyaları yazdırmaya, DOCX dosyaları düzenlemeye hazırdır.</p>' +
       '</section>';
     }
     var definitions = [
@@ -498,7 +498,7 @@
     var el = document.getElementById('weekMaterials');
     var mats = D.materials[String(week.n)] || {};
     var items = [];
-    var lessonFiles = renderLessonFiles(mats, D.resourceBundles && D.resourceBundles[String(week.n)]);
+    var lessonFiles = renderLessonFiles(mats, D.resourceBundles && D.resourceBundles[String(week.n)], week);
     MATERIAL_ORDER.forEach(function (key) {
       var files = mats[key] || [];
       var viewerItem = materialViewerItem(files);
