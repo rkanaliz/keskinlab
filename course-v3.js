@@ -375,6 +375,7 @@
           : '<span class="material-status">Hazırlanacak</span>') +
       '</div>';
     }).join('');
+    if (!rows || definitions.every(function (definition) { return !(mats[definition.key] || []).some(function (file) { return PDF_EXT_RE.test(file) || /\.docx$/i.test(file); }); })) return '';
     return '<section class="lesson-files" aria-labelledby="lessonFilesTitle">' +
       '<h3 class="lesson-files-title" id="lessonFilesTitle">DERS DOSYALARI</h3>' +
       '<div class="lesson-files-list">' + rows + '</div>' +
