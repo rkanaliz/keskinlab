@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Kelime Kavanozu — BTY.5.1.1 | KeskinLab</title>
+  <meta name="description" content="BTY.5.1.1 için öğrencileri dengeli gruplara ayıran ve ders kavramlarını gruplara dağıtan sınıf aracı.">
+  <link rel="icon" href="brand/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="course-v3.css?v=20260913b">
+  <link rel="stylesheet" href="site-shell-v2b.css">
+  <link rel="stylesheet" href="kelime-kavanozu.css?v=20260913b">
+</head>
+<body>
+<header class="site-header" data-shared-shell="v2"><div class="container header-row"><a class="logo" href="/"><span class="logo-word">KeskinLab</span><span class="logo-tagline">ÖĞRENMEYİ TASARLAR</span></a><nav class="main-nav" aria-label="Ana navigasyon" id="mainNav"><a href="/5-sinif-bty" class="nav-link is-active">5. Sınıf</a><a href="/6-sinif-bty" class="nav-link">6. Sınıf</a><a href="/#dersler" class="nav-link">Seçmeli Dersler</a><a href="/dijital-icerikler" class="nav-link">Dijital İçerikler</a><a href="/evrak-cantasi" class="nav-link">Evraklar</a><a href="/hakkinda" class="nav-link">Hakkında</a></nav><div class="header-actions"><button class="icon-btn" id="searchTrigger" aria-label="Ara" aria-haspopup="dialog" type="button"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M16 16l-3.4-3.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button><button id="startLesson" class="btn btn-primary btn-compact" aria-expanded="false" aria-controls="lessonMenu" type="button">Derse Başla <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="header-menu" id="lessonMenu" hidden></div><button class="mobile-menu-trigger icon-btn" id="mobileMenuTrigger" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobileMenu" type="button">☰</button></div></div></header>
+
+<main class="jar-main">
+  <section class="jar-hero">
+    <div class="container jar-hero-inner">
+      <div>
+        <a class="jar-back" href="5-sinif-bty.html?week=1#weekMaterials">← 5. Sınıf · 1. haftaya dön</a>
+        <p class="jar-code">BTY.5.1.1 · SINIF ARACI</p>
+        <h1>Grup &amp; Kelime Kavanozu</h1>
+        <p class="jar-lead">Öğrencileri dengeli ve rastgele gruplara ayırın; haftanın kavramlarını gruplara tek adımda dağıtın.</p>
+      </div>
+      <div class="jar-mark" aria-hidden="true"><span>01</span><strong>KAVRAMLARI<br>SINIFLANDIR</strong></div>
+    </div>
+  </section>
+
+  <section class="jar-workspace" aria-labelledby="workspaceTitle">
+    <div class="container">
+      <h2 class="sr-only" id="workspaceTitle">Grup ve kavram ayarları</h2>
+      <div class="jar-input-grid">
+        <section class="jar-panel" aria-labelledby="studentsTitle">
+          <div class="jar-panel-head"><span>01</span><div><h2 id="studentsTitle">Grupları oluştur</h2><p>Her satıra bir öğrenci adı yazın.</p></div></div>
+          <label class="jar-label" for="studentNames">Öğrenci listesi</label>
+          <textarea id="studentNames" rows="10" placeholder="Ali Yılmaz&#10;Ayşe Demir&#10;Deniz Kaya" spellcheck="false"></textarea>
+          <div class="jar-inline-fields">
+            <label><span>Grup sayısı</span><input id="groupCount" type="number" min="2" max="12" value="4" inputmode="numeric"></label>
+            <label class="jar-check"><input id="rememberNames" type="checkbox"><span>Listeyi bu cihazda hatırla</span></label>
+          </div>
+          <div class="jar-actions">
+            <button class="btn btn-primary" id="createGroups" type="button">Grupları oluştur</button>
+            <button class="btn btn-secondary" id="reshuffleGroups" type="button">Yeniden karıştır</button>
+            <button class="jar-text-button" id="copyGroups" type="button">Grupları kopyala</button>
+          </div>
+        </section>
+
+        <section class="jar-panel" aria-labelledby="conceptsTitle">
+          <div class="jar-panel-head"><span>02</span><div><h2 id="conceptsTitle">Kelimeleri dağıt</h2><p>Hazır kavramları kullanın veya listeyi düzenleyin.</p></div></div>
+          <label class="jar-label" for="conceptNames">BTY.5.1.1 kavramları</label>
+          <textarea id="conceptNames" rows="10" spellcheck="false"></textarea>
+          <p class="jar-source">Kavramlar BTY.5.1.1 ders notu ve sınıflandırma alanlarından hazırlanmıştır.</p>
+          <div class="jar-actions">
+            <button class="btn btn-primary" id="assignConcepts" type="button">Kavramları gruplara dağıt</button>
+            <button class="btn btn-secondary" id="resetConcepts" type="button">Hazır listeye dön</button>
+            <button class="jar-text-button" id="copyAssignments" type="button">Tüm sonucu kopyala</button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="jar-results" aria-labelledby="resultsTitle">
+    <div class="container">
+      <div class="jar-results-head"><div><p class="jar-code">SINIFTA KULLAN</p><h2 id="resultsTitle">Gruplar</h2></div><p id="resultSummary">Öğrenci listesini ekleyip grupları oluşturun.</p></div>
+      <div class="jar-notice" id="jarNotice" role="status" aria-live="polite" hidden></div>
+      <div class="group-grid" id="groupResults"></div>
+    </div>
+  </section>
+</main>
+
+<div id="mobileBackdrop" class="mobile-backdrop" hidden></div><nav class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobil navigasyon" hidden><button class="menu-close" type="button" aria-label="Menüyü kapat">Kapat</button><a href="/">Ana Sayfa</a><a href="/5-sinif-bty">5. Sınıf</a><a href="/6-sinif-bty">6. Sınıf</a><a href="/#dersler">Seçmeli Dersler</a><a href="/dijital-icerikler">Dijital İçerikler</a><a href="/evrak-cantasi">Evraklar</a><a href="/hakkinda">Hakkında</a><button class="menu-search" type="button">Ara</button></nav><div class="search-dialog" id="searchDialog" role="dialog" aria-modal="true" aria-label="KeskinLab'da ara" hidden><div class="search-shell"><div class="search-head"><label for="searchInput">KeskinLab'da ara</label><button id="searchClose" type="button">Kapat</button></div><input id="searchInput" type="search" autocomplete="off" placeholder="Konu, hafta, evrak veya takvim ara"><div id="searchResults" class="search-results"></div></div></div><footer class="site-footer" data-shared-shell="v2"><div class="container footer-row"><span class="footer-text">© 2026 KeskinLab. Tüm hakları saklıdır.</span><nav class="footer-nav" aria-label="Alt navigasyon"><a href="/takvim">Takvim</a><a href="/hakkinda">Hakkında</a><a href="/iletisim">İletişim</a><a href="/dijital-araclar">Dijital Araçlar</a></nav></div></footer>
+<script src="site-materials.js"></script>
+<script src="site-shell-v2b.js"></script>
+<script src="kelime-kavanozu.js?v=20260913c"></script>
+</body>
+</html>
