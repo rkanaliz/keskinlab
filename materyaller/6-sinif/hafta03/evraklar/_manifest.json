@@ -1,0 +1,22 @@
+{
+  "01-ogretmen-uygulama-kilavuzu": {
+    "label": "Öğretmen Uygulama Kılavuzu",
+    "group": "teacher"
+  },
+  "02-kavram-eslestirme-kart-seti": {
+    "label": "Kavram Eşleştirme Kart Seti",
+    "group": "student"
+  },
+  "03-haftalik-enerji-kullanimi-uygulama-kagidi": {
+    "label": "Haftalık Enerji Kullanımı Uygulama Kağıdı",
+    "group": "student"
+  },
+  "04-arac-secimi-ve-kisa-degerlendirme": {
+    "label": "Araç Seçimi ve Kısa Değerlendirme",
+    "group": "assessment"
+  },
+  "tum-evraklar": {
+    "label": "Tüm Hafta 03 Evrakları",
+    "group": "bundle"
+  }
+}
