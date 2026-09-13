@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Artırılmış ve Sanal Gerçeklik Dedektifleri — KeskinLab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/ar-vr-dedektifleri.css">
+</head>
+<body>
+  <main class="activity-shell">
+    <a class="back-link" href="/6-sinif-bty?week=1">← 6. sınıf · 1. hafta</a>
+    <section class="activity-header" aria-labelledby="activity-title">
+      <p class="eyebrow">KESKİNLAB · HAFTA 01 · ETKİLEŞİMLİ ETKİNLİK</p>
+      <h1 id="activity-title">Artırılmış ve Sanal Gerçeklik Dedektifleri</h1>
+      <p>AR ve VR teknolojilerini günlük yaşam örneklerinde ayırt et, kullanım alanlarıyla ilişkilendir ve kendi gerekçeni yaz.</p>
+    </section>
+
+    <nav class="activity-progress" aria-label="Etkinlik bölümleri">
+      <button type="button" class="progress-step is-active" data-go="0"><span>1</span> Ayırt et</button>
+      <button type="button" class="progress-step" data-go="1"><span>2</span> Sınıflandır</button>
+      <button type="button" class="progress-step" data-go="2"><span>3</span> Senaryoyu çöz</button>
+      <button type="button" class="progress-step" data-go="3"><span>4</span> Düşünceni yaz</button>
+    </nav>
+
+    <div id="activityPanels">
+      <section class="activity-panel is-active" data-panel="0" aria-labelledby="truth-title">
+        <div class="panel-heading"><p>ETKİNLİK 1</p><h2 id="truth-title">AR örneği mi?</h2><span>Aşağıdaki durumların artırılmış gerçeklik (AR) örneği olup olmadığını belirle.</span></div>
+        <div class="question-list" data-quiz="truth"></div>
+        <div class="panel-actions"><button type="button" class="button button-primary" data-check="truth">Cevapları kontrol et</button></div>
+      </section>
+
+      <section class="activity-panel" data-panel="1" aria-labelledby="sort-title">
+        <div class="panel-heading"><p>ETKİNLİK 2</p><h2 id="sort-title">Teknolojiyi doğru alana yerleştir</h2><span>Kartı seç, sonra uygun kullanım alanını seç. İstersen sürükleyip bırakabilirsin.</span></div>
+        <div class="sort-layout">
+          <div class="sort-bank" id="sortBank" aria-label="Yerleştirilecek teknoloji kartları"></div>
+          <div class="sort-zones" id="sortZones" aria-label="Kullanım alanları"></div>
+        </div>
+        <p class="status-message" id="sortStatus" aria-live="polite"></p>
+        <div class="panel-actions"><button type="button" class="button button-primary" data-check="sort">Yerleştirmeyi kontrol et</button><button type="button" class="button button-quiet" data-reset="sort">Sıfırla</button></div>
+      </section>
+
+      <section class="activity-panel" data-panel="2" aria-labelledby="scenario-title">
+        <div class="panel-heading"><p>ETKİNLİK 3</p><h2 id="scenario-title">Senaryoyu analiz et</h2><span>Her gerçek yaşam senaryosunda kullanılan teknolojiyi seç.</span></div>
+        <div class="scenario-list" data-quiz="scenario"></div>
+        <div class="panel-actions"><button type="button" class="button button-primary" data-check="scenario">Cevapları kontrol et</button></div>
+      </section>
+
+      <section class="activity-panel" data-panel="3" aria-labelledby="write-title">
+        <div class="panel-heading"><p>ETKİNLİK 4</p><h2 id="write-title">Düşünceni yaz</h2><span>Cevapların öğretmene gönderilmez; bu ekranda kalır ve sen silene kadar tarayıcında saklanır.</span></div>
+        <div class="writing-list" id="writingList"></div>
+        <div class="panel-actions"><button type="button" class="button button-primary" id="saveWriting">Cevaplarımı kaydet</button></div>
+      </section>
+    </div>
+
+    <footer class="activity-footer">
+      <button class="button button-quiet" id="previous" type="button">← Önceki</button>
+      <span id="panelCount" aria-live="polite">1 / 4</span>
+      <button class="button button-primary" id="next" type="button">Sonraki →</button>
+    </footer>
+  </main>
+  <script src="/ar-vr-dedektifleri.js"></script>
+</body>
+</html>

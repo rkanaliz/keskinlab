@@ -453,13 +453,14 @@
           '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 3H3v4M13 3h4v4M17 13v4h-4M7 17H3v-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
         '</button>'
       : '';
-    var hasWeekTool = D.course && D.course.codePrefix === '5-sinif' && week.n === 1;
+    var hasWeekTool = D.course && ((D.course.codePrefix === '5-sinif' && week.n === 1) || (D.course.codePrefix === '6-sinif' && week.n === 1));
+    var isArVrTool = D.course && D.course.codePrefix === '6-sinif' && week.n === 1;
     var weekTool = hasWeekTool
       ? '<aside class="week-tool-promo" aria-labelledby="weekToolTitle">' +
           '<p>BU HAFTANIN SINIF ARACI</p>' +
-          '<h3 id="weekToolTitle">Grup &amp; Kelime Kavanozu</h3>' +
-          '<span>Öğrencileri gruplara ayırın ve haftanın beş kavramını rastgele dağıtın.</span>' +
-          '<a href="kelime-kavanozu.html">Aracı aç <b>→</b></a>' +
+          (isArVrTool
+            ? '<h3 id="weekToolTitle">AR / VR Dedektifleri</h3><span>Artırılmış ve sanal gerçeklik örneklerini ayırt eden dört bölümlü sınıf etkinliği.</span><a href="/ar-vr-dedektifleri.html">Etkinliği aç <b>→</b></a>'
+            : '<h3 id="weekToolTitle">Grup &amp; Kelime Kavanozu</h3><span>Öğrencileri gruplara ayırın ve haftanın beş kavramını rastgele dağıtın.</span><a href="kelime-kavanozu.html">Aracı aç <b>→</b></a>') +
         '</aside>'
       : '';
 
