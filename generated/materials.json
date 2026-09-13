@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-13T12:58:42.021Z",
+  "generatedAt": "2026-09-13T13:16:48.523Z",
   "courses": {
     "5-sinif": {
       "title": "5. Sınıf",
@@ -1673,6 +1673,89 @@
                   "href": "materyaller/5-sinif/hafta03/hafta-ozeti/04.png",
                   "format": "png",
                   "filename": "KeskinLab-5-Sinif-Hafta-03-Hafta-Ozeti-04.png"
+                }
+              ]
+            },
+            {
+              "type": "evraklar",
+              "label": "Öğretmen Uygulama Kılavuzu",
+              "index": "01-ogretmen-uygulama-kilavuzu",
+              "group": "teacher",
+              "preview": "materyaller/5-sinif/hafta03/evraklar/01-ogretmen-uygulama-kilavuzu.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": "materyaller/5-sinif/hafta03/evraklar/01-ogretmen-uygulama-kilavuzu.docx",
+              "downloads": [
+                {
+                  "href": "materyaller/5-sinif/hafta03/evraklar/01-ogretmen-uygulama-kilavuzu.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-5-Sinif-Hafta-03-Ogretmen-Uygulama-Kilavuzu-01-ogretmen-uygulama-kilavuzu.pdf"
+                },
+                {
+                  "href": "materyaller/5-sinif/hafta03/evraklar/01-ogretmen-uygulama-kilavuzu.docx",
+                  "format": "docx",
+                  "filename": "KeskinLab-5-Sinif-Hafta-03-Ogretmen-Uygulama-Kilavuzu-Duzenlenebilir-01-ogretmen-uygulama-kilavuzu.docx"
+                }
+              ]
+            },
+            {
+              "type": "evraklar",
+              "label": "Dijital Kimlik Kartım",
+              "index": "02-dijital-kimlik-kartim",
+              "group": "student",
+              "preview": "materyaller/5-sinif/hafta03/evraklar/02-dijital-kimlik-kartim.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": "materyaller/5-sinif/hafta03/evraklar/02-dijital-kimlik-kartim.docx",
+              "downloads": [
+                {
+                  "href": "materyaller/5-sinif/hafta03/evraklar/02-dijital-kimlik-kartim.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-5-Sinif-Hafta-03-Dijital-Kimlik-Kartim-02-dijital-kimlik-kartim.pdf"
+                },
+                {
+                  "href": "materyaller/5-sinif/hafta03/evraklar/02-dijital-kimlik-kartim.docx",
+                  "format": "docx",
+                  "filename": "KeskinLab-5-Sinif-Hafta-03-Dijital-Kimlik-Kartim-Duzenlenebilir-02-dijital-kimlik-kartim.docx"
+                }
+              ]
+            },
+            {
+              "type": "evraklar",
+              "label": "Öğretmen Gözlem Formu",
+              "index": "03-ogretmen-gozlem-formu",
+              "group": "teacher",
+              "preview": "materyaller/5-sinif/hafta03/evraklar/03-ogretmen-gozlem-formu.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": "materyaller/5-sinif/hafta03/evraklar/03-ogretmen-gozlem-formu.docx",
+              "downloads": [
+                {
+                  "href": "materyaller/5-sinif/hafta03/evraklar/03-ogretmen-gozlem-formu.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-5-Sinif-Hafta-03-Ogretmen-Gozlem-Formu-03-ogretmen-gozlem-formu.pdf"
+                },
+                {
+                  "href": "materyaller/5-sinif/hafta03/evraklar/03-ogretmen-gozlem-formu.docx",
+                  "format": "docx",
+                  "filename": "KeskinLab-5-Sinif-Hafta-03-Ogretmen-Gozlem-Formu-Duzenlenebilir-03-ogretmen-gozlem-formu.docx"
+                }
+              ]
+            },
+            {
+              "type": "evraklar",
+              "label": "Tüm Hafta 03 Evrakları",
+              "index": "tum-evraklar",
+              "group": "bundle",
+              "preview": "materyaller/5-sinif/hafta03/evraklar/tum-evraklar.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/5-sinif/hafta03/evraklar/tum-evraklar.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-5-Sinif-Hafta-03-Tum-Hafta-03-Evraklari-tum-evraklar.pdf"
                 }
               ]
             }

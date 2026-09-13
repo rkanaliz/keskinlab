@@ -1,0 +1,6 @@
+{
+  "tum-evraklar": { "label": "Tüm Hafta 03 Evrakları", "group": "bundle" },
+  "01-ogretmen-uygulama-kilavuzu": { "label": "Öğretmen Uygulama Kılavuzu", "group": "teacher" },
+  "02-dijital-kimlik-kartim": { "label": "Dijital Kimlik Kartım", "group": "student" },
+  "03-ogretmen-gozlem-formu": { "label": "Öğretmen Gözlem Formu", "group": "teacher" }
+}
