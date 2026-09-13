@@ -1,0 +1,18 @@
+{
+  "01-ogretmen-uygulama-kilavuzu": {
+    "label": "Öğretmen Uygulama Kılavuzu",
+    "group": "teacher"
+  },
+  "02-dunden-yarina-teknolojik-bir-hikaye": {
+    "label": "Dünden Yarına Teknolojik Bir Hikaye",
+    "group": "student"
+  },
+  "03-performans-akran-ve-bireysel-kapanis": {
+    "label": "Performans, Akran ve Bireysel Kapanış",
+    "group": "assessment"
+  },
+  "tum-evraklar": {
+    "label": "Tüm Hafta 02 Evrakları",
+    "group": "bundle"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-13T15:42:45.589Z",
+  "generatedAt": "2026-09-13T16:38:54.381Z",
   "courses": {
     "5-sinif": {
       "title": "5. Sınıf",
@@ -3299,75 +3299,75 @@
             },
             {
               "type": "evraklar",
-              "label": "Hafta Evrakı",
-              "index": "00-ogretmen-uygulama-kilavuzu",
-              "group": null,
-              "preview": "materyaller/6-sinif/hafta02/evraklar/00-ogretmen-uygulama-kilavuzu.pdf",
+              "label": "Öğretmen Uygulama Kılavuzu",
+              "index": "01-ogretmen-uygulama-kilavuzu",
+              "group": "teacher",
+              "preview": "materyaller/6-sinif/hafta02/evraklar/01-ogretmen-uygulama-kilavuzu.pdf",
               "webPreview": null,
               "thumbnail": null,
-              "editable": "materyaller/6-sinif/hafta02/evraklar/00-ogretmen-uygulama-kilavuzu.docx",
+              "editable": "materyaller/6-sinif/hafta02/evraklar/01-ogretmen-uygulama-kilavuzu.docx",
               "downloads": [
                 {
-                  "href": "materyaller/6-sinif/hafta02/evraklar/00-ogretmen-uygulama-kilavuzu.pdf",
+                  "href": "materyaller/6-sinif/hafta02/evraklar/01-ogretmen-uygulama-kilavuzu.pdf",
                   "format": "pdf",
-                  "filename": "KeskinLab-6-Sinif-Hafta-02-Hafta-Evraki-00-ogretmen-uygulama-kilavuzu.pdf"
+                  "filename": "KeskinLab-6-Sinif-Hafta-02-Ogretmen-Uygulama-Kilavuzu-01-ogretmen-uygulama-kilavuzu.pdf"
                 },
                 {
-                  "href": "materyaller/6-sinif/hafta02/evraklar/00-ogretmen-uygulama-kilavuzu.docx",
+                  "href": "materyaller/6-sinif/hafta02/evraklar/01-ogretmen-uygulama-kilavuzu.docx",
                   "format": "docx",
-                  "filename": "KeskinLab-6-Sinif-Hafta-02-Hafta-Evraki-Duzenlenebilir-00-ogretmen-uygulama-kilavuzu.docx"
+                  "filename": "KeskinLab-6-Sinif-Hafta-02-Ogretmen-Uygulama-Kilavuzu-Duzenlenebilir-01-ogretmen-uygulama-kilavuzu.docx"
                 }
               ]
             },
             {
               "type": "evraklar",
-              "label": "Hafta Evrakı",
-              "index": "01-grup-arastirma-ve-gelecek-afisi",
-              "group": null,
-              "preview": "materyaller/6-sinif/hafta02/evraklar/01-grup-arastirma-ve-gelecek-afisi.pdf",
+              "label": "Dünden Yarına Teknolojik Bir Hikaye",
+              "index": "02-dunden-yarina-teknolojik-bir-hikaye",
+              "group": "student",
+              "preview": "materyaller/6-sinif/hafta02/evraklar/02-dunden-yarina-teknolojik-bir-hikaye.pdf",
               "webPreview": null,
               "thumbnail": null,
-              "editable": "materyaller/6-sinif/hafta02/evraklar/01-grup-arastirma-ve-gelecek-afisi.docx",
+              "editable": "materyaller/6-sinif/hafta02/evraklar/02-dunden-yarina-teknolojik-bir-hikaye.docx",
               "downloads": [
                 {
-                  "href": "materyaller/6-sinif/hafta02/evraklar/01-grup-arastirma-ve-gelecek-afisi.pdf",
+                  "href": "materyaller/6-sinif/hafta02/evraklar/02-dunden-yarina-teknolojik-bir-hikaye.pdf",
                   "format": "pdf",
-                  "filename": "KeskinLab-6-Sinif-Hafta-02-Hafta-Evraki-01-grup-arastirma-ve-gelecek-afisi.pdf"
+                  "filename": "KeskinLab-6-Sinif-Hafta-02-Dunden-Yarina-Teknolojik-Bir-Hikaye-02-dunden-yarina-teknolojik-bir-hikaye.pdf"
                 },
                 {
-                  "href": "materyaller/6-sinif/hafta02/evraklar/01-grup-arastirma-ve-gelecek-afisi.docx",
+                  "href": "materyaller/6-sinif/hafta02/evraklar/02-dunden-yarina-teknolojik-bir-hikaye.docx",
                   "format": "docx",
-                  "filename": "KeskinLab-6-Sinif-Hafta-02-Hafta-Evraki-Duzenlenebilir-01-grup-arastirma-ve-gelecek-afisi.docx"
+                  "filename": "KeskinLab-6-Sinif-Hafta-02-Dunden-Yarina-Teknolojik-Bir-Hikaye-Duzenlenebilir-02-dunden-yarina-teknolojik-bir-hikaye.docx"
                 }
               ]
             },
             {
               "type": "evraklar",
-              "label": "Hafta Evrakı",
-              "index": "02-dereceli-puanlama-ve-akran-degerlendirme",
-              "group": null,
-              "preview": "materyaller/6-sinif/hafta02/evraklar/02-dereceli-puanlama-ve-akran-degerlendirme.pdf",
+              "label": "Performans, Akran ve Bireysel Kapanış",
+              "index": "03-performans-akran-ve-bireysel-kapanis",
+              "group": "assessment",
+              "preview": "materyaller/6-sinif/hafta02/evraklar/03-performans-akran-ve-bireysel-kapanis.pdf",
               "webPreview": null,
               "thumbnail": null,
-              "editable": "materyaller/6-sinif/hafta02/evraklar/02-dereceli-puanlama-ve-akran-degerlendirme.docx",
+              "editable": "materyaller/6-sinif/hafta02/evraklar/03-performans-akran-ve-bireysel-kapanis.docx",
               "downloads": [
                 {
-                  "href": "materyaller/6-sinif/hafta02/evraklar/02-dereceli-puanlama-ve-akran-degerlendirme.pdf",
+                  "href": "materyaller/6-sinif/hafta02/evraklar/03-performans-akran-ve-bireysel-kapanis.pdf",
                   "format": "pdf",
-                  "filename": "KeskinLab-6-Sinif-Hafta-02-Hafta-Evraki-02-dereceli-puanlama-ve-akran-degerlendirme.pdf"
+                  "filename": "KeskinLab-6-Sinif-Hafta-02-Performans-Akran-ve-Bireysel-Kapanis-03-performans-akran-ve-bireysel-kapanis.pdf"
                 },
                 {
-                  "href": "materyaller/6-sinif/hafta02/evraklar/02-dereceli-puanlama-ve-akran-degerlendirme.docx",
+                  "href": "materyaller/6-sinif/hafta02/evraklar/03-performans-akran-ve-bireysel-kapanis.docx",
                   "format": "docx",
-                  "filename": "KeskinLab-6-Sinif-Hafta-02-Hafta-Evraki-Duzenlenebilir-02-dereceli-puanlama-ve-akran-degerlendirme.docx"
+                  "filename": "KeskinLab-6-Sinif-Hafta-02-Performans-Akran-ve-Bireysel-Kapanis-Duzenlenebilir-03-performans-akran-ve-bireysel-kapanis.docx"
                 }
               ]
             },
             {
               "type": "evraklar",
-              "label": "Hafta Evrakı",
+              "label": "Tüm Hafta 02 Evrakları",
               "index": "tum-evraklar",
-              "group": null,
+              "group": "bundle",
               "preview": "materyaller/6-sinif/hafta02/evraklar/tum-evraklar.pdf",
               "webPreview": null,
               "thumbnail": null,
@@ -3376,7 +3376,7 @@
                 {
                   "href": "materyaller/6-sinif/hafta02/evraklar/tum-evraklar.pdf",
                   "format": "pdf",
-                  "filename": "KeskinLab-6-Sinif-Hafta-02-Hafta-Evraki-tum-evraklar.pdf"
+                  "filename": "KeskinLab-6-Sinif-Hafta-02-Tum-Hafta-02-Evraklari-tum-evraklar.pdf"
                 }
               ]
             }

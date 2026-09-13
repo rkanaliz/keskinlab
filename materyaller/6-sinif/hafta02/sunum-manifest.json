@@ -1,0 +1,187 @@
+{
+  "course": "6-sinif-bty",
+  "week": 2,
+  "academic_year": "2026-2027",
+  "title": "Bilişim Teknolojilerinin Geleceği",
+  "learning_outcome": "BTY.6.1.2",
+  "total": 22,
+  "format": "static-image",
+  "slides": [
+    {
+      "number": 1,
+      "title": "Hafta 02 Sunum Ekranı 01",
+      "file": "sunum/01.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "75a16d486e32dde2938654c64a893cb398821e988cd3af7edc81ea347963477c"
+    },
+    {
+      "number": 2,
+      "title": "Hafta 02 Sunum Ekranı 02",
+      "file": "sunum/02.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "766515abd558f80099e5edc6aa5618f8e8104ee9e5900ba9202f59a3c48bc820"
+    },
+    {
+      "number": 3,
+      "title": "Hafta 02 Sunum Ekranı 03",
+      "file": "sunum/03.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "b28d8b64ea94aef86dd49a23c368469ad9d252872143ad096c12e0d64cf43aa6"
+    },
+    {
+      "number": 4,
+      "title": "Hafta 02 Sunum Ekranı 04",
+      "file": "sunum/04.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "593bcef1a12b41ee8e34483c5f96f5b232bc07e96e119e6fa73e916142ea2c1e"
+    },
+    {
+      "number": 5,
+      "title": "Hafta 02 Sunum Ekranı 05",
+      "file": "sunum/05.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "6e71d9026273f613fb654b8fd8580eaf124ee8661e1058f18d29321ae43e4a4b"
+    },
+    {
+      "number": 6,
+      "title": "Hafta 02 Sunum Ekranı 06",
+      "file": "sunum/06.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "aae061200b07c3a1c3332f35ffbe135fe805d252628acec167a29050580f794e"
+    },
+    {
+      "number": 7,
+      "title": "Hafta 02 Sunum Ekranı 07",
+      "file": "sunum/07.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "3bb6b8af1875e383ac6d869debdd0c3ff384c033ddaab9c145292f3af1f2eb35"
+    },
+    {
+      "number": 8,
+      "title": "Hafta 02 Sunum Ekranı 08",
+      "file": "sunum/08.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "0b7d01cf648cb8272d1bf2f420d910b3d60c38bb9270a6a5e4b598102963614a"
+    },
+    {
+      "number": 9,
+      "title": "Hafta 02 Sunum Ekranı 09",
+      "file": "sunum/09.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "a8cdf56d1565a5d3529c0a9ec11859b19f90aab4c9a95663a73e9a39b4761b66"
+    },
+    {
+      "number": 10,
+      "title": "Hafta 02 Sunum Ekranı 10",
+      "file": "sunum/10.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "91ebf7e7f6ad05e52987d16c7fca204cf34408c3f5ffd9821ffdd1a3ed78c94b"
+    },
+    {
+      "number": 11,
+      "title": "Hafta 02 Sunum Ekranı 11",
+      "file": "sunum/11.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "3a65cbc42f00b6ec833bb7ee2cb5c72783ca721254e27a83bff5daee6716fc18"
+    },
+    {
+      "number": 12,
+      "title": "Hafta 02 Sunum Ekranı 12",
+      "file": "sunum/12.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "984aca7f5fd08cd6942a5aa19096cf706f501ea17927f416a521e767b8196a6f"
+    },
+    {
+      "number": 13,
+      "title": "Hafta 02 Sunum Ekranı 13",
+      "file": "sunum/13.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "fee3a6cdc60ab6acc6d86e608c85f38ddd30c5e43a510259d66d8df80f77a817"
+    },
+    {
+      "number": 14,
+      "title": "Hafta 02 Sunum Ekranı 14",
+      "file": "sunum/14.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "d88d5a8ea2c473afd070d63247118d56b7392656fd3c86cd5420e98a0ddd652e"
+    },
+    {
+      "number": 15,
+      "title": "Hafta 02 Sunum Ekranı 15",
+      "file": "sunum/15.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "1dc5f46a7ef2a6df9ef8ba39d28dbea8149a12905f569cc7b9b8180a59a477c7"
+    },
+    {
+      "number": 16,
+      "title": "Hafta 02 Sunum Ekranı 16",
+      "file": "sunum/16.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "fbc2c36fdfbceadc76b6fa1319bd1699cdd98d3bad976dd6c78e5756ba70cd3a"
+    },
+    {
+      "number": 17,
+      "title": "Hafta 02 Sunum Ekranı 17",
+      "file": "sunum/17.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "52453b2c4090b8002f0da3c06c9c70fa324b169be3342411792a50e216073668"
+    },
+    {
+      "number": 18,
+      "title": "Hafta 02 Sunum Ekranı 18",
+      "file": "sunum/18.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "8b2d0118e9a7fe7240b5890ec99f39510be268b5bf3ce2f5487119d6a633dd09"
+    },
+    {
+      "number": 19,
+      "title": "Hafta 02 Sunum Ekranı 19",
+      "file": "sunum/19.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "f0e8f1dc21dd70889158e1bd452060da34c90dd6b77120836801661453e5341d"
+    },
+    {
+      "number": 20,
+      "title": "Hafta 02 Sunum Ekranı 20",
+      "file": "sunum/20.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "bb609f777ad15e4fb8114c72ac6883634394cb47836bb33b509f0baf7bd4f1ec"
+    },
+    {
+      "number": 21,
+      "title": "Hafta 02 Sunum Ekranı 21",
+      "file": "sunum/21.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "19631f4feaa96d3dcddb513ba78c6c603b485cd8863fd10121d3515c3b118791"
+    },
+    {
+      "number": 22,
+      "title": "Hafta 02 Sunum Ekranı 22",
+      "file": "sunum/22.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "269cfa5147a82225c9e561038caf151fe8f37cd40c2112800c4371f46e41d6c3"
+    }
+  ]
+}
