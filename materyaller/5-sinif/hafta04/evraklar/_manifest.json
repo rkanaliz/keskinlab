@@ -1,0 +1,7 @@
+{
+  "tum-evraklar": { "label": "Tüm Hafta 04 Evrakları", "group": "bundle" },
+  "01-ogretmen-uygulama-kilavuzu": { "label": "Öğretmen Uygulama Kılavuzu", "group": "teacher" },
+  "02-dijital-ayak-izi-testi-oz-degerlendirme": { "label": "Dijital Ayak İzi Testi + Öz Değerlendirme", "group": "assessment" },
+  "03-dijital-vatandaslik-kartlari-poster-planlama": { "label": "Dijital Vatandaşlık Kartları + Poster Planlama", "group": "student" },
+  "04-ogretmen-degerlendirme-formu": { "label": "Öğretmen Değerlendirme Formu", "group": "teacher" }
+}

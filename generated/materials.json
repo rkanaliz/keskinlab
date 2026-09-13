@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-13T13:16:48.523Z",
+  "generatedAt": "2026-09-13T13:35:12.502Z",
   "courses": {
     "5-sinif": {
       "title": "5. Sınıf",
@@ -2081,6 +2081,111 @@
                   "href": "materyaller/5-sinif/hafta04/sunum/20.png",
                   "format": "png",
                   "filename": "KeskinLab-5-Sinif-Hafta-04-Sunum-20.png"
+                }
+              ]
+            },
+            {
+              "type": "evraklar",
+              "label": "Öğretmen Uygulama Kılavuzu",
+              "index": "01-ogretmen-uygulama-kilavuzu",
+              "group": "teacher",
+              "preview": "materyaller/5-sinif/hafta04/evraklar/01-ogretmen-uygulama-kilavuzu.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": "materyaller/5-sinif/hafta04/evraklar/01-ogretmen-uygulama-kilavuzu.docx",
+              "downloads": [
+                {
+                  "href": "materyaller/5-sinif/hafta04/evraklar/01-ogretmen-uygulama-kilavuzu.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-5-Sinif-Hafta-04-Ogretmen-Uygulama-Kilavuzu-01-ogretmen-uygulama-kilavuzu.pdf"
+                },
+                {
+                  "href": "materyaller/5-sinif/hafta04/evraklar/01-ogretmen-uygulama-kilavuzu.docx",
+                  "format": "docx",
+                  "filename": "KeskinLab-5-Sinif-Hafta-04-Ogretmen-Uygulama-Kilavuzu-Duzenlenebilir-01-ogretmen-uygulama-kilavuzu.docx"
+                }
+              ]
+            },
+            {
+              "type": "evraklar",
+              "label": "Dijital Ayak İzi Testi + Öz Değerlendirme",
+              "index": "02-dijital-ayak-izi-testi-oz-degerlendirme",
+              "group": "assessment",
+              "preview": "materyaller/5-sinif/hafta04/evraklar/02-dijital-ayak-izi-testi-oz-degerlendirme.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": "materyaller/5-sinif/hafta04/evraklar/02-dijital-ayak-izi-testi-oz-degerlendirme.docx",
+              "downloads": [
+                {
+                  "href": "materyaller/5-sinif/hafta04/evraklar/02-dijital-ayak-izi-testi-oz-degerlendirme.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-5-Sinif-Hafta-04-Dijital-Ayak-Izi-Testi-Oz-Degerlendirme-02-dijital-ayak-izi-testi-oz-degerlendirme.pdf"
+                },
+                {
+                  "href": "materyaller/5-sinif/hafta04/evraklar/02-dijital-ayak-izi-testi-oz-degerlendirme.docx",
+                  "format": "docx",
+                  "filename": "KeskinLab-5-Sinif-Hafta-04-Dijital-Ayak-Izi-Testi-Oz-Degerlendirme-Duzenlenebilir-02-dijital-ayak-izi-testi-oz-degerlendirme.docx"
+                }
+              ]
+            },
+            {
+              "type": "evraklar",
+              "label": "Dijital Vatandaşlık Kartları + Poster Planlama",
+              "index": "03-dijital-vatandaslik-kartlari-poster-planlama",
+              "group": "student",
+              "preview": "materyaller/5-sinif/hafta04/evraklar/03-dijital-vatandaslik-kartlari-poster-planlama.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": "materyaller/5-sinif/hafta04/evraklar/03-dijital-vatandaslik-kartlari-poster-planlama.docx",
+              "downloads": [
+                {
+                  "href": "materyaller/5-sinif/hafta04/evraklar/03-dijital-vatandaslik-kartlari-poster-planlama.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-5-Sinif-Hafta-04-Dijital-Vatandaslik-Kartlari-Poster-Planlama-03-dijital-vatandaslik-kartlari-poster-planlama.pdf"
+                },
+                {
+                  "href": "materyaller/5-sinif/hafta04/evraklar/03-dijital-vatandaslik-kartlari-poster-planlama.docx",
+                  "format": "docx",
+                  "filename": "KeskinLab-5-Sinif-Hafta-04-Dijital-Vatandaslik-Kartlari-Poster-Planlama-Duzenlenebilir-03-dijital-vatandaslik-kartlari-poster-planlama.docx"
+                }
+              ]
+            },
+            {
+              "type": "evraklar",
+              "label": "Öğretmen Değerlendirme Formu",
+              "index": "04-ogretmen-degerlendirme-formu",
+              "group": "teacher",
+              "preview": "materyaller/5-sinif/hafta04/evraklar/04-ogretmen-degerlendirme-formu.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": "materyaller/5-sinif/hafta04/evraklar/04-ogretmen-degerlendirme-formu.docx",
+              "downloads": [
+                {
+                  "href": "materyaller/5-sinif/hafta04/evraklar/04-ogretmen-degerlendirme-formu.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-5-Sinif-Hafta-04-Ogretmen-Degerlendirme-Formu-04-ogretmen-degerlendirme-formu.pdf"
+                },
+                {
+                  "href": "materyaller/5-sinif/hafta04/evraklar/04-ogretmen-degerlendirme-formu.docx",
+                  "format": "docx",
+                  "filename": "KeskinLab-5-Sinif-Hafta-04-Ogretmen-Degerlendirme-Formu-Duzenlenebilir-04-ogretmen-degerlendirme-formu.docx"
+                }
+              ]
+            },
+            {
+              "type": "evraklar",
+              "label": "Tüm Hafta 04 Evrakları",
+              "index": "tum-evraklar",
+              "group": "bundle",
+              "preview": "materyaller/5-sinif/hafta04/evraklar/tum-evraklar.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/5-sinif/hafta04/evraklar/tum-evraklar.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-5-Sinif-Hafta-04-Tum-Hafta-04-Evraklari-tum-evraklar.pdf"
                 }
               ]
             }
