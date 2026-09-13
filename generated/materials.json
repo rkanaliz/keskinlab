@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-13T13:35:12.502Z",
+  "generatedAt": "2026-09-13T15:42:45.589Z",
   "courses": {
     "5-sinif": {
       "title": "5. Sınıf",
@@ -2772,242 +2772,154 @@
             {
               "type": "evraklar",
               "label": "Öğretmen Uygulama Kılavuzu",
-              "index": "00-ogretmen-uygulama-kilavuzu",
+              "index": "01-ogretmen-uygulama-kilavuzu",
               "group": "teacher",
-              "preview": "materyaller/6-sinif/hafta01/evraklar/00-ogretmen-uygulama-kilavuzu.pdf",
+              "preview": "materyaller/6-sinif/hafta01/evraklar/01-ogretmen-uygulama-kilavuzu.pdf",
               "webPreview": null,
               "thumbnail": null,
-              "editable": "materyaller/6-sinif/hafta01/evraklar/00-ogretmen-uygulama-kilavuzu.docx",
+              "editable": "materyaller/6-sinif/hafta01/evraklar/01-ogretmen-uygulama-kilavuzu.docx",
               "downloads": [
                 {
-                  "href": "materyaller/6-sinif/hafta01/evraklar/00-ogretmen-uygulama-kilavuzu.pdf",
+                  "href": "materyaller/6-sinif/hafta01/evraklar/01-ogretmen-uygulama-kilavuzu.pdf",
                   "format": "pdf",
-                  "filename": "KeskinLab-6-Sinif-Hafta-01-Ogretmen-Uygulama-Kilavuzu-00-ogretmen-uygulama-kilavuzu.pdf"
+                  "filename": "KeskinLab-6-Sinif-Hafta-01-Ogretmen-Uygulama-Kilavuzu-01-ogretmen-uygulama-kilavuzu.pdf"
                 },
                 {
-                  "href": "materyaller/6-sinif/hafta01/evraklar/00-ogretmen-uygulama-kilavuzu.docx",
+                  "href": "materyaller/6-sinif/hafta01/evraklar/01-ogretmen-uygulama-kilavuzu.docx",
                   "format": "docx",
-                  "filename": "KeskinLab-6-Sinif-Hafta-01-Ogretmen-Uygulama-Kilavuzu-Duzenlenebilir-00-ogretmen-uygulama-kilavuzu.docx"
+                  "filename": "KeskinLab-6-Sinif-Hafta-01-Ogretmen-Uygulama-Kilavuzu-Duzenlenebilir-01-ogretmen-uygulama-kilavuzu.docx"
                 }
               ]
             },
             {
               "type": "evraklar",
               "label": "Ön Değerlendirme",
-              "index": "01-on-degerlendirme",
+              "index": "02-on-degerlendirme",
               "group": "assessment",
-              "preview": "materyaller/6-sinif/hafta01/evraklar/01-on-degerlendirme.pdf",
+              "preview": "materyaller/6-sinif/hafta01/evraklar/02-on-degerlendirme.pdf",
               "webPreview": null,
               "thumbnail": null,
-              "editable": "materyaller/6-sinif/hafta01/evraklar/01-on-degerlendirme.docx",
+              "editable": "materyaller/6-sinif/hafta01/evraklar/02-on-degerlendirme.docx",
               "downloads": [
                 {
-                  "href": "materyaller/6-sinif/hafta01/evraklar/01-on-degerlendirme.pdf",
+                  "href": "materyaller/6-sinif/hafta01/evraklar/02-on-degerlendirme.pdf",
                   "format": "pdf",
-                  "filename": "KeskinLab-6-Sinif-Hafta-01-On-Degerlendirme-01-on-degerlendirme.pdf"
+                  "filename": "KeskinLab-6-Sinif-Hafta-01-On-Degerlendirme-02-on-degerlendirme.pdf"
                 },
                 {
-                  "href": "materyaller/6-sinif/hafta01/evraklar/01-on-degerlendirme.docx",
+                  "href": "materyaller/6-sinif/hafta01/evraklar/02-on-degerlendirme.docx",
                   "format": "docx",
-                  "filename": "KeskinLab-6-Sinif-Hafta-01-On-Degerlendirme-Duzenlenebilir-01-on-degerlendirme.docx"
+                  "filename": "KeskinLab-6-Sinif-Hafta-01-On-Degerlendirme-Duzenlenebilir-02-on-degerlendirme.docx"
                 }
               ]
             },
             {
               "type": "evraklar",
-              "label": "AR Gözlem ve Keşif",
-              "index": "02-ar-gozlem-ve-kesif",
+              "label": "Renkli Gerçeklik Gözlem ve Yansıtma",
+              "index": "03-renkli-gerceklik-gozlem-ve-yansitma",
               "group": "student",
-              "preview": "materyaller/6-sinif/hafta01/evraklar/02-ar-gozlem-ve-kesif.pdf",
+              "preview": "materyaller/6-sinif/hafta01/evraklar/03-renkli-gerceklik-gozlem-ve-yansitma.pdf",
               "webPreview": null,
               "thumbnail": null,
-              "editable": "materyaller/6-sinif/hafta01/evraklar/02-ar-gozlem-ve-kesif.docx",
+              "editable": "materyaller/6-sinif/hafta01/evraklar/03-renkli-gerceklik-gozlem-ve-yansitma.docx",
               "downloads": [
                 {
-                  "href": "materyaller/6-sinif/hafta01/evraklar/02-ar-gozlem-ve-kesif.pdf",
+                  "href": "materyaller/6-sinif/hafta01/evraklar/03-renkli-gerceklik-gozlem-ve-yansitma.pdf",
                   "format": "pdf",
-                  "filename": "KeskinLab-6-Sinif-Hafta-01-AR-Gozlem-ve-Kesif-02-ar-gozlem-ve-kesif.pdf"
+                  "filename": "KeskinLab-6-Sinif-Hafta-01-Renkli-Gerceklik-Gozlem-ve-Yansitma-03-renkli-gerceklik-gozlem-ve-yansitma.pdf"
                 },
                 {
-                  "href": "materyaller/6-sinif/hafta01/evraklar/02-ar-gozlem-ve-kesif.docx",
+                  "href": "materyaller/6-sinif/hafta01/evraklar/03-renkli-gerceklik-gozlem-ve-yansitma.docx",
                   "format": "docx",
-                  "filename": "KeskinLab-6-Sinif-Hafta-01-AR-Gozlem-ve-Kesif-Duzenlenebilir-02-ar-gozlem-ve-kesif.docx"
+                  "filename": "KeskinLab-6-Sinif-Hafta-01-Renkli-Gerceklik-Gozlem-ve-Yansitma-Duzenlenebilir-03-renkli-gerceklik-gozlem-ve-yansitma.docx"
                 }
               ]
             },
             {
               "type": "evraklar",
-              "label": "Grup Araştırması ve Mini Poster",
-              "index": "03-grup-arastirmasi-ve-mini-poster",
+              "label": "Yenilikçi Teknoloji İnceleme ve Sınıflandırma",
+              "index": "04-yenilikci-teknoloji-inceleme-ve-siniflandirma",
               "group": "student",
-              "preview": "materyaller/6-sinif/hafta01/evraklar/03-grup-arastirmasi-ve-mini-poster.pdf",
+              "preview": "materyaller/6-sinif/hafta01/evraklar/04-yenilikci-teknoloji-inceleme-ve-siniflandirma.pdf",
               "webPreview": null,
               "thumbnail": null,
-              "editable": "materyaller/6-sinif/hafta01/evraklar/03-grup-arastirmasi-ve-mini-poster.docx",
+              "editable": "materyaller/6-sinif/hafta01/evraklar/04-yenilikci-teknoloji-inceleme-ve-siniflandirma.docx",
               "downloads": [
                 {
-                  "href": "materyaller/6-sinif/hafta01/evraklar/03-grup-arastirmasi-ve-mini-poster.pdf",
+                  "href": "materyaller/6-sinif/hafta01/evraklar/04-yenilikci-teknoloji-inceleme-ve-siniflandirma.pdf",
                   "format": "pdf",
-                  "filename": "KeskinLab-6-Sinif-Hafta-01-Grup-Arastirmasi-ve-Mini-Poster-03-grup-arastirmasi-ve-mini-poster.pdf"
+                  "filename": "KeskinLab-6-Sinif-Hafta-01-Yenilikci-Teknoloji-Inceleme-ve-Siniflandirma-04-yenilikci-teknoloji-inceleme-ve-siniflandirma.pdf"
                 },
                 {
-                  "href": "materyaller/6-sinif/hafta01/evraklar/03-grup-arastirmasi-ve-mini-poster.docx",
+                  "href": "materyaller/6-sinif/hafta01/evraklar/04-yenilikci-teknoloji-inceleme-ve-siniflandirma.docx",
                   "format": "docx",
-                  "filename": "KeskinLab-6-Sinif-Hafta-01-Grup-Arastirmasi-ve-Mini-Poster-Duzenlenebilir-03-grup-arastirmasi-ve-mini-poster.docx"
+                  "filename": "KeskinLab-6-Sinif-Hafta-01-Yenilikci-Teknoloji-Inceleme-ve-Siniflandirma-Duzenlenebilir-04-yenilikci-teknoloji-inceleme-ve-siniflandirma.docx"
                 }
               ]
             },
             {
               "type": "evraklar",
               "label": "Frayer Modeli",
-              "index": "04-frayer-modeli",
+              "index": "05-frayer-modeli",
               "group": "student",
-              "preview": "materyaller/6-sinif/hafta01/evraklar/04-frayer-modeli.pdf",
+              "preview": "materyaller/6-sinif/hafta01/evraklar/05-frayer-modeli.pdf",
               "webPreview": null,
               "thumbnail": null,
-              "editable": "materyaller/6-sinif/hafta01/evraklar/04-frayer-modeli.docx",
+              "editable": "materyaller/6-sinif/hafta01/evraklar/05-frayer-modeli.docx",
               "downloads": [
                 {
-                  "href": "materyaller/6-sinif/hafta01/evraklar/04-frayer-modeli.pdf",
+                  "href": "materyaller/6-sinif/hafta01/evraklar/05-frayer-modeli.pdf",
                   "format": "pdf",
-                  "filename": "KeskinLab-6-Sinif-Hafta-01-Frayer-Modeli-04-frayer-modeli.pdf"
+                  "filename": "KeskinLab-6-Sinif-Hafta-01-Frayer-Modeli-05-frayer-modeli.pdf"
                 },
                 {
-                  "href": "materyaller/6-sinif/hafta01/evraklar/04-frayer-modeli.docx",
+                  "href": "materyaller/6-sinif/hafta01/evraklar/05-frayer-modeli.docx",
                   "format": "docx",
-                  "filename": "KeskinLab-6-Sinif-Hafta-01-Frayer-Modeli-Duzenlenebilir-04-frayer-modeli.docx"
+                  "filename": "KeskinLab-6-Sinif-Hafta-01-Frayer-Modeli-Duzenlenebilir-05-frayer-modeli.docx"
                 }
               ]
             },
             {
               "type": "evraklar",
-              "label": "Grup Gözlem Formu",
-              "index": "05-grup-gozlem-formu",
+              "label": "Öğretmen Gözlem ve Dereceli Puanlama",
+              "index": "06-ogretmen-gozlem-ve-dereceli-puanlama",
               "group": "teacher",
-              "preview": "materyaller/6-sinif/hafta01/evraklar/05-grup-gozlem-formu.pdf",
+              "preview": "materyaller/6-sinif/hafta01/evraklar/06-ogretmen-gozlem-ve-dereceli-puanlama.pdf",
               "webPreview": null,
               "thumbnail": null,
-              "editable": "materyaller/6-sinif/hafta01/evraklar/05-grup-gozlem-formu.docx",
+              "editable": "materyaller/6-sinif/hafta01/evraklar/06-ogretmen-gozlem-ve-dereceli-puanlama.docx",
               "downloads": [
                 {
-                  "href": "materyaller/6-sinif/hafta01/evraklar/05-grup-gozlem-formu.pdf",
+                  "href": "materyaller/6-sinif/hafta01/evraklar/06-ogretmen-gozlem-ve-dereceli-puanlama.pdf",
                   "format": "pdf",
-                  "filename": "KeskinLab-6-Sinif-Hafta-01-Grup-Gozlem-Formu-05-grup-gozlem-formu.pdf"
+                  "filename": "KeskinLab-6-Sinif-Hafta-01-Ogretmen-Gozlem-ve-Dereceli-Puanlama-06-ogretmen-gozlem-ve-dereceli-puanlama.pdf"
                 },
                 {
-                  "href": "materyaller/6-sinif/hafta01/evraklar/05-grup-gozlem-formu.docx",
+                  "href": "materyaller/6-sinif/hafta01/evraklar/06-ogretmen-gozlem-ve-dereceli-puanlama.docx",
                   "format": "docx",
-                  "filename": "KeskinLab-6-Sinif-Hafta-01-Grup-Gozlem-Formu-Duzenlenebilir-05-grup-gozlem-formu.docx"
+                  "filename": "KeskinLab-6-Sinif-Hafta-01-Ogretmen-Gozlem-ve-Dereceli-Puanlama-Duzenlenebilir-06-ogretmen-gozlem-ve-dereceli-puanlama.docx"
                 }
               ]
             },
             {
               "type": "evraklar",
-              "label": "Dereceli Puanlama Anahtarı",
-              "index": "06-dereceli-puanlama-anahtari",
-              "group": "assessment",
-              "preview": "materyaller/6-sinif/hafta01/evraklar/06-dereceli-puanlama-anahtari.pdf",
-              "webPreview": null,
-              "thumbnail": null,
-              "editable": "materyaller/6-sinif/hafta01/evraklar/06-dereceli-puanlama-anahtari.docx",
-              "downloads": [
-                {
-                  "href": "materyaller/6-sinif/hafta01/evraklar/06-dereceli-puanlama-anahtari.pdf",
-                  "format": "pdf",
-                  "filename": "KeskinLab-6-Sinif-Hafta-01-Dereceli-Puanlama-Anahtari-06-dereceli-puanlama-anahtari.pdf"
-                },
-                {
-                  "href": "materyaller/6-sinif/hafta01/evraklar/06-dereceli-puanlama-anahtari.docx",
-                  "format": "docx",
-                  "filename": "KeskinLab-6-Sinif-Hafta-01-Dereceli-Puanlama-Anahtari-Duzenlenebilir-06-dereceli-puanlama-anahtari.docx"
-                }
-              ]
-            },
-            {
-              "type": "evraklar",
-              "label": "Kullanım Alanına Göre Sınıflandır",
-              "index": "07-kullanim-alani-siniflandirma",
+              "label": "Bireysel Kapanış ve Hafta 02 Hazırlığı",
+              "index": "07-bireysel-kapanis-ve-hafta02-hazirligi",
               "group": "student",
-              "preview": "materyaller/6-sinif/hafta01/evraklar/07-kullanim-alani-siniflandirma.pdf",
+              "preview": "materyaller/6-sinif/hafta01/evraklar/07-bireysel-kapanis-ve-hafta02-hazirligi.pdf",
               "webPreview": null,
               "thumbnail": null,
-              "editable": "materyaller/6-sinif/hafta01/evraklar/07-kullanim-alani-siniflandirma.docx",
+              "editable": "materyaller/6-sinif/hafta01/evraklar/07-bireysel-kapanis-ve-hafta02-hazirligi.docx",
               "downloads": [
                 {
-                  "href": "materyaller/6-sinif/hafta01/evraklar/07-kullanim-alani-siniflandirma.pdf",
+                  "href": "materyaller/6-sinif/hafta01/evraklar/07-bireysel-kapanis-ve-hafta02-hazirligi.pdf",
                   "format": "pdf",
-                  "filename": "KeskinLab-6-Sinif-Hafta-01-Kullanim-Alanina-Gore-Siniflandir-07-kullanim-alani-siniflandirma.pdf"
+                  "filename": "KeskinLab-6-Sinif-Hafta-01-Bireysel-Kapanis-ve-Hafta-02-Hazirligi-07-bireysel-kapanis-ve-hafta02-hazirligi.pdf"
                 },
                 {
-                  "href": "materyaller/6-sinif/hafta01/evraklar/07-kullanim-alani-siniflandirma.docx",
+                  "href": "materyaller/6-sinif/hafta01/evraklar/07-bireysel-kapanis-ve-hafta02-hazirligi.docx",
                   "format": "docx",
-                  "filename": "KeskinLab-6-Sinif-Hafta-01-Kullanim-Alanina-Gore-Siniflandir-Duzenlenebilir-07-kullanim-alani-siniflandirma.docx"
-                }
-              ]
-            },
-            {
-              "type": "evraklar",
-              "label": "Kısa Cevaplı Kontrol",
-              "index": "08-kisa-cevapli-kontrol",
-              "group": "assessment",
-              "preview": "materyaller/6-sinif/hafta01/evraklar/08-kisa-cevapli-kontrol.pdf",
-              "webPreview": null,
-              "thumbnail": null,
-              "editable": "materyaller/6-sinif/hafta01/evraklar/08-kisa-cevapli-kontrol.docx",
-              "downloads": [
-                {
-                  "href": "materyaller/6-sinif/hafta01/evraklar/08-kisa-cevapli-kontrol.pdf",
-                  "format": "pdf",
-                  "filename": "KeskinLab-6-Sinif-Hafta-01-Kisa-Cevapli-Kontrol-08-kisa-cevapli-kontrol.pdf"
-                },
-                {
-                  "href": "materyaller/6-sinif/hafta01/evraklar/08-kisa-cevapli-kontrol.docx",
-                  "format": "docx",
-                  "filename": "KeskinLab-6-Sinif-Hafta-01-Kisa-Cevapli-Kontrol-Duzenlenebilir-08-kisa-cevapli-kontrol.docx"
-                }
-              ]
-            },
-            {
-              "type": "evraklar",
-              "label": "Açık Uçlu Değerlendirme",
-              "index": "09-acik-uclu-degerlendirme",
-              "group": "assessment",
-              "preview": "materyaller/6-sinif/hafta01/evraklar/09-acik-uclu-degerlendirme.pdf",
-              "webPreview": null,
-              "thumbnail": null,
-              "editable": "materyaller/6-sinif/hafta01/evraklar/09-acik-uclu-degerlendirme.docx",
-              "downloads": [
-                {
-                  "href": "materyaller/6-sinif/hafta01/evraklar/09-acik-uclu-degerlendirme.pdf",
-                  "format": "pdf",
-                  "filename": "KeskinLab-6-Sinif-Hafta-01-Acik-Uclu-Degerlendirme-09-acik-uclu-degerlendirme.pdf"
-                },
-                {
-                  "href": "materyaller/6-sinif/hafta01/evraklar/09-acik-uclu-degerlendirme.docx",
-                  "format": "docx",
-                  "filename": "KeskinLab-6-Sinif-Hafta-01-Acik-Uclu-Degerlendirme-Duzenlenebilir-09-acik-uclu-degerlendirme.docx"
-                }
-              ]
-            },
-            {
-              "type": "evraklar",
-              "label": "Tema 1 Performans Görevi",
-              "index": "10-tema1-performans-gorevi",
-              "group": "theme",
-              "preview": "materyaller/6-sinif/hafta01/evraklar/10-tema1-performans-gorevi.pdf",
-              "webPreview": null,
-              "thumbnail": null,
-              "editable": "materyaller/6-sinif/hafta01/evraklar/10-tema1-performans-gorevi.docx",
-              "downloads": [
-                {
-                  "href": "materyaller/6-sinif/hafta01/evraklar/10-tema1-performans-gorevi.pdf",
-                  "format": "pdf",
-                  "filename": "KeskinLab-6-Sinif-Hafta-01-Tema-1-Performans-Gorevi-10-tema1-performans-gorevi.pdf"
-                },
-                {
-                  "href": "materyaller/6-sinif/hafta01/evraklar/10-tema1-performans-gorevi.docx",
-                  "format": "docx",
-                  "filename": "KeskinLab-6-Sinif-Hafta-01-Tema-1-Performans-Gorevi-Duzenlenebilir-10-tema1-performans-gorevi.docx"
+                  "filename": "KeskinLab-6-Sinif-Hafta-01-Bireysel-Kapanis-ve-Hafta-02-Hazirligi-Duzenlenebilir-07-bireysel-kapanis-ve-hafta02-hazirligi.docx"
                 }
               ]
             },

@@ -35,7 +35,7 @@
       "height": 1080,
       "pedagogical_role": "AR gözlemi",
       "process_components": "a",
-      "sha256": "9bf08b7e2649f2273fc3b5bffb65b9ac21912c060cdc8a8ba4cd173fdba0e45f"
+      "sha256": "39867a8e0fb884a045bd77b5c9295b2b7de06116e1cbc64c9b2ccdca7b177bd9"
     },
     {
       "number": 4,
@@ -75,7 +75,7 @@
       "height": 1080,
       "pedagogical_role": "Kısa kavram sunumu",
       "process_components": "a-b",
-      "sha256": "71949418997731824398ffa38ecd31a57f9cffb56fac521c39e544299ef30635"
+      "sha256": "dde2a2b96de21f7a965ee7bb50d57b2076cae78f1f239742ee110dfe2ce61500"
     },
     {
       "number": 8,
@@ -105,7 +105,7 @@
       "height": 1080,
       "pedagogical_role": "Bulguları paylaşma",
       "process_components": "a-b",
-      "sha256": "648ae2e028c9415d35aeba3c43ead3236ed7fc9025db1845b05b11c411873415"
+      "sha256": "9db4b0246a8069ba71bf6844ce8436add2159d690bf26055c2f6386dbf8a1129"
     },
     {
       "number": 11,
@@ -115,7 +115,7 @@
       "height": 1080,
       "pedagogical_role": "Eleştirel tartışma",
       "process_components": "b",
-      "sha256": "6c63223074dca2faa6a9533922af7ff95cae070dd6b5cbad2b20a5330971fa0c"
+      "sha256": "c6bca9af04f4b78d87a316d03e9707f99013ed8063c5a848d4423ddf2fa5a0f9"
     },
     {
       "number": 12,
@@ -125,7 +125,7 @@
       "height": 1080,
       "pedagogical_role": "Ara sentez",
       "process_components": "a-b-c",
-      "sha256": "aa300bb0db6af7af4d5d6e8a9e1c10b1af911e333c64bb8348559381c3b3c150"
+      "sha256": "b31db9457b20571eb1d110792152f3e95991955ac422834b6c1dcf36e5e0b1fd"
     },
     {
       "number": 13,
@@ -225,7 +225,7 @@
       "height": 1080,
       "pedagogical_role": "Bireysel öğrenme kanıtı",
       "process_components": "a-b-c",
-      "sha256": "d89c80e701ee75f52725b2b192742b774b80169a193e11ef050a83c08774a18c"
+      "sha256": "9ffb35312d6fc43030bf2aacca8a311b843e41dd156312cb7676d3083b4ea7bc"
     }
   ]
 }
