@@ -452,9 +452,18 @@
           '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 3H3v4M13 3h4v4M17 13v4h-4M7 17H3v-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
         '</button>'
       : '';
+    var hasWeekTool = D.course && D.course.codePrefix === '5-sinif' && week.n === 1;
+    var weekTool = hasWeekTool
+      ? '<aside class="week-tool-promo" aria-labelledby="weekToolTitle">' +
+          '<p>BU HAFTANIN SINIF ARACI</p>' +
+          '<h3 id="weekToolTitle">Grup &amp; Kelime Kavanozu</h3>' +
+          '<span>Öğrencileri gruplara ayırın ve haftanın beş kavramını rastgele dağıtın.</span>' +
+          '<a href="kelime-kavanozu.html">Aracı aç <b>→</b></a>' +
+        '</aside>'
+      : '';
 
     el.innerHTML =
-      '<div class="material-viewer">' +
+      '<div class="material-viewer' + (hasWeekTool ? ' has-week-tool' : '') + '">' +
         '<div class="material-stage-column">' +
           '<div class="material-stage' + (!preview ? ' is-pending' : '') + '">' +
             (preview
@@ -465,6 +474,7 @@
           footer +
         '</div>' +
         '<div class="material-selector" aria-label="Materyal seçici">' + selector + '</div>' +
+        weekTool +
       '</div>' + lessonFiles;
 
     el.querySelectorAll('[data-material-type]').forEach(function (button) {
