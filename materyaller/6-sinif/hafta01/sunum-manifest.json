@@ -10,7 +10,7 @@
     {
       "number": 1,
       "title": "Teknoloji Ne Zaman Yenilikçi Olur?",
-      "file": "sunum/01-teknoloji-ne-zaman-yenilikci-olur.png",
+      "file": "sunum/01.png",
       "width": 1920,
       "height": 1080,
       "pedagogical_role": "Giriş ve köprü",
@@ -20,7 +20,7 @@
     {
       "number": 2,
       "title": "Hızlı Yoklama",
-      "file": "sunum/02-hizli-yoklama.png",
+      "file": "sunum/02.png",
       "width": 1920,
       "height": 1080,
       "pedagogical_role": "Ön değerlendirme",
@@ -30,7 +30,7 @@
     {
       "number": 3,
       "title": "Burada Ne Oluyor?",
-      "file": "sunum/03-burada-ne-oluyor.png",
+      "file": "sunum/03.png",
       "width": 1920,
       "height": 1080,
       "pedagogical_role": "AR gözlemi",
@@ -40,7 +40,7 @@
     {
       "number": 4,
       "title": "Artırılmış Gerçeklik",
-      "file": "sunum/04-artirilmis-gerceklik.png",
+      "file": "sunum/04.png",
       "width": 1920,
       "height": 1080,
       "pedagogical_role": "Kavramı netleştirme",
@@ -50,7 +50,7 @@
     {
       "number": 5,
       "title": "Sanal Gerçeklikte Ne Farklı?",
-      "file": "sunum/05-sanal-gerceklik.png",
+      "file": "sunum/05.png",
       "width": 1920,
       "height": 1080,
       "pedagogical_role": "VR keşfi",
@@ -60,7 +60,7 @@
     {
       "number": 6,
       "title": "AR mı, VR mi?",
-      "file": "sunum/06-ar-mi-vr-mi.png",
+      "file": "sunum/06.png",
       "width": 1920,
       "height": 1080,
       "pedagogical_role": "Karşılaştırma ve gerekçe",
@@ -70,7 +70,7 @@
     {
       "number": 7,
       "title": "Yenilikçi Teknoloji İstasyonu",
-      "file": "sunum/07-teknoloji-istasyonu.png",
+      "file": "sunum/07.png",
       "width": 1920,
       "height": 1080,
       "pedagogical_role": "Kısa kavram sunumu",
@@ -80,7 +80,7 @@
     {
       "number": 8,
       "title": "Seç ve İncele",
-      "file": "sunum/08-sec-ve-incele.png",
+      "file": "sunum/08.png",
       "width": 1920,
       "height": 1080,
       "pedagogical_role": "Grup araştırmasını başlatma",
@@ -90,7 +90,7 @@
     {
       "number": 9,
       "title": "Araştırma Notları",
-      "file": "sunum/09-arastirma-notlari.png",
+      "file": "sunum/09.png",
       "width": 1920,
       "height": 1080,
       "pedagogical_role": "Araştırma ve kaynak kaydı",
@@ -100,7 +100,7 @@
     {
       "number": 10,
       "title": "Kısa Grup Paylaşımı",
-      "file": "sunum/10-kisa-grup-paylasimi.png",
+      "file": "sunum/10.png",
       "width": 1920,
       "height": 1080,
       "pedagogical_role": "Bulguları paylaşma",
@@ -110,7 +110,7 @@
     {
       "number": 11,
       "title": "Avantaj mı, Sınırlılık mı?",
-      "file": "sunum/11-avantaj-sinirlilik.png",
+      "file": "sunum/11.png",
       "width": 1920,
       "height": 1080,
       "pedagogical_role": "Eleştirel tartışma",
@@ -120,7 +120,7 @@
     {
       "number": 12,
       "title": "Bir Teknolojiyi Nasıl Tanırız?",
-      "file": "sunum/12-bir-teknolojiyi-nasil-taniriz.png",
+      "file": "sunum/12.png",
       "width": 1920,
       "height": 1080,
       "pedagogical_role": "Ara sentez",
@@ -130,7 +130,7 @@
     {
       "number": 13,
       "title": "Bir Telefon Kaç İşi Birleştiriyor?",
-      "file": "sunum/13-telefonun-islevleri.png",
+      "file": "sunum/13.png",
       "width": 1920,
       "height": 1080,
       "pedagogical_role": "Günlük yaşama köprü",
@@ -140,7 +140,7 @@
     {
       "number": 14,
       "title": "Hangi Alanlarda İşe Yarıyor?",
-      "file": "sunum/14-kullanim-alanlari.png",
+      "file": "sunum/14.png",
       "width": 1920,
       "height": 1080,
       "pedagogical_role": "Sınıflandırma ölçütünü belirleme",
@@ -150,7 +150,7 @@
     {
       "number": 15,
       "title": "İletişimde Ne Değişti?",
-      "file": "sunum/15-iletisimde-degisim.png",
+      "file": "sunum/15.png",
       "width": 1920,
       "height": 1080,
       "pedagogical_role": "İletişim örneği ve tartışma",
@@ -160,7 +160,7 @@
     {
       "number": 16,
       "title": "Eğitimde Ne Değişti?",
-      "file": "sunum/16-egitimde-degisim.png",
+      "file": "sunum/16.png",
       "width": 1920,
       "height": 1080,
       "pedagogical_role": "Eğitim örneği",
@@ -170,7 +170,7 @@
     {
       "number": 17,
       "title": "Sağlıkta Ne Değişti?",
-      "file": "sunum/17-saglikta-degisim.png",
+      "file": "sunum/17.png",
       "width": 1920,
       "height": 1080,
       "pedagogical_role": "Sağlık örneği",
@@ -180,7 +180,7 @@
     {
       "number": 18,
       "title": "Eğlencede Ne Değişti?",
-      "file": "sunum/18-eglencede-degisim.png",
+      "file": "sunum/18.png",
       "width": 1920,
       "height": 1080,
       "pedagogical_role": "Eğlence örneği",
@@ -190,7 +190,7 @@
     {
       "number": 19,
       "title": "Sanayide Ne Değişti?",
-      "file": "sunum/19-sanayide-degisim.png",
+      "file": "sunum/19.png",
       "width": 1920,
       "height": 1080,
       "pedagogical_role": "Sanayi örneği",
@@ -200,7 +200,7 @@
     {
       "number": 20,
       "title": "Aynı Teknoloji, Farklı Alanlar",
-      "file": "sunum/20-ayni-teknoloji-farkli-alanlar.png",
+      "file": "sunum/20.png",
       "width": 1920,
       "height": 1080,
       "pedagogical_role": "Çoklu kullanım alanları",
@@ -210,7 +210,7 @@
     {
       "number": 21,
       "title": "Kullanım Alanına Göre Grupla",
-      "file": "sunum/21-kullanim-alanina-gore-grupla.png",
+      "file": "sunum/21.png",
       "width": 1920,
       "height": 1080,
       "pedagogical_role": "Sınıflandırma ve ürün",
@@ -220,7 +220,7 @@
     {
       "number": 22,
       "title": "Bir Teknoloji Seç ve Gerekçelendir",
-      "file": "sunum/22-sec-ve-gerekcelendir.png",
+      "file": "sunum/22.png",
       "width": 1920,
       "height": 1080,
       "pedagogical_role": "Bireysel öğrenme kanıtı",
