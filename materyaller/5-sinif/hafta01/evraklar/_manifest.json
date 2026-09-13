@@ -1,0 +1,8 @@
+{
+  "tum-evraklar": { "label": "Tüm Hafta 01 Evrakları", "group": "bundle" },
+  "01-ogretmen-uygulama-kilavuzu": { "label": "Öğretmen Uygulama Kılavuzu", "group": "teacher" },
+  "02-temel-kavram-kartlari": { "label": "Temel Kavram Kartları", "group": "student" },
+  "03-ogrenci-calismasi": { "label": "Öğrenci Çalışması", "group": "student" },
+  "04-teknolojilerin-yolculugu-rubrik": { "label": "Teknolojilerin Yolculuğu Dereceli Puanlama Anahtarı", "group": "assessment" },
+  "05-ogretmen-gozlem-formu": { "label": "Öğretmen Gözlem Formu", "group": "teacher" }
+}
