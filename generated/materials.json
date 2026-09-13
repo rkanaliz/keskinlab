@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-13T11:59:12.422Z",
+  "generatedAt": "2026-09-13T12:58:42.021Z",
   "courses": {
     "5-sinif": {
       "title": "5. Sınıf",
@@ -1051,6 +1051,111 @@
                   "href": "materyaller/5-sinif/hafta02/hafta-ozeti/03.png",
                   "format": "png",
                   "filename": "KeskinLab-5-Sinif-Hafta-02-Hafta-Ozeti-03.png"
+                }
+              ]
+            },
+            {
+              "type": "evraklar",
+              "label": "Öğretmen Uygulama Kılavuzu",
+              "index": "01-ogretmen-uygulama-kilavuzu",
+              "group": "teacher",
+              "preview": "materyaller/5-sinif/hafta02/evraklar/01-ogretmen-uygulama-kilavuzu.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": "materyaller/5-sinif/hafta02/evraklar/01-ogretmen-uygulama-kilavuzu.docx",
+              "downloads": [
+                {
+                  "href": "materyaller/5-sinif/hafta02/evraklar/01-ogretmen-uygulama-kilavuzu.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-5-Sinif-Hafta-02-Ogretmen-Uygulama-Kilavuzu-01-ogretmen-uygulama-kilavuzu.pdf"
+                },
+                {
+                  "href": "materyaller/5-sinif/hafta02/evraklar/01-ogretmen-uygulama-kilavuzu.docx",
+                  "format": "docx",
+                  "filename": "KeskinLab-5-Sinif-Hafta-02-Ogretmen-Uygulama-Kilavuzu-Duzenlenebilir-01-ogretmen-uygulama-kilavuzu.docx"
+                }
+              ]
+            },
+            {
+              "type": "evraklar",
+              "label": "Dijital Sağlık Günlüğüm",
+              "index": "02-ogrenci-calismasi-dijital-saglik-gunlugum",
+              "group": "student",
+              "preview": "materyaller/5-sinif/hafta02/evraklar/02-ogrenci-calismasi-dijital-saglik-gunlugum.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": "materyaller/5-sinif/hafta02/evraklar/02-ogrenci-calismasi-dijital-saglik-gunlugum.docx",
+              "downloads": [
+                {
+                  "href": "materyaller/5-sinif/hafta02/evraklar/02-ogrenci-calismasi-dijital-saglik-gunlugum.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-5-Sinif-Hafta-02-Dijital-Saglik-Gunlugum-02-ogrenci-calismasi-dijital-saglik-gunlugum.pdf"
+                },
+                {
+                  "href": "materyaller/5-sinif/hafta02/evraklar/02-ogrenci-calismasi-dijital-saglik-gunlugum.docx",
+                  "format": "docx",
+                  "filename": "KeskinLab-5-Sinif-Hafta-02-Dijital-Saglik-Gunlugum-Duzenlenebilir-02-ogrenci-calismasi-dijital-saglik-gunlugum.docx"
+                }
+              ]
+            },
+            {
+              "type": "evraklar",
+              "label": "Öz Değerlendirme Formu",
+              "index": "03-oz-degerlendirme-formu",
+              "group": "assessment",
+              "preview": "materyaller/5-sinif/hafta02/evraklar/03-oz-degerlendirme-formu.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": "materyaller/5-sinif/hafta02/evraklar/03-oz-degerlendirme-formu.docx",
+              "downloads": [
+                {
+                  "href": "materyaller/5-sinif/hafta02/evraklar/03-oz-degerlendirme-formu.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-5-Sinif-Hafta-02-Oz-Degerlendirme-Formu-03-oz-degerlendirme-formu.pdf"
+                },
+                {
+                  "href": "materyaller/5-sinif/hafta02/evraklar/03-oz-degerlendirme-formu.docx",
+                  "format": "docx",
+                  "filename": "KeskinLab-5-Sinif-Hafta-02-Oz-Degerlendirme-Formu-Duzenlenebilir-03-oz-degerlendirme-formu.docx"
+                }
+              ]
+            },
+            {
+              "type": "evraklar",
+              "label": "Öğretmen Gözlem Formu",
+              "index": "04-ogretmen-gozlem-formu",
+              "group": "teacher",
+              "preview": "materyaller/5-sinif/hafta02/evraklar/04-ogretmen-gozlem-formu.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": "materyaller/5-sinif/hafta02/evraklar/04-ogretmen-gozlem-formu.docx",
+              "downloads": [
+                {
+                  "href": "materyaller/5-sinif/hafta02/evraklar/04-ogretmen-gozlem-formu.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-5-Sinif-Hafta-02-Ogretmen-Gozlem-Formu-04-ogretmen-gozlem-formu.pdf"
+                },
+                {
+                  "href": "materyaller/5-sinif/hafta02/evraklar/04-ogretmen-gozlem-formu.docx",
+                  "format": "docx",
+                  "filename": "KeskinLab-5-Sinif-Hafta-02-Ogretmen-Gozlem-Formu-Duzenlenebilir-04-ogretmen-gozlem-formu.docx"
+                }
+              ]
+            },
+            {
+              "type": "evraklar",
+              "label": "Tüm Hafta 02 Evrakları",
+              "index": "tum-evraklar",
+              "group": "bundle",
+              "preview": "materyaller/5-sinif/hafta02/evraklar/tum-evraklar.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/5-sinif/hafta02/evraklar/tum-evraklar.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-5-Sinif-Hafta-02-Tum-Hafta-02-Evraklari-tum-evraklar.pdf"
                 }
               ]
             }

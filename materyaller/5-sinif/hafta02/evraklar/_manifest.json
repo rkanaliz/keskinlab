@@ -1,0 +1,7 @@
+{
+  "tum-evraklar": { "label": "Tüm Hafta 02 Evrakları", "group": "bundle" },
+  "01-ogretmen-uygulama-kilavuzu": { "label": "Öğretmen Uygulama Kılavuzu", "group": "teacher" },
+  "02-ogrenci-calismasi-dijital-saglik-gunlugum": { "label": "Dijital Sağlık Günlüğüm", "group": "student" },
+  "03-oz-degerlendirme-formu": { "label": "Öz Değerlendirme Formu", "group": "assessment" },
+  "04-ogretmen-gozlem-formu": { "label": "Öğretmen Gözlem Formu", "group": "teacher" }
+}
