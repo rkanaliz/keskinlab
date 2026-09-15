@@ -314,6 +314,41 @@
     return key === 'sunum' || key === 'infografik' || key === 'hafta-ozeti';
   }
 
+  function webPreviewPath(masterPath) {
+    var match = typeof masterPath === 'string' && masterPath.match(/^(\/?)materyaller\/(.+)\.(png|jpe?g)$/i);
+    if (!match) return null;
+    return match[1] + 'generated/web/' + match[2] + '.webp?v=20260915b';
+  }
+
+  function preloadNextMaterial(active) {
+    var nextMasterPath = active && active.previews[activeMaterialIndex + 1];
+    var nextWebPath = webPreviewPath(nextMasterPath);
+    if (!nextWebPath) return;
+    var preload = new Image();
+    preload.src = nextWebPath;
+  }
+
+  function setMaterialImageSource(image, masterPath, active, prioritize) {
+    var webPath = webPreviewPath(masterPath);
+    var fellBack = false;
+    image.onload = function () {
+      image.onerror = null;
+      preloadNextMaterial(active);
+    };
+    if (prioritize && 'fetchPriority' in image) image.fetchPriority = 'high';
+    if (!webPath) {
+      image.src = masterPath;
+      return;
+    }
+    image.onerror = function () {
+      if (fellBack) return;
+      fellBack = true;
+      image.onerror = null;
+      image.src = masterPath;
+    };
+    image.src = webPath;
+  }
+
   function updateMaterialPage(index) {
     var active = activeMaterialItems.find(function (item) { return item.key === activeMaterialType; });
     if (!active || !active.previews.length) return;
@@ -325,7 +360,7 @@
     var prev = el.querySelector('[data-material-page="prev"]');
     var next = el.querySelector('[data-material-page="next"]');
     if (image) {
-      image.src = active.previews[activeMaterialIndex];
+      setMaterialImageSource(image, active.previews[activeMaterialIndex], active, false);
       replayMotion(image, 'is-changing');
     }
     if (counter) counter.textContent = (activeMaterialIndex + 1) + ' / ' + active.previews.length;
@@ -469,7 +504,7 @@
         '<div class="material-stage-column">' +
           '<div class="material-stage' + (!preview ? ' is-pending' : '') + '">' +
             (preview
-              ? '<img src="' + preview + '" alt="' + active.label + ' önizlemesi">'
+              ? '<img alt="' + active.label + ' önizlemesi">'
               : '<div class="material-placeholder" role="status"><span>' + active.label + '</span><strong>Hazırlanacak</strong></div>') +
             fullscreenButton +
           '</div>' +
@@ -502,6 +537,8 @@
         if (target && target.requestFullscreen) target.requestFullscreen();
       });
     }
+    var previewImage = el.querySelector('.material-stage img');
+    if (previewImage) setMaterialImageSource(previewImage, preview, active, activeMaterialIndex === 0);
     wireMaterialStage(el.querySelector('.material-stage'), active);
     replayMotion(el.querySelector('.material-viewer'), 'is-switching');
   }
