@@ -1,0 +1,26 @@
+{
+  "00-ogretmen-uygulama-kilavuzu": {
+    "label": "Öğretmen Uygulama Kılavuzu",
+    "group": "teacher"
+  },
+  "01-sorudan-veriye": {
+    "label": "Sorudan Veriye",
+    "group": "student"
+  },
+  "02-veriden-bulguya": {
+    "label": "Veriden Bulguya",
+    "group": "student"
+  },
+  "03-performans-gorevi-rubrik": {
+    "label": "Performans Görevi + Rubrik",
+    "group": "assessment"
+  },
+  "04-oz-akran-degerlendirme": {
+    "label": "Öz + Akran Değerlendirme",
+    "group": "assessment"
+  },
+  "05-ogretmen-kontrol-listesi": {
+    "label": "Öğretmen Kontrol Listesi",
+    "group": "teacher"
+  }
+}

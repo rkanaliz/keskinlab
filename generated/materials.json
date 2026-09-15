@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-13T16:38:54.381Z",
+  "generatedAt": "2026-09-15T15:44:26.259Z",
   "courses": {
     "5-sinif": {
       "title": "5. Sınıf",
@@ -3734,6 +3734,760 @@
                   "href": "materyaller/6-sinif/hafta03/sunum/22.png",
                   "format": "png",
                   "filename": "KeskinLab-6-Sinif-Hafta-03-Sunum-22.png"
+                }
+              ]
+            },
+            {
+              "type": "evraklar",
+              "label": "Öğretmen Uygulama Kılavuzu",
+              "index": "01-ogretmen-uygulama-kilavuzu",
+              "group": "teacher",
+              "preview": "materyaller/6-sinif/hafta03/evraklar/01-ogretmen-uygulama-kilavuzu.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": "materyaller/6-sinif/hafta03/evraklar/01-ogretmen-uygulama-kilavuzu.docx",
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta03/evraklar/01-ogretmen-uygulama-kilavuzu.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-6-Sinif-Hafta-03-Ogretmen-Uygulama-Kilavuzu-01-ogretmen-uygulama-kilavuzu.pdf"
+                },
+                {
+                  "href": "materyaller/6-sinif/hafta03/evraklar/01-ogretmen-uygulama-kilavuzu.docx",
+                  "format": "docx",
+                  "filename": "KeskinLab-6-Sinif-Hafta-03-Ogretmen-Uygulama-Kilavuzu-Duzenlenebilir-01-ogretmen-uygulama-kilavuzu.docx"
+                }
+              ]
+            },
+            {
+              "type": "evraklar",
+              "label": "Kavram Eşleştirme Kart Seti",
+              "index": "02-kavram-eslestirme-kart-seti",
+              "group": "student",
+              "preview": "materyaller/6-sinif/hafta03/evraklar/02-kavram-eslestirme-kart-seti.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": "materyaller/6-sinif/hafta03/evraklar/02-kavram-eslestirme-kart-seti.docx",
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta03/evraklar/02-kavram-eslestirme-kart-seti.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-6-Sinif-Hafta-03-Kavram-Eslestirme-Kart-Seti-02-kavram-eslestirme-kart-seti.pdf"
+                },
+                {
+                  "href": "materyaller/6-sinif/hafta03/evraklar/02-kavram-eslestirme-kart-seti.docx",
+                  "format": "docx",
+                  "filename": "KeskinLab-6-Sinif-Hafta-03-Kavram-Eslestirme-Kart-Seti-Duzenlenebilir-02-kavram-eslestirme-kart-seti.docx"
+                }
+              ]
+            },
+            {
+              "type": "evraklar",
+              "label": "Haftalık Enerji Kullanımı Uygulama Kağıdı",
+              "index": "03-haftalik-enerji-kullanimi-uygulama-kagidi",
+              "group": "student",
+              "preview": "materyaller/6-sinif/hafta03/evraklar/03-haftalik-enerji-kullanimi-uygulama-kagidi.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": "materyaller/6-sinif/hafta03/evraklar/03-haftalik-enerji-kullanimi-uygulama-kagidi.docx",
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta03/evraklar/03-haftalik-enerji-kullanimi-uygulama-kagidi.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-6-Sinif-Hafta-03-Haftalik-Enerji-Kullanimi-Uygulama-Kagidi-03-haftalik-enerji-kullanimi-uygulama-kagidi.pdf"
+                },
+                {
+                  "href": "materyaller/6-sinif/hafta03/evraklar/03-haftalik-enerji-kullanimi-uygulama-kagidi.docx",
+                  "format": "docx",
+                  "filename": "KeskinLab-6-Sinif-Hafta-03-Haftalik-Enerji-Kullanimi-Uygulama-Kagidi-Duzenlenebilir-03-haftalik-enerji-kullanimi-uygulama-kagidi.docx"
+                }
+              ]
+            },
+            {
+              "type": "evraklar",
+              "label": "Araç Seçimi ve Kısa Değerlendirme",
+              "index": "04-arac-secimi-ve-kisa-degerlendirme",
+              "group": "assessment",
+              "preview": "materyaller/6-sinif/hafta03/evraklar/04-arac-secimi-ve-kisa-degerlendirme.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": "materyaller/6-sinif/hafta03/evraklar/04-arac-secimi-ve-kisa-degerlendirme.docx",
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta03/evraklar/04-arac-secimi-ve-kisa-degerlendirme.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-6-Sinif-Hafta-03-Arac-Secimi-ve-Kisa-Degerlendirme-04-arac-secimi-ve-kisa-degerlendirme.pdf"
+                },
+                {
+                  "href": "materyaller/6-sinif/hafta03/evraklar/04-arac-secimi-ve-kisa-degerlendirme.docx",
+                  "format": "docx",
+                  "filename": "KeskinLab-6-Sinif-Hafta-03-Arac-Secimi-ve-Kisa-Degerlendirme-Duzenlenebilir-04-arac-secimi-ve-kisa-degerlendirme.docx"
+                }
+              ]
+            },
+            {
+              "type": "evraklar",
+              "label": "Tüm Hafta 03 Evrakları",
+              "index": "tum-evraklar",
+              "group": "bundle",
+              "preview": "materyaller/6-sinif/hafta03/evraklar/tum-evraklar.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta03/evraklar/tum-evraklar.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-6-Sinif-Hafta-03-Tum-Hafta-03-Evraklari-tum-evraklar.pdf"
+                }
+              ]
+            }
+          ]
+        },
+        "04": {
+          "week": 4,
+          "materials": [
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "01",
+              "preview": "materyaller/6-sinif/hafta04/sunum/01.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/01.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/01-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/01.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "02",
+              "preview": "materyaller/6-sinif/hafta04/sunum/02.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/02.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/02-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/02.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-02.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "03",
+              "preview": "materyaller/6-sinif/hafta04/sunum/03.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/03.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/03-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/03.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-03.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "04",
+              "preview": "materyaller/6-sinif/hafta04/sunum/04.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/04.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/04-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/04.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-04.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "05",
+              "preview": "materyaller/6-sinif/hafta04/sunum/05.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/05.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/05-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/05.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-05.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "06",
+              "preview": "materyaller/6-sinif/hafta04/sunum/06.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/06.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/06-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/06.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-06.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "07",
+              "preview": "materyaller/6-sinif/hafta04/sunum/07.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/07.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/07-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/07.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-07.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "08",
+              "preview": "materyaller/6-sinif/hafta04/sunum/08.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/08.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/08-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/08.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-08.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "09",
+              "preview": "materyaller/6-sinif/hafta04/sunum/09.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/09.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/09-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/09.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-09.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "10",
+              "preview": "materyaller/6-sinif/hafta04/sunum/10.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/10.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/10-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/10.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-10.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "11",
+              "preview": "materyaller/6-sinif/hafta04/sunum/11.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/11.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/11-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/11.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-11.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "12",
+              "preview": "materyaller/6-sinif/hafta04/sunum/12.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/12.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/12-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/12.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-12.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "13",
+              "preview": "materyaller/6-sinif/hafta04/sunum/13.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/13.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/13-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/13.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-13.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "14",
+              "preview": "materyaller/6-sinif/hafta04/sunum/14.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/14.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/14-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/14.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-14.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "15",
+              "preview": "materyaller/6-sinif/hafta04/sunum/15.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/15.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/15-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/15.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-15.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "16",
+              "preview": "materyaller/6-sinif/hafta04/sunum/16.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/16.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/16-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/16.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-16.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "17",
+              "preview": "materyaller/6-sinif/hafta04/sunum/17.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/17.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/17-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/17.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-17.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "18",
+              "preview": "materyaller/6-sinif/hafta04/sunum/18.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/18.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/18-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/18.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-18.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "19",
+              "preview": "materyaller/6-sinif/hafta04/sunum/19.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/19.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/19-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/19.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-19.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "20",
+              "preview": "materyaller/6-sinif/hafta04/sunum/20.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/20.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/20-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/20.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-20.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "21",
+              "preview": "materyaller/6-sinif/hafta04/sunum/21.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/21.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/21-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/21.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-21.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "22",
+              "preview": "materyaller/6-sinif/hafta04/sunum/22.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/22.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/22-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/22.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-22.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "23",
+              "preview": "materyaller/6-sinif/hafta04/sunum/23.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/23.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/23-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/23.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-23.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "24",
+              "preview": "materyaller/6-sinif/hafta04/sunum/24.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/24.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/24-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/24.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-24.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "25",
+              "preview": "materyaller/6-sinif/hafta04/sunum/25.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/25.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/25-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/25.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-25.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "26",
+              "preview": "materyaller/6-sinif/hafta04/sunum/26.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/26.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/26-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/26.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-26.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "27",
+              "preview": "materyaller/6-sinif/hafta04/sunum/27.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/27.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/27-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/27.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-27.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "28",
+              "preview": "materyaller/6-sinif/hafta04/sunum/28.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/28.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/28-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/28.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-28.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "29",
+              "preview": "materyaller/6-sinif/hafta04/sunum/29.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/29.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/29-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/29.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-29.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "30",
+              "preview": "materyaller/6-sinif/hafta04/sunum/30.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/30.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/30-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/30.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-30.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "31",
+              "preview": "materyaller/6-sinif/hafta04/sunum/31.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/31.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/31-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/31.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-31.png"
+                }
+              ]
+            },
+            {
+              "type": "sunum",
+              "label": "Sunum",
+              "index": "32",
+              "preview": "materyaller/6-sinif/hafta04/sunum/32.png",
+              "webPreview": "generated/web/6-sinif/hafta04/sunum/32.webp",
+              "thumbnail": "generated/web/6-sinif/hafta04/sunum/32-thumb.webp",
+              "editable": null,
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/sunum/32.png",
+                  "format": "png",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sunum-32.png"
+                }
+              ]
+            },
+            {
+              "type": "evraklar",
+              "label": "Öğretmen Uygulama Kılavuzu",
+              "index": "00-ogretmen-uygulama-kilavuzu",
+              "group": "teacher",
+              "preview": "materyaller/6-sinif/hafta04/evraklar/00-ogretmen-uygulama-kilavuzu.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": "materyaller/6-sinif/hafta04/evraklar/00-ogretmen-uygulama-kilavuzu.docx",
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/evraklar/00-ogretmen-uygulama-kilavuzu.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Ogretmen-Uygulama-Kilavuzu-00-ogretmen-uygulama-kilavuzu.pdf"
+                },
+                {
+                  "href": "materyaller/6-sinif/hafta04/evraklar/00-ogretmen-uygulama-kilavuzu.docx",
+                  "format": "docx",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Ogretmen-Uygulama-Kilavuzu-Duzenlenebilir-00-ogretmen-uygulama-kilavuzu.docx"
+                }
+              ]
+            },
+            {
+              "type": "evraklar",
+              "label": "Sorudan Veriye",
+              "index": "01-sorudan-veriye",
+              "group": "student",
+              "preview": "materyaller/6-sinif/hafta04/evraklar/01-sorudan-veriye.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": "materyaller/6-sinif/hafta04/evraklar/01-sorudan-veriye.docx",
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/evraklar/01-sorudan-veriye.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sorudan-Veriye-01-sorudan-veriye.pdf"
+                },
+                {
+                  "href": "materyaller/6-sinif/hafta04/evraklar/01-sorudan-veriye.docx",
+                  "format": "docx",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Sorudan-Veriye-Duzenlenebilir-01-sorudan-veriye.docx"
+                }
+              ]
+            },
+            {
+              "type": "evraklar",
+              "label": "Veriden Bulguya",
+              "index": "02-veriden-bulguya",
+              "group": "student",
+              "preview": "materyaller/6-sinif/hafta04/evraklar/02-veriden-bulguya.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": "materyaller/6-sinif/hafta04/evraklar/02-veriden-bulguya.docx",
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/evraklar/02-veriden-bulguya.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Veriden-Bulguya-02-veriden-bulguya.pdf"
+                },
+                {
+                  "href": "materyaller/6-sinif/hafta04/evraklar/02-veriden-bulguya.docx",
+                  "format": "docx",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Veriden-Bulguya-Duzenlenebilir-02-veriden-bulguya.docx"
+                }
+              ]
+            },
+            {
+              "type": "evraklar",
+              "label": "Performans Görevi + Rubrik",
+              "index": "03-performans-gorevi-rubrik",
+              "group": "assessment",
+              "preview": "materyaller/6-sinif/hafta04/evraklar/03-performans-gorevi-rubrik.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": "materyaller/6-sinif/hafta04/evraklar/03-performans-gorevi-rubrik.docx",
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/evraklar/03-performans-gorevi-rubrik.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Performans-Gorevi-Rubrik-03-performans-gorevi-rubrik.pdf"
+                },
+                {
+                  "href": "materyaller/6-sinif/hafta04/evraklar/03-performans-gorevi-rubrik.docx",
+                  "format": "docx",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Performans-Gorevi-Rubrik-Duzenlenebilir-03-performans-gorevi-rubrik.docx"
+                }
+              ]
+            },
+            {
+              "type": "evraklar",
+              "label": "Öz + Akran Değerlendirme",
+              "index": "04-oz-akran-degerlendirme",
+              "group": "assessment",
+              "preview": "materyaller/6-sinif/hafta04/evraklar/04-oz-akran-degerlendirme.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": "materyaller/6-sinif/hafta04/evraklar/04-oz-akran-degerlendirme.docx",
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/evraklar/04-oz-akran-degerlendirme.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Oz-Akran-Degerlendirme-04-oz-akran-degerlendirme.pdf"
+                },
+                {
+                  "href": "materyaller/6-sinif/hafta04/evraklar/04-oz-akran-degerlendirme.docx",
+                  "format": "docx",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Oz-Akran-Degerlendirme-Duzenlenebilir-04-oz-akran-degerlendirme.docx"
+                }
+              ]
+            },
+            {
+              "type": "evraklar",
+              "label": "Öğretmen Kontrol Listesi",
+              "index": "05-ogretmen-kontrol-listesi",
+              "group": "teacher",
+              "preview": "materyaller/6-sinif/hafta04/evraklar/05-ogretmen-kontrol-listesi.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": "materyaller/6-sinif/hafta04/evraklar/05-ogretmen-kontrol-listesi.docx",
+              "downloads": [
+                {
+                  "href": "materyaller/6-sinif/hafta04/evraklar/05-ogretmen-kontrol-listesi.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Ogretmen-Kontrol-Listesi-05-ogretmen-kontrol-listesi.pdf"
+                },
+                {
+                  "href": "materyaller/6-sinif/hafta04/evraklar/05-ogretmen-kontrol-listesi.docx",
+                  "format": "docx",
+                  "filename": "KeskinLab-6-Sinif-Hafta-04-Ogretmen-Kontrol-Listesi-Duzenlenebilir-05-ogretmen-kontrol-listesi.docx"
                 }
               ]
             }
