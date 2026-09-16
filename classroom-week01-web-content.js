@@ -4,7 +4,7 @@
 const NOTE_HTML=`
 <div class="webdoc-head">
   <span>DERS NOTU · BTY.5.1.1</span>
-  <p>Bu hafta günlük yaşamda kullanılan bilişim teknolojilerini tanıyacak; geçmiş ve günümüz örneklerini karşılaştıracak; kullanım alanlarına göre sınıflandıracağız.</p>
+  <p>Bu hafta temel kavramları Kelime Kavanozu ile keşfedecek; geçmiş ve günümüz örneklerini karşılaştıracak, yeşil ekranı sorgulayacak ve bilişim teknolojilerini kullanım alanlarına göre sınıflandıracağız.</p>
 </div>
 <section class="webdoc-section">
   <h4><span>01</span> Temel Kavramlar</h4>
@@ -25,7 +25,12 @@ const NOTE_HTML=`
   </div>
 </section>
 <section class="webdoc-section">
-  <h4><span>03</span> Kullanım Alanlarına Göre Sınıflandırma</h4>
+  <h4><span>03</span> Yeşil Ekranı Sorgulayalım</h4>
+  <p>Kısa film sahnesini izleyin. Bir oyuncunun stüdyodan çıkmadan ejderhanın sırtında uçması veya uzayda yürümesi nasıl mümkün olabilir? Tahminlerinizi paylaşın; ardından sahne arkası çekim sürecini inceleyin.</p>
+  <ol class="webdoc-check"><li>Bu sahnenin arkasında hangi bilişim teknolojileri olabilir?</li><li>Animasyon ve oyun kahramanlarını gerçek gibi hareket ettiren başka teknolojiler nelerdir?</li><li>Bu teknolojiler okulda, hastanede veya uzay araştırmalarında nasıl kullanılabilir?</li></ol>
+</section>
+<section class="webdoc-section">
+  <h4><span>04</span> Kullanım Alanlarına Göre Sınıflandırma</h4>
   <div class="webdoc-categories">
     <div><b>İletişim</b><span>telefon, e-posta</span></div>
     <div><b>Eğitim</b><span>akıllı tahta, tablet</span></div>
@@ -36,7 +41,7 @@ const NOTE_HTML=`
   <p class="webdoc-note"><b>UNUTMA:</b> Aynı teknoloji, kullanım amacına göre birden fazla grupta yer alabilir. Örneğin tablet; ders çalışırken eğitim, oyun oynarken eğlence amacıyla kullanılabilir.</p>
 </section>
 <section class="webdoc-section">
-  <h4><span>04</span> Kendini Kontrol Et</h4>
+  <h4><span>05</span> Kendini Kontrol Et</h4>
   <ol class="webdoc-check">
     <li>Bir bilişim teknolojisi örneği yaz ve ne amaçla kullanıldığını söyle.</li>
     <li>Geçmişte kullanılan bir araçla günümüzdeki karşılığını eşleştir.</li>
@@ -47,13 +52,13 @@ const NOTE_HTML=`
 
 const ACTIVITY_HTML=`
 <div class="webdoc-head activity-head">
-  <span>TEKNOLOJİ ARAŞTIRMACILARI · BTY.5.1.1</span>
-  <p><b>Görev:</b> Grubunuzla bir bilişim teknolojisi seçin. Geçmişte ve günümüzde nasıl kullanıldığını araştırın, kullanım alanını belirleyin ve sınıfa kısa bir sunum yapın.</p>
+  <span>TEKNOLOJİLERİN YOLCULUĞU · BTY.5.1.1</span>
+  <p><b>Görev:</b> Grubunuzla bir teknolojik aracı geçmiş ve günümüzdeki biçimleriyle karşılaştırın. İşlev, kullanıcı deneyimi, erişilebilirlik, maliyet ve enerji tüketimi açısından poster hazırlayıp sınıfa sunun.</p>
 </div>
 <section class="webdoc-section">
-  <h4><span>01</span> Teknolojiyi Tanıyalım</h4>
+  <h4><span>01</span> Teknolojinin Yolculuğunu Tanıyalım</h4>
   <label class="web-field">Bu teknoloji ne işe yarar?<textarea rows="2"></textarea></label>
-  <fieldset class="web-choice"><legend>Bilgiyi nasıl kullanır?</legend><label><input type="checkbox"> Oluşturur</label><label><input type="checkbox"> İşler</label><label><input type="checkbox"> Saklar</label><label><input type="checkbox"> Paylaşır</label></fieldset>
+  <fieldset class="web-choice"><legend>Karşılaştırmada hangi ölçütleri kullanacağız?</legend><label><input type="checkbox"> İşlev</label><label><input type="checkbox"> Kullanıcı deneyimi</label><label><input type="checkbox"> Erişilebilirlik</label><label><input type="checkbox"> Maliyet</label><label><input type="checkbox"> Enerji tüketimi</label></fieldset>
   <label class="web-field">En çok nerede kullanılır?<textarea rows="2"></textarea></label>
 </section>
 <section class="webdoc-section">

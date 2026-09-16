@@ -11,6 +11,15 @@ KeskinLab; 5–6. sınıf Bilişim Teknolojileri ve Yazılım, Robotik Kodlama-I
 - Kanonik ders verisi: `data/*.json`
 - Build çıktıları: `generated/courses.json`, `generated/materials.json`, `generated/web/`
 
+## Haftalık plan verisi
+
+Haftalık ders planı için kaynak dosya `data/5-sinif.json`'dır. Generated dosyalar elle düzenlenmez.
+
+- 5. sınıfın tek haftalık plan kaynağı `data/5-sinif.json`; 6. sınıfın karşılığı `data/6-sinif.json`'dır.
+- `generated/courses.json` ve `course-data-*.js` türetilmiş çıktılardır. `npm run generate` komutu bunları kanonik JSON verisinden üretir.
+- `keskinlab-5-sinif-hafta-plani-2026-2027.json` repository içinde değildir ve etkin bir build veya çalışma zamanı bağımlılığı yoktur. Eski/uyumsuz kaynak olarak deprecated kabul edilir; projeye ikinci bir elle yönetilen kaynak olarak eklenmez.
+- `npm run validate:courses`, kanonik kaynaklar ile `generated/courses.json` ve `course-data-*.js` haftalık çıktılarının uyumunu denetler.
+
 ## Ana yüzeyler
 - `index.html` — yaşayan anasayfa / Bu Hafta / zaman çizgisi / dersler / öğretmen araçları
 - `hakkinda.html` — KeskinLab nedir?

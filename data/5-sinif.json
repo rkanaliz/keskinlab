@@ -20,7 +20,81 @@
       "kurban_bayrami_cakisiyor": false,
       "ozel_hafta": false,
       "baslangic": "2026-09-14",
-      "bitis": "2026-09-18"
+      "bitis": "2026-09-18",
+      "kilavuz": {
+        "sayfalar": [12, 13, 14, 15, 16],
+        "dersten_once": [
+          "Bilişim teknolojileri kavramına ilişkin beyin fırtınası sorularını hazırlayın.",
+          "İletişim, bilgi, bilişim, teknoloji ve bilgi iletişim teknolojileri kartlarıyla bir Kelime Kavanozu oluşturun; Bilişim Teknolojileri Alt Kavramları interaktif etkinliğini hazırlayın.",
+          "3-4 kişilik gruplar için bir Web 2.0 grup oluşturma aracı veya renkli kartlar hazırlayın.",
+          "Daktilo, teyp, ilk bilgisayar, akıllı telefon ve bulut bilişim gibi geçmiş ve günümüz bilişim teknolojilerine ait görseller hazırlayın.",
+          "Grup çalışmaları için afiş/poster kâğıtları ve renkli kalemleri hazır edin.",
+          "Örnek çekim süreci ve sahne arkası görüntülerini de içeren, yeşil ekran teknolojisine ait kısa bir film sahnesi videosu hazırlayın.",
+          "Dereceli Puanlama Anahtarı ile Öğretmen Gözlem Formu'nu ölçme ve değerlendirme için önceden hazırlayın."
+        ],
+        "dikkat_cekme": [
+          "Bilişim teknolojileri denince aklınıza neler geliyor?",
+          "Günlük yaşamınızda karşılaştığınız bilişim teknolojilerinden örnekler veriniz.",
+          "Sizce bilişim teknolojileri hayatımızı nasıl etkiliyor, bize hangi kolaylıkları sağlıyor?",
+          "Yanıtları tahtada görünür kılın; yapışkan not veya mini kartlarla kavramları gruplayın ve sınıfça tartışın."
+        ],
+        "temel_kavramlar": [
+          "iletişim",
+          "bilgi",
+          "bilişim",
+          "teknoloji",
+          "bilgi iletişim teknolojileri (BİT)",
+          "donanım",
+          "yazılım",
+          "internet"
+        ],
+        "ders_sureci": [
+          "Beyin fırtınasıyla öğrencilerin bilişim teknolojileri hakkındaki düşüncelerini haritalandırın. Günlük yaşam örneklerinden hareketle iletişim, bilgi, bilişim, teknoloji, BİT, donanım, yazılım ve internet arasındaki bağlantıları öğrencilerin kendi cümleleriyle keşfetmesini sağlayın; Bilişim Teknolojileri Alt Kavramları interaktif etkinliğini kullanın.",
+          "Öğrencileri küçük gruplara ayırın. Her grubun Kelime Kavanozu'ndan rastgele bir kavram seçmesini sağlayın; 5-8 dakikalık araştırma süresinde güvenilir bilgi kaynaklarına erişimlerini rehberlikle destekleyin. Sunumları sonrasında kavramları tahtada toplayıp kullanım alanlarına göre sınıflandırın; teknolojinin hayatı kolaylaştırma, süreçleri hızlandırma, maliyetleri azaltma ve verimliliği artırma etkileri üzerine beyin fırtınası yapın.",
+          "Geçmiş ve günümüz teknolojilerini yansıtın. Daktilo, kasetçalar, tüplü televizyon, telgraf, disket ve ilk cep telefonu ile dokunmatik dizüstü bilgisayar, akıllı telefon, akıllı saat, bulut bilişim, çevrim içi müzik platformu ve yüksek çözünürlüklü akıllı televizyon örneklerini benzerlik, farklılık ve değişim açısından karşılaştırın.",
+          "Teknolojilerin Yolculuğu etkinliğinde gruplara bilgisayar veya telefon gibi bir teknolojik araç verin. Geçmiş ve günümüzdeki biçimlerini işlev, kullanıcı deneyimi, erişilebilirlik, maliyet ve enerji tüketimi açısından karşılaştırmalarını; poster/afiş hazırlayıp sunmalarını sağlayın. Dinleyicileri doğruluk, özgünlük ve netlik ölçütleriyle açık fikirlilikle değerlendirmeye ve soru sormaya teşvik edin.",
+          "Yeşil ekranla hazırlanmış kısa film sahnesini izletin. 'Sizce bir oyuncu stüdyodan hiç çıkmadan nasıl bir ejderhanın sırtında uçabilir veya uzayda yürüyebilir? Bu sihrin arkasında nasıl bir teknoloji saklanıyor olabilir?' sorusuyla tahminleri alın; sahne arkası çekim süreciyle işleyişi somutlaştırın. Sevilen animasyon veya oyun kahramanlarını gerçek gibi hareket ettiren başka bilişim teknolojilerini; bu teknolojilerin okul, hastane ve uzay araştırmalarındaki olası kullanımlarını sorgulatın. Yanıtları tahtada haritalandırıp kullanım alanlarına göre gruplandırın.",
+          "'Bilişim teknolojileri topluma nasıl katkılar sağlar, hangi alanlarda daha faydalıdır?' sorusuyla görüş alışverişi yapın. Başkalarının fikirlerine saygı duyma, konuşma sırasını bekleme, kaynağı belirsiz bilgiyi paylaşmama ve doğruluğundan emin olunan örnekler verme kurallarını hatırlatın. Küçük grupların seçtikleri alandaki bilişim teknolojilerini tanıtan kısa sözlü sunumlarını dinleyip eksikleri tamamlayın."
+        ],
+        "ogrenme_ogretme_uygulamalari": [
+          {
+            "ad": "Temel Kavramları Keşfediyoruz",
+            "sure": "20 dk.",
+            "tur": "Küçük grup çalışması; soru-cevap; sunum",
+            "uygulama_adimlari": [
+              "Kelime Kavanozu, grup oluşturma aracı veya renkli kartlarla öğrencileri küçük gruplara ayırın.",
+              "Her gruba Kelime Kavanozu'ndan bir kavram seçtirin.",
+              "5-8 dakikalık kısa araştırma süresinde gerektiğinde web tarayıcısıyla destek olun.",
+              "Grupların kavramlarını sunmasını, diğer öğrencilerin soru sormasını sağlayın.",
+              "Kavramları tahtada toplayıp kullanım alanlarına göre sınıflandırın."
+            ]
+          },
+          {
+            "ad": "Teknolojilerin Yolculuğu",
+            "sure": "25 dk.",
+            "tur": "Küçük grup tartışmaları; bütün sınıfla yapılan tartışmalar",
+            "uygulama_adimlari": [
+              "Geçmiş ve günümüz teknolojilerine ait görselleri gösterin.",
+              "Öğrencilerden benzerlik ve farklılıkları ifade etmelerini isteyin.",
+              "Küçük gruplara ayırın; her gruba bilgisayar veya telefon gibi bir araç verin.",
+              "Grupların aracı işlev, kullanıcı deneyimi, erişilebilirlik, maliyet ve enerji tüketimi açısından karşılaştırmasını sağlayın.",
+              "Afiş hazırlayıp sunmalarını; dinleyicilerin açık fikirlilikle değerlendirme yapıp soru sormasını teşvik edin."
+            ]
+          }
+        ],
+        "olcme_degerlendirme": [
+          "Teknolojilerin Yolculuğu etkinliğinde doğruluk, özgünlük ve netlik ölçütleri için Dereceli Puanlama Anahtarı kullanın.",
+          "Etkinliklerin ara değerlendirmesinde Öğretmen Gözlem Formu'ndan yararlanın.",
+          "Sunum ve tartışma sırasında öğrencilerin katılımını, açık fikirliliğini, soru sorma ve sınıflandırma gerekçelerini gözlemleyin."
+        ],
+        "gelecek_derse_hazirlik": [
+          "'Bilişim teknolojileri hayatımızı kolaylaştırırken bizi bazı risklerle de karşı karşıya bırakabilir mi?' sorusuyla bir sonraki derse merak uyandırın.",
+          "Öğrencilerden bilişim teknolojilerinin olumlu yönleri ve yaşamı olumsuz etkileyebileceği durumlar için küçük bir internet araştırması veya aile bireyleriyle sohbet yapmalarını isteyin.",
+          "Araştırmalarını defterlerine yazı, tablo veya çizimle zenginleştirip derse getirmelerini sağlayın."
+        ],
+        "destekleme": [],
+        "zenginlestirme": []
+      }
     },
     {
       "hafta_no": 2,
@@ -141,15 +215,45 @@
     {
       "hafta_no": 8,
       "tarih_araligi": "02 Kasım - 06 Kasım",
-      "ders_saati": "SINAV HAFTASI",
-      "tema": "",
-      "konu": "",
-      "ogrenme_ciktisi": "",
-      "surec_bilesenleri": [],
+      "ders_saati": "1+1*",
+      "tema": "Dijital Ürün Tasarım ve Geliştirme",
+      "konu": "Görsel Düzenleme Programlarına Giriş",
+      "ogrenme_ciktisi": "BTY.5.2.1 Görsel düzenleme programlarından yararlanabilme",
+      "surec_bilesenleri": [
+        "a) Görsellerin temel özelliklerini tanır.",
+        "b) Uygun görsel düzenleme programını belirler.",
+        "c) Belirlenen görsel düzenleme programının arayüz özelliklerini kullanır.",
+        "ç) Kullanılan görsel düzenleme programını kullanım alanları/verimliliği açısından değerlendirir."
+      ],
       "kurban_bayrami_cakisiyor": false,
-      "ozel_hafta": true,
+      "ozel_hafta": false,
       "baslangic": "2026-11-02",
-      "bitis": "2026-11-06"
+      "bitis": "2026-11-06",
+      "icerik_ders_saati": 1,
+      "okul_temelli_planlama_saati": 1,
+      "dersler": [
+        {
+          "ders_no": 1,
+          "tur": "ders",
+          "ogrenme_ciktisi_ref": "BTY.5.2.1",
+          "konu_ref": "Görsel Düzenleme Programlarına Giriş"
+        },
+        {
+          "ders_no": 2,
+          "tur": "okul_temelli_planlama"
+        }
+      ],
+      "kilavuz": {
+        "sayfalar": [],
+        "dersten_once": [],
+        "dikkat_cekme": [],
+        "ders_sureci": [],
+        "ogrenme_ogretme_uygulamalari": [],
+        "olcme_degerlendirme": [],
+        "gelecek_derse_hazirlik": [],
+        "destekleme": [],
+        "zenginlestirme": []
+      }
     },
     {
       "hafta_no": 9,
@@ -293,15 +397,44 @@
     {
       "hafta_no": 16,
       "tarih_araligi": "04 Ocak - 08 Ocak",
-      "ders_saati": "SINAV HAFTASI",
-      "tema": "",
-      "konu": "",
-      "ogrenme_ciktisi": "",
-      "surec_bilesenleri": [],
+      "ders_saati": "1+1*",
+      "tema": "Bilgisayar Ağları ve İletişim",
+      "konu": "Bilgisayar Ağ Türleri ve Bağlanma Yöntemleri",
+      "ogrenme_ciktisi": "BTY.5.3.2. Bilgisayar ağları ve bağlanma yöntemlerini sınıflandırabilme",
+      "surec_bilesenleri": [
+        "a) Bilgisayar ağlarında kullanılan bağlanma yöntemlerini belirler.",
+        "b) Bilgisayar ağlarında kullanılan bağlanma yöntem ve teknolojilerini ilişkilendirir.",
+        "c) Bilgisayar ağlarında kullanılan bileşenlerin işlevlerini gruplandırır."
+      ],
       "kurban_bayrami_cakisiyor": false,
-      "ozel_hafta": true,
+      "ozel_hafta": false,
       "baslangic": "2027-01-04",
-      "bitis": "2027-01-08"
+      "bitis": "2027-01-08",
+      "icerik_ders_saati": 1,
+      "okul_temelli_planlama_saati": 1,
+      "dersler": [
+        {
+          "ders_no": 1,
+          "tur": "ders",
+          "ogrenme_ciktisi_ref": "BTY.5.3.2",
+          "konu_ref": "Bilgisayar Ağ Türleri ve Bağlanma Yöntemleri"
+        },
+        {
+          "ders_no": 2,
+          "tur": "okul_temelli_planlama"
+        }
+      ],
+      "kilavuz": {
+        "sayfalar": [],
+        "dersten_once": [],
+        "dikkat_cekme": [],
+        "ders_sureci": [],
+        "ogrenme_ogretme_uygulamalari": [],
+        "olcme_degerlendirme": [],
+        "gelecek_derse_hazirlik": [],
+        "destekleme": [],
+        "zenginlestirme": []
+      }
     },
     {
       "hafta_no": 17,
@@ -410,13 +543,18 @@
     {
       "hafta_no": 23,
       "tarih_araligi": "15 Mart - 19 Mart",
-      "ders_saati": "SINAV HAFTASI",
-      "tema": "",
-      "konu": "",
-      "ogrenme_ciktisi": "",
-      "surec_bilesenleri": [],
+      "ders_saati": "2",
+      "tema": "Yapay Zekâ",
+      "konu": "Yapay Zekâda Güvenlik",
+      "ogrenme_ciktisi": "BTY.5.5.2. Yapay zekâya ilişkin etik ve güvenlik / gizlilik önlemlerini yönetebilme",
+      "surec_bilesenleri": [
+        "a) Yapay zekâda etik ve güvenlik/gizlilik risklerini belirler.",
+        "b) Yapay zekâda etik ve güvenlik/gizlilik önlemlerini belirler.",
+        "c) Yapay zekâda etik ilkelerin ve bilgi güvenliğinin/gizliliğinin temel bileşenlerini ayırt eder.",
+        "ç) Yapay zekâ uygulamalarını etik ilkeler ile e-güvenlik/e-gizlilik açısından değerlendirir."
+      ],
       "kurban_bayrami_cakisiyor": false,
-      "ozel_hafta": true,
+      "ozel_hafta": false,
       "baslangic": "2027-03-15",
       "bitis": "2027-03-19"
     },
@@ -441,15 +579,45 @@
     {
       "hafta_no": 25,
       "tarih_araligi": "29 Mart - 02 Nisan",
-      "ders_saati": "OKUL TEMELLİ PLANLAMA*",
-      "tema": "",
-      "konu": "",
-      "ogrenme_ciktisi": "",
-      "surec_bilesenleri": [],
+      "ders_saati": "1+1*",
+      "tema": "Yazılım Tasarımı ve Programlama",
+      "konu": "Problem Belirleme ve Algoritma Oluşturma",
+      "ogrenme_ciktisi": "BTY.5.6.1. Problem çözümü için algoritmik düşünebilme",
+      "surec_bilesenleri": [
+        "a) Günlük yaşamda karşılaştığı bir problemi belirler.",
+        "b) Belirlediği problemin girdi ve çıktılarını belirler.",
+        "c) Belirlediği problemin çözümüne ilişkin işlem adımlarını listeler.",
+        "ç) İşlem adımlarını akış şeması ile gösterir."
+      ],
       "kurban_bayrami_cakisiyor": false,
-      "ozel_hafta": true,
+      "ozel_hafta": false,
       "baslangic": "2027-03-29",
-      "bitis": "2027-04-02"
+      "bitis": "2027-04-02",
+      "icerik_ders_saati": 1,
+      "okul_temelli_planlama_saati": 1,
+      "dersler": [
+        {
+          "ders_no": 1,
+          "tur": "ders",
+          "ogrenme_ciktisi_ref": "BTY.5.6.1",
+          "konu_ref": "Problem Belirleme ve Algoritma Oluşturma"
+        },
+        {
+          "ders_no": 2,
+          "tur": "okul_temelli_planlama"
+        }
+      ],
+      "kilavuz": {
+        "sayfalar": [],
+        "dersten_once": [],
+        "dikkat_cekme": [],
+        "ders_sureci": [],
+        "ogrenme_ogretme_uygulamalari": [],
+        "olcme_degerlendirme": [],
+        "gelecek_derse_hazirlik": [],
+        "destekleme": [],
+        "zenginlestirme": []
+      }
     },
     {
       "hafta_no": 26,
@@ -621,15 +789,45 @@
     {
       "hafta_no": 35,
       "tarih_araligi": "07 Haziran - 11 Haziran",
-      "ders_saati": "SINAV HAFTASI",
-      "tema": "",
-      "konu": "",
-      "ogrenme_ciktisi": "",
-      "surec_bilesenleri": [],
+      "ders_saati": "1+1*",
+      "tema": "Yazılım Tasarımı ve Programlama",
+      "konu": "Blok Tabanlı Ortamda Yazılım Geliştirme",
+      "ogrenme_ciktisi": "BTY.5.6.4. Blok tabanlı ortamda yazılım geliştirme sürecini yönetebilme",
+      "surec_bilesenleri": [
+        "a) Blok tabanlı ortamda yazılım geliştirme sürecini planlar.",
+        "b) Blok tabanlı ortamda yazılımı tasarlar.",
+        "c) Blok tabanlı ortamda yazılımı oluşturur.",
+        "ç) Blok tabanlı ortamda oluşturulan yazılımı değerlendirir."
+      ],
       "kurban_bayrami_cakisiyor": false,
-      "ozel_hafta": true,
+      "ozel_hafta": false,
       "baslangic": "2027-06-07",
-      "bitis": "2027-06-11"
+      "bitis": "2027-06-11",
+      "icerik_ders_saati": 1,
+      "okul_temelli_planlama_saati": 1,
+      "dersler": [
+        {
+          "ders_no": 1,
+          "tur": "ders",
+          "ogrenme_ciktisi_ref": "BTY.5.6.4",
+          "konu_ref": "Blok Tabanlı Ortamda Yazılım Geliştirme"
+        },
+        {
+          "ders_no": 2,
+          "tur": "okul_temelli_planlama"
+        }
+      ],
+      "kilavuz": {
+        "sayfalar": [],
+        "dersten_once": [],
+        "dikkat_cekme": [],
+        "ders_sureci": [],
+        "ogrenme_ogretme_uygulamalari": [],
+        "olcme_degerlendirme": [],
+        "gelecek_derse_hazirlik": [],
+        "destekleme": [],
+        "zenginlestirme": []
+      }
     },
     {
       "hafta_no": 36,

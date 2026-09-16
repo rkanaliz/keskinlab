@@ -147,6 +147,10 @@ for (const config of courses) {
       konu: ['robotik', 'yapay-zeka'].includes(config.key) ? stripCodes(week.konu) : week.konu,
       cikti: week.ogrenme_ciktisi || (week.kazanimlar || []).join(' '),
       surec: week.surec_bilesenleri || (week.etkinlik ? [week.etkinlik] : []),
+      ...(Object.hasOwn(week, 'icerik_ders_saati') ? { icerik_ders_saati: week.icerik_ders_saati } : {}),
+      ...(Object.hasOwn(week, 'okul_temelli_planlama_saati') ? { okul_temelli_planlama_saati: week.okul_temelli_planlama_saati } : {}),
+      ...(Array.isArray(week.dersler) ? { dersler: week.dersler } : {}),
+      ...(week.kilavuz ? { kilavuz: week.kilavuz } : {}),
       ozel: special,
       baslangic: week.baslangic,
       bitis: week.bitis
