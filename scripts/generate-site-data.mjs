@@ -22,7 +22,7 @@ const COURSE_SOURCES={
 };
 const LEAVES=[
  ['sunum','Sunum'],['ders-notu','Ders Notu'],['ogrenci-etkinligi','Öğrenci Etkinliği'],['infografik','İnfografik'],['hafta-ozeti','Hafta Özeti'],
- ['olcme-degerlendirme/kisa-cevap','Kısa Cevaplı Kontrol'],['olcme-degerlendirme/rubrik','Dereceli Puanlama'],['olcme-degerlendirme/kontrol-listesi','Kontrol Listesi'],['ogretmen/gozlem-formu','Öğretmen Gözlem Formu'],['evraklar','Hafta Evrakı']
+ ['olcme-degerlendirme/kisa-cevap','Kısa Cevaplı Kontrol'],['olcme-degerlendirme/rubrik','Dereceli Puanlama'],['olcme-degerlendirme/kontrol-listesi','Kontrol Listesi'],['ogretmen/gozlem-formu','Öğretmen Gözlem Formu'],['ogretmen/uygulama-kilavuzu','Öğretmen Uygulama Kılavuzu'],['evraklar','Hafta Evrakı']
 ];
 const DISPLAYABLE=new Set(['.pdf','.png','.jpg','.jpeg']);
 const EDITABLE=new Set(['.docx']);
