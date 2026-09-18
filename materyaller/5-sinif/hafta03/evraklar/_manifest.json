@@ -1,0 +1,10 @@
+{
+  "01-dijital-kimlik-kartim": {
+    "label": "Dijital Kimlik Kartım",
+    "group": "student"
+  },
+  "02-ogretmen-uygulama-kilavuzu": {
+    "label": "Öğretmen Uygulama Kılavuzu",
+    "group": "teacher"
+  }
+}
