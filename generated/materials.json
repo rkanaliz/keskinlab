@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-15T15:44:26.259Z",
+  "generatedAt": "2026-09-18T11:41:12.252Z",
   "courses": {
     "5-sinif": {
       "title": "5. Sınıf",
@@ -927,34 +927,46 @@
               ]
             },
             {
-              "type": "sunum",
-              "label": "Sunum",
-              "index": "19",
-              "preview": "materyaller/5-sinif/hafta02/sunum/19.png",
-              "webPreview": "generated/web/5-sinif/hafta02/sunum/19.webp",
-              "thumbnail": "generated/web/5-sinif/hafta02/sunum/19-thumb.webp",
-              "editable": null,
+              "type": "ogrenci-etkinligi",
+              "label": "Öğrenci Etkinliği",
+              "index": "01",
+              "group": null,
+              "preview": "materyaller/5-sinif/hafta02/ogrenci-etkinligi/01.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": "materyaller/5-sinif/hafta02/ogrenci-etkinligi/01.docx",
               "downloads": [
                 {
-                  "href": "materyaller/5-sinif/hafta02/sunum/19.png",
-                  "format": "png",
-                  "filename": "KeskinLab-5-Sinif-Hafta-02-Sunum-19.png"
+                  "href": "materyaller/5-sinif/hafta02/ogrenci-etkinligi/01.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-5-Sinif-Hafta-02-Ogrenci-Etkinligi.pdf"
+                },
+                {
+                  "href": "materyaller/5-sinif/hafta02/ogrenci-etkinligi/01.docx",
+                  "format": "docx",
+                  "filename": "KeskinLab-5-Sinif-Hafta-02-Ogrenci-Etkinligi-Duzenlenebilir.docx"
                 }
               ]
             },
             {
-              "type": "sunum",
-              "label": "Sunum",
-              "index": "20",
-              "preview": "materyaller/5-sinif/hafta02/sunum/20.png",
-              "webPreview": "generated/web/5-sinif/hafta02/sunum/20.webp",
-              "thumbnail": "generated/web/5-sinif/hafta02/sunum/20-thumb.webp",
-              "editable": null,
+              "type": "ogrenci-etkinligi",
+              "label": "Öğrenci Etkinliği",
+              "index": "02",
+              "group": null,
+              "preview": "materyaller/5-sinif/hafta02/ogrenci-etkinligi/02.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": "materyaller/5-sinif/hafta02/ogrenci-etkinligi/02.docx",
               "downloads": [
                 {
-                  "href": "materyaller/5-sinif/hafta02/sunum/20.png",
-                  "format": "png",
-                  "filename": "KeskinLab-5-Sinif-Hafta-02-Sunum-20.png"
+                  "href": "materyaller/5-sinif/hafta02/ogrenci-etkinligi/02.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-5-Sinif-Hafta-02-Ogrenci-Etkinligi-02.pdf"
+                },
+                {
+                  "href": "materyaller/5-sinif/hafta02/ogrenci-etkinligi/02.docx",
+                  "format": "docx",
+                  "filename": "KeskinLab-5-Sinif-Hafta-02-Ogrenci-Etkinligi-Duzenlenebilir-02.docx"
                 }
               ]
             },
@@ -971,38 +983,6 @@
                   "href": "materyaller/5-sinif/hafta02/infografik/01.png",
                   "format": "png",
                   "filename": "KeskinLab-5-Sinif-Hafta-02-Infografik.png"
-                }
-              ]
-            },
-            {
-              "type": "infografik",
-              "label": "İnfografik",
-              "index": "02",
-              "preview": "materyaller/5-sinif/hafta02/infografik/02.png",
-              "webPreview": "generated/web/5-sinif/hafta02/infografik/02.webp",
-              "thumbnail": "generated/web/5-sinif/hafta02/infografik/02-thumb.webp",
-              "editable": null,
-              "downloads": [
-                {
-                  "href": "materyaller/5-sinif/hafta02/infografik/02.png",
-                  "format": "png",
-                  "filename": "KeskinLab-5-Sinif-Hafta-02-Infografik-02.png"
-                }
-              ]
-            },
-            {
-              "type": "infografik",
-              "label": "İnfografik",
-              "index": "03",
-              "preview": "materyaller/5-sinif/hafta02/infografik/03.png",
-              "webPreview": "generated/web/5-sinif/hafta02/infografik/03.webp",
-              "thumbnail": "generated/web/5-sinif/hafta02/infografik/03-thumb.webp",
-              "editable": null,
-              "downloads": [
-                {
-                  "href": "materyaller/5-sinif/hafta02/infografik/03.png",
-                  "format": "png",
-                  "filename": "KeskinLab-5-Sinif-Hafta-02-Infografik-03.png"
                 }
               ]
             },
@@ -1051,6 +1031,50 @@
                   "href": "materyaller/5-sinif/hafta02/hafta-ozeti/03.png",
                   "format": "png",
                   "filename": "KeskinLab-5-Sinif-Hafta-02-Hafta-Ozeti-03.png"
+                }
+              ]
+            },
+            {
+              "type": "ogretmen/gozlem-formu",
+              "label": "Öğretmen Gözlem Formu",
+              "index": "01",
+              "group": null,
+              "preview": "materyaller/5-sinif/hafta02/ogretmen/gozlem-formu/01.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": "materyaller/5-sinif/hafta02/ogretmen/gozlem-formu/01.docx",
+              "downloads": [
+                {
+                  "href": "materyaller/5-sinif/hafta02/ogretmen/gozlem-formu/01.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-5-Sinif-Hafta-02-Ogretmen-Gozlem-Formu.pdf"
+                },
+                {
+                  "href": "materyaller/5-sinif/hafta02/ogretmen/gozlem-formu/01.docx",
+                  "format": "docx",
+                  "filename": "KeskinLab-5-Sinif-Hafta-02-Ogretmen-Gozlem-Formu-Duzenlenebilir.docx"
+                }
+              ]
+            },
+            {
+              "type": "ogretmen/uygulama-kilavuzu",
+              "label": "Öğretmen Uygulama Kılavuzu",
+              "index": "01",
+              "group": null,
+              "preview": "materyaller/5-sinif/hafta02/ogretmen/uygulama-kilavuzu/01.pdf",
+              "webPreview": null,
+              "thumbnail": null,
+              "editable": "materyaller/5-sinif/hafta02/ogretmen/uygulama-kilavuzu/01.docx",
+              "downloads": [
+                {
+                  "href": "materyaller/5-sinif/hafta02/ogretmen/uygulama-kilavuzu/01.pdf",
+                  "format": "pdf",
+                  "filename": "KeskinLab-5-Sinif-Hafta-02-Ogretmen-Uygulama-Kilavuzu.pdf"
+                },
+                {
+                  "href": "materyaller/5-sinif/hafta02/ogretmen/uygulama-kilavuzu/01.docx",
+                  "format": "docx",
+                  "filename": "KeskinLab-5-Sinif-Hafta-02-Ogretmen-Uygulama-Kilavuzu-Duzenlenebilir.docx"
                 }
               ]
             },
