@@ -349,7 +349,10 @@
   function groupWeek02Documents(files) {
     var groups = {};
     files.forEach(function (file) {
-      var stem = String(file).split('/').pop().replace(/\.[^.]+$/, '');
+      // `gozlem-formu/01` ve `uygulama-kilavuzu/01` aynı dosya
+      // numarasını kullanır; yalnız dosya adıyla gruplanırlarsa birbirini
+      // ezerler. Yol + uzantısız dosya adı her materyalin gerçek kimliğidir.
+      var stem = String(file).replace(/\.[^.]+$/, '');
       if (!groups[stem]) groups[stem] = { pdf: null, docx: null };
       if (PDF_EXT_RE.test(file)) groups[stem].pdf = file;
       if (/\.docx$/i.test(file)) groups[stem].docx = file;
