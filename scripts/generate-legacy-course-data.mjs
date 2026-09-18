@@ -63,8 +63,11 @@ for (const config of courses) {
     const entry = {};
     const resources = [];
     for (const material of week.materials || []) {
-      const files = (material.downloads || []).map(item => `/${item.href.replace(/^\//, '')}`);
-      if (material.preview && !files.includes(`/${material.preview.replace(/^\//, '')}`)) files.push(`/${material.preview.replace(/^\//, '')}`);
+      const useWeek02WebPreview = config.key === '5-sinif' && week.week === 2 && Boolean(material.webPreview);
+      const files = useWeek02WebPreview
+        ? [`/${material.webPreview.replace(/^\//, '')}`]
+        : (material.downloads || []).map(item => `/${item.href.replace(/^\//, '')}`);
+      if (!useWeek02WebPreview && material.preview && !files.includes(`/${material.preview.replace(/^\//, '')}`)) files.push(`/${material.preview.replace(/^\//, '')}`);
       const parts = material.type.split('/');
       if (parts.length === 1) (entry[parts[0]] ||= []).push(...files);
       else ((entry[parts[0]] ||= {})[parts[1]] ||= []).push(...files);
