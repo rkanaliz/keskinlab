@@ -186,7 +186,7 @@
     'infografik': 'İnfografik', 'hafta-ozeti': 'Hafta Özeti', 'olcme-degerlendirme': 'Ölçme / Değerlendirme'
   };
   // Ekranda gösterilecek görsel materyallerin seçici sırası
-  var MATERIAL_ORDER = ['sunum', 'infografik', 'hafta-ozeti'];
+  var MATERIAL_ORDER = ['sunum', 'ders-notu', 'infografik', 'hafta-ozeti'];
   var IMAGE_EXT_RE = /\.(png|jpe?g|webp|gif)$/i;
   var PDF_EXT_RE = /\.pdf$/i;
   var activeMaterialType = null;
@@ -311,7 +311,7 @@
   }
 
   function materialSupportsFullscreen(key) {
-    return key === 'sunum' || key === 'infografik' || key === 'hafta-ozeti';
+    return key === 'sunum' || key === 'ders-notu' || key === 'infografik' || key === 'hafta-ozeti';
   }
 
   function webPreviewPath(masterPath) {
@@ -600,6 +600,7 @@
       var viewerItem = materialViewerItem(files);
       viewerItem.key = key;
       viewerItem.label = MATERIAL_LABELS[key] || key;
+      if (week.n === 3 && key === 'hafta-ozeti' && !viewerItem.previews.length) return;
       items.push(viewerItem);
     });
     var firstAvailable = items.find(function (item) { return item.previews.length; });
