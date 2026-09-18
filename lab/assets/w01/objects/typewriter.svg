@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 360" role="img" aria-label="Daktilo illüstrasyonu">
+  <g fill="none" stroke="#12182B" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path fill="#F8F4EA" d="M122 142h276l48 142H74z"/>
+    <path fill="#EFE7D7" d="M154 98h212v80H154z"/>
+    <path d="M184 98V58h152v40"/>
+    <path d="M98 284h324v32H98z"/>
+    <path d="M138 186h244"/>
+    <path d="M142 214h236M150 242h220" stroke-width="5" opacity=".55"/>
+    <path d="M92 124h336"/>
+    <circle cx="107" cy="124" r="12" fill="#1E8A80" stroke="#12182B"/>
+    <circle cx="413" cy="124" r="12" fill="#E2A63B" stroke="#12182B"/>
+  </g>
+  <g fill="#12182B">
+    <circle cx="166" cy="204" r="6"/><circle cx="196" cy="204" r="6"/><circle cx="226" cy="204" r="6"/><circle cx="256" cy="204" r="6"/><circle cx="286" cy="204" r="6"/><circle cx="316" cy="204" r="6"/><circle cx="346" cy="204" r="6"/>
+    <circle cx="180" cy="232" r="6"/><circle cx="210" cy="232" r="6"/><circle cx="240" cy="232" r="6"/><circle cx="270" cy="232" r="6"/><circle cx="300" cy="232" r="6"/><circle cx="330" cy="232" r="6"/>
+  </g>
+  <path d="M180 76h160" stroke="#B9822A" stroke-width="5" stroke-dasharray="12 10" opacity=".8"/>
+</svg>

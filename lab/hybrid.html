@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#081525">
+  <title>KeskinLab · Hibrit Ders Player · 5. Sınıf BTY</title>
+  <link rel="icon" href="../brand/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="lesson-engine.css">
+  <link rel="stylesheet" href="lesson-final.css">
+  <link rel="stylesheet" href="lesson-touch.css">
+  <link rel="stylesheet" href="lesson-theme1-visuals.css">
+  <link rel="stylesheet" href="hybrid-player.css">
+</head>
+<body class="hybrid-body">
+  <div class="hybrid-shell">
+    <aside class="hybrid-rail" aria-label="Ders akışı">
+      <a class="hybrid-brand" href="../classroom-5-sinif.html" aria-label="KeskinLab Classroom'a dön">
+        <img src="../brand/devre-karakteri.svg" alt="">
+        <span>Keskin<span>Lab</span></span>
+      </a>
+      <div class="hybrid-rail-label">DERS AKIŞI</div>
+      <nav class="hybrid-chapters" id="hybridChapters"></nav>
+      <button class="hybrid-notes" id="hybridNotes" type="button">▤ <span>DERS NOTLARIM</span></button>
+    </aside>
+
+    <main class="lesson-app hybrid-app" id="lessonApp" aria-live="polite">
+      <header class="lesson-bar lesson-bar-top hybrid-topbar">
+        <div class="hybrid-course-meta">
+          <b>5. SINIF BTY</b><i></i><b>1. HAFTA</b>
+          <span id="lessonMeta">Bilişim Teknolojilerinin Hayatımızdaki Yeri</span>
+        </div>
+        <div class="lesson-top-actions">
+          <button class="chrome-btn hybrid-hidden-control" id="chapterButton" type="button" tabindex="-1" aria-hidden="true">BÖLÜMLER</button>
+          <button class="chrome-btn hybrid-teacher" id="teacherButton" type="button">♙ <span>ÖĞRETMEN PANELİ</span></button>
+          <button class="chrome-btn hybrid-fullscreen" id="fullscreenButton" type="button" aria-label="Tam ekran">⛶</button>
+        </div>
+      </header>
+
+      <section class="hybrid-workspace">
+        <section class="viewport-shell hybrid-viewport-shell" id="viewportShell">
+          <div class="slide-viewport" id="slideViewport">
+            <article class="slide-stage" id="slideStage" aria-label="Ders adımı"></article>
+          </div>
+          <div class="orientation-note" id="orientationNote">
+            <strong>Dersi yatay ekranda aç.</strong>
+            <span>KeskinLab ders akışı, akıllı tahta ve yatay ekranlar için 16:9 tasarlanmıştır.</span>
+          </div>
+        </section>
+
+        <section class="hybrid-interaction" id="hybridInteraction" aria-live="polite">
+          <div class="hybrid-prompt-icon" id="hybridPromptIcon">?</div>
+          <div class="hybrid-prompt-copy">
+            <strong id="hybridPromptTitle">Düşün ve paylaş</strong>
+            <span id="hybridPromptText">Bu adımda öğrencilerin düşünmesini ve sınıfla paylaşmasını bekle.</span>
+          </div>
+          <div class="hybrid-prompt-hint" id="hybridPromptHint">DERS AKIŞIYLA BİRLİKTE İLERLER</div>
+        </section>
+      </section>
+
+      <footer class="lesson-bar lesson-bar-bottom hybrid-bottombar">
+        <button class="nav-btn hybrid-prev" id="prevButton" type="button" aria-label="Önceki adım">← <span>ÖNCEKİ</span></button>
+        <div class="progress-block hybrid-progress">
+          <div class="progress-copy">
+            <span id="chapterLabel">BAŞLANGIÇ</span>
+            <b id="stepLabel">01 / 33</b>
+          </div>
+          <div class="progress-track" aria-hidden="true"><i id="progressFill"></i></div>
+        </div>
+        <button class="nav-btn nav-btn-primary hybrid-next" id="nextButton" type="button" aria-label="Sonraki adım"><span>SONRAKİ</span> →</button>
+      </footer>
+    </main>
+  </div>
+
+  <aside class="panel panel-chapters" id="chapterPanel" aria-hidden="true">
+    <div class="panel-head"><div><span class="panel-kicker">DERS HARİTASI</span><h2>Bölümler</h2></div><button class="panel-close" data-close-panel type="button">×</button></div>
+    <div class="chapter-list" id="chapterList"></div>
+  </aside>
+
+  <aside class="panel panel-teacher" id="teacherPanel" aria-hidden="true">
+    <div class="panel-head"><div><span class="panel-kicker">ÖĞRETMEN KATMANI</span><h2>Bu adımda</h2></div><button class="panel-close" data-close-panel type="button">×</button></div>
+    <div class="teacher-content" id="teacherContent"></div>
+  </aside>
+  <div class="panel-scrim" id="panelScrim" hidden></div>
+
+  <div class="loading-state" id="loadingState">
+    <div class="loading-mark">$</div>
+    <strong>Hibrit ders hazırlanıyor</strong>
+    <span>5. Sınıf BTY · Hafta 01</span>
+  </div>
+
+  <script src="lesson-engine.js"></script>
+  <script src="lesson-final.js"></script>
+  <script src="lesson-touch.js"></script>
+  <script src="lesson-theme1-visuals.js"></script>
+  <script src="hybrid-player.js"></script>
+</body>
+</html>

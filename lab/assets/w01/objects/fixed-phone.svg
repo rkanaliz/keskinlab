@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 360" role="img" aria-label="Sabit telefon illüstrasyonu">
+  <g fill="none" stroke="#12182B" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path fill="#F8F4EA" d="M132 134h256l40 150H92z"/>
+    <path fill="#EFE7D7" d="M128 114c18-62 246-62 264 0l-44 42c-30-28-146-28-176 0z"/>
+    <path d="M162 222h196"/>
+    <circle cx="260" cy="210" r="52" fill="#F4EFE4"/>
+    <circle cx="260" cy="210" r="16" fill="#EAF4F1"/>
+    <path d="M260 158v20M302 176l-16 14M318 218h-20M292 250l-14-16M228 250l14-16M202 218h20M218 176l16 14" stroke-width="6"/>
+    <path d="M428 284c24 6 36 24 34 54" stroke="#1E8A80" stroke-width="6"/>
+  </g>
+  <circle cx="182" cy="114" r="8" fill="#1E8A80"/>
+  <circle cx="338" cy="114" r="8" fill="#E2A63B"/>
+</svg>

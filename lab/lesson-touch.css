@@ -1,0 +1,57 @@
+/* KeskinLab Lesson Engine · Touch-first classroom layer */
+html,body,.lesson-app{overscroll-behavior:none}
+button,a{-webkit-tap-highlight-color:transparent}
+button{touch-action:manipulation}
+.slide-viewport{touch-action:pan-y pinch-zoom;-webkit-user-select:none;user-select:none}
+.slide-stage{touch-action:inherit}
+.slide-stage.layout-activity{touch-action:manipulation}
+
+/* Tahta önünde ayakta kullanım: kontroller mouse arayüzünden daha büyük. */
+.lesson-app{grid-template-rows:66px minmax(0,1fr) 78px}
+.lesson-bar{padding-left:18px;padding-right:18px}
+.chrome-btn{min-height:46px;padding:0 16px;border-radius:9px}
+.nav-btn{min-width:76px;min-height:58px;border-radius:10px;font-size:23px}
+.nav-btn-primary{min-width:86px}
+.panel-close{width:48px;height:48px}
+.chapter-jump{min-height:74px;padding:18px 0}
+.teacher-content button,.teacher-content a{min-height:48px}
+.s-action{min-width:240px;min-height:76px;border-radius:10px;font-size:14px}
+.tech-item{min-height:132px;border-radius:8px}
+.category-zone{min-height:210px;border-radius:8px}
+.tech-item,.category-zone,.s-action{touch-action:manipulation}
+
+/* Parmak temasında anlık görsel teyit. Hover'a bağımlı değiliz. */
+.chrome-btn:active,.nav-btn:active,.panel-close:active,.chapter-jump:active,
+.s-action:active,.tech-item:active,.category-zone:active{transform:scale(.975)}
+.chrome-btn,.nav-btn,.panel-close,.chapter-jump,.s-action,.tech-item,.category-zone{
+  transition:transform .08s ease,background-color .12s ease,border-color .12s ease,opacity .12s ease
+}
+
+/* Swipe yalnız pasif sunum yüzeylerinde çalışır; bu sınıf kısa geri bildirim verir. */
+.slide-viewport.touch-swipe-next:after,.slide-viewport.touch-swipe-prev:after{
+  position:absolute;top:50%;z-index:20;display:grid;place-items:center;width:62px;height:62px;
+  margin-top:-31px;border-radius:50%;background:rgba(18,24,43,.86);color:#fff;
+  font:600 28px "IBM Plex Mono";pointer-events:none;animation:touchPulse .22s ease both
+}
+.slide-viewport.touch-swipe-next:after{content:'→';right:22px}
+.slide-viewport.touch-swipe-prev:after{content:'←';left:22px}
+@keyframes touchPulse{from{opacity:0;transform:scale(.82)}to{opacity:1;transform:scale(1)}}
+
+/* Klavye/mouse kullanan öğretmen için erişilebilir odak korunur. */
+button:focus-visible,a:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+
+@media (hover:none),(pointer:coarse){
+  .lesson-top-actions{gap:9px}
+  .chrome-btn{min-height:50px;padding:0 18px;font-size:10px}
+  .nav-btn{min-width:82px;min-height:62px}
+  .panel{width:min(500px,96vw)}
+  .panel-close{width:52px;height:52px}
+  .chapter-jump{min-height:82px}
+  .teacher-block p{font-size:15px;line-height:1.65}
+}
+
+@media (max-width:820px){
+  .lesson-app{grid-template-rows:62px minmax(0,1fr) 72px}
+  .nav-btn{min-width:66px;min-height:54px}
+  .chrome-btn{min-height:44px;padding:0 12px}
+}

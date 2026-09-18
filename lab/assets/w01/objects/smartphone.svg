@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 360" role="img" aria-label="Akıllı telefon illüstrasyonu">
+  <g fill="none" stroke="#12182B" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="176" y="28" width="168" height="304" rx="28" fill="#F8F4EA"/>
+    <rect x="194" y="56" width="132" height="228" rx="10" fill="#EAF4F1"/>
+    <path d="M234 42h52"/>
+    <circle cx="260" cy="308" r="9" fill="#EFE7D7"/>
+  </g>
+  <g fill="none" stroke="#1E8A80" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M218 108h84v54h-36l-22 18v-18h-26z"/>
+    <circle cx="238" cy="135" r="3" fill="#1E8A80"/><circle cx="260" cy="135" r="3" fill="#1E8A80"/><circle cx="282" cy="135" r="3" fill="#1E8A80"/>
+    <path d="M216 222c22-28 66-28 88 0"/>
+    <path d="M228 210c16-17 48-17 64 0"/>
+    <circle cx="260" cy="230" r="6" fill="#E2A63B" stroke="#E2A63B"/>
+  </g>
+</svg>
