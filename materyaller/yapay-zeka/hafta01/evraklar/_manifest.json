@@ -1,0 +1,14 @@
+{
+  "01-ogretmen-uygulama-kilavuzu": {
+    "label": "Öğretmen Uygulama Kılavuzu",
+    "group": "teacher"
+  },
+  "02-ogrenci-calisma-kagidi": {
+    "label": "Öğrenci Çalışma Kâğıdı",
+    "group": "student"
+  },
+  "03-oz-degerlendirme-konu-kavrama": {
+    "label": "Öz Değerlendirme ve Konu Kavrama",
+    "group": "assessment"
+  }
+}
