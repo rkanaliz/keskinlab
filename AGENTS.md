@@ -229,3 +229,57 @@ Do not dump long internal logs or implementation diaries unless the user asks fo
 A successful KeskinLab workflow is not only one where the site improves. It is one where the project owner spends less time supervising routine execution.
 
 Optimize for completed, verified work with fewer interruptions.
+
+## KeskinLab Codex Talimatları
+
+### Yayın ve Hosting Politikası
+
+Bu proje ChatGPT Sites / OpenAI Sites kullanmaz.
+
+KeskinLab yalnızca mevcut GitHub + Cloudflare Pages altyapısı üzerinden yayınlanır.
+
+KeskinLab'ın tek production hattı:
+
+`GitHub origin/main` → `Cloudflare Pages projesi keskinlab`
+
+YASAK:
+
+- ChatGPT Sites kullanmak
+- `sites:sites-hosting` entegrasyonunu çağırmak
+- `sites.save_site_version` veya başka bir Sites hosting çağrısı yapmak
+- Wrangler ile production deploy yapmak
+- `.openai/hosting.json` oluşturmak veya değiştirmek
+- Yeni hosting/deployment mimarisi kurmak
+- Sites deployment oluşturmak
+- Mevcut Cloudflare akışını başka bir hosting sistemiyle değiştirmek
+
+Bir görevde "deploy", "publish", "yayınla", "siteye ekle", "canlıya al" gibi ifadeler geçerse:
+
+1. Önce mevcut KeskinLab GitHub/Cloudflare yayın yapısını kullan.
+2. ChatGPT Sites'a geçme.
+3. Yeni hosting yapılandırması oluşturma.
+4. Alternatif hosting arama, önerme veya kurma.
+5. Aktif branch `main` değilse production işlemi öncesinde mevcut branch ile `main` arasındaki ilişkiyi kontrol et ve kullanıcıya bildir.
+6. Development branch'inden doğrudan başka bir hosting sistemine production yayını yapma.
+
+Cloudflare Pages proje ayarlarını, dashboard'u, domain'i veya build/deploy konfigürasyonunu kullanıcı açıkça istemedikçe değiştirme.
+
+Mevcut çalışan yayın altyapısını bir görev bahanesiyle yeniden tasarlama.
+
+### Branch Politikası
+
+Aktif geliştirme branch'i: `keskinlab-redesign-2026`
+
+Branch, merge, cherry-pick, rebase veya main'e taşıma işlemlerini kullanıcı açıkça istemedikçe yapma.
+
+Mevcut görev yalnız içerik entegrasyonuysa repo mimarisini veya deployment mimarisini değiştirme.
+
+### Kredi / İşlem Tasarrufu
+
+Zaten başarıyla yapılmış build, validation veya smoke testleri gereksiz yere tekrar çalıştırma.
+
+Yalnız görevin doğruluğu için gerçekten gerekli kontrolleri çalıştır.
+
+Aynı içeriği yeniden üretme.
+
+Kullanıcı açıkça istemedikçe deploy/publish yapma.

@@ -9,5 +9,4 @@ node_modules/
 
 # Generated site data and web derivatives
 generated/
-dist/
 .cache/
