@@ -333,7 +333,38 @@
     if (next) next.disabled = activeMaterialIndex === active.previews.length - 1;
   }
 
-  function renderLessonFiles(mats, resources, week) {
+  var WEEK02_DOCUMENT_TITLES = {
+    '/hafta02/ogrenci-etkinligi/01': 'Günlük Teknoloji Kullanımı Gözlem Formu',
+    '/hafta02/ogrenci-etkinligi/02': 'Öğrenci Öz Değerlendirme Formu',
+    '/hafta02/ogretmen/gozlem-formu/01': 'Öğretmen Gözlem Formu',
+    '/hafta02/ogretmen/uygulama-kilavuzu/01': 'Öğretmen Uygulama Kılavuzu'
+  };
+
+  function week02DocumentTitle(file) {
+    var normalized = String(file || '').replace(/\.[^.]+$/, '');
+    var key = Object.keys(WEEK02_DOCUMENT_TITLES).find(function (candidate) { return normalized.indexOf(candidate) !== -1; });
+    return key ? WEEK02_DOCUMENT_TITLES[key] : '';
+  }
+
+  function groupWeek02Documents(files) {
+    var groups = {};
+    files.forEach(function (file) {
+      // `gozlem-formu/01` ve `uygulama-kilavuzu/01` aynı dosya
+      // numarasını kullanır; yalnız dosya adıyla gruplanırlarsa birbirini
+      // ezerler. Yol + uzantısız dosya adı her materyalin gerçek kimliğidir.
+      var stem = String(file).replace(/\.[^.]+$/, '');
+      if (!groups[stem]) groups[stem] = { pdf: null, docx: null };
+      if (PDF_EXT_RE.test(file)) groups[stem].pdf = file;
+      if (/\.docx$/i.test(file)) groups[stem].docx = file;
+    });
+    return Object.keys(groups).sort().map(function (stem) { return groups[stem]; });
+  }
+
+  function isWeek02File(file) {
+    return String(file || '').indexOf('/5-sinif/hafta02/') !== -1;
+  }
+
+  function renderLessonFiles(mats, resources) {
     if (resources && resources.length) {
       var bundle = resources.find(function (resource) { return resource.group === 'bundle'; });
       var groupLabels = { teacher: 'Öğretmen İçin', student: 'Öğrenci Çalışmaları', assessment: 'Ölçme ve Değerlendirme', theme: 'Tema Görevi' };
@@ -351,10 +382,27 @@
         return resourceRows ? '<div class="resource-group"><h4>' + groupLabels[group] + '</h4>' + resourceRows + '</div>' : '';
       }).join('');
       return '<section class="lesson-files lesson-files-expanded" aria-labelledby="lessonFilesTitle">' +
-        '<div class="resource-files-head"><div><p>HAFTA ' + String(week.n).padStart(2, '0') + ' · DERS DOSYALARI</p><h3 id="lessonFilesTitle">Derste kullanacağın her şey.</h3></div>' +
+        '<div class="resource-files-head"><div><p>HAFTA 01 · DERS DOSYALARI</p><h3 id="lessonFilesTitle">Derste kullanacağın her şey.</h3></div>' +
           (bundle && bundle.pdf ? '<a class="resource-bundle-link" href="' + bundle.pdf + '" target="_blank" rel="noopener">Tüm evrakları aç <span>→</span></a>' : '') +
         '</div><div class="resource-groups">' + groups + '</div>' +
-        '<p class="resource-note">PDF dosyaları yazdırmaya, DOCX dosyaları düzenlemeye hazırdır.</p>' +
+        '<p class="resource-note">PDF dosyaları yazdırmaya, DOCX dosyaları düzenlemeye hazırdır. Tema performans görevi 2. haftada tamamlanır.</p>' +
+      '</section>';
+    }
+    if ((mats['ogrenci-etkinligi'] || []).some(isWeek02File)) {
+      var week02Rows = groupWeek02Documents(mats['ogrenci-etkinligi']).map(function (group) {
+        var title = week02DocumentTitle(group.pdf || group.docx);
+        if (!title) return '';
+        return '<div class="lesson-file-row">' +
+          '<span class="lesson-file-name">' + title + '</span>' +
+          '<span class="lesson-file-actions">' +
+            (group.pdf ? '<a href="' + group.pdf + '" target="_blank" rel="noopener">Aç</a><a href="' + group.pdf + '" download>PDF indir</a>' : '') +
+            (group.docx ? '<a href="' + group.docx + '" download>DOCX indir</a>' : '') +
+          '</span>' +
+        '</div>';
+      }).join('');
+      return '<section class="lesson-files" aria-labelledby="lessonFilesTitle">' +
+        '<h3 class="lesson-files-title" id="lessonFilesTitle">DERS VE ETKİNLİK DOSYALARI</h3>' +
+        '<div class="lesson-files-list">' + week02Rows + '</div>' +
       '</section>';
     }
     var definitions = [
@@ -375,7 +423,6 @@
           : '<span class="material-status">Hazırlanacak</span>') +
       '</div>';
     }).join('');
-    if (!rows || definitions.every(function (definition) { return !(mats[definition.key] || []).some(function (file) { return PDF_EXT_RE.test(file) || /\.docx$/i.test(file); }); })) return '';
     return '<section class="lesson-files" aria-labelledby="lessonFilesTitle">' +
       '<h3 class="lesson-files-title" id="lessonFilesTitle">DERS DOSYALARI</h3>' +
       '<div class="lesson-files-list">' + rows + '</div>' +
@@ -509,7 +556,7 @@
     var el = document.getElementById('weekMaterials');
     var mats = D.materials[String(week.n)] || {};
     var items = [];
-    var lessonFiles = renderLessonFiles(mats, D.resourceBundles && D.resourceBundles[String(week.n)], week);
+    var lessonFiles = renderLessonFiles(mats, D.resourceBundles && D.resourceBundles[String(week.n)]);
     MATERIAL_ORDER.forEach(function (key) {
       var files = mats[key] || [];
       var viewerItem = materialViewerItem(files);
@@ -560,7 +607,14 @@
     var mats = D.materials[String(week.n)] || {};
     if (mats['ogrenci-etkinligi']) links.push('<a href="' + (mats['ogrenci-etkinligi'].find(function (file) { return PDF_EXT_RE.test(file); }) || mats['ogrenci-etkinligi'][0]) + '" class="teacher-link">Çalışma Kâğıdı</a>');
     else links.push('<span class="teacher-link teacher-link-pending">Çalışma Kâğıdı <small>Hazırlanacak</small></span>');
-    if (mats['ogretmen'] && mats['ogretmen']['gozlem-formu']) links.push('<a href="' + (mats['ogretmen']['gozlem-formu'].find(function (file) { return PDF_EXT_RE.test(file); }) || mats['ogretmen']['gozlem-formu'][0]) + '" class="teacher-link">Gözlem Formu</a>');
+    var teacherFiles = mats['ogretmen'] ? Object.keys(mats['ogretmen']).flatMap(function (type) { return mats['ogretmen'][type] || []; }) : [];
+    if (teacherFiles.some(isWeek02File)) {
+      groupWeek02Documents(teacherFiles).forEach(function (group) {
+        var title = week02DocumentTitle(group.pdf || group.docx);
+        if (group.pdf) links.push('<a href="' + group.pdf + '" target="_blank" rel="noopener" class="teacher-link">' + title + ' · Aç</a>');
+        if (group.docx) links.push('<a href="' + group.docx + '" download class="teacher-link">' + title + ' · DOCX indir</a>');
+      });
+    } else if (mats['ogretmen'] && mats['ogretmen']['gozlem-formu']) links.push('<a href="' + (mats['ogretmen']['gozlem-formu'].find(function (file) { return PDF_EXT_RE.test(file); }) || mats['ogretmen']['gozlem-formu'][0]) + '" class="teacher-link">Gözlem Formu</a>');
     else links.push('<span class="teacher-link teacher-link-pending">Gözlem Formu <small>Hazırlanacak</small></span>');
     el.innerHTML = links.join('');
   }
