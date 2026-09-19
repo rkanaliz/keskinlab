@@ -363,11 +363,11 @@ body.v3-modal-open { overflow: hidden; }
 .week-tool-promos {
   grid-area: week-tool;
   display: grid;
-  gap: 14px;
+  gap: 0;
 }
 .week-tool-promo {
   align-self: start;
-  margin-top: 14px;
+  margin-top: 0;
   padding: 22px 18px;
   border-top: 1px solid var(--color-border);
   background: var(--color-surface-subtle);
