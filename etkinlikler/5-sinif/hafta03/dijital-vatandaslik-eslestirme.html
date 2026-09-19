@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#8f2634">
+  <title>Dijital Vatandaşlık Eşleştirme | KeskinLab Önizleme</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dijital-vatandaslik-eslestirme.css">
+</head>
+<body>
+  <main class="activity-shell">
+    <header class="activity-header">
+      <a class="brand" href="/" aria-label="KeskinLab ana sayfa">
+        <span class="brand-mark" aria-hidden="true">K</span>
+        <span>KeskinLab</span>
+      </a>
+      <span class="preview-label">Etkileşim önizlemesi</span>
+    </header>
+
+    <section class="activity-intro" aria-labelledby="activity-title">
+      <p class="eyebrow">5. SINIF · DİJİTAL VATANDAŞLIK</p>
+      <h1 id="activity-title">Doğru alanı bul</h1>
+      <p class="lead">Davranış kartlarını ilgili dijital yaşam alanıyla eşleştir.</p>
+      <button class="text-button" id="helpButton" type="button" aria-expanded="false" aria-controls="instructions">Nasıl oynanır?</button>
+      <div class="instructions" id="instructions" hidden>
+        <p><strong>Bilgisayarda:</strong> Kartı sürükleyip uygun alana bırak.</p>
+        <p><strong>Telefon veya klavyede:</strong> Önce kartı, ardından alanı seç.</p>
+      </div>
+    </section>
+
+    <section class="game" aria-label="Dijital vatandaşlık eşleştirme oyunu">
+      <div class="game-toolbar">
+        <p class="progress"><span id="matchCount">0</span> / <span id="totalCount">12</span> kart yerleştirildi</p>
+        <p class="status" id="statusMessage" aria-live="polite">Bir kart seç veya sürükle.</p>
+        <div class="toolbar-actions">
+          <button class="check-button" id="checkButton" type="button" disabled>Kontrol et</button>
+          <button class="reset-button" id="resetButton" type="button">Yeniden başlat</button>
+        </div>
+      </div>
+
+      <div class="category-grid" id="categoryGrid" aria-label="Kategoriler">
+        <div class="category category-education" role="button" tabindex="0" data-category="education" aria-label="Eğitim alanı">
+          <span class="category-icon" aria-hidden="true">01</span>
+          <span class="category-title">Eğitim</span>
+          <span class="category-hint">Kartları buraya yerleştir</span>
+          <span class="category-count" aria-label="Bu alandaki kart sayısı">0 kart</span>
+          <div class="matched-list"></div>
+        </div>
+        <div class="category category-social" role="button" tabindex="0" data-category="social" aria-label="Sosyal medya alanı">
+          <span class="category-icon" aria-hidden="true">02</span>
+          <span class="category-title">Sosyal medya</span>
+          <span class="category-hint">Kartları buraya yerleştir</span>
+          <span class="category-count" aria-label="Bu alandaki kart sayısı">0 kart</span>
+          <div class="matched-list"></div>
+        </div>
+        <div class="category category-health" role="button" tabindex="0" data-category="health" aria-label="Sağlık alanı">
+          <span class="category-icon" aria-hidden="true">03</span>
+          <span class="category-title">Sağlık</span>
+          <span class="category-hint">Kartları buraya yerleştir</span>
+          <span class="category-count" aria-label="Bu alandaki kart sayısı">0 kart</span>
+          <div class="matched-list"></div>
+        </div>
+        <div class="category category-public" role="button" tabindex="0" data-category="public" aria-label="Kamu hizmetleri alanı">
+          <span class="category-icon" aria-hidden="true">04</span>
+          <span class="category-title">Kamu hizmetleri</span>
+          <span class="category-hint">Kartları buraya yerleştir</span>
+          <span class="category-count" aria-label="Bu alandaki kart sayısı">0 kart</span>
+          <div class="matched-list"></div>
+        </div>
+      </div>
+
+      <div class="cards-section">
+        <div class="cards-heading">
+          <h2>Kartlar</h2>
+          <p id="selectionHint">Önce bir kart seç.</p>
+        </div>
+        <div class="cards-grid" id="cardsGrid"></div>
+      </div>
+
+      <div class="completion" id="completion" hidden role="status">
+        <span aria-hidden="true">✓</span>
+        <div>
+          <strong>Tüm eşleşmeler doğru.</strong>
+          <p>Dijital ortamlarda güvenli ve sorumlu davranışları doğru alanlarla buluşturdun.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="dijital-vatandaslik-eslestirme.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#8f2634">
+  <title>Dijital Kavramlar Sınıflandırma | KeskinLab Önizleme</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dijital-kavramlar-siniflandirma.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <a class="brand" href="/" aria-label="KeskinLab ana sayfa">
+        <span class="brand-mark" aria-hidden="true">K</span>
+        <span>KeskinLab</span>
+      </a>
+      <span class="preview-label">Etkileşim önizlemesi</span>
+    </header>
+
+    <section class="hero" aria-labelledby="pageTitle">
+      <p class="eyebrow">5. SINIF · DİJİTAL VATANDAŞLIK</p>
+      <h1 id="pageTitle">Dijital Kimlik · Dijital Ayak İzi · Dijital Vatandaşlık</h1>
+      <p>Her kavramda dört bölümü doldur: Tanım, Özellikler, Örnekler ve Örnek Olmayanlar.</p>
+      <p class="hero-note">Doğru eşleştir, sırayla ilerle.</p>
+
+      <nav class="stage-nav" aria-label="Kavram aşamaları">
+        <button class="stage-tab is-active" type="button" data-stage-tab="identity" aria-current="step">
+          <span class="stage-number">1</span>
+          <span>Dijital Kimlik</span>
+          <small>Kilidi aç</small>
+        </button>
+        <button class="stage-tab" type="button" data-stage-tab="footprint" disabled>
+          <span class="stage-number">2</span>
+          <span>Dijital Ayak İzi</span>
+          <small>Kilitli</small>
+        </button>
+        <button class="stage-tab" type="button" data-stage-tab="citizenship" disabled>
+          <span class="stage-number">3</span>
+          <span>Dijital Vatandaşlık</span>
+          <small>Kilitli</small>
+        </button>
+      </nav>
+    </section>
+
+    <section class="activity" aria-labelledby="stageTitle">
+      <div class="activity-top">
+        <div>
+          <p class="stage-kicker" id="stageKicker"></p>
+          <h2 id="stageTitle"></h2>
+          <p>Öğeleri doğru bölüme yerleştir. Hepsi doğru olduğunda sonraki kavram açılır.</p>
+        </div>
+        <div class="activity-actions">
+          <span class="remaining">Kalan öğe: <strong id="remainingCount">7</strong></span>
+          <button class="secondary-button" id="shuffleButton" type="button">Karıştır</button>
+        </div>
+      </div>
+
+      <p class="status" id="statusMessage" aria-live="polite">Bir kart seç veya sürükle.</p>
+
+      <div class="buckets" id="buckets" aria-label="Sınıflandırma alanları">
+        <section class="bucket bucket-definition" data-bucket="definition">
+          <header><h3>Tanım</h3><span class="bucket-count">0/1</span></header>
+          <div class="drop-zone" role="button" tabindex="0" aria-label="Tanım alanı"><span>Öğeleri buraya bırak</span><div class="placed-items"></div></div>
+        </section>
+        <section class="bucket bucket-features" data-bucket="features">
+          <header><h3>Özellikler</h3><span class="bucket-count">0/2</span></header>
+          <div class="drop-zone" role="button" tabindex="0" aria-label="Özellikler alanı"><span>Öğeleri buraya bırak</span><div class="placed-items"></div></div>
+        </section>
+        <section class="bucket bucket-examples" data-bucket="examples">
+          <header><h3>Örnekler</h3><span class="bucket-count">0/2</span></header>
+          <div class="drop-zone" role="button" tabindex="0" aria-label="Örnekler alanı"><span>Öğeleri buraya bırak</span><div class="placed-items"></div></div>
+        </section>
+        <section class="bucket bucket-nonexamples" data-bucket="nonexamples">
+          <header><h3>Örnek Olmayanlar</h3><span class="bucket-count">0/2</span></header>
+          <div class="drop-zone" role="button" tabindex="0" aria-label="Örnek olmayanlar alanı"><span>Öğeleri buraya bırak</span><div class="placed-items"></div></div>
+        </section>
+      </div>
+
+      <div class="card-bank">
+        <div class="card-bank-heading">
+          <h3>Öğeler</h3>
+          <p>Sürükle-bırak veya kartı seçip hedefe dokun.</p>
+        </div>
+        <div class="cards" id="cards"></div>
+      </div>
+    </section>
+
+    <footer class="app-footer">
+      <span>Frayer Modeli: Tanım · Özellikler · Örnekler · Örnek Olmayanlar</span>
+      <button class="restart-button" id="restartButton" type="button">Baştan başla</button>
+    </footer>
+  </main>
+
+  <div class="dialog" id="completionDialog" hidden role="dialog" aria-modal="true" aria-labelledby="dialogTitle">
+    <div class="dialog-backdrop"></div>
+    <div class="dialog-panel">
+      <span class="dialog-symbol" aria-hidden="true">✓</span>
+      <h2 id="dialogTitle">Tebrikler!</h2>
+      <p>Üç kavramı da başarıyla tamamladın.</p>
+      <div class="dialog-actions">
+        <button class="primary-button" id="playAgainButton" type="button">Tekrar oyna</button>
+        <button class="secondary-button" id="closeDialogButton" type="button">Kapat</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="dijital-kavramlar-siniflandirma.js" defer></script>
+</body>
+</html>

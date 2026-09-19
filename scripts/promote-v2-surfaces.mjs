@@ -147,13 +147,18 @@ for (const config of courses) {
       konu: ['robotik', 'yapay-zeka'].includes(config.key) ? stripCodes(week.konu) : week.konu,
       cikti: week.ogrenme_ciktisi || (week.kazanimlar || []).join(' '),
       surec: week.surec_bilesenleri || (week.etkinlik ? [week.etkinlik] : []),
+      ...(Object.hasOwn(week, 'icerik_ders_saati') ? { icerik_ders_saati: week.icerik_ders_saati } : {}),
+      ...(Object.hasOwn(week, 'okul_temelli_planlama_saati') ? { okul_temelli_planlama_saati: week.okul_temelli_planlama_saati } : {}),
+      ...(Array.isArray(week.dersler) ? { dersler: week.dersler } : {}),
+      ...(week.kilavuz ? { kilavuz: week.kilavuz } : {}),
+      ...(Object.hasOwn(week, 'gunluk_plan_yok') ? { gunluk_plan_yok: week.gunluk_plan_yok } : {}),
       ozel: special,
       baslangic: week.baslangic,
       bitis: week.bitis
     };
   });
   const themes = Object.fromEntries(themeNames.map((name, index) => [String(index + 1), name]));
-  const dailyPlans = Object.fromEntries(weeks.map(w => [w.n, `/gunluk-planlar-${config.folder}/hafta${String(w.n).padStart(2, '0')}-${config.suffix}.docx`]));
+  const dailyPlans = Object.fromEntries(weeks.filter(w => !w.gunluk_plan_yok).map(w => [w.n, `/gunluk-planlar-${config.folder}/hafta${String(w.n).padStart(2, '0')}-${config.suffix}.docx`]));
   const materials = {};
   const resourceBundles = {};
   const manifestCourse = materialManifest.courses?.[config.key];
@@ -213,7 +218,8 @@ for (const config of courses) {
   else html = html.replace('/5-sinif-bty-cerceve-yillik-plan.xlsx', config.annual);
   html = html.replace('<title>5. Sınıf BTY — KeskinLab</title>', `<title>${config.title} — KeskinLab</title>`);
   html = html.replace('<a href="/hakkinda">Gizlilik</a>', '<a href="/dijital-araclar">Dijital Araçlar</a>');
-  const legacyConfig = JSON.stringify({ source: config.key, plan: `gunluk-planlar-${config.folder}/hafta{n}-${config.suffix}.docx` });
+  const noDailyPlans = weeks.filter(w => w.gunluk_plan_yok).map(w => w.n);
+  const legacyConfig = JSON.stringify({ source: config.key, plan: `gunluk-planlar-${config.folder}/hafta{n}-${config.suffix}.docx`, ...(noDailyPlans.length ? { noDailyPlans } : {}) });
   html = html.replace(`<script src="/course-data-${config.key}.js?v=20260910o"></script>`, `<script>window.KESKINLAB_COURSE=${legacyConfig};</script>\n<script src="/course-data-${config.key}.js?v=20260910o"></script>`);
   html = applySharedShell(html, activeHref);
   await writeFile(config.file, html);

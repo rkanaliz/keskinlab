@@ -360,8 +360,12 @@ body.v3-modal-open { overflow: hidden; }
 }
 .material-label-short { display: none; }
 .material-viewer.has-week-tool { grid-template-areas: "stage selector" "stage week-tool"; }
-.week-tool-promo {
+.week-tool-promos {
   grid-area: week-tool;
+  display: grid;
+  gap: 14px;
+}
+.week-tool-promo {
   align-self: start;
   margin-top: 14px;
   padding: 22px 18px;
@@ -503,6 +507,8 @@ body.v3-modal-open { overflow: hidden; }
   letter-spacing: .04em;
   text-transform: uppercase;
 }
+.teacher-week-note { margin: 4px 0 0; padding: 10px 11px; border-left: 3px solid var(--color-accent); background: var(--color-surface); color: var(--color-text-secondary); font-size: 12px; line-height: 1.5; }
+.teacher-week-note b { color: var(--color-text); }
 .teacher-empty { font-size: 13px; color: var(--color-text-muted); font-style: italic; }
 
 .curriculum-details summary { font-size: 13px; font-weight: 500; color: var(--color-accent); cursor: pointer; }
