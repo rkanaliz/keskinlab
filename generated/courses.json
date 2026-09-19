@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-19T08:52:44.095Z",
+  "generatedAt": "2026-09-19T12:57:04.048Z",
   "courses": {
     "5-sinif": {
       "title": "5. Sınıf BTY",
@@ -254,33 +254,71 @@
           "ders_saati": "1+1",
           "tema": "Bilişim Teknolojilerinin Hayatımızdaki Yeri",
           "unite": "",
-          "konu": "Bilişim Teknolojilerinin Etkileri ve Dijital Sağlık (Kapanış/Pekiştirme) / Dijital Kimlik",
-          "ogrenme_ciktisi": "BTY.5.1.2. Bilişim teknolojilerinin birey ve toplum üzerindeki etkilerini özetleyebilme (kapanış ve pekiştirme) • BTY.5.1.3. Dijital vatandaşlık uygulamalarını sınıflandırabilme (bu hafta yalnız a süreci: dijital kimlik)",
+          "konu": "Dijital Kimlik, Dijital Ayak İzi ve Dijital Vatandaşlık",
+          "ogrenme_ciktisi": "BTY.5.1.3. Dijital vatandaşlık uygulamalarını sınıflandırabilme",
           "kazanimlar": [],
           "surec_bilesenleri": [
-            "a) Farklı bilişim teknolojilerinin olumlu ve olumsuz yönleri ile ilgili çözümleme yapar.",
-            "b) Farklı bilişim teknolojilerinin kullanımına göre fiziksel güvenlik önlemleri ile ilgili sınıflandırma yapar.",
-            "c) Bilişim teknolojilerini kullanmanın beden ve ruh sağlığı üzerindeki etkilerini kendi cümleleriyle ifade eder.",
-            "a) Dijital kimlik kavramını belirler."
+            "a) Dijital kimlik kavramını belirler.",
+            "b) Dijital ayak izinin etkilerini bilişim teknolojilerinin kullanım alanları ile ilişkilendirir.",
+            "c) Dijital vatandaşlık uygulamalarını kullanım alanlarına göre gruplandırır."
           ],
           "etkinlik": "",
           "ozel_hafta": false,
           "kurban_bayrami_cakisiyor": false,
           "belirli_gun": "",
+          "sinif_araclari": [
+            {
+              "label": "Dijital Vatandaşlık Eşleştirme",
+              "aciklama": "Dijital yaşam alanlarındaki güvenli ve sorumlu davranışları eşleştirin.",
+              "href": "/etkinlikler/5-sinif/hafta03/dijital-vatandaslik-eslestirme.html"
+            },
+            {
+              "label": "Dijital Kavramlar Sınıflandırma",
+              "aciklama": "Dijital kimlik, dijital ayak izi ve dijital vatandaşlık kavramlarını Frayer modeliyle sınıflandırın.",
+              "href": "/etkinlikler/5-sinif/hafta03/dijital-kavramlar-siniflandirma.html"
+            }
+          ],
+          "ogretmen_notu": "10. ekrandaki arama adı temsili örnektir; sınıf uygulamasında öğretmen kendi ad-soyadını aratmalıdır.",
+          "ogrenci_aciklama": "Dijital kimliğini ve dijital ayak izini tanıyacak; dijital ortamlarda güvenli, etik ve sorumlu davranışları kullanım alanlarına göre sınıflandıracaksın.",
+          "sinif_akisi": [
+            "Dijital kimliği tanı",
+            "Ayak izini ilişkilendir",
+            "Dijital vatandaşlığı sınıflandır"
+          ],
+          "gunluk_plan_yok": true,
           "sourceKind": "bty",
           "source": {
             "hafta_no": 3,
             "tarih_araligi": "28 Eylül - 02 Ekim",
             "ders_saati": "1+1",
             "tema": "Bilişim Teknolojilerinin Hayatımızdaki Yeri",
-            "konu": "Bilişim Teknolojilerinin Etkileri ve Dijital Sağlık (Kapanış/Pekiştirme) / Dijital Kimlik",
-            "ogrenme_ciktisi": "BTY.5.1.2. Bilişim teknolojilerinin birey ve toplum üzerindeki etkilerini özetleyebilme (kapanış ve pekiştirme) • BTY.5.1.3. Dijital vatandaşlık uygulamalarını sınıflandırabilme (bu hafta yalnız a süreci: dijital kimlik)",
+            "konu": "Dijital Kimlik, Dijital Ayak İzi ve Dijital Vatandaşlık",
+            "ogrenme_ciktisi": "BTY.5.1.3. Dijital vatandaşlık uygulamalarını sınıflandırabilme",
             "surec_bilesenleri": [
-              "a) Farklı bilişim teknolojilerinin olumlu ve olumsuz yönleri ile ilgili çözümleme yapar.",
-              "b) Farklı bilişim teknolojilerinin kullanımına göre fiziksel güvenlik önlemleri ile ilgili sınıflandırma yapar.",
-              "c) Bilişim teknolojilerini kullanmanın beden ve ruh sağlığı üzerindeki etkilerini kendi cümleleriyle ifade eder.",
-              "a) Dijital kimlik kavramını belirler."
+              "a) Dijital kimlik kavramını belirler.",
+              "b) Dijital ayak izinin etkilerini bilişim teknolojilerinin kullanım alanları ile ilişkilendirir.",
+              "c) Dijital vatandaşlık uygulamalarını kullanım alanlarına göre gruplandırır."
             ],
+            "sinif_araclari": [
+              {
+                "label": "Dijital Vatandaşlık Eşleştirme",
+                "aciklama": "Dijital yaşam alanlarındaki güvenli ve sorumlu davranışları eşleştirin.",
+                "href": "/etkinlikler/5-sinif/hafta03/dijital-vatandaslik-eslestirme.html"
+              },
+              {
+                "label": "Dijital Kavramlar Sınıflandırma",
+                "aciklama": "Dijital kimlik, dijital ayak izi ve dijital vatandaşlık kavramlarını Frayer modeliyle sınıflandırın.",
+                "href": "/etkinlikler/5-sinif/hafta03/dijital-kavramlar-siniflandirma.html"
+              }
+            ],
+            "ogretmen_notu": "10. ekrandaki arama adı temsili örnektir; sınıf uygulamasında öğretmen kendi ad-soyadını aratmalıdır.",
+            "ogrenci_aciklama": "Dijital kimliğini ve dijital ayak izini tanıyacak; dijital ortamlarda güvenli, etik ve sorumlu davranışları kullanım alanlarına göre sınıflandıracaksın.",
+            "sinif_akisi": [
+              "Dijital kimliği tanı",
+              "Ayak izini ilişkilendir",
+              "Dijital vatandaşlığı sınıflandır"
+            ],
+            "gunluk_plan_yok": true,
             "kurban_bayrami_cakisiyor": false,
             "ozel_hafta": false,
             "baslangic": "2026-09-28",

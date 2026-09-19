@@ -3,8 +3,16 @@
     "label": "Dijital Kimlik Kartım",
     "group": "student"
   },
-  "02-ogretmen-uygulama-kilavuzu": {
-    "label": "Öğretmen Uygulama Kılavuzu",
+  "02-dijital-ayak-izi-testi": {
+    "label": "Dijital Ayak İzi Testi",
+    "group": "assessment"
+  },
+  "03-ogretmen-gozlem-formu": {
+    "label": "Öğretmen Gözlem Formu",
     "group": "teacher"
+  },
+  "04-oz-degerlendirme-formu": {
+    "label": "Öz Değerlendirme Formu",
+    "group": "assessment"
   }
 }

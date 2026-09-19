@@ -18,7 +18,7 @@ function stripCodes(text = '') {
 
 function optionalWeekFields(week) {
   const result = {};
-  for (const key of ['icerik_ders_saati', 'okul_temelli_planlama_saati', 'dersler', 'kilavuz']) {
+  for (const key of ['icerik_ders_saati', 'okul_temelli_planlama_saati', 'dersler', 'kilavuz', 'sinif_araclari', 'ogretmen_notu', 'ogrenci_aciklama', 'sinif_akisi', 'gunluk_plan_yok']) {
     if (Object.hasOwn(week, key)) result[key] = week[key];
   }
   return result;
@@ -56,7 +56,7 @@ for (const config of courses) {
     };
   });
   const themes = Object.fromEntries(themeNames.map((name, index) => [String(index + 1), name]));
-  const dailyPlans = Object.fromEntries(weeks.map(week => [week.n, `/gunluk-planlar-${config.folder}/hafta${String(week.n).padStart(2, '0')}-${config.suffix}.docx`]));
+  const dailyPlans = Object.fromEntries(weeks.filter(week => !week.gunluk_plan_yok).map(week => [week.n, `/gunluk-planlar-${config.folder}/hafta${String(week.n).padStart(2, '0')}-${config.suffix}.docx`]));
   const materials = {};
   const resourceBundles = {};
   for (const week of Object.values(materialManifest.courses?.[config.key]?.weeks || {})) {

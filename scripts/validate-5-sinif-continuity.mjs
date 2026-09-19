@@ -134,22 +134,13 @@ async function validateAgentsInstructions() {
 async function validateApplicationScope() {
   const canonical = JSON.parse(await fs.readFile(path.join(ROOT, 'data', '5-sinif.json'), 'utf8'));
   const week03 = canonical.weeks.find((week) => week.hafta_no === 3);
-  const week04 = canonical.weeks.find((week) => week.hafta_no === 4);
   const week03Expected = [
-    'a) Farklı bilişim teknolojilerinin olumlu ve olumsuz yönleri ile ilgili çözümleme yapar.',
-    'b) Farklı bilişim teknolojilerinin kullanımına göre fiziksel güvenlik önlemleri ile ilgili sınıflandırma yapar.',
-    'c) Bilişim teknolojilerini kullanmanın beden ve ruh sağlığı üzerindeki etkilerini kendi cümleleriyle ifade eder.',
-    'a) Dijital kimlik kavramını belirler.'
-  ];
-  const week04Expected = [
+    'a) Dijital kimlik kavramını belirler.',
     'b) Dijital ayak izinin etkilerini bilişim teknolojilerinin kullanım alanları ile ilişkilendirir.',
     'c) Dijital vatandaşlık uygulamalarını kullanım alanlarına göre gruplandırır.'
   ];
   if (JSON.stringify(week03?.surec_bilesenleri) !== JSON.stringify(week03Expected)) {
-    fail('data/5-sinif.json week 03 must contain BTY.5.1.2 closure plus only BTY.5.1.3.a');
-  }
-  if (JSON.stringify(week04?.surec_bilesenleri) !== JSON.stringify(week04Expected)) {
-    fail('data/5-sinif.json week 04 must start with BTY.5.1.3.b and continue with c');
+    fail('data/5-sinif.json week 03 must contain all BTY.5.1.3 a-b-c process components');
   }
 
   let derived;
@@ -161,9 +152,7 @@ async function validateApplicationScope() {
     return;
   }
   const derived03 = derived.weeks?.find((week) => week.n === 3);
-  const derived04 = derived.weeks?.find((week) => week.n === 4);
   if (JSON.stringify(derived03?.surec) !== JSON.stringify(week03Expected)) fail('course-data-5-sinif.js week 03 is stale');
-  if (JSON.stringify(derived04?.surec) !== JSON.stringify(week04Expected)) fail('course-data-5-sinif.js week 04 is stale');
 }
 
 function validateQuarantine(ledger) {

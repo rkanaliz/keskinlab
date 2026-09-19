@@ -35,6 +35,9 @@
   // eklenecek) haftalarda güvenli, mekanik olmayan bir yedek kullanılır.
   // ---------------------------------------------------------------
   function deriveFlow(week) {
+    if (Array.isArray(week.sinif_akisi) && week.sinif_akisi.length) {
+      return week.sinif_akisi.map(function (title) { return { title: title }; });
+    }
     if (week.n === 1) return D.week1Flow;
     if (week.ozel) return [];
     var copy = D.studentCopy && D.studentCopy[String(week.n)];
@@ -46,6 +49,7 @@
 
   function studentExplainer(week) {
     if (week.ozel) return null;
+    if (week.ogrenci_aciklama) return week.ogrenci_aciklama;
     var copy = D.studentCopy && D.studentCopy[String(week.n)];
     if (copy && copy.explainer) return copy.explainer;
     if (!week.cikti) return null;
@@ -364,7 +368,7 @@
     return String(file || '').indexOf('/5-sinif/hafta02/') !== -1;
   }
 
-  function renderLessonFiles(mats, resources) {
+  function renderLessonFiles(mats, resources, weekNumber) {
     if (resources && resources.length) {
       var bundle = resources.find(function (resource) { return resource.group === 'bundle'; });
       var groupLabels = { teacher: 'Öğretmen İçin', student: 'Öğrenci Çalışmaları', assessment: 'Ölçme ve Değerlendirme', theme: 'Tema Görevi' };
@@ -382,10 +386,10 @@
         return resourceRows ? '<div class="resource-group"><h4>' + groupLabels[group] + '</h4>' + resourceRows + '</div>' : '';
       }).join('');
       return '<section class="lesson-files lesson-files-expanded" aria-labelledby="lessonFilesTitle">' +
-        '<div class="resource-files-head"><div><p>HAFTA 01 · DERS DOSYALARI</p><h3 id="lessonFilesTitle">Derste kullanacağın her şey.</h3></div>' +
+        '<div class="resource-files-head"><div><p>HAFTA ' + String(weekNumber).padStart(2, '0') + ' · DERS DOSYALARI</p><h3 id="lessonFilesTitle">Derste kullanacağın her şey.</h3></div>' +
           (bundle && bundle.pdf ? '<a class="resource-bundle-link" href="' + bundle.pdf + '" target="_blank" rel="noopener">Tüm evrakları aç <span>→</span></a>' : '') +
         '</div><div class="resource-groups">' + groups + '</div>' +
-        '<p class="resource-note">PDF dosyaları yazdırmaya, DOCX dosyaları düzenlemeye hazırdır. Tema performans görevi 2. haftada tamamlanır.</p>' +
+        '<p class="resource-note">PDF dosyaları yazdırmaya, DOCX dosyaları düzenlemeye hazırdır.</p>' +
       '</section>';
     }
     if ((mats['ogrenci-etkinligi'] || []).some(isWeek02File)) {
@@ -500,14 +504,21 @@
           '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 3H3v4M13 3h4v4M17 13v4h-4M7 17H3v-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
         '</button>'
       : '';
-    var hasWeekTool = D.course && D.course.codePrefix === '5-sinif' && week.n === 1;
+    var defaultWeekTools = D.course && D.course.codePrefix === '5-sinif' && week.n === 1
+      ? [{ label: 'Grup & Kelime Kavanozu', description: 'Öğrencileri gruplara ayırın ve haftanın beş kavramını rastgele dağıtın.', href: 'kelime-kavanozu.html' }]
+      : [];
+    var weekTools = Array.isArray(week.sinif_araclari) ? week.sinif_araclari : defaultWeekTools;
+    var hasWeekTool = weekTools.length > 0;
     var weekTool = hasWeekTool
-      ? '<aside class="week-tool-promo" aria-labelledby="weekToolTitle">' +
-          '<p>BU HAFTANIN SINIF ARACI</p>' +
-          '<h3 id="weekToolTitle">Grup &amp; Kelime Kavanozu</h3>' +
-          '<span>Öğrencileri gruplara ayırın ve haftanın beş kavramını rastgele dağıtın.</span>' +
-          '<a href="kelime-kavanozu.html">Aracı aç <b>→</b></a>' +
-        '</aside>'
+      ? '<div class="week-tool-promos">' + weekTools.map(function (tool, index) {
+          var titleId = 'weekToolTitle' + index;
+          return '<aside class="week-tool-promo" aria-labelledby="' + titleId + '">' +
+            '<p>BU HAFTANIN SINIF ARACI</p>' +
+            '<h3 id="' + titleId + '">' + tool.label + '</h3>' +
+            '<span>' + tool.aciklama + '</span>' +
+            '<a href="' + tool.href + '">Aracı aç <b>→</b></a>' +
+          '</aside>';
+        }).join('') + '</div>'
       : '';
 
     el.innerHTML =
@@ -556,13 +567,13 @@
     var el = document.getElementById('weekMaterials');
     var mats = D.materials[String(week.n)] || {};
     var items = [];
-    var lessonFiles = renderLessonFiles(mats, D.resourceBundles && D.resourceBundles[String(week.n)]);
+    var lessonFiles = renderLessonFiles(mats, D.resourceBundles && D.resourceBundles[String(week.n)], week.n);
     MATERIAL_ORDER.forEach(function (key) {
       var files = mats[key] || [];
       var viewerItem = materialViewerItem(files);
       viewerItem.key = key;
       viewerItem.label = MATERIAL_LABELS[key] || key;
-      if (week.n === 3 && key === 'hafta-ozeti' && !viewerItem.previews.length) return;
+      if (week.n === 3 && !viewerItem.previews.length) return;
       items.push(viewerItem);
     });
     var firstAvailable = items.find(function (item) { return item.previews.length; });
@@ -604,11 +615,26 @@
     var links = [];
     var plan = D.dailyPlans[week.n];
     if (plan) links.push('<a href="' + plan + '" class="teacher-link">Günlük Ders Planı</a>');
+    var resources = D.resourceBundles && D.resourceBundles[String(week.n)];
+    if (resources && resources.length) {
+      var studentResource = resources.find(function (resource) { return resource.group === 'student'; });
+      if (studentResource && (studentResource.pdf || studentResource.docx)) {
+        links.push('<a href="' + (studentResource.pdf || studentResource.docx) + '" class="teacher-link">Çalışma Kâğıdı</a>');
+      }
+      resources.filter(function (resource) { return resource.group === 'teacher'; }).forEach(function (resource) {
+        if (resource.pdf) links.push('<a href="' + resource.pdf + '" target="_blank" rel="noopener" class="teacher-link">' + resource.label + ' · Aç</a>');
+        if (resource.docx) links.push('<a href="' + resource.docx + '" download class="teacher-link">' + resource.label + ' · DOCX indir</a>');
+      });
+    }
     var mats = D.materials[String(week.n)] || {};
-    if (mats['ogrenci-etkinligi']) links.push('<a href="' + (mats['ogrenci-etkinligi'].find(function (file) { return PDF_EXT_RE.test(file); }) || mats['ogrenci-etkinligi'][0]) + '" class="teacher-link">Çalışma Kâğıdı</a>');
-    else links.push('<span class="teacher-link teacher-link-pending">Çalışma Kâğıdı <small>Hazırlanacak</small></span>');
+    if (!resources || !resources.length) {
+      if (mats['ogrenci-etkinligi']) links.push('<a href="' + (mats['ogrenci-etkinligi'].find(function (file) { return PDF_EXT_RE.test(file); }) || mats['ogrenci-etkinligi'][0]) + '" class="teacher-link">Çalışma Kâğıdı</a>');
+      else links.push('<span class="teacher-link teacher-link-pending">Çalışma Kâğıdı <small>Hazırlanacak</small></span>');
+    }
     var teacherFiles = mats['ogretmen'] ? Object.keys(mats['ogretmen']).flatMap(function (type) { return mats['ogretmen'][type] || []; }) : [];
-    if (teacherFiles.some(isWeek02File)) {
+    if (resources && resources.some(function (resource) { return resource.group === 'teacher'; })) {
+      // Evrak manifesti öğretmen dosyalarını yukarıda gerçek formatlarıyla bağladı.
+    } else if (teacherFiles.some(isWeek02File)) {
       groupWeek02Documents(teacherFiles).forEach(function (group) {
         var title = week02DocumentTitle(group.pdf || group.docx);
         if (group.pdf) links.push('<a href="' + group.pdf + '" target="_blank" rel="noopener" class="teacher-link">' + title + ' · Aç</a>');
@@ -616,6 +642,7 @@
       });
     } else if (mats['ogretmen'] && mats['ogretmen']['gozlem-formu']) links.push('<a href="' + (mats['ogretmen']['gozlem-formu'].find(function (file) { return PDF_EXT_RE.test(file); }) || mats['ogretmen']['gozlem-formu'][0]) + '" class="teacher-link">Gözlem Formu</a>');
     else links.push('<span class="teacher-link teacher-link-pending">Gözlem Formu <small>Hazırlanacak</small></span>');
+    if (week.ogretmen_notu) links.push('<p class="teacher-week-note"><b>Öğretmen notu:</b> ' + week.ogretmen_notu + '</p>');
     el.innerHTML = links.join('');
   }
 

@@ -123,8 +123,8 @@
     },
     {
       "week": 3,
-      "packageStatus": "approved-complete-at-partial-outcome-boundary",
-      "actualScope": "BTY.5.1.2'nin etkiler, fiziksel önlemler ve beden/ruh sağlığı boyutlarının pekiştirilerek kapatılması; dijital kimliğin tanımı, bileşenleri, kişisel bilgi/gizlilik tercihleri ve çevrim içi davranışların kimliği temsil etmesi.",
+      "packageStatus": "approved-complete",
+      "actualScope": "BTY.5.1.3 kapsamında dijital kimlik, dijital ayak izi ve dijital vatandaşlık uygulamaları: kavramların tanımı, özellikleri, örnekleri ve örnek olmayanları; dijital ayak izinin kullanım alanlarındaki etkileri; dijital vatandaşlık uygulamalarını kullanım alanlarına göre sınıflandırma.",
       "learningOutcomes": [
         {
           "code": "BTY.5.1.2",
@@ -151,7 +151,7 @@
         {
           "code": "BTY.5.1.3",
           "title": "Dijital vatandaşlık uygulamalarını sınıflandırabilme",
-          "completion": "partial",
+          "completion": "complete",
           "processComponents": [
             {
               "id": "a",
@@ -161,13 +161,12 @@
             {
               "id": "b",
               "text": "Dijital ayak izinin etkilerini bilişim teknolojilerinin kullanım alanları ile ilişkilendirir.",
-              "status": "not-yet-taught",
-              "evidence": "Sunum 18, dijital ayak izi öğretimini bir sonraki derse bırakılan soru olarak kurar."
+              "status": "completed"
             },
             {
               "id": "c",
               "text": "Dijital vatandaşlık uygulamalarını kullanım alanlarına göre gruplandırır.",
-              "status": "not-yet-taught"
+              "status": "completed"
             }
           ]
         }
@@ -175,20 +174,29 @@
       "materialPackage": {
         "root": "materyaller/5-sinif/hafta03",
         "presentationSlides": 18,
-        "lessonNoteImages": 3,
-        "infographics": 1,
         "documentsManifest": "evraklar/_manifest.json",
-        "studentDocuments": ["evraklar/01-dijital-kimlik-kartim.pdf", "evraklar/01-dijital-kimlik-kartim.docx"],
-        "teacherDocuments": ["evraklar/02-ogretmen-uygulama-kilavuzu.pdf", "evraklar/02-ogretmen-uygulama-kilavuzu.docx"]
+        "studentDocuments": [
+          "evraklar/01-dijital-kimlik-kartim.pdf",
+          "evraklar/01-dijital-kimlik-kartim.docx",
+          "evraklar/02-dijital-ayak-izi-testi.pdf",
+          "evraklar/02-dijital-ayak-izi-testi.docx",
+          "evraklar/04-oz-degerlendirme-formu.pdf",
+          "evraklar/04-oz-degerlendirme-formu.docx"
+        ],
+        "teacherDocuments": ["evraklar/03-ogretmen-gozlem-formu.pdf", "evraklar/03-ogretmen-gozlem-formu.docx"],
+        "interactiveActivities": [
+          "etkinlikler/5-sinif/hafta03/dijital-vatandaslik-eslestirme.html",
+          "etkinlikler/5-sinif/hafta03/dijital-kavramlar-siniflandirma.html"
+        ]
       },
-      "pedagogicalEndpoint": "BTY.5.1.2 tamamlandı. BTY.5.1.3'ün yalnız a bileşeni tamamlandı. Ders, 'çevrim içi yaptıklarımız geride bir iz bırakır mı?' sorusuyla b bileşeninin eşiğinde bitti.",
-      "nextWeekStart": "Hafta 04, Hafta 03 sunumunun 18. slaytındaki açık sorudan hareketle BTY.5.1.3.b olan dijital ayak izinin etkilerini kullanım alanlarıyla ilişkilendirmeden başlamalı; ardından BTY.5.1.3.c olan dijital vatandaşlık uygulamalarını kullanım alanlarına göre gruplandırmaya ilerlemelidir."
+      "pedagogicalEndpoint": "BTY.5.1.3'ün a, b ve c süreç bileşenleri güncel 18 slaytlık full set, dört evrak ve iki etkileşimle tamamlandı. Sunumun 10. ekranındaki arama adı temsili örnektir; sınıfta öğretmen kendi ad-soyadını aratır.",
+      "nextWeekStart": "Hafta 04, BTY.5.1.3'ün a-b-c bileşenlerini yeniden başlangıç noktası sayamaz. Yeni haftanın içeriği, Öğretim Programı ve Öğretmen Kılavuzu ile zamanlama kaydı birlikte gözden geçirilerek ayrıca belirlenmelidir."
     }
   ],
   "nextProduction": {
     "week": 4,
-    "requiredStart": "BTY.5.1.3.b — dijital ayak izinin etkilerini bilişim teknolojilerinin kullanım alanları ile ilişkilendirme",
-    "then": "BTY.5.1.3.c — dijital vatandaşlık uygulamalarını kullanım alanlarına göre gruplandırma",
+    "requiredStart": "BTY.5.1.3 a-b-c Hafta 03'te tamamlandı; Hafta 04 için yeni başlangıç, Öğretim Programı ve Öğretmen Kılavuzu ile zamanlama kaydı birlikte gözden geçirilmeden belirlenemez.",
+    "then": "BTY.5.1.3 bileşenleri yeni üretimde tekrar başlangıç noktası olarak kullanılamaz.",
     "entryEvidence": "materyaller/5-sinif/hafta03/sunum/18.png",
     "precondition": "Öğretim Programı ve 5. sınıf Öğretmen Kılavuz Kitabı sentezlenmeden yeni içerik üretilemez.",
     "existingArtifactsDisposition": "Materyaller/5-sinif/hafta04 altındaki 20 slayt ve gunluk-planlar-5sinif/hafta04-5sinif-bty.docx repoda mevcuttur; bu süreklilik denetiminde onaylanmış içerik sayılmamıştır. Resmî kaynaklar ve bu başlangıç noktasıyla yeniden doğrulanmadan kaynak veya devam zemini olarak kullanılamaz.",
@@ -207,6 +215,11 @@
   },
   "unresolvedConflicts": [
     {
+      "id": "week-04-timing-overlaps-completed-week-03-scope",
+      "status": "requires-official-schedule-review",
+      "description": "data/5-sinif.json zamanlama kaydı Hafta 04 için BTY.5.1.3.b-c gösterirken, bu konuşmada onaylanan güncel Hafta 03 full seti BTY.5.1.3 a-b-c kapsamını tamamlar. Hafta 04 için yeni kapsam, resmî kaynaklar ve zamanlama kaydıyla ayrıca kararlaştırılmalıdır."
+    },
+    {
       "id": "week-04-existing-package-not-continuity-approved",
       "status": "quarantined-pending-source-review",
       "description": "Repoda 20 slaytlık mevcut Hafta 04 sunumu ve Hafta 04 günlük planı vardır. İlk slayt kayıtlı dijital ayak izi eşiğiyle uyumlu görünse de paket, bu denetimde Öğretim Programı ve Öğretmen Kılavuzuyla sentezlenerek onaylanmamıştır; yeni üretime kanonik kaynak olamaz."
@@ -214,9 +227,9 @@
   ],
   "resolvedFindings": [
     {
-      "id": "week-03-application-scope-corrected",
+      "id": "week-03-full-set-integrated",
       "status": "resolved",
-      "description": "data/5-sinif.json ve ondan üretilen uygulama verisi Hafta 03 için BTY.5.1.2 kapanış/pekiştirmeyi ve yalnız BTY.5.1.3.a sürecini gösterir; BTY.5.1.3.b ve c Hafta 04'e bırakılmıştır."
+      "description": "Bu konuşmada hazırlanan güncel full set, Hafta 03 için BTY.5.1.3 a-b-c kapsamını 18 sunum görseli, dört evrak ve iki sınıf aracıyla tamamlar; eski Hafta 03 materyalleri aktif setten kaldırılmıştır."
     },
     {
       "id": "week-03-summary-validator-stale-expectation",
