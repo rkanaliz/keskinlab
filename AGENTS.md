@@ -94,14 +94,26 @@ Do not invent curriculum scope or teaching outcomes.
 
 When educational sources conflict, do not silently reconcile them. Use this hierarchy and surface genuine conflicts to the user:
 
-1. Official 5–6 BTY Türkiye Yüzyılı Maarif Modeli curriculum
-2. Current 2026–2027 TYMM draft framework annual plan
-3. TYMM common text
-4. Official MEB 2026–2027 work calendar
-5. Derived repository data/generated application data
-6. Historical/legacy project documents
+1. TYMM Bilişim Teknolojileri ve Yazılım Öğretim Programı
+2. İlgili sınıfın Öğretmen Kılavuz Kitabı
+3. Yıllık/haftalık plan, yalnız zamanlama için
+4. KeskinLab pedagojik yorumu
 
-Derived JSON/data must not override official source material.
+TYMM Ortak Metni; çapraz beceri, değer, ölçme ve farklılaştırma çerçevesi olarak kullanılabilir. Öğretim Programının veya ilgili sınıfın Öğretmen Kılavuz Kitabının önüne geçemez.
+
+`data/5-sinif.json` bağımsız bir pedagojik veya resmî kaynak değildir. Takvim bilgisini ve uygulamada gösterilen haftalık kapsamı besleyen kanonik uygulama verisidir. Tamamlanmış haftalarda `data/5-sinif-content-state.json` içindeki fiilî kapsamı doğru yansıtmalıdır; gelecek haftalarda ise yalnız resmî kaynak sentezinden sonra güncellenebilir. Türetilmiş JSON, üretilmiş uygulama verisi ve arayüz metni resmî kaynakların ya da tamamlanmış materyallerdeki gerçek pedagojik sınırın yerine geçemez.
+
+### 4.1. 5. sınıf içerik sürekliliği
+
+5. sınıfta yeni bir hafta hazırlamadan önce `data/5-sinif-content-state.json` okunmalıdır. Bu dosya, tamamlanmış haftaların gerçek pedagojik kapsamı ve bir sonraki başlangıç noktası için repo içindeki kanonik süreklilik kaydıdır.
+
+- Bir sonraki hafta hazırlanırken önce tamamlanmış önceki haftaların gerçekte hangi öğrenme çıktısı ve süreç bileşenlerini işlediği kontrol edilir.
+- Haftanın numarası tek başına içerik başlangıcını belirlemez.
+- Eski haftalık JSON, eski slayt sayısı veya legacy materyal yeni üretime kaynak olamaz.
+- Resmî kaynaklar yukarıdaki sırayla sentezlenmeden ve önceki haftanın bitiş noktası süreklilik kaydından belirlenmeden yeni hafta üretilemez.
+- Süreklilik kaydı ile güncel materyal arasında çelişki bulunursa içerik tahmin edilmez veya sessizce uzlaştırılmaz; üretim durdurulur ve çelişki kullanıcıya raporlanır.
+- Süreklilik kaydında tamamlanmış hafta olarak yer almayan mevcut bir materyal klasörü, slayt paketi veya günlük plan kendiliğinden güncel ya da onaylı kabul edilemez; resmî kaynaklar ve kayıtlı bitiş noktasıyla yeniden doğrulanmadan kullanılamaz.
+- `keskinlab-5-sinif-hafta-plani-2026-2027.json`, günlük plan DOCX'leri, `course-data-5-sinif.js` ve `generated/` altındaki çıktılar pedagojik başlangıç noktası belirlemek için kanonik kaynak değildir.
 
 ## 5. Visual and design rules
 

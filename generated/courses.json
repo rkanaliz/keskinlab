@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-18T16:35:26.266Z",
+  "generatedAt": "2026-09-19T08:52:44.095Z",
   "courses": {
     "5-sinif": {
       "title": "5. Sınıf BTY",
@@ -254,16 +254,14 @@
           "ders_saati": "1+1",
           "tema": "Bilişim Teknolojilerinin Hayatımızdaki Yeri",
           "unite": "",
-          "konu": "Bilişim Teknolojilerinin Etkileri ve Dijital Sağlık / Dijital Vatandaşlık Uygulamaları",
-          "ogrenme_ciktisi": "BTY.5.1.2. Bilişim teknolojilerinin birey ve toplum üzerindeki etkilerini özetleyebilme BTY.5.1.3. Dijital vatandaşlık uygulamalarını sınıflandırabilme",
+          "konu": "Bilişim Teknolojilerinin Etkileri ve Dijital Sağlık (Kapanış/Pekiştirme) / Dijital Kimlik",
+          "ogrenme_ciktisi": "BTY.5.1.2. Bilişim teknolojilerinin birey ve toplum üzerindeki etkilerini özetleyebilme (kapanış ve pekiştirme) • BTY.5.1.3. Dijital vatandaşlık uygulamalarını sınıflandırabilme (bu hafta yalnız a süreci: dijital kimlik)",
           "kazanimlar": [],
           "surec_bilesenleri": [
             "a) Farklı bilişim teknolojilerinin olumlu ve olumsuz yönleri ile ilgili çözümleme yapar.",
             "b) Farklı bilişim teknolojilerinin kullanımına göre fiziksel güvenlik önlemleri ile ilgili sınıflandırma yapar.",
             "c) Bilişim teknolojilerini kullanmanın beden ve ruh sağlığı üzerindeki etkilerini kendi cümleleriyle ifade eder.",
-            "a) Dijital kimlik kavramını belirler.",
-            "b) Dijital ayak izinin etkilerini bilişim teknolojilerinin kullanım alanları ile ilişkilendirir.",
-            "c) Dijital vatandaşlık uygulamalarını kullanım alanlarına göre gruplandırır."
+            "a) Dijital kimlik kavramını belirler."
           ],
           "etkinlik": "",
           "ozel_hafta": false,
@@ -275,15 +273,13 @@
             "tarih_araligi": "28 Eylül - 02 Ekim",
             "ders_saati": "1+1",
             "tema": "Bilişim Teknolojilerinin Hayatımızdaki Yeri",
-            "konu": "Bilişim Teknolojilerinin Etkileri ve Dijital Sağlık / Dijital Vatandaşlık Uygulamaları",
-            "ogrenme_ciktisi": "BTY.5.1.2. Bilişim teknolojilerinin birey ve toplum üzerindeki etkilerini özetleyebilme BTY.5.1.3. Dijital vatandaşlık uygulamalarını sınıflandırabilme",
+            "konu": "Bilişim Teknolojilerinin Etkileri ve Dijital Sağlık (Kapanış/Pekiştirme) / Dijital Kimlik",
+            "ogrenme_ciktisi": "BTY.5.1.2. Bilişim teknolojilerinin birey ve toplum üzerindeki etkilerini özetleyebilme (kapanış ve pekiştirme) • BTY.5.1.3. Dijital vatandaşlık uygulamalarını sınıflandırabilme (bu hafta yalnız a süreci: dijital kimlik)",
             "surec_bilesenleri": [
               "a) Farklı bilişim teknolojilerinin olumlu ve olumsuz yönleri ile ilgili çözümleme yapar.",
               "b) Farklı bilişim teknolojilerinin kullanımına göre fiziksel güvenlik önlemleri ile ilgili sınıflandırma yapar.",
               "c) Bilişim teknolojilerini kullanmanın beden ve ruh sağlığı üzerindeki etkilerini kendi cümleleriyle ifade eder.",
-              "a) Dijital kimlik kavramını belirler.",
-              "b) Dijital ayak izinin etkilerini bilişim teknolojilerinin kullanım alanları ile ilişkilendirir.",
-              "c) Dijital vatandaşlık uygulamalarını kullanım alanlarına göre gruplandırır."
+              "a) Dijital kimlik kavramını belirler."
             ],
             "kurban_bayrami_cakisiyor": false,
             "ozel_hafta": false,
@@ -299,11 +295,10 @@
           "ders_saati": "2",
           "tema": "Bilişim Teknolojilerinin Hayatımızdaki Yeri",
           "unite": "",
-          "konu": "Dijital Vatandaşlık Uygulamaları",
+          "konu": "Dijital Ayak İzi ve Dijital Vatandaşlık Uygulamaları",
           "ogrenme_ciktisi": "BTY.5.1.3. Dijital vatandaşlık uygulamalarını sınıflandırabilme",
           "kazanimlar": [],
           "surec_bilesenleri": [
-            "a) Dijital kimlik kavramını belirler.",
             "b) Dijital ayak izinin etkilerini bilişim teknolojilerinin kullanım alanları ile ilişkilendirir.",
             "c) Dijital vatandaşlık uygulamalarını kullanım alanlarına göre gruplandırır."
           ],
@@ -317,10 +312,9 @@
             "tarih_araligi": "05 Ekim - 09 Ekim",
             "ders_saati": "2",
             "tema": "Bilişim Teknolojilerinin Hayatımızdaki Yeri",
-            "konu": "Dijital Vatandaşlık Uygulamaları",
+            "konu": "Dijital Ayak İzi ve Dijital Vatandaşlık Uygulamaları",
             "ogrenme_ciktisi": "BTY.5.1.3. Dijital vatandaşlık uygulamalarını sınıflandırabilme",
             "surec_bilesenleri": [
-              "a) Dijital kimlik kavramını belirler.",
               "b) Dijital ayak izinin etkilerini bilişim teknolojilerinin kullanım alanları ile ilişkilendirir.",
               "c) Dijital vatandaşlık uygulamalarını kullanım alanlarına göre gruplandırır."
             ],

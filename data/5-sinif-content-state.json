@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "course": "5-sinif",
+  "recordKind": "pedagogical-continuity-ledger",
+  "status": "active",
+  "reviewedAt": "2026-09-19",
+  "purpose": "Tamamlanmış 5. sınıf haftalarının güncel repo materyallerinde fiilen işlenen kapsamını ve bir sonraki haftanın pedagojik başlangıç noktasını kaydeder.",
+  "authority": {
+    "sourceHierarchy": [
+      "TYMM Bilişim Teknolojileri ve Yazılım Öğretim Programı",
+      "İlgili sınıfın Öğretmen Kılavuz Kitabı",
+      "Yıllık/haftalık plan yalnız zamanlama için",
+      "KeskinLab pedagojik yorumu"
+    ],
+    "commonTextRole": "TYMM Ortak Metni çapraz beceri, değer, ölçme ve farklılaştırma çerçevesidir; Öğretim Programı veya Öğretmen Kılavuzunun önüne geçemez.",
+    "calendarDataRole": "data/5-sinif.json bağımsız pedagojik veya resmî kaynak değildir; takvimi ve uygulamada gösterilen haftalık kapsamı besleyen kanonik uygulama verisidir. Tamamlanmış haftalarda bu ledger içindeki fiilî kapsamı yansıtmak zorundadır.",
+    "continuityRule": "Yeni hafta, yalnız tamamlanmış önceki haftaların güncel materyallerdeki gerçek bitiş noktası belirlendikten ve resmî kaynaklar sentezlendikten sonra üretilebilir.",
+    "forbiddenAsNewContentSource": [
+      "keskinlab-5-sinif-hafta-plani-2026-2027.json",
+      "eski haftalık JSON dosyaları",
+      "eski slayt sayıları",
+      "legacy materyaller",
+      "course-data-5-sinif.js",
+      "generated/ altındaki türetilmiş çıktılar",
+      "gunluk-planlar-5sinif/ altındaki yıllık dağılıma dayalı DOCX dosyaları"
+    ]
+  },
+  "evidencePolicy": {
+    "scope": "Yalnız repodaki güncel Hafta 01-03 veri, sunum, ders notu, etkinlik, öğretmen materyali ve manifest dosyaları incelendi.",
+    "completionMeaning": "Bir haftanın materyal paketinin tamamlanmış olması, o hafta takvim verisinde adı geçen bütün süreç bileşenlerinin işlendiği anlamına gelmez.",
+    "conflictRule": "Takvim/uygulama verisi ile materyalin gerçek bitişi çelişirse materyal sınırı kaydedilir, veri sessizce pedagojik kanıt sayılmaz ve çelişki unresolvedConflicts alanında tutulur."
+  },
+  "weeks": [
+    {
+      "week": 1,
+      "packageStatus": "approved-complete",
+      "actualScope": "Bilişim teknolojilerine ilişkin temel kavramlar; geçmiş ve günümüz teknolojilerinin benzerlik ve farklılıkları; teknolojilerin kullanım alanlarına göre sınıflandırılması.",
+      "learningOutcomes": [
+        {
+          "code": "BTY.5.1.1",
+          "title": "Günlük yaşamda kullanılan bilişim teknolojilerini sınıflandırabilme",
+          "completion": "complete",
+          "processComponents": [
+            {
+              "id": "a",
+              "text": "Bilişim teknolojilerine ilişkin temel kavramları belirler.",
+              "status": "completed"
+            },
+            {
+              "id": "b",
+              "text": "Geçmişten günümüze bilişim teknolojilerindeki benzerlikleri ve farklılıkları ilişkilendirir.",
+              "status": "completed"
+            },
+            {
+              "id": "c",
+              "text": "Bilişim teknolojilerini kullanım alanlarına göre gruplandırır.",
+              "status": "completed"
+            }
+          ]
+        }
+      ],
+      "materialPackage": {
+        "root": "materyaller/5-sinif/hafta01",
+        "presentationSlides": 20,
+        "lessonNotes": ["ders-notu/01.pdf", "ders-notu/01.docx"],
+        "studentActivities": ["ogrenci-etkinligi/01.pdf", "ogrenci-etkinligi/01.docx"],
+        "infographics": 3,
+        "weekSummaries": 4,
+        "teacherMaterials": ["ogretmen/gozlem-formu/01.pdf", "ogretmen/gozlem-formu/01.docx"],
+        "additionalCurrentEvidence": ["classroom-week01-web-content.js", "data/5-sinif.json#weeks[0].kilavuz"]
+      },
+      "pedagogicalEndpoint": "BTY.5.1.1'in a, b ve c süreç bileşenleri tamamlandı; öğrenci bir kullanım alanı seçip ilgili teknolojiyi ve sağladığı katkıyı açıklayabilecek noktada bırakıldı.",
+      "nextWeekStart": "BTY.5.1.2 kapsamında bilişim teknolojilerinin olumlu ve olumsuz etkilerini çözümlemeye başlanır."
+    },
+    {
+      "week": 2,
+      "packageStatus": "approved-complete",
+      "actualScope": "Bilişim teknolojilerinin olumlu ve olumsuz etkileri; fiziksel güvenlik önlemleri; ekran/teknoloji kullanımının beden ve ruh sağlığına etkileri; sağlıklı kullanım kuralları.",
+      "learningOutcomes": [
+        {
+          "code": "BTY.5.1.2",
+          "title": "Bilişim teknolojilerinin birey ve toplum üzerindeki etkilerini özetleyebilme",
+          "completion": "covered-in-week-02-and-reinforced-to-closure-in-week-03",
+          "processComponents": [
+            {
+              "id": "a",
+              "text": "Farklı bilişim teknolojilerinin olumlu ve olumsuz yönleri ile ilgili çözümleme yapar.",
+              "status": "covered"
+            },
+            {
+              "id": "b",
+              "text": "Farklı bilişim teknolojilerinin kullanımına göre fiziksel güvenlik önlemleri ile ilgili sınıflandırma yapar.",
+              "status": "covered"
+            },
+            {
+              "id": "c",
+              "text": "Bilişim teknolojilerini kullanmanın beden ve ruh sağlığı üzerindeki etkilerini kendi cümleleriyle ifade eder.",
+              "status": "covered"
+            }
+          ]
+        }
+      ],
+      "materialPackage": {
+        "root": "materyaller/5-sinif/hafta02",
+        "presentationSlides": 18,
+        "studentActivities": [
+          "ogrenci-etkinligi/01.pdf",
+          "ogrenci-etkinligi/01.docx",
+          "ogrenci-etkinligi/02.pdf",
+          "ogrenci-etkinligi/02.docx"
+        ],
+        "infographics": 1,
+        "weekSummaries": 3,
+        "teacherMaterials": [
+          "ogretmen/gozlem-formu/01.pdf",
+          "ogretmen/gozlem-formu/01.docx",
+          "ogretmen/uygulama-kilavuzu/01.pdf",
+          "ogretmen/uygulama-kilavuzu/01.docx"
+        ]
+      },
+      "pedagogicalEndpoint": "BTY.5.1.2'nin üç süreç bileşeni işlendi; öğrenci olumlu/olumsuz etki, fiziksel önlem ve sağlıklı kullanım için kişisel kurallar üretebilecek noktaya geldi.",
+      "nextWeekStart": "BTY.5.1.2 kısa tekrar, örnek zincirleri ve kişisel dijital denge kararıyla pekiştirilip kapatılır; ardından BTY.5.1.3.a kapsamında dijital kimlik kavramına geçilir."
+    },
+    {
+      "week": 3,
+      "packageStatus": "approved-complete-at-partial-outcome-boundary",
+      "actualScope": "BTY.5.1.2'nin etkiler, fiziksel önlemler ve beden/ruh sağlığı boyutlarının pekiştirilerek kapatılması; dijital kimliğin tanımı, bileşenleri, kişisel bilgi/gizlilik tercihleri ve çevrim içi davranışların kimliği temsil etmesi.",
+      "learningOutcomes": [
+        {
+          "code": "BTY.5.1.2",
+          "title": "Bilişim teknolojilerinin birey ve toplum üzerindeki etkilerini özetleyebilme",
+          "completion": "complete",
+          "processComponents": [
+            {
+              "id": "a",
+              "text": "Farklı bilişim teknolojilerinin olumlu ve olumsuz yönleri ile ilgili çözümleme yapar.",
+              "status": "completed-and-reinforced"
+            },
+            {
+              "id": "b",
+              "text": "Farklı bilişim teknolojilerinin kullanımına göre fiziksel güvenlik önlemleri ile ilgili sınıflandırma yapar.",
+              "status": "completed-and-reinforced"
+            },
+            {
+              "id": "c",
+              "text": "Bilişim teknolojilerini kullanmanın beden ve ruh sağlığı üzerindeki etkilerini kendi cümleleriyle ifade eder.",
+              "status": "completed-and-reinforced"
+            }
+          ]
+        },
+        {
+          "code": "BTY.5.1.3",
+          "title": "Dijital vatandaşlık uygulamalarını sınıflandırabilme",
+          "completion": "partial",
+          "processComponents": [
+            {
+              "id": "a",
+              "text": "Dijital kimlik kavramını belirler.",
+              "status": "completed"
+            },
+            {
+              "id": "b",
+              "text": "Dijital ayak izinin etkilerini bilişim teknolojilerinin kullanım alanları ile ilişkilendirir.",
+              "status": "not-yet-taught",
+              "evidence": "Sunum 18, dijital ayak izi öğretimini bir sonraki derse bırakılan soru olarak kurar."
+            },
+            {
+              "id": "c",
+              "text": "Dijital vatandaşlık uygulamalarını kullanım alanlarına göre gruplandırır.",
+              "status": "not-yet-taught"
+            }
+          ]
+        }
+      ],
+      "materialPackage": {
+        "root": "materyaller/5-sinif/hafta03",
+        "presentationSlides": 18,
+        "lessonNoteImages": 3,
+        "infographics": 1,
+        "documentsManifest": "evraklar/_manifest.json",
+        "studentDocuments": ["evraklar/01-dijital-kimlik-kartim.pdf", "evraklar/01-dijital-kimlik-kartim.docx"],
+        "teacherDocuments": ["evraklar/02-ogretmen-uygulama-kilavuzu.pdf", "evraklar/02-ogretmen-uygulama-kilavuzu.docx"]
+      },
+      "pedagogicalEndpoint": "BTY.5.1.2 tamamlandı. BTY.5.1.3'ün yalnız a bileşeni tamamlandı. Ders, 'çevrim içi yaptıklarımız geride bir iz bırakır mı?' sorusuyla b bileşeninin eşiğinde bitti.",
+      "nextWeekStart": "Hafta 04, Hafta 03 sunumunun 18. slaytındaki açık sorudan hareketle BTY.5.1.3.b olan dijital ayak izinin etkilerini kullanım alanlarıyla ilişkilendirmeden başlamalı; ardından BTY.5.1.3.c olan dijital vatandaşlık uygulamalarını kullanım alanlarına göre gruplandırmaya ilerlemelidir."
+    }
+  ],
+  "nextProduction": {
+    "week": 4,
+    "requiredStart": "BTY.5.1.3.b — dijital ayak izinin etkilerini bilişim teknolojilerinin kullanım alanları ile ilişkilendirme",
+    "then": "BTY.5.1.3.c — dijital vatandaşlık uygulamalarını kullanım alanlarına göre gruplandırma",
+    "entryEvidence": "materyaller/5-sinif/hafta03/sunum/18.png",
+    "precondition": "Öğretim Programı ve 5. sınıf Öğretmen Kılavuz Kitabı sentezlenmeden yeni içerik üretilemez.",
+    "existingArtifactsDisposition": "Materyaller/5-sinif/hafta04 altındaki 20 slayt ve gunluk-planlar-5sinif/hafta04-5sinif-bty.docx repoda mevcuttur; bu süreklilik denetiminde onaylanmış içerik sayılmamıştır. Resmî kaynaklar ve bu başlangıç noktasıyla yeniden doğrulanmadan kaynak veya devam zemini olarak kullanılamaz.",
+    "quarantinedArtifacts": [
+      {
+        "path": "materyaller/5-sinif/hafta04",
+        "status": "not-approved-for-reuse",
+        "allowedAsSource": false
+      },
+      {
+        "path": "gunluk-planlar-5sinif/hafta04-5sinif-bty.docx",
+        "status": "not-approved-for-reuse",
+        "allowedAsSource": false
+      }
+    ]
+  },
+  "unresolvedConflicts": [
+    {
+      "id": "week-04-existing-package-not-continuity-approved",
+      "status": "quarantined-pending-source-review",
+      "description": "Repoda 20 slaytlık mevcut Hafta 04 sunumu ve Hafta 04 günlük planı vardır. İlk slayt kayıtlı dijital ayak izi eşiğiyle uyumlu görünse de paket, bu denetimde Öğretim Programı ve Öğretmen Kılavuzuyla sentezlenerek onaylanmamıştır; yeni üretime kanonik kaynak olamaz."
+    }
+  ],
+  "resolvedFindings": [
+    {
+      "id": "week-03-application-scope-corrected",
+      "status": "resolved",
+      "description": "data/5-sinif.json ve ondan üretilen uygulama verisi Hafta 03 için BTY.5.1.2 kapanış/pekiştirmeyi ve yalnız BTY.5.1.3.a sürecini gösterir; BTY.5.1.3.b ve c Hafta 04'e bırakılmıştır."
+    },
+    {
+      "id": "week-03-summary-validator-stale-expectation",
+      "status": "resolved",
+      "description": "scripts/validate-week-summary-assets.mjs Hafta 03 için güncel pakete uygun olarak sıfır hafta özeti bekler; eski dört özet zorunluluğu kaldırılmıştır."
+    }
+  ]
+}

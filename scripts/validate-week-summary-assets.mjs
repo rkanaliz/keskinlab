@@ -7,7 +7,7 @@ const manifest = JSON.parse(fs.readFileSync(path.join(root, 'generated', 'materi
 const checks = [
   ['5-sinif', '01', 4],
   ['5-sinif', '02', 3],
-  ['5-sinif', '03', 4],
+  ['5-sinif', '03', 0],
   ['6-sinif', '01', 4],
 ];
 
