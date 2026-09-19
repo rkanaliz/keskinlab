@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-19T13:42:04.983Z",
+  "generatedAt": "2026-09-19T13:51:25.972Z",
   "courses": {
     "5-sinif": {
       "title": "5. Sınıf",
@@ -1473,54 +1473,6 @@
                   "href": "materyaller/5-sinif/hafta03/sunum/18.png",
                   "format": "png",
                   "filename": "KeskinLab-5-Sinif-Hafta-03-Sunum-18.png"
-                }
-              ]
-            },
-            {
-              "type": "ders-notu",
-              "label": "Ders Notu",
-              "index": "01",
-              "preview": "materyaller/5-sinif/hafta03/ders-notu/01.png",
-              "webPreview": "generated/web/5-sinif/hafta03/ders-notu/01.webp",
-              "thumbnail": "generated/web/5-sinif/hafta03/ders-notu/01-thumb.webp",
-              "editable": null,
-              "downloads": [
-                {
-                  "href": "materyaller/5-sinif/hafta03/ders-notu/01.png",
-                  "format": "png",
-                  "filename": "KeskinLab-5-Sinif-Hafta-03-Ders-Notu.png"
-                }
-              ]
-            },
-            {
-              "type": "ders-notu",
-              "label": "Ders Notu",
-              "index": "02",
-              "preview": "materyaller/5-sinif/hafta03/ders-notu/02.png",
-              "webPreview": "generated/web/5-sinif/hafta03/ders-notu/02.webp",
-              "thumbnail": "generated/web/5-sinif/hafta03/ders-notu/02-thumb.webp",
-              "editable": null,
-              "downloads": [
-                {
-                  "href": "materyaller/5-sinif/hafta03/ders-notu/02.png",
-                  "format": "png",
-                  "filename": "KeskinLab-5-Sinif-Hafta-03-Ders-Notu-02.png"
-                }
-              ]
-            },
-            {
-              "type": "ders-notu",
-              "label": "Ders Notu",
-              "index": "03",
-              "preview": "materyaller/5-sinif/hafta03/ders-notu/03.png",
-              "webPreview": "generated/web/5-sinif/hafta03/ders-notu/03.webp",
-              "thumbnail": "generated/web/5-sinif/hafta03/ders-notu/03-thumb.webp",
-              "editable": null,
-              "downloads": [
-                {
-                  "href": "materyaller/5-sinif/hafta03/ders-notu/03.png",
-                  "format": "png",
-                  "filename": "KeskinLab-5-Sinif-Hafta-03-Ders-Notu-03.png"
                 }
               ]
             },
